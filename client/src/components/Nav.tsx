@@ -15,13 +15,11 @@ export function Nav() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border text-foreground">
       <div className="flex justify-between items-center px-6 py-6 md:px-12">
-        <Link href="/">
-          <a className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group">
              <div className="w-3 h-3 bg-primary group-hover:bg-accent transition-colors"></div>
              <span className="text-2xl md:text-3xl font-display font-bold tracking-tighter hover:opacity-70 transition-opacity">
                MEMETIK
              </span>
-          </a>
         </Link>
 
         {/* Desktop Menu */}

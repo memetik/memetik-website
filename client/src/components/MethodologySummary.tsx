@@ -87,11 +87,9 @@ export function MethodologySummary() {
       </div>
       
       <div className="mt-16 flex justify-center">
-        <Link href="/blueprint">
-            <button className="group flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-bold text-lg tracking-wide hover:bg-primary/90 transition-all">
-                VIEW FULL STRATEGY
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+        <Link href="/blueprint" className="group flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-bold text-lg tracking-wide hover:bg-primary/90 transition-all inline-flex cursor-pointer">
+            VIEW FULL STRATEGY
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
     </section>

@@ -50,6 +50,7 @@ export default function Home() {
                         <a href="#" className="hover:text-primary transition-colors">TWITTER</a>
                         <a href="#" className="hover:text-primary transition-colors">INSTAGRAM</a>
                         <a href="#" className="hover:text-primary transition-colors">LINKEDIN</a>
+                        <a href="/bts" className="text-white/10 hover:text-primary transition-colors pt-8">CONFIDENTIAL: BTS</a>
                     </div>
                 </div>
                 <div className="mt-24 pt-8 border-t border-border flex justify-between font-mono text-xs text-muted-foreground">
