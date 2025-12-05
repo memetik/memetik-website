@@ -1,6 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
-import { ProjectGrid } from "@/components/ProjectGrid";
+import { MethodologySummary } from "@/components/MethodologySummary";
 import { Marquee } from "@/components/Marquee";
 import { Services } from "@/components/Services";
 
@@ -31,7 +31,7 @@ export default function Home() {
         </section>
 
         <Services />
-        <ProjectGrid />
+        <MethodologySummary />
         
         <footer className="bg-background text-white py-24 px-6 md:px-12 border-t border-border">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
