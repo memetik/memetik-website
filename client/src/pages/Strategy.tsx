@@ -39,9 +39,7 @@ export default function Strategy() {
             <span className="text-primary">MARKET CAPTURE.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-            The 90-day protocol to become the default, mathematical answer in ChatGPT, Claude, and Perplexity.
-          </p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">The Answer Engine Infrastructure protocol to become the default, mathematical answer in ChatGPT, Claude, and Perplexity.</p>
         </motion.div>
 
         {/* 2. The Promise - High Impact */}
