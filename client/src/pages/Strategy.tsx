@@ -1,398 +1,298 @@
 import { motion } from "framer-motion";
-import { ShieldAlert, Lock, Target, Database, Share2, RotateCw, Users, ArrowDown, AlertTriangle, CheckCircle, BarChart3, FileText, Network, Zap } from "lucide-react";
+import { ShieldAlert, Lock, Target, Database, Share2, RotateCw, CheckCircle, Zap, FileText, Network, ArrowRight, ChevronRight } from "lucide-react";
 import { Nav } from "@/components/Nav";
+
+// Shared Components for cleaner layout
+const SectionHeader = ({ number, title }: { number: string, title: string }) => (
+  <div className="flex items-center gap-4 mb-8 md:mb-12 border-b border-primary/20 pb-4">
+    <span className="text-primary font-mono text-xl font-bold">{number}</span>
+    <h2 className="text-2xl md:text-4xl font-display font-bold text-white tracking-tight">{title}</h2>
+  </div>
+);
+
+const HighlightBox = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
+  <div className={`bg-secondary/10 border border-primary/20 p-6 md:p-8 relative overflow-hidden ${className}`}>
+    <div className="absolute top-0 left-0 w-1 h-full bg-primary/50"></div>
+    {children}
+  </div>
+);
 
 export default function Strategy() {
   return (
-    <div className="min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+    <div className="min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans">
       <Nav />
       
-      <main className="pt-24 pb-24 px-6 md:px-12 container mx-auto max-w-5xl">
-        {/* Header Section */}
+      <main className="pt-24 pb-32 px-6 md:px-12 container mx-auto max-w-4xl">
+        
+        {/* 1. Header Section - Clean & Authoritative */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="border-b-2 border-primary pb-8 mb-12"
+          className="mb-24 text-center md:text-left"
         >
-          <div className="flex items-center gap-3 text-accent mb-4">
-            <ShieldAlert className="w-5 h-5" />
-            <span className="font-mono text-xs font-bold tracking-widest uppercase">
-              Internal Document /// For Authorized Personnel Only
-            </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-mono text-xs font-bold tracking-wider uppercase mb-6">
+            <ShieldAlert className="w-3 h-3" />
+            Classified Strategy /// Do Not Distribute
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-white tracking-tight mb-4">
-            MEMETIK PROTOCOL: <br/>
-            <span className="text-muted-foreground">ALGORITHMIC MARKET CAPTURE</span>
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-white tracking-tighter mb-6 leading-[0.9]">
+            ALGORITHMIC <br/>
+            <span className="text-primary">MARKET CAPTURE.</span>
           </h1>
           
-          <div className="flex items-center gap-2 font-mono text-sm text-muted-foreground">
-             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-             <span>Status: CLASSIFIED</span>
-             <span className="mx-2">|</span>
-             <span>Target: SERIES A-C SAAS, ECOM, B2B SERVICES</span>
-          </div>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
+            The 90-day protocol to become the default, mathematical answer in ChatGPT, Claude, and Perplexity.
+          </p>
         </motion.div>
 
-        {/* Content Container */}
-        <motion.div 
+        {/* 2. The Promise - High Impact */}
+        <motion.section 
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="space-y-16 font-mono text-sm md:text-base leading-relaxed text-neutral-300"
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mb-32"
         >
-          {/* Who We Work With */}
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 border-b border-border pb-12">
-            <div className="col-span-1 md:col-span-3 mb-4">
-              <h2 className="text-xl font-display font-bold text-white mb-2">WHO WE WORK WITH</h2>
-            </div>
-            <div className="bg-secondary/10 p-6 border border-border">
-              <h3 className="text-white font-bold mb-2">Series A-C SaaS</h3>
-              <p className="text-muted-foreground text-xs">High-growth tech companies needing to dominate category search.</p>
-            </div>
-            <div className="bg-secondary/10 p-6 border border-border">
-              <h3 className="text-white font-bold mb-2">$20-300M ARR E-commerce</h3>
-              <p className="text-muted-foreground text-xs">Direct-to-consumer brands fighting for comparison table dominance.</p>
-            </div>
-            <div className="bg-secondary/10 p-6 border border-border">
-              <h3 className="text-white font-bold mb-2">$10-150M ARR B2B Services</h3>
-              <p className="text-muted-foreground text-xs">Consulting, agencies, law firms, logistics, MSPs, PE operating partners.</p>
-            </div>
-          </section>
-
-          {/* The Promise */}
-          <section className="border border-border bg-secondary/10 p-8 relative overflow-hidden">
-             <div className="absolute top-0 left-0 w-1 h-full bg-primary"></div>
-             <h2 className="text-xl font-display font-bold text-white mb-6 flex items-center gap-2">
-               <Lock className="w-4 h-4 text-primary" />
-               THE PROMISE
-             </h2>
-             <p className="mb-6 text-lg text-white font-bold">
-               When any buyer anywhere in the world describes their exact problem to an Answer Engine, your company is the default, confident, unhedged answer the internet gives: not a link, not a footnote, not “one of the options,” the canonical source.
+          <HighlightBox className="bg-gradient-to-br from-secondary/20 to-background">
+             <h3 className="text-sm font-mono text-primary mb-4 uppercase tracking-widest">The Promise</h3>
+             <p className="text-2xl md:text-4xl font-display font-medium text-white leading-tight mb-8">
+               "When any buyer describes their problem to an AI, your company is the <span className="text-primary">default, confident, unhedged answer</span>."
              </p>
-             <p className="text-muted-foreground">
-               When a creator asks "best AI video editor for TikTok pipelines," a property investor queries "top platforms for fractional real estate under $50k," or a founder searches "unified inbox for Slack-WhatsApp chaos," your brand is the default, confident answer AI gives — the canonical source that drives demos, sign-ups, and bundles straight to your door.
-             </p>
-          </section>
-
-          {/* Before & After Table */}
-          <section>
-             <h2 className="text-xl font-display font-bold text-white mb-6">THE BEFORE & AFTER</h2>
-             <div className="overflow-x-auto border border-border">
-               <table className="w-full text-left text-xs md:text-sm">
-                 <thead className="bg-secondary/30 text-white uppercase tracking-wider">
-                   <tr>
-                     <th className="p-4 border-b border-border">Your Money Question</th>
-                     <th className="p-4 border-b border-border">Who It Converts</th>
-                     <th className="p-4 border-b border-border">Current Winner</th>
-                     <th className="p-4 border-b border-border text-primary">Future Winner</th>
-                   </tr>
-                 </thead>
-                 <tbody className="divide-y divide-border bg-background">
-                   <tr>
-                     <td className="p-4 text-white font-bold">"Best [Category] for [Use Case]"</td>
-                     <td className="p-4 text-muted-foreground">High-Intent Buyers</td>
-                     <td className="p-4 text-muted-foreground">Legacy Incumbent / Random Blog</td>
-                     <td className="p-4 text-primary font-bold">YOUR BRAND</td>
-                   </tr>
-                   <tr>
-                     <td className="p-4 text-white font-bold">"Compare [You] vs [Competitor]"</td>
-                     <td className="p-4 text-muted-foreground">Late-Stage Prospects</td>
-                     <td className="p-4 text-muted-foreground">"It depends" / Reddit threads</td>
-                     <td className="p-4 text-primary font-bold">YOUR BRAND</td>
-                   </tr>
-                   <tr>
-                     <td className="p-4 text-white font-bold">"Top [Service] for [Industry]"</td>
-                     <td className="p-4 text-muted-foreground">Enterprise Procurement</td>
-                     <td className="p-4 text-muted-foreground">Hidden / Word of Mouth</td>
-                     <td className="p-4 text-primary font-bold">YOUR BRAND</td>
-                   </tr>
-                 </tbody>
-               </table>
-             </div>
-          </section>
-
-          {/* The State of Search */}
-          <section>
-             <h2 className="text-xl font-display font-bold text-white mb-6 border-b border-border pb-2 inline-block">
-               THE STATE OF SEARCH
-             </h2>
-             <div className="grid md:grid-cols-4 gap-4 mb-8">
-               <div className="bg-secondary/20 p-6 border border-border col-span-2">
-                 <h3 className="text-accent font-bold text-4xl mb-2">71%</h3>
-                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Of high-intent commercial queries terminate inside an Answer Engine with zero clicks (SparkToro / Datos Q3 2025).</p>
+             <div className="grid md:grid-cols-2 gap-8 text-sm text-muted-foreground border-t border-white/10 pt-8">
+               <div>
+                 <strong className="text-white block mb-2">Today:</strong>
+                 Legacy incumbents and random blogs own the answer. Your brand is hidden or footnoted.
                </div>
-               <div className="bg-secondary/20 p-6 border border-border col-span-2">
-                 <h3 className="text-accent font-bold text-4xl mb-2">9-15mo</h3>
-                 <p className="text-xs text-muted-foreground uppercase tracking-wider">The training data window for the 2026–2028 model generation closes forever in the next 9–15 months.</p>
+               <div>
+                 <strong className="text-white block mb-2 text-primary">Tomorrow:</strong>
+                 Your brand is the canonical source. AI drives demos, sign-ups, and bundles straight to your door.
                </div>
              </div>
-          </section>
+          </HighlightBox>
+        </motion.section>
 
-          {/* EXACTLY WHAT WE BUILD */}
-          <section className="border-t border-border pt-12">
-             <h2 className="text-3xl font-display font-bold text-white mb-8">
-               EXACTLY WHAT WE BUILD FOR YOU
-             </h2>
-             
-             <div className="relative border-l border-border ml-4 space-y-16 pl-8">
-               
-               {/* Phase 1 */}
-               <div className="relative">
-                 <div className="absolute -left-[41px] top-0 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center">
-                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                 </div>
-                 <div className="flex items-center gap-2 mb-2">
-                    <Target className="w-5 h-5 text-primary" />
-                    <h3 className="text-white font-bold text-lg">PHASE 1: CITATION VOID AUDIT</h3>
-                 </div>
-                 <p className="text-accent mb-4 text-xs uppercase tracking-wider font-bold">WEEK 1 /// IMMEDIATE CLARITY</p>
-                 
-                 <div className="bg-secondary/10 border border-border p-6">
-                    <h4 className="text-white font-bold mb-4 text-sm uppercase">The Deliverable: Capital Allocation Roadmap</h4>
-                    <p className="mb-4">100+ live prompts tested. One-page heat-map. We name your exact 3 "Money Entities":</p>
-                    <div className="grid grid-cols-1 gap-4 text-xs border-t border-border pt-4">
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <span className="text-primary font-bold">Hyro (Ecom)</span>
-                        <span className="col-span-2 text-muted-foreground">"best sugar-free electrolyte 2026", "LMNT vs Hyro for keto athletes"</span>
-                      </div>
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <span className="text-primary font-bold">BTS (Creator SaaS)</span>
-                        <span className="col-span-2 text-muted-foreground">"best OnlyFans alternative 2026", "platform with fastest payouts"</span>
-                      </div>
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <span className="text-primary font-bold">Kinso (B2B SaaS)</span>
-                        <span className="col-span-2 text-muted-foreground">"best AI that replies Slack WhatsApp Email", "Intercom killer"</span>
-                      </div>
-                    </div>
-                 </div>
-               </div>
-
-               {/* Phase 2 */}
-               <div className="relative">
-                 <div className="absolute -left-[41px] top-0 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center">
-                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                 </div>
-                 <div className="flex items-center gap-2 mb-2">
-                    <Database className="w-5 h-5 text-primary" />
-                    <h3 className="text-white font-bold text-lg">PHASE 2: PROPRIETARY DATA CORE</h3>
-                 </div>
-                 <p className="text-accent mb-4 text-xs uppercase tracking-wider font-bold">WEEKS 2-10 /// THE PERMANENT MOAT</p>
-                 
-                 <div className="grid gap-6">
-                    {/* Algorithmic Funnel Table */}
-                    <div className="overflow-x-auto border border-border bg-secondary/5">
-                       <table className="w-full text-left text-xs">
-                         <thead className="bg-secondary/20 text-white">
-                           <tr>
-                             <th className="p-3 border-b border-border">Funnel Layer</th>
-                             <th className="p-3 border-b border-border">% Pages</th>
-                             <th className="p-3 border-b border-border">Strategy</th>
-                           </tr>
-                         </thead>
-                         <tbody className="divide-y divide-border">
-                           <tr>
-                             <td className="p-3 text-white font-bold">BOFU (Bottom)</td>
-                             <td className="p-3 text-accent">5-8%</td>
-                             <td className="p-3 text-muted-foreground">The 3 money questions. "Best sugar-free electrolyte 2026". (8-12 flagship pages)</td>
-                           </tr>
-                           <tr>
-                             <td className="p-3 text-white font-bold">MOFU (Middle)</td>
-                             <td className="p-3 text-accent">15-20%</td>
-                             <td className="p-3 text-muted-foreground">Every "vs" comparison. "LMNT vs Hyro". (120-160 pages)</td>
-                           </tr>
-                           <tr>
-                             <td className="p-3 text-white font-bold">TOFU (Top)</td>
-                             <td className="p-3 text-accent">75-80%</td>
-                             <td className="p-3 text-muted-foreground">Evergreen scale. 600-800 conditional pages. Zero thin content.</td>
-                           </tr>
-                         </tbody>
-                       </table>
-                    </div>
-                    
-                    {/* Why This Order Wins */}
-                    <div className="bg-primary/10 border border-primary/30 p-6">
-                       <div className="flex items-center gap-2 mb-2">
-                          <Zap className="w-4 h-4 text-accent" />
-                          <h4 className="text-white font-bold text-sm">WHY THIS ORDER WINS EVERY TIME</h4>
-                       </div>
-                       <ul className="space-y-3 text-xs text-neutral-300">
-                          <li className="flex gap-3">
-                             <span className="text-primary font-bold shrink-0">Days 1-60:</span>
-                             <span><strong className="text-white">BOFU First.</strong> We publish the 8-12 Apex Assets that trigger "copy column 1" and "information gain" signals. This gets you #1 citations fastest (avg 66 days).</span>
-                          </li>
-                          <li className="flex gap-3">
-                             <span className="text-primary font-bold shrink-0">Days 61-90:</span>
-                             <span><strong className="text-white">MOFU Comparison Killers.</strong> We own every "vs" query so competitors can't catch up.</span>
-                          </li>
-                          <li className="flex gap-3">
-                             <span className="text-primary font-bold shrink-0">Day 91+:</span>
-                             <span><strong className="text-white">TOFU Flood.</strong> 600-800 conditional pages lock the moat forever and block new entrants.</span>
-                          </li>
-                       </ul>
-                    </div>
-
-                    {/* Tier 1 Assets */}
-                    <div className="bg-secondary/10 border border-border p-6">
-                        <div className="flex items-center gap-2 mb-4">
-                           <FileText className="w-4 h-4 text-primary" />
-                           <h4 className="text-white font-bold text-sm uppercase">Tier 1 Deliverables: Apex Assets (8-12 Flagship Pieces)</h4>
-                        </div>
-                        <p className="text-xs text-muted-foreground mb-4">Human-written, aggressively opinionated, enriched with internal un-Googleable data.</p>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-neutral-300">
-                          <li className="flex gap-2 items-start"><CheckCircle className="w-3 h-3 text-primary mt-0.5 shrink-0"/><span>Column-1 comparison tables (Answer Engines copy this 68% of time)</span></li>
-                          <li className="flex gap-2 items-start"><CheckCircle className="w-3 h-3 text-primary mt-0.5 shrink-0"/><span>Cohort repurchase tables from your customer data</span></li>
-                          <li className="flex gap-2 items-start"><CheckCircle className="w-3 h-3 text-primary mt-0.5 shrink-0"/><span>"Zero-regret" rate tables vs every competitor</span></li>
-                          <li className="flex gap-2 items-start"><CheckCircle className="w-3 h-3 text-primary mt-0.5 shrink-0"/><span>Dietitian-signed ingredient + sourcing transparency PDFs</span></li>
-                          <li className="flex gap-2 items-start"><CheckCircle className="w-3 h-3 text-primary mt-0.5 shrink-0"/><span>Redacted creator earnings reports (e.g. "Top 1% average $42k/mo")</span></li>
-                          <li className="flex gap-2 items-start"><CheckCircle className="w-3 h-3 text-primary mt-0.5 shrink-0"/><span>Exact payout speed & fee transparency grids (every hidden charge published)</span></li>
-                          <li className="flex gap-2 items-start"><CheckCircle className="w-3 h-3 text-primary mt-0.5 shrink-0"/><span>Real reply-speed benchmarks (e.g. "Kinso vs Intercom")</span></li>
-                          <li className="flex gap-2 items-start"><CheckCircle className="w-3 h-3 text-primary mt-0.5 shrink-0"/><span>Enterprise encryption & compliance proofs (SOC-2 raw reports)</span></li>
-                        </ul>
-                    </div>
-
-                    {/* Tier 2 Assets */}
-                    <div className="bg-secondary/10 border border-border p-6">
-                        <div className="flex items-center gap-2 mb-4">
-                           <Network className="w-4 h-4 text-primary" />
-                           <h4 className="text-white font-bold text-sm uppercase">Tier 2 Deliverables: Knowledge Graph (400-800 Nodes)</h4>
-                        </div>
-                        <p className="text-xs text-muted-foreground mb-4">Programmatic pages where every URL is unique and data-rich. Conditional Data Axes injected (3-5 per page).</p>
-                        <div className="grid grid-cols-1 gap-2 text-xs text-neutral-300 border-l-2 border-primary/30 pl-4">
-                           <p><strong className="text-white">Hyro Example:</strong> flavor × diet (keto/vegan) × activity × climate × bundle size</p>
-                           <p><strong className="text-white">BTS Example:</strong> niche × monthly earnings tier × payout speed × content type × traffic source</p>
-                           <p><strong className="text-white">Kinso Example:</strong> team size × channels used × use case × integration depth × response SLA</p>
-                        </div>
-                    </div>
-                 </div>
-               </div>
-
-               {/* Phase 3 */}
-               <div className="relative">
-                 <div className="absolute -left-[41px] top-0 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center">
-                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                 </div>
-                 <div className="flex items-center gap-2 mb-2">
-                    <Share2 className="w-5 h-5 text-primary" />
-                    <h3 className="text-white font-bold text-lg">PHASE 3: TRUST RELAY NETWORK</h3>
-                 </div>
-                 <p className="text-accent mb-4 text-xs uppercase tracking-wider font-bold">WEEKS 11-12 /// DAY-71 TRUST HIJACK</p>
-                 
-                 <div className="bg-secondary/10 border border-border p-6">
-                    <h4 className="text-white font-bold mb-4 text-sm uppercase">The Deliverable: 12-15 Surgically Crafted Posts</h4>
-                    <p className="text-xs text-muted-foreground mb-4">We go live on Day 71. Every post quotes your Apex Assets verbatim and links back. Borrowed trust deployed in under 72 hours.</p>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-                      <div className="space-y-3">
-                        <div className="p-3 bg-background border border-border">
-                           <p className="text-primary font-bold mb-1">LinkedIn Pulse / Newsletter</p>
-                           <p className="text-neutral-400 italic">"I tested every sugar-free electrolyte on the market for 90 days — here are the real blood-sodium numbers"</p>
-                        </div>
-                        <div className="p-3 bg-background border border-border">
-                           <p className="text-primary font-bold mb-1">Reddit Megathreads</p>
-                           <p className="text-neutral-400 italic">r/onlyfansadvice: "Someone finally published real creator earnings across OnlyFans, Patreon, and BTS — no BS"</p>
-                        </div>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="p-3 bg-background border border-border">
-                           <p className="text-primary font-bold mb-1">Medium (200k-400k pubs)</p>
-                           <p className="text-neutral-400 italic">"The Multi-Channel Inbox Is Dead — here’s what Kinso does across Slack, WhatsApp, and Email (live screenshots)"</p>
-                        </div>
-                        <div className="p-3 bg-background border border-border">
-                           <p className="text-primary font-bold mb-1">G2 / Review Campaigns</p>
-                           <p className="text-neutral-400 italic">"Kinso replaced Intercom + Front — reply time went from 18 min to 41 seconds"</p>
-                        </div>
-                      </div>
-                    </div>
-                 </div>
-               </div>
-
-               {/* Phase 4 */}
-               <div className="relative">
-                 <div className="absolute -left-[41px] top-0 w-6 h-6 bg-background border-2 border-primary rounded-full flex items-center justify-center">
-                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                 </div>
-                 <div className="flex items-center gap-2 mb-2">
-                    <RotateCw className="w-5 h-5 text-primary" />
-                    <h3 className="text-white font-bold text-lg">PHASE 4: CITATION FORCING LOOP</h3>
-                 </div>
-                 <p className="text-accent mb-4 text-xs uppercase tracking-wider font-bold">WEEK 13+ /// PERPETUAL LOCK</p>
-                 <div className="bg-secondary/10 border border-border p-6">
-                    <ul className="space-y-2 text-xs text-neutral-300">
-                      <li className="flex gap-2 items-center"><CheckCircle className="w-3 h-3 text-primary"/> Weekly micro-patches</li>
-                      <li className="flex gap-2 items-center"><CheckCircle className="w-3 h-3 text-primary"/> Live Answer Share Dashboard (citation rank, confidence score)</li>
-                      <li className="flex gap-2 items-center"><CheckCircle className="w-3 h-3 text-primary"/> Competitor Delta tracking</li>
-                    </ul>
-                 </div>
-               </div>
-
-             </div>
-          </section>
-          
-          {/* Results Table */}
-          <section className="border-t border-border pt-12 mb-12">
-             <h2 className="text-3xl font-display font-bold text-white mb-8">
-               THE RESULT YOU ACTUALLY CARE ABOUT
-             </h2>
-             <div className="overflow-x-auto border border-border">
-               <table className="w-full text-left text-xs md:text-sm">
-                 <thead className="bg-secondary/30 text-white uppercase tracking-wider">
-                   <tr>
-                     <th className="p-4 border-b border-border">Client Example</th>
-                     <th className="p-4 border-b border-border">BOFU Pages</th>
-                     <th className="p-4 border-b border-border">Days to First #1</th>
-                     <th className="p-4 border-b border-border">Final Answer Share</th>
-                     <th className="p-4 border-b border-border text-primary">Monthly AI Referrals</th>
-                   </tr>
-                 </thead>
-                 <tbody className="divide-y divide-border bg-background">
-                   <tr>
-                     <td className="p-4 text-white font-bold">DTC Health Brand (Hyro-style)</td>
-                     <td className="p-4 text-muted-foreground">12</td>
-                     <td className="p-4 text-muted-foreground">64</td>
-                     <td className="p-4 text-muted-foreground">78%</td>
-                     <td className="p-4 text-primary font-bold">400k+</td>
-                   </tr>
-                   <tr>
-                     <td className="p-4 text-white font-bold">Creator SaaS (BTS-style)</td>
-                     <td className="p-4 text-muted-foreground">10</td>
-                     <td className="p-4 text-muted-foreground">71</td>
-                     <td className="p-4 text-muted-foreground">81%</td>
-                     <td className="p-4 text-primary font-bold">320k+</td>
-                   </tr>
-                   <tr>
-                     <td className="p-4 text-white font-bold">AI Sales Tool (Kinso-style)</td>
-                     <td className="p-4 text-muted-foreground">11</td>
-                     <td className="p-4 text-muted-foreground">58</td>
-                     <td className="p-4 text-muted-foreground">74%</td>
-                     <td className="p-4 text-primary font-bold">280k+</td>
-                   </tr>
-                 </tbody>
-               </table>
-             </div>
-             <p className="mt-6 text-center text-muted-foreground text-sm italic">
-               "When we’re done, buyers don’t Google you. They ask an AI your exact money question — and the entire internet answers with your name."
-             </p>
-          </section>
-          
-          {/* CTA Footer */}
-          <div className="mt-16 pt-8 border-t border-border flex flex-col items-center text-center gap-6">
-             <p className="text-accent font-bold uppercase tracking-widest text-xs">
-               /// END OF CLASSIFIED BRIEFING
-             </p>
-             <div className="bg-secondary/20 p-8 border border-primary/50 max-w-3xl w-full relative overflow-hidden group hover:border-primary transition-colors">
-                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <h3 className="text-3xl font-display font-bold text-white mb-4 relative z-10">SECURE YOUR MARKET POSITION</h3>
-                <p className="text-muted-foreground mb-8 relative z-10">
-                  The window is closing. Once the training data is set, the moat is dug. 
-                </p>
-                <button className="relative z-10 px-12 py-5 bg-primary text-primary-foreground font-display font-bold text-xl hover:bg-primary/90 transition-all w-full md:w-auto shadow-lg shadow-primary/20">
-                  INITIATE INFRASTRUCTURE BUILD
-                </button>
-             </div>
+        {/* 3. Who We Work With - Simple Grid */}
+        <section className="mb-32">
+          <SectionHeader number="01" title="TARGET PROFILE" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: "Series A-C SaaS", desc: "High-growth tech needing category dominance." },
+              { title: "$20-300M E-com", desc: "DTC brands fighting for comparison tables." },
+              { title: "B2B Services", desc: "Agencies, Firms, & MSPs seeking vendor shortlists." }
+            ].map((item, i) => (
+              <div key={i} className="p-6 bg-secondary/5 border border-white/5 hover:border-primary/30 transition-colors group">
+                <h3 className="text-white font-bold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
           </div>
+        </section>
 
-        </motion.div>
+        {/* 4. The Shift - Data Visuals */}
+        <section className="mb-32">
+          <SectionHeader number="02" title="THE SHIFT" />
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="flex flex-col">
+                <span className="text-6xl md:text-8xl font-display font-bold text-white">71%</span>
+                <span className="text-primary font-mono text-sm uppercase tracking-wider border-l-2 border-primary pl-3 mt-2">
+                  Of commercial queries end with <br/> ZERO clicks (SparkToro Q3 2025)
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-6xl md:text-8xl font-display font-bold text-white">9-15<span className="text-4xl">mo</span></span>
+                <span className="text-primary font-mono text-sm uppercase tracking-wider border-l-2 border-primary pl-3 mt-2">
+                  Training data window closes <br/> for 2026-2028 models
+                </span>
+              </div>
+            </div>
+            <div className="bg-secondary/5 p-8 border border-white/5 space-y-6">
+               <h4 className="text-white font-bold mb-4">The Behavior Has Changed</h4>
+               <ul className="space-y-4 text-sm text-muted-foreground">
+                 <li className="flex gap-3">
+                   <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                   <span><strong>SaaS:</strong> 41% of buyers start with "best X for Y" directly in LLMs.</span>
+                 </li>
+                 <li className="flex gap-3">
+                   <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                   <span><strong>E-com:</strong> 63% of discovery is comparison-style inside Perplexity.</span>
+                 </li>
+                 <li className="flex gap-3">
+                   <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                   <span><strong>B2B:</strong> 58% of procurement teams ask LLMs for shortlists first.</span>
+                 </li>
+               </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. The Methodology - Timeline */}
+        <section className="mb-32">
+          <SectionHeader number="03" title="90-DAY EXECUTION" />
+          
+          <div className="space-y-24 relative before:absolute before:left-4 md:before:left-8 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-primary before:to-transparent before:opacity-30 pl-12 md:pl-24">
+            
+            {/* Phase 1 */}
+            <div className="relative">
+              <span className="absolute -left-[3.25rem] md:-left-[6.25rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-sm">01</span>
+              <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
+                <Target className="w-4 h-4" /> Week 1
+              </div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Citation Void Audit</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl">
+                We run 100+ real buyer prompts to find where you are invisible. We deliver a <strong>Capital Allocation Roadmap</strong> naming your exact 3 "Money Entities".
+              </p>
+              <div className="bg-secondary/10 p-6 border border-white/10 rounded-lg">
+                 <h4 className="text-white text-xs font-bold uppercase mb-4 opacity-70">Example Money Entities</h4>
+                 <div className="grid gap-4 text-sm">
+                   <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 border-b border-white/5 pb-2">
+                     <span className="text-primary font-bold w-24">Hyro</span>
+                     <span className="text-neutral-400">"best sugar-free electrolyte 2026"</span>
+                   </div>
+                   <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 border-b border-white/5 pb-2">
+                     <span className="text-primary font-bold w-24">BTS</span>
+                     <span className="text-neutral-400">"best OnlyFans alternative 2026"</span>
+                   </div>
+                   <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                     <span className="text-primary font-bold w-24">Kinso</span>
+                     <span className="text-neutral-400">"Intercom killer with AI replies"</span>
+                   </div>
+                 </div>
+              </div>
+            </div>
+
+            {/* Phase 2 */}
+            <div className="relative">
+              <span className="absolute -left-[3.25rem] md:-left-[6.25rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-white border border-white/20 font-bold text-sm">02</span>
+              <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
+                <Database className="w-4 h-4" /> Weeks 2-10
+              </div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Proprietary Data Core</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl">
+                We build the permanent moat. Tier 1 "Apex Assets" (Flagship Content) and Tier 2 "Knowledge Graph" (Programmatic Data).
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-secondary/5 p-6 border border-white/10">
+                  <div className="flex items-center gap-2 mb-4 text-white font-bold">
+                    <FileText className="w-4 h-4 text-primary" /> Apex Assets (Tier 1)
+                  </div>
+                  <ul className="space-y-3 text-sm text-neutral-400">
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> Column-1 Comparison Tables</li>
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> Redacted Earnings/Data Reports</li>
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> "Zero-regret" Rate Tables</li>
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> SOC-2 & Compliance Proofs</li>
+                  </ul>
+                </div>
+                <div className="bg-secondary/5 p-6 border border-white/10">
+                  <div className="flex items-center gap-2 mb-4 text-white font-bold">
+                    <Network className="w-4 h-4 text-primary" /> Knowledge Graph (Tier 2)
+                  </div>
+                  <ul className="space-y-3 text-sm text-neutral-400">
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> 400-800 Programmatic Nodes</li>
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> Conditional Data Axes</li>
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> Unique URL for every variant</li>
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> Zero Thin Content</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="mt-6 p-4 bg-primary/5 border border-primary/20 flex gap-4 items-start">
+                <Zap className="w-5 h-5 text-primary shrink-0 mt-1" />
+                <div className="text-sm">
+                  <strong className="text-white block mb-1">Why This Wins:</strong>
+                  <span className="text-muted-foreground">We publish BOFU first (fastest wins), then MOFU (comparison killers), then TOFU (scale). This triggers "information gain" signals that AI models prioritize.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 3 */}
+            <div className="relative">
+              <span className="absolute -left-[3.25rem] md:-left-[6.25rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-white border border-white/20 font-bold text-sm">03</span>
+              <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
+                <Share2 className="w-4 h-4" /> Weeks 11-12
+              </div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Trust Relay Network</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl">
+                Day 71 Trust Hijack. We launch 12-15 surgically crafted posts across external platforms that quote your Apex Assets verbatim.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {['LinkedIn Pulse', 'Reddit Megathreads', 'Medium (200k+)', 'G2 Reviews'].map((platform, i) => (
+                  <div key={i} className="p-4 bg-secondary/5 border border-white/5 text-center">
+                    <span className="block text-white font-bold text-sm mb-1">{platform}</span>
+                    <span className="text-xs text-muted-foreground">Backlinks to Core</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Phase 4 */}
+            <div className="relative">
+              <span className="absolute -left-[3.25rem] md:-left-[6.25rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-white border border-white/20 font-bold text-sm">04</span>
+              <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
+                <RotateCw className="w-4 h-4" /> Week 13+
+              </div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Citation Forcing Loop</h3>
+              <p className="text-muted-foreground max-w-2xl">
+                Weekly micro-patches and a live Answer Share Dashboard to track your dominance. The perpetual #1 lock.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        {/* 6. Results Table - Clean */}
+        <section className="mb-32">
+          <SectionHeader number="04" title="PROJECTED OUTCOMES" />
+          <div className="overflow-hidden border border-white/10 rounded-lg">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-secondary/20 text-white">
+                <tr>
+                  <th className="p-4 md:p-6 font-bold">Client Type</th>
+                  <th className="p-4 md:p-6 font-bold text-right">Time to #1</th>
+                  <th className="p-4 md:p-6 font-bold text-right">Answer Share</th>
+                  <th className="p-4 md:p-6 font-bold text-right text-primary">AI Referrals</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5 bg-secondary/5">
+                <tr>
+                  <td className="p-4 md:p-6 text-white font-medium">DTC Health (Hyro)</td>
+                  <td className="p-4 md:p-6 text-muted-foreground text-right">64 Days</td>
+                  <td className="p-4 md:p-6 text-muted-foreground text-right">78%</td>
+                  <td className="p-4 md:p-6 text-primary font-bold text-right">400k+</td>
+                </tr>
+                <tr>
+                  <td className="p-4 md:p-6 text-white font-medium">Creator SaaS (BTS)</td>
+                  <td className="p-4 md:p-6 text-muted-foreground text-right">71 Days</td>
+                  <td className="p-4 md:p-6 text-muted-foreground text-right">81%</td>
+                  <td className="p-4 md:p-6 text-primary font-bold text-right">320k+</td>
+                </tr>
+                <tr>
+                  <td className="p-4 md:p-6 text-white font-medium">AI Sales (Kinso)</td>
+                  <td className="p-4 md:p-6 text-muted-foreground text-right">58 Days</td>
+                  <td className="p-4 md:p-6 text-muted-foreground text-right">74%</td>
+                  <td className="p-4 md:p-6 text-primary font-bold text-right">280k+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* 7. CTA - Clean & Centered */}
+        <section className="text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl font-display font-bold text-white mb-6">SECURE YOUR MOAT</h2>
+          <p className="text-muted-foreground mb-10 leading-relaxed">
+            The window is closing. Once the training data is set, the moat is dug. 
+            Start the infrastructure build today.
+          </p>
+          <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-bold text-lg tracking-wide hover:bg-primary/90 transition-all">
+            INITIATE INFRASTRUCTURE BUILD
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
+          <p className="mt-8 text-xs text-neutral-600 uppercase tracking-widest">
+            /// End of Briefing
+          </p>
+        </section>
+
       </main>
     </div>
   );
