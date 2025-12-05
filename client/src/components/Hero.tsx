@@ -46,7 +46,7 @@ export function Hero() {
           <p className="text-lg md:text-xl font-mono text-muted-foreground leading-relaxed border-l-2 border-primary pl-6">
             The future isn't 10 blue links. It's one direct answer.
             <br />
-            We engineer visibility for LLMs, Generative Engines, and AI Agents.
+            We engineer visibility for LLMs, Answer Engines, and AI Agents.
           </p>
           
           <div className="flex flex-wrap gap-4 mt-4">
@@ -55,7 +55,7 @@ export function Hero() {
                <span className="text-lg">→</span>
              </button>
              <button className="px-8 py-3 border border-border text-foreground font-mono font-bold text-sm hover:bg-secondary transition-colors hover:border-primary/50">
-               GEO EXPLAINED
+               AEO EXPLAINED
              </button>
           </div>
         </motion.div>

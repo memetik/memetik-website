@@ -10,7 +10,7 @@ const services = [
   },
   {
     icon: <Search className="w-8 h-8" />,
-    title: "GENERATIVE ENGINE OPTIMIZATION (GEO)",
+    title: "ANSWER ENGINE OPTIMIZATION (AEO)",
     description: "Traditional SEO is dying. We structure content for semantic density that AI agents prioritize over keyword stuffing.",
     tags: ["Semantic Architecture", "Answer Engine Optimization", "Structured Data"]
   },

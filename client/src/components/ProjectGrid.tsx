@@ -14,7 +14,7 @@ const projects = [
     id: "02",
     title: "SEMANTIC COMMERCE",
     client: "LUXE RETAIL",
-    category: "GEO STRATEGY",
+    category: "AEO STRATEGY",
     result: "12K AI-DIRECTED VISITS",
     year: "2024",
   },
