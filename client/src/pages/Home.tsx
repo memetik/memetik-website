@@ -6,20 +6,20 @@ import { Services } from "@/components/Services";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-white text-black selection:bg-black selection:text-white">
+    <div className="min-h-screen w-full bg-background text-foreground selection:bg-black selection:text-white">
       <Nav />
       <main>
         <Hero />
         <Marquee />
         
-        <section id="agency" className="py-24 px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center bg-white">
+        <section id="agency" className="py-24 px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center bg-neutral-100 dark:bg-neutral-900">
             <div>
-                <h2 className="text-4xl md:text-5xl font-display font-medium leading-tight mb-8 text-black">
+                <h2 className="text-4xl md:text-5xl font-display font-medium leading-tight mb-8">
                     THE SEARCH BAR IS DYING. <br/>
                     <span className="text-neutral-400">THE CONVERSATION IS BEGINNING.</span>
                 </h2>
             </div>
-            <div className="font-mono text-sm md:text-base text-neutral-500 space-y-6 leading-relaxed">
+            <div className="font-mono text-sm md:text-base text-muted-foreground space-y-6 leading-relaxed">
                 <p>
                     Traditional SEO focused on ranking for keywords. We focus on influencing the neural networks that now control information discovery.
                 </p>
@@ -32,7 +32,7 @@ export default function Home() {
         <Services />
         <ProjectGrid />
         
-        <footer className="bg-neutral-50 text-black py-24 px-6 md:px-12 border-t border-neutral-200">
+        <footer className="bg-black text-white py-24 px-6 md:px-12 border-t border-white/10">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div className="col-span-1 md:col-span-2">
                     <h2 className="text-8xl font-display font-bold tracking-tighter mb-8">MEMETIK</h2>
@@ -40,20 +40,18 @@ export default function Home() {
                         The world's first agency dedicated to LLM SEO and Generative Engine Optimization.
                     </p>
                 </div>
-                <div className="col-span-1 flex flex-col gap-4 font-mono text-sm text-neutral-500">
-                    <span className="font-bold text-black">LOCATIONS</span>
+                <div className="col-span-1 flex flex-col gap-4 font-mono text-sm text-neutral-400">
                     <span>SAN FRANCISCO</span>
                     <span>NEW YORK</span>
                     <span>TOKYO</span>
                 </div>
-                <div className="col-span-1 flex flex-col gap-4 font-mono text-sm text-neutral-500">
-                    <span className="font-bold text-black">SOCIAL</span>
-                    <a href="#" className="hover:text-black transition-colors">TWITTER</a>
-                    <a href="#" className="hover:text-black transition-colors">INSTAGRAM</a>
-                    <a href="#" className="hover:text-black transition-colors">LINKEDIN</a>
+                <div className="col-span-1 flex flex-col gap-4 font-mono text-sm text-neutral-400">
+                    <a href="#" className="hover:text-white">TWITTER</a>
+                    <a href="#" className="hover:text-white">INSTAGRAM</a>
+                    <a href="#" className="hover:text-white">LINKEDIN</a>
                 </div>
             </div>
-            <div className="mt-24 pt-8 border-t border-neutral-200 flex justify-between font-mono text-xs text-neutral-400">
+            <div className="mt-24 pt-8 border-t border-white/10 flex justify-between font-mono text-xs text-neutral-500">
                 <span>© 2025 MEMETIK AGENCY</span>
                 <span>ALL RIGHTS RESERVED</span>
             </div>

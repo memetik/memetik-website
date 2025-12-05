@@ -13,7 +13,7 @@ export function Nav() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-neutral-100 text-black">
+    <nav className="fixed top-0 left-0 w-full z-50 mix-blend-difference text-white">
       <div className="flex justify-between items-center px-6 py-6 md:px-12">
         <Link href="/" className="text-2xl md:text-3xl font-display font-bold tracking-tighter hover:opacity-70 transition-opacity">
             MEMETIK
@@ -25,7 +25,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-mono tracking-widest hover:text-neutral-500 transition-colors"
+              className="text-sm font-mono tracking-widest hover:line-through decoration-2"
             >
               {link.label}
             </a>
@@ -49,7 +49,7 @@ export function Nav() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-white text-black p-6 border-b border-neutral-100 md:hidden shadow-lg"
+            className="absolute top-full left-0 w-full bg-black text-white p-6 border-b border-white/20 md:hidden"
           >
             <div className="flex flex-col gap-6 items-center">
               {links.map((link) => (
