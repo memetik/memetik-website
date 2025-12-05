@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldAlert, Lock, Target, Database, Share2, RotateCw, Zap, CheckCircle, FileText, Network } from "lucide-react";
+import { ShieldAlert, Lock, Target, Database, Share2, RotateCw, Users, ArrowDown, AlertTriangle, CheckCircle, BarChart3, FileText, Network, Zap } from "lucide-react";
 import { Nav } from "@/components/Nav";
 
 export default function Strategy() {
@@ -12,7 +12,7 @@ export default function Strategy() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="border-b border-border pb-8 mb-12"
+          className="border-b-2 border-primary pb-8 mb-12"
         >
           <div className="flex items-center gap-3 text-accent mb-4">
             <ShieldAlert className="w-5 h-5" />
@@ -27,7 +27,7 @@ export default function Strategy() {
           </h1>
           
           <div className="flex items-center gap-2 font-mono text-sm text-muted-foreground">
-             <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
              <span>Status: CLASSIFIED</span>
              <span className="mx-2">|</span>
              <span>Target: SERIES A-C SAAS, ECOM, B2B SERVICES</span>
@@ -46,22 +46,22 @@ export default function Strategy() {
             <div className="col-span-1 md:col-span-3 mb-4">
               <h2 className="text-xl font-display font-bold text-white mb-2">WHO WE WORK WITH</h2>
             </div>
-            <div className="bg-slate-800/50 p-6 border border-border rounded-lg">
+            <div className="bg-secondary/10 p-6 border border-border">
               <h3 className="text-white font-bold mb-2">Series A-C SaaS</h3>
               <p className="text-muted-foreground text-xs">High-growth tech companies needing to dominate category search.</p>
             </div>
-            <div className="bg-slate-800/50 p-6 border border-border rounded-lg">
+            <div className="bg-secondary/10 p-6 border border-border">
               <h3 className="text-white font-bold mb-2">$20-300M ARR E-commerce</h3>
               <p className="text-muted-foreground text-xs">Direct-to-consumer brands fighting for comparison table dominance.</p>
             </div>
-            <div className="bg-slate-800/50 p-6 border border-border rounded-lg">
+            <div className="bg-secondary/10 p-6 border border-border">
               <h3 className="text-white font-bold mb-2">$10-150M ARR B2B Services</h3>
               <p className="text-muted-foreground text-xs">Consulting, agencies, law firms, logistics, MSPs, PE operating partners.</p>
             </div>
           </section>
 
           {/* The Promise */}
-          <section className="border border-border bg-slate-800/30 p-8 relative overflow-hidden rounded-lg">
+          <section className="border border-border bg-secondary/10 p-8 relative overflow-hidden">
              <div className="absolute top-0 left-0 w-1 h-full bg-primary"></div>
              <h2 className="text-xl font-display font-bold text-white mb-6 flex items-center gap-2">
                <Lock className="w-4 h-4 text-primary" />
@@ -78,9 +78,9 @@ export default function Strategy() {
           {/* Before & After Table */}
           <section>
              <h2 className="text-xl font-display font-bold text-white mb-6">THE BEFORE & AFTER</h2>
-             <div className="overflow-x-auto border border-border rounded-lg">
+             <div className="overflow-x-auto border border-border">
                <table className="w-full text-left text-xs md:text-sm">
-                 <thead className="bg-slate-800/50 text-white uppercase tracking-wider">
+                 <thead className="bg-secondary/30 text-white uppercase tracking-wider">
                    <tr>
                      <th className="p-4 border-b border-border">Your Money Question</th>
                      <th className="p-4 border-b border-border">Who It Converts</th>
@@ -118,11 +118,11 @@ export default function Strategy() {
                THE STATE OF SEARCH
              </h2>
              <div className="grid md:grid-cols-4 gap-4 mb-8">
-               <div className="bg-slate-800/50 p-6 border border-border col-span-2 rounded-lg">
+               <div className="bg-secondary/20 p-6 border border-border col-span-2">
                  <h3 className="text-accent font-bold text-4xl mb-2">71%</h3>
                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Of high-intent commercial queries terminate inside an Answer Engine with zero clicks (SparkToro / Datos Q3 2025).</p>
                </div>
-               <div className="bg-slate-800/50 p-6 border border-border col-span-2 rounded-lg">
+               <div className="bg-secondary/20 p-6 border border-border col-span-2">
                  <h3 className="text-accent font-bold text-4xl mb-2">9-15mo</h3>
                  <p className="text-xs text-muted-foreground uppercase tracking-wider">The training data window for the 2026–2028 model generation closes forever in the next 9–15 months.</p>
                </div>
@@ -148,7 +148,7 @@ export default function Strategy() {
                  </div>
                  <p className="text-accent mb-4 text-xs uppercase tracking-wider font-bold">WEEK 1 /// IMMEDIATE CLARITY</p>
                  
-                 <div className="bg-slate-800/30 border border-border p-6 rounded-lg">
+                 <div className="bg-secondary/10 border border-border p-6">
                     <h4 className="text-white font-bold mb-4 text-sm uppercase">The Deliverable: Capital Allocation Roadmap</h4>
                     <p className="mb-4">100+ live prompts tested. One-page heat-map. We name your exact 3 "Money Entities":</p>
                     <div className="grid grid-cols-1 gap-4 text-xs border-t border-border pt-4">
@@ -181,9 +181,9 @@ export default function Strategy() {
                  
                  <div className="grid gap-6">
                     {/* Algorithmic Funnel Table */}
-                    <div className="overflow-x-auto border border-border bg-slate-800/30 rounded-lg">
+                    <div className="overflow-x-auto border border-border bg-secondary/5">
                        <table className="w-full text-left text-xs">
-                         <thead className="bg-slate-800/50 text-white">
+                         <thead className="bg-secondary/20 text-white">
                            <tr>
                              <th className="p-3 border-b border-border">Funnel Layer</th>
                              <th className="p-3 border-b border-border">% Pages</th>
@@ -211,7 +211,7 @@ export default function Strategy() {
                     </div>
                     
                     {/* Why This Order Wins */}
-                    <div className="bg-primary/10 border border-primary/30 p-6 rounded-lg">
+                    <div className="bg-primary/10 border border-primary/30 p-6">
                        <div className="flex items-center gap-2 mb-2">
                           <Zap className="w-4 h-4 text-accent" />
                           <h4 className="text-white font-bold text-sm">WHY THIS ORDER WINS EVERY TIME</h4>
@@ -233,7 +233,7 @@ export default function Strategy() {
                     </div>
 
                     {/* Tier 1 Assets */}
-                    <div className="bg-slate-800/30 border border-border p-6 rounded-lg">
+                    <div className="bg-secondary/10 border border-border p-6">
                         <div className="flex items-center gap-2 mb-4">
                            <FileText className="w-4 h-4 text-primary" />
                            <h4 className="text-white font-bold text-sm uppercase">Tier 1 Deliverables: Apex Assets (8-12 Flagship Pieces)</h4>
@@ -252,7 +252,7 @@ export default function Strategy() {
                     </div>
 
                     {/* Tier 2 Assets */}
-                    <div className="bg-slate-800/30 border border-border p-6 rounded-lg">
+                    <div className="bg-secondary/10 border border-border p-6">
                         <div className="flex items-center gap-2 mb-4">
                            <Network className="w-4 h-4 text-primary" />
                            <h4 className="text-white font-bold text-sm uppercase">Tier 2 Deliverables: Knowledge Graph (400-800 Nodes)</h4>
@@ -278,27 +278,27 @@ export default function Strategy() {
                  </div>
                  <p className="text-accent mb-4 text-xs uppercase tracking-wider font-bold">WEEKS 11-12 /// DAY-71 TRUST HIJACK</p>
                  
-                 <div className="bg-slate-800/30 border border-border p-6 rounded-lg">
+                 <div className="bg-secondary/10 border border-border p-6">
                     <h4 className="text-white font-bold mb-4 text-sm uppercase">The Deliverable: 12-15 Surgically Crafted Posts</h4>
                     <p className="text-xs text-muted-foreground mb-4">We go live on Day 71. Every post quotes your Apex Assets verbatim and links back. Borrowed trust deployed in under 72 hours.</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
                       <div className="space-y-3">
-                        <div className="p-3 bg-background border border-border rounded-md">
+                        <div className="p-3 bg-background border border-border">
                            <p className="text-primary font-bold mb-1">LinkedIn Pulse / Newsletter</p>
                            <p className="text-neutral-400 italic">"I tested every sugar-free electrolyte on the market for 90 days — here are the real blood-sodium numbers"</p>
                         </div>
-                        <div className="p-3 bg-background border border-border rounded-md">
+                        <div className="p-3 bg-background border border-border">
                            <p className="text-primary font-bold mb-1">Reddit Megathreads</p>
                            <p className="text-neutral-400 italic">r/onlyfansadvice: "Someone finally published real creator earnings across OnlyFans, Patreon, and BTS — no BS"</p>
                         </div>
                       </div>
                       <div className="space-y-3">
-                        <div className="p-3 bg-background border border-border rounded-md">
+                        <div className="p-3 bg-background border border-border">
                            <p className="text-primary font-bold mb-1">Medium (200k-400k pubs)</p>
                            <p className="text-neutral-400 italic">"The Multi-Channel Inbox Is Dead — here’s what Kinso does across Slack, WhatsApp, and Email (live screenshots)"</p>
                         </div>
-                        <div className="p-3 bg-background border border-border rounded-md">
+                        <div className="p-3 bg-background border border-border">
                            <p className="text-primary font-bold mb-1">G2 / Review Campaigns</p>
                            <p className="text-neutral-400 italic">"Kinso replaced Intercom + Front — reply time went from 18 min to 41 seconds"</p>
                         </div>
@@ -317,7 +317,7 @@ export default function Strategy() {
                     <h3 className="text-white font-bold text-lg">PHASE 4: CITATION FORCING LOOP</h3>
                  </div>
                  <p className="text-accent mb-4 text-xs uppercase tracking-wider font-bold">WEEK 13+ /// PERPETUAL LOCK</p>
-                 <div className="bg-slate-800/30 border border-border p-6 rounded-lg">
+                 <div className="bg-secondary/10 border border-border p-6">
                     <ul className="space-y-2 text-xs text-neutral-300">
                       <li className="flex gap-2 items-center"><CheckCircle className="w-3 h-3 text-primary"/> Weekly micro-patches</li>
                       <li className="flex gap-2 items-center"><CheckCircle className="w-3 h-3 text-primary"/> Live Answer Share Dashboard (citation rank, confidence score)</li>
@@ -334,9 +334,9 @@ export default function Strategy() {
              <h2 className="text-3xl font-display font-bold text-white mb-8">
                THE RESULT YOU ACTUALLY CARE ABOUT
              </h2>
-             <div className="overflow-x-auto border border-border rounded-lg">
+             <div className="overflow-x-auto border border-border">
                <table className="w-full text-left text-xs md:text-sm">
-                 <thead className="bg-slate-800/50 text-white uppercase tracking-wider">
+                 <thead className="bg-secondary/30 text-white uppercase tracking-wider">
                    <tr>
                      <th className="p-4 border-b border-border">Client Example</th>
                      <th className="p-4 border-b border-border">BOFU Pages</th>
@@ -380,13 +380,13 @@ export default function Strategy() {
              <p className="text-accent font-bold uppercase tracking-widest text-xs">
                /// END OF CLASSIFIED BRIEFING
              </p>
-             <div className="bg-slate-800/30 p-8 border border-primary/50 max-w-3xl w-full relative overflow-hidden group hover:border-primary transition-colors rounded-lg">
+             <div className="bg-secondary/20 p-8 border border-primary/50 max-w-3xl w-full relative overflow-hidden group hover:border-primary transition-colors">
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <h3 className="text-3xl font-display font-bold text-white mb-4 relative z-10">SECURE YOUR MARKET POSITION</h3>
                 <p className="text-muted-foreground mb-8 relative z-10">
                   The window is closing. Once the training data is set, the moat is dug. 
                 </p>
-                <button className="relative z-10 px-12 py-5 bg-gradient-to-r from-primary to-secondary text-white font-display font-bold text-xl hover:scale-105 transition-all w-full md:w-auto shadow-lg shadow-primary/20 rounded-lg">
+                <button className="relative z-10 px-12 py-5 bg-primary text-primary-foreground font-display font-bold text-xl hover:bg-primary/90 transition-all w-full md:w-auto shadow-lg shadow-primary/20">
                   INITIATE INFRASTRUCTURE BUILD
                 </button>
              </div>
