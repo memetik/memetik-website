@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldAlert, Lock, Target, Database, Share2, RotateCw, Users, ArrowDown, AlertTriangle, CheckCircle, BarChart3, FileText, Network } from "lucide-react";
+import { ShieldAlert, Lock, Target, Database, Share2, RotateCw, Users, ArrowDown, AlertTriangle, CheckCircle, BarChart3, FileText, Network, Zap } from "lucide-react";
 import { Nav } from "@/components/Nav";
 
 export default function Strategy() {
@@ -209,6 +209,28 @@ export default function Strategy() {
                          </tbody>
                        </table>
                     </div>
+                    
+                    {/* Why This Order Wins */}
+                    <div className="bg-primary/10 border border-primary/30 p-6">
+                       <div className="flex items-center gap-2 mb-2">
+                          <Zap className="w-4 h-4 text-accent" />
+                          <h4 className="text-white font-bold text-sm">WHY THIS ORDER WINS EVERY TIME</h4>
+                       </div>
+                       <ul className="space-y-3 text-xs text-neutral-300">
+                          <li className="flex gap-3">
+                             <span className="text-primary font-bold shrink-0">Days 1-60:</span>
+                             <span><strong className="text-white">BOFU First.</strong> We publish the 8-12 Apex Assets that trigger "copy column 1" and "information gain" signals. This gets you #1 citations fastest (avg 66 days).</span>
+                          </li>
+                          <li className="flex gap-3">
+                             <span className="text-primary font-bold shrink-0">Days 61-90:</span>
+                             <span><strong className="text-white">MOFU Comparison Killers.</strong> We own every "vs" query so competitors can't catch up.</span>
+                          </li>
+                          <li className="flex gap-3">
+                             <span className="text-primary font-bold shrink-0">Day 91+:</span>
+                             <span><strong className="text-white">TOFU Flood.</strong> 600-800 conditional pages lock the moat forever and block new entrants.</span>
+                          </li>
+                       </ul>
+                    </div>
 
                     {/* Tier 1 Assets */}
                     <div className="bg-secondary/10 border border-border p-6">
@@ -307,6 +329,52 @@ export default function Strategy() {
              </div>
           </section>
           
+          {/* Results Table */}
+          <section className="border-t border-border pt-12 mb-12">
+             <h2 className="text-3xl font-display font-bold text-white mb-8">
+               THE RESULT YOU ACTUALLY CARE ABOUT
+             </h2>
+             <div className="overflow-x-auto border border-border">
+               <table className="w-full text-left text-xs md:text-sm">
+                 <thead className="bg-secondary/30 text-white uppercase tracking-wider">
+                   <tr>
+                     <th className="p-4 border-b border-border">Client Example</th>
+                     <th className="p-4 border-b border-border">BOFU Pages</th>
+                     <th className="p-4 border-b border-border">Days to First #1</th>
+                     <th className="p-4 border-b border-border">Final Answer Share</th>
+                     <th className="p-4 border-b border-border text-primary">Monthly AI Referrals</th>
+                   </tr>
+                 </thead>
+                 <tbody className="divide-y divide-border bg-background">
+                   <tr>
+                     <td className="p-4 text-white font-bold">DTC Health Brand (Hyro-style)</td>
+                     <td className="p-4 text-muted-foreground">12</td>
+                     <td className="p-4 text-muted-foreground">64</td>
+                     <td className="p-4 text-muted-foreground">78%</td>
+                     <td className="p-4 text-primary font-bold">400k+</td>
+                   </tr>
+                   <tr>
+                     <td className="p-4 text-white font-bold">Creator SaaS (BTS-style)</td>
+                     <td className="p-4 text-muted-foreground">10</td>
+                     <td className="p-4 text-muted-foreground">71</td>
+                     <td className="p-4 text-muted-foreground">81%</td>
+                     <td className="p-4 text-primary font-bold">320k+</td>
+                   </tr>
+                   <tr>
+                     <td className="p-4 text-white font-bold">AI Sales Tool (Kinso-style)</td>
+                     <td className="p-4 text-muted-foreground">11</td>
+                     <td className="p-4 text-muted-foreground">58</td>
+                     <td className="p-4 text-muted-foreground">74%</td>
+                     <td className="p-4 text-primary font-bold">280k+</td>
+                   </tr>
+                 </tbody>
+               </table>
+             </div>
+             <p className="mt-6 text-center text-muted-foreground text-sm italic">
+               "When we’re done, buyers don’t Google you. They ask an AI your exact money question — and the entire internet answers with your name."
+             </p>
+          </section>
+          
           {/* CTA Footer */}
           <div className="mt-16 pt-8 border-t border-border flex flex-col items-center text-center gap-6">
              <p className="text-accent font-bold uppercase tracking-widest text-xs">
@@ -317,7 +385,6 @@ export default function Strategy() {
                 <h3 className="text-3xl font-display font-bold text-white mb-4 relative z-10">SECURE YOUR MARKET POSITION</h3>
                 <p className="text-muted-foreground mb-8 relative z-10">
                   The window is closing. Once the training data is set, the moat is dug. 
-                  <br/>When we're done, buyers won't Google you. They will ask AI your exact money question, and the internet will answer with your name.
                 </p>
                 <button className="relative z-10 px-12 py-5 bg-primary text-primary-foreground font-display font-bold text-xl hover:bg-primary/90 transition-all w-full md:w-auto shadow-lg shadow-primary/20">
                   INITIATE INFRASTRUCTURE BUILD
