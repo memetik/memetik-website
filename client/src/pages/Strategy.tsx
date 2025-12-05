@@ -22,7 +22,7 @@ export default function Strategy() {
     <div className="min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans">
       <Nav />
       
-      <main className="pt-24 pb-32 px-6 md:px-12 container mx-auto max-w-5xl">
+      <main className="pt-24 pb-32 px-6 md:px-12 container mx-auto max-w-4xl">
         
         {/* 1. Header Section - Clean & Authoritative */}
         <motion.div 
@@ -127,7 +127,7 @@ export default function Strategy() {
 
         {/* 5. The Methodology - Timeline */}
         <section className="mb-32">
-          <SectionHeader number="03" title="90-DAY EXECUTION" />
+          <SectionHeader number="03" title="EXECUTION PROTOCOL" />
           
           <div className="space-y-24 relative before:absolute before:left-4 md:before:left-8 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-primary before:to-transparent before:opacity-30 pl-12 md:pl-24">
             
@@ -135,7 +135,7 @@ export default function Strategy() {
             <div className="relative">
               <span className="absolute -left-[3.25rem] md:-left-[6.25rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-sm">01</span>
               <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
-                <Target className="w-4 h-4" /> Week 1
+                <Target className="w-4 h-4" /> Phase 1
               </div>
               <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Citation Void Audit</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl">
@@ -164,7 +164,7 @@ export default function Strategy() {
             <div className="relative">
               <span className="absolute -left-[3.25rem] md:-left-[6.25rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-white border border-white/20 font-bold text-sm">02</span>
               <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
-                <Database className="w-4 h-4" /> Weeks 2-10
+                <Database className="w-4 h-4" /> Phase 2
               </div>
               <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Proprietary Data Core</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl">
@@ -231,9 +231,9 @@ export default function Strategy() {
                 <div className="text-sm">
                   <strong className="text-white block mb-1">Why This Order Wins:</strong>
                   <span className="text-muted-foreground">
-                    1. <strong>Days 1-60:</strong> BOFU First (Fastest wins, avg 66 days).<br/>
-                    2. <strong>Days 61-90:</strong> MOFU Comparison Killers (Block competitors).<br/>
-                    3. <strong>Day 91+:</strong> TOFU Flood (Scale & Lock the moat).
+                    1. <strong>Step 1:</strong> BOFU First (Fastest wins).<br/>
+                    2. <strong>Step 2:</strong> MOFU Comparison Killers (Block competitors).<br/>
+                    3. <strong>Step 3:</strong> TOFU Flood (Scale & Lock the moat).
                   </span>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export default function Strategy() {
             <div className="relative">
               <span className="absolute -left-[3.25rem] md:-left-[6.25rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-white border border-white/20 font-bold text-sm">03</span>
               <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
-                <Share2 className="w-4 h-4" /> Weeks 11-12
+                <Share2 className="w-4 h-4" /> Phase 3
               </div>
               <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Trust Relay Network</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl">
@@ -273,7 +273,7 @@ export default function Strategy() {
             <div className="relative">
               <span className="absolute -left-[3.25rem] md:-left-[6.25rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-white border border-white/20 font-bold text-sm">04</span>
               <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
-                <RotateCw className="w-4 h-4" /> Week 13+
+                <RotateCw className="w-4 h-4" /> Phase 4
               </div>
               <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">Citation Forcing Loop</h3>
               <p className="text-muted-foreground max-w-2xl">
@@ -302,21 +302,21 @@ export default function Strategy() {
                 <tr>
                   <td className="p-4 md:p-6 text-white font-medium">DTC Health (Hyro)</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">12</td>
-                  <td className="p-4 md:p-6 text-muted-foreground text-right">64 Days</td>
+                  <td className="p-4 md:p-6 text-muted-foreground text-right">Fastest</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">78%</td>
                   <td className="p-4 md:p-6 text-primary font-bold text-right">400k+</td>
                 </tr>
                 <tr>
                   <td className="p-4 md:p-6 text-white font-medium">Creator SaaS (BTS)</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">10</td>
-                  <td className="p-4 md:p-6 text-muted-foreground text-right">71 Days</td>
+                  <td className="p-4 md:p-6 text-muted-foreground text-right">Fast</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">81%</td>
                   <td className="p-4 md:p-6 text-primary font-bold text-right">320k+</td>
                 </tr>
                 <tr>
                   <td className="p-4 md:p-6 text-white font-medium">AI Sales (Kinso)</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">11</td>
-                  <td className="p-4 md:p-6 text-muted-foreground text-right">58 Days</td>
+                  <td className="p-4 md:p-6 text-muted-foreground text-right">Average</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">74%</td>
                   <td className="p-4 md:p-6 text-primary font-bold text-right">280k+</td>
                 </tr>
