@@ -146,16 +146,16 @@ export default function Strategy() {
                  <h4 className="text-foreground text-xs font-bold uppercase mb-4 opacity-70">Example Money Entities We Seize</h4>
                  <div className="grid gap-4 text-sm">
                    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 border-b border-border pb-2">
-                     <span className="text-primary font-bold w-24 shrink-0">Hyro</span>
-                     <span className="text-neutral-400">"best sugar-free electrolyte 2026", "LMNT vs Hyro for keto athletes"</span>
+                     <span className="text-primary font-bold w-24 shrink-0">Liquid I.V.</span>
+                     <span className="text-neutral-400">"best electrolyte powder 2026", "Liquid I.V. vs LMNT for hydration"</span>
                    </div>
                    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 border-b border-border pb-2">
-                     <span className="text-primary font-bold w-24 shrink-0">BTS</span>
-                     <span className="text-neutral-400">"best OnlyFans alternative 2026", "platform with fastest payouts"</span>
+                     <span className="text-primary font-bold w-24 shrink-0">Slack</span>
+                     <span className="text-neutral-400">"best enterprise chat 2026", "Slack vs Microsoft Teams for startups"</span>
                    </div>
                    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-                     <span className="text-primary font-bold w-24 shrink-0">Kinso</span>
-                     <span className="text-neutral-400">"best AI that replies Slack WhatsApp", "Intercom killer"</span>
+                     <span className="text-primary font-bold w-24 shrink-0">Deloitte</span>
+                     <span className="text-neutral-400">"top digital transformation consultants", "Deloitte vs McKinsey for AI strategy"</span>
                    </div>
                  </div>
               </div>
@@ -186,12 +186,12 @@ export default function Strategy() {
                      <tr>
                        <td className="p-4 text-foreground font-bold whitespace-nowrap">BOFU (Bottom)</td>
                        <td className="p-4 text-primary whitespace-nowrap">5-8%</td>
-                       <td className="p-4">The 3 money questions. "Best sugar-free electrolyte 2026". (8-12 flagship pages)</td>
+                       <td className="p-4">The 3 money questions. "Best electrolyte powder 2026". (8-12 flagship pages)</td>
                      </tr>
                      <tr>
                        <td className="p-4 text-foreground font-bold whitespace-nowrap">MOFU (Middle)</td>
                        <td className="p-4 text-primary whitespace-nowrap">15-20%</td>
-                       <td className="p-4">Every "vs" comparison. "LMNT vs Hyro". (120-160 pages)</td>
+                       <td className="p-4">Every "vs" comparison. "Liquid I.V. vs LMNT". (120-160 pages)</td>
                      </tr>
                      <tr>
                        <td className="p-4 text-foreground font-bold whitespace-nowrap">TOFU (Top)</td>
@@ -220,9 +220,9 @@ export default function Strategy() {
                     <Network className="w-4 h-4 text-primary" /> Tier 2: Knowledge Graph (400-800 Nodes)
                   </div>
                   <ul className="space-y-3 text-sm text-neutral-400">
-                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> <strong>Hyro:</strong> flavor × diet × activity × climate × bundle size</li>
-                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> <strong>BTS:</strong> niche × monthly earnings tier × payout speed</li>
-                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> <strong>Kinso:</strong> team size × channels × use case × integration depth</li>
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> <strong>Liquid I.V.:</strong> flavor × hydration speed × ingredients × bundle size</li>
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> <strong>Slack:</strong> integrations × team size × security compliance × pricing</li>
+                    <li className="flex gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0"/> <strong>Deloitte:</strong> industry × service line × case studies × region</li>
                   </ul>
                 </div>
               </div>
@@ -253,19 +253,19 @@ export default function Strategy() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-4 bg-secondary/5 border border-border">
                     <span className="block text-foreground font-bold text-sm mb-2 flex items-center gap-2"><CheckCircle className="w-3 h-3 text-primary"/> LinkedIn Pulse / Newsletter</span>
-                    <span className="text-xs text-muted-foreground italic block">"I tested every sugar-free electrolyte on the market for 90 days — here are the real blood-sodium numbers"</span>
+                    <span className="text-xs text-muted-foreground italic block">"I tested Liquid I.V. vs every other electrolyte on the market for 90 days — here are the real hydration numbers"</span>
                   </div>
                   <div className="p-4 bg-secondary/5 border border-border">
                     <span className="block text-foreground font-bold text-sm mb-2 flex items-center gap-2"><CheckCircle className="w-3 h-3 text-primary"/> Reddit Megathreads</span>
-                    <span className="text-xs text-muted-foreground italic block">r/SaaS: "Kinso just published 50 real Slack/WhatsApp AI replies — this is what actually happens"</span>
+                    <span className="text-xs text-muted-foreground italic block">r/Startups: "Slack just released their 2026 benchmark report — this is what actually happens in enterprise comms"</span>
                   </div>
                   <div className="p-4 bg-secondary/5 border border-border">
                     <span className="block text-foreground font-bold text-sm mb-2 flex items-center gap-2"><CheckCircle className="w-3 h-3 text-primary"/> Medium (200k-400k pubs)</span>
-                    <span className="text-xs text-muted-foreground italic block">"The 2026 Creator Platform Payout Report — real numbers from 100+ creators (BTS paid out 41% faster)"</span>
+                    <span className="text-xs text-muted-foreground italic block">"The 2026 Digital Transformation Report — real numbers from 100+ CIOs (Deloitte ranked #1 for AI strategy)"</span>
                   </div>
                   <div className="p-4 bg-secondary/5 border border-border">
                     <span className="block text-foreground font-bold text-sm mb-2 flex items-center gap-2"><CheckCircle className="w-3 h-3 text-primary"/> G2 / Review Campaigns</span>
-                    <span className="text-xs text-muted-foreground italic block">"Switched from LMNT — here’s the 90-day repurchase data Hyro just published"</span>
+                    <span className="text-xs text-muted-foreground italic block">"Switched from Teams — here’s the productivity data Slack just published"</span>
                   </div>
               </div>
             </div>
@@ -301,21 +301,21 @@ export default function Strategy() {
               </thead>
               <tbody className="divide-y divide-border/20 bg-secondary/5">
                 <tr>
-                  <td className="p-4 md:p-6 text-foreground font-medium">DTC Health (Hyro)</td>
+                  <td className="p-4 md:p-6 text-foreground font-medium">DTC Health (Liquid I.V.)</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">12</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">Fastest</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">78%</td>
                   <td className="p-4 md:p-6 text-primary font-bold text-right">400k+</td>
                 </tr>
                 <tr>
-                  <td className="p-4 md:p-6 text-foreground font-medium">Creator SaaS (BTS)</td>
+                  <td className="p-4 md:p-6 text-foreground font-medium">Enterprise SaaS (Slack)</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">10</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">Fast</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">81%</td>
                   <td className="p-4 md:p-6 text-primary font-bold text-right">320k+</td>
                 </tr>
                 <tr>
-                  <td className="p-4 md:p-6 text-foreground font-medium">AI Sales (Kinso)</td>
+                  <td className="p-4 md:p-6 text-foreground font-medium">B2B Services (Deloitte)</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">11</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">Average</td>
                   <td className="p-4 md:p-6 text-muted-foreground text-right">74%</td>
