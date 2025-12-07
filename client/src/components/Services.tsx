@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, Cpu, Globe, AlertTriangle } from "lucide-react";
+import { Search, Cpu, Globe, Sparkles } from "lucide-react";
 
 const services = [
   {
@@ -25,8 +25,8 @@ const services = [
 export function Services() {
   return (
     <section className="py-24 px-6 md:px-12 bg-background text-foreground border-y border-border relative overflow-hidden">
-      {/* Background Warning Stripes */}
-      <div className="absolute top-0 left-0 w-full h-2 bg-[repeating-linear-gradient(45deg,#F97316,#F97316_10px,#0F172A_10px,#0F172A_20px)] opacity-50"></div>
+      {/* Clean accent line */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-primary/20"></div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
         {services.map((service, index) => (
@@ -39,7 +39,7 @@ export function Services() {
             className="group flex flex-col gap-6 p-8 border border-border hover:border-primary transition-colors bg-secondary/10 hover:bg-secondary/30 relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 p-2 opacity-20 group-hover:opacity-100 transition-opacity">
-               <AlertTriangle className="text-accent w-6 h-6" />
+               <Sparkles className="text-accent w-6 h-6" />
             </div>
 
             <div className="text-primary group-hover:text-accent transition-colors">
