@@ -32,16 +32,14 @@ const phases = [
 export function MethodologySummary() {
   return (
     <section className="py-24 md:py-32 bg-background text-foreground px-6 md:px-12 border-b border-border">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 border-b border-border pb-6">
-        <div>
-          <div className="inline-block px-2 py-1 bg-accent text-accent-foreground font-mono text-xs font-bold mb-4">
-            EXECUTION PROTOCOL
-          </div>
-          <h2 className="text-4xl md:text-6xl font-display font-medium tracking-tighter text-foreground">
-            WHAT WE DO
-          </h2>
+      <div className="flex flex-col items-center text-center mb-16 md:mb-24 border-b border-border pb-6">
+        <div className="inline-block px-2 py-1 bg-accent text-accent-foreground font-mono text-xs font-bold mb-4">
+          EXECUTION PROTOCOL
         </div>
-        <span className="font-mono text-sm text-muted-foreground mb-2">
+        <h2 className="text-4xl md:text-6xl font-display font-medium tracking-tighter text-foreground mb-4">
+          WHAT WE DO
+        </h2>
+        <span className="font-mono text-sm text-muted-foreground">
           (90-DAY INFRASTRUCTURE BUILD)
         </span>
       </div>
