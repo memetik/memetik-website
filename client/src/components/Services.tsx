@@ -25,9 +25,6 @@ const services = [
 export function Services() {
   return (
     <section className="py-24 px-6 md:px-12 bg-background text-foreground border-y border-border relative overflow-hidden">
-      {/* Clean accent line */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-primary/20"></div>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
         {services.map((service, index) => (
           <motion.div
