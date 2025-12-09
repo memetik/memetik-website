@@ -78,7 +78,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative flex flex-col justify-between min-h-[450px] p-8 md:p-12 bg-background border border-border/40 rounded-3xl hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2"
+      className="group relative flex flex-col justify-between min-h-[450px] md:min-h-[550px] p-8 md:p-12 bg-background border border-border/40 rounded-3xl hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2"
     >
       {/* Top Section */}
       <div className="relative z-10 flex flex-col h-full">
@@ -95,15 +95,15 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
           {phase.title}
         </h3>
 
-        {/* Description - Always visible on mobile, reveal on desktop */}
-        <div className="md:mt-auto relative z-10">
-          <div className="mb-8 md:transform md:translate-y-4 md:opacity-0 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 ease-out">
+        {/* Description - Always visible on mobile AND desktop now, to ensure usability */}
+        <div className="mt-auto relative z-10">
+          <div className="mb-8">
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
               {phase.description}
             </p>
           </div>
           
-          <div className="flex flex-wrap gap-2 md:transform md:translate-y-4 md:opacity-0 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 ease-out delay-75">
+          <div className="flex flex-wrap gap-2">
             {phase.deliverables.map((item, i) => (
               <span 
                 key={i} 
