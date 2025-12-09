@@ -88,6 +88,15 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
 export function Services() {
   return (
     <section className="bg-background text-foreground py-24 px-4 md:px-8 relative overflow-hidden">
+      <div className="flex flex-col items-center text-center mb-16 md:mb-24 border-b border-border/50 pb-12 max-w-5xl mx-auto px-4">
+        <div className="inline-block px-3 py-1 bg-primary/10 text-primary font-mono text-xs font-bold mb-6 tracking-widest border border-primary/20 rounded-full">
+          OUR EXPERTISE
+        </div>
+        <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter text-foreground">
+          CORE CAPABILITIES
+        </h2>
+      </div>
+
       <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {services.map((service, index) => (
           <ServiceCard key={index} service={service} index={index} />
