@@ -25,6 +25,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="light" storageKey="memetik-theme">
         <TooltipProvider>
+          <div className="noise-overlay" />
           <Toaster />
           <Router />
         </TooltipProvider>

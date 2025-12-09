@@ -29,7 +29,7 @@ export function Hero() {
         >
            {/* Badge removed as requested */}
            
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.85] tracking-tighter text-foreground drop-shadow-sm">
+          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-display font-bold leading-[0.8] tracking-tighter text-foreground drop-shadow-sm select-none">
             OWN THE
             <br />
             <span className="text-primary relative inline-block">
@@ -37,8 +37,8 @@ export function Hero() {
               <motion.span 
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
-                transition={{ delay: 0.8, duration: 1, ease: "easeInOut" }}
-                className="absolute bottom-2 left-0 h-[0.1em] bg-accent/30 -z-10"
+                transition={{ delay: 0.8, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute bottom-1 md:bottom-4 left-0 h-[0.05em] bg-accent -z-10"
               />
             </span>
           </h1>
@@ -50,18 +50,21 @@ export function Hero() {
           transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl flex flex-col gap-8"
         >
-          <p className="text-xl md:text-2xl font-serif text-muted-foreground leading-relaxed border-l-2 border-primary pl-6 py-2">
+          <p className="text-xl md:text-3xl font-serif text-muted-foreground leading-tight border-l-2 border-primary pl-6 py-2 tracking-tight">
             The future isn't 10 blue links. It's one direct answer.
             <br />
-            We engineer visibility for LLMs, Answer Engines, and AI Agents.
+            <span className="text-foreground">We engineer visibility for LLMs, Answer Engines, and AI Agents.</span>
           </p>
           
-          <div className="flex flex-wrap gap-4 mt-2">
-             <button className="group px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm hover:bg-primary/90 transition-all flex items-center gap-2 rounded-full shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5">
-               AUDIT MY AI VISIBILITY
-               <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
+          <div className="flex flex-wrap gap-4 mt-4">
+             <button className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-full shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5">
+               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
+               <div className="relative flex items-center gap-2">
+                 AUDIT MY AI VISIBILITY
+                 <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
+               </div>
              </button>
-             <button className="px-8 py-4 border border-border text-foreground font-mono font-bold text-sm hover:bg-secondary/5 transition-colors hover:border-primary/50 rounded-full">
+             <button className="px-8 py-4 border border-border text-foreground font-mono font-bold text-sm hover:bg-secondary/5 transition-all duration-300 hover:border-primary/50 rounded-full backdrop-blur-sm">
                AEO EXPLAINED
              </button>
           </div>

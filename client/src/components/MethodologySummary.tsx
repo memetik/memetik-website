@@ -66,14 +66,16 @@ export function MethodologySummary() {
 
               {/* Title */}
               <div className="col-span-11 md:col-span-5 flex items-center">
-                <h3 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-3xl md:text-5xl font-display font-bold tracking-tighter text-foreground group-hover:text-primary transition-colors duration-300">
                   {phase.title}
                 </h3>
               </div>
 
               {/* Description */}
               <div className="col-span-12 md:col-span-5 font-serif text-muted-foreground leading-relaxed text-lg md:text-xl md:pl-8 border-l-0 md:border-l border-border/50 group-hover:border-primary/30 transition-colors duration-500">
-                {phase.description}
+                <span className="group-hover:text-foreground transition-colors duration-300">
+                  {phase.description}
+                </span>
               </div>
               
               {/* Arrow */}
