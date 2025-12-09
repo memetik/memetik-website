@@ -93,17 +93,17 @@ export function BrandManifesto() {
       </div>
 
       {/* SECTION: BRAND VALUES */}
-      <div className="py-24 md:py-32 px-6 md:px-12 bg-foreground text-background relative overflow-hidden">
-        {/* Subtle grid pattern for texture */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <div className="py-24 md:py-32 px-6 md:px-12 bg-secondary/5 text-foreground relative overflow-hidden">
+        {/* Subtle grid pattern for texture - Dark version for light background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
             <div>
-              <h2 className="text-4xl md:text-8xl font-display font-bold mb-4 tracking-tighter">OUR VALUES</h2>
+              <h2 className="text-4xl md:text-8xl font-display font-bold mb-4 tracking-tighter text-foreground">OUR VALUES</h2>
               <div className="h-1 w-24 bg-primary mt-4"></div>
             </div>
-            <p className="font-mono text-sm md:text-base text-primary/80 tracking-widest uppercase md:mb-4">The Operating System for Dominance</p>
+            <p className="font-mono text-sm md:text-base text-muted-foreground tracking-widest uppercase md:mb-4">The Operating System for Dominance</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -131,11 +131,11 @@ export function BrandManifesto() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 md:p-10 border border-white/10 hover:border-primary/50 transition-all duration-500 bg-white/5 backdrop-blur-sm group hover:-translate-y-2 hover:bg-white/[0.07]"
+                className="p-8 md:p-10 border border-border bg-background shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 group hover:-translate-y-2 rounded-xl"
               >
-                <div className="text-5xl md:text-7xl font-display font-bold text-white/5 group-hover:text-primary/20 transition-colors mb-12">0{i+1}</div>
-                <h3 className="text-xl font-bold mb-4 text-primary tracking-tight">{value.title}</h3>
-                <p className="text-gray-400 leading-relaxed text-sm">{value.desc}</p>
+                <div className="text-5xl md:text-7xl font-display font-bold text-foreground/5 group-hover:text-primary/10 transition-colors mb-12">0{i+1}</div>
+                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors tracking-tight">{value.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm font-sans">{value.desc}</p>
               </motion.div>
             ))}
           </div>
