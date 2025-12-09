@@ -32,30 +32,32 @@ export function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.2 }}
-            className="group flex flex-col gap-6 p-8 border border-border hover:border-primary transition-colors bg-secondary/10 hover:bg-secondary/30 relative overflow-hidden"
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            className="group flex flex-col gap-6 p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 bg-secondary/5 hover:bg-secondary/10 relative overflow-hidden rounded-xl hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1"
           >
-            <div className="absolute top-0 right-0 p-2 opacity-20 group-hover:opacity-100 transition-opacity">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <div className="absolute top-0 right-0 p-4 opacity-50 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:rotate-12 group-hover:scale-110">
                <Sparkles className="text-accent w-6 h-6" />
             </div>
 
-            <div className="text-primary group-hover:text-accent transition-colors">
+            <div className="relative z-10 text-primary group-hover:text-accent transition-colors duration-300">
               {service.icon}
             </div>
             
-            <h3 className="text-2xl font-display font-bold tracking-tight text-foreground">
+            <h3 className="relative z-10 text-2xl font-display font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
               {service.title}
             </h3>
             
-            <p className="font-mono text-sm text-muted-foreground leading-relaxed">
+            <p className="relative z-10 font-serif text-lg text-muted-foreground leading-relaxed">
               {service.description}
             </p>
             
-            <div className="mt-auto pt-6 border-t border-border group-hover:border-primary/30">
-              <ul className="flex flex-col gap-2">
+            <div className="relative z-10 mt-auto pt-6 border-t border-border/50 group-hover:border-primary/20 transition-colors duration-300">
+              <ul className="flex flex-col gap-3">
                 {service.tags.map((tag, i) => (
-                  <li key={i} className="flex items-center gap-2 font-mono text-xs text-neutral-400 group-hover:text-neutral-300">
-                    <span className="w-1 h-1 bg-primary rounded-full" />
+                  <li key={i} className="flex items-center gap-3 font-mono text-xs text-muted-foreground/80 group-hover:text-foreground/80 transition-colors">
+                    <span className="w-1.5 h-1.5 bg-primary/50 group-hover:bg-accent rounded-full transition-colors duration-300" />
                     {tag}
                   </li>
                 ))}

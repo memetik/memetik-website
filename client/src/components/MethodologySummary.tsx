@@ -50,31 +50,37 @@ export function MethodologySummary() {
             key={phase.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="group relative border-b border-border py-12 md:py-16 transition-colors hover:bg-secondary/10"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: index * 0.1, duration: 0.6 }}
+            className="group relative border-b border-border/50 py-16 md:py-24 transition-all hover:bg-secondary/5"
           >
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
               {/* Number */}
-              <div className="col-span-1 md:col-span-1 font-mono text-lg text-primary/50 group-hover:text-primary transition-colors font-bold">
-                /{phase.id}
+              <div className="col-span-1 md:col-span-1">
+                <span className="font-mono text-xl text-primary/30 group-hover:text-primary transition-colors duration-500 font-bold block transform group-hover:-translate-y-1 group-hover:scale-110 origin-left">
+                  /{phase.id}
+                </span>
               </div>
 
-              {/* Title - Icons removed */}
-              <div className="col-span-11 md:col-span-4 flex items-center">
-                <h3 className="text-2xl md:text-4xl font-display font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+              {/* Title */}
+              <div className="col-span-11 md:col-span-5 flex items-center">
+                <h3 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
                   {phase.title}
                 </h3>
               </div>
 
               {/* Description */}
-              <div className="col-span-12 md:col-span-6 font-sans text-muted-foreground leading-relaxed text-lg md:pl-8 border-l-0 md:border-l border-border/50">
+              <div className="col-span-12 md:col-span-5 font-serif text-muted-foreground leading-relaxed text-lg md:text-xl md:pl-8 border-l-0 md:border-l border-border/50 group-hover:border-primary/30 transition-colors duration-500">
                 {phase.description}
               </div>
               
               {/* Arrow */}
-              <div className="col-span-12 md:col-span-1 flex justify-end items-center h-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex">
-                 <ArrowRight className="w-8 h-8 text-primary -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+              <div className="col-span-12 md:col-span-1 flex justify-end items-center h-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-[-20px] group-hover:translate-x-0 hidden md:flex">
+                 <div className="p-3 rounded-full border border-primary/20 bg-background/50 backdrop-blur-sm">
+                   <ArrowRight className="w-6 h-6 text-primary -rotate-45 group-hover:rotate-0 transition-transform duration-500 cubic-bezier(0.34, 1.56, 0.64, 1)" />
+                 </div>
               </div>
             </div>
           </motion.div>

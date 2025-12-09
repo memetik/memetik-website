@@ -1,35 +1,45 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import heroBg from "@assets/generated_images/abstract_ai_search_visualization_with_data_nodes_and_connections_in_light_theme_colors.png";
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 200]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background text-foreground">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0 opacity-20 mix-blend-overlay">
+      {/* Background Image with Overlay - Parallax Effect */}
+      <motion.div style={{ y }} className="absolute inset-0 z-0 opacity-30 mix-blend-overlay">
         <img
           src={heroBg}
           alt="AI Search Network Visualization"
-          className="w-full h-full object-cover grayscale contrast-125"
+          className="w-full h-full object-cover grayscale contrast-125 scale-105"
         />
-        <div className="absolute inset-0 bg-background/50" />
-      </div>
+        <div className="absolute inset-0 bg-background/40 backdrop-blur-[1px]" />
+      </motion.div>
       
       {/* Subtle data grid instead of construction lines */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-10"></div>
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-[0.03]"></div>
 
-      <div className="relative z-10 container px-6 md:px-12 flex flex-col gap-8 pt-24">
+      <div className="relative z-10 container px-6 md:px-12 flex flex-col gap-10 pt-24">
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
            {/* Badge removed as requested */}
            
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.85] tracking-tighter text-foreground">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.85] tracking-tighter text-foreground drop-shadow-sm">
             OWN THE
             <br />
-            <span className="text-primary">
+            <span className="text-primary relative inline-block">
               AI ANSWER.
+              <motion.span 
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ delay: 0.8, duration: 1, ease: "easeInOut" }}
+                className="absolute bottom-2 left-0 h-[0.1em] bg-accent/30 -z-10"
+              />
             </span>
           </h1>
         </motion.div>
@@ -38,20 +48,20 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl flex flex-col gap-6"
+          className="max-w-2xl flex flex-col gap-8"
         >
-          <p className="text-lg md:text-xl font-mono text-muted-foreground leading-relaxed border-l-2 border-primary pl-6">
+          <p className="text-xl md:text-2xl font-serif text-muted-foreground leading-relaxed border-l-2 border-primary pl-6 py-2">
             The future isn't 10 blue links. It's one direct answer.
             <br />
             We engineer visibility for LLMs, Answer Engines, and AI Agents.
           </p>
           
-          <div className="flex flex-wrap gap-4 mt-4">
-             <button className="px-8 py-3 bg-primary text-primary-foreground font-mono font-bold text-sm hover:bg-primary/90 transition-all flex items-center gap-2 rounded-full">
+          <div className="flex flex-wrap gap-4 mt-2">
+             <button className="group px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm hover:bg-primary/90 transition-all flex items-center gap-2 rounded-full shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5">
                AUDIT MY AI VISIBILITY
-               <span className="text-lg">→</span>
+               <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
              </button>
-             <button className="px-8 py-3 border border-border text-foreground font-mono font-bold text-sm hover:bg-secondary/10 transition-colors hover:border-primary/50 rounded-full">
+             <button className="px-8 py-4 border border-border text-foreground font-mono font-bold text-sm hover:bg-secondary/5 transition-colors hover:border-primary/50 rounded-full">
                AEO EXPLAINED
              </button>
           </div>
@@ -60,13 +70,11 @@ export function Hero() {
       
       {/* Scroll Indicator */}
       <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
+        style={{ opacity }}
         className="absolute bottom-12 left-6 md:left-12 text-xs font-mono text-muted-foreground flex items-center gap-3"
       >
-        <div className="w-px h-12 bg-border"></div>
-        SCROLL TO EXPLORE
+        <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent"></div>
+        <span className="writing-vertical-lr rotate-180">SCROLL TO EXPLORE</span>
       </motion.div>
     </section>
   );
