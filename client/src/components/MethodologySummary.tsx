@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, Target, Database, Share2, RotateCw } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Target, Database, Share2, RotateCw, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import React, { useRef } from "react";
 
