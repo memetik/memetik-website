@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Check, X } from "lucide-react";
+import { ArrowRight, Check, X, Store, Rocket, Zap } from "lucide-react";
 
 export function BrandManifesto() {
   return (
@@ -143,18 +143,33 @@ export function BrandManifesto() {
       </div>
 
       {/* SECTION: WHO WE SERVE */}
-      <div className="py-24 md:py-32 px-6 md:px-12 border-b border-border bg-secondary/5 relative">
-        <div className="max-w-5xl mx-auto">
+      <div className="py-24 md:py-32 px-6 md:px-12 border-b border-border bg-background relative">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-24">
              <h2 className="text-4xl md:text-7xl font-display font-bold mb-8 tracking-tighter">WHO WE SERVE</h2>
-             <p className="font-serif text-xl text-muted-foreground max-w-2xl mx-auto">We partner with founders who refuse to be left behind by the AI shift.</p>
+             <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">We partner with founders who refuse to be left behind by the AI shift.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-24">
             {[
-              "E-commerce founders scaling to 7–9 figures",
-              "SaaS founders building category dominance",
-              "High-IQ operators who invest in speed"
+              {
+                icon: <Store className="w-8 h-8" />,
+                title: "E-Commerce",
+                desc: "Founders scaling to 7–9 figures who need to dominate comparison queries.",
+                highlight: "Scaling to 7-9 Figures"
+              },
+              {
+                icon: <Rocket className="w-8 h-8" />,
+                title: "SaaS Leaders",
+                desc: "Founders building category dominance through answer-based visibility.",
+                highlight: "Category Dominance"
+              },
+              {
+                icon: <Zap className="w-8 h-8" />,
+                title: "High-IQ Operators",
+                desc: "Visionaries who invest in speed and understand the platform shift.",
+                highlight: "Invest in Speed"
+              }
             ].map((item, i) => (
               <motion.div 
                 key={i} 
@@ -162,36 +177,44 @@ export function BrandManifesto() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-10 bg-background border border-border hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col items-center justify-center min-h-[240px] text-center group"
+                className="relative p-8 md:p-10 bg-secondary/5 border border-border/50 hover:border-primary/30 transition-all duration-300 rounded-2xl group overflow-hidden"
               >
-                <div className="w-16 h-1 bg-primary/20 group-hover:bg-primary transition-colors mb-8"></div>
-                <p className="font-sans text-lg md:text-xl leading-relaxed group-hover:text-foreground transition-colors">{item}</p>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary/50 to-primary/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                
+                <div className="mb-8 p-4 bg-background rounded-full inline-flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300 text-primary">
+                  {item.icon}
+                </div>
+                
+                <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
+                <p className="font-sans text-muted-foreground leading-relaxed mb-6">{item.desc}</p>
+                
+                <div className="inline-block px-3 py-1 bg-primary/10 rounded-full text-xs font-mono font-bold text-primary/80 uppercase tracking-wider">
+                  {item.highlight}
+                </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="relative p-10 md:p-16 border border-primary/20 bg-background rounded-xl max-w-3xl mx-auto text-center overflow-hidden">
+          <div className="relative p-10 md:p-16 border border-primary/20 bg-secondary/5 rounded-3xl max-w-4xl mx-auto text-center overflow-hidden">
             <div className="absolute inset-0 bg-primary/5 opacity-50"></div>
-            <div className="absolute -top-12 -left-12 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -right-12 w-24 h-24 bg-accent/20 rounded-full blur-2xl"></div>
+            <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl"></div>
             
-            <div className="relative z-10">
+            <div className="relative z-10 flex flex-col items-center">
               <p className="font-mono text-xs text-primary mb-6 uppercase tracking-[0.2em] font-bold">The Requirement</p>
-              <p className="text-xl md:text-3xl font-display font-medium text-foreground leading-tight">
-                We do not work with unqualified or low-budget companies. <br/>
+              <p className="text-xl md:text-4xl font-display font-medium text-foreground leading-tight mb-8">
+                We do not work with unqualified or low-budget companies. <br className="hidden md:block"/>
                 Our work requires <span className="text-primary font-bold">ambition</span> — and investment.
               </p>
+              
+              <button className="group relative px-10 py-5 bg-foreground text-background font-mono font-bold text-lg tracking-wide overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20 inline-flex items-center gap-3 rounded-full mt-4">
+                <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                <div className="relative flex items-center gap-3">
+                  BOOK A STRATEGY CALL
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </button>
             </div>
-          </div>
-          
-          <div className="mt-24 flex justify-center">
-            <button className="group relative px-12 py-6 bg-foreground text-background font-mono font-bold text-lg tracking-wide overflow-hidden transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20 inline-flex items-center gap-3 rounded-sm">
-              <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <div className="relative flex items-center gap-3">
-                BOOK A STRATEGY CALL
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </button>
           </div>
         </div>
       </div>
