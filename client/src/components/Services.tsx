@@ -32,30 +32,30 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.6 }}
-      className="group relative flex flex-col justify-between min-h-[400px] md:h-[500px] p-6 md:p-10 border-b md:border-b-0 md:border-r border-border/50 bg-background hover:bg-secondary/5 transition-colors duration-500 overflow-hidden last:border-b-0 md:last:border-r-0"
+      transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="group relative flex flex-col justify-between min-h-[450px] md:h-[550px] p-8 md:p-12 bg-background border border-border/40 rounded-3xl hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2"
     >
       {/* Top Section */}
       <div className="relative z-10 flex flex-col h-full">
-        <div className="flex justify-between items-start mb-6 md:mb-8">
-          <span className="font-mono text-sm tracking-widest text-muted-foreground group-hover:text-primary transition-colors duration-300">
-            /{service.id}
+        <div className="flex justify-between items-start mb-8 md:mb-10">
+          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground/60 group-hover:text-primary transition-colors duration-300 border border-border/50 rounded-full px-3 py-1">
+            {service.id}
           </span>
-          <div className="text-muted-foreground group-hover:text-primary transition-colors duration-300 transform group-hover:rotate-45 group-hover:scale-110">
-             <ArrowUpRight className="w-6 h-6" />
+          <div className="p-3 rounded-full bg-secondary/5 group-hover:bg-primary/10 text-muted-foreground group-hover:text-primary transition-all duration-300 transform group-hover:rotate-45">
+             <ArrowUpRight className="w-5 h-5" />
           </div>
         </div>
         
-        <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-[0.95] tracking-tighter text-foreground mb-6 group-hover:text-primary transition-colors duration-300 break-words hyphens-auto">
+        <h3 className="text-3xl md:text-5xl font-display font-bold leading-[1] tracking-tighter text-foreground mb-6 group-hover:text-primary transition-colors duration-300 break-words hyphens-auto">
           {service.title}
         </h3>
 
         {/* Description - Always visible on mobile, reveal on desktop */}
         <div className="md:mt-auto relative z-10">
-          <div className="mb-6 md:transform md:translate-y-4 md:opacity-0 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 ease-out">
+          <div className="mb-8 md:transform md:translate-y-4 md:opacity-0 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 ease-out">
             <p className="font-serif text-lg md:text-xl text-muted-foreground leading-relaxed">
               {service.description}
             </p>
@@ -65,7 +65,7 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
             {service.tags.map((tag, i) => (
               <span 
                 key={i} 
-                className="px-2 py-1 text-[10px] md:text-xs font-mono border border-border rounded-full text-muted-foreground group-hover:border-primary/30 group-hover:text-primary transition-colors duration-300"
+                className="px-3 py-1.5 text-[10px] md:text-xs font-mono border border-border/60 rounded-full text-muted-foreground/80 group-hover:border-primary/30 group-hover:text-primary transition-colors duration-300 bg-secondary/5"
               >
                 {tag}
               </span>
@@ -74,18 +74,21 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
         </div>
       </div>
       
-      {/* Background Icon */}
-      <div className="absolute -bottom-8 -right-8 text-foreground/5 group-hover:text-primary/5 transition-colors duration-500 transform scale-150 group-hover:scale-[1.6] group-hover:-rotate-12 transition-transform duration-700 pointer-events-none z-0">
-        {React.cloneElement(service.icon as React.ReactElement, { className: "w-48 h-48 md:w-64 md:h-64" })}
+      {/* Background Icon - softer opacity */}
+      <div className="absolute -bottom-12 -right-12 text-foreground/[0.02] group-hover:text-primary/[0.04] transition-colors duration-500 transform scale-150 group-hover:scale-[1.6] group-hover:-rotate-12 transition-transform duration-1000 ease-in-out pointer-events-none z-0">
+        {React.cloneElement(service.icon as React.ReactElement, { className: "w-64 h-64" })}
       </div>
+      
+      {/* Subtle Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
     </motion.div>
   );
 }
 
 export function Services() {
   return (
-    <section className="bg-background text-foreground border-y border-border relative overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-3">
+    <section className="bg-background text-foreground py-24 px-4 md:px-8 relative overflow-hidden">
+      <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {services.map((service, index) => (
           <ServiceCard key={index} service={service} index={index} />
         ))}
