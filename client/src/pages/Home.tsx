@@ -68,7 +68,7 @@ export default function Home() {
             <Services />
             <MethodologySummary />
             
-            <footer className="bg-secondary text-white py-24 md:py-32 px-6 md:px-12 border-t border-border/10 relative overflow-hidden">
+            <footer className="bg-[hsl(171,100%,11%)] text-white py-24 md:py-32 px-6 md:px-12 border-t border-border/10 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 mix-blend-overlay"></div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
                     <div className="col-span-1 md:col-span-2 space-y-8">
