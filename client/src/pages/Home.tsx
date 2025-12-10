@@ -5,8 +5,13 @@ import { Marquee } from "@/components/Marquee";
 import { Services } from "@/components/Services";
 import { BrandManifesto } from "@/components/BrandManifesto";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "MEMETIK | Algorithmic Market Capture";
+  }, []);
+
   return (
       <div className="min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
           <Nav />

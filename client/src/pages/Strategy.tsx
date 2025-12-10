@@ -21,6 +21,7 @@ const HighlightBox = ({ children, className = "" }: { children: React.ReactNode,
 export default function Strategy() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Strategy Protocol | MEMETIK AEO Agency";
   }, []);
 
   return (
