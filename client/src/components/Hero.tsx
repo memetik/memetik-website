@@ -34,12 +34,6 @@ export function Hero() {
             <br />
             <span className="text-primary relative inline-block">
               AI ANSWER.
-              <motion.span 
-                initial={{ width: "0%" }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 0.8, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute bottom-1 md:bottom-4 left-0 h-[0.05em] bg-accent -z-10"
-              />
             </span>
           </h1>
         </motion.div>
