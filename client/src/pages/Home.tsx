@@ -53,7 +53,7 @@ export default function Home() {
                   className="font-sans text-lg md:text-2xl text-muted-foreground space-y-8 leading-relaxed border-l-2 border-primary/20 pl-8 relative z-10"
                 >
                     <p>
-                        <span className="text-foreground font-bold highlight-text bg-gradient-to-r from-primary/20 to-transparent bg-no-repeat bg-[length:100%_0.4em] bg-bottom">71% of commercial queries now end inside ChatGPT-style models.</span>
+                        <span className="text-foreground font-bold highlight-text bg-gradient-to-r from-primary/20 to-transparent bg-no-repeat bg-[length:100%_0.4em] bg-bottom">71% of commercial queries now end with zero clicks.</span>
                     </p>
                     <p>
                         Google traffic is eroding. LLMs decide winners before a user ever clicks a link. If your brand isn't in the model's answer layer—you don't exist.
