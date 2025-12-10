@@ -133,7 +133,7 @@ export function BrandManifesto() {
                 transition={{ delay: i * 0.1 }}
                 className="p-8 md:p-10 border border-border bg-background shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 group hover:-translate-y-2 rounded-xl"
               >
-                <div className="text-5xl md:text-7xl font-display font-bold text-foreground/5 group-hover:text-primary/10 transition-colors mb-12">0{i+1}</div>
+                <div className="text-5xl md:text-7xl font-display font-bold text-foreground/20 group-hover:text-primary/30 transition-colors mb-12">0{i+1}</div>
                 <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors tracking-tight">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm font-sans">{value.desc}</p>
               </motion.div>
