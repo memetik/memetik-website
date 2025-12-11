@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "MEMETIK | Algorithmic Market Capture";
+    document.title = "MEMETIK | AEO & SEO Agency";
   }, []);
 
   return (
