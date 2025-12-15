@@ -31,9 +31,7 @@ export default function Strategy() {
       <main className="pt-24 pb-32 px-4 md:px-12 container mx-auto max-w-5xl">
         
         {/* 1. Header Section - Clean & Authoritative */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div 
           className="mb-16 md:mb-24 text-center md:text-left"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-mono text-xs font-bold tracking-wider uppercase mb-6">
@@ -49,13 +47,10 @@ export default function Strategy() {
           <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mx-auto md:mx-0">
             The 90-day protocol to become the default, mathematical answer in ChatGPT, Claude, and Perplexity.
           </p>
-        </motion.div>
+        </div>
 
         {/* 2. The Promise - High Impact */}
-        <motion.section 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+        <section 
           className="mb-24 md:mb-32"
         >
           <HighlightBox className="bg-gradient-to-br from-secondary/5 to-background">
@@ -74,7 +69,7 @@ export default function Strategy() {
                </div>
              </div>
           </HighlightBox>
-        </motion.section>
+        </section>
 
         {/* 3. Who We Work With - Simple Grid */}
         <section className="mb-24 md:mb-32">

@@ -73,29 +73,24 @@ export function Nav() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-background border-b border-border md:hidden shadow-lg h-screen"
-          >
-            <div className="flex flex-col p-8 gap-8 items-center justify-center h-full pb-32">
-              {links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-3xl font-display font-bold hover:text-primary transition-colors tracking-tighter"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div
+          className="absolute top-full left-0 w-full bg-background border-b border-border md:hidden shadow-lg h-screen"
+        >
+          <div className="flex flex-col p-8 gap-8 items-center justify-center h-full pb-32">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-3xl font-display font-bold hover:text-primary transition-colors tracking-tighter"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

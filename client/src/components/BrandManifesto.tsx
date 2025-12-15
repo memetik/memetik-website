@@ -14,11 +14,7 @@ export function BrandManifesto() {
         </div>
 
         <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <div
             className="mb-16 md:mb-24"
           >
             <div className="inline-block px-3 py-1 bg-accent/10 text-accent font-mono text-xs font-bold mb-6 tracking-widest border border-accent/20 rounded-full">
@@ -37,14 +33,10 @@ export function BrandManifesto() {
                 Memetik was built as the antidote.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mt-16 md:mt-24">
-            <motion.div 
-               initial={{ opacity: 0, x: -20 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
+            <div 
                className="space-y-8"
             >
               <h3 className="font-mono text-sm tracking-[0.2em] text-muted-foreground uppercase mb-6 pb-2 border-b border-border/50">The Old Way</h3>
@@ -63,12 +55,8 @@ export function BrandManifesto() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
-            <motion.div 
-               initial={{ opacity: 0, x: 20 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.4 }}
+            </div>
+            <div 
                className="space-y-8"
             >
               <h3 className="font-mono text-sm tracking-[0.2em] text-primary uppercase mb-6 pb-2 border-b border-primary/20">The Memetik Way</h3>
@@ -87,7 +75,7 @@ export function BrandManifesto() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
@@ -125,18 +113,14 @@ export function BrandManifesto() {
                 desc: "We partner for outcomes, not tasks. We play for the decade, not the quarter."
               }
             ].map((value, i) => (
-              <motion.div 
+              <div 
                 key={i} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="p-8 md:p-10 border border-border bg-background shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 group hover:-translate-y-2 rounded-xl"
               >
                 <div className="text-5xl md:text-7xl font-display font-bold text-foreground/20 group-hover:text-primary/30 transition-colors mb-12">0{i+1}</div>
                 <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors tracking-tight">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm font-sans">{value.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -171,12 +155,8 @@ export function BrandManifesto() {
                 highlight: "Invest in Speed"
               }
             ].map((item, i) => (
-              <motion.div 
+              <div 
                 key={i} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="relative p-8 md:p-10 bg-secondary/5 border border-border/50 hover:border-primary/30 transition-all duration-300 rounded-2xl group overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary/50 to-primary/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
@@ -191,7 +171,7 @@ export function BrandManifesto() {
                 <div className="inline-block px-3 py-1 bg-primary/10 rounded-full text-xs font-mono font-bold text-primary/80 uppercase tracking-wider">
                   {item.highlight}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 

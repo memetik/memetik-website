@@ -22,11 +22,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-[0.03]"></div>
 
       <div className="relative z-10 container px-6 md:px-12 flex flex-col gap-10 pt-24">
-        <motion.div
-          initial={{ opacity: 0, y: 100, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        >
+        <div>
            {/* Badge removed as requested */}
            
           <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-display font-bold leading-[0.8] tracking-tighter text-foreground drop-shadow-sm select-none">
@@ -36,12 +32,9 @@ export function Hero() {
               AI ANSWER.
             </span>
           </h1>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        <div
           className="max-w-2xl flex flex-col gap-8"
         >
           <p className="text-xl md:text-3xl font-sans text-muted-foreground leading-tight border-l-2 border-primary pl-6 py-2 tracking-tight">
@@ -59,7 +52,7 @@ export function Hero() {
                </div>
              </button>
           </div>
-        </motion.div>
+        </div>
       </div>
       
       {/* Scroll Indicator */}

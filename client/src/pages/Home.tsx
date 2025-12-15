@@ -23,38 +23,23 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-secondary/5 -skew-x-12 transform translate-x-1/4" />
                 
                 <div className="relative z-10">
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
+                    <div 
                       className="inline-block px-3 py-1 bg-primary/10 text-primary font-mono text-xs font-bold mb-6 tracking-widest border border-primary/20 rounded-full"
                     >
                       THE SHIFT
-                    </motion.div>
-                    <motion.h2 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 }}
+                    </div>
+                    <h2 
                       className="text-4xl md:text-6xl font-display font-bold leading-[0.9] mb-8 text-foreground uppercase tracking-tight"
                     >
                         The search bar is dying. <br/>
                         <span className="text-primary">The conversation is beginning.</span>
-                    </motion.h2>
-                    <motion.div 
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3, duration: 0.8 }}
+                    </h2>
+                    <div 
                       className="w-24 h-1 bg-primary mt-8 origin-left"
-                    ></motion.div>
+                    ></div>
                 </div>
                 
-                <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
+                <div 
                   className="font-sans text-lg md:text-2xl text-muted-foreground space-y-8 leading-relaxed border-l-2 border-primary/20 pl-8 relative z-10"
                 >
                     <p>
@@ -66,7 +51,7 @@ export default function Home() {
                     <p className="text-foreground font-medium">
                         We build Answer Engine Optimization (AEO) systems that force LLMs to cite you.
                     </p>
-                </motion.div>
+                </div>
             </section>
 
             <BrandManifesto />
