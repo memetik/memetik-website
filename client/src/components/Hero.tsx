@@ -25,7 +25,7 @@ export function Hero() {
         <div>
            {/* Badge removed as requested */}
            
-          <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-display font-bold leading-[0.9] tracking-tighter text-foreground drop-shadow-sm select-none">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold leading-[0.9] tracking-tighter text-foreground drop-shadow-sm select-none">
             Be the Brand
             <br />
             <span className="text-primary">
