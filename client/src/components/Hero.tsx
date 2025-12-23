@@ -26,7 +26,7 @@ export function Hero() {
            {/* Badge removed as requested */}
            
           <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-display font-bold leading-[0.9] tracking-tighter text-foreground drop-shadow-sm select-none">
-            Be the brand
+            Be the Brand
             <br />
             <span className="text-primary">
               AI recommends
