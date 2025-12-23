@@ -38,7 +38,7 @@ export function Hero() {
           className="max-w-2xl flex flex-col gap-8"
         >
           <p className="text-xl md:text-3xl font-sans text-muted-foreground leading-tight border-l-2 border-primary pl-6 py-2 tracking-tight">
-            The future isn't 10 blue links. It's one direct answer.
+            The future is one direct answer.
             <br />
             <span className="text-foreground">We engineer visibility for LLMs, Answer Engines, and AI Agents.</span>
           </p>
