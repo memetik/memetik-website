@@ -182,8 +182,7 @@ export function BrandManifesto() {
             
             <div className="relative z-10 flex flex-col items-center">
               <p className="font-mono text-xs text-primary mb-6 uppercase tracking-[0.2em] font-bold">The Requirement</p>
-              <p className="text-xl md:text-4xl font-display font-medium text-foreground leading-tight mb-8">
-                We do not work with unqualified or low-budget companies. <br className="hidden md:block"/>
+              <p className="text-xl md:text-4xl font-mono font-medium text-foreground leading-tight mb-8 uppercase tracking-tighter">
                 Our work requires <span className="text-primary font-bold">ambition</span>.
               </p>
               
