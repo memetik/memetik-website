@@ -21,36 +21,60 @@ export function Hero() {
       {/* Subtle data grid instead of construction lines */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-[0.03]"></div>
 
-      <div className="relative z-10 container px-6 md:px-12 flex flex-col gap-10 pt-24">
-        <div>
-           {/* Badge removed as requested */}
-           
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold leading-[0.9] tracking-tighter text-foreground drop-shadow-sm select-none">
-            Be the Brand
-            <br />
-            <span className="text-primary">
+      <div className="relative z-10 container px-6 md:px-12 flex flex-col gap-10 pt-32">
+        {/* Decorative 'Stamp' Container */}
+        <div className="absolute top-24 right-6 md:right-12 border-2 border-primary p-4 hidden lg:block opacity-60 rotate-2">
+            <div className="border border-primary p-2">
+                <div className="font-display font-bold text-4xl text-primary leading-none text-center">LAB</div>
+                <div className="font-mono text-[10px] text-center mt-1 tracking-widest">ADVANCED TECH OPS</div>
+            </div>
+        </div>
+
+        <div className="max-w-4xl relative">
+          {/* Technical Header Block */}
+          <div className="flex items-center gap-4 mb-6 text-xs font-mono tracking-widest text-muted-foreground border-b border-primary/20 pb-4 w-fit">
+            <span className="bg-primary text-background px-2 py-0.5 font-bold">FIG. 01</span>
+            <span>AUTONOMOUS VISIBILITY UNIT</span>
+            <span>&gt;&gt;&gt; USA</span>
+          </div>
+
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold leading-[0.85] tracking-tighter text-foreground drop-shadow-sm select-none uppercase">
+            Be the Brand <br/>
+            <span className="text-primary relative inline-block">
               AI recommends
+              {/* Decorative crosshairs */}
+              <span className="absolute -top-4 -right-4 text-primary text-2xl font-light opacity-50">+</span>
+              <span className="absolute -bottom-4 -left-4 text-primary text-2xl font-light opacity-50">+</span>
             </span>
           </h1>
         </div>
 
-        <div
-          className="max-w-2xl flex flex-col gap-8"
-        >
-          <p className="text-xl md:text-3xl font-sans text-muted-foreground leading-tight border-l-2 border-primary pl-6 py-2 tracking-tight">
+        <div className="max-w-2xl flex flex-col gap-8 relative">
+           {/* Side Line Decoration */}
+           <div className="absolute -left-6 top-0 bottom-0 w-[2px] bg-primary/20 hidden md:block">
+              <div className="absolute top-0 left-[-4px] w-[10px] h-[2px] bg-primary"></div>
+              <div className="absolute bottom-0 left-[-4px] w-[10px] h-[2px] bg-primary"></div>
+           </div>
+
+          <p className="text-xl md:text-3xl font-sans text-muted-foreground leading-tight pl-0 md:pl-6 py-2 tracking-tight">
             The future is one direct answer.
             <br />
-            <span className="text-foreground">We engineer visibility for LLMs, Answer Engines, and AI Agents.</span>
+            <span className="text-foreground bg-primary/5 px-1">We engineer visibility for LLMs, Answer Engines, and AI Agents.</span>
           </p>
           
-          <div className="flex flex-wrap gap-4 mt-4">
-             <a href="https://cal.com/memetik/letstalk" className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-primary shadow-[4px_4px_0px_0px_var(--color-foreground)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-block">
+          <div className="flex flex-wrap gap-4 mt-4 md:pl-6">
+             <a href="https://cal.com/memetik/letstalk" className="group relative px-10 py-5 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-primary shadow-[6px_6px_0px_0px_var(--color-foreground)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-block uppercase tracking-widest">
                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-               <div className="relative flex items-center gap-2">
-                 LET'S TALK
+               <div className="relative flex items-center gap-4">
+                 <span>[ INITIATE PROTOCOL ]</span>
                  <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
                </div>
              </a>
+             
+             {/* Secondary 'ghost' technical button */}
+             <div className="hidden md:flex items-center gap-2 px-4 py-2 border border-primary/20 text-[10px] font-mono tracking-widest text-primary/60">
+                <span className="animate-pulse">●</span> SYSTEM READY
+             </div>
           </div>
         </div>
       </div>

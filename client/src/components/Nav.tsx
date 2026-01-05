@@ -24,33 +24,55 @@ export function Nav() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 backdrop-blur-md py-3 shadow-sm border-b border-border/50' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b-2 border-primary bg-background`}>
+      {/* Top "System" Bar */}
+      <div className="w-full border-b border-primary/20 bg-primary/5 py-1 px-4 hidden md:flex justify-between items-center text-[10px] font-mono tracking-widest text-primary/60 uppercase">
+        <div className="flex gap-4">
+          <span>SYS.VER.2026.1</span>
+          <span>LAT: 37.7749° N</span>
+        </div>
+        <div className="flex gap-4">
+           <span>// MEMETIK.AI</span>
+           <span>STATUS: ONLINE</span>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center h-20">
         <Link href="/">
-          <a className="flex items-center gap-2 group relative z-50">
-             <span className="font-display font-bold text-2xl tracking-tighter text-foreground group-hover:text-primary transition-colors">MEMETIK</span>
+          <a className="flex items-center gap-4 group relative z-50">
+             {/* Logo Mark */}
+             <div className="w-10 h-10 border-2 border-primary flex items-center justify-center bg-primary text-background font-display font-bold text-xl group-hover:bg-background group-hover:text-primary transition-colors">
+               M
+             </div>
+             <div className="flex flex-col">
+               <span className="font-display font-bold text-2xl tracking-tighter text-foreground leading-none">MEMETIK</span>
+               <span className="font-mono text-[10px] tracking-[0.3em] text-muted-foreground leading-none mt-1">LOCKED IN</span>
+             </div>
           </a>
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-12">
+        {/* Desktop Menu - Technical Style */}
+        <div className="hidden md:flex items-center h-full">
           {links.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-xs font-mono tracking-widest hover:text-primary transition-colors relative group"
+              className="h-full flex items-center px-8 text-xs font-mono tracking-widest hover:bg-primary hover:text-background transition-colors border-l border-primary/10 relative group"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              {/* Corner mark on hover */}
+              <span className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-background opacity-0 group-hover:opacity-100 transition-opacity"></span>
             </a>
           ))}
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-none hover:bg-secondary/10 transition-colors border-2 border-transparent hover:border-border"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
+          <div className="h-full flex items-center pl-8 border-l border-primary/10">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 rounded-none hover:bg-primary hover:text-background transition-colors border-2 border-primary"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Toggle */}
