@@ -17,7 +17,7 @@ export function BrandManifesto() {
           <div
             className="mb-16 md:mb-24"
           >
-            <div className="inline-block px-3 py-1 bg-accent/10 text-accent font-mono text-xs font-bold mb-6 tracking-widest border border-accent/20 rounded-full">
+            <div className="inline-block px-3 py-1 bg-accent/10 text-accent font-mono text-xs font-bold mb-6 tracking-widest border border-accent/20 rounded-none">
               WHY WE EXIST
             </div>
             <h2 className="text-4xl md:text-7xl font-display font-bold leading-[0.9] mb-8 tracking-tighter">
@@ -48,7 +48,7 @@ export function BrandManifesto() {
                   "Agency theatre"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-4 text-muted-foreground/50 line-through decoration-destructive/30 text-lg">
-                    <div className="p-1 rounded-full bg-destructive/10">
+                    <div className="p-1 rounded-none bg-destructive/10">
                       <X className="w-4 h-4 text-destructive/50" />
                     </div>
                     {item}
@@ -68,7 +68,7 @@ export function BrandManifesto() {
                   "Engineered dominance"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-4 text-foreground font-medium text-lg">
-                    <div className="p-1 rounded-full bg-primary/10">
+                    <div className="p-1 rounded-none bg-primary/10">
                       <Check className="w-4 h-4 text-primary" />
                     </div>
                     {item}
@@ -115,7 +115,7 @@ export function BrandManifesto() {
             ].map((value, i) => (
               <div 
                 key={i} 
-                className="p-8 md:p-10 border border-border bg-background shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 group hover:-translate-y-2 rounded-xl"
+                className="p-8 md:p-10 border-2 border-border bg-background shadow-none hover:shadow-[8px_8px_0px_0px_var(--color-primary)] hover:border-primary transition-all duration-500 group hover:-translate-y-2 rounded-none"
               >
                 <div className="text-5xl md:text-7xl font-display font-bold text-foreground/20 group-hover:text-primary/30 transition-colors mb-12">0{i+1}</div>
                 <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors tracking-tight">{value.title}</h3>
@@ -157,25 +157,25 @@ export function BrandManifesto() {
             ].map((item, i) => (
               <div 
                 key={i} 
-                className="relative p-8 md:p-10 bg-secondary/5 border border-border/50 hover:border-primary/30 transition-all duration-300 rounded-2xl group overflow-hidden"
+                className="relative p-8 md:p-10 bg-secondary/5 border-2 border-border/50 hover:border-primary transition-all duration-300 rounded-none group overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary/50 to-primary/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 
-                <div className="mb-8 p-4 bg-background rounded-full inline-flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300 text-primary">
+                <div className="mb-8 p-4 bg-background rounded-none border border-border inline-flex items-center justify-center shadow-sm group-hover:shadow-none group-hover:scale-110 transition-all duration-300 text-primary">
                   {item.icon}
                 </div>
                 
                 <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
                 <p className="font-sans text-muted-foreground leading-relaxed mb-6">{item.desc}</p>
                 
-                <div className="inline-block px-3 py-1 bg-primary/10 rounded-full text-xs font-mono font-bold text-primary/80 uppercase tracking-wider">
+                <div className="inline-block px-3 py-1 bg-primary/10 rounded-none text-xs font-mono font-bold text-primary/80 uppercase tracking-wider">
                   {item.highlight}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="relative p-10 md:p-16 border border-primary/20 bg-secondary/5 rounded-3xl max-w-4xl mx-auto text-center overflow-hidden">
+          <div className="relative p-10 md:p-16 border-2 border-primary/20 bg-secondary/5 rounded-none max-w-4xl mx-auto text-center overflow-hidden">
             <div className="absolute inset-0 bg-primary/5 opacity-50"></div>
             <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl"></div>
@@ -187,7 +187,7 @@ export function BrandManifesto() {
                 Our work requires <span className="text-primary font-bold">ambition</span>.
               </p>
               
-              <a href="https://cal.com/memetik/letstalk" className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-full shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-1 inline-flex items-center gap-2 mt-4">
+              <a href="https://cal.com/memetik/letstalk" className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-primary shadow-[4px_4px_0px_0px_var(--color-foreground)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-flex items-center gap-2 mt-4">
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
                 <div className="relative flex items-center gap-2">
                   LET'S TALK

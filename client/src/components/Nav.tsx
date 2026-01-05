@@ -46,7 +46,7 @@ export function Nav() {
           ))}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full hover:bg-secondary/10 transition-colors border border-transparent hover:border-border"
+            className="p-2 rounded-none hover:bg-secondary/10 transition-colors border-2 border-transparent hover:border-border"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -57,7 +57,7 @@ export function Nav() {
         <div className="flex items-center gap-4 md:hidden relative z-50">
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full hover:bg-secondary/10 transition-colors"
+            className="p-2 rounded-none hover:bg-secondary/10 transition-colors"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}

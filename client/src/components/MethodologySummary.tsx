@@ -74,15 +74,15 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
   return (
     <div
       ref={ref}
-      className="group relative flex flex-col justify-between min-h-[450px] md:min-h-[550px] p-8 md:p-12 bg-background border border-border/40 rounded-3xl hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2"
+      className="group relative flex flex-col justify-between min-h-[450px] md:min-h-[550px] p-8 md:p-12 bg-background border-2 border-border hover:border-primary transition-all duration-500 overflow-hidden shadow-none hover:shadow-[8px_8px_0px_0px_var(--color-primary)] hover:-translate-y-2"
     >
       {/* Top Section */}
       <div className="relative z-10 flex flex-col h-full">
         <div className="flex justify-between items-start mb-8 md:mb-10">
-          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground/60 group-hover:text-primary transition-colors duration-300 border border-border/50 rounded-full px-3 py-1">
+          <span className="font-mono text-xs tracking-[0.2em] text-muted-foreground/60 group-hover:text-primary transition-colors duration-300 border border-border/50 rounded-none px-3 py-1 bg-white">
             {phase.subtitle}
           </span>
-          <div className="p-3 rounded-full bg-secondary/5 group-hover:bg-primary/10 text-muted-foreground group-hover:text-primary transition-all duration-300 transform group-hover:rotate-45">
+          <div className="p-3 rounded-none bg-secondary/5 group-hover:bg-primary/10 text-muted-foreground group-hover:text-primary transition-all duration-300 transform group-hover:rotate-45 border border-transparent group-hover:border-primary">
              <ArrowUpRight className="w-5 h-5" />
           </div>
         </div>
@@ -103,7 +103,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
             {phase.deliverables.map((item, i) => (
               <span 
                 key={i} 
-                className="px-3 py-1.5 text-[10px] md:text-xs font-mono border border-border/60 rounded-full text-muted-foreground/80 group-hover:border-primary/30 group-hover:text-primary transition-colors duration-300 bg-secondary/5"
+                className="px-3 py-1.5 text-[10px] md:text-xs font-mono border border-border/60 rounded-none text-muted-foreground/80 group-hover:border-primary group-hover:text-primary transition-colors duration-300 bg-secondary/5"
               >
                 {item}
               </span>
@@ -130,7 +130,7 @@ export function MethodologySummary() {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-secondary/5 to-transparent pointer-events-none" />
       
       <div className="flex flex-col items-center text-center mb-20 md:mb-32 border-b border-border/50 pb-12 max-w-5xl mx-auto px-4">
-        <div className="inline-block px-3 py-1 bg-accent/10 text-accent font-mono text-xs font-bold mb-6 tracking-widest border border-accent/20 rounded-full">
+        <div className="inline-block px-3 py-1 bg-accent/10 text-accent font-mono text-xs font-bold mb-6 tracking-widest border border-accent/20 rounded-none">
           EXECUTION PROTOCOL
         </div>
         <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter text-foreground mb-8">
@@ -140,7 +140,7 @@ export function MethodologySummary() {
         {/* Overview Grid */}
         <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mt-4">
           {overviewPoints.map((point, i) => (
-            <span key={i} className="px-4 py-2 bg-secondary/5 border border-border/50 rounded-full text-xs md:text-sm font-mono text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors cursor-default">
+            <span key={i} className="px-4 py-2 bg-secondary/5 border border-border/50 rounded-none text-xs md:text-sm font-mono text-muted-foreground hover:text-primary hover:border-primary transition-colors cursor-default">
               {point}
             </span>
           ))}
@@ -154,7 +154,7 @@ export function MethodologySummary() {
       </div>
       
       <div className="mt-24 flex justify-center">
-        <a href="https://cal.com/memetik/letstalk" className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-full shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-1 inline-flex items-center gap-2">
+        <a href="https://cal.com/memetik/letstalk" className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-primary shadow-[4px_4px_0px_0px_var(--color-foreground)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-flex items-center gap-2">
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
             <div className="relative flex items-center gap-2">
               LET'S TALK

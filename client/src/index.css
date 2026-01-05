@@ -24,82 +24,83 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   
-  --font-sans: 'Inter', 'Geist Sans', sans-serif;
-  --font-display: 'Inter', 'Geist Sans', sans-serif;
-  --font-mono: 'Geist Mono', 'Consolas', monospace;
+  --font-sans: 'JetBrains Mono', monospace;
+  --font-display: 'Archivo Black', sans-serif;
+  --font-serif: 'Newsreader', serif;
+  --font-mono: 'JetBrains Mono', monospace;
   
-  --radius: 9999px;
+  --radius: 0px;
 }
 
 :root {
-  /* Background: #F5F9F8 - Very subtle cool mint/white */
-  --background: 175 20% 97%;
-  /* Foreground: #00241F - Deep Phthalo Black */
-  --foreground: 175 100% 7%;
+  /* Background: #E3E7DE - Factory Floor Greige */
+  --background: 87 14% 89%;
+  /* Foreground: #111111 - Machinery Black */
+  --foreground: 0 0% 7%;
   
-  /* Card: White */
-  --card: 0 0% 100%;
-  --card-foreground: 175 100% 7%;
+  /* Card: Same as background but will use borders */
+  --card: 87 14% 89%;
+  --card-foreground: 0 0% 7%;
   
-  --popover: 0 0% 100%;
-  --popover-foreground: 175 100% 7%;
+  --popover: 87 14% 89%;
+  --popover-foreground: 0 0% 7%;
   
-  /* Primary: #006A5A (Phthalo Green) - Rich Blue-Green */
-  --primary: 171 100% 21%;
-  --primary-foreground: 0 0% 100%;
+  /* Primary: #111111 - Machinery Black */
+  --primary: 0 0% 7%;
+  --primary-foreground: 87 14% 89%;
   
-  /* Secondary: #003830 (Dark Phthalo) */
-  --secondary: 171 100% 11%;
-  --secondary-foreground: 0 0% 100%;
+  /* Secondary: Transparent with black border style usually, or solid black */
+  --secondary: 0 0% 7%;
+  --secondary-foreground: 87 14% 89%;
   
-  /* Muted: Cool light teal-gray */
-  --muted: 175 20% 94%;
-  --muted-foreground: 175 20% 40%;
+  /* Muted: Slightly darker greige for separation */
+  --muted: 87 10% 80%;
+  --muted-foreground: 0 0% 40%;
   
-  /* Accent: #00A68C (Vibrant Phthalo/Teal) */
-  --accent: 171 100% 32%;
-  --accent-foreground: 0 0% 100%;
+  /* Accent: #111111 */
+  --accent: 0 0% 7%;
+  --accent-foreground: 87 14% 89%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   
-  /* Border: #CBD5E1 with a hint of teal */
-  --border: 175 15% 85%;
-  --input: 175 15% 85%;
-  --ring: 171 100% 21%;
+  /* Border: #111111 - Stark Black Borders */
+  --border: 0 0% 7%;
+  --input: 0 0% 7%;
+  --ring: 0 0% 7%;
   
-  --radius: 9999px;
+  --radius: 0px;
 }
 
 .dark {
-  /* Invert for dark mode */
-  --background: 175 100% 4%;
-  --foreground: 175 20% 97%;
+  /* Inverted Industrial: Black Background, Greige Text */
+  --background: 0 0% 7%;
+  --foreground: 87 14% 89%;
   
-  --card: 175 100% 6%;
-  --card-foreground: 175 20% 97%;
+  --card: 0 0% 7%;
+  --card-foreground: 87 14% 89%;
   
-  --popover: 175 100% 6%;
-  --popover-foreground: 175 20% 97%;
+  --popover: 0 0% 7%;
+  --popover-foreground: 87 14% 89%;
   
-  --primary: 171 100% 32%;
-  --primary-foreground: 0 0% 100%;
+  --primary: 87 14% 89%;
+  --primary-foreground: 0 0% 7%;
   
-  --secondary: 175 20% 97%;
-  --secondary-foreground: 175 100% 7%;
+  --secondary: 87 14% 89%;
+  --secondary-foreground: 0 0% 7%;
   
-  --muted: 175 50% 15%;
-  --muted-foreground: 175 20% 65%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 87 14% 60%;
   
-  --accent: 171 100% 32%;
-  --accent-foreground: 0 0% 100%;
+  --accent: 87 14% 89%;
+  --accent-foreground: 0 0% 7%;
   
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 100%;
   
-  --border: 175 50% 20%;
-  --input: 175 50% 20%;
-  --ring: 171 100% 32%;
+  --border: 87 14% 89%;
+  --input: 87 14% 89%;
+  --ring: 87 14% 89%;
 }
 
 @layer base {
@@ -107,22 +108,25 @@
     @apply border-border;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03"; 
+    @apply font-mono antialiased bg-background text-foreground;
+    font-feature-settings: "ss01", "zero"; 
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display text-foreground;
+    @apply font-display text-foreground uppercase tracking-tighter;
   }
   
-  /* Custom scrollbar for webkit */
+  /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
+    background: var(--background);
+    border-left: 2px solid var(--border);
   }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-border/50 rounded-full hover:bg-primary/50 transition-colors;
+    background: var(--foreground);
+    border: 2px solid var(--background);
   }
 }
 
@@ -132,10 +136,10 @@
   }
   
   .glass {
-    @apply backdrop-blur-md bg-background/60 border border-white/10 shadow-lg;
+    @apply bg-background border-2 border-border shadow-[4px_4px_0px_0px_var(--color-border)];
   }
   
-  /* Noise overlay utility */
+  /* Heavy Grain Overlay */
   .noise-overlay {
     position: fixed;
     top: 0;
@@ -144,7 +148,22 @@
     height: 100%;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.12;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+  
+  /* Technical Decals */
+  .technical-border {
+    @apply border-2 border-border relative;
+  }
+  .technical-border::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background: var(--foreground);
   }
 }

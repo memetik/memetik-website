@@ -34,7 +34,7 @@ export default function Strategy() {
         <div 
           className="mb-16 md:mb-24 text-center md:text-left"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-mono text-xs font-bold tracking-wider uppercase mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-primary/10 text-primary border border-primary/20 font-mono text-xs font-bold tracking-wider uppercase mb-6">
             <ShieldAlert className="w-3 h-3" />
             Classified Strategy /// Do Not Distribute
           </div>
@@ -135,7 +135,7 @@ export default function Strategy() {
             
             {/* Phase 1 */}
             <div className="relative">
-              <span className="absolute -left-14 md:-left-26 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-sm shadow-[0_0_10px_rgba(249,115,22,0.5)]">01</span>
+              <span className="absolute -left-14 md:-left-26 top-0 flex h-8 w-8 items-center justify-center rounded-none bg-primary text-primary-foreground font-bold text-sm shadow-none border border-primary">01</span>
               <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
                 <Target className="w-4 h-4" /> Phase 1
               </div>
@@ -164,7 +164,7 @@ export default function Strategy() {
 
             {/* Phase 2 */}
             <div className="relative">
-              <span className="absolute -left-14 md:-left-26 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-white border border-border font-bold text-sm">02</span>
+              <span className="absolute -left-14 md:-left-26 top-0 flex h-8 w-8 items-center justify-center rounded-none bg-secondary text-white border border-border font-bold text-sm">02</span>
               <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
                 <Database className="w-4 h-4" /> Phase 2
               </div>
@@ -243,7 +243,7 @@ export default function Strategy() {
 
             {/* Phase 3 */}
             <div className="relative">
-              <span className="absolute -left-14 md:-left-26 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-white border border-border font-bold text-sm">03</span>
+              <span className="absolute -left-14 md:-left-26 top-0 flex h-8 w-8 items-center justify-center rounded-none bg-secondary text-white border border-border font-bold text-sm">03</span>
               <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
                 <Share2 className="w-4 h-4" /> Phase 3
               </div>
@@ -273,7 +273,7 @@ export default function Strategy() {
 
             {/* Phase 4 */}
             <div className="relative">
-              <span className="absolute -left-14 md:-left-26 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-white border border-border font-bold text-sm">04</span>
+              <span className="absolute -left-14 md:-left-26 top-0 flex h-8 w-8 items-center justify-center rounded-none bg-secondary text-white border border-border font-bold text-sm">04</span>
               <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
                 <RotateCw className="w-4 h-4" /> Phase 4
               </div>
@@ -335,7 +335,7 @@ export default function Strategy() {
             <br/><br/>
             <span className="text-foreground font-bold">"When we’re done, buyers don’t Google you. They ask an AI your exact money question — and the entire internet answers with your name."</span>
           </p>
-          <a href="https://cal.com/memetik/letstalk" className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-full shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-1 inline-flex items-center gap-2">
+          <a href="https://cal.com/memetik/letstalk" className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-primary shadow-[4px_4px_0px_0px_var(--color-foreground)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-flex items-center gap-2">
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
             <div className="relative flex items-center gap-2">
               LET'S TALK
