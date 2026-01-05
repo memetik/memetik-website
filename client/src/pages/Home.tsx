@@ -58,37 +58,49 @@ export default function Home() {
             <Services />
             <MethodologySummary />
             
-            <footer className="bg-[hsl(171,100%,11%)] text-white py-24 md:py-32 px-6 md:px-12 border-t border-border/10 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 mix-blend-overlay"></div>
+            <footer className="bg-background text-foreground py-24 md:py-32 px-6 md:px-12 border-t-2 border-border relative overflow-hidden">
+                <div className="absolute inset-0 bg-secondary/5 pointer-events-none"></div>
+                
+                {/* Technical Decal */}
+                <div className="absolute top-0 right-12 px-4 py-1 bg-primary text-primary-foreground font-mono text-[10px] uppercase font-bold tracking-widest border-b-2 border-l-2 border-r-2 border-primary">
+                  Zone: Footer // ID: F-01
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
                     <div className="col-span-1 md:col-span-2 space-y-8">
-                        <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter leading-[0.8] text-white/90">
+                        <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter leading-[0.8] text-foreground uppercase">
                           MEMETIK
                         </h2>
-                        <p className="font-mono text-sm md:text-base text-white/60 max-w-md border-l-2 border-primary pl-6 py-2">
+                        <p className="font-mono text-sm md:text-base text-muted-foreground max-w-md border-l-2 border-primary pl-6 py-2">
                           Algorithmic Market Capture. <br/>
                           We make you the default answer in ChatGPT, Claude, & Perplexity.
                         </p>
                     </div>
-                    <div className="col-span-1 flex flex-col gap-6 font-mono text-sm text-white/60 pt-4">
-                        <span className="text-primary font-bold tracking-widest text-xs mb-2">LOCATIONS</span>
-                        <span className="hover:text-white transition-colors cursor-pointer">SAN FRANCISCO</span>
-                        <span className="hover:text-white transition-colors cursor-pointer">NEW YORK</span>
-                        <span className="hover:text-white transition-colors cursor-pointer">TOKYO</span>
+                    <div className="col-span-1 flex flex-col gap-6 font-mono text-sm text-muted-foreground pt-4">
+                        <span className="text-primary font-bold tracking-widest text-xs mb-2 border-b-2 border-primary/20 pb-2 inline-block w-max">LOCATIONS</span>
+                        <span className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2 group">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-primary">»</span> SAN FRANCISCO
+                        </span>
+                        <span className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2 group">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-primary">»</span> NEW YORK
+                        </span>
+                        <span className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2 group">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-primary">»</span> TOKYO
+                        </span>
                     </div>
-                    <div className="col-span-1 flex flex-col gap-6 font-mono text-sm text-white/60 pt-4">
-                        <span className="text-primary font-bold tracking-widest text-xs mb-2">CONNECT</span>
-                        <a href="#" className="hover:text-white hover:translate-x-1 transition-all">TWITTER</a>
-                        <a href="#" className="hover:text-white hover:translate-x-1 transition-all">INSTAGRAM</a>
-                        <a href="#" className="hover:text-white hover:translate-x-1 transition-all">LINKEDIN</a>
+                    <div className="col-span-1 flex flex-col gap-6 font-mono text-sm text-muted-foreground pt-4">
+                        <span className="text-primary font-bold tracking-widest text-xs mb-2 border-b-2 border-primary/20 pb-2 inline-block w-max">CONNECT</span>
+                        <a href="#" className="hover:text-primary hover:translate-x-1 transition-all">TWITTER</a>
+                        <a href="#" className="hover:text-primary hover:translate-x-1 transition-all">INSTAGRAM</a>
+                        <a href="#" className="hover:text-primary hover:translate-x-1 transition-all">LINKEDIN</a>
                     </div>
                 </div>
-                <div className="mt-32 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center font-mono text-xs text-white/40 gap-4">
+                <div className="mt-32 pt-8 border-t-2 border-border flex flex-col md:flex-row justify-between items-center font-mono text-xs text-muted-foreground gap-4">
                     <span>© 2025 MEMETIK // ALL RIGHTS RESERVED</span>
-                    <span className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-full border border-white/5">
+                    <span className="flex items-center gap-3 px-4 py-2 bg-secondary/10 border-2 border-border">
                        <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full bg-primary opacity-75 rounded-none"></span>
+                          <span className="relative inline-flex h-2 w-2 bg-primary rounded-none"></span>
                         </span>
                        SYSTEMS OPERATIONAL
                     </span>
