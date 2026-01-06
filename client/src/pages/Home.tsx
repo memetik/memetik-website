@@ -23,12 +23,8 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-secondary/5 -skew-x-12 transform translate-x-1/4" />
                 
                 <div className="relative z-10">
-                    <div className="w-full overflow-hidden text-primary/40 font-mono text-xs tracking-widest whitespace-nowrap mb-6 select-none opacity-50">
-                      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-                    </div>
-
                     <div 
-                      className="inline-block px-3 py-1 bg-primary text-primary-foreground font-mono text-xs font-bold mb-6 tracking-widest rounded-none"
+                      className="inline-block px-3 py-1 bg-primary/10 text-primary font-mono text-xs font-bold mb-6 tracking-widest border border-primary/20 rounded-full"
                     >
                       THE SHIFT
                     </div>
@@ -72,9 +68,6 @@ export default function Home() {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
                     <div className="col-span-1 md:col-span-2 space-y-8">
-                        <div className="w-full overflow-hidden text-primary/40 font-mono text-xs tracking-widest whitespace-nowrap mb-6 select-none opacity-50">
-                          &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-                        </div>
                         <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter leading-[0.8] text-foreground uppercase">
                           MEMETIK
                         </h2>
@@ -84,19 +77,19 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="col-span-1 flex flex-col gap-6 font-mono text-sm text-muted-foreground pt-4">
-                        <span className="text-primary-foreground bg-primary px-2 py-1 font-bold tracking-widest text-xs mb-2 inline-block w-max">LOCATIONS</span>
-                        <span className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2 group border-b border-transparent hover:border-primary w-max">
-                          SAN FRANCISCO
+                        <span className="text-primary font-bold tracking-widest text-xs mb-2 border-b-2 border-primary/20 pb-2 inline-block w-max">LOCATIONS</span>
+                        <span className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2 group">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-primary">»</span> SAN FRANCISCO
                         </span>
-                        <span className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2 group border-b border-transparent hover:border-primary w-max">
-                          NEW YORK
+                        <span className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2 group">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-primary">»</span> NEW YORK
                         </span>
-                        <span className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2 group border-b border-transparent hover:border-primary w-max">
-                          TOKYO
+                        <span className="hover:text-primary transition-colors cursor-pointer flex items-center gap-2 group">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-primary">»</span> TOKYO
                         </span>
                     </div>
                     <div className="col-span-1 flex flex-col gap-6 font-mono text-sm text-muted-foreground pt-4">
-                        <span className="text-primary-foreground bg-primary px-2 py-1 font-bold tracking-widest text-xs mb-2 inline-block w-max">CONNECT</span>
+                        <span className="text-primary font-bold tracking-widest text-xs mb-2 border-b-2 border-primary/20 pb-2 inline-block w-max">CONNECT</span>
                         <a href="#" className="hover:text-primary hover:translate-x-1 transition-all">TWITTER</a>
                         <a href="#" className="hover:text-primary hover:translate-x-1 transition-all">INSTAGRAM</a>
                         <a href="#" className="hover:text-primary hover:translate-x-1 transition-all">LINKEDIN</a>
@@ -106,7 +99,7 @@ export default function Home() {
                     <span>© 2025 MEMETIK // ALL RIGHTS RESERVED</span>
                     <span className="flex items-center gap-3 px-4 py-2 bg-secondary/10 border-2 border-border">
                        <span className="relative flex h-2 w-2">
-                          <span className="animate-pulse absolute inline-flex h-full w-full bg-primary opacity-75 rounded-none"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full bg-primary opacity-75 rounded-none"></span>
                           <span className="relative inline-flex h-2 w-2 bg-primary rounded-none"></span>
                         </span>
                        SYSTEMS OPERATIONAL

@@ -58,7 +58,7 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
         {/* Description - Always visible on mobile AND desktop now, to ensure usability */}
         <div className="mt-auto relative z-10">
           <div className="mb-8 pl-4 border-l-2 border-primary/20 group-hover:border-primary transition-colors">
-            <p className="font-sans text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="font-serif text-lg md:text-xl text-muted-foreground leading-relaxed italic">
               {service.description}
             </p>
           </div>

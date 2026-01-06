@@ -61,10 +61,10 @@ export function Hero() {
               <div className="absolute bottom-0 left-[-4px] w-[10px] h-[2px] bg-primary"></div>
            </div>
 
-          <p className="text-xl md:text-3xl font-sans text-muted-foreground leading-tight pl-0 md:pl-6 py-2 tracking-tight">
+          <p className="text-xl md:text-3xl font-serif text-muted-foreground leading-tight pl-0 md:pl-6 py-2 tracking-tight">
             The future is one direct answer.
             <br />
-            <span className="text-foreground bg-primary/5 px-1">We engineer visibility for LLMs, Answer Engines, and AI Agents.</span>
+            <span className="text-foreground bg-primary/5 px-1 italic">We engineer visibility for LLMs, Answer Engines, and AI Agents.</span>
           </p>
           
           <div className="flex flex-wrap gap-4 mt-4 md:pl-6">
