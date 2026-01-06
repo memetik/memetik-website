@@ -43,8 +43,8 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
       </div>
 
       {/* Heavy Black Header */}
-      <div className="bg-foreground text-[#E3E7DE] p-4 md:p-6 mb-6 transform group-hover:-translate-y-1 transition-transform duration-300">
-          <h3 className="text-4xl md:text-5xl font-display font-black leading-[0.85] tracking-tighter uppercase">
+      <div className="bg-foreground p-4 md:p-6 mb-6 transform group-hover:-translate-y-1 transition-transform duration-300">
+          <h3 className="text-4xl md:text-5xl font-display font-black leading-[0.85] tracking-tighter uppercase text-[#E3E7DE]">
             {service.title}
           </h3>
       </div>
