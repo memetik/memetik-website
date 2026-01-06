@@ -33,7 +33,7 @@ export default function Home() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black leading-[0.9] mb-2 tracking-tight uppercase text-foreground">
                   The search bar is dying.
                 </h2>
-                <p className="font-serif text-xl sm:text-2xl md:text-3xl italic text-foreground/60 mb-6">
+                <p className="font-serif text-xl sm:text-2xl md:text-3xl text-foreground/60 mb-6">
                   The conversation is beginning.
                 </p>
                 
@@ -115,7 +115,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight uppercase mb-2">
               MEMETIK
             </h2>
-            <p className="font-serif text-lg sm:text-xl md:text-2xl italic text-background/60 mb-6">
+            <p className="font-serif text-lg sm:text-xl md:text-2xl text-background/60 mb-6">
               We engineer visibility across LLMs, search engines, and agents.
             </p>
             

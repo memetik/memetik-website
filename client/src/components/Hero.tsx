@@ -16,8 +16,8 @@ export function Hero() {
           RECOMMENDS
         </h1>
         
-        {/* Serif italic subtitle */}
-        <p className="font-serif text-xl sm:text-2xl md:text-3xl italic text-foreground mb-8">
+        {/* Subtitle */}
+        <p className="font-serif text-xl sm:text-2xl md:text-3xl text-foreground mb-8">
           The future is one direct answer.
         </p>
 

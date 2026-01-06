@@ -42,8 +42,8 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
         {service.title}
       </h3>
       
-      {/* Serif italic subtitle */}
-      <p className="font-serif text-lg sm:text-xl italic text-foreground mb-6">
+      {/* Subtitle */}
+      <p className="font-serif text-lg sm:text-xl text-foreground mb-6">
         {service.subtitle}
       </p>
 
@@ -98,7 +98,7 @@ export function Services() {
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-2">
           Core Systems
         </h2>
-        <p className="font-serif text-lg sm:text-xl md:text-2xl italic text-foreground/60 mb-6">
+        <p className="font-serif text-lg sm:text-xl md:text-2xl text-foreground/60 mb-6">
           Capabilities for AI-era visibility.
         </p>
         

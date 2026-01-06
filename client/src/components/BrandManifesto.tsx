@@ -18,7 +18,7 @@ export function BrandManifesto() {
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black leading-[0.85] mb-2 tracking-tight uppercase text-foreground">
                 The Industry Is Broken.
               </h2>
-              <p className="font-serif text-lg sm:text-xl md:text-2xl italic text-foreground/60 mb-6">
+              <p className="font-serif text-lg sm:text-xl md:text-2xl text-foreground/60 mb-6">
                 Memetik was built as the antidote.
               </p>
               
@@ -94,7 +94,7 @@ export function BrandManifesto() {
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-2">
             Our Values
           </h2>
-          <p className="font-serif text-lg sm:text-xl md:text-2xl italic text-foreground/60 mb-6">
+          <p className="font-serif text-lg sm:text-xl md:text-2xl text-foreground/60 mb-6">
             The operating system for dominance.
           </p>
           
@@ -142,7 +142,7 @@ export function BrandManifesto() {
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-2">
             Who We Serve
           </h2>
-          <p className="font-serif text-lg sm:text-xl md:text-2xl italic text-foreground/60 mb-6">
+          <p className="font-serif text-lg sm:text-xl md:text-2xl text-foreground/60 mb-6">
             We partner with founders who refuse to be left behind.
           </p>
           
