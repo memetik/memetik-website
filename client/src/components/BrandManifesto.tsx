@@ -5,41 +5,31 @@ export function BrandManifesto() {
   return (
     <section className="bg-background text-foreground overflow-hidden">
       {/* SECTION: WHY WE EXIST */}
-      <div className="py-24 md:py-32 px-6 md:px-12 border-b border-border relative">
-        <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
-           <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-             <circle cx="200" cy="200" r="199.5" stroke="currentColor" />
-             <path d="M200 0V400M0 200H400" stroke="currentColor" />
-           </svg>
-        </div>
-
+      <div className="py-24 md:py-32 px-6 md:px-12 border-b-2 border-foreground relative">
         <div className="max-w-4xl mx-auto relative z-10">
-          <div
-            className="mb-16 md:mb-24"
-          >
-            <div className="inline-block px-3 py-1 bg-accent/10 text-accent font-mono text-xs font-bold mb-6 tracking-widest border border-accent/20 rounded-none">
-              WHY WE EXIST
-            </div>
-            <h2 className="text-4xl md:text-7xl font-display font-bold leading-[0.9] mb-8 tracking-tighter">
+          <div className="mb-16 md:mb-24">
+             {/* Chevron Divider */}
+             <div className="w-full overflow-hidden whitespace-nowrap mb-6 select-none opacity-40 font-mono text-[10px] tracking-tighter font-bold text-foreground">
+                &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+             </div>
+             
+            <h2 className="text-5xl md:text-8xl font-display font-black leading-[0.8] mb-8 tracking-tighter uppercase text-foreground">
               THE INDUSTRY <br/><span className="text-muted-foreground">IS BROKEN.</span>
             </h2>
-            <div className="font-sans text-xl md:text-3xl text-muted-foreground space-y-8 leading-relaxed border-l-2 border-primary pl-8 md:pl-12">
+            <div className="font-serif text-2xl md:text-4xl text-foreground space-y-8 leading-tight">
               <p>
                 Founders are paying "SEO agencies" who deliver nothing of value.
                 Search is changing faster than agencies can keep up.
-                Most still sell the same packages they offered in 2015.
               </p>
-              <p className="text-foreground font-medium">
+              <p className="bg-foreground text-[#E3E7DE] p-2 inline-block font-sans font-bold tracking-tight transform -rotate-1">
                 Memetik was built as the antidote.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mt-16 md:mt-24">
-            <div 
-               className="space-y-8"
-            >
-              <h3 className="font-mono text-sm tracking-[0.2em] text-muted-foreground uppercase mb-6 pb-2 border-b border-border/50">The Old Way</h3>
+            <div className="space-y-8">
+              <h3 className="font-mono text-sm tracking-[0.2em] text-muted-foreground uppercase mb-6 pb-2 border-b border-foreground/20">The Old Way</h3>
               <ul className="space-y-6">
                 {[
                   "Optimizing for rankings",
@@ -47,19 +37,17 @@ export function BrandManifesto() {
                   "Guessing what works",
                   "Agency theatre"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-muted-foreground/50 line-through decoration-destructive/30 text-lg">
-                    <div className="p-1 rounded-none bg-destructive/10">
-                      <X className="w-4 h-4 text-destructive/50" />
+                  <li key={i} className="flex items-center gap-4 text-muted-foreground/50 line-through decoration-foreground/30 text-lg font-serif italic">
+                    <div className="p-1 rounded-none border border-foreground/20">
+                      <X className="w-4 h-4 text-foreground/50" />
                     </div>
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div 
-               className="space-y-8"
-            >
-              <h3 className="font-mono text-sm tracking-[0.2em] text-primary uppercase mb-6 pb-2 border-b border-primary/20">The Memetik Way</h3>
+            <div className="space-y-8">
+              <h3 className="font-mono text-sm tracking-[0.2em] text-foreground uppercase mb-6 pb-2 border-b-2 border-foreground">The Memetik Way</h3>
               <ul className="space-y-6">
                 {[
                   "Optimizing for ANSWERS",
@@ -67,9 +55,9 @@ export function BrandManifesto() {
                   "Strategies LLMs cannot ignore",
                   "Engineered dominance"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-foreground font-medium text-lg">
-                    <div className="p-1 rounded-none bg-primary/10">
-                      <Check className="w-4 h-4 text-primary" />
+                  <li key={i} className="flex items-center gap-4 text-foreground font-bold text-lg font-sans uppercase tracking-tight">
+                    <div className="p-1 rounded-none bg-foreground text-[#E3E7DE]">
+                      <Check className="w-4 h-4" />
                     </div>
                     {item}
                   </li>
@@ -81,20 +69,19 @@ export function BrandManifesto() {
       </div>
 
       {/* SECTION: BRAND VALUES */}
-      <div className="py-24 md:py-32 px-6 md:px-12 bg-secondary/5 text-foreground relative overflow-hidden">
-        {/* Subtle grid pattern for texture - Dark version for light background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-
+      <div className="py-24 md:py-32 px-6 md:px-12 bg-foreground text-[#E3E7DE] relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
             <div>
-              <h2 className="text-4xl md:text-8xl font-display font-bold mb-4 tracking-tighter text-foreground">OUR VALUES</h2>
-              <div className="h-1 w-24 bg-primary mt-4"></div>
+               <div className="w-full overflow-hidden whitespace-nowrap mb-6 select-none opacity-40 font-mono text-[10px] tracking-tighter font-bold text-[#E3E7DE]">
+                &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+             </div>
+              <h2 className="text-4xl md:text-8xl font-display font-black mb-4 tracking-tighter text-[#E3E7DE] uppercase">OUR VALUES</h2>
             </div>
-            <p className="font-mono text-sm md:text-base text-muted-foreground tracking-widest uppercase md:mb-4">The Operating System for Dominance</p>
+            <p className="font-mono text-sm md:text-base text-[#E3E7DE]/60 tracking-widest uppercase md:mb-4">The Operating System for Dominance</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-[#E3E7DE]/20">
             {[
               {
                 title: "FIRST PRINCIPLES",
@@ -115,11 +102,11 @@ export function BrandManifesto() {
             ].map((value, i) => (
               <div 
                 key={i} 
-                className="p-8 md:p-10 border-2 border-border bg-background shadow-none hover:shadow-[8px_8px_0px_0px_var(--color-primary)] hover:border-primary transition-all duration-500 group hover:-translate-y-2 rounded-none"
+                className="p-8 md:p-10 border-r border-b border-[#E3E7DE]/20 hover:bg-[#E3E7DE] hover:text-foreground transition-all duration-300 group"
               >
-                <div className="text-5xl md:text-7xl font-display font-bold text-foreground/20 group-hover:text-primary/30 transition-colors mb-12">0{i+1}</div>
-                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors tracking-tight">{value.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-sm font-sans">{value.desc}</p>
+                <div className="text-5xl md:text-7xl font-display font-bold text-[#E3E7DE]/20 group-hover:text-foreground/20 transition-colors mb-12">0{i+1}</div>
+                <h3 className="text-xl font-bold mb-4 tracking-tight uppercase">{value.title}</h3>
+                <p className="leading-relaxed text-sm font-mono opacity-80">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -127,14 +114,14 @@ export function BrandManifesto() {
       </div>
 
       {/* SECTION: WHO WE SERVE */}
-      <div className="py-24 md:py-32 px-6 md:px-12 border-b border-border bg-background relative">
+      <div className="py-24 md:py-32 px-6 md:px-12 border-b-2 border-foreground bg-background relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-24">
-             <h2 className="text-4xl md:text-7xl font-display font-bold mb-8 tracking-tighter">WHO WE SERVE</h2>
-             <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">We partner with founders who refuse to be left behind by the AI shift.</p>
+             <h2 className="text-4xl md:text-7xl font-display font-black mb-8 tracking-tighter uppercase">WHO WE SERVE</h2>
+             <p className="font-serif text-2xl md:text-3xl text-foreground max-w-2xl mx-auto">We partner with founders who refuse to be left behind.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-foreground">
             {[
               {
                 icon: <Store className="w-8 h-8" />,
@@ -157,36 +144,30 @@ export function BrandManifesto() {
             ].map((item, i) => (
               <div 
                 key={i} 
-                className="relative p-8 md:p-10 bg-secondary/5 border-2 border-border/50 hover:border-primary transition-all duration-300 rounded-none group overflow-hidden"
+                className="relative p-8 md:p-12 border-b md:border-b-0 md:border-r border-foreground hover:bg-secondary/10 transition-all duration-300 group last:border-r-0"
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary/50 to-primary/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                
-                <div className="mb-8 p-4 bg-background rounded-none border border-border inline-flex items-center justify-center shadow-sm group-hover:shadow-none group-hover:scale-110 transition-all duration-300 text-primary">
+                <div className="mb-8 text-foreground group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
                 
-                <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
-                <p className="font-sans text-muted-foreground leading-relaxed mb-6">{item.desc}</p>
+                <h3 className="text-3xl font-display font-bold mb-4 uppercase tracking-tighter">{item.title}</h3>
+                <p className="font-serif text-lg text-muted-foreground leading-tight mb-8">{item.desc}</p>
                 
-                <div className="inline-block px-3 py-1 bg-primary/10 rounded-none text-xs font-mono font-bold text-primary/80 uppercase tracking-wider">
+                <div className="inline-block px-3 py-1 bg-foreground text-[#E3E7DE] rounded-none text-xs font-mono font-bold uppercase tracking-wider">
                   {item.highlight}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="relative p-10 md:p-16 border-2 border-primary/20 bg-secondary/5 rounded-none max-w-4xl mx-auto text-center overflow-hidden">
-            <div className="absolute inset-0 bg-primary/5 opacity-50"></div>
-            <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl"></div>
-            
+          <div className="relative mt-24 max-w-4xl mx-auto text-center">
             <div className="relative z-10 flex flex-col items-center">
-              <p className="font-mono text-xs text-primary mb-6 uppercase tracking-[0.2em] font-bold">The Requirement</p>
-              <p className="text-xl md:text-4xl font-mono font-medium text-foreground leading-tight mb-8 uppercase tracking-tighter">
-                Our work requires <span className="text-primary font-bold">ambition</span>.
+              <p className="font-mono text-xs text-foreground mb-6 uppercase tracking-[0.2em] font-bold">The Requirement</p>
+              <p className="text-2xl md:text-5xl font-display font-black text-foreground leading-none mb-8 uppercase tracking-tighter">
+                Our work requires <span className="bg-foreground text-[#E3E7DE] px-2">ambition</span>.
               </p>
               
-              <a href="https://cal.com/memetik/letstalk" className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-primary shadow-[4px_4px_0px_0px_var(--color-foreground)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-flex items-center gap-2 mt-4">
+              <a href="https://cal.com/memetik/letstalk" className="group relative px-8 py-4 bg-foreground text-[#E3E7DE] font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-foreground hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-flex items-center gap-2 mt-4">
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
                 <div className="relative flex items-center gap-2">
                   LET'S TALK

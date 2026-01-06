@@ -2,36 +2,70 @@ import { motion } from "framer-motion";
 
 export function Marquee() {
   return (
-    <div className="w-full py-4 bg-primary text-primary-foreground overflow-hidden flex items-center border-y-2 border-primary relative">
-      <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-primary to-transparent z-10"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-primary to-transparent z-10"></div>
+    <div className="w-full bg-foreground text-background overflow-hidden flex flex-col border-y-2 border-foreground relative">
       
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20 font-mono text-[10px] bg-background text-primary px-1 font-bold border border-primary hidden md:block">
-        LIVE FEED
+      {/* Top Chevron Tape */}
+      <div className="w-full bg-[#E3E7DE] text-foreground border-b-2 border-foreground py-1 overflow-hidden">
+        <motion.div
+            className="flex whitespace-nowrap font-mono text-sm font-bold tracking-tighter leading-none"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+        >
+            {[...Array(20)].map((_, i) => (
+                <span key={i} className="mx-0 select-none">
+                    &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+                </span>
+            ))}
+        </motion.div>
       </div>
 
-      <motion.div
-        className="flex whitespace-nowrap"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-      >
-        {[...Array(4)].map((_, i) => (
-          <div key={i} className="flex items-center gap-8 mx-4">
-            <span className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase">
-              LLM OPTIMIZATION
-            </span>
-            <span className="text-xl font-mono align-middle opacity-50">[ + ]</span>
-            <span className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase">
-              GENERATIVE SEARCH
-            </span>
-            <span className="text-xl font-mono align-middle opacity-50">[ + ]</span>
-            <span className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase">
-              AI VISIBILITY
-            </span>
-            <span className="text-xl font-mono align-middle opacity-50">[ + ]</span>
+      {/* Main Ticker */}
+      <div className="py-4 relative flex items-center bg-foreground text-background">
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-foreground to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-foreground to-transparent z-10"></div>
+          
+          <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20 font-mono text-[10px] bg-[#E3E7DE] text-foreground px-2 py-1 font-bold border border-background hidden md:block">
+            LIVE FEED
           </div>
-        ))}
-      </motion.div>
+
+          <motion.div
+            className="flex whitespace-nowrap"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+          >
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="flex items-center gap-12 mx-4">
+                <span className="text-4xl md:text-6xl font-display font-bold tracking-tighter uppercase text-[#E3E7DE]">
+                  LLM OPTIMIZATION
+                </span>
+                <span className="text-xl font-mono align-middle text-[#E3E7DE]/50">[ + ]</span>
+                <span className="text-4xl md:text-6xl font-display font-bold tracking-tighter uppercase text-[#E3E7DE]">
+                  GENERATIVE SEARCH
+                </span>
+                <span className="text-xl font-mono align-middle text-[#E3E7DE]/50">[ + ]</span>
+                <span className="text-4xl md:text-6xl font-display font-bold tracking-tighter uppercase text-[#E3E7DE]">
+                  AI VISIBILITY
+                </span>
+                <span className="text-xl font-mono align-middle text-[#E3E7DE]/50">[ + ]</span>
+              </div>
+            ))}
+          </motion.div>
+      </div>
+      
+       {/* Bottom Chevron Tape - Reversed */}
+      <div className="w-full bg-[#E3E7DE] text-foreground border-t-2 border-foreground py-1 overflow-hidden">
+        <motion.div
+            className="flex whitespace-nowrap font-mono text-sm font-bold tracking-tighter leading-none"
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+        >
+             {[...Array(20)].map((_, i) => (
+                <span key={i} className="mx-0 select-none">
+                    &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+                </span>
+            ))}
+        </motion.div>
+      </div>
     </div>
   );
 }
