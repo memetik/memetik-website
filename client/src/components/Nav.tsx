@@ -41,8 +41,8 @@ export function Nav() {
           <a className="flex items-center gap-4 group relative z-50">
              {/* Logo Mark - M Shape */}
              <div className="w-10 h-10 bg-foreground text-background flex items-center justify-center group-hover:bg-foreground/90 transition-colors">
-               <svg viewBox="0 0 100 80" fill="currentColor" className="w-6 h-6">
-                 <path d="M0 0 H30 V80 H20 V25 H10 V80 H0 Z M35 25 L50 45 L65 25 V0 H35 Z M70 0 H100 V80 H90 V25 H80 V80 H70 Z" />
+               <svg viewBox="0 0 100 100" fill="currentColor" className="w-6 h-6">
+                 <path d="M0 0 H100 V100 H70 V35 H65 V100 H35 V35 H30 V100 H0 V0 Z M35 0 V25 L50 45 L65 25 V0" fillRule="evenodd" />
                </svg>
              </div>
              <div className="flex flex-col">

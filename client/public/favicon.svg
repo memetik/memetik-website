@@ -1,3 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" fill="#111111">
-  <path d="M0 0 H30 V80 H20 V25 H10 V80 H0 Z M35 25 L50 45 L65 25 V0 H35 Z M70 0 H100 V80 H90 V25 H80 V80 H70 Z" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#111111">
+  <path d="M0 0 H100 V100 H70 V35 H65 V100 H35 V35 H30 V100 H0 V0 Z M35 0 V25 L50 45 L65 25 V0" fill-rule="evenodd" />
 </svg>
