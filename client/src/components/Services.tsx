@@ -65,12 +65,9 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
         <span>{service.location}</span>
       </div>
 
-      {/* Bottom Tags - FUEL style */}
+      {/* Bottom Tags */}
       <div className="flex flex-wrap items-center gap-2 mt-auto">
-        <div className="flex items-center justify-center w-8 h-8 bg-foreground text-background">
-          <span className="text-xs">✕</span>
-        </div>
-        <div className="bg-foreground text-background px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+        <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
           {service.tags[0]}
         </div>
         {service.tags.slice(1).map((tag, i) => (
@@ -126,10 +123,7 @@ export function Services() {
       {/* Bottom Tag Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mt-8">
         <div className="flex flex-wrap items-center gap-2">
-          <div className="flex items-center justify-center w-8 h-8 bg-foreground text-background">
-            <span className="text-xs">✕</span>
-          </div>
-          <div className="bg-foreground text-background px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+          <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
             MORE OUTPUT
           </div>
           <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">

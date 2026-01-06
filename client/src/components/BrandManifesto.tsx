@@ -34,10 +34,7 @@ export function BrandManifesto() {
               
               {/* Tag bar */}
               <div className="flex flex-wrap items-center gap-2">
-                <div className="flex items-center justify-center w-8 h-8 bg-foreground text-background">
-                  <span className="text-xs">✕</span>
-                </div>
-                <div className="bg-foreground text-background px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
                   THE ANTIDOTE
                 </div>
                 <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
@@ -173,7 +170,7 @@ export function BrandManifesto() {
                 </div>
                 <h3 className="text-xl font-display font-black uppercase tracking-tight mb-3">{item.title}</h3>
                 <p className="font-mono text-xs text-foreground/60 leading-relaxed mb-4">{item.desc}</p>
-                <div className="bg-foreground text-background px-3 py-1.5 font-mono text-[10px] font-bold uppercase inline-block">
+                <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase inline-block">
                   {item.tag}
                 </div>
               </div>
