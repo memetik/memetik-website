@@ -15,10 +15,22 @@ export function Nav() {
   }, []);
 
   const links = [
-    { href: "#work", label: "WORK" },
-    { href: "#agency", label: "GROWTH PARTNER" },
-    { href: "#contact", label: "CONTACT" },
+    { href: "#work", label: "CASE STUDIES" },
+    { href: "#methodology", label: "PROCESS" },
+    { href: "#faq", label: "FAQ" },
   ];
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const navHeight = 120;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b-2 border-primary bg-background`}>
@@ -56,7 +68,8 @@ export function Nav() {
             <a
               key={link.label}
               href={link.href}
-              className="h-full flex items-center px-8 text-xs font-mono tracking-widest hover:bg-primary hover:text-background transition-colors border-l border-primary/10 relative group"
+              onClick={(e) => scrollToSection(e, link.href)}
+              className="h-full flex items-center px-8 text-xs font-mono tracking-widest hover:bg-primary hover:text-background transition-colors border-l border-primary/10 relative group cursor-pointer"
             >
               {link.label}
               {/* Corner mark on hover */}
@@ -99,8 +112,8 @@ export function Nav() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-3xl font-display font-bold hover:text-primary transition-colors tracking-tighter"
-                onClick={() => setIsOpen(false)}
+                className="text-3xl font-display font-bold hover:text-primary transition-colors tracking-tighter cursor-pointer"
+                onClick={(e) => scrollToSection(e, link.href)}
               >
                 {link.label}
               </a>

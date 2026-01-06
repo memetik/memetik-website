@@ -17,54 +17,58 @@ const phases = [
   {
     id: "01",
     title: "THE LLM AUDIT",
-    subtitle: "PHASE 1",
-    description: "A complete visibility mapping across 7 major AI models. We establish your current Answer Share and identify the fastest paths to take it.",
+    subtitle: "WEEK 1-2",
+    description: "Complete visibility mapping across major AI models. We establish your current Answer Share and identify the fastest paths to dominance.",
     icon: <Target className="w-12 h-12" />,
     deliverables: [
       "100+ prompt tests",
-      "Hallucination report",
       "Competitor visibility map",
-      "SERP overlap analysis"
-    ]
+      "Gap analysis report",
+      "Priority roadmap"
+    ],
+    outcome: "Know exactly where you stand vs competitors in AI responses"
   },
   {
     id: "02",
-    title: "PROPRIETARY DATA CORE",
-    subtitle: "PHASE 2",
-    description: "We construct the data infrastructure models prefer to ingest. Tier 1 'Apex Assets' and Tier 2 'Programmatic Clusters' that force citation.",
+    title: "CONTENT ENGINEERING",
+    subtitle: "WEEK 3-8",
+    description: "We build the content infrastructure that AI models prefer to cite. High-authority assets designed specifically for LLM consumption.",
     icon: <Database className="w-12 h-12" />,
     deliverables: [
       "8–12 Apex Assets",
-      "Comparison grids",
-      "600+ Programmatic Pages",
-      "Zero filler content"
-    ]
+      "Comparison engines",
+      "Programmatic pages",
+      "Entity optimization"
+    ],
+    outcome: "Content that AI actually wants to recommend"
   },
   {
     id: "03",
     title: "AUTHORITY INJECTION",
-    subtitle: "PHASE 3",
-    description: "We force models to recognise your data by distributing it across high-trust surfaces and validating your authority.",
+    subtitle: "WEEK 4-12",
+    description: "We establish your brand as the trusted source by distributing across high-authority surfaces that AI models crawl.",
     icon: <Share2 className="w-12 h-12" />,
     deliverables: [
-      "Parasite SEO",
-      "50–100+ branded mentions",
-      "DR70–90 backlinks",
-      "Link velocity campaigns"
-    ]
+      "DR70-90 placements",
+      "Branded mentions",
+      "Citation building",
+      "Trust signals"
+    ],
+    outcome: "AI recognizes you as the authority in your category"
   },
   {
     id: "04",
-    title: "CONTINUOUS DEPLOYMENT",
-    subtitle: "PHASE 4",
-    description: "A long-term reinforcement system. We maintain the #1 slot across all relevant queries and prevent loss of visibility as models update.",
+    title: "ONGOING OPTIMIZATION",
+    subtitle: "MONTH 3+",
+    description: "Continuous reinforcement to maintain and expand your #1 position as AI models update and competitors try to catch up.",
     icon: <RotateCw className="w-12 h-12" />,
     deliverables: [
-      "Weekly micro-patches",
-      "Continuous prompt testing",
-      "Competitor interdiction",
-      "Live Share Dashboard"
-    ]
+      "Weekly monitoring",
+      "Prompt testing",
+      "Competitor tracking",
+      "Live dashboard"
+    ],
+    outcome: "Stay #1 while competitors scramble to figure out AEO"
   }
 ];
 
@@ -95,10 +99,16 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
         </h3>
 
         <div className="mt-auto relative z-10">
-          <div className="mb-8 border-l-2 border-foreground pl-6">
-            <p className="font-serif text-xl text-foreground leading-tight">
+          <div className="mb-6 border-l-2 border-foreground pl-6">
+            <p className="font-serif text-lg text-foreground leading-tight">
               {phase.description}
             </p>
+          </div>
+          
+          {/* Outcome highlight */}
+          <div className="bg-foreground/5 border border-foreground/20 p-3 mb-6">
+            <p className="font-mono text-xs text-foreground/60 uppercase mb-1">Expected Outcome</p>
+            <p className="font-mono text-sm font-bold text-foreground">{phase.outcome}</p>
           </div>
           
           <div className="flex flex-wrap gap-2">
@@ -119,16 +129,21 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
 
 export function MethodologySummary() {
   return (
-    <section className="py-24 md:py-32 bg-background text-foreground px-4 md:px-0 border-b-2 border-foreground relative overflow-hidden">
+    <section id="methodology" className="py-24 md:py-32 bg-background text-foreground px-4 md:px-0 border-b-2 border-foreground relative overflow-hidden">
       
       <div className="container mx-auto px-6 md:px-12 mb-16 relative">
-           <div className="w-full overflow-hidden whitespace-nowrap mb-6 select-none opacity-40 font-mono text-[10px] tracking-tighter font-bold text-foreground">
-                &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+           <div className="inline-flex items-center gap-2 border border-foreground/30 px-3 py-1.5 mb-6">
+             <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">
+               Our Process
+             </span>
            </div>
            
-           <h2 className="text-3xl sm:text-4xl md:text-8xl font-display font-black tracking-tighter text-foreground mb-8 uppercase">
-             Methodology
+           <h2 className="text-3xl sm:text-4xl md:text-7xl font-display font-black tracking-tighter text-foreground mb-4 uppercase">
+             The 90-Day Roadmap
            </h2>
+           <p className="font-mono text-sm text-foreground/60 max-w-2xl mb-8">
+             A proven 4-phase system that takes you from invisible to undeniable in AI responses. Here's exactly what happens when you partner with us.
+           </p>
            <div className="h-[2px] w-full bg-foreground mb-12"></div>
       </div>
 

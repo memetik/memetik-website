@@ -4,6 +4,12 @@ import { MethodologySummary } from "@/components/MethodologySummary";
 import { Marquee } from "@/components/Marquee";
 import { Services } from "@/components/Services";
 import { BrandManifesto } from "@/components/BrandManifesto";
+import { Testimonials } from "@/components/Testimonials";
+import { CaseStudies } from "@/components/CaseStudies";
+import { FAQ } from "@/components/FAQ";
+import { Guarantee } from "@/components/Guarantee";
+import { EmailCapture } from "@/components/EmailCapture";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -14,6 +20,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <Nav />
+      <MobileStickyCTA />
       <main>
         <Hero />
         <Marquee />
@@ -97,8 +104,13 @@ export default function Home() {
         </section>
 
         <BrandManifesto />
+        <Testimonials />
+        <CaseStudies />
         <Services />
         <MethodologySummary />
+        <FAQ />
+        <Guarantee />
+        <EmailCapture />
         
         {/* FOOTER */}
         <footer className="bg-foreground text-background py-16 md:py-24 px-4 sm:px-6 md:px-12 relative overflow-hidden">

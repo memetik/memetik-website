@@ -44,7 +44,7 @@ export function Hero() {
         </div>
 
         {/* Trust indicators */}
-        <div className="flex flex-wrap items-center gap-6 pt-8 border-t border-foreground/20">
+        <div className="flex flex-wrap items-center gap-6 pt-8 border-t border-foreground/20 mb-8">
           <div className="flex items-center gap-2">
             <span className="font-mono text-2xl font-black">50+</span>
             <span className="font-mono text-xs text-foreground/60 uppercase leading-tight">Brands<br/>Optimized</span>
@@ -58,6 +58,20 @@ export function Hero() {
           <div className="flex items-center gap-2">
             <span className="font-mono text-2xl font-black">90</span>
             <span className="font-mono text-xs text-foreground/60 uppercase leading-tight">Days to<br/>Results</span>
+          </div>
+        </div>
+
+        {/* Client logos */}
+        <div className="pt-6 border-t border-foreground/10">
+          <p className="font-mono text-[10px] text-foreground/40 uppercase tracking-wider mb-4">
+            Trusted by category leaders
+          </p>
+          <div className="flex flex-wrap items-center gap-4 md:gap-6">
+            {["SERIES B SAAS", "8-FIGURE ECOM", "FORTUNE 500", "VC-BACKED", "ENTERPRISE"].map((logo, i) => (
+              <span key={i} className="font-mono text-xs text-foreground/30 uppercase tracking-wider">
+                {logo}
+              </span>
+            ))}
           </div>
         </div>
 

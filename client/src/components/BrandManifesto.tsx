@@ -79,102 +79,90 @@ export function BrandManifesto() {
         </div>
       </div>
 
-      {/* SECTION: BRAND VALUES */}
-      <div className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b-2 border-foreground">
-        <div className="max-w-7xl mx-auto">
-          
-          {/* Chevron bar */}
-          <div className="font-mono text-xs tracking-tighter text-foreground/60 mb-8 overflow-hidden">
-            &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-          </div>
-          
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-2">
-            Our Values
-          </h2>
-          <p className="font-serif text-lg sm:text-xl md:text-2xl text-foreground/60 mb-6">
-            The operating system for dominance.
-          </p>
-          
-          {/* Certification + Location */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider text-foreground mb-2">
-            <span>CERTIFIED PRINCIPLES</span>
-            <span className="border border-foreground px-2 py-0.5">[ TESTED ]</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider text-foreground/60 mb-8">
-            <span>OPERATING SYSTEMS</span>
-            <span>/</span>
-            <span>UNITED STATES OF AMERICA</span>
-          </div>
-          
-          {/* Values Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-2 border-foreground">
-            {[
-              { title: "FIRST PRINCIPLES", desc: "We rebuild strategy from scratch. No assumptions. No legacy baggage." },
-              { title: "BOLD INNOVATION", desc: "Experimentation beats perfection. We embrace failure to find what works." },
-              { title: "SPEED WINS", desc: "Execution velocity compounds. We move faster than the market." },
-              { title: "LONG-TERM GAMES", desc: "We partner for outcomes, not tasks. We play for the decade." }
-            ].map((value, i) => (
-              <div key={i} className="p-6 md:p-8 border-b sm:border-r border-foreground last:border-r-0 sm:[&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r [&:nth-last-child(-n+2)]:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+4)]:border-b-0">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="text-3xl md:text-4xl font-display font-black text-foreground/20">0{i+1}</div>
-                  <div className="font-mono text-[8px] uppercase tracking-widest text-foreground/30">MTK-VAL-0{i+1}</div>
-                </div>
-                <h3 className="text-sm font-mono font-bold mb-3 uppercase tracking-wider">{value.title}</h3>
-                <p className="text-xs font-mono text-foreground/60 leading-relaxed">{value.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* SECTION: WHO WE SERVE */}
-      <div className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground bg-background">
+      <div id="who-we-serve" className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground bg-background">
         <div className="max-w-6xl mx-auto">
           
-          {/* Chevron bar */}
-          <div className="font-mono text-xs tracking-tighter text-foreground/60 mb-8 overflow-hidden">
-            &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+          <div className="inline-flex items-center gap-2 border border-foreground/30 px-3 py-1.5 mb-6">
+            <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">
+              Ideal Client Profile
+            </span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-2">
-            Who We Serve
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-4">
+            Is This For You?
           </h2>
-          <p className="font-serif text-lg sm:text-xl md:text-2xl text-foreground/60 mb-6">
-            We partner with founders who refuse to be left behind.
+          <p className="font-mono text-sm text-foreground/60 max-w-2xl mb-12">
+            We're selective about who we work with. AEO requires significant investment and commitment. Here's who sees the best results:
           </p>
           
-          {/* Certification + Location */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider text-foreground mb-2">
-            <span>TARGET ACQUISITION</span>
-            <span className="border border-foreground px-2 py-0.5">[ QUALIFIED ]</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider text-foreground/60 mb-8">
-            <span>PARTNER SYSTEMS</span>
-            <span>/</span>
-            <span>UNITED STATES OF AMERICA</span>
+          {/* Who We Serve Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            
+            {/* Good Fit */}
+            <div className="border-2 border-foreground p-6 md:p-8">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="text-green-600 text-xl">✓</span>
+                <h3 className="font-mono text-sm font-bold uppercase tracking-wider">You're a Great Fit If:</h3>
+              </div>
+              <ul className="space-y-4">
+                {[
+                  { main: "$1M+ ARR", sub: "You have the revenue to invest in long-term growth" },
+                  { main: "6-month commitment mindset", sub: "You understand AEO is a strategic play, not a quick fix" },
+                  { main: "B2B SaaS or E-commerce", sub: "Your customers research purchases with AI" },
+                  { main: "Category leader or ambitious challenger", sub: "You want to dominate, not just compete" },
+                  { main: "In-house marketing team", sub: "Someone to collaborate with and hand off to" }
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-green-600 mt-1">•</span>
+                    <div>
+                      <span className="font-mono text-sm font-bold">{item.main}</span>
+                      <span className="font-mono text-sm text-foreground/60"> — {item.sub}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Not a Fit */}
+            <div className="border-2 border-foreground/30 p-6 md:p-8 bg-foreground/5">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="text-red-500 text-xl">✗</span>
+                <h3 className="font-mono text-sm font-bold uppercase tracking-wider">Not a Fit If:</h3>
+              </div>
+              <ul className="space-y-4">
+                {[
+                  { main: "Pre-revenue or early stage", sub: "Focus on product-market fit first" },
+                  { main: "Looking for quick wins", sub: "AEO compounds over 6-12 months" },
+                  { main: "Budget under $15K/month", sub: "We can't deliver results at lower price points" },
+                  { main: "Highly regulated industry", sub: "Healthcare, finance require specialized compliance" },
+                  { main: "Want to 'set and forget'", sub: "This is a partnership, not a service subscription" }
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-red-500 mt-1">•</span>
+                    <div>
+                      <span className="font-mono text-sm font-bold">{item.main}</span>
+                      <span className="font-mono text-sm text-foreground/60"> — {item.sub}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
           </div>
           
-          {/* Serve Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-foreground mb-12">
-            {[
-              { icon: <Store className="w-6 h-6" />, title: "E-Commerce", desc: "Founders scaling to 7–9 figures who need to dominate comparison queries.", tag: "7-9 FIGURES" },
-              { icon: <Rocket className="w-6 h-6" />, title: "SaaS Leaders", desc: "Founders building category dominance through answer-based visibility.", tag: "CATEGORY LEADER" },
-              { icon: <Zap className="w-6 h-6" />, title: "Operators", desc: "Visionaries who invest in speed and understand the platform shift.", tag: "HIGH-IQ" }
-            ].map((item, i) => (
-              <div key={i} className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-foreground last:border-r-0 last:border-b-0">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-10 h-10 border-2 border-foreground flex items-center justify-center">
-                    {item.icon}
-                  </div>
-                  <div className="font-mono text-[8px] uppercase tracking-widest text-foreground/30">0{i+1}</div>
+          {/* Industry Focus */}
+          <div className="border-t border-foreground/20 pt-8 mb-12">
+            <p className="font-mono text-xs text-foreground/40 uppercase tracking-wider mb-4">
+              Industries we specialize in
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {["B2B SaaS", "E-Commerce (7-figures+)", "Professional Services", "Agencies", "Tech Startups"].map((industry, i) => (
+                <div key={i} className="border border-foreground/30 px-4 py-2 font-mono text-sm">
+                  {industry}
                 </div>
-                <h3 className="text-xl font-display font-black uppercase tracking-tight mb-3">{item.title}</h3>
-                <p className="font-mono text-xs text-foreground/60 leading-relaxed mb-4">{item.desc}</p>
-                <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase inline-block">
-                  {item.tag}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* CTA */}
@@ -183,7 +171,7 @@ export function BrandManifesto() {
               <div className="inline-flex items-center gap-2 border border-foreground/30 px-3 py-1.5 mb-6">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                 <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">
-                  2 spots left this quarter
+                  January 2026: 1 spot remaining
                 </span>
               </div>
               <p className="text-2xl md:text-4xl font-display font-black uppercase tracking-tight mb-4">
