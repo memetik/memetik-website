@@ -33,7 +33,7 @@ export function Nav() {
         </div>
         <div className="flex gap-4">
            <span>// MEMETIK.AI</span>
-           <span>STATUS: ONLINE</span>
+           <span className="font-bold">STATUS: OPERATIONAL</span>
         </div>
       </div>
 
