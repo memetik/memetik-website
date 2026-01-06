@@ -7,32 +7,42 @@ export function BrandManifesto() {
       <div className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground relative">
         <div className="max-w-6xl mx-auto relative z-10">
           
-          {/* Header */}
-          <div className="flex flex-wrap items-center gap-3 mb-8">
-            <div className="bg-foreground text-background px-3 py-1 font-mono text-[10px] font-bold uppercase">
-              SECTION 03
-            </div>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/60">INDUSTRY ANALYSIS</span>
-            <div className="flex-grow"></div>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/40">&gt;&gt;&gt;</span>
+          {/* Chevron bar */}
+          <div className="font-mono text-xs tracking-tighter text-foreground/60 mb-8 overflow-hidden">
+            &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Left - Main Statement */}
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black leading-[0.85] mb-8 tracking-tight uppercase text-foreground">
-                THE INDUSTRY<br/>
-                <span className="text-foreground/40">IS BROKEN.</span>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black leading-[0.85] mb-2 tracking-tight uppercase text-foreground">
+                BROKEN
               </h2>
+              <p className="font-serif text-xl sm:text-2xl md:text-3xl italic text-foreground mb-6">
+                The Industry Status Quo
+              </p>
               
-              <div className="space-y-4 font-mono text-sm leading-relaxed text-foreground/70">
+              <div className="space-y-4 font-mono text-sm leading-relaxed text-foreground/70 mb-6">
                 <p>Founders are paying "SEO agencies" who deliver nothing of value. Search is changing faster than agencies can keep up.</p>
               </div>
               
-              <div className="mt-8 border-2 border-foreground bg-foreground text-background p-4 inline-block">
-                <span className="font-mono font-bold text-sm uppercase tracking-wider">
-                  MEMETIK WAS BUILT AS THE ANTIDOTE.
-                </span>
+              {/* Certification line */}
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-wider text-foreground mb-6">
+                <span>INDUSTRY ANALYSIS</span>
+                <span className="border border-foreground px-2 py-0.5">[ VERIFIED ]</span>
+              </div>
+              
+              {/* Tag bar */}
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="flex items-center justify-center w-8 h-8 bg-foreground text-background">
+                  <span className="text-xs">✕</span>
+                </div>
+                <div className="bg-foreground text-background px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                  THE ANTIDOTE
+                </div>
+                <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                  MEMETIK
+                </div>
               </div>
             </div>
             
@@ -76,24 +86,27 @@ export function BrandManifesto() {
       <div className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b-2 border-foreground">
         <div className="max-w-7xl mx-auto">
           
-          {/* Header */}
-          <div className="flex flex-wrap items-end justify-between gap-6 mb-8">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="grid grid-cols-2 gap-[2px]">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="w-2 h-2 bg-foreground"></div>
-                  ))}
-                </div>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/60">CORE PRINCIPLES</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase">
-                Our Values
-              </h2>
-            </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/50">
-              THE OPERATING SYSTEM FOR DOMINANCE
-            </div>
+          {/* Chevron bar */}
+          <div className="font-mono text-xs tracking-tighter text-foreground/60 mb-8 overflow-hidden">
+            &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+          </div>
+          
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black tracking-tight uppercase mb-2">
+            VALUES
+          </h2>
+          <p className="font-serif text-xl sm:text-2xl md:text-3xl italic text-foreground mb-6">
+            For Operational Dominance
+          </p>
+          
+          {/* Certification + Location */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider text-foreground mb-2">
+            <span>CERTIFIED PRINCIPLES</span>
+            <span className="border border-foreground px-2 py-0.5">[ TESTED ]</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider text-foreground/60 mb-8">
+            <span>OPERATING SYSTEMS</span>
+            <span>/</span>
+            <span>UNITED STATES OF AMERICA</span>
           </div>
           
           {/* Values Grid */}
@@ -121,18 +134,27 @@ export function BrandManifesto() {
       <div className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground bg-background">
         <div className="max-w-6xl mx-auto">
           
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/60">TARGET OPERATORS</span>
-              <div className="bg-foreground text-background px-2 py-0.5 font-mono text-[10px] font-bold">SECTION 05</div>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-4">
-              Who We Serve
-            </h2>
-            <p className="font-mono text-sm text-foreground/60 max-w-xl mx-auto">
-              We partner with founders who refuse to be left behind.
-            </p>
+          {/* Chevron bar */}
+          <div className="font-mono text-xs tracking-tighter text-foreground/60 mb-8 overflow-hidden">
+            &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+          </div>
+          
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black tracking-tight uppercase mb-2">
+            OPERATORS
+          </h2>
+          <p className="font-serif text-xl sm:text-2xl md:text-3xl italic text-foreground mb-6">
+            For Ambitious Founders
+          </p>
+          
+          {/* Certification + Location */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider text-foreground mb-2">
+            <span>TARGET ACQUISITION</span>
+            <span className="border border-foreground px-2 py-0.5">[ QUALIFIED ]</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider text-foreground/60 mb-8">
+            <span>PARTNER SYSTEMS</span>
+            <span>/</span>
+            <span>UNITED STATES OF AMERICA</span>
           </div>
           
           {/* Serve Grid */}

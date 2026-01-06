@@ -22,28 +22,31 @@ export default function Home() {
         <section id="agency" className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b-2 border-foreground">
           <div className="max-w-7xl mx-auto">
             
-            {/* Header */}
-            <div className="flex flex-wrap items-center gap-3 mb-8">
-              <div className="grid grid-cols-2 gap-[2px]">
-                {[...Array(4)].map((_, i) => (
-                  <div key={i} className="w-2 h-2 bg-foreground"></div>
-                ))}
-              </div>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/60">MARKET ANALYSIS</span>
-              <div className="bg-foreground text-background px-2 py-0.5 font-mono text-[10px] font-bold">THE SHIFT</div>
-              <div className="flex-grow"></div>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/40 hidden sm:inline">CRITICAL INTELLIGENCE</span>
+            {/* Chevron bar */}
+            <div className="font-mono text-xs tracking-tighter text-foreground/60 mb-8 overflow-hidden">
+              &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
               {/* Left - Main Content */}
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black leading-[0.9] mb-8 tracking-tight uppercase text-foreground">
-                  The search bar is dying.<br/>
-                  <span className="text-foreground/40">The conversation is beginning.</span>
+                <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black leading-[0.85] mb-2 tracking-tight uppercase text-foreground">
+                  SHIFT
                 </h2>
+                <p className="font-serif text-xl sm:text-2xl md:text-3xl italic text-foreground mb-6">
+                  For Market Intelligence
+                </p>
                 
-                <div className="h-1 w-20 bg-foreground mb-8"></div>
+                {/* Certification line */}
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-wider text-foreground mb-2">
+                  <span>CRITICAL INTELLIGENCE</span>
+                  <span className="border border-foreground px-2 py-0.5">[ VERIFIED ]</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider text-foreground/60 mb-8">
+                  <span>MARKET ANALYSIS</span>
+                  <span>/</span>
+                  <span>UNITED STATES OF AMERICA</span>
+                </div>
                 
                 {/* Stats Box */}
                 <div className="border-2 border-foreground p-6 mb-6">
@@ -54,6 +57,19 @@ export default function Home() {
                   <p className="font-mono text-sm text-foreground/70">
                     commercial research now begins or ends inside AI answer engines.
                   </p>
+                </div>
+                
+                {/* Tag bar */}
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="flex items-center justify-center w-8 h-8 bg-foreground text-background">
+                    <span className="text-xs">✕</span>
+                  </div>
+                  <div className="bg-foreground text-background px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                    SEARCH DYING
+                  </div>
+                  <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                    AI RISING
+                  </div>
                 </div>
               </div>
               
@@ -90,51 +106,43 @@ export default function Home() {
         <footer className="bg-foreground text-background py-16 md:py-24 px-4 sm:px-6 md:px-12 relative overflow-hidden">
           <div className="max-w-7xl mx-auto">
             
-            {/* Top Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              {/* Logo & Tagline */}
-              <div className="lg:col-span-2">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="grid grid-cols-3 gap-[2px]">
-                    {[...Array(9)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-background"></div>
-                    ))}
-                  </div>
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight">MEMETIK</span>
-                </div>
-                <p className="font-mono text-sm text-background/60 max-w-md mb-6">
-                  We engineer visibility across LLMs, search engines, and agents.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <div className="border border-background/30 px-3 py-1.5 font-mono text-[10px] uppercase">NEW YORK</div>
-                  <div className="border border-background/30 px-3 py-1.5 font-mono text-[10px] uppercase">SAN FRANCISCO</div>
-                  <div className="border border-background/30 px-3 py-1.5 font-mono text-[10px] uppercase">GLOBAL</div>
-                </div>
+            {/* Chevron bar */}
+            <div className="font-mono text-xs tracking-tighter text-background/30 mb-8 overflow-hidden">
+              &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+            </div>
+            
+            {/* Main Title */}
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black tracking-tight uppercase mb-2">
+              MEMETIK
+            </h2>
+            <p className="font-serif text-xl sm:text-2xl md:text-3xl italic text-background/80 mb-6">
+              For Answer Engine Optimization
+            </p>
+            
+            {/* Certification + Location */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider text-background/80 mb-2">
+              <span>CERTIFIED FOR AI VISIBILITY</span>
+              <span className="border border-background/40 px-2 py-0.5">[ OPERATIONAL ]</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider text-background/50 mb-8">
+              <span>VISIBILITY SYSTEMS</span>
+              <span>/</span>
+              <span>UNITED STATES OF AMERICA</span>
+            </div>
+            
+            {/* Tag bar */}
+            <div className="flex flex-wrap items-center gap-2 mb-16">
+              <div className="flex items-center justify-center w-8 h-8 bg-background text-foreground">
+                <span className="text-xs">✕</span>
               </div>
-              
-              {/* Links */}
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-background/40 mb-4 pb-2 border-b border-background/20">
-                  NAVIGATION
-                </div>
-                <ul className="space-y-2 font-mono text-sm">
-                  <li><a href="#agency" className="text-background/60 hover:text-background transition-colors">About</a></li>
-                  <li><a href="#" className="text-background/60 hover:text-background transition-colors">Services</a></li>
-                  <li><a href="#" className="text-background/60 hover:text-background transition-colors">Methodology</a></li>
-                  <li><a href="https://cal.com/memetik/letstalk" className="text-background/60 hover:text-background transition-colors">Contact</a></li>
-                </ul>
+              <div className="bg-background text-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                LLM OPTIMIZATION
               </div>
-              
-              {/* Connect */}
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-background/40 mb-4 pb-2 border-b border-background/20">
-                  CONNECT
-                </div>
-                <ul className="space-y-2 font-mono text-sm">
-                  <li><a href="#" className="text-background/60 hover:text-background transition-colors">Twitter / X</a></li>
-                  <li><a href="#" className="text-background/60 hover:text-background transition-colors">LinkedIn</a></li>
-                  <li><a href="#" className="text-background/60 hover:text-background transition-colors">Instagram</a></li>
-                </ul>
+              <div className="border-2 border-background/40 px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                AEO & SEO
+              </div>
+              <div className="border-2 border-background/40 px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                AI AGENTS
               </div>
             </div>
             
@@ -144,21 +152,14 @@ export default function Home() {
                 <div className="font-mono text-[10px] uppercase tracking-widest text-background/40">
                   © 2026 MEMETIK // ALL RIGHTS RESERVED
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-2 border border-background/20 px-3 py-1.5">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full bg-green-500 opacity-75 rounded-full"></span>
-                      <span className="relative inline-flex h-2 w-2 bg-green-500 rounded-full"></span>
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-background/60">SYSTEMS OPERATIONAL</span>
-                  </div>
-                </div>
+                <a 
+                  href="https://cal.com/memetik/letstalk" 
+                  className="inline-flex items-center gap-3 bg-background text-foreground px-6 py-3 font-mono font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
+                >
+                  LET'S TALK
+                  <span>→</span>
+                </a>
               </div>
-            </div>
-            
-            {/* Background Text */}
-            <div className="absolute bottom-0 right-0 text-[15vw] font-display font-black text-background/[0.03] leading-none select-none pointer-events-none overflow-hidden">
-              LAB
             </div>
           </div>
         </footer>

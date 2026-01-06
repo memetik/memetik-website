@@ -1,60 +1,64 @@
 export function Hero() {
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden bg-background text-foreground">
-      {/* Grid background */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--color-foreground)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-foreground)_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-[0.05]"></div>
       
-      {/* Decorative crosses */}
-      <div className="absolute top-32 right-8 text-foreground/20 text-2xl font-light select-none hidden sm:block">+</div>
-      <div className="absolute top-1/2 right-12 text-foreground/20 text-2xl font-light select-none hidden sm:block">+</div>
-      <div className="absolute bottom-48 left-8 text-foreground/20 text-2xl font-light select-none hidden sm:block">+</div>
-      <div className="absolute bottom-32 right-1/4 text-foreground/20 text-2xl font-light select-none hidden sm:block">+</div>
-      <div className="absolute top-1/3 left-12 text-foreground/20 text-2xl font-light select-none hidden sm:block">+</div>
-
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 pt-24 pb-12">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 pt-24 pb-12">
         
-        {/* Technical header bar */}
-        <div className="flex items-center gap-4 mb-12 text-xs font-mono uppercase tracking-wider">
-          <div className="bg-foreground text-background px-3 py-2">
-            <div className="text-[10px] leading-tight">FIG.</div>
-            <div className="text-base font-bold leading-tight">01</div>
-          </div>
-          <div className="text-foreground/70">
-            <div>AUTONOMOUS VISIBILITY</div>
-            <div>UNIT</div>
-          </div>
-          <div className="flex-grow"></div>
-          <div className="text-foreground/50 hidden sm:block">&gt;&gt;&gt;</div>
-          <div className="text-foreground/70 hidden sm:block">USA</div>
+        {/* Chevron Bar */}
+        <div className="font-mono text-xs sm:text-sm md:text-base tracking-tighter text-foreground mb-8 overflow-hidden">
+          &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
         </div>
 
-        {/* Main headline */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black leading-[0.9] tracking-tight text-foreground uppercase mb-12">
-          BE THE<br/>
-          BRAND<br/>
-          AI<br/>
-          RECOMMENDS
+        {/* Main headline - FUEL style heavy black */}
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] font-display font-black leading-[0.85] tracking-tight text-foreground uppercase mb-4">
+          MEMETIK
         </h1>
         
-        {/* Tagline with highlighted text */}
-        <div className="mb-12 max-w-xl">
-          <p className="font-mono text-base sm:text-lg leading-relaxed">
-            <span className="text-foreground/70">The future is one direct answer.</span>
-            <br/>
-            <span className="bg-foreground text-background px-1 inline-block mt-1">We engineer visibility for LLMs,</span>
-            <br/>
-            <span className="bg-foreground text-background px-1 inline-block mt-1">Answer Engines, and AI Agents.</span>
-          </p>
+        {/* Serif italic subtitle */}
+        <p className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic text-foreground mb-8">
+          For Answer Engine Optimization
+        </p>
+
+        {/* Certification line */}
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs sm:text-sm uppercase tracking-wider text-foreground mb-3">
+          <span>CERTIFIED FOR AI VISIBILITY</span>
+          <span className="hidden sm:inline text-foreground/40">|</span>
+          <span className="border border-foreground px-2 py-0.5">[ TESTED ]</span>
         </div>
 
-        {/* CTA Button */}
-        <a 
-          href="https://cal.com/memetik/letstalk" 
-          className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
-        >
-          LET'S TALK
-          <span className="text-lg">→</span>
-        </a>
+        {/* System / Location label */}
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs sm:text-sm uppercase tracking-wider text-foreground mb-10">
+          <span>VISIBILITY SYSTEMS</span>
+          <span className="text-foreground/40">/</span>
+          <span>UNITED STATES OF AMERICA</span>
+        </div>
+
+        {/* Bottom tag bar - FUEL style */}
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="flex items-center justify-center w-10 h-10 bg-foreground text-background">
+            <span className="text-lg">✕</span>
+          </div>
+          <div className="bg-foreground text-background px-4 py-2.5 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider">
+            LLM OPTIMIZATION
+          </div>
+          <div className="border-2 border-foreground px-4 py-2 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider">
+            MISSION-GRADE
+          </div>
+          <div className="border-2 border-foreground px-4 py-2 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider">
+            AEO & SEO
+          </div>
+        </div>
+
+        {/* CTA below tags */}
+        <div className="mt-12">
+          <a 
+            href="https://cal.com/memetik/letstalk" 
+            className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+          >
+            LET'S TALK
+            <span className="text-lg">→</span>
+          </a>
+        </div>
 
       </div>
     </section>
