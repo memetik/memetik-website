@@ -26,7 +26,7 @@ export function EmailCapture() {
               </span>
             </div>
             
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-black tracking-tight uppercase mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-black tracking-tight uppercase mb-4 text-[#E3E7DE]">
               The 2026 AI Visibility Playbook
             </h2>
             
