@@ -44,15 +44,15 @@ export default function Home() {
                 </div>
                 
                 <div 
-                  className="font-serif text-lg md:text-2xl text-muted-foreground space-y-8 leading-relaxed border-l-2 border-primary/20 pl-8 relative z-10 italic"
+                  className="font-sans text-lg md:text-2xl text-muted-foreground space-y-8 leading-relaxed border-l-2 border-primary/20 pl-8 relative z-10"
                 >
                     <p>
-                        <span className="text-foreground font-bold not-italic highlight-text bg-gradient-to-r from-primary/20 to-transparent bg-no-repeat bg-[length:100%_0.4em] bg-bottom">40–70% of high-intent commercial research now begins or ends inside AI answer engines.</span>
+                        <span className="text-foreground font-bold highlight-text bg-gradient-to-r from-primary/20 to-transparent bg-no-repeat bg-[length:100%_0.4em] bg-bottom">40–70% of high-intent commercial research now begins or ends inside AI answer engines.</span>
                     </p>
                     <p>
                         Google traffic is eroding. LLMs decide winners before a user ever clicks a link. If your brand isn't in the model's answer layer—you don't exist.
                     </p>
-                    <p className="text-foreground font-bold not-italic font-mono text-sm uppercase tracking-widest">
+                    <p className="text-foreground font-medium">
                         We build Answer Engine Optimization (AEO) systems that force LLMs to cite you.
                     </p>
                 </div>
@@ -78,7 +78,7 @@ export default function Home() {
                         <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter leading-[0.8] text-foreground uppercase">
                           MEMETIK
                         </h2>
-                        <p className="font-serif italic text-lg md:text-xl text-muted-foreground max-w-md border-l-2 border-primary pl-6 py-2">
+                        <p className="font-mono text-sm md:text-base text-muted-foreground max-w-md border-l-2 border-primary pl-6 py-2">
                           Algorithmic Market Capture. <br/>
                           We make you the default answer in ChatGPT, Claude, & Perplexity.
                         </p>

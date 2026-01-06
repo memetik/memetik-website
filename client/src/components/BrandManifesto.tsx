@@ -23,13 +23,13 @@ export function BrandManifesto() {
             <h2 className="text-4xl md:text-7xl font-display font-bold leading-[0.9] mb-8 tracking-tighter">
               THE INDUSTRY <br/><span className="text-muted-foreground">IS BROKEN.</span>
             </h2>
-            <div className="font-serif italic text-xl md:text-3xl text-muted-foreground space-y-8 leading-relaxed border-l-2 border-primary pl-8 md:pl-12">
+            <div className="font-sans text-xl md:text-3xl text-muted-foreground space-y-8 leading-relaxed border-l-2 border-primary pl-8 md:pl-12">
               <p>
                 Founders are paying "SEO agencies" who deliver nothing of value.
                 Search is changing faster than agencies can keep up.
                 Most still sell the same packages they offered in 2015.
               </p>
-              <p className="text-foreground font-medium not-italic font-mono text-sm uppercase tracking-widest">
+              <p className="text-foreground font-medium">
                 Memetik was built as the antidote.
               </p>
             </div>

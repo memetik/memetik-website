@@ -102,7 +102,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
         {/* Description - Always visible on mobile AND desktop now, to ensure usability */}
         <div className="mt-auto relative z-10">
           <div className="mb-8">
-            <p className="font-serif text-lg text-muted-foreground leading-relaxed italic">
+            <p className="font-sans text-lg text-muted-foreground leading-relaxed">
               {phase.description}
             </p>
           </div>
