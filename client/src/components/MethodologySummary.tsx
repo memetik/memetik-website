@@ -102,7 +102,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
         {/* Description - Always visible on mobile AND desktop now, to ensure usability */}
         <div className="mt-auto relative z-10">
           <div className="mb-8">
-            <p className="font-serif text-lg text-muted-foreground leading-relaxed italic">
+            <p className="font-sans text-lg text-muted-foreground leading-relaxed">
               {phase.description}
             </p>
           </div>
@@ -111,7 +111,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
             {phase.deliverables.map((item, i) => (
               <span 
                 key={i} 
-                className="px-2 py-1 text-[10px] md:text-xs font-mono bg-primary text-primary-foreground font-bold uppercase tracking-wider group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
+                className="px-2 py-1 text-[10px] md:text-xs font-mono border border-primary/20 rounded-none text-muted-foreground uppercase tracking-wider group-hover:border-primary group-hover:text-primary transition-colors duration-300 bg-transparent"
               >
                 [ {item} ]
               </span>
@@ -138,11 +138,6 @@ export function MethodologySummary() {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-secondary/5 to-transparent pointer-events-none" />
       
       <div className="flex flex-col items-center text-center mb-20 md:mb-32 border-b-2 border-border pb-12 max-w-5xl mx-auto px-4 relative">
-        {/* Chevron Divider */}
-        <div className="w-full overflow-hidden text-primary/40 font-mono text-xs tracking-widest whitespace-nowrap mb-6 select-none opacity-50">
-          &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        </div>
-        
         <div className="absolute top-0 left-0 text-[10px] font-mono text-muted-foreground uppercase tracking-widest hidden md:block">
            SEC: PROTOCOLS
         </div>
@@ -150,7 +145,7 @@ export function MethodologySummary() {
            REF: 994-A
         </div>
 
-        <div className="inline-block px-3 py-1 bg-primary text-primary-foreground font-mono text-xs font-bold mb-6 tracking-widest rounded-none uppercase">
+        <div className="inline-block px-3 py-1 bg-primary/10 text-primary font-mono text-xs font-bold mb-6 tracking-widest border-2 border-primary rounded-none uppercase">
           [ Execution Protocol ]
         </div>
         <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter text-foreground mb-8 uppercase">
@@ -160,7 +155,9 @@ export function MethodologySummary() {
         {/* Overview Grid */}
         <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mt-4">
           {overviewPoints.map((point, i) => (
-            <span key={i} className="px-4 py-2 bg-primary text-primary-foreground text-xs md:text-sm font-mono font-bold uppercase tracking-tight hover:bg-primary/90 transition-colors cursor-default relative group">
+            <span key={i} className="px-4 py-2 bg-background border border-primary/30 text-xs md:text-sm font-mono text-muted-foreground uppercase tracking-tight hover:text-primary hover:border-primary transition-colors cursor-default relative group">
+              <span className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
+              <span className="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
               {point}
             </span>
           ))}

@@ -58,7 +58,7 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
         {/* Description - Always visible on mobile AND desktop now, to ensure usability */}
         <div className="mt-auto relative z-10">
           <div className="mb-8 pl-4 border-l-2 border-primary/20 group-hover:border-primary transition-colors">
-            <p className="font-serif text-lg md:text-xl text-muted-foreground leading-relaxed italic">
+            <p className="font-sans text-lg md:text-xl text-muted-foreground leading-relaxed">
               {service.description}
             </p>
           </div>
@@ -67,7 +67,7 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
             {service.tags.map((tag, i) => (
               <span 
                 key={i} 
-                className="px-2 py-1 text-[10px] md:text-xs font-mono bg-primary text-primary-foreground font-bold uppercase tracking-wider group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
+                className="px-2 py-1 text-[10px] md:text-xs font-mono border border-primary/20 text-muted-foreground uppercase tracking-wider group-hover:border-primary group-hover:text-primary transition-colors duration-300 bg-background"
               >
                 {tag}
               </span>
@@ -91,12 +91,7 @@ export function Services() {
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-[0.05]"></div>
 
       <div className="flex flex-col items-center text-center mb-16 md:mb-24 border-b border-border/50 pb-12 max-w-5xl mx-auto px-4 relative z-10">
-        {/* Chevron Divider */}
-        <div className="w-full overflow-hidden text-primary/40 font-mono text-xs tracking-widest whitespace-nowrap mb-6 select-none opacity-50">
-          &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-        </div>
-        
-        <div className="inline-block px-3 py-1 bg-primary text-primary-foreground font-mono text-xs font-bold mb-6 tracking-widest rounded-none uppercase">
+        <div className="inline-block px-3 py-1 bg-primary/10 text-primary font-mono text-xs font-bold mb-6 tracking-widest border-2 border-primary rounded-none uppercase">
           [ Capacity & Infrastructure ]
         </div>
         <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter text-foreground uppercase">

@@ -17,7 +17,7 @@ export function BrandManifesto() {
           <div
             className="mb-16 md:mb-24"
           >
-            <div className="inline-block px-3 py-1 bg-primary text-primary-foreground font-mono text-xs font-bold mb-6 tracking-widest rounded-none">
+            <div className="inline-block px-3 py-1 bg-accent/10 text-accent font-mono text-xs font-bold mb-6 tracking-widest border border-accent/20 rounded-none">
               WHY WE EXIST
             </div>
             <h2 className="text-4xl md:text-7xl font-display font-bold leading-[0.9] mb-8 tracking-tighter">

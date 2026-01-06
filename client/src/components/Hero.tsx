@@ -31,11 +31,6 @@ export function Hero() {
         </div>
 
         <div className="max-w-4xl relative">
-          {/* Chevron Divider */}
-          <div className="w-full overflow-hidden text-primary/40 font-mono text-xs tracking-widest whitespace-nowrap mb-6 select-none opacity-50">
-            &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-          </div>
-
           {/* Technical Header Block */}
           <div className="flex items-center gap-4 mb-6 text-xs font-mono tracking-widest text-muted-foreground border-b border-primary/20 pb-4 w-fit">
             <span className="bg-primary text-background px-2 py-0.5 font-bold">FIG. 01</span>
@@ -61,10 +56,10 @@ export function Hero() {
               <div className="absolute bottom-0 left-[-4px] w-[10px] h-[2px] bg-primary"></div>
            </div>
 
-          <p className="text-xl md:text-3xl font-serif text-muted-foreground leading-tight pl-0 md:pl-6 py-2 tracking-tight">
+          <p className="text-xl md:text-3xl font-sans text-muted-foreground leading-tight pl-0 md:pl-6 py-2 tracking-tight">
             The future is one direct answer.
             <br />
-            <span className="text-foreground bg-primary/5 px-1 italic">We engineer visibility for LLMs, Answer Engines, and AI Agents.</span>
+            <span className="text-foreground bg-primary/5 px-1">We engineer visibility for LLMs, Answer Engines, and AI Agents.</span>
           </p>
           
           <div className="flex flex-wrap gap-4 mt-4 md:pl-6">
@@ -76,12 +71,9 @@ export function Hero() {
                </div>
              </a>
              
-             {/* Secondary 'ghost' technical button -> Solid Block Style */}
-             <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-[10px] font-mono tracking-widest font-bold">
-                <span className="animate-pulse">●</span> MISSION-GRADE
-             </div>
-             <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-[10px] font-mono tracking-widest font-bold">
-                SYSTEM READY
+             {/* Secondary 'ghost' technical button */}
+             <div className="hidden md:flex items-center gap-2 px-4 py-2 border border-primary/20 text-[10px] font-mono tracking-widest text-primary/60">
+                <span className="animate-pulse">●</span> SYSTEM READY
              </div>
           </div>
         </div>
