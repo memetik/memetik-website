@@ -13,7 +13,7 @@ export function Hero() {
         </div>
 
         {/* Main headline */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black leading-[0.85] tracking-tight text-foreground uppercase mb-6">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black leading-[0.85] tracking-tight text-foreground uppercase mb-6">
           BE THE<br/>
           BRAND AI<br/>
           RECOMMENDS
