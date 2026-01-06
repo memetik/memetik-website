@@ -69,19 +69,19 @@ export function BrandManifesto() {
       </div>
 
       {/* SECTION: BRAND VALUES */}
-      <div className="py-24 md:py-32 px-6 md:px-12 bg-foreground text-[#E3E7DE] relative overflow-hidden">
+      <div className="py-24 md:py-32 px-6 md:px-12 bg-background text-foreground relative overflow-hidden border-b-2 border-foreground">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
             <div>
-               <div className="w-full overflow-hidden whitespace-nowrap mb-6 select-none opacity-40 font-mono text-[10px] tracking-tighter font-bold text-[#E3E7DE]">
+               <div className="w-full overflow-hidden whitespace-nowrap mb-6 select-none opacity-40 font-mono text-[10px] tracking-tighter font-bold text-foreground">
                 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
              </div>
-              <h2 className="text-3xl sm:text-4xl md:text-8xl font-display font-black mb-4 tracking-tighter text-[#E3E7DE] uppercase">OUR VALUES</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-8xl font-display font-black mb-4 tracking-tighter text-foreground uppercase">OUR VALUES</h2>
             </div>
-            <p className="font-mono text-sm md:text-base text-[#E3E7DE]/60 tracking-widest uppercase md:mb-4">The Operating System for Dominance</p>
+            <p className="font-mono text-sm md:text-base text-muted-foreground tracking-widest uppercase md:mb-4">The Operating System for Dominance</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-[#E3E7DE]/20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t-2 border-l-2 border-foreground">
             {[
               {
                 title: "FIRST PRINCIPLES",
@@ -102,11 +102,11 @@ export function BrandManifesto() {
             ].map((value, i) => (
               <div 
                 key={i} 
-                className="p-8 md:p-10 border-r border-b border-[#E3E7DE]/20 transition-all duration-300 group bg-[#E3E7DE] text-foreground"
+                className="p-8 md:p-10 border-r-2 border-b-2 border-foreground transition-all duration-300 group bg-background text-foreground"
               >
                 <div className="text-4xl md:text-7xl font-display font-bold transition-colors mb-12 text-foreground/20">0{i+1}</div>
                 <h3 className="text-xl font-bold mb-4 tracking-tight uppercase">{value.title}</h3>
-                <p className="leading-relaxed text-sm font-mono opacity-80">{value.desc}</p>
+                <p className="leading-relaxed text-sm font-mono text-muted-foreground">{value.desc}</p>
               </div>
             ))}
           </div>
