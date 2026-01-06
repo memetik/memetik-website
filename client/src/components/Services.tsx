@@ -1,90 +1,94 @@
-import { motion } from "framer-motion";
-import { Search, Cpu, Globe, ArrowUpRight, Plus } from "lucide-react";
-import React, { useRef } from "react";
-
 const services = [
   {
     id: "01",
-    icon: <Cpu className="w-12 h-12" />,
     title: "LLM SEO",
+    subtitle: "Training Data Systems",
     description: "We reverse-engineer the training data. Your brand becomes the primary citation for ChatGPT, Claude, and Gemini.",
-    tags: ["Training Data Injection", "Citation Optimization", "Brand Entity Connection"],
-    type: "ATMOSPHERE SYSTEMS"
+    tags: ["CITATION OPTIMIZATION", "BRAND ENTITY"],
+    type: "ATMOSPHERE SYSTEMS",
+    status: "DEPLOYED"
   },
   {
     id: "02",
-    icon: <Search className="w-12 h-12" />,
-    title: "ANSWER ENGINE OPTIMIZATION",
+    title: "ANSWER ENGINE",
+    subtitle: "Semantic Architecture",
     description: "Traditional SEO is dying. We structure content for semantic density that AI agents prioritize over keyword stuffing.",
-    tags: ["Semantic Architecture", "Answer Engine Optimization", "Structured Data"],
-    type: "PROPULSION UNITS"
+    tags: ["AEO", "STRUCTURED DATA"],
+    type: "PROPULSION UNITS",
+    status: "OPERATIONAL"
   },
   {
     id: "03",
-    icon: <Globe className="w-12 h-12" />,
-    title: "SAAS & ECOM DOMINANCE",
+    title: "SAAS & ECOM",
+    subtitle: "Revenue Operations",
     description: "High-intent visibility for complex B2B sales cycles and massive product catalogs. We capture the 'How do I...' queries.",
-    tags: ["Programmatic SEO", "Technical Scale", "Revenue Attribution"],
-    type: "MISSION CONTROL"
+    tags: ["PROGRAMMATIC", "SCALE"],
+    type: "MISSION CONTROL",
+    status: "ACTIVE"
   }
 ];
 
 function ServiceCard({ service, index }: { service: typeof services[0], index: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  
   return (
-    <div
-      ref={ref}
-      className="group relative flex flex-col justify-between min-h-[500px] p-6 md:p-10 bg-[#E3E7DE] border-b-2 md:border-b-0 md:border-r-2 border-foreground hover:bg-[#E3E7DE] transition-all duration-300"
-    >
-      {/* Decorative Chevron Top */}
-      <div className="w-full overflow-hidden whitespace-nowrap mb-6 select-none opacity-40 font-mono text-[10px] tracking-tighter font-bold text-foreground">
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-      </div>
-
-      {/* Heavy Black Header */}
-      <div className="bg-foreground p-4 md:p-6 mb-6 transform group-hover:-translate-y-1 transition-transform duration-300">
-          <h3 className="text-2xl sm:text-3xl md:text-5xl font-display font-black leading-[0.85] tracking-tighter uppercase text-[#E3E7DE]">
-            {service.title}
-          </h3>
-      </div>
-
-      <div className="flex-grow flex flex-col gap-6 relative z-10">
-        <h4 className="font-serif text-lg md:text-2xl text-foreground leading-tight tracking-tight">
-             {service.description}
-        </h4>
-        
-        <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-widest text-muted-foreground mt-auto">
-             <span>CERTIFIED FOR OPERATIONS</span>
-             <span className="flex-grow border-b border-foreground/20"></span>
-             <span>[ TESTED ]</span>
-        </div>
-        
-        <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-foreground/60">
-            <span>{service.type}</span>
-            <span>/</span>
-            <span>UNITED STATES</span>
-        </div>
-      </div>
+    <div className="group relative flex flex-col min-h-[450px] p-6 md:p-8 bg-background border-b-2 md:border-b-0 md:border-r-2 border-foreground last:border-r-0">
       
-      {/* Bottom Bar Controls */}
-      <div className="flex mt-8 gap-0 border-2 border-foreground h-12">
-         {/* X Box */}
-         <div className="aspect-square bg-foreground text-[#E3E7DE] flex items-center justify-center border-r-2 border-foreground">
-             <div className="relative w-4 h-4">
-                 <div className="absolute inset-0 border border-[#E3E7DE] rotate-45 scale-75"></div>
-                 <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-[#E3E7DE] -rotate-45"></div>
-                 <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-[#E3E7DE] rotate-45"></div>
-             </div>
-         </div>
-         
-         <div className="flex-grow bg-foreground text-[#E3E7DE] flex items-center justify-center px-4 font-mono text-xs font-bold uppercase tracking-wider">
-             {service.tags[0]}
-         </div>
-         
-         <div className="bg-[#E3E7DE] text-foreground flex items-center justify-center px-4 font-mono text-xs font-bold uppercase tracking-wider border-l-2 border-foreground">
-             MISSION-GRADE
-         </div>
+      {/* Top Row */}
+      <div className="flex items-start justify-between mb-6">
+        <div className="flex items-center gap-3">
+          <div className="bg-foreground text-background px-2 py-1 font-mono text-[10px] font-bold">
+            FIG.0{index + 1}
+          </div>
+          <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/60">
+            {service.type}
+          </div>
+        </div>
+        <div className="border border-foreground px-2 py-0.5 font-mono text-[10px] uppercase">
+          {service.status}
+        </div>
+      </div>
+
+      {/* Title Block */}
+      <div className="bg-foreground text-background p-4 mb-6">
+        <div className="text-2xl sm:text-3xl md:text-4xl font-display font-black tracking-tight uppercase leading-[0.9]">
+          {service.title}
+        </div>
+        <div className="font-serif text-sm italic mt-2 text-background/70">
+          {service.subtitle}
+        </div>
+      </div>
+
+      {/* Description */}
+      <div className="flex-grow">
+        <p className="font-mono text-sm leading-relaxed text-foreground/80 mb-6">
+          {service.description}
+        </p>
+        
+        {/* Certification Line */}
+        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-foreground/50 mb-4">
+          <span>CERTIFIED FOR OPERATIONS</span>
+          <div className="flex-grow border-t border-foreground/20"></div>
+          <span>[ TESTED ]</span>
+        </div>
+      </div>
+
+      {/* Bottom Tags */}
+      <div className="flex flex-wrap gap-2 mt-auto">
+        <div className="flex items-center justify-center w-8 h-8 bg-foreground text-background">
+          <span className="text-xs">✕</span>
+        </div>
+        {service.tags.map((tag, i) => (
+          <div key={i} className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+            {tag}
+          </div>
+        ))}
+        <div className="bg-foreground text-background px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+          MISSION-GRADE
+        </div>
+      </div>
+
+      {/* Corner Registration Mark */}
+      <div className="absolute bottom-3 right-3 font-mono text-[8px] text-foreground/30 uppercase">
+        MTK-SVC-0{index + 1}
       </div>
     </div>
   );
@@ -92,24 +96,56 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
 
 export function Services() {
   return (
-    <section className="bg-background text-foreground py-24 px-4 md:px-0 relative overflow-hidden border-b-2 border-foreground">
+    <section className="bg-background text-foreground py-16 md:py-24 relative overflow-hidden border-b-2 border-foreground">
       
-      <div className="container mx-auto px-6 md:px-12 mb-16 relative">
-          <div className="flex items-center gap-4 mb-4">
-             <div className="h-[2px] w-8 bg-foreground"></div>
-             <span className="font-mono font-bold text-sm tracking-widest text-foreground uppercase">CAPABILITIES</span>
-             <div className="h-[1px] flex-grow bg-foreground/30"></div>
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mb-12">
+        <div className="flex flex-wrap items-end justify-between gap-6 mb-6">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="grid grid-cols-2 gap-[2px]">
+                {[...Array(4)].map((_, i) => (
+                  <div key={i} className="w-2 h-2 bg-foreground"></div>
+                ))}
+              </div>
+              <span className="font-mono text-xs uppercase tracking-widest text-foreground/60">CAPABILITIES</span>
+              <div className="bg-foreground text-background px-2 py-0.5 font-mono text-[10px] font-bold">
+                SECTION 02
+              </div>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase">
+              Core Systems
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-8xl font-display font-black tracking-tighter text-foreground uppercase mb-4">
-             Core Systems
-          </h2>
+          
+          <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/50 text-right">
+            <div>OPERATIONAL STATUS: ACTIVE</div>
+            <div>LAST UPDATED: 2026</div>
+          </div>
+        </div>
+        
+        {/* Divider */}
+        <div className="flex items-center gap-2">
+          <div className="h-1 w-16 bg-foreground"></div>
+          <div className="flex-grow border-t-2 border-foreground"></div>
+          <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/50">&gt;&gt;&gt;</div>
+        </div>
       </div>
 
-      <div className="w-full border-t-2 border-foreground">
-        <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 bg-background md:bg-foreground">
-            {services.map((service, index) => (
+      {/* Services Grid */}
+      <div className="border-t-2 border-foreground">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-0">
+          {services.map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
-            ))}
+          ))}
+        </div>
+      </div>
+      
+      {/* Bottom Bar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mt-8">
+        <div className="flex flex-wrap items-center justify-between gap-4 text-[10px] font-mono uppercase tracking-widest text-foreground/40">
+          <span>MORE OUTPUT • MORE RESILIENCE • MORE VISIBILITY</span>
+          <span>ZERO DOWNTIME OPERATIONS</span>
         </div>
       </div>
     </section>
