@@ -179,18 +179,29 @@ export function BrandManifesto() {
 
           {/* CTA */}
           <div className="text-center">
-            <div className="inline-block border-2 border-foreground p-8">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-foreground/60 mb-4">THE REQUIREMENT</p>
-              <p className="text-2xl md:text-4xl font-display font-black uppercase tracking-tight mb-6">
-                Our work requires <span className="bg-foreground text-background px-2">ambition</span>.
+            <div className="inline-block border-2 border-foreground p-8 md:p-12 max-w-2xl">
+              <div className="inline-flex items-center gap-2 border border-foreground/30 px-3 py-1.5 mb-6">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">
+                  2 spots left this quarter
+                </span>
+              </div>
+              <p className="text-2xl md:text-4xl font-display font-black uppercase tracking-tight mb-4">
+                Ready to dominate AI search?
+              </p>
+              <p className="font-mono text-sm text-foreground/60 mb-6">
+                Get a free AI visibility audit and see exactly where you stand against competitors in LLM responses.
               </p>
               <a 
                 href="https://cal.com/memetik/letstalk" 
                 className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
               >
-                LET'S TALK
+                CLAIM YOUR FREE AUDIT
                 <ArrowRight className="w-4 h-4" />
               </a>
+              <p className="font-mono text-xs text-foreground/40 mt-4 uppercase">
+                30-min call • No obligation • Results in 48hrs
+              </p>
             </div>
           </div>
         </div>

@@ -1,11 +1,9 @@
 import { Link } from "wouter";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useTheme } from "@/components/theme-provider";
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -65,26 +63,22 @@ export function Nav() {
               <span className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-background opacity-0 group-hover:opacity-100 transition-opacity"></span>
             </a>
           ))}
-          <div className="h-full flex items-center pl-8 border-l border-primary/10">
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-none hover:bg-primary hover:text-background transition-colors border-2 border-primary"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
-          </div>
+          <a
+            href="https://cal.com/memetik/letstalk"
+            className="h-full flex items-center px-6 text-xs font-mono font-bold tracking-widest bg-foreground text-background hover:opacity-90 transition-opacity border-l border-primary/10"
+          >
+            FREE AUDIT →
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
         <div className="flex items-center gap-4 md:hidden relative z-50">
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-none hover:bg-secondary/10 transition-colors"
-            aria-label="Toggle theme"
+          <a
+            href="https://cal.com/memetik/letstalk"
+            className="px-3 py-2 text-[10px] font-mono font-bold tracking-widest bg-foreground text-background"
           >
-            {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
+            FREE AUDIT
+          </a>
           <button
             className="text-foreground hover:text-primary transition-colors"
             onClick={() => setIsOpen(!isOpen)}

@@ -73,22 +73,23 @@ export default function Home() {
               {/* Right - Info Cards */}
               <div className="space-y-4">
                 <div className="border-2 border-foreground p-6">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/50 mb-3">INTELLIGENCE BRIEF</div>
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/50 mb-3">THE PROBLEM</div>
                   <p className="font-mono text-sm leading-relaxed text-foreground/80">
                     Google traffic is eroding. LLMs decide winners before a user ever clicks a link. If your brand isn't in the model's answer layer—you don't exist.
                   </p>
                 </div>
                 
                 <div className="border-2 border-foreground p-6 bg-foreground text-background">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-background/50 mb-3">OUR MISSION</div>
-                  <p className="font-mono text-sm font-bold leading-relaxed">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-background/50 mb-3">THE SOLUTION</div>
+                  <p className="font-mono text-sm font-bold leading-relaxed mb-4">
                     We build Answer Engine Optimization (AEO) systems that force LLMs to cite you.
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <div className="border border-background/40 px-2 py-1 text-[10px] font-mono uppercase">CERTIFIED</div>
-                    <div className="border border-background/40 px-2 py-1 text-[10px] font-mono uppercase">TESTED</div>
-                    <div className="border border-background/40 px-2 py-1 text-[10px] font-mono uppercase">DEPLOYED</div>
-                  </div>
+                  <a 
+                    href="https://cal.com/memetik/letstalk" 
+                    className="inline-flex items-center gap-2 text-background font-mono text-sm font-bold uppercase tracking-wider hover:opacity-80 transition-opacity"
+                  >
+                    See how it works →
+                  </a>
                 </div>
               </div>
             </div>
@@ -103,58 +104,54 @@ export default function Home() {
         <footer className="bg-foreground text-background py-16 md:py-24 px-4 sm:px-6 md:px-12 relative overflow-hidden">
           <div className="max-w-7xl mx-auto">
             
-            {/* Chevron bar */}
-            <div className="font-mono text-xs tracking-tighter text-background/30 mb-8 overflow-hidden">
-              &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+            {/* Final CTA Section */}
+            <div className="text-center mb-16 pb-16 border-b border-background/20">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-4 text-background">
+                Stop losing deals to AI.
+              </h2>
+              <p className="font-mono text-sm sm:text-base text-background/60 mb-8 max-w-xl mx-auto">
+                Every day you wait, competitors are training LLMs to recommend them instead of you.
+              </p>
+              <a 
+                href="https://cal.com/memetik/letstalk" 
+                className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+              >
+                GET YOUR FREE AI VISIBILITY AUDIT
+                <span>→</span>
+              </a>
+              <p className="font-mono text-xs text-background/40 mt-4 uppercase">
+                See exactly where you rank vs competitors • 30-min call
+              </p>
             </div>
             
-            {/* Main Title */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight uppercase mb-2 text-background">
-              MEMETIK
-            </h2>
-            <p className="font-serif text-lg sm:text-xl md:text-2xl text-background/60 mb-6">
-              We engineer visibility across LLMs, search engines, and agents.
-            </p>
-            
-            {/* Certification + Location */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider text-background/80 mb-2">
-              <span>SYSTEMS OPERATIONAL</span>
-              <span className="border border-background/40 px-2 py-0.5">[ ACTIVE ]</span>
-            </div>
-            <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider text-background/50 mb-8">
-              <span>NEW YORK</span>
-              <span>/</span>
-              <span>SAN FRANCISCO</span>
-              <span>/</span>
-              <span>GLOBAL</span>
-            </div>
-            
-            {/* Tag bar */}
-            <div className="flex flex-wrap items-center gap-2 mb-16">
-              <div className="border-2 border-background/60 px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
-                LLM SEO
+            {/* Footer Info */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-display font-black tracking-tight uppercase mb-2 text-background">
+                  MEMETIK
+                </h3>
+                <p className="font-mono text-sm text-background/60 mb-4">
+                  Answer Engine Optimization for ambitious brands.
+                </p>
+                <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider text-background/50">
+                  <span>NEW YORK</span>
+                  <span>/</span>
+                  <span>SAN FRANCISCO</span>
+                  <span>/</span>
+                  <span>GLOBAL</span>
+                </div>
               </div>
-              <div className="border-2 border-background/60 px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
-                AEO
-              </div>
-              <div className="border-2 border-background/60 px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
-                AI AGENTS
-              </div>
-            </div>
-            
-            {/* Bottom Bar */}
-            <div className="border-t border-background/20 pt-8">
-              <div className="flex flex-wrap items-center justify-between gap-4">
+              
+              <div className="md:text-right">
+                <div className="inline-flex items-center gap-2 mb-4">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  <span className="font-mono text-xs uppercase tracking-wider text-background/70">
+                    Currently accepting new clients
+                  </span>
+                </div>
                 <div className="font-mono text-[10px] uppercase tracking-widest text-background/40">
                   © 2026 MEMETIK // ALL RIGHTS RESERVED
                 </div>
-                <a 
-                  href="https://cal.com/memetik/letstalk" 
-                  className="inline-flex items-center gap-3 bg-background text-foreground px-6 py-3 font-mono font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
-                >
-                  LET'S TALK
-                  <span>→</span>
-                </a>
               </div>
             </div>
           </div>

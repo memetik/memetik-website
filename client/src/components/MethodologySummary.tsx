@@ -140,14 +140,20 @@ export function MethodologySummary() {
         ))}
       </div>
       
-      <div className="mt-24 flex justify-center">
+      <div className="mt-24 text-center">
+        <p className="font-mono text-sm text-foreground/60 mb-6 uppercase tracking-wider">
+          Ready to see what this looks like for your brand?
+        </p>
         <a href="https://cal.com/memetik/letstalk" className="group relative px-10 py-5 bg-foreground text-[#E3E7DE] font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-foreground hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-flex items-center gap-4 uppercase tracking-widest">
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
             <div className="relative flex items-center gap-4">
-              <span>LET'S TALK</span>
+              <span>GET YOUR FREE AI AUDIT</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
         </a>
+        <p className="font-mono text-xs text-foreground/40 mt-4 uppercase">
+          We'll show you exactly where you rank in AI responses
+        </p>
       </div>
     </section>
   );
