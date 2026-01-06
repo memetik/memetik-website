@@ -69,12 +69,11 @@ export default function Home() {
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
                         <div className="col-span-1 md:col-span-2 space-y-8">
-                            <h2 className="text-6xl md:text-9xl font-display font-black tracking-tighter leading-[0.8] text-[#E3E7DE] uppercase">
+                            <h2 className="text-4xl md:text-9xl font-display font-black tracking-tighter leading-[0.8] text-[#E3E7DE] uppercase">
                               MEMETIK
                             </h2>
-                            <p className="font-serif text-xl md:text-2xl text-[#E3E7DE]/80 max-w-md border-l-2 border-[#E3E7DE]/30 pl-6 py-2 leading-tight">
-                              Algorithmic Market Capture. <br/>
-                              We make you the default answer in ChatGPT, Claude, & Perplexity.
+                            <p className="font-serif text-lg md:text-2xl text-[#E3E7DE]/80 max-w-md border-l-2 border-[#E3E7DE]/30 pl-6 py-2 leading-tight">
+                              We engineer visibility across LLMs, search engines, and agents.
                             </p>
                         </div>
                         <div className="col-span-1 flex flex-col gap-6 font-mono text-sm text-[#E3E7DE]/60 pt-4">

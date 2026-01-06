@@ -50,7 +50,7 @@ function ServiceCard({ service, index }: { service: typeof services[0], index: n
       </div>
 
       <div className="flex-grow flex flex-col gap-6 relative z-10">
-        <h4 className="font-serif text-3xl md:text-4xl text-foreground leading-tight tracking-tight">
+        <h4 className="font-serif text-lg md:text-3xl text-foreground leading-tight tracking-tight">
              {service.description}
         </h4>
         
