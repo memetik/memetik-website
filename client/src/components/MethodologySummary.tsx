@@ -78,7 +78,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
   return (
     <div
       ref={ref}
-      className="group relative flex flex-col justify-between min-h-[500px] p-8 md:p-12 bg-background border-2 border-foreground hover:bg-[#E3E7DE] transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col justify-between min-h-[500px] p-8 md:p-12 bg-background border-2 border-foreground hover:bg-muted transition-all duration-300 overflow-hidden"
     >
       {/* Heavy Black Bar Top */}
       <div className="absolute top-0 left-0 right-0 h-4 bg-foreground"></div>
@@ -86,7 +86,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
       {/* Top Section */}
       <div className="relative z-10 flex flex-col h-full mt-6">
         <div className="flex justify-between items-start mb-8">
-          <span className="bg-foreground text-[#E3E7DE] px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest">
+          <span className="bg-foreground text-background px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest">
             {phase.subtitle}
           </span>
           <div className="font-mono text-xs font-bold text-foreground/40">
@@ -159,7 +159,7 @@ export function MethodologySummary() {
         <p className="font-mono text-sm text-foreground/60 mb-6 uppercase tracking-wider">
           Ready to see what this looks like for your brand?
         </p>
-        <a href="https://cal.com/memetik/letstalk" className="group relative px-10 py-5 bg-foreground text-[#E3E7DE] font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-foreground hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-flex items-center gap-4 uppercase tracking-widest">
+        <a href="https://cal.com/memetik/letstalk" className="group relative px-10 py-5 bg-foreground text-background font-mono font-bold text-sm overflow-hidden rounded-none border-2 border-foreground hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100 inline-flex items-center gap-4 uppercase tracking-widest">
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
             <div className="relative flex items-center gap-4">
               <span>GET YOUR FREE AI AUDIT</span>
