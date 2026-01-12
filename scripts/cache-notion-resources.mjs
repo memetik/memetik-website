@@ -58,21 +58,28 @@ function transformPage(page) {
 async function main() {
   console.log("🚀 Starting Notion resources cache...");
 
+  // Ensure cache directories exist first
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  fs.mkdirSync(CONTENT_CACHE_DIR, { recursive: true });
+
   if (!NOTION_TOKEN) {
     console.log("⚠️  NOTION_TOKEN not set, skipping cache generation");
-    // Create empty cache files so build doesn't fail
-    fs.mkdirSync(CACHE_DIR, { recursive: true });
-    fs.mkdirSync(CONTENT_CACHE_DIR, { recursive: true });
     fs.writeFileSync(ARTICLES_CACHE, "[]");
     console.log("✅ Created empty cache files");
     return;
   }
 
-  const notion = new Client({ auth: NOTION_TOKEN });
-
-  // Ensure cache directories exist
-  fs.mkdirSync(CACHE_DIR, { recursive: true });
-  fs.mkdirSync(CONTENT_CACHE_DIR, { recursive: true });
+  console.log("🔑 NOTION_TOKEN found, initializing client...");
+  
+  let notion;
+  try {
+    notion = new Client({ auth: NOTION_TOKEN });
+    console.log("✅ Notion client initialized");
+  } catch (err) {
+    console.error("❌ Failed to initialize Notion client:", err.message);
+    fs.writeFileSync(ARTICLES_CACHE, "[]");
+    return;
+  }
 
   // Fetch all published articles
   console.log("📚 Fetching published articles from Notion...");
