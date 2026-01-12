@@ -7,7 +7,7 @@ import path from "path";
 const NOTION_TOKEN = process.env.NOTION_TOKEN;
 const DATABASE_ID = process.env.NOTION_BLOG_DATABASE_ID || "2e59dd7e86c28122af7bf230399a326e";
 
-const CACHE_DIR = "public/cache";
+const CACHE_DIR = "client/public/cache";
 const ARTICLES_CACHE = `${CACHE_DIR}/resources-articles.json`;
 const CONTENT_CACHE_DIR = `${CACHE_DIR}/resources-content`;
 

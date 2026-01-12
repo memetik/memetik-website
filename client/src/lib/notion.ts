@@ -22,7 +22,7 @@ export interface ResourceArticle {
   status: string;
 }
 
-// Cache file paths
-export const CACHE_DIR = "public/cache";
-export const ARTICLES_CACHE = `${CACHE_DIR}/resources-articles.json`;
-export const CONTENT_CACHE_DIR = `${CACHE_DIR}/resources-content`;
+// Cache file paths (relative to client/public for Vite)
+export const CACHE_DIR = "cache";
+export const ARTICLES_CACHE = `/cache/resources-articles.json`;
+export const CONTENT_CACHE_DIR = `/cache/resources-content`;
