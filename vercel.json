@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node scripts/cache-notion-resources.mjs && npm run build:client",
+  "buildCommand": "node scripts/cache-notion-resources.cjs && npm run build:client",
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
   "framework": "vite"
