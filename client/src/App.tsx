@@ -9,6 +9,7 @@ import Strategy from "@/pages/Strategy";
 import BTSOffer from "@/pages/BTSOffer";
 import Resources from "@/pages/Resources";
 import ResourcePost from "@/pages/ResourcePost";
+import Audit from "@/pages/Audit";
 import { ThemeProvider } from "@/components/theme-provider";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/bts" component={BTSOffer} />
       <Route path="/resources" component={Resources} />
       <Route path="/resources/:slug" component={ResourcePost} />
+      <Route path="/audit" component={Audit} />
       <Route component={NotFound} />
     </Switch>
   );

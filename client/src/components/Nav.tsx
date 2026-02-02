@@ -96,12 +96,12 @@ export function Nav() {
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
-          <a
-            href="https://cal.com/memetik/letstalk"
+          <Link
+            href="/audit"
             className="h-full flex items-center px-6 text-xs font-mono font-bold tracking-widest bg-foreground text-background hover:opacity-90 transition-opacity border-l border-primary/10"
           >
             FREE AUDIT →
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -113,12 +113,12 @@ export function Nav() {
           >
             {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
-          <a
-            href="https://cal.com/memetik/letstalk"
+          <Link
+            href="/audit"
             className="px-3 py-2 text-[10px] font-mono font-bold tracking-widest bg-foreground text-background"
           >
             FREE AUDIT
-          </a>
+          </Link>
           <button
             className="text-foreground hover:text-primary transition-colors"
             onClick={() => setIsOpen(!isOpen)}
