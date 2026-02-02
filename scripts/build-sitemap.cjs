@@ -13,6 +13,20 @@ const STATIC_PAGES = [
   { loc: "/strategy", priority: "0.8", changefreq: "monthly" },
   { loc: "/resources", priority: "0.8", changefreq: "daily" },
   { loc: "/bts", priority: "0.6", changefreq: "monthly" },
+  // ICP segment pages
+  { loc: "/for/saas-founders", priority: "0.8", changefreq: "monthly" },
+  { loc: "/for/ecommerce-brands", priority: "0.8", changefreq: "monthly" },
+  { loc: "/for/b2b-services", priority: "0.8", changefreq: "monthly" },
+  { loc: "/for/marketing-leaders", priority: "0.8", changefreq: "monthly" },
+  // Comparison pages
+  { loc: "/vs/manual-seo", priority: "0.7", changefreq: "monthly" },
+  { loc: "/vs/traditional-seo-agencies", priority: "0.7", changefreq: "monthly" },
+  { loc: "/vs/content-marketing-agencies", priority: "0.7", changefreq: "monthly" },
+  // Solution pages
+  { loc: "/solutions/chatgpt-visibility", priority: "0.8", changefreq: "monthly" },
+  { loc: "/solutions/perplexity-citations", priority: "0.8", changefreq: "monthly" },
+  { loc: "/solutions/ai-overview-ranking", priority: "0.8", changefreq: "monthly" },
+  { loc: "/solutions/competitor-displacement", priority: "0.8", changefreq: "monthly" },
 ];
 
 function main() {

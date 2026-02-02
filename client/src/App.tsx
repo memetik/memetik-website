@@ -10,6 +10,9 @@ import BTSOffer from "@/pages/BTSOffer";
 import Resources from "@/pages/Resources";
 import ResourcePost from "@/pages/ResourcePost";
 import Audit from "@/pages/Audit";
+import Segment from "@/pages/Segment";
+import Comparison from "@/pages/Comparison";
+import Solution from "@/pages/Solution";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -22,6 +25,9 @@ function Router() {
       <Route path="/resources" component={Resources} />
       <Route path="/resources/:slug" component={ResourcePost} />
       <Route path="/audit" component={Audit} />
+      <Route path="/for/:segment" component={Segment} />
+      <Route path="/vs/:comparison" component={Comparison} />
+      <Route path="/solutions/:solution" component={Solution} />
       <Route component={NotFound} />
     </Switch>
   );

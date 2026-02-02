@@ -38,6 +38,26 @@ Key topics: Answer Engine Optimization (AEO), AI search visibility and citations
 - [Strategy Protocol](${DOMAIN}/strategy): The 90-day protocol to become the default AI recommendation in your category
 - [Resources](${DOMAIN}/resources): ${articles.length} articles on AEO, AI search optimization, and AI visibility
 
+## For Specific Industries
+
+- [AEO for SaaS Founders](${DOMAIN}/for/saas-founders): AI search optimization for Series A-C SaaS companies
+- [AEO for E-commerce Brands](${DOMAIN}/for/ecommerce-brands): Get products recommended by AI when shoppers ask for the best in your category
+- [AEO for B2B Services](${DOMAIN}/for/b2b-services): Be the firm AI recommends when buyers ask for vendor recommendations
+- [AEO for Marketing Leaders](${DOMAIN}/for/marketing-leaders): Measurable AI visibility metrics and executive-ready reporting for CMOs and VPs
+
+## Solutions
+
+- [ChatGPT Visibility](${DOMAIN}/solutions/chatgpt-visibility): Get recommended by ChatGPT when buyers search your category
+- [Perplexity Citations](${DOMAIN}/solutions/perplexity-citations): Get cited by Perplexity AI with direct links to your site
+- [Google AI Overview Ranking](${DOMAIN}/solutions/ai-overview-ranking): Get featured in AI-generated answers at the top of Google
+- [Competitor Displacement](${DOMAIN}/solutions/competitor-displacement): Systematically replace competitors as the default AI recommendation
+
+## Comparisons
+
+- [Memetik vs DIY AEO](${DOMAIN}/vs/manual-seo): Why in-house AEO fails and when to hire an agency
+- [Memetik vs SEO Agencies](${DOMAIN}/vs/traditional-seo-agencies): Why traditional SEO agencies can't do AEO
+- [Memetik vs Content Agencies](${DOMAIN}/vs/content-marketing-agencies): Why content alone doesn't get you cited by AI
+
 `;
 
   for (const [type, typeArticles] of Object.entries(byType).sort()) {
