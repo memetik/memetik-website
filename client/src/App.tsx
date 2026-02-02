@@ -11,6 +11,7 @@ import Resources from "@/pages/Resources";
 import ResourcePost from "@/pages/ResourcePost";
 import Audit from "@/pages/Audit";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/react";
 
 function Router() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <div className="noise-overlay" />
           <Toaster />
           <Router />
+          <Analytics />
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>

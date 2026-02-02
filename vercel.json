@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node scripts/build-articles.cjs && npm run build:client",
+  "buildCommand": "node scripts/build-articles.cjs && node scripts/build-sitemap.cjs && npm run build:client",
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
   "framework": "vite",

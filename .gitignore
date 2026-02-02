@@ -7,6 +7,7 @@ vite.config.ts.*
 .vercel
 public/cache
 client/public/cache
+client/public/sitemap.xml
 .env
 .local/
 .replit
