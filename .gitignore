@@ -9,7 +9,6 @@ public/cache
 client/public/cache
 client/public/sitemap.xml
 client/public/llms.txt
-client/public/llms-full.txt
 .env
 .local/
 .replit
