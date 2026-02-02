@@ -20,16 +20,33 @@ export default function Audit() {
   const [domain, setDomain] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "Free AEO Audit | MEMETIK";
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const AUDIT_API = "https://wonderful-rebirth-production-7f52.up.railway.app";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Wire to API / n8n webhook / Notion
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch(`${AUDIT_API}/audit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ domain, email }),
+      });
+      if (!res.ok) throw new Error("Failed to start audit");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -147,11 +164,18 @@ export default function Audit() {
 
                     <button
                       type="submit"
-                      className="w-full flex items-center justify-center gap-3 bg-foreground text-background px-6 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+                      disabled={submitting}
+                      className="w-full flex items-center justify-center gap-3 bg-foreground text-background px-6 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity disabled:opacity-60"
                     >
-                      Run My Free Audit
-                      <ArrowRight className="w-4 h-4" />
+                      {submitting ? "Running Audit..." : "Run My Free Audit"}
+                      {!submitting && <ArrowRight className="w-4 h-4" />}
                     </button>
+
+                    {error && (
+                      <p className="font-mono text-xs text-red-500 text-center">
+                        {error}
+                      </p>
+                    )}
 
                     <p className="font-mono text-[10px] text-foreground/40 text-center">
                       No credit card. No sales call required. Just data.
