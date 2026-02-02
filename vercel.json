@@ -2,5 +2,8 @@
   "buildCommand": "node scripts/cache-notion-resources.cjs && npm run build:client",
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
-  "framework": "vite"
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
