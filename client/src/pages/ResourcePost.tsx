@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "wouter";
 import { Nav } from "@/components/Nav";
-import { NotionRenderer, type NotionBlock } from "@/components/NotionRenderer";
 import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
 import type { ResourceArticle } from "@/lib/notion";
 
 interface ArticleWithContent extends ResourceArticle {
-  blocks: NotionBlock[];
+  html: string;
 }
 
 export default function ResourcePost() {
@@ -29,11 +28,11 @@ export default function ResourcePost() {
           return;
         }
 
-        // Fetch article content
-        fetch(`/cache/resources-content/${found.id}.json`)
-          .then((res) => res.json())
-          .then((blocks: NotionBlock[]) => {
-            setArticle({ ...found, blocks });
+        // Fetch article content (HTML from markdown)
+        fetch(`/cache/resources-content/${found.id}.html`)
+          .then((res) => res.text())
+          .then((html: string) => {
+            setArticle({ ...found, html });
             document.title = `${found.metaTitle || found.title} | MEMETIK`;
             
             // Update meta description
@@ -173,7 +172,10 @@ export default function ResourcePost() {
       {/* Article Content */}
       <article className="py-12 px-4 sm:px-6 md:px-12">
         <div className="max-w-3xl mx-auto">
-          <NotionRenderer blocks={article.blocks} />
+          <div
+            className="article-content"
+            dangerouslySetInnerHTML={{ __html: article.html }}
+          />
 
           {/* Sources */}
           {article.sources && (

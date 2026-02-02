@@ -6,6 +6,7 @@ vite.config.ts.*
 *.tar.gz
 .vercel
 public/cache
+client/public/cache
 .env
 .local/
 .replit
