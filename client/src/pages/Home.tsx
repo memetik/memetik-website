@@ -128,36 +128,48 @@ export default function Home() {
             </div>
             
             {/* Footer Links */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
               <div>
-                <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Company</h4>
+                <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">For You</h4>
                 <ul className="space-y-2">
-                  <li><a href="#" className="font-mono text-sm text-background/70 hover:text-background transition-colors">About</a></li>
-                  <li><a href="#" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Careers</a></li>
-                  <li><a href="#" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Contact</a></li>
+                  <li><a href="/for/saas-founders" className="font-mono text-sm text-background/70 hover:text-background transition-colors">SaaS Founders</a></li>
+                  <li><a href="/for/marketing-leaders" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Marketing Leaders</a></li>
+                  <li><a href="/for/ecommerce-brands" className="font-mono text-sm text-background/70 hover:text-background transition-colors">E-commerce</a></li>
+                  <li><a href="/for/b2b-services" className="font-mono text-sm text-background/70 hover:text-background transition-colors">B2B Services</a></li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Services</h4>
+                <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Solutions</h4>
                 <ul className="space-y-2">
-                  <li><a href="#methodology" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Process</a></li>
-                  <li><a href="#faq" className="font-mono text-sm text-background/70 hover:text-background transition-colors">FAQ</a></li>
-                  <li><a href="#" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Case Studies</a></li>
+                  <li><a href="/solutions/chatgpt-visibility" className="font-mono text-sm text-background/70 hover:text-background transition-colors">ChatGPT Visibility</a></li>
+                  <li><a href="/solutions/perplexity-citations" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Perplexity Citations</a></li>
+                  <li><a href="/solutions/ai-overview-ranking" className="font-mono text-sm text-background/70 hover:text-background transition-colors">AI Overview Ranking</a></li>
+                  <li><a href="/solutions/competitor-displacement" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Competitor Displacement</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Compare</h4>
+                <ul className="space-y-2">
+                  <li><a href="/vs/traditional-seo-agencies" className="font-mono text-sm text-background/70 hover:text-background transition-colors">vs SEO Agencies</a></li>
+                  <li><a href="/vs/content-marketing-agencies" className="font-mono text-sm text-background/70 hover:text-background transition-colors">vs Content Agencies</a></li>
+                  <li><a href="/vs/manual-seo" className="font-mono text-sm text-background/70 hover:text-background transition-colors">vs DIY/Manual</a></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Resources</h4>
                 <ul className="space-y-2">
-                  <li><a href="#" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Blog</a></li>
-                  <li><a href="#" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Research</a></li>
-                  <li><a href="#" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Newsletter</a></li>
+                  <li><a href="/resources" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Articles</a></li>
+                  <li><a href="/audit" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Free Audit</a></li>
+                  <li><a href="#methodology" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Process</a></li>
+                  <li><a href="#faq" className="font-mono text-sm text-background/70 hover:text-background transition-colors">FAQ</a></li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Legal</h4>
+                <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Company</h4>
                 <ul className="space-y-2">
-                  <li><a href="#" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Privacy Policy</a></li>
-                  <li><a href="#" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Terms of Service</a></li>
+                  <li><a href="/strategy" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Strategy</a></li>
+                  <li><a href="/bts" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Behind the Scenes</a></li>
+                  <li><a href="https://cal.com/memetik/letstalk" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Contact</a></li>
                 </ul>
               </div>
             </div>
