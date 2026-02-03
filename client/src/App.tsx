@@ -10,6 +10,7 @@ import BTSOffer from "@/pages/BTSOffer";
 import Resources from "@/pages/Resources";
 import ResourcePost from "@/pages/ResourcePost";
 import Audit from "@/pages/Audit";
+import AuditReport from "@/pages/AuditReport";
 import Segment from "@/pages/Segment";
 import Comparison from "@/pages/Comparison";
 import Solution from "@/pages/Solution";
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/resources" component={Resources} />
       <Route path="/resources/:slug" component={ResourcePost} />
       <Route path="/audit" component={Audit} />
+      <Route path="/audit/:slug" component={AuditReport} />
       <Route path="/for/:segment" component={Segment} />
       <Route path="/vs/:comparison" component={Comparison} />
       <Route path="/solutions/:solution" component={Solution} />
