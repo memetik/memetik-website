@@ -248,13 +248,13 @@ export default function AuditReport() {
           </p>
 
           <div className="flex items-center justify-center gap-4 no-print">
-            <button
-              onClick={() => window.print()}
+            <a
+              href={`${AUDIT_API}/audit/by-slug/${slug}/pdf`}
               className="inline-flex items-center gap-2 border border-white/20 px-4 py-2 font-mono text-sm text-white/70 hover:bg-white/5 transition-colors"
             >
               <Download className="w-4 h-4" />
               Download PDF
-            </button>
+            </a>
             <a
               href="https://cal.com/memetik/letstalk"
               className="inline-flex items-center gap-2 bg-white text-black px-6 py-2 font-mono font-bold text-sm uppercase"
