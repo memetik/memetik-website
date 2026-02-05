@@ -474,30 +474,57 @@ export default function StrategyUleads() {
         {/* What to Expect */}
         <section className="mb-24 md:mb-32">
           <SectionHeader number="04" title="WHAT TO EXPECT" />
-          <div className="overflow-x-auto border border-border rounded-lg">
-            <table className="w-full text-left text-sm min-w-[500px]">
+          <div className="overflow-x-auto border border-border rounded-lg mb-8">
+            <table className="w-full text-left text-sm min-w-[700px]">
               <thead className="bg-secondary/20 text-foreground">
                 <tr>
                   <th className="p-4 md:p-6 font-bold">Timeline</th>
-                  <th className="p-4 md:p-6 font-bold">Milestone</th>
+                  <th className="p-4 md:p-6 font-bold">What We're Doing</th>
+                  <th className="p-4 md:p-6 font-bold">What You'll See</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/20 bg-secondary/5">
                 {[
-                  { time: "Month 1-2", milestone: "Technical foundation live. Content publishing begins. Sites start getting indexed." },
-                  { time: "Month 3-4", milestone: "Long-tail keywords entering rankings. First organic traffic. AI audit showing gaps and opportunities." },
-                  { time: "Month 5-6", milestone: "Dozens of pages ranking. Organic leads starting to come through forms." },
-                  { time: "Month 7-9", milestone: "Content compounding. Organic becoming a consistent lead source alongside paid." },
-                  { time: "Month 10-12", milestone: "Hundreds of indexed pages. Organic lead volume growing month over month. AI citations beginning to appear." },
+                  {
+                    time: "Month 1",
+                    doing: "Technical foundation across all 3 sites. Competitor reverse-engineering. Full keyword maps and content architecture. Baseline AEO audit.",
+                    seeing: "Sites indexed in Google. Content calendars for 1,475+ pages delivered. Clear blueprint for every page we're building.",
+                  },
+                  {
+                    time: "Month 2-3",
+                    doing: "First 100+ pages published across all 3 sites. Programmatic templates deployed. Link building and PR campaigns launched. Reddit/Quora seeding begins.",
+                    seeing: "Pages appearing in Google index. Long-tail rankings starting to show. First organic impressions in Search Console.",
+                  },
+                  {
+                    time: "Month 4-6",
+                    doing: "300+ pages live. Comparison and BOFU content scaling. Authority signals compounding. AEO entity building in progress.",
+                    seeing: "Rankings climbing across all 3 verticals. First organic leads hitting forms. AI platforms starting to reference your content.",
+                  },
+                  {
+                    time: "Month 7-9",
+                    doing: "600+ pages live. Programmatic content at scale. Second wave of link building. PR placements generating brand signals.",
+                    seeing: "Organic becoming a consistent lead channel alongside paid. Hundreds of ranking keywords per site. Monthly lead volume growing.",
+                  },
+                  {
+                    time: "Month 10-12",
+                    doing: "1,000+ pages live. Full content coverage approaching. AEO citations tracked and optimised.",
+                    seeing: "Organic traffic compounding month over month. Multiple AI platforms citing your brands. Lead cost from organic approaching zero marginal cost.",
+                  },
                 ].map((row, i) => (
                   <tr key={i}>
-                    <td className="p-4 md:p-6 text-primary font-bold whitespace-nowrap">{row.time}</td>
-                    <td className="p-4 md:p-6 text-muted-foreground">{row.milestone}</td>
+                    <td className="p-4 md:p-6 text-primary font-bold whitespace-nowrap align-top">{row.time}</td>
+                    <td className="p-4 md:p-6 text-muted-foreground align-top">{row.doing}</td>
+                    <td className="p-4 md:p-6 text-foreground align-top">{row.seeing}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+          <HighlightBox>
+            <p className="text-sm md:text-base text-muted-foreground italic">
+              Paid ads stop the moment you stop paying. Content compounds. By month 12, every page we've built is working for you — <span className="text-primary font-bold not-italic">permanently.</span>
+            </p>
+          </HighlightBox>
         </section>
 
         {/* Next Steps + CTA */}
