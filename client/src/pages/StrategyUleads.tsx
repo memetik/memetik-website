@@ -253,49 +253,133 @@ export default function StrategyUleads() {
 
             {/* Phase 2 */}
             <PhaseBlock number="02" icon={<Database className="w-4 h-4" />} label="Phase 2 — Month 2 Onwards" title="Content Engine">
-              <p className="text-muted-foreground mb-8 max-w-2xl">15-20 pieces per site per month. Every article targets a real search query. Every article funnels to the lead capture form.</p>
+              <HighlightBox className="mb-8">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  We don't do selective content. We build <strong className="text-foreground">every single page</strong> that could rank and convert — every comparison, every review, every segment page, every BOFU query, every programmatic variation. If there's a search query with intent, we build a page for it. The goal is total coverage across all three verticals.
+                </p>
+              </HighlightBox>
 
-              <div className="space-y-6 mb-8">
-                {[
-                  {
-                    site: "boostursuper.com",
-                    items: [
-                      '"Is [Fund Name] any good?" reviews for every major super fund',
-                      '"Best super fund for [segment]" — under 30s, over 50s, self-employed, high balance, low fees',
-                      '"How to" guides — consolidate super, switch funds, find lost super, boost super with salary sacrifice',
-                      "Super performance comparison pages (updated quarterly with public data)",
-                      'Calculator content — "how much super should I have at [age]"',
-                      "FAQ content with schema — targets featured snippets and AI extraction",
-                    ],
-                  },
-                  {
-                    site: "righthealthinsurance.com",
-                    items: [
-                      '"Best health insurance for [segment]" — singles, couples, families, young adults, seniors, pregnancy',
-                      "Policy type explainers — hospital vs extras, gold vs silver vs bronze, gap cover explained",
-                      "Insurer reviews — Bupa, Medibank, nib, HCF, ahm, etc.",
-                      '"Is health insurance worth it?" and MLS/LHC penalty explainer content',
-                      'Comparison pages — "[Insurer A] vs [Insurer B]" head-to-head reviews',
-                      "Seasonal content — health insurance premium increase April, tax time reminders",
-                    ],
-                  },
-                  {
-                    site: "rightlifeinsure.com",
-                    items: [
-                      '"Best life insurance for [segment]" — young families, mortgage holders, self-employed, over 50s',
-                      "Policy type explainers — term life vs whole life, TPD, trauma cover, income protection",
-                      "Insurer reviews — TAL, AIA, Zurich, OnePath, MLC, NobleOak",
-                      '"Life insurance through super vs direct" — high-intent comparison content',
-                      'Calculator content — "how much life insurance do I need"',
-                      'Claims process guides and "what does life insurance actually cover" trust content',
-                    ],
-                  },
-                ].map((s, i) => (
-                  <div key={i} className="bg-secondary/5 border border-border p-6">
-                    <h4 className="text-foreground font-bold font-mono text-sm mb-4">{s.site}</h4>
-                    <BulletList items={s.items} />
+              <div className="space-y-8 mb-8">
+                {/* boostursuper.com */}
+                <div className="bg-secondary/5 border border-border p-6">
+                  <h4 className="text-foreground font-bold font-mono text-sm mb-6">boostursuper.com</h4>
+                  <div className="space-y-6">
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Individual Fund Reviews <span className="text-primary">(100+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">A dedicated review page for every super fund in Australia — AustralianSuper, REST, Aware, HESTA, UniSuper, Hostplus, QSuper, CBUS, Media Super, Vision Super, and every other fund. Each page covers fees, performance, insurance, investment options, and a clear CTA.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Fund vs Fund Comparisons <span className="text-primary">(500+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Every meaningful head-to-head: "AustralianSuper vs REST," "Hostplus vs UniSuper," "QSuper vs Aware," etc. Programmatically generated across every fund × fund combination with real comparison data.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Best Super Fund For [Segment] <span className="text-primary">(30+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Under 30s, over 50s, self-employed, high balance, low fees, ethical investing, high growth, conservative, women, apprentices, government employees, teachers, nurses, construction workers, retail workers, etc.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">How-To Guides + Calculators + FAQ <span className="text-primary">(60+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Consolidate super, switch funds, find lost super, salary sacrifice, SMSF guides, super projection calculators, fee comparison calculators, every foundational "what is superannuation" query with schema markup.</p>
+                    </div>
                   </div>
-                ))}
+                </div>
+
+                {/* righthealthinsurance.com */}
+                <div className="bg-secondary/5 border border-border p-6">
+                  <h4 className="text-foreground font-bold font-mono text-sm mb-6">righthealthinsurance.com</h4>
+                  <div className="space-y-6">
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Insurer Reviews <span className="text-primary">(40+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Every major health insurer: Bupa, Medibank, nib, HCF, ahm, GMHBA, Teachers Health, Defence Health, Police Health, Australian Unity, CBHS, GU Health, Latrobe Health, Peoplecare, RT Health, Westfund, etc.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Insurer vs Insurer Comparisons <span className="text-primary">(300+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Every meaningful head-to-head programmatically generated: "Bupa vs Medibank," "nib vs HCF," "ahm vs GMHBA," etc. Each page compares premiums, coverage, waiting periods, and extras.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Best Health Insurance For [Segment] <span className="text-primary">(30+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Singles, couples, families, young adults, seniors, pregnancy, dental, optical, physiotherapy, mental health, singles under 30, families with kids, self-employed, expats, people with pre-existing conditions.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Policy Types + Insurer × Policy Programmatic <span className="text-primary">(220+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Hospital vs extras, gold vs silver vs bronze, gap cover, ambulance cover, pregnancy cover. Plus every insurer × cover type combination: "Bupa gold hospital cover," "nib extras cover," "Medibank pregnancy cover," etc.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Decision & Seasonal Content <span className="text-primary">(20+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">"Is health insurance worth it in 2026," MLS explainer, LHC loading, how to switch, waiting periods, April premium increase roundup, EOFY tax guide.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* rightlifeinsure.com */}
+                <div className="bg-secondary/5 border border-border p-6">
+                  <h4 className="text-foreground font-bold font-mono text-sm mb-6">rightlifeinsure.com</h4>
+                  <div className="space-y-6">
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Insurer Reviews <span className="text-primary">(15+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">TAL, AIA, Zurich, OnePath, MLC, NobleOak, ClearView, MetLife, Integrity Life, BT, Resolution Life, Acenda/Encompass — every active life insurer in the Australian market.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Insurer vs Insurer Comparisons <span className="text-primary">(100+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Every meaningful head-to-head: "TAL vs AIA," "NobleOak vs Zurich," "MLC vs OnePath," etc. Programmatic generation across all insurer × insurer combinations.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Best Life Insurance For [Segment] <span className="text-primary">(25+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Young families, mortgage holders, self-employed, over 50s, single parents, high-income earners, business owners, stay-at-home parents, smokers vs non-smokers, people with pre-existing conditions.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Cover Types + Insurer × Cover Programmatic <span className="text-primary">(115+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">Term life vs whole life, TPD, trauma cover, income protection, funeral insurance, key person insurance. Plus every insurer × cover type: "TAL term life," "AIA income protection," "NobleOak TPD cover," etc.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Life Insurance Through Super vs Direct <span className="text-primary">(dedicated hub)</span></h5>
+                      <p className="text-sm text-muted-foreground">The single highest-intent comparison in this vertical — a full content hub covering cost differences, coverage differences, claims process, tax implications, and when each option makes sense.</p>
+                    </div>
+                    <div>
+                      <h5 className="text-foreground font-bold text-xs uppercase tracking-wider mb-2">Calculators + Trust Content <span className="text-primary">(20+ pages)</span></h5>
+                      <p className="text-sm text-muted-foreground">"How much life insurance do I need," cost calculators, income protection calculators, claims process guides, claim statistics Australia, "is life insurance worth it."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Page count table */}
+              <div className="overflow-x-auto border border-border rounded-lg mb-8">
+                <table className="w-full text-left text-sm min-w-[500px]">
+                  <thead className="bg-secondary/20 text-foreground">
+                    <tr>
+                      <th className="p-4 md:p-6 font-bold">Site</th>
+                      <th className="p-4 md:p-6 font-bold text-right">Editorial</th>
+                      <th className="p-4 md:p-6 font-bold text-right">Programmatic</th>
+                      <th className="p-4 md:p-6 font-bold text-right text-primary">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border/20 bg-secondary/5">
+                    <tr>
+                      <td className="p-4 md:p-6 text-foreground font-medium font-mono text-xs">boostursuper.com</td>
+                      <td className="p-4 md:p-6 text-muted-foreground text-right">90+</td>
+                      <td className="p-4 md:p-6 text-muted-foreground text-right">500+</td>
+                      <td className="p-4 md:p-6 text-primary font-bold text-right">590+</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 md:p-6 text-foreground font-medium font-mono text-xs">righthealthinsurance.com</td>
+                      <td className="p-4 md:p-6 text-muted-foreground text-right">110+</td>
+                      <td className="p-4 md:p-6 text-muted-foreground text-right">500+</td>
+                      <td className="p-4 md:p-6 text-primary font-bold text-right">610+</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 md:p-6 text-foreground font-medium font-mono text-xs">rightlifeinsure.com</td>
+                      <td className="p-4 md:p-6 text-muted-foreground text-right">75+</td>
+                      <td className="p-4 md:p-6 text-muted-foreground text-right">200+</td>
+                      <td className="p-4 md:p-6 text-primary font-bold text-right">275+</td>
+                    </tr>
+                    <tr className="bg-secondary/10">
+                      <td className="p-4 md:p-6 text-foreground font-bold">Total</td>
+                      <td className="p-4 md:p-6 text-foreground font-bold text-right">275+</td>
+                      <td className="p-4 md:p-6 text-foreground font-bold text-right">1,200+</td>
+                      <td className="p-4 md:p-6 text-primary font-bold text-right">1,475+</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
               <div className="p-4 bg-primary/5 border border-primary/20 flex gap-4 items-start">
@@ -303,7 +387,7 @@ export default function StrategyUleads() {
                 <div className="text-sm">
                   <strong className="text-foreground block mb-1">Content Principles</strong>
                   <span className="text-muted-foreground">
-                    Every article targets a real search query with commercial or informational intent. FAQ schema on every page. Content structured for AI extraction — clear, quotable answers in the first 100 words. E-E-A-T signals — author bios, sources cited, "reviewed by licensed adviser" badges where possible.
+                    Every page targets a real search query. Every page has a clear CTA to the lead capture form. FAQ schema on every page. Content structured for AI extraction — clear, quotable answers in the first 100 words. E-E-A-T signals throughout. No filler. Every page exists because someone searches for it.
                   </span>
                 </div>
               </div>
@@ -387,37 +471,9 @@ export default function StrategyUleads() {
           </div>
         </section>
 
-        {/* Programmatic Content */}
-        <section className="mb-24 md:mb-32">
-          <SectionHeader number="04" title="PROGRAMMATIC CONTENT OPPORTUNITY" />
-          <p className="text-muted-foreground mb-8">Each vertical has a natural programmatic play that scales each site from 1 page to hundreds of indexed pages targeting long-tail queries.</p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                site: "boostursuper.com",
-                desc: "Auto-generate a page for every super fund in Australia (100+ funds). Template: fund overview, fees, performance, reviews, \"is [fund] right for you?\" CTA.",
-              },
-              {
-                site: "righthealthinsurance.com",
-                desc: "Auto-generate pages for every health insurer × policy type combination. Template: insurer overview, policy breakdown, pros/cons, comparison CTA.",
-              },
-              {
-                site: "rightlifeinsure.com",
-                desc: "Auto-generate pages for every life insurer × cover type combination (term life, TPD, trauma, income protection). Template: insurer overview, cover details, claims data, comparison CTA.",
-              },
-            ].map((p, i) => (
-              <div key={i} className="p-6 bg-secondary/5 border border-border">
-                <h3 className="text-foreground font-bold font-mono text-sm mb-3">{p.site}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* What to Expect */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="05" title="WHAT TO EXPECT" />
+          <SectionHeader number="04" title="WHAT TO EXPECT" />
           <div className="overflow-x-auto border border-border rounded-lg">
             <table className="w-full text-left text-sm min-w-[500px]">
               <thead className="bg-secondary/20 text-foreground">
@@ -446,7 +502,7 @@ export default function StrategyUleads() {
 
         {/* Next Steps + CTA */}
         <section className="text-center max-w-2xl mx-auto">
-          <SectionHeader number="06" title="NEXT STEPS" />
+          <SectionHeader number="05" title="NEXT STEPS" />
 
           <div className="text-left mb-12">
             <div className="space-y-4">
