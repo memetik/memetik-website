@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTheme } from "@/components/theme-provider";
@@ -7,6 +7,7 @@ export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,15 @@ export function Nav() {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    setIsOpen(false);
+    
+    // If not on homepage, navigate there with hash
+    if (location !== "/") {
+      window.location.href = "/" + href;
+      return;
+    }
+    
+    // On homepage, smooth scroll
     const element = document.querySelector(href);
     if (element) {
       const navHeight = 120;
@@ -32,7 +42,6 @@ export function Nav() {
       const offsetPosition = elementPosition + window.pageYOffset - navHeight;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
-    setIsOpen(false);
   };
 
   return (
