@@ -913,14 +913,18 @@ export default function StrategySignifyIP() {
           <div className="text-left mb-12">
             <div className="space-y-4">
               {[
-                "Review this strategy document and confirm priorities",
-                "Technical setup begins (week 1-2): schema, sitemap, GSC, analytics",
-                "First flagship content published by end of month 1",
-                "Programmatic content and link building from month 2",
+                { title: "Choose your plan", desc: "Pick Ignite, Authority, or Dominance. We'll send over a simple month-to-month agreement — no lock-in, cancel anytime." },
+                { title: "Sign & pay", desc: "E-sign the agreement and set up billing via Stripe. First invoice on signup, then monthly." },
+                { title: "Complete the onboarding form", desc: "We'll send a short onboarding form to capture your brand details, target audience, competitors, and any preferences for content tone and style." },
+                { title: "Grant us access", desc: "We'll need admin access to your Craft CMS to push content and implement technical fixes (schema, sitemap, meta tags, alt text). Plus access to Google Search Console and Google Analytics." },
+                { title: "We get to work", desc: "Technical setup starts immediately. First content published within week 2. AI citation seeding begins day one. You'll have a dedicated Slack channel or email thread for updates." },
               ].map((step, i) => (
                 <div key={i} className="flex gap-4 items-start p-4 bg-secondary/5 border border-border">
                   <span className="flex h-6 w-6 items-center justify-center rounded-none bg-primary text-primary-foreground font-bold text-xs shrink-0">{i + 1}</span>
-                  <p className="text-sm text-muted-foreground">{step}</p>
+                  <div>
+                    <p className="text-sm text-foreground font-bold mb-1">{step.title}</p>
+                    <p className="text-sm text-muted-foreground">{step.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
