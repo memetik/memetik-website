@@ -38,21 +38,21 @@ const faqs = [
 
 function FAQItem({ faq, isOpen, onToggle }: { faq: typeof faqs[0], isOpen: boolean, onToggle: () => void }) {
   return (
-    <div className="border-b border-foreground/20 last:border-b-0">
+    <div className="border-b border-foreground/10 last:border-b-0">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between py-6 text-left group"
       >
-        <span className="font-mono text-sm md:text-base font-bold uppercase tracking-wider pr-8">
+        <span className="text-base font-semibold pr-8">
           {faq.question}
         </span>
-        <span className="flex-shrink-0 w-8 h-8 border border-foreground flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors">
+        <span className="flex-shrink-0 w-8 h-8 border border-foreground/15 rounded flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors">
           {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
         </span>
       </button>
       {isOpen && (
         <div className="pb-6">
-          <p className="font-mono text-sm text-foreground/70 leading-relaxed max-w-3xl">
+          <p className="text-base text-foreground/70 leading-relaxed max-w-3xl">
             {faq.answer}
           </p>
         </div>
@@ -65,21 +65,21 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b-2 border-foreground">
+    <section id="faq" className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b border-foreground/10">
       <div className="max-w-4xl mx-auto">
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight mb-4">
             Questions & Answers
           </h2>
-          <p className="font-mono text-sm text-foreground/60">
+          <p className="text-base text-foreground/60">
             Everything you need to know before we talk.
           </p>
         </div>
 
         {/* FAQ List */}
-        <div className="border-t border-foreground/20">
+        <div className="border-t border-foreground/10">
           {faqs.map((faq, i) => (
             <FAQItem
               key={i}
@@ -92,12 +92,12 @@ export function FAQ() {
 
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
-          <p className="font-mono text-sm text-foreground/60 mb-4">
+          <p className="text-sm text-foreground/60 mb-4">
             Still have questions?
           </p>
           <a 
             href="https://cal.com/memetik/letstalk"
-            className="inline-flex items-center gap-3 border-2 border-foreground px-6 py-3 font-mono font-bold text-sm uppercase tracking-wider hover:bg-foreground hover:text-background transition-colors"
+            className="inline-flex items-center gap-3 border border-foreground px-6 py-3 rounded font-mono font-bold text-sm uppercase tracking-wider hover:bg-foreground hover:text-background transition-colors"
           >
             Book a Call — We'll Answer Everything
           </a>

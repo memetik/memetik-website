@@ -26,41 +26,36 @@ export default function Home() {
         <Marquee />
         
         {/* THE SHIFT SECTION */}
-        <section id="agency" className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b-2 border-foreground">
+        <section id="agency" className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b border-foreground/10">
           <div className="max-w-7xl mx-auto">
-            
-            {/* Chevron bar */}
-            <div className="font-mono text-xs tracking-tighter text-foreground/60 mb-8 overflow-hidden">
-              &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
               {/* Left - Main Content */}
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black leading-[0.9] mb-2 tracking-tight uppercase text-foreground">
-                  The search bar is dying.
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black leading-[0.9] mb-2 tracking-tight text-foreground">
+                  The Search Bar Is Dying.
                 </h2>
                 <p className="font-serif text-xl sm:text-2xl md:text-3xl text-foreground/60 mb-6">
                   The conversation is beginning.
                 </p>
                 
                 {/* Stats Box */}
-                <div className="border-2 border-foreground p-6 mb-6">
+                <div className="border border-foreground/15 rounded p-6 mb-6">
                   <div className="flex items-baseline gap-2 mb-2">
                     <span className="text-4xl md:text-5xl font-display font-black">40-70%</span>
                     <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/60">OF HIGH-INTENT</span>
                   </div>
-                  <p className="font-mono text-sm text-foreground/70">
+                  <p className="text-sm text-foreground/70">
                     commercial research now begins or ends inside AI answer engines.
                   </p>
                 </div>
                 
                 {/* Tag bar */}
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <div className="border border-foreground/15 px-3 py-1.5 rounded font-mono text-[10px] font-bold uppercase tracking-wider">
                     THE SHIFT
                   </div>
-                  <div className="border-2 border-foreground px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <div className="border border-foreground/15 px-3 py-1.5 rounded font-mono text-[10px] font-bold uppercase tracking-wider">
                     AI ERA
                   </div>
                 </div>
@@ -68,16 +63,16 @@ export default function Home() {
               
               {/* Right - Info Cards */}
               <div className="space-y-4">
-                <div className="border-2 border-foreground p-6">
+                <div className="border border-foreground/15 rounded p-6">
                   <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/50 mb-3">THE PROBLEM</div>
-                  <p className="font-mono text-sm leading-relaxed text-foreground/80">
-                    Google traffic is eroding. LLMs decide winners before a user ever clicks a link. If your brand isn't in the model's answer layer—you don't exist.
+                  <p className="text-base leading-relaxed text-foreground/70">
+                    Google traffic is eroding. LLMs decide winners before a user ever clicks a link. If your brand isn't in the model's answer layer — you don't exist.
                   </p>
                 </div>
                 
-                <div className="border-2 border-foreground p-6 bg-foreground text-background">
+                <div className="border border-foreground/15 rounded p-6 bg-foreground text-background">
                   <div className="font-mono text-[10px] uppercase tracking-widest text-background/50 mb-3">THE SOLUTION</div>
-                  <p className="font-mono text-sm font-bold leading-relaxed mb-4">
+                  <p className="text-base font-semibold leading-relaxed mb-4">
                     We build Answer Engine Optimization (AEO) systems that force LLMs to cite you.
                   </p>
                   <a 
@@ -108,22 +103,22 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             
             {/* Final CTA Section */}
-            <div className="text-center mb-16 pb-16 border-b border-background/20">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-4 text-background">
-                Stop losing deals to AI.
+            <div className="text-center mb-16 pb-16 border-b border-background/15">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight mb-4 text-background">
+                Stop Losing Deals to AI.
               </h2>
-              <p className="font-mono text-sm sm:text-base text-background/60 mb-8 max-w-xl mx-auto">
+              <p className="text-base text-background/60 mb-8 max-w-xl mx-auto">
                 Every day you wait, competitors are training LLMs to recommend them instead of you.
               </p>
               <a 
                 href="https://cal.com/memetik/letstalk" 
-                className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded hover:opacity-90 transition-opacity"
               >
                 GET YOUR FREE AI VISIBILITY AUDIT
                 <span>→</span>
               </a>
               <p className="font-mono text-xs text-background/40 mt-4 uppercase">
-                See exactly where you rank vs competitors • 30-min call
+                See exactly where you rank vs competitors · 30-min call
               </p>
             </div>
             
@@ -132,52 +127,52 @@ export default function Home() {
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">For You</h4>
                 <ul className="space-y-2">
-                  <li><a href="/for/saas-founders" className="font-mono text-sm text-background/70 hover:text-background transition-colors">SaaS Founders</a></li>
-                  <li><a href="/for/marketing-leaders" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Marketing Leaders</a></li>
-                  <li><a href="/for/ecommerce-brands" className="font-mono text-sm text-background/70 hover:text-background transition-colors">E-commerce</a></li>
-                  <li><a href="/for/b2b-services" className="font-mono text-sm text-background/70 hover:text-background transition-colors">B2B Services</a></li>
+                  <li><a href="/for/saas-founders" className="text-sm text-background/70 hover:text-background transition-colors">SaaS Founders</a></li>
+                  <li><a href="/for/marketing-leaders" className="text-sm text-background/70 hover:text-background transition-colors">Marketing Leaders</a></li>
+                  <li><a href="/for/ecommerce-brands" className="text-sm text-background/70 hover:text-background transition-colors">E-commerce</a></li>
+                  <li><a href="/for/b2b-services" className="text-sm text-background/70 hover:text-background transition-colors">B2B Services</a></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Solutions</h4>
                 <ul className="space-y-2">
-                  <li><a href="/solutions/chatgpt-visibility" className="font-mono text-sm text-background/70 hover:text-background transition-colors">ChatGPT Visibility</a></li>
-                  <li><a href="/solutions/perplexity-citations" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Perplexity Citations</a></li>
-                  <li><a href="/solutions/ai-overview-ranking" className="font-mono text-sm text-background/70 hover:text-background transition-colors">AI Overview Ranking</a></li>
-                  <li><a href="/solutions/competitor-displacement" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Competitor Displacement</a></li>
+                  <li><a href="/solutions/chatgpt-visibility" className="text-sm text-background/70 hover:text-background transition-colors">ChatGPT Visibility</a></li>
+                  <li><a href="/solutions/perplexity-citations" className="text-sm text-background/70 hover:text-background transition-colors">Perplexity Citations</a></li>
+                  <li><a href="/solutions/ai-overview-ranking" className="text-sm text-background/70 hover:text-background transition-colors">AI Overview Ranking</a></li>
+                  <li><a href="/solutions/competitor-displacement" className="text-sm text-background/70 hover:text-background transition-colors">Competitor Displacement</a></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Compare</h4>
                 <ul className="space-y-2">
-                  <li><a href="/vs/traditional-seo-agencies" className="font-mono text-sm text-background/70 hover:text-background transition-colors">vs SEO Agencies</a></li>
-                  <li><a href="/vs/content-marketing-agencies" className="font-mono text-sm text-background/70 hover:text-background transition-colors">vs Content Agencies</a></li>
-                  <li><a href="/vs/manual-seo" className="font-mono text-sm text-background/70 hover:text-background transition-colors">vs DIY/Manual</a></li>
+                  <li><a href="/vs/traditional-seo-agencies" className="text-sm text-background/70 hover:text-background transition-colors">vs SEO Agencies</a></li>
+                  <li><a href="/vs/content-marketing-agencies" className="text-sm text-background/70 hover:text-background transition-colors">vs Content Agencies</a></li>
+                  <li><a href="/vs/manual-seo" className="text-sm text-background/70 hover:text-background transition-colors">vs DIY/Manual</a></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Resources</h4>
                 <ul className="space-y-2">
-                  <li><a href="/resources" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Articles</a></li>
-                  <li><a href="/audit" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Free Audit</a></li>
-                  <li><a href="#methodology" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Process</a></li>
-                  <li><a href="#faq" className="font-mono text-sm text-background/70 hover:text-background transition-colors">FAQ</a></li>
+                  <li><a href="/resources" className="text-sm text-background/70 hover:text-background transition-colors">Articles</a></li>
+                  <li><a href="/audit" className="text-sm text-background/70 hover:text-background transition-colors">Free Audit</a></li>
+                  <li><a href="#methodology" className="text-sm text-background/70 hover:text-background transition-colors">Process</a></li>
+                  <li><a href="#faq" className="text-sm text-background/70 hover:text-background transition-colors">FAQ</a></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wider text-background/40 mb-4">Company</h4>
                 <ul className="space-y-2">
-                  <li><a href="/strategy" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Strategy</a></li>
-                  <li><a href="/bts" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Behind the Scenes</a></li>
-                  <li><a href="https://cal.com/memetik/letstalk" className="font-mono text-sm text-background/70 hover:text-background transition-colors">Contact</a></li>
+                  <li><a href="/strategy" className="text-sm text-background/70 hover:text-background transition-colors">Strategy</a></li>
+                  <li><a href="/bts" className="text-sm text-background/70 hover:text-background transition-colors">Behind the Scenes</a></li>
+                  <li><a href="https://cal.com/memetik/letstalk" className="text-sm text-background/70 hover:text-background transition-colors">Contact</a></li>
                 </ul>
               </div>
             </div>
             
             {/* Footer Bottom */}
-            <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-background/20">
+            <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-background/15">
               <div className="flex items-center gap-4 mb-4 md:mb-0">
-                <h3 className="text-xl font-display font-black tracking-tight uppercase text-background">
+                <h3 className="text-xl font-display font-black tracking-tight text-background">
                   MEMETIK
                 </h3>
                 <span className="font-mono text-xs text-background/40">Answer Engine Optimization</span>
@@ -185,7 +180,7 @@ export default function Home() {
               
               <div className="flex items-center gap-6">
                 <div className="inline-flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
                   <span className="font-mono text-xs uppercase tracking-wider text-background/70">
                     Accepting clients
                   </span>

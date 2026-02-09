@@ -45,20 +45,8 @@ export function Nav() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b-2 border-primary bg-background`}>
-      {/* Top "System" Bar */}
-      <div className="w-full border-b border-primary/20 bg-primary/5 py-1 px-4 hidden md:flex justify-between items-center text-[10px] font-mono tracking-widest text-primary/60 uppercase">
-        <div className="flex gap-4">
-          <span>SYS.VER.2026.1</span>
-          <span>LAT: 37.7749° N</span>
-        </div>
-        <div className="flex gap-4">
-           <span>// MEMETIK.AI</span>
-           <span>STATUS: ONLINE</span>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center h-20">
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-foreground/10 bg-background/95 backdrop-blur-sm`}>
+      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center h-16">
         <Link href="/">
           <a className="flex items-center gap-4 group relative z-50">
              {/* Logo Mark - M Shape */}
@@ -69,7 +57,7 @@ export function Nav() {
              </div>
              <div className="flex flex-col">
                <span className="font-display font-bold text-2xl tracking-tighter text-foreground leading-none">MEMETIK</span>
-               <span className="font-mono text-[10px] tracking-[0.3em] text-muted-foreground leading-none mt-1">LOCKED IN</span>
+               <span className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground leading-none mt-1">ANSWER ENGINE OPTIMIZATION</span>
              </div>
           </a>
         </Link>
@@ -81,33 +69,31 @@ export function Nav() {
               <Link 
                 key={link.label} 
                 href={link.href}
-                className="h-full flex items-center px-8 text-xs font-mono tracking-widest hover:bg-primary hover:text-background transition-colors border-l border-primary/10 relative group cursor-pointer"
+                className="h-full flex items-center px-6 text-xs font-mono tracking-widest hover:text-accent transition-colors cursor-pointer"
               >
                 {link.label}
-                <span className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-background opacity-0 group-hover:opacity-100 transition-opacity"></span>
               </Link>
             ) : (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="h-full flex items-center px-8 text-xs font-mono tracking-widest hover:bg-primary hover:text-background transition-colors border-l border-primary/10 relative group cursor-pointer"
+                className="h-full flex items-center px-6 text-xs font-mono tracking-widest hover:text-accent transition-colors cursor-pointer"
               >
                 {link.label}
-                <span className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-background opacity-0 group-hover:opacity-100 transition-opacity"></span>
               </a>
             )
           ))}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="h-full flex items-center px-4 border-l border-primary/10 hover:bg-primary hover:text-background transition-colors"
+            className="h-full flex items-center px-4 hover:text-accent transition-colors"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
           <Link
             href="/audit"
-            className="h-full flex items-center px-6 text-xs font-mono font-bold tracking-widest bg-foreground text-background hover:opacity-90 transition-opacity border-l border-primary/10"
+            className="flex items-center px-5 py-2 text-xs font-mono font-bold tracking-widest bg-foreground text-background rounded hover:opacity-90 transition-opacity ml-4"
           >
             FREE AUDIT →
           </Link>
@@ -124,7 +110,7 @@ export function Nav() {
           </button>
           <Link
             href="/audit"
-            className="px-3 py-2 text-[10px] font-mono font-bold tracking-widest bg-foreground text-background"
+            className="px-3 py-2 text-[10px] font-mono font-bold tracking-widest bg-foreground text-background rounded"
           >
             FREE AUDIT
           </Link>

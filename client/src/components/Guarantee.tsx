@@ -2,18 +2,18 @@ import { Shield, CheckCircle } from "lucide-react";
 
 export function Guarantee() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b-2 border-foreground">
+    <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b border-foreground/10">
       <div className="max-w-4xl mx-auto">
         
-        <div className="border-2 border-foreground p-8 md:p-12 text-center">
+        <div className="border border-foreground/15 rounded-lg p-8 md:p-12 text-center">
           
           {/* Shield Icon */}
-          <div className="w-16 h-16 mx-auto mb-6 border-2 border-foreground flex items-center justify-center">
-            <Shield className="w-8 h-8" />
+          <div className="w-16 h-16 mx-auto mb-6 border border-foreground/15 rounded-full flex items-center justify-center">
+            <Shield className="w-8 h-8 text-accent" />
           </div>
           
           {/* Headline */}
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-black tracking-tight uppercase mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-black tracking-tight mb-4">
             The 90-Day Guarantee
           </h2>
           
@@ -29,16 +29,16 @@ export function Guarantee() {
               "90-day performance tracking",
               "Full refund if no improvement"
             ].map((item, i) => (
-              <div key={i} className="flex items-center justify-center gap-2 font-mono text-sm">
-                <CheckCircle className="w-4 h-4 text-green-600" />
+              <div key={i} className="flex items-center justify-center gap-2 text-sm">
+                <CheckCircle className="w-4 h-4 text-accent" />
                 <span>{item}</span>
               </div>
             ))}
           </div>
           
           {/* Fine Print */}
-          <p className="font-mono text-xs text-foreground/40 max-w-xl mx-auto">
-            We've never paid out on this guarantee—because our methodology works. But it exists because we believe you shouldn't risk your investment on promises. You should risk it on proof.
+          <p className="text-xs text-foreground/40 max-w-xl mx-auto">
+            We've never paid out on this guarantee — because our methodology works. But it exists because we believe you shouldn't risk your investment on promises. You should risk it on proof.
           </p>
           
         </div>

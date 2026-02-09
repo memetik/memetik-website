@@ -27,7 +27,7 @@ const deliverables = [
 
 function DeliverableCard({ item, index }: { item: typeof deliverables[0], index: number }) {
   return (
-    <div className="group relative flex flex-col min-h-[480px] p-6 md:p-8 bg-background border-b-2 md:border-b-0 md:border-r-2 border-foreground last:border-r-0">
+    <div className="group relative flex flex-col min-h-[480px] p-6 md:p-8 bg-background border border-foreground/10 rounded">
       
       {/* Number */}
       <div className="flex items-center justify-between mb-6">
@@ -35,7 +35,7 @@ function DeliverableCard({ item, index }: { item: typeof deliverables[0], index:
       </div>
 
       {/* Main headline */}
-      <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight uppercase leading-[0.85] text-foreground mb-2">
+      <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight leading-[0.85] text-foreground mb-2">
         {item.title}
       </h3>
       
@@ -45,14 +45,14 @@ function DeliverableCard({ item, index }: { item: typeof deliverables[0], index:
       </p>
 
       {/* Description */}
-      <p className="font-mono text-sm leading-relaxed text-foreground/70 mb-6">
+      <p className="text-base leading-relaxed text-foreground/70 mb-6">
         {item.description}
       </p>
       
       {/* Outcome Box */}
-      <div className="border-2 border-foreground p-4 mb-6 bg-foreground/5">
+      <div className="border border-foreground/10 rounded p-4 mb-6 bg-muted">
         <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/50 mb-1">What You Get</div>
-        <p className="font-mono text-sm font-bold text-foreground">
+        <p className="text-sm font-semibold text-foreground">
           {item.outcome}
         </p>
       </div>
@@ -60,7 +60,7 @@ function DeliverableCard({ item, index }: { item: typeof deliverables[0], index:
       {/* Tags */}
       <div className="flex flex-wrap items-center gap-2 mt-auto">
         {item.tags.map((tag, i) => (
-          <div key={i} className="border border-foreground/30 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider">
+          <div key={i} className="border border-foreground/15 rounded px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider">
             {tag}
           </div>
         ))}
@@ -71,28 +71,28 @@ function DeliverableCard({ item, index }: { item: typeof deliverables[0], index:
 
 export function Services() {
   return (
-    <section className="bg-background text-foreground py-16 md:py-24 relative overflow-hidden border-b-2 border-foreground">
+    <section className="bg-background text-foreground py-16 md:py-24 relative overflow-hidden border-b border-foreground/10">
       
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mb-12">
         
-        <div className="inline-flex items-center gap-2 border border-foreground/30 px-3 py-1.5 mb-6">
+        <div className="inline-flex items-center gap-2 border border-foreground/15 px-3 py-1.5 rounded-full mb-6">
           <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">
             The Full Package
           </span>
         </div>
         
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-4">
-          What We Do For You
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight mb-4">
+          What We Do for You
         </h2>
-        <p className="font-mono text-sm text-foreground/60 max-w-2xl">
+        <p className="text-base text-foreground/60 max-w-2xl">
           Every client engagement includes all three pillars. This is the complete system that makes your brand the answer AI gives.
         </p>
       </div>
 
       {/* Deliverables Grid */}
-      <div className="border-t-2 border-foreground">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {deliverables.map((item, index) => (
             <DeliverableCard key={index} item={item} index={index} />
           ))}
@@ -103,7 +103,7 @@ export function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mt-12 text-center">
         <a 
           href="https://cal.com/memetik/letstalk"
-          className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded hover:opacity-90 transition-opacity"
         >
           LET'S TALK
           <span>→</span>
