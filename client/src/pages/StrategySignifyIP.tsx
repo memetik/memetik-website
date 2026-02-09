@@ -843,6 +843,54 @@ export default function StrategySignifyIP() {
             </div>
           </div>
 
+          <div className="mb-8">
+            <p className="text-sm font-mono text-primary font-bold uppercase tracking-widest mb-4">More investment = faster compounding</p>
+            <div className="overflow-x-auto border border-border rounded-lg">
+              <table className="w-full text-left text-sm min-w-[500px]">
+                <thead className="bg-secondary/20 text-foreground">
+                  <tr>
+                    <th className="p-4 md:p-6 font-bold"></th>
+                    <th className="p-4 md:p-6 font-bold text-center">Ignite</th>
+                    <th className="p-4 md:p-6 font-bold text-center text-primary">Authority</th>
+                    <th className="p-4 md:p-6 font-bold text-center">Dominance</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border/20 bg-secondary/5">
+                  <tr>
+                    <td className="p-4 md:p-6 text-foreground font-medium text-xs">Pages published</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">~50</td>
+                    <td className="p-4 md:p-6 text-primary font-bold text-center">350+</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">350+</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 md:p-6 text-foreground font-medium text-xs">Organic leads/month (month 12)</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">5-15</td>
+                    <td className="p-4 md:p-6 text-primary font-bold text-center">40-60</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">50-80</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 md:p-6 text-foreground font-medium text-xs">Time to ROI</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">6-9 months</td>
+                    <td className="p-4 md:p-6 text-primary font-bold text-center">3-5 months</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">2-4 months</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 md:p-6 text-foreground font-medium text-xs">AI citation tracking</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">—</td>
+                    <td className="p-4 md:p-6 text-primary font-bold text-center">Quarterly</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">Monthly</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 md:p-6 text-foreground font-medium text-xs">Backlink building</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">Organic only</td>
+                    <td className="p-4 md:p-6 text-primary font-bold text-center">PR + directories</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">Dedicated outreach</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
           <div className="p-4 bg-primary/5 border border-primary/20 flex gap-4 items-start">
             <Zap className="w-5 h-5 text-primary shrink-0 mt-1" />
             <div className="text-sm">
