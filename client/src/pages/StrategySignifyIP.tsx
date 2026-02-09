@@ -772,7 +772,7 @@ export default function StrategySignifyIP() {
             {/* Ignite */}
             <div className="bg-secondary/5 border border-border p-6 md:p-8">
               <h3 className="text-foreground font-bold text-lg mb-1">Ignite</h3>
-              <p className="text-xs text-muted-foreground font-mono mb-4">3-month minimum</p>
+              <p className="text-xs text-muted-foreground font-mono mb-4">No lock-in contract</p>
               <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$2,200<span className="text-muted-foreground text-lg">/mo</span></p>
               <BulletList items={[
                 "Full technical SEO setup (schema, sitemap, GSC, GA4, Core Web Vitals)",
@@ -792,7 +792,7 @@ export default function StrategySignifyIP() {
             <div className="bg-secondary/5 border-2 border-primary p-6 md:p-8 relative">
               <span className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-mono font-bold px-3 py-1">RECOMMENDED</span>
               <h3 className="text-foreground font-bold text-lg mb-1">Authority</h3>
-              <p className="text-xs text-muted-foreground font-mono mb-4">6-month minimum</p>
+              <p className="text-xs text-muted-foreground font-mono mb-4">No lock-in contract</p>
               <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$3,500<span className="text-muted-foreground text-lg">/mo</span></p>
               <BulletList items={[
                 "Everything in Ignite",
@@ -814,7 +814,7 @@ export default function StrategySignifyIP() {
             {/* Dominance */}
             <div className="bg-secondary/5 border border-border p-6 md:p-8">
               <h3 className="text-foreground font-bold text-lg mb-1">Dominance</h3>
-              <p className="text-xs text-muted-foreground font-mono mb-4">6-month minimum</p>
+              <p className="text-xs text-muted-foreground font-mono mb-4">No lock-in contract</p>
               <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$5,500<span className="text-muted-foreground text-lg">/mo</span></p>
               <BulletList items={[
                 "Everything in Authority",
