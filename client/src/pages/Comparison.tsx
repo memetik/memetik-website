@@ -23,7 +23,7 @@ export default function Comparison() {
       <div className="min-h-screen w-full bg-background text-foreground">
         <Nav />
         <div className="pt-32 pb-16 px-4 text-center">
-          <h1 className="text-3xl font-display font-black uppercase mb-4">Page Not Found</h1>
+          <h1 className="text-3xl font-display font-extrabold uppercase mb-4">Page Not Found</h1>
           <Link href="/">
             <a className="font-mono text-sm underline">Back to home</a>
           </Link>
@@ -45,7 +45,7 @@ export default function Comparison() {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black leading-[0.85] tracking-tight uppercase mb-6 whitespace-pre-line">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[0.85] tracking-tight uppercase mb-6 whitespace-pre-line">
             {data.headline}
           </h1>
           <p className="font-serif text-2xl sm:text-3xl text-foreground/70 mb-6">
@@ -67,7 +67,7 @@ export default function Comparison() {
       {/* Comparison Table */}
       <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-display font-black tracking-tight uppercase mb-12">
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-12">
             The honest comparison
           </h2>
 
@@ -148,7 +148,7 @@ export default function Comparison() {
       {/* FAQ */}
       <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-display font-black tracking-tight uppercase mb-12">
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-12">
             Common Questions
           </h2>
           <div className="border-2 border-foreground divide-y-2 divide-foreground">
@@ -179,7 +179,7 @@ export default function Comparison() {
       {/* Bottom CTA */}
       <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-foreground text-background">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black uppercase tracking-tight mb-4 text-background">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold uppercase tracking-tight mb-4 text-background">
             See the difference yourself.
           </h2>
           <p className="font-mono text-sm text-background/60 mb-8 max-w-xl mx-auto">
@@ -198,7 +198,7 @@ export default function Comparison() {
       <footer className="py-8 px-4 sm:px-6 md:px-12 border-t border-foreground/20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <Link href="/">
-            <a className="font-display font-black text-xl uppercase">MEMETIK</a>
+            <a className="font-display font-extrabold text-xl uppercase">MEMETIK</a>
           </Link>
           <div className="font-mono text-xs text-foreground/40 uppercase">&copy; 2026 MEMETIK</div>
         </div>

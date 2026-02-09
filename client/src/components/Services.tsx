@@ -35,7 +35,7 @@ function DeliverableCard({ item, index }: { item: typeof deliverables[0], index:
       </div>
 
       {/* Main headline */}
-      <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight leading-[0.85] text-foreground mb-2">
+      <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[0.85] text-foreground mb-2">
         {item.title}
       </h3>
       
@@ -82,7 +82,7 @@ export function Services() {
           </span>
         </div>
         
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight mb-4">
           What We Do for You
         </h2>
         <p className="text-base text-foreground/60 max-w-2xl">

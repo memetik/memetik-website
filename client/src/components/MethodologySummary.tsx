@@ -88,7 +88,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
           </span>
         </div>
         
-        <h3 className="text-2xl sm:text-3xl md:text-5xl font-display font-black leading-[0.9] tracking-tight text-foreground mb-8">
+        <h3 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold leading-[0.9] tracking-tight text-foreground mb-8">
           {phase.title}
         </h3>
 
@@ -132,7 +132,7 @@ export function MethodologySummary() {
              </span>
            </div>
            
-           <h2 className="text-3xl sm:text-4xl md:text-7xl font-display font-black tracking-tight text-foreground mb-4">
+           <h2 className="text-3xl sm:text-4xl md:text-7xl font-display font-extrabold tracking-tight text-foreground mb-4">
              The 90-Day Roadmap
            </h2>
            <p className="text-base text-foreground/60 max-w-2xl mb-8">

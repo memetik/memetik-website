@@ -10,7 +10,7 @@ export function BrandManifesto() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Left - Main Statement */}
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black leading-[0.85] mb-2 tracking-tight text-foreground">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold leading-[0.85] mb-2 tracking-tight text-foreground">
                 The Industry Is Broken.
               </h2>
               <p className="font-serif text-lg sm:text-xl md:text-2xl text-foreground/60 mb-6">
@@ -78,7 +78,7 @@ export function BrandManifesto() {
             </span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight mb-4">
             Is This for You?
           </h2>
           <p className="text-base text-foreground/60 max-w-2xl mb-12">
@@ -163,7 +163,7 @@ export function BrandManifesto() {
                   February 2026: 1 spot remaining
                 </span>
               </div>
-              <p className="text-2xl md:text-4xl font-display font-black tracking-tight mb-4">
+              <p className="text-2xl md:text-4xl font-display font-extrabold tracking-tight mb-4">
                 Ready to Dominate AI Search?
               </p>
               <p className="text-base text-foreground/60 mb-6">

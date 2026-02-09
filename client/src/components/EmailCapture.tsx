@@ -26,7 +26,7 @@ export function EmailCapture() {
               </span>
             </div>
             
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-black tracking-tight mb-4 text-background">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold tracking-tight mb-4 text-background">
               The 2026 AI Visibility Playbook
             </h2>
             
@@ -54,7 +54,7 @@ export function EmailCapture() {
             {submitted ? (
               <div className="text-center py-8">
                 <CheckCircle className="w-12 h-12 mx-auto mb-4 text-accent" />
-                <h3 className="font-display font-black text-xl mb-2">Check Your Email</h3>
+                <h3 className="font-display font-bold text-xl mb-2">Check Your Email</h3>
                 <p className="text-sm text-background/70">
                   The playbook is on its way. Check your spam if you don't see it.
                 </p>

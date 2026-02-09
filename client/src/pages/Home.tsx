@@ -32,7 +32,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
               {/* Left - Main Content */}
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black leading-[0.9] mb-2 tracking-tight text-foreground">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold leading-[0.9] mb-2 tracking-tight text-foreground">
                   The Search Bar Is Dying.
                 </h2>
                 <p className="font-serif text-xl sm:text-2xl md:text-3xl text-foreground/60 mb-6">
@@ -42,7 +42,7 @@ export default function Home() {
                 {/* Stats Box */}
                 <div className="border border-foreground/15 rounded p-6 mb-6">
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl md:text-5xl font-display font-black">40-70%</span>
+                    <span className="text-4xl md:text-5xl font-display font-extrabold">40-70%</span>
                     <span className="font-mono text-[10px] uppercase tracking-widest text-foreground/60">OF HIGH-INTENT</span>
                   </div>
                   <p className="text-sm text-foreground/70">
@@ -104,7 +104,7 @@ export default function Home() {
             
             {/* Final CTA Section */}
             <div className="text-center mb-16 pb-16 border-b border-background/15">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight mb-4 text-background">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight mb-4 text-background">
                 Stop Losing Deals to AI.
               </h2>
               <p className="text-base text-background/60 mb-8 max-w-xl mx-auto">
@@ -172,7 +172,7 @@ export default function Home() {
             {/* Footer Bottom */}
             <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-background/15">
               <div className="flex items-center gap-4 mb-4 md:mb-0">
-                <h3 className="text-xl font-display font-black tracking-tight text-background">
+                <h3 className="text-xl font-display font-bold tracking-tight text-background">
                   MEMETIK
                 </h3>
                 <span className="font-mono text-xs text-background/40">Answer Engine Optimization</span>

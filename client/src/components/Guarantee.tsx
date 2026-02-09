@@ -13,7 +13,7 @@ export function Guarantee() {
           </div>
           
           {/* Headline */}
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-black tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-display font-extrabold tracking-tight mb-4">
             The 90-Day Guarantee
           </h2>
           

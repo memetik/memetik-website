@@ -25,7 +25,7 @@
   --color-ring: hsl(var(--ring));
   
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Archivo Black', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
   --font-serif: 'Newsreader', serif;
   --font-mono: 'JetBrains Mono', monospace;
   
@@ -157,16 +157,16 @@
   
   /* Article content styles (rendered from markdown HTML) */
   .article-content h1 {
-    @apply text-3xl md:text-4xl font-display font-black tracking-tight uppercase text-foreground mt-12 mb-6;
+    @apply text-3xl md:text-4xl font-display font-extrabold tracking-tight text-foreground mt-12 mb-6;
   }
   .article-content h2 {
-    @apply text-2xl md:text-3xl font-display font-black tracking-tight uppercase text-foreground mt-10 mb-4;
+    @apply text-2xl md:text-3xl font-display font-bold tracking-tight text-foreground mt-10 mb-4;
   }
   .article-content h3 {
-    @apply text-xl md:text-2xl font-display font-black tracking-tight uppercase text-foreground mt-8 mb-3;
+    @apply text-xl md:text-2xl font-display font-semibold tracking-tight text-foreground mt-8 mb-3;
   }
   .article-content h4 {
-    @apply text-lg font-display font-black tracking-tight uppercase text-foreground mt-6 mb-2;
+    @apply text-lg font-display font-semibold tracking-tight text-foreground mt-6 mb-2;
   }
   .article-content p {
     @apply font-sans text-base leading-relaxed text-foreground/80 mb-4;

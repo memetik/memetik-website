@@ -114,7 +114,7 @@ function Block({ block }: { block: NotionBlock }) {
     case "heading_1": {
       const richText = block.heading_1?.rich_text || [];
       return (
-        <h1 className="text-3xl md:text-4xl font-display font-black tracking-tight uppercase text-foreground mt-12 mb-6">
+        <h1 className="text-3xl md:text-4xl font-display font-extrabold tracking-tight text-foreground mt-12 mb-6">
           <RichText richText={richText} />
         </h1>
       );
@@ -123,7 +123,7 @@ function Block({ block }: { block: NotionBlock }) {
     case "heading_2": {
       const richText = block.heading_2?.rich_text || [];
       return (
-        <h2 className="text-2xl md:text-3xl font-display font-black tracking-tight uppercase text-foreground mt-10 mb-4">
+        <h2 className="text-2xl md:text-3xl font-display font-bold tracking-tight text-foreground mt-10 mb-4">
           <RichText richText={richText} />
         </h2>
       );
@@ -132,7 +132,7 @@ function Block({ block }: { block: NotionBlock }) {
     case "heading_3": {
       const richText = block.heading_3?.rich_text || [];
       return (
-        <h3 className="text-xl md:text-2xl font-display font-black tracking-tight uppercase text-foreground mt-8 mb-3">
+        <h3 className="text-xl md:text-2xl font-display font-semibold tracking-tight text-foreground mt-8 mb-3">
           <RichText richText={richText} />
         </h3>
       );

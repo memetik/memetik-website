@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 1200px;
+      height: 1500px;
+      font-family: 'JetBrains Mono', monospace;
+      background: #111111;
+      padding: 60px;
+    }
+    
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(227, 231, 222, 0.2);
+    }
+    
+    .badge {
+      background: transparent;
+      color: #E3E7DE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 8px 20px;
+      border: 2px solid #E3E7DE;
+      display: inline-block;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    h1 {
+      font-family: 'Archivo Black', sans-serif;
+      color: #E3E7DE;
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    
+    .subtitle {
+      color: #E3E7DE;
+      opacity: 0.6;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Process Steps */
+    .process {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+    
+    .step {
+      flex: 1;
+      background: rgba(227, 231, 222, 0.03);
+      border: 1px solid rgba(227, 231, 222, 0.15);
+      padding: 28px;
+    }
+    
+    .step-number {
+      font-family: 'Archivo Black', sans-serif;
+      color: #E3E7DE;
+      opacity: 0.2;
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    
+    .step-title {
+      font-family: 'Archivo Black', sans-serif;
+      color: #E3E7DE;
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    
+    .step-desc {
+      color: #E3E7DE;
+      opacity: 0.6;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    
+    /* What We Check */
+    .section-title {
+      font-family: 'Archivo Black', sans-serif;
+      color: #E3E7DE;
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(227, 231, 222, 0.2);
+    }
+    
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+    
+    .check {
+      background: rgba(227, 231, 222, 0.03);
+      border: 1px solid rgba(227, 231, 222, 0.1);
+      padding: 24px;
+    }
+    
+    .check-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    
+    .check-title {
+      color: #E3E7DE;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    
+    .check-points {
+      color: #E3E7DE;
+      opacity: 0.5;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+    
+    /* AI Engines */
+    .engines {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+    
+    .engine {
+      flex: 1;
+      border: 2px solid #E3E7DE;
+      padding: 28px;
+      text-align: center;
+    }
+    
+    .engine-name {
+      font-family: 'Archivo Black', sans-serif;
+      color: #E3E7DE;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    
+    .engine-desc {
+      color: #E3E7DE;
+      opacity: 0.5;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Sample Output */
+    .output {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .output-left {
+      flex: 1;
+    }
+    
+    .output-title {
+      font-family: 'Archivo Black', sans-serif;
+      color: #E3E7DE;
+      font-size: 32px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    
+    .output-list {
+      color: #E3E7DE;
+      opacity: 0.7;
+      font-size: 14px;
+      line-height: 2;
+    }
+    
+    .output-list span {
+      opacity: 0.4;
+      margin-right: 8px;
+    }
+    
+    .output-right {
+      flex: 1;
+    }
+    
+    .score-card {
+      border: 2px solid #E3E7DE;
+      padding: 32px;
+    }
+    
+    .score-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(227, 231, 222, 0.2);
+    }
+    
+    .score-label-sm {
+      color: #E3E7DE;
+      opacity: 0.4;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .score-brand {
+      font-family: 'Archivo Black', sans-serif;
+      color: #E3E7DE;
+      font-size: 20px;
+      margin-top: 6px;
+    }
+    
+    .score-big {
+      text-align: right;
+    }
+    
+    .score-value {
+      font-family: 'Archivo Black', sans-serif;
+      color: #E3E7DE;
+      font-size: 64px;
+      line-height: 1;
+    }
+    
+    .score-max {
+      color: #E3E7DE;
+      opacity: 0.4;
+      font-size: 14px;
+    }
+    
+    .score-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    
+    .score-metric {
+      background: rgba(227, 231, 222, 0.05);
+      padding: 14px;
+    }
+    
+    .score-metric-label {
+      color: #E3E7DE;
+      opacity: 0.4;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    
+    .score-metric-value {
+      color: #E3E7DE;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    
+    /* CTA */
+    .cta-section {
+      margin-top: 50px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(227, 231, 222, 0.2);
+      text-align: center;
+    }
+    
+    .cta {
+      background: #E3E7DE;
+      color: #111111;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 20px 48px;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .cta-sub {
+      color: #E3E7DE;
+      opacity: 0.4;
+      font-size: 12px;
+      margin-top: 16px;
+    }
+    
+    /* Logo */
+    .logo {
+      position: absolute;
+      top: 60px;
+      right: 60px;
+      color: #E3E7DE;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">memetik.ai</div>
+  
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">Free AEO Audit</div>
+    <h1>Can AI Find Your Business?</h1>
+    <p class="subtitle">64% of Google searches now end without a click. Your customers are asking ChatGPT, Perplexity & Claude instead. Are you visible?</p>
+  </div>
+  
+  <!-- Process Steps -->
+  <div class="process">
+    <div class="step">
+      <div class="step-number">01</div>
+      <div class="step-title">Enter Your URL</div>
+      <div class="step-desc">Drop in your website. We crawl your pages, check your technical setup, and analyze your content structure.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">02</div>
+      <div class="step-title">We Query 3 AI Engines</div>
+      <div class="step-desc">We ask ChatGPT, Perplexity & Claude 8 purchase-intent questions about your industry. Do they mention you?</div>
+    </div>
+    <div class="step">
+      <div class="step-number">03</div>
+      <div class="step-title">Get Your Score</div>
+      <div class="step-desc">Receive a detailed report with your AEO Readiness Score, gaps, and a 30-60-90 day roadmap to fix them.</div>
+    </div>
+  </div>
+  
+  <!-- What We Check -->
+  <div class="section-title">What We Analyze</div>
+  <div class="checks">
+    <div class="check">
+      <div class="check-icon">🔍</div>
+      <div class="check-title">AI Visibility</div>
+      <div class="check-points">Do AI engines cite you?<br>Brand mentions across queries<br>Competitor comparison</div>
+    </div>
+    <div class="check">
+      <div class="check-icon">⚙️</div>
+      <div class="check-title">Technical</div>
+      <div class="check-points">llms.txt presence<br>Crawlability score<br>Site structure</div>
+    </div>
+    <div class="check">
+      <div class="check-icon">📊</div>
+      <div class="check-title">Structured Data</div>
+      <div class="check-points">Schema markup<br>JSON-LD implementation<br>Rich snippet eligibility</div>
+    </div>
+    <div class="check">
+      <div class="check-icon">✍️</div>
+      <div class="check-title">Content Quality</div>
+      <div class="check-points">Clarity & structure<br>Entity coverage<br>Answer-ready formatting</div>
+    </div>
+    <div class="check">
+      <div class="check-icon">🔗</div>
+      <div class="check-title">Citability</div>
+      <div class="check-points">Authoritative signals<br>Source reliability<br>Trust indicators</div>
+    </div>
+    <div class="check">
+      <div class="check-icon">📈</div>
+      <div class="check-title">Competitive</div>
+      <div class="check-points">Who AI recommends<br>Share of voice<br>Gap analysis</div>
+    </div>
+  </div>
+  
+  <!-- AI Engines -->
+  <div class="section-title">Tested Across 3 AI Engines</div>
+  <div class="engines">
+    <div class="engine">
+      <div class="engine-name">ChatGPT</div>
+      <div class="engine-desc">300M+ weekly users</div>
+    </div>
+    <div class="engine">
+      <div class="engine-name">Perplexity</div>
+      <div class="engine-desc">100M+ monthly queries</div>
+    </div>
+    <div class="engine">
+      <div class="engine-name">Claude</div>
+      <div class="engine-desc">Enterprise AI leader</div>
+    </div>
+  </div>
+  
+  <!-- Sample Output -->
+  <div class="output">
+    <div class="output-left">
+      <div class="output-title">Your Report Includes</div>
+      <div class="output-list">
+        <span>→</span> AEO Readiness Score (0-100)<br>
+        <span>→</span> AI visibility across all 3 engines<br>
+        <span>→</span> Competitors AI recommends instead<br>
+        <span>→</span> Technical gaps & quick wins<br>
+        <span>→</span> 30-60-90 day action roadmap
+      </div>
+    </div>
+    <div class="output-right">
+      <div class="score-card">
+        <div class="score-header">
+          <div>
+            <div class="score-label-sm">AEO Readiness</div>
+            <div class="score-brand">yoursite.com</div>
+          </div>
+          <div class="score-big">
+            <div class="score-value">58</div>
+            <div class="score-max">/ 100</div>
+          </div>
+        </div>
+        <div class="score-metrics">
+          <div class="score-metric">
+            <div class="score-metric-label">AI Visibility</div>
+            <div class="score-metric-value">3 / 8</div>
+          </div>
+          <div class="score-metric">
+            <div class="score-metric-label">Technical</div>
+            <div class="score-metric-value">9 / 13</div>
+          </div>
+          <div class="score-metric">
+            <div class="score-metric-label">Content</div>
+            <div class="score-metric-value">11 / 15</div>
+          </div>
+          <div class="score-metric">
+            <div class="score-metric-label">Structured Data</div>
+            <div class="score-metric-value">8 / 17</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta">Get Your Free Audit →</div>
+    <div class="cta-sub">60 seconds. No email required. Instant results.</div>
+  </div>
+</body>
+</html>

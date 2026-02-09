@@ -30,7 +30,7 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
           )}
 
           {/* Title */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-black tracking-tight uppercase leading-[0.9] mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold tracking-tight leading-[0.9] mb-4">
             {article.title}
           </h2>
 
@@ -81,7 +81,7 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
         )}
 
         {/* Title */}
-        <h3 className="text-lg sm:text-xl font-display font-black tracking-tight uppercase leading-[0.95] mb-3">
+        <h3 className="text-lg sm:text-xl font-display font-bold tracking-tight leading-[0.95] mb-3">
           {article.title}
         </h3>
 

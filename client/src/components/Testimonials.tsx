@@ -51,7 +51,7 @@ export function Testimonials() {
               Client Results
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight uppercase mb-4">
             Real Results.<br/>Real Revenue.
           </h2>
           <p className="font-mono text-sm text-foreground/60 max-w-2xl mx-auto">
@@ -78,7 +78,7 @@ export function Testimonials() {
               {/* Metric */}
               <div className="border-t border-foreground/20 pt-4 mb-4">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-display font-black">{testimonial.metric}</span>
+                  <span className="text-3xl font-display font-extrabold">{testimonial.metric}</span>
                   <span className="font-mono text-xs text-foreground/60 uppercase">{testimonial.metricLabel}</span>
                 </div>
               </div>

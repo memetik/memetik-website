@@ -67,7 +67,7 @@ export default function Audit() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left -- Copy */}
             <div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-black leading-[0.85] tracking-tight text-foreground uppercase mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold leading-[0.85] tracking-tight text-foreground uppercase mb-6">
                 Is your brand
                 <br />
                 invisible to AI?
@@ -92,7 +92,7 @@ export default function Audit() {
                   { stat: "90", label: "Days to fix it" },
                 ].map((item, i) => (
                   <div key={i} className="border-2 border-foreground p-4">
-                    <div className="text-2xl md:text-3xl font-display font-black">
+                    <div className="text-2xl md:text-3xl font-display font-extrabold">
                       {item.stat}
                     </div>
                     <div className="font-mono text-[10px] uppercase tracking-wider text-foreground/60 mt-1">
@@ -108,7 +108,7 @@ export default function Audit() {
               {submitted ? (
                 <div className="text-center py-8">
                   <CheckCircle className="w-16 h-16 mx-auto mb-6 text-green-600" />
-                  <h3 className="font-display font-black text-2xl uppercase mb-3">
+                  <h3 className="font-display font-extrabold text-2xl uppercase mb-3">
                     Audit Requested
                   </h3>
                   <p className="font-mono text-sm text-foreground/70 mb-4">
@@ -122,7 +122,7 @@ export default function Audit() {
               ) : (
                 <>
                   <div className="mb-6">
-                    <h2 className="font-display font-black text-xl uppercase mb-2">
+                    <h2 className="font-display font-extrabold text-xl uppercase mb-2">
                       Get Your Free AEO Audit
                     </h2>
                     <p className="font-mono text-xs text-foreground/60">
@@ -195,7 +195,7 @@ export default function Audit() {
             &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight uppercase mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight uppercase mb-4">
             What's in the audit
           </h2>
           <p className="font-serif text-lg text-foreground/60 mb-12 max-w-2xl">
@@ -249,7 +249,7 @@ export default function Audit() {
                 <div className="w-10 h-10 border-2 border-foreground flex items-center justify-center mb-4">
                   <item.icon className="w-5 h-5" />
                 </div>
-                <h3 className="font-display font-black text-lg uppercase mb-2">
+                <h3 className="font-display font-extrabold text-lg uppercase mb-2">
                   {item.title}
                 </h3>
                 <p className="font-mono text-xs text-foreground/70 leading-relaxed">
@@ -266,7 +266,7 @@ export default function Audit() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-display font-black tracking-tight uppercase mb-6 text-background">
+              <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-6 text-background">
                 Your buyers aren't googling anymore
               </h2>
               <p className="font-mono text-sm text-background/70 mb-6">
@@ -365,7 +365,7 @@ export default function Audit() {
                   <span className="font-mono text-sm font-bold text-background">
                     Overall AEO Score
                   </span>
-                  <span className="font-display font-black text-2xl text-red-400">
+                  <span className="font-display font-extrabold text-2xl text-red-400">
                     8/100
                   </span>
                 </div>
@@ -378,7 +378,7 @@ export default function Audit() {
       {/* How It Works Section */}
       <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-display font-black tracking-tight uppercase mb-12">
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-12">
             How it works
           </h2>
 
@@ -413,7 +413,7 @@ export default function Audit() {
                 <div className="font-mono text-xs text-foreground/40 mb-4">
                   {item.step}
                 </div>
-                <h3 className="font-display font-black text-xl uppercase mb-3">
+                <h3 className="font-display font-extrabold text-xl uppercase mb-3">
                   {item.title}
                 </h3>
                 <p className="font-mono text-xs text-foreground/70 leading-relaxed mb-4">
@@ -434,7 +434,7 @@ export default function Audit() {
       {/* Social Proof / Trust */}
       <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-display font-black tracking-tight uppercase mb-8">
+          <h2 className="text-2xl sm:text-3xl font-display font-extrabold tracking-tight uppercase mb-8">
             Why companies trust Memetik
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
@@ -445,7 +445,7 @@ export default function Audit() {
               { stat: "236", label: "Articles published" },
             ].map((item, i) => (
               <div key={i}>
-                <div className="text-3xl md:text-4xl font-display font-black">
+                <div className="text-3xl md:text-4xl font-display font-extrabold">
                   {item.stat}
                 </div>
                 <div className="font-mono text-[10px] uppercase tracking-wider text-foreground/60 mt-1">
@@ -460,7 +460,7 @@ export default function Audit() {
       {/* Bottom CTA */}
       <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-foreground text-background">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black uppercase tracking-tight mb-4 text-background">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold uppercase tracking-tight mb-4 text-background">
             Stop guessing. Start measuring.
           </h2>
           <p className="font-mono text-sm text-background/60 mb-8 max-w-xl mx-auto">
@@ -488,7 +488,7 @@ export default function Audit() {
       <footer className="py-8 px-4 sm:px-6 md:px-12 border-t border-foreground/20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <Link href="/">
-            <a className="font-display font-black text-xl uppercase">
+            <a className="font-display font-extrabold text-xl uppercase">
               MEMETIK
             </a>
           </Link>

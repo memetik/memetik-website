@@ -70,7 +70,7 @@ export function FAQ() {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight mb-4">
             Questions & Answers
           </h2>
           <p className="text-base text-foreground/60">

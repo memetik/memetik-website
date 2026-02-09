@@ -91,7 +91,7 @@ export default function ResourcePost() {
         <Nav />
         <div className="pt-32 pb-16 px-4 sm:px-6 md:px-12">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl font-display font-black uppercase mb-4">
+            <h1 className="text-3xl font-display font-extrabold uppercase mb-4">
               {error || "Article Not Found"}
             </h1>
             <Link href="/resources">
@@ -131,7 +131,7 @@ export default function ResourcePost() {
           )}
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-tight uppercase leading-[0.9] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight uppercase leading-[0.9] mb-6">
             {article.title}
           </h1>
 
@@ -201,7 +201,7 @@ export default function ResourcePost() {
       {/* Related Articles / CTA */}
       <section className="py-16 px-4 sm:px-6 md:px-12 border-t-2 border-foreground bg-foreground text-background">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-display font-black uppercase tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl font-display font-extrabold uppercase tracking-tight mb-4">
             Ready to dominate AI search?
           </h2>
           <p className="font-mono text-sm text-background/60 mb-8">
@@ -220,7 +220,7 @@ export default function ResourcePost() {
       {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 md:px-12 border-t border-foreground/20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <a href="/" className="font-display font-black text-xl uppercase">
+          <a href="/" className="font-display font-extrabold text-xl uppercase">
             MEMETIK
           </a>
           <div className="font-mono text-xs text-foreground/40 uppercase">

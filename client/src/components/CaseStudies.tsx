@@ -41,7 +41,7 @@ export function CaseStudies() {
               Proof of Work
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-black tracking-tight uppercase mb-4 text-background">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight uppercase mb-4 text-background">
             Case Studies
           </h2>
           <p className="font-mono text-sm text-background/60 max-w-2xl">
@@ -66,7 +66,7 @@ export function CaseStudies() {
                     </span>
                   </div>
                   
-                  <h3 className="text-2xl md:text-3xl font-display font-black uppercase tracking-tight mb-6 text-background">
+                  <h3 className="text-2xl md:text-3xl font-display font-extrabold uppercase tracking-tight mb-6 text-background">
                     {study.title}
                   </h3>
                   
@@ -92,7 +92,7 @@ export function CaseStudies() {
                   <div className="grid grid-cols-3 gap-4">
                     {study.results.map((result, j) => (
                       <div key={j} className="text-center p-4 border border-background/20">
-                        <div className="text-3xl md:text-4xl font-display font-black text-background mb-1">
+                        <div className="text-3xl md:text-4xl font-display font-extrabold text-background mb-1">
                           {result.metric}
                         </div>
                         <div className="font-mono text-[10px] text-background/60 uppercase">

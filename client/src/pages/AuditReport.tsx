@@ -172,7 +172,7 @@ export default function AuditReport() {
       <div className="min-h-screen w-full bg-[#0a0a0a] text-[#f5f5f5]">
         <Nav />
         <div className="pt-32 pb-16 px-4 text-center">
-          <h1 className="text-4xl font-display font-black uppercase mb-4">Audit Not Found</h1>
+          <h1 className="text-4xl font-display font-extrabold uppercase mb-4">Audit Not Found</h1>
           <p className="font-mono text-white/60 mb-8">
             This audit report doesn't exist or has expired.
           </p>
@@ -193,7 +193,7 @@ export default function AuditReport() {
         <Nav />
         <div className="pt-32 pb-16 px-4 text-center">
           <Loader2 className="w-16 h-16 animate-spin mx-auto mb-6 text-white/50" />
-          <h1 className="text-3xl font-display font-black uppercase mb-4">Audit in Progress</h1>
+          <h1 className="text-3xl font-display font-extrabold uppercase mb-4">Audit in Progress</h1>
           <p className="font-mono text-white/60 mb-2">
             We're analyzing <strong className="text-white">{data.domain}</strong>
           </p>
@@ -230,13 +230,13 @@ export default function AuditReport() {
             AEO Audit Report
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold uppercase tracking-tight mb-6">
             {data.domain}
           </h1>
 
           <div className="inline-flex flex-col items-center mb-8">
             <div className="w-32 h-32 border-4 border-white/20 rounded-full flex flex-col items-center justify-center mb-4">
-              <span className={`text-5xl font-display font-black ${gradeColor(score?.grade || "F")}`}>
+              <span className={`text-5xl font-display font-extrabold ${gradeColor(score?.grade || "F")}`}>
                 {score?.grade}
               </span>
             </div>
@@ -275,7 +275,7 @@ export default function AuditReport() {
       {/* Executive Summary */}
       <section className="py-12 px-4 sm:px-6 md:px-12 border-b border-white/10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-display font-black uppercase mb-6">Executive Summary</h2>
+          <h2 className="text-2xl font-display font-extrabold uppercase mb-6">Executive Summary</h2>
           <p className="font-serif text-lg text-white/70 leading-relaxed">
             {report?.executiveSummary}
           </p>
@@ -285,7 +285,7 @@ export default function AuditReport() {
       {/* Score Breakdown */}
       <section className="py-12 px-4 sm:px-6 md:px-12 border-b border-white/10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-display font-black uppercase mb-8">Score Breakdown</h2>
+          <h2 className="text-2xl font-display font-extrabold uppercase mb-8">Score Breakdown</h2>
           
           <div className="space-y-4">
             {score?.categories.map((cat, i) => (
@@ -322,7 +322,7 @@ export default function AuditReport() {
       {/* AI Visibility */}
       <section className="py-12 px-4 sm:px-6 md:px-12 border-b border-white/10 print-break">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-display font-black uppercase mb-8">What AI Says About You</h2>
+          <h2 className="text-2xl font-display font-extrabold uppercase mb-8">What AI Says About You</h2>
           
           {aiVisibility?.brandAnalysis?.category && (
             <p className="font-mono text-sm text-white/50 mb-4">
@@ -341,7 +341,7 @@ export default function AuditReport() {
             </div>
           )}
 
-          <h3 className="text-lg font-display font-black uppercase mb-4">AI Search Query Results</h3>
+          <h3 className="text-lg font-display font-extrabold uppercase mb-4">AI Search Query Results</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -387,12 +387,12 @@ export default function AuditReport() {
       {/* Detailed Analysis */}
       <section className="py-12 px-4 sm:px-6 md:px-12 border-b border-white/10 print-break">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-display font-black uppercase mb-8">Detailed Analysis</h2>
+          <h2 className="text-2xl font-display font-extrabold uppercase mb-8">Detailed Analysis</h2>
           
           <div className="space-y-6">
             {report?.categoryAnalysis.map((cat, i) => (
               <div key={i} className="bg-white/5 border border-white/10 p-6">
-                <h3 className="text-lg font-display font-black uppercase mb-3">{cat.category}</h3>
+                <h3 className="text-lg font-display font-extrabold uppercase mb-3">{cat.category}</h3>
                 <p className="font-serif text-white/70 mb-4">{cat.analysis}</p>
                 
                 {cat.quickWins && cat.quickWins.length > 0 && (
@@ -417,7 +417,7 @@ export default function AuditReport() {
       {/* Recommendations */}
       <section className="py-12 px-4 sm:px-6 md:px-12 border-b border-white/10 print-break">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-display font-black uppercase mb-8">Top Recommendations</h2>
+          <h2 className="text-2xl font-display font-extrabold uppercase mb-8">Top Recommendations</h2>
           
           <div className="space-y-3">
             {report?.topRecommendations.map((rec, i) => (
@@ -430,7 +430,7 @@ export default function AuditReport() {
 
           {report?.contentToCreate && report.contentToCreate.length > 0 && (
             <div className="mt-12">
-              <h2 className="text-2xl font-display font-black uppercase mb-8">Content to Create</h2>
+              <h2 className="text-2xl font-display font-extrabold uppercase mb-8">Content to Create</h2>
               <div className="space-y-3">
                 {report.contentToCreate.map((content, i) => (
                   <div key={i} className="bg-white/5 border border-white/10 border-l-4 border-l-white/30 p-4 flex items-start gap-4">
@@ -447,11 +447,11 @@ export default function AuditReport() {
       {/* Roadmap */}
       <section className="py-12 px-4 sm:px-6 md:px-12 border-b border-white/10 print-break">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-display font-black uppercase mb-8">Your 90-Day AEO Roadmap</h2>
+          <h2 className="text-2xl font-display font-extrabold uppercase mb-8">Your 90-Day AEO Roadmap</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white/5 border border-white/10 p-6">
-              <h3 className="text-lg font-display font-black uppercase mb-4 text-green-500">
+              <h3 className="text-lg font-display font-extrabold uppercase mb-4 text-green-500">
                 Days 1-30: Foundation
               </h3>
               <ul className="space-y-2">
@@ -465,7 +465,7 @@ export default function AuditReport() {
             </div>
             
             <div className="bg-white/5 border border-white/10 p-6">
-              <h3 className="text-lg font-display font-black uppercase mb-4 text-yellow-500">
+              <h3 className="text-lg font-display font-extrabold uppercase mb-4 text-yellow-500">
                 Days 31-60: Build
               </h3>
               <ul className="space-y-2">
@@ -479,7 +479,7 @@ export default function AuditReport() {
             </div>
             
             <div className="bg-white/5 border border-white/10 p-6">
-              <h3 className="text-lg font-display font-black uppercase mb-4 text-red-500">
+              <h3 className="text-lg font-display font-extrabold uppercase mb-4 text-red-500">
                 Days 61-90: Scale
               </h3>
               <ul className="space-y-2">
@@ -501,7 +501,7 @@ export default function AuditReport() {
           <div className="font-mono text-xs tracking-widest text-white/40 mb-6 uppercase">
             Memetik
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-black uppercase mb-4">
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold uppercase mb-4">
             Ready to Own Your AI Search Results?
           </h2>
           <p className="font-serif text-lg text-white/60 max-w-xl mx-auto mb-8">
@@ -525,7 +525,7 @@ export default function AuditReport() {
       <footer className="py-8 px-4 sm:px-6 md:px-12 border-t border-white/10 no-print">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <Link href="/">
-            <a className="font-display font-black text-xl uppercase">MEMETIK</a>
+            <a className="font-display font-extrabold text-xl uppercase">MEMETIK</a>
           </Link>
           <div className="font-mono text-xs text-white/40 uppercase">
             &copy; 2026 MEMETIK
