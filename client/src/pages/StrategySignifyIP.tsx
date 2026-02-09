@@ -768,6 +768,15 @@ export default function StrategySignifyIP() {
         <section className="mb-24 md:mb-32">
           <SectionHeader number="06" title="INVESTMENT" />
 
+          <div className="text-center mb-8 p-4 border-2 border-primary">
+            <p className="text-lg md:text-xl font-display font-bold text-foreground">
+              Month-to-month. No lock-in contract. Cancel anytime.
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Every page we build stays on your site — permanently.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {/* Ignite */}
             <div className="bg-secondary/5 border border-border p-6 md:p-8">
