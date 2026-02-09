@@ -870,9 +870,9 @@ export default function StrategySignifyIP() {
                   </tr>
                   <tr>
                     <td className="p-4 md:p-6 text-foreground font-medium text-xs">Time to ROI</td>
-                    <td className="p-4 md:p-6 text-muted-foreground text-center">6-9 months</td>
-                    <td className="p-4 md:p-6 text-primary font-bold text-center">3-5 months</td>
-                    <td className="p-4 md:p-6 text-muted-foreground text-center">2-4 months</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">2-3 months</td>
+                    <td className="p-4 md:p-6 text-primary font-bold text-center">1-2 months</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">~1 month</td>
                   </tr>
                   <tr>
                     <td className="p-4 md:p-6 text-foreground font-medium text-xs">AI citation tracking</td>
@@ -889,6 +889,9 @@ export default function StrategySignifyIP() {
                 </tbody>
               </table>
             </div>
+            <p className="text-xs text-muted-foreground mt-4">
+              Traditional SERP rankings take 3-6 months. We don't wait — we target the upstream traffic inside LLMs (ChatGPT, Perplexity, Gemini) using methods that generate AI citations within weeks. Google rankings compound on top of that.
+            </p>
           </div>
 
           <div className="p-4 bg-primary/5 border border-primary/20 flex gap-4 items-start">
