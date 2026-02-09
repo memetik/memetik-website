@@ -768,32 +768,69 @@ export default function StrategySignifyIP() {
         <section className="mb-24 md:mb-32">
           <SectionHeader number="06" title="INVESTMENT" />
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {/* Ignite */}
             <div className="bg-secondary/5 border border-border p-6 md:p-8">
-              <h3 className="text-foreground font-bold text-lg mb-2">Foundation</h3>
-              <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$7K<span className="text-muted-foreground text-lg">/month</span></p>
+              <h3 className="text-foreground font-bold text-lg mb-1">Ignite</h3>
+              <p className="text-xs text-muted-foreground font-mono mb-4">3-month minimum</p>
+              <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$2,200<span className="text-muted-foreground text-lg">/mo</span></p>
               <BulletList items={[
-                "Full technical SEO setup",
-                "40+ hand-crafted Apex Asset pages",
-                "100-150 programmatic pages",
-                "Basic AEO + entity building",
-                "Local SEO domination",
-                "Monthly reporting on SEO + AEO + conversion KPIs",
+                "Full technical SEO setup (schema, sitemap, GSC, GA4, Core Web Vitals)",
+                "10 flagship guide pages",
+                "5 location pages (Adelaide + 4 major cities)",
+                "30 programmatic SEO pages",
+                "Google Business Profile optimization",
+                "Local citation submissions (10+ directories)",
+                "Monthly reporting",
               ]} />
+              <div className="mt-6 pt-4 border-t border-border/50">
+                <p className="text-xs font-mono text-primary font-bold">~50 PAGES OVER 3 MONTHS</p>
+              </div>
             </div>
 
+            {/* Authority */}
             <div className="bg-secondary/5 border-2 border-primary p-6 md:p-8 relative">
               <span className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-mono font-bold px-3 py-1">RECOMMENDED</span>
-              <h3 className="text-foreground font-bold text-lg mb-2">Ownership</h3>
-              <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$12K<span className="text-muted-foreground text-lg">/month</span></p>
+              <h3 className="text-foreground font-bold text-lg mb-1">Authority</h3>
+              <p className="text-xs text-muted-foreground font-mono mb-4">6-month minimum</p>
+              <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$3,500<span className="text-muted-foreground text-lg">/mo</span></p>
               <BulletList items={[
-                "Everything in Foundation",
-                "200-300 programmatic pages (full coverage)",
-                "Full Trust Relay Network (20+ DR50+ backlinks)",
-                "Aggressive AEO with guaranteed citation targets",
-                "Content placements: LinkedIn, Medium, Reddit, guest posts",
-                "Quarterly content refresh + optimization passes",
+                "Everything in Ignite",
+                "Full 40+ editorial pages (guides, comparisons, industry, all 8 locations)",
+                "200-300 programmatic SEO pages (every permutation)",
+                "12+ expanded case studies",
+                "Press releases (2/month)",
+                "Blog content (2 posts/month)",
+                "AEO baseline audit + quarterly monitoring",
+                "Review generation strategy + templates",
+                "Legal directory submissions (IPTA, Law Society SA, Doyle's Guide)",
+                "Monthly reporting with SEO + AEO + conversion tracking",
               ]} />
+              <div className="mt-6 pt-4 border-t border-primary/30">
+                <p className="text-xs font-mono text-primary font-bold">350+ PAGES OVER 6 MONTHS</p>
+              </div>
+            </div>
+
+            {/* Dominance */}
+            <div className="bg-secondary/5 border border-border p-6 md:p-8">
+              <h3 className="text-foreground font-bold text-lg mb-1">Dominance</h3>
+              <p className="text-xs text-muted-foreground font-mono mb-4">6-month minimum</p>
+              <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$5,500<span className="text-muted-foreground text-lg">/mo</span></p>
+              <BulletList items={[
+                "Everything in Authority",
+                "Dedicated backlink outreach (5+ DR50+ links/month)",
+                "LinkedIn ghostwriting for Hollie Ford (2/month)",
+                "Guest post placements (1-2/month)",
+                "Reddit + Quora seeding (ongoing brand mentions)",
+                "Medium articles + content placements",
+                "Monthly AEO monitoring + optimization",
+                "Competitor monitoring dashboard",
+                "Quarterly content refresh on top performers",
+                "Priority Slack/email support",
+              ]} />
+              <div className="mt-6 pt-4 border-t border-border/50">
+                <p className="text-xs font-mono text-primary font-bold">350+ PAGES, 20+ BACKLINKS, 30+ PLACEMENTS</p>
+              </div>
             </div>
           </div>
 
@@ -802,7 +839,7 @@ export default function StrategySignifyIP() {
             <div className="text-sm">
               <strong className="text-foreground block mb-1">The economics</strong>
               <span className="text-muted-foreground">
-                At 40-60 organic leads per month by month 12, and a conservative 20% conversion to paid consultations — that's 8-12 new clients per month from organic alone. At Signify IP's average engagement value, the ROI pays for itself many times over. And unlike paid ads, it compounds.
+                On Authority at $3,500/month — by month 12, you're looking at 40-60 organic leads per month. At a conservative 20% conversion to paid consultations, that's 8-12 new clients per month from organic alone. At Signify IP's average engagement value, the ROI pays for itself many times over. And unlike paid ads, it compounds — every page we build keeps working permanently.
               </span>
             </div>
           </div>
