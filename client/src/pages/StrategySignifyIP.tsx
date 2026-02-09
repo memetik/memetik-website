@@ -691,6 +691,7 @@ export default function StrategySignifyIP() {
         {/* Timeline */}
         <section className="mb-24 md:mb-32">
           <SectionHeader number="05" title="12-MONTH ROADMAP" />
+          <p className="text-xs text-muted-foreground font-mono mb-6 uppercase tracking-widest">Shown for Dominance tier — Ignite and Authority follow the same phases at adjusted velocity.</p>
           <div className="overflow-x-auto border border-border rounded-lg mb-8">
             <table className="w-full text-left text-sm min-w-[700px]">
               <thead className="bg-secondary/20 text-foreground">
@@ -704,28 +705,28 @@ export default function StrategySignifyIP() {
                 {[
                   {
                     time: "Month 1",
-                    doing: "Technical foundation. Schema markup. Sitemap + GSC. Flagship guides #1-3 published. Pricing page. FAQ page. GBP optimization. Local citations. AEO baseline audit.",
-                    seeing: "Site indexed properly in Google. Content calendar delivered. First pages ranking for long-tail queries.",
+                    doing: "Technical foundation. Schema markup. Sitemap + GSC. Flagship guides #1-3 published. Pricing page. FAQ page. GBP optimization. Local citations. AEO baseline audit. Reddit + Quora seeding begins. First LinkedIn article published.",
+                    seeing: "Site indexed properly in Google. First AI citations appearing in ChatGPT and Perplexity within weeks. Content calendar delivered.",
                   },
                   {
                     time: "Month 2-3",
-                    doing: "Flagship guides #4-10 published. Comparison pages. Adelaide + Sydney + Melbourne location pages. Industry landing pages begin. LinkedIn article series. First Reddit/Medium placements.",
-                    seeing: "40-50 pages live. Long-tail rankings appearing. First organic impressions in Search Console.",
+                    doing: "Flagship guides #4-10. Comparison pages. All 8 location pages. Industry landing pages. First 50 pSEO pages deployed. Press releases. LinkedIn articles. Reddit/Medium placements. Dedicated backlink outreach begins.",
+                    seeing: "100+ pages live. AI platforms citing Signify IP for core trade mark queries. Long-tail rankings appearing. First organic leads hitting forms.",
                   },
                   {
                     time: "Month 4-6",
-                    doing: "pSEO launch: 80-100 programmatic pages deployed. Remaining location + industry pages. Link building campaigns. Ongoing AEO entity building.",
-                    seeing: "130-155 pages live. Rankings climbing. First organic leads hitting forms. AI platforms starting to reference content.",
+                    doing: "Full pSEO scale: 150+ programmatic pages deployed. Guest post placements. Second wave of backlink outreach. Monthly AEO optimization. Case studies expanded.",
+                    seeing: "250+ pages live. Rankings climbing across all target keywords. Organic leads growing month over month. Signify IP consistently cited across ChatGPT, Perplexity, Gemini.",
                   },
                   {
                     time: "Month 7-9",
-                    doing: "International filing pages. Dispute scenario pages. Second wave of link building. PR placements. Content refresh on top performers.",
-                    seeing: "190-235 pages live. Organic becoming a consistent lead channel. Multiple AI platforms citing Signify IP. Monthly leads growing.",
+                    doing: "International filing pages. Dispute scenario pages. PR placements generating brand signals. Content refresh on top performers. Competitor monitoring.",
+                    seeing: "320+ pages live. Organic a consistent lead channel. 30-50 leads/month. Multiple AI platforms citing Signify IP as a top recommendation.",
                   },
                   {
                     time: "Month 10-12",
-                    doing: "Remaining competitor pages. Final pSEO batch. Full content audit. Optimization pass. Year 2 planning.",
-                    seeing: "230-295 pages live. 150-200 ranking keywords. 40-60 organic leads/month. Top-3 AI cited source for TM queries.",
+                    doing: "Final pSEO batch. Full content audit. Optimization pass. Quarterly refresh. Year 2 planning.",
+                    seeing: "350+ pages live. 150-200 ranking keywords. 50-80 organic leads/month. Top-3 AI cited source for trade mark queries in Australia.",
                   },
                 ].map((row, i) => (
                   <tr key={i}>
@@ -749,10 +750,10 @@ export default function StrategySignifyIP() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/20 bg-secondary/5">
-                <tr><td className="p-4 md:p-6 text-foreground">Q1 (Month 1-3)</td><td className="p-4 md:p-6 text-right text-muted-foreground">40-50</td><td className="p-4 md:p-6 text-right text-primary font-bold">50-55</td></tr>
-                <tr><td className="p-4 md:p-6 text-foreground">Q2 (Month 4-6)</td><td className="p-4 md:p-6 text-right text-muted-foreground">80-100</td><td className="p-4 md:p-6 text-right text-primary font-bold">130-155</td></tr>
-                <tr><td className="p-4 md:p-6 text-foreground">Q3 (Month 7-9)</td><td className="p-4 md:p-6 text-right text-muted-foreground">60-80</td><td className="p-4 md:p-6 text-right text-primary font-bold">190-235</td></tr>
-                <tr><td className="p-4 md:p-6 text-foreground">Q4 (Month 10-12)</td><td className="p-4 md:p-6 text-right text-muted-foreground">40-60</td><td className="p-4 md:p-6 text-right text-primary font-bold">230-295</td></tr>
+                <tr><td className="p-4 md:p-6 text-foreground">Q1 (Month 1-3)</td><td className="p-4 md:p-6 text-right text-muted-foreground">100+</td><td className="p-4 md:p-6 text-right text-primary font-bold">100+</td></tr>
+                <tr><td className="p-4 md:p-6 text-foreground">Q2 (Month 4-6)</td><td className="p-4 md:p-6 text-right text-muted-foreground">150+</td><td className="p-4 md:p-6 text-right text-primary font-bold">250+</td></tr>
+                <tr><td className="p-4 md:p-6 text-foreground">Q3 (Month 7-9)</td><td className="p-4 md:p-6 text-right text-muted-foreground">70+</td><td className="p-4 md:p-6 text-right text-primary font-bold">320+</td></tr>
+                <tr><td className="p-4 md:p-6 text-foreground">Q4 (Month 10-12)</td><td className="p-4 md:p-6 text-right text-muted-foreground">30+</td><td className="p-4 md:p-6 text-right text-primary font-bold">350+</td></tr>
               </tbody>
             </table>
           </div>
