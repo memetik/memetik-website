@@ -149,18 +149,7 @@ export function MethodologySummary() {
         ))}
       </div>
       
-      <div className="mt-24 text-center">
-        <p className="text-sm text-foreground/60 mb-6 uppercase tracking-wider font-mono">
-          Ready to see what this looks like for your brand?
-        </p>
-        <a href="https://cal.com/memetik/letstalk" className="group inline-flex items-center gap-4 px-10 py-5 bg-foreground text-background font-mono font-bold text-sm rounded overflow-hidden hover:opacity-90 transition-opacity uppercase tracking-widest">
-              <span>GET YOUR FREE AI AUDIT</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </a>
-        <p className="font-mono text-xs text-foreground/40 mt-4 uppercase">
-          We'll show you exactly where you rank in AI responses
-        </p>
-      </div>
+
     </section>
   );
 }
