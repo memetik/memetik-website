@@ -860,51 +860,9 @@ export default function StrategyBTS() {
           </div>
         </section>
 
-        {/* 08: Risks & Contingencies */}
+        {/* 08: Commercial Terms */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="08" title="RISKS & CONTINGENCIES" />
-
-          <div className="space-y-4">
-            {[
-              {
-                risk: "Blog Network Discovery",
-                mitigation: "Each blog provides genuine value independently. Unique hosting, registrars, IPs. Real author personas with active social profiles. No footprint patterns. If deindexed, broader strategy continues — blog network amplifies, doesn't carry.",
-              },
-              {
-                risk: "Reddit Account Bans",
-                mitigation: "Aged accounts with established posting history and authentic engagement. Every post provides real value. BTS mentions incidental, not promotional. If banned, shift volume to Quora and Indie Hackers.",
-              },
-              {
-                risk: "Whop Counter-Response",
-                mitigation: "Actually a favorable outcome. Forces them to play defense and split resources. We choose the battleground; they react. Their structural technical problems compound and limit response effectiveness.",
-              },
-              {
-                risk: "Wikipedia Rejection",
-                mitigation: "36 press releases specifically designed to build coverage base. If first submission rejected, continue building coverage beyond 6 months. Press itself has standalone value for AI training and search.",
-              },
-              {
-                risk: "AI Model Updates",
-                mitigation: "Strategy diversified across 12+ platforms. No single platform failure eliminates visibility. Real-time search integrations mean recently published content always has a path into AI answers.",
-              },
-              {
-                risk: "Content Quality Dilution at Scale",
-                mitigation: "Flagship content is deeply researched. Programmatic content meets minimum quality threshold with manual review. If a page isn't genuinely useful, it doesn't publish.",
-              },
-            ].map((item) => (
-              <div key={item.risk} className="bg-secondary/5 border border-border p-5">
-                <div className="flex items-center gap-2 mb-2">
-                  <AlertTriangle className="w-4 h-4 text-yellow-500" />
-                  <h5 className="text-sm font-mono text-foreground font-bold">{item.risk}</h5>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.mitigation}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 09: Commercial Terms */}
-        <section className="mb-24 md:mb-32">
-          <SectionHeader number="09" title="COMMERCIAL TERMS" />
+          <SectionHeader number="08" title="COMMERCIAL TERMS" />
 
           <HighlightBox className="bg-gradient-to-br from-secondary/5 to-background">
             <div className="grid md:grid-cols-2 gap-8">
@@ -913,7 +871,7 @@ export default function StrategyBTS() {
                 <p className="text-muted-foreground text-sm mb-6">6-month initial engagement. $66,000 total.</p>
                 <BulletList items={[
                   "Invoiced monthly through Memetik",
-                  "50% of month 1 ($5,500) to kick off",
+                  "100% of month 1 ($11,000) to kick off",
                   "Monthly invoicing thereafter",
                   "Phase 1 / founding-partner pricing",
                   "Category exclusivity: no competing creator economy platforms",
@@ -941,9 +899,9 @@ export default function StrategyBTS() {
           </HighlightBox>
         </section>
 
-        {/* 10: Next Steps */}
+        {/* 09: Next Steps */}
         <section className="mb-16">
-          <SectionHeader number="10" title="NEXT STEPS" />
+          <SectionHeader number="09" title="NEXT STEPS" />
 
           <div className="space-y-4 mb-10">
             {[
