@@ -769,7 +769,7 @@ export default function StrategyBTS() {
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-3">Independent Blog Network — 3 Sites</h5>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                Clean domains, real author personas with LinkedIn profiles, unique hosting/registrars/IPs, no footprint to BTS. Publish genuinely useful builder content for 2-3 months before introducing platform comparisons.
+                Clean domains, real author personas, unique hosting/registrars/IPs, no footprint to BTS. Publish genuinely useful builder content for 2-3 months before introducing platform comparisons.
               </p>
               <BulletList items={[
                 "Non-negotiable: if someone reads these and never clicks a BTS link, they still get genuine value",
