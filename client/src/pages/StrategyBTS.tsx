@@ -1,6 +1,69 @@
-import { useEffect } from "react";
-import { Target, Database, Share2, RotateCw, CheckCircle, Zap, ArrowRight, Globe, AlertTriangle, Search, Bot, FileText, TrendingUp, Shield, Users, BarChart3, Swords, Eye, Megaphone, MapPin, Clock, DollarSign, Star, ExternalLink } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Target, Database, Share2, RotateCw, CheckCircle, Zap, ArrowRight, Globe, AlertTriangle, Search, Bot, FileText, TrendingUp, Shield, Users, BarChart3, Swords, Eye, Megaphone, MapPin, Clock, DollarSign, Star, ExternalLink, Lock } from "lucide-react";
 import { Nav } from "@/components/Nav";
+
+const GATE_KEY = "bts-strategy-auth";
+const CORRECT_HASH = ",[a`y&0#IGrF<C#Z";
+
+function hashPassword(pw: string): string {
+  let h = 0;
+  for (let i = 0; i < pw.length; i++) {
+    h = ((h << 5) - h + pw.charCodeAt(i)) | 0;
+  }
+  const mapped = Array.from(
+    new Uint8Array(new Int32Array([h, h ^ 0x5f3759df, h ^ 0xdeadbeef, h ^ 0xcafebabe]).buffer)
+  );
+  return mapped.map((b) => String.fromCharCode(33 + (b % 94))).join("");
+}
+
+function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (hashPassword(password) === CORRECT_HASH) {
+      sessionStorage.setItem(GATE_KEY, "1");
+      onUnlock();
+    } else {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
+  };
+
+  return (
+    <div className="min-h-screen w-full bg-background text-foreground flex items-center justify-center font-sans">
+      <div className="w-full max-w-sm px-6">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-12 h-12 border border-primary/20 bg-secondary/10 mb-4">
+            <Lock className="w-5 h-5 text-primary" />
+          </div>
+          <h1 className="text-xl font-display font-bold text-foreground mb-1">Restricted Document</h1>
+          <p className="text-sm text-muted-foreground">Enter password to access this strategy document.</p>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            autoFocus
+            className={`w-full px-4 py-3 bg-secondary/10 border ${error ? "border-red-500" : "border-border"} text-foreground font-mono text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors mb-3`}
+          />
+          <button
+            type="submit"
+            className="w-full px-4 py-3 bg-primary text-primary-foreground font-display font-bold text-sm hover:opacity-90 transition-opacity"
+          >
+            ACCESS DOCUMENT
+          </button>
+          {error && (
+            <p className="text-xs text-red-500 font-mono mt-2 text-center">Incorrect password.</p>
+          )}
+        </form>
+      </div>
+    </div>
+  );
+}
 
 const SectionHeader = ({ number, title }: { number: string; title: string }) => (
   <div className="flex items-center gap-4 mb-8 md:mb-12 border-b border-primary/20 pb-4">
@@ -63,10 +126,16 @@ const publishingPlatforms = [
 ];
 
 export default function StrategyBTS() {
+  const [unlocked, setUnlocked] = useState(() => sessionStorage.getItem(GATE_KEY) === "1");
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "BTS Counter-Offensive — Strategic Growth Plan | MEMETIK";
   }, []);
+
+  if (!unlocked) {
+    return <PasswordGate onUnlock={() => setUnlocked(true)} />;
+  }
 
   return (
     <div className="min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans overflow-x-hidden">
