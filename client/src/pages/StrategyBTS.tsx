@@ -835,118 +835,9 @@ export default function StrategyBTS() {
           </div>
         </section>
 
-        {/* 07: Timeline & Milestones */}
+        {/* 07: What I Need From BTS */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="07" title="TIMELINE & MILESTONES" />
-
-          <div className="space-y-8 relative ml-8 md:ml-16 border-l-2 border-primary/20 pl-8 md:pl-12">
-            {[
-              {
-                month: "Month 1",
-                title: "Audit & Optimise",
-                items: [
-                  "Full AI visibility audit across ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews",
-                  "SEO audit of all 166+ existing pages",
-                  "Create profiles on Trustpilot, G2, Capterra, TrustRadius, Product Hunt",
-                  "First 6 press releases distributed",
-                  "Bing Webmaster Tools + IndexNow setup",
-                  "Competitive monitoring for Whop begins",
-                  "Blog network domains registered and setup begins",
-                ],
-                kpi: "AI audit complete. SEO audit done. All review profiles created. First 6 releases out.",
-              },
-              {
-                month: "Month 2",
-                title: "Strengthen & Expand",
-                items: [
-                  "Complete internal linking architecture across all existing content",
-                  "New content production targeting high-priority queries",
-                  "Independent blog network goes live with first content",
-                  "Forum operations begin on Reddit, Quora, Indie Hackers",
-                  "First backlinks acquired through outreach and guest posting",
-                  "High-authority placements begin on LinkedIn and Medium",
-                  "Press releases 7-12 distributed",
-                ],
-                kpi: "Interlinking complete. New content production started. Blogs publishing. Forum ops begun.",
-              },
-              {
-                month: "Month 3",
-                title: "Push",
-                items: [
-                  "Scale content to 300+ total pages live",
-                  "All third-party placements actively publishing",
-                  "Forum operations at full speed across all four platforms",
-                  "Wikipedia page drafted if press coverage meets notability criteria",
-                  "Press releases 13-18 distributed",
-                  "Review solicitation process activated",
-                ],
-                kpi: "300+ pages live. All placements active. Wikipedia drafted if eligible.",
-                target: "First measurable AI mentions for BTS across any platform.",
-              },
-              {
-                month: "Month 4",
-                title: "Expand",
-                items: [
-                  "APAC content live across Australia, Singapore, Malaysia, India, Japan",
-                  "Content scaling toward 500+ total pages",
-                  "Review solicitation at scale",
-                  "Blog network begins platform comparison content",
-                  "Press releases 19-24 distributed",
-                ],
-                kpi: "APAC content live. Scaling toward 500+ pages. Review solicitation at scale.",
-                target: "AI mentions showing measurable improvement over zero baseline.",
-              },
-              {
-                month: "Month 5",
-                title: "Consolidate",
-                items: [
-                  "All content live and fully interlinked",
-                  "Review ratings at 4.5+ on Trustpilot",
-                  "Forum posts generating organic engagement",
-                  "Blog network fully operational with natural cross-linking",
-                  "Press releases 25-30 distributed",
-                ],
-                kpi: "All content live. Reviews at 4.5+. Forum posts generating organic engagement.",
-                target: "Whop's AI mention share declining relative to BTS's growing share.",
-              },
-              {
-                month: "Month 6",
-                title: "Review & Decision",
-                items: [
-                  "Full performance review against all month-1 baselines",
-                  "AI citation share: before vs after across all platforms",
-                  "Search position tracking for all target queries",
-                  "Review platform ratings and volume",
-                  "Backlink profile growth analysis",
-                  "Press releases 31-36 distributed",
-                ],
-                kpi: "Full performance review complete. AI citation share documented. All targets measured.",
-                target: "Decision: continue, expand, or maintain.",
-              },
-            ].map((phase) => (
-              <div key={phase.month} className="relative pb-8 last:pb-0">
-                <span className="absolute -left-[calc(2rem+7px)] md:-left-[calc(3rem+7px)] top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-primary border-2 border-background"></span>
-                <div className="text-primary font-mono text-sm font-bold uppercase tracking-wider mb-1">{phase.month}</div>
-                <h4 className="text-lg font-display font-bold text-foreground mb-3">{phase.title}</h4>
-                <BulletList items={phase.items} />
-                <div className="mt-3 bg-secondary/5 border border-border p-3 text-xs">
-                  <span className="font-mono text-primary font-bold">KPIs: </span>
-                  <span className="text-muted-foreground">{phase.kpi}</span>
-                </div>
-                {phase.target && (
-                  <div className="mt-2 bg-primary/5 border border-primary/20 p-3 text-xs">
-                    <span className="font-mono text-primary font-bold">TARGET: </span>
-                    <span className="text-foreground font-medium">{phase.target}</span>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 08: What I Need From BTS */}
-        <section className="mb-24 md:mb-32">
-          <SectionHeader number="08" title="WHAT I NEED FROM BTS" />
+          <SectionHeader number="07" title="WHAT I NEED FROM BTS" />
           <p className="text-sm text-muted-foreground mb-6 leading-relaxed">This works if I have the following. Without them, parts of the strategy stall.</p>
 
           <div className="grid md:grid-cols-2 gap-4">
@@ -958,8 +849,7 @@ export default function StrategyBTS() {
               { title: "Day One / Chapters Brand Guidelines", desc: "I need to understand and align with BTS's visual and brand identity — the Day One community, the Chapter system, the early-2000s aesthetic — so all content and placements feel native to BTS's world." },
               { title: '"Build Something Real" Positioning Assets', desc: "Any existing copy, internal docs, or brand materials that articulate the builder-first philosophy. If these don't exist yet, we build them together in month 1." },
               { title: "Builder Revenue Distribution Data", desc: "What do BTS builders actually earn? Revenue distribution data supports the 'our builders actually make money' narrative and provides the hard contrast to Whop's 2.4M accounts where most do $0." },
-              { title: "48-Hour Content Approvals", desc: "Content velocity matters. If approvals take a week, the competitive monitoring strategy breaks down — Whop publishes something, I need to counter within 48 hours." },
-              { title: "Bi-Weekly Strategy Calls", desc: "30 minutes every two weeks to review progress, adjust priorities, and stay aligned on direction." },
+
               { title: "Platform Data for Research", desc: "User growth numbers, builder earnings data, transaction volumes, payout speed statistics — the raw material for the original research that press releases and flagship content are built on." },
             ].map((item) => (
               <div key={item.title} className="bg-secondary/5 border border-border p-4">
@@ -970,9 +860,9 @@ export default function StrategyBTS() {
           </div>
         </section>
 
-        {/* 09: Risks & Contingencies */}
+        {/* 08: Risks & Contingencies */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="09" title="RISKS & CONTINGENCIES" />
+          <SectionHeader number="08" title="RISKS & CONTINGENCIES" />
 
           <div className="space-y-4">
             {[
@@ -1012,9 +902,9 @@ export default function StrategyBTS() {
           </div>
         </section>
 
-        {/* 10: Commercial Terms */}
+        {/* 09: Commercial Terms */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="10" title="COMMERCIAL TERMS" />
+          <SectionHeader number="09" title="COMMERCIAL TERMS" />
 
           <HighlightBox className="bg-gradient-to-br from-secondary/5 to-background">
             <div className="grid md:grid-cols-2 gap-8">
@@ -1051,9 +941,9 @@ export default function StrategyBTS() {
           </HighlightBox>
         </section>
 
-        {/* 11: Next Steps */}
+        {/* 10: Next Steps */}
         <section className="mb-16">
-          <SectionHeader number="11" title="NEXT STEPS" />
+          <SectionHeader number="10" title="NEXT STEPS" />
 
           <div className="space-y-4 mb-10">
             {[
