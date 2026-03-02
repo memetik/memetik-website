@@ -170,7 +170,7 @@ export default function StrategyBTS() {
               BTS has a real product, real users (20,000+), real creators (1,600+), and $1.4M+ paid out. What it doesn't have is visibility.
             </p>
             <p>
-              Domain Authority sits at 30. Organic traffic is roughly 53 clicks per month. The site ranks for 8-17 keywords, almost all branded variations of "behindthescenes." AI visibility across ChatGPT, Perplexity, Gemini, and Google AI Overviews is zero. BTS has no presence on Trustpilot, G2, Capterra, or Product Hunt. The 166+ blog articles already published are a solid foundation, but they're not yet connected to the broader discovery ecosystem.
+              Domain Authority sits at 7. Organic traffic is roughly 40 clicks per month — and that's only been for one month. The site ranks for 8-17 keywords, almost all branded variations of "behindthescenes." AI visibility across ChatGPT, Perplexity, Gemini, and Google AI Overviews is zero. BTS has no presence on Trustpilot, G2, Capterra, or Product Hunt. The 166+ blog articles already published are a solid foundation, but they're not yet connected to the broader discovery ecosystem.
             </p>
             <p>
               Meanwhile, Whop — the primary competitor — has an Authority Score of 51, 487.5K organic monthly traffic, 232 AI mentions across platforms, and $217M in funding behind it. They're spending $50-75K/month on content alone, with a dedicated Head of SEO and a team of 7-9 freelance writers.
@@ -319,8 +319,8 @@ export default function StrategyBTS() {
               </thead>
               <tbody>
                 {[
-                  { metric: "Domain Authority", bts: "30", whop: "51" },
-                  { metric: "Organic Traffic", bts: "~53 clicks/mo", whop: "487.5K/mo" },
+                  { metric: "Domain Authority", bts: "7", whop: "51" },
+                  { metric: "Organic Traffic", bts: "~40 clicks/mo (1 month)", whop: "487.5K/mo" },
                   { metric: "Organic Keywords", bts: "8-17", whop: "119.2K" },
                   { metric: "Referring Domains", bts: "~100 real editorial", whop: "18.9K" },
                   { metric: "AI Mentions", bts: "0", whop: "232" },
