@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import Strategy from "@/pages/Strategy";
 import StrategyUleads from "@/pages/StrategyUleads";
 import StrategySignifyIP from "@/pages/StrategySignifyIP";
+import StrategyBTS from "@/pages/StrategyBTS";
 import BTSOffer from "@/pages/BTSOffer";
 import Resources from "@/pages/Resources";
 import ResourcePost from "@/pages/ResourcePost";
@@ -23,6 +24,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/strategy/bts" component={StrategyBTS} />
       <Route path="/strategy/signify-ip" component={StrategySignifyIP} />
       <Route path="/strategy/uleads" component={StrategyUleads} />
       <Route path="/strategy" component={Strategy} />
