@@ -112,17 +112,21 @@ const targetQueries = [
   { query: '"Whop alternative without fund holds"', winner: "Nobody", difficulty: "Easy" },
   { query: '"safest creator platform for payments"', winner: "Nobody", difficulty: "Easy" },
   { query: '"best all-in-one creator platform"', winner: "Kajabi", difficulty: "Medium" },
+  { query: '"best platform for online entrepreneurs"', winner: "Scattered", difficulty: "Medium" },
+  { query: '"best platform to build a real business"', winner: "Nobody", difficulty: "Easy" },
+  { query: '"platform for serious builders"', winner: "Nobody", difficulty: "Easy" },
+  { query: '"where to build a $100K business online"', winner: "Nobody", difficulty: "Easy" },
 ];
 
 const publishingPlatforms = [
-  { platform: "LinkedIn", type: "Analysis pieces", target: '"creator platform comparison"' },
-  { platform: "Medium", type: "Creator stories", target: '"best platform for selling courses"' },
+  { platform: "LinkedIn", type: "Analysis pieces", target: '"best platform for online entrepreneurs"' },
+  { platform: "Medium", type: "Builder stories", target: '"best platform for selling courses"' },
   { platform: "HackerNoon", type: "Technical content", target: '"creator economy infrastructure"' },
   { platform: "Forbes/Entrepreneur", type: "Thought leadership", target: '"future of creator economy"' },
   { platform: "Reddit", type: "Recommendations", target: '"[competitor] alternative"' },
-  { platform: "Quora", type: "Detailed answers", target: '"which creator platform is best?"' },
+  { platform: "Quora", type: "Detailed answers", target: '"which platform is best for building a business?"' },
   { platform: "YouTube", type: "Reviews/comparisons", target: '"BTS vs Whop"' },
-  { platform: "Substack", type: "Newsletter content", target: '"creator business strategies"' },
+  { platform: "Substack", type: "Newsletter content", target: '"building a real business online"' },
 ];
 
 export default function StrategyBTS() {
@@ -172,8 +176,11 @@ export default function StrategyBTS() {
         <section className="mb-24 md:mb-32">
           <HighlightBox className="bg-gradient-to-br from-secondary/5 to-background">
             <h3 className="text-sm font-mono text-primary mb-6 uppercase tracking-widest">TLDR</h3>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+              BTS isn't chasing volume. It's building the platform for 10,000 densely concentrated builders doing $100K+/year — a $1B GMV target that changes the entire competitive equation.
+            </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
-              Three lines of effort running simultaneously across 6 months to take BTS from zero visibility to measurable AI presence, significant organic search growth, and 4.5+ review ratings across platforms.
+              This is a 6-month campaign to make BTS the obvious home for serious entrepreneurs who are obsessed with what they're building — people who care about legitimacy, longevity, and legacy, not another marketplace racing to the bottom on headcount. Three lines of effort running simultaneously:
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -236,24 +243,27 @@ export default function StrategyBTS() {
 
           <div className="prose-custom space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              BTS has a real product, real users (20,000+), real creators (1,600+), and $1.4M+ paid out. What it doesn't have is visibility.
+              BTS has real builders and real revenue. 20,000+ users, 1,600+ builders, $1.4M+ paid out. What it doesn't have is visibility.
+            </p>
+            <p>
+              Whop has 2.4M accounts and a brand that screams hustle culture. The visibility gap is also a positioning opportunity — BTS doesn't need Whop's traffic. It needs the right 10,000 people to find it.
             </p>
             <p>
               Domain Authority sits at 7. Organic traffic is roughly 40 clicks per month — and that's only been for one month. The site ranks for 8-17 keywords, almost all branded variations of "behindthescenes." AI visibility across ChatGPT, Perplexity, Gemini, and Google AI Overviews is zero. BTS has no presence on Trustpilot, G2, Capterra, or Product Hunt. The 166+ blog articles already published are a solid foundation, but they're not yet connected to the broader discovery ecosystem.
             </p>
             <p>
-              Meanwhile, Whop — the primary competitor — has an Authority Score of 51, 487.5K organic monthly traffic, 232 AI mentions across platforms, and $217M in funding behind it. They're spending $50-75K/month on content alone, with a dedicated Head of SEO and a team of 7-9 freelance writers.
+              Meanwhile, Whop — the primary competitor — has an Authority Score of 51, 487.5K organic monthly traffic, 232 AI mentions across platforms, and $217M in funding behind it. They're spending $50-75K/month on content alone, with a dedicated Head of SEO and a team of 7-9 freelance writers. But their 2.4M businesses mostly do $0, their marketplace is saturated with gambling, trading, and get-rich-quick schemes, and their brand is synonymous with hustle culture — not legitimate entrepreneurship.
             </p>
             <p className="text-foreground font-medium">
-              But Whop is more fragile than it looks. And the window to exploit that fragility is open right now.
+              Whop is more fragile than it looks. And the window to exploit that fragility is open right now.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
             {[
               { label: "BTS Users", value: "20,000+", icon: <Users className="w-4 h-4" /> },
-              { label: "Active Creators", value: "1,600+", icon: <Star className="w-4 h-4" /> },
-              { label: "Paid to Creators", value: "$1.4M+", icon: <DollarSign className="w-4 h-4" /> },
+              { label: "Active Builders", value: "1,600+", icon: <Star className="w-4 h-4" /> },
+              { label: "Paid to Builders", value: "$1.4M+", icon: <DollarSign className="w-4 h-4" /> },
               { label: "AI Mentions", value: "0", icon: <Bot className="w-4 h-4" /> },
             ].map((stat) => (
               <div key={stat.label} className="bg-secondary/5 border border-border p-4 text-center">
@@ -265,7 +275,7 @@ export default function StrategyBTS() {
           </div>
 
           <p className="text-sm text-muted-foreground mt-8 leading-relaxed">
-            The product is ahead of the brand. The content library exists but isn't connected to any distribution system. The platform metrics are real but invisible to anyone who isn't already a user. This plan closes that gap.
+            The product is ahead of the brand. The content library exists but isn't connected to any distribution system. The platform metrics are real but invisible to anyone who isn't already a user. BTS's philosophy is quality over quantity — fewer builders, higher revenue per builder, real businesses instead of hustle accounts. The common thread among BTS's target builders is obsession: they're obsessed with the thing they're building, whether it's day one or day 1,000. This plan closes the visibility gap by taking what BTS has already built and making it discoverable to the right 10,000 people.
           </p>
         </section>
 
@@ -313,6 +323,22 @@ export default function StrategyBTS() {
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             <div className="bg-secondary/5 border border-border p-5">
               <div className="flex items-center gap-2 text-primary font-mono text-xs font-bold uppercase tracking-wider mb-3">
+                <Users className="w-4 h-4" /> 2.4M Businesses — Most Do $0
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                The vast majority of Whop's 2.4M accounts generate zero revenue. They need volume to drive marketplace metrics, but that volume dilutes the brand and fills the platform with low-quality offerings. BTS's target of 10,000 real builders doing $100K+/year is the opposite strategy — and it's one Whop can't copy without abandoning the volume that defines them.
+              </p>
+            </div>
+            <div className="bg-secondary/5 border border-border p-5">
+              <div className="flex items-center gap-2 text-primary font-mono text-xs font-bold uppercase tracking-wider mb-3">
+                <AlertTriangle className="w-4 h-4" /> Gambling & Hustle Culture
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Whop's marketplace is saturated with gambling picks, trading signals, and get-rich-quick schemes. Sports betting communities, crypto signal groups, and hustle-culture content dominate the listings. This isn't a bug — it's where a significant portion of their transaction volume comes from. A fundamental positioning vulnerability they can't fix without losing the volume that drives their metrics.
+              </p>
+            </div>
+            <div className="bg-secondary/5 border border-border p-5">
+              <div className="flex items-center gap-2 text-primary font-mono text-xs font-bold uppercase tracking-wider mb-3">
                 <Search className="w-4 h-4" /> Search Dependency
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -332,7 +358,7 @@ export default function StrategyBTS() {
                 <Shield className="w-4 h-4" /> Trust Problems
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Trustpilot: 3.7/5 from 2,107 reviews. 120-day fund holds on creator earnings. Random account suspensions. Confusing fees. BBB complaints filed. Reddit threads warning about scams. Marketplace described as "spammy" and full of get-rich-quick schemes.
+                Trustpilot: 3.7/5 from 2,107 reviews. 120-day fund holds on builder earnings — builders can't access their own money for four months. Random account suspensions. Confusing fees. BBB complaints filed. Reddit threads warning about scams. Brand associated with hustle culture, not serious entrepreneurs.
               </p>
             </div>
             <div className="bg-secondary/5 border border-border p-5">
@@ -395,6 +421,9 @@ export default function StrategyBTS() {
                   { metric: "AI Mentions", bts: "0", whop: "232" },
                   { metric: "Review Presence", bts: "None", whop: "2,107 Trustpilot reviews" },
                   { metric: "Content Base", bts: "166+ articles", whop: "Extensive" },
+                  { metric: "Platform Traction", bts: "20K+ users, 1,600+ builders, $1.4M+ paid", whop: "2.4M accounts (most $0)" },
+                  { metric: "Valuation", bts: "$15M (Glamdring Research)", whop: "$217M funding" },
+                  { metric: "Strategic Target", bts: "10,000 builders x $100K = $1B GMV", whop: "Volume at all costs" },
                 ].map((row) => (
                   <tr key={row.metric} className="border-b border-border/50">
                     <td className="p-3 text-foreground font-medium">{row.metric}</td>
@@ -419,7 +448,7 @@ export default function StrategyBTS() {
               </div>
               <h3 className="text-xl font-display font-bold text-foreground mb-3">AI Dominance</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Make BTS the answer when people ask AI models about creator platforms. Get BTS content into Bing (ChatGPT), Reddit and YouTube (Perplexity), top-10 organic results (Google AI Overviews), Brave (Claude), and the broader web that feeds training data. Build multi-platform presence and semantic depth that AI models use as trust signals. Target: measurable, growing AI citation share by month 3, with Whop's relative share declining by month 5.
+                Make BTS the answer when people ask AI models about creator platforms, business-building tools, and where serious entrepreneurs should set up shop. Get BTS content into Bing (ChatGPT), Reddit and YouTube (Perplexity), top-10 organic results (Google AI Overviews), Brave (Claude), and the broader web that feeds training data. Build multi-platform presence and semantic depth that AI models use as trust signals. Target: measurable, growing AI citation share by month 3, with Whop's relative share declining by month 5.
               </p>
             </HighlightBox>
 
@@ -429,7 +458,7 @@ export default function StrategyBTS() {
               </div>
               <h3 className="text-xl font-display font-bold text-foreground mb-3">Search Ownership</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Maximise BTS's search visibility with a constellation of placements — not just the BTS site, but guest posts, Medium articles, Reddit threads, review profiles, LinkedIn pieces. When someone searches "best Whop alternative" or "creator platform comparison 2026," BTS appears repeatedly across multiple results. A competitor would have to fight on 8 fronts simultaneously to displace this.
+                Maximise BTS's search visibility for every query that matters — not just "creator platform" queries but "online entrepreneur," "build a real business," and "serious builder" queries too. Not just with the BTS site, but with a constellation of placements — guest posts, Medium articles, Reddit threads, review profiles, LinkedIn pieces. When someone searches "best Whop alternative" or "best platform for online entrepreneurs," BTS appears repeatedly across multiple results. A competitor would have to fight on 8 fronts simultaneously to displace this.
               </p>
             </HighlightBox>
 
@@ -439,15 +468,81 @@ export default function StrategyBTS() {
               </div>
               <h3 className="text-xl font-display font-bold text-foreground mb-3">Reputation Warfare</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Attack Whop's trust vulnerabilities while building BTS's trust infrastructure. Whop's problems are real, documented, and painful. The 120-day fund hold is a disqualifying issue for many creators. Make those problems visible everywhere, while building BTS's review presence, social proof, and press coverage. Comparison content targets all competitors. Attack content targets Whop specifically.
+                Attack Whop's trust vulnerabilities while building BTS's trust infrastructure. This isn't about fabricating anything — Whop's problems are real, documented, and painful for their users. The 120-day fund hold alone is a disqualifying issue for many builders. The gambling and get-rich-quick marketplace saturation is a brand liability they can't shed. Make those problems visible everywhere, while building BTS's review presence, social proof, and press coverage to create a clear philosophical contrast: Whop is hustle culture for everyone, BTS is the platform for people building something real. Comparison content targets all competitors. Attack content targets Whop specifically.
               </p>
             </HighlightBox>
           </div>
         </section>
 
-        {/* 04: The Playbook */}
+        {/* 04: The $1B GMV Thesis */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="04" title="THE PLAYBOOK" />
+          <SectionHeader number="04" title="THE $1B GMV THESIS" />
+
+          <HighlightBox className="bg-gradient-to-br from-secondary/5 to-background mb-10">
+            <p className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
+              10,000 builders <span className="text-primary">x</span> $100K average annual revenue <span className="text-primary">=</span> $1B in platform GMV.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              This isn't a vanity metric. It's the strategic filter for everything in this campaign. Every piece of content, every placement, every attack angle is designed to attract those specific 10,000 people — not spray and pray for millions of signups that never generate revenue.
+            </p>
+          </HighlightBox>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="bg-secondary/5 border border-border p-5">
+              <h4 className="text-lg font-display font-bold text-foreground mb-3">Whop's Strategy: Volume</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                2.4M accounts, most doing $0, marketplace packed with gambling picks and hustle schemes. Their metrics look impressive at the top line but the per-account economics are hollow.
+              </p>
+            </div>
+            <div className="bg-secondary/5 border border-border p-5">
+              <h4 className="text-lg font-display font-bold text-foreground mb-3">BTS's Strategy: Density</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Fewer builders, higher revenue per builder, real businesses generating real income. A platform with 10,000 builders each doing $100K+ is worth more — to the builders, to the platform, and to investors — than a platform with 2.4M accounts where the median revenue is zero.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-secondary/5 border border-border p-6 mb-10">
+            <h4 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-3">The Unifying Value: Obsession</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              BTS builders are obsessed with the thing they're building — whether it's day one or day 1,000, they still think of it as day one. That shared identity is what makes dense concentration possible. You don't need millions of casual users when you have thousands of obsessed builders who treat their work like a craft.
+            </p>
+          </div>
+
+          <div className="bg-secondary/5 border border-border p-6 mb-10">
+            <h4 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-3">Brand Architecture</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              At the top level, BTS is clean, tech, minimal, clinical — a serious platform for serious people. A layer deeper, the community identity takes shape: "Day One" as the unifying concept, with cohorts organized as Chapters (Chapter 1, Chapter 2, Chapter 3). The aesthetic shifts to an early-2000s nostalgic internet vibe — leaning into entrepreneurial legends and hard-won advice, creating a space that feels both modern and grounded.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              This layered brand architecture means the content we create needs to work at both levels: the clinical authority of BTS the platform, and the warm, obsession-driven culture of Day One the community.
+            </p>
+          </div>
+
+          <h4 className="text-base font-display font-bold text-foreground mb-4">How This Thesis Shapes the Campaign</h4>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-secondary/5 border border-border p-4">
+              <h5 className="text-sm font-mono text-primary font-bold mb-2">Content Targeting</h5>
+              <p className="text-sm text-muted-foreground">We're writing for the entrepreneur doing $50K who wants to get to $200K. The fitness coach ready to turn their side hustle into a real business. Every piece speaks to builders, not browsers.</p>
+            </div>
+            <div className="bg-secondary/5 border border-border p-4">
+              <h5 className="text-sm font-mono text-primary font-bold mb-2">Channel Selection</h5>
+              <p className="text-sm text-muted-foreground">Indie Hackers matters more than TikTok. LinkedIn matters more than Instagram. Reddit's r/Entrepreneur matters more than r/passive_income. We go where serious builders actually spend time.</p>
+            </div>
+            <div className="bg-secondary/5 border border-border p-4">
+              <h5 className="text-sm font-mono text-primary font-bold mb-2">Competitive Framing</h5>
+              <p className="text-sm text-muted-foreground">Every comparison with Whop reinforces the density-over-volume contrast. Their numbers are bigger. Ours are better. That's the narrative.</p>
+            </div>
+            <div className="bg-secondary/5 border border-border p-4">
+              <h5 className="text-sm font-mono text-primary font-bold mb-2">Community Positioning</h5>
+              <p className="text-sm text-muted-foreground">The Day One / Chapters structure gives us something Whop doesn't have: a cohort-based community model that creates belonging and retention. Content can reference "joining Chapter 3" or "Day One builders" in a way that makes BTS feel like a movement, not just a platform.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 05: The Playbook */}
+        <section className="mb-24 md:mb-32">
+          <SectionHeader number="05" title="THE PLAYBOOK" />
 
           {/* Section 1: AI Answer */}
           <h3 className="text-xl font-display font-bold text-foreground mb-2 mt-8 flex items-center gap-3">
@@ -489,7 +584,7 @@ export default function StrategyBTS() {
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-2">Flagship Content</h5>
-              <p className="text-sm text-muted-foreground leading-relaxed">Deep comparison pages (BTS vs Whop, BTS vs Kajabi, BTS vs Skool), comprehensive guides, and original research built from BTS platform data. Designed to be the definitive resource, earn backlinks, and get cited by AI models.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">Deep comparison pages (BTS vs Whop, BTS vs Kajabi, BTS vs Skool), comprehensive guides, original research built from BTS platform data, and manifesto-style content that defines the category. "Build Something Real" is the throughline — pieces like "Why We Only Want 10,000 Builders," "The Case Against Volume," and "What Happens When a Platform Optimizes for Real Businesses Instead of Signups."</p>
             </div>
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-2">Comparison Content</h5>
@@ -497,11 +592,11 @@ export default function StrategyBTS() {
             </div>
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-2">Attack Content</h5>
-              <p className="text-sm text-muted-foreground leading-relaxed">Whop-only. "Whop Fund Hold Problems," "Is Whop Legit," "Whop Scam Complaints." Surfaces real, documented issues from Trustpilot, Reddit, and BBB filings. Nothing fabricated.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">Whop-only. "Whop Fund Hold Problems," "Is Whop Legit," "Whop's 2.4M Businesses — Why Most Make $0," "Gambling, Trading, and Hustle Culture: Inside Whop's Marketplace Problem." Surfaces real, documented issues from Trustpilot, Reddit, and BBB filings. Nothing fabricated, nothing exaggerated.</p>
             </div>
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-2">Programmatic Content</h5>
-              <p className="text-sm text-muted-foreground leading-relaxed">Long-tail pages: "best creator platform for yoga instructors," "best platform for selling photography presets." Volume play covering hundreds of niche queries no competitor is targeting.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">Long-tail pages with builder-first language: "best platform for yoga business owners," "how to build a $100K yoga business online," "best platform for selling photography presets," "how to build a real business teaching music online." Volume play covering hundreds of niche queries no competitor is targeting — language speaks to entrepreneurs building businesses, not hobbyists looking for a side hustle.</p>
             </div>
           </div>
 
@@ -554,7 +649,7 @@ export default function StrategyBTS() {
             {[
               { pos: "Position 1", source: "behindthescenes.com page" },
               { pos: "Positions 2-3", source: "Guest posts on high-authority sites mentioning BTS" },
-              { pos: "Positions 4-5", source: "Medium/Substack articles by creators" },
+              { pos: "Positions 4-5", source: "Medium/Substack articles by builders" },
               { pos: "Positions 6-7", source: "Reddit threads recommending BTS" },
               { pos: "Position 8", source: "G2/Capterra review page" },
               { pos: "Positions 9-10", source: "LinkedIn or HackerNoon piece" },
@@ -598,25 +693,26 @@ export default function StrategyBTS() {
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-3">Fund Holds Amplification</h5>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                Whop's 120-day fund hold on creator earnings is their single biggest vulnerability. Creators can't access their own money for four months.
+                Whop's 120-day fund hold on builder earnings is their single biggest vulnerability. Builders can't access their own money for four months. This is well-documented in Trustpilot reviews, Reddit complaints, and BBB filings.
               </p>
               <BulletList items={[
-                'Dedicated content: "Whop Fund Hold Problems," "Why Whop Holds Your Money for 120 Days," "Creator Platforms That Pay Instantly"',
-                "Surface existing complaints in forum discussions — amplify real ones, don't create fake ones",
-                "Position BTS's payment speed as the direct contrast with specific, verifiable data",
-                "Every comparison content piece mentions the fund hold difference prominently",
+                'Dedicated content: "Whop Fund Hold Problems: What Builders Need to Know," "Why Whop Holds Your Money for 120 Days," "Platforms That Pay Builders Instantly — A Comparison"',
+                "Surface existing complaints in forum discussions and recommendation threads — amplify real ones, don't create fake ones",
+                "Position BTS's payment speed as the direct contrast — requires exact payout timing data from BTS to make the comparison concrete and credible",
+                "Every piece of comparison content between BTS and Whop mentions the fund hold difference prominently — it becomes part of BTS's standard competitive positioning",
               ]} />
             </div>
 
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-3">Marketplace Quality Attacks</h5>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                Whop's marketplace is filled with get-rich-quick products and low-quality digital offerings. This is a brand problem they can't fix without alienating their creator base.
+                Whop's marketplace is filled with gambling picks, trading signals, get-rich-quick products, resold PLR content, and questionable businesses of every variety. This is a brand problem they can't fix without alienating a large portion of their user base — the very accounts generating their transaction volume.
               </p>
               <BulletList items={[
-                "Content contrasting Whop's open marketplace (minimal quality control) with BTS's approach to curation",
-                "Surface specific examples of low-quality Whop listings — screenshot, document, cite",
-                "Position BTS as the platform for professional creators, not hustle culture resellers",
+                "Content contrasting Whop's open marketplace (anyone can sell anything, minimal quality control) with BTS's curation-first approach",
+                "Name the specific categories: gambling communities, trading signal groups, get-rich-quick schemes, questionable hustle products",
+                "Surface specific examples of low-quality Whop marketplace listings — screenshot, document, cite",
+                "Position BTS as the antidote: curation over volume, real businesses over hustle schemes, 10,000 serious builders over 2.4M accounts where most make $0",
               ]} />
             </div>
 
@@ -638,10 +734,10 @@ export default function StrategyBTS() {
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">Forum and community presence across four platforms. Key principle: every post provides real value regardless of whether they click through to BTS.</p>
               <div className="grid md:grid-cols-2 gap-4 mt-4">
                 {[
-                  { platform: "Reddit", desc: "Aged accounts, authentic engagement in r/Entrepreneur, r/creators, r/passive_income. BTS mentions feel incidental." },
-                  { platform: "Indie Hackers", desc: "Genuine creator business discussions. Sophisticated, skeptical audience — approach must be authentic." },
-                  { platform: "Quora", desc: "500+ word answers that genuinely help. BTS mentioned as one option with honest pros and cons." },
-                  { platform: "Twitter/X", desc: "Creator economy conversations. Quote-tweet discussions about platforms, payment processing, selection." },
+                  { platform: "Reddit", desc: "Aged accounts, authentic engagement in r/Entrepreneur, r/creators, r/passive_income, r/digitalnomad. The persona: a serious builder who chose BTS because they wanted a platform that takes their business seriously. BTS mentions feel incidental, not promotional." },
+                  { platform: "Indie Hackers", desc: "This is where the 10,000-builder audience lives. Genuine discussions about building real businesses, monetization, and platform selection. Sophisticated, skeptical audience — approach must be authentic." },
+                  { platform: "Quora", desc: "500+ word answers that genuinely help the reader make a decision. BTS mentioned as one option among several, with honest pros and cons." },
+                  { platform: "Twitter/X", desc: "Engage with builder and entrepreneur conversations. Build presence in threads about building online businesses, platform selection, and the creator economy." },
                 ].map((item) => (
                   <div key={item.platform} className="bg-background/50 border border-border/50 p-3">
                     <span className="text-xs font-mono text-primary font-bold">{item.platform}</span>
@@ -673,7 +769,7 @@ export default function StrategyBTS() {
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-3">Independent Blog Network — 3 Sites</h5>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                Clean domains, real author personas with LinkedIn and Twitter/X profiles, unique hosting/registrars/IPs, no footprint to BTS. Publish genuinely useful creator content for 2-3 months before introducing platform comparisons.
+                Clean domains, real author personas with LinkedIn and Twitter/X profiles, unique hosting/registrars/IPs, no footprint to BTS. Publish genuinely useful builder content for 2-3 months before introducing platform comparisons.
               </p>
               <BulletList items={[
                 "Non-negotiable: if someone reads these and never clicks a BTS link, they still get genuine value",
@@ -694,9 +790,9 @@ export default function StrategyBTS() {
           </div>
         </section>
 
-        {/* 05: APAC Defense */}
+        {/* 06: APAC Defense */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="05" title="APAC DEFENSE" />
+          <SectionHeader number="06" title="APAC DEFENSE" />
           <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
             BTS has an APAC presence that Whop hasn't targeted yet. Establish dominance in APAC search and AI results before Whop arrives. First-mover advantage in regional search is significant — harder to displace an incumbent than to claim uncontested ground.
           </p>
@@ -707,11 +803,11 @@ export default function StrategyBTS() {
                 <FileText className="w-4 h-4" /> Content
               </div>
               <BulletList items={[
-                '"Best Creator Platform in Australia 2026" — flagship APAC comparison',
-                "Country pages: Singapore, Malaysia, India, Japan",
-                '"Creator Economy in APAC" — comprehensive market overview',
+                '"Best Platform for Online Builders in Australia 2026" — flagship APAC comparison',
+                "Country pages: Singapore, Malaysia, India, Japan — local payment methods, currency support, builder market conditions",
+                '"Builder Economy in APAC" — comprehensive market overview',
                 "Payment processing comparisons for APAC methods (PayNow, GrabPay, UPI)",
-                'Localised attack: "Best Whop Alternative in Australia"',
+                'Localised versions: "Best Whop Alternative in Australia," "Best Platform for Indian Entrepreneurs"',
               ]} />
             </div>
             <div className="bg-secondary/5 border border-border p-5">
@@ -719,10 +815,10 @@ export default function StrategyBTS() {
                 <Users className="w-4 h-4" /> Community
               </div>
               <BulletList items={[
-                "Identify APAC creator communities on Facebook, Discord, Telegram, Line",
-                "Establish presence before Whop arrives",
-                "Develop local creator case studies",
-                'Position: "built for global creators" vs American hustle culture',
+                "Identify APAC builder communities on Facebook, Discord, Telegram, Line (particularly important in Japan and Southeast Asia)",
+                "Establish BTS presence before Whop arrives — early presence becomes incumbent advantage",
+                "Develop local builder case studies featuring APAC builders using BTS successfully",
+                'Position BTS as built for global entrepreneurs, not just the US market',
               ]} />
             </div>
             <div className="bg-secondary/5 border border-border p-5">
@@ -730,18 +826,18 @@ export default function StrategyBTS() {
                 <Megaphone className="w-4 h-4" /> Press
               </div>
               <BulletList items={[
-                "Target APAC publications: Tech in Asia, e27, Mumbrella",
+                "Target APAC publications: Tech in Asia, e27, Mumbrella, and regional tech blogs",
                 "Guest posts on APAC tech and business sites",
-                "APAC market entry angles, regional partnerships",
-                "Resonates in markets skeptical of Silicon Valley hype",
+                'Position BTS as "built for global entrepreneurs, not American hustle culture"',
+                "Resonates particularly well in markets skeptical of Silicon Valley hype and get-rich-quick culture that Whop represents",
               ]} />
             </div>
           </div>
         </section>
 
-        {/* 06: Timeline & Milestones */}
+        {/* 07: Timeline & Milestones */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="06" title="TIMELINE & MILESTONES" />
+          <SectionHeader number="07" title="TIMELINE & MILESTONES" />
 
           <div className="space-y-8 relative ml-8 md:ml-16 border-l-2 border-primary/20 pl-8 md:pl-12">
             {[
@@ -848,20 +944,23 @@ export default function StrategyBTS() {
           </div>
         </section>
 
-        {/* 07: What I Need From BTS */}
+        {/* 08: What I Need From BTS */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="07" title="WHAT I NEED FROM BTS" />
+          <SectionHeader number="08" title="WHAT I NEED FROM BTS" />
           <p className="text-sm text-muted-foreground mb-6 leading-relaxed">This works if I have the following. Without them, parts of the strategy stall.</p>
 
           <div className="grid md:grid-cols-2 gap-4">
             {[
               { title: "Product Roadmap Access", desc: "Content aligned with feature launches is 10x more effective than writing about them a month later." },
-              { title: "Creator Testimonials & Case Studies", desc: "Real creator stories are the most persuasive content for search and AI. Permission to interview and publish results." },
-              { title: "Payment Speed Data", desc: "Exact numbers. This is the direct counter to Whop's 120-day hold. Must be specific and verifiable." },
-              { title: "Messaging & Positioning Input", desc: "What resonates with users? What language do they use? What objections come up in sales?" },
-              { title: "48-Hour Content Approvals", desc: "Content velocity matters. Competitive monitoring breaks down if approvals take a week." },
-              { title: "Bi-Weekly Strategy Calls", desc: "30 minutes every two weeks to review progress, adjust priorities, stay aligned." },
-              { title: "Platform Data for Research", desc: "User growth, creator earnings, transaction volumes, payout stats — raw material for original research and press releases." },
+              { title: "Builder Testimonials & Case Studies", desc: "Real builder stories are the most persuasive content for both search and AI models. Permission to interview builders and publish their results — earnings, growth, experience." },
+              { title: "Payment Speed Data", desc: "Exact numbers — how fast do BTS builders get paid? This is the direct counter to Whop's 120-day hold. Must be specific and verifiable, not vague marketing language." },
+              { title: "Messaging & Positioning Input", desc: "What resonates with your builders? What language do they use? What objections come up in sales conversations?" },
+              { title: "Day One / Chapters Brand Guidelines", desc: "I need to understand and align with BTS's visual and brand identity — the Day One community, the Chapter system, the early-2000s aesthetic — so all content and placements feel native to BTS's world." },
+              { title: '"Build Something Real" Positioning Assets', desc: "Any existing copy, internal docs, or brand materials that articulate the builder-first philosophy. If these don't exist yet, we build them together in month 1." },
+              { title: "Builder Revenue Distribution Data", desc: "What do BTS builders actually earn? Revenue distribution data supports the 'our builders actually make money' narrative and provides the hard contrast to Whop's 2.4M accounts where most do $0." },
+              { title: "48-Hour Content Approvals", desc: "Content velocity matters. If approvals take a week, the competitive monitoring strategy breaks down — Whop publishes something, I need to counter within 48 hours." },
+              { title: "Bi-Weekly Strategy Calls", desc: "30 minutes every two weeks to review progress, adjust priorities, and stay aligned on direction." },
+              { title: "Platform Data for Research", desc: "User growth numbers, builder earnings data, transaction volumes, payout speed statistics — the raw material for the original research that press releases and flagship content are built on." },
             ].map((item) => (
               <div key={item.title} className="bg-secondary/5 border border-border p-4">
                 <h5 className="text-sm font-mono text-primary font-bold mb-1">{item.title}</h5>
@@ -871,9 +970,9 @@ export default function StrategyBTS() {
           </div>
         </section>
 
-        {/* 08: Risks & Contingencies */}
+        {/* 09: Risks & Contingencies */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="08" title="RISKS & CONTINGENCIES" />
+          <SectionHeader number="09" title="RISKS & CONTINGENCIES" />
 
           <div className="space-y-4">
             {[
@@ -913,9 +1012,9 @@ export default function StrategyBTS() {
           </div>
         </section>
 
-        {/* 09: Commercial Terms */}
+        {/* 10: Commercial Terms */}
         <section className="mb-24 md:mb-32">
-          <SectionHeader number="09" title="COMMERCIAL TERMS" />
+          <SectionHeader number="10" title="COMMERCIAL TERMS" />
 
           <HighlightBox className="bg-gradient-to-br from-secondary/5 to-background">
             <div className="grid md:grid-cols-2 gap-8">
@@ -952,9 +1051,9 @@ export default function StrategyBTS() {
           </HighlightBox>
         </section>
 
-        {/* 10: Next Steps */}
+        {/* 11: Next Steps */}
         <section className="mb-16">
-          <SectionHeader number="10" title="NEXT STEPS" />
+          <SectionHeader number="11" title="NEXT STEPS" />
 
           <div className="space-y-4 mb-10">
             {[
