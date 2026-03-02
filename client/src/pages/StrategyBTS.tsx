@@ -125,7 +125,7 @@ const publishingPlatforms = [
   { platform: "Forbes/Entrepreneur", type: "Thought leadership", target: '"future of creator economy"' },
   { platform: "Reddit", type: "Recommendations", target: '"[competitor] alternative"' },
   { platform: "Quora", type: "Detailed answers", target: '"which platform is best for building a business?"' },
-  { platform: "YouTube", type: "Reviews/comparisons", target: '"BTS vs Whop"' },
+
   { platform: "Substack", type: "Newsletter content", target: '"building a real business online"' },
 ];
 
@@ -212,11 +212,11 @@ export default function StrategyBTS() {
               <div className="grid md:grid-cols-2 gap-3">
                 {[
                   "500+ optimised content pages on behindthescenes.com",
-                  "55 third-party placements (LinkedIn, Medium, HackerNoon, Forbes, Reddit, Quora, YouTube, Substack)",
+                  "55 third-party placements (LinkedIn, Medium, HackerNoon, Forbes, Reddit, Quora, Substack)",
                   "36 press releases (6/month) — press coverage + AI training data + Wikipedia notability",
                   "3 independent blog properties with real author personas, no footprint to BTS",
                   "Active review profiles on 5 platforms with solicitation flows",
-                  "Forum operations across 4 platforms (Reddit, Quora, Indie Hackers, Twitter/X)",
+                  "Forum operations across 3 platforms (Reddit, Quora, Indie Hackers)",
                   "APAC content dominance: Australia, Singapore, Malaysia, India, Japan",
                   "Weekly AI mention tracking and monthly performance reports",
                   "Continuous competitive monitoring with 48-hour counter-publishing",
@@ -386,7 +386,7 @@ export default function StrategyBTS() {
               "ChatGPT uses Bing for real-time search. 87% of SearchGPT citations match Bing's top 10 results.",
               "Sites present on 4+ platforms are 2.8x more likely to appear in ChatGPT responses.",
               "Only 11% of domains get cited by both ChatGPT and Perplexity — cross-platform AI visibility is rare and valuable.",
-              "Perplexity sources heavily from Reddit (46.7% of citations) and YouTube (13.9%).",
+              "Perplexity sources heavily from Reddit (46.7% of citations).",
               "Google AI Overviews pull 93.67% of citations from top-10 organic results.",
               "Pages with high semantic completeness see 340% higher AI inclusion rates.",
             ].map((stat, i) => (
@@ -448,7 +448,7 @@ export default function StrategyBTS() {
               </div>
               <h3 className="text-xl font-display font-bold text-foreground mb-3">AI Dominance</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Make BTS the answer when people ask AI models about creator platforms, business-building tools, and where serious entrepreneurs should set up shop. Get BTS content into Bing (ChatGPT), Reddit and YouTube (Perplexity), top-10 organic results (Google AI Overviews), Brave (Claude), and the broader web that feeds training data. Build multi-platform presence and semantic depth that AI models use as trust signals. Target: measurable, growing AI citation share by month 3, with Whop's relative share declining by month 5.
+                Make BTS the answer when people ask AI models about creator platforms, business-building tools, and where serious entrepreneurs should set up shop. Get BTS content into Bing (ChatGPT), Reddit (Perplexity), top-10 organic results (Google AI Overviews), Brave (Claude), and the broader web that feeds training data. Build multi-platform presence and semantic depth that AI models use as trust signals. Target: measurable, growing AI citation share by month 3, with Whop's relative share declining by month 5.
               </p>
             </HighlightBox>
 
@@ -613,7 +613,7 @@ export default function StrategyBTS() {
             </div>
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-2">Multi-Platform Presence</h5>
-              <p className="text-sm text-muted-foreground leading-relaxed">Sites on 4+ platforms are 2.8x more likely to appear in ChatGPT. BTS content across blog, LinkedIn, Medium, HackerNoon, Reddit, Quora, YouTube, Substack, and the independent blog network — platform-native, not duplicate.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">Sites on 4+ platforms are 2.8x more likely to appear in ChatGPT. BTS content across blog, LinkedIn, Medium, HackerNoon, Reddit, Quora, Substack, and the independent blog network — platform-native, not duplicate.</p>
             </div>
           </div>
 
@@ -622,7 +622,7 @@ export default function StrategyBTS() {
           <div className="grid md:grid-cols-2 gap-4 mb-10">
             {[
               { model: "ChatGPT", source: "Bing", tactic: "Bing Webmaster Tools, IndexNow, structured data (FAQ, comparison, review schema)" },
-              { model: "Perplexity", source: "Reddit + YouTube", tactic: "Reddit threads (46.7% of citations) + YouTube reviews (13.9%). Forum ops do double duty." },
+              { model: "Perplexity", source: "Reddit", tactic: "Reddit accounts for 46.7% of Perplexity citations. Reddit threads recommending BTS are direct inputs to Perplexity answers. Forum ops do double duty." },
               { model: "Claude", source: "Brave Search", tactic: "Ensure BTS content indexed by Brave. Different index = different coverage opportunities." },
               { model: "Google AI Overviews", source: "Top-10 Organic", tactic: "93.67% of citations from top-10 results. Strong organic = AI Overview inclusion." },
             ].map((item) => (
@@ -737,7 +737,7 @@ export default function StrategyBTS() {
                   { platform: "Reddit", desc: "Aged accounts, authentic engagement in r/Entrepreneur, r/creators, r/passive_income, r/digitalnomad. The persona: a serious builder who chose BTS because they wanted a platform that takes their business seriously. BTS mentions feel incidental, not promotional." },
                   { platform: "Indie Hackers", desc: "This is where the 10,000-builder audience lives. Genuine discussions about building real businesses, monetization, and platform selection. Sophisticated, skeptical audience — approach must be authentic." },
                   { platform: "Quora", desc: "500+ word answers that genuinely help the reader make a decision. BTS mentioned as one option among several, with honest pros and cons." },
-                  { platform: "Twitter/X", desc: "Engage with builder and entrepreneur conversations. Build presence in threads about building online businesses, platform selection, and the creator economy." },
+
                 ].map((item) => (
                   <div key={item.platform} className="bg-background/50 border border-border/50 p-3">
                     <span className="text-xs font-mono text-primary font-bold">{item.platform}</span>
@@ -769,7 +769,7 @@ export default function StrategyBTS() {
             <div className="bg-secondary/5 border border-border p-5">
               <h5 className="text-sm font-mono text-primary font-bold uppercase tracking-wider mb-3">Independent Blog Network — 3 Sites</h5>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                Clean domains, real author personas with LinkedIn and Twitter/X profiles, unique hosting/registrars/IPs, no footprint to BTS. Publish genuinely useful builder content for 2-3 months before introducing platform comparisons.
+                Clean domains, real author personas with LinkedIn profiles, unique hosting/registrars/IPs, no footprint to BTS. Publish genuinely useful builder content for 2-3 months before introducing platform comparisons.
               </p>
               <BulletList items={[
                 "Non-negotiable: if someone reads these and never clicks a BTS link, they still get genuine value",
@@ -982,7 +982,7 @@ export default function StrategyBTS() {
               },
               {
                 risk: "Reddit Account Bans",
-                mitigation: "Aged accounts with established posting history and authentic engagement. Every post provides real value. BTS mentions incidental, not promotional. If banned, shift volume to Quora, Indie Hackers, Twitter/X.",
+                mitigation: "Aged accounts with established posting history and authentic engagement. Every post provides real value. BTS mentions incidental, not promotional. If banned, shift volume to Quora and Indie Hackers.",
               },
               {
                 risk: "Whop Counter-Response",
