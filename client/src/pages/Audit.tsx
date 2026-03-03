@@ -75,7 +75,7 @@ export default function Audit() {
                 invisible to AI?
               </h1>
 
-              <p className="font-serif text-xl sm:text-2xl text-foreground/70 mb-6">
+              <p className="font-sans text-xl sm:text-2xl text-foreground/70 mb-6">
                 Find out what ChatGPT, Perplexity, and Gemini say when buyers
                 ask about your category.
               </p>
@@ -200,7 +200,7 @@ export default function Audit() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight uppercase mb-4">
             What's in the audit
           </h2>
-          <p className="font-serif text-lg text-foreground/60 mb-12 max-w-2xl">
+          <p className="font-sans text-lg text-foreground/60 mb-12 max-w-2xl">
             A 7-page competitive analysis of your AI search presence, scored
             and benchmarked against your top competitors.
           </p>

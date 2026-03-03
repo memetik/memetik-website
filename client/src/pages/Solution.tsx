@@ -49,7 +49,7 @@ export default function Solution() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[0.85] tracking-tight uppercase mb-6 whitespace-pre-line">
             {data.headline}
           </h1>
-          <p className="font-serif text-2xl sm:text-3xl text-foreground/70 mb-6">
+          <p className="font-sans text-2xl sm:text-3xl text-foreground/70 mb-6">
             {data.subhead}
           </p>
           <p className="font-mono text-sm text-foreground/60 max-w-2xl mb-8">

@@ -81,7 +81,7 @@ export function CaseStudies() {
                     </div>
                   </div>
                   
-                  <blockquote className="border-l-2 border-background/30 pl-4 font-serif text-lg text-background/70">
+                  <blockquote className="border-l-2 border-background/30 pl-4 font-sans text-lg text-background/70">
                     "{study.quote}"
                   </blockquote>
                 </div>

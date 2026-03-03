@@ -243,7 +243,7 @@ export default function AuditReport() {
             <span className="text-2xl font-mono text-white/60">{score?.overall}/100</span>
           </div>
 
-          <p className="font-serif text-lg text-white/60 max-w-2xl mx-auto mb-8">
+          <p className="font-sans text-lg text-white/60 max-w-2xl mx-auto mb-8">
             AI Search Visibility Assessment
           </p>
 
@@ -276,7 +276,7 @@ export default function AuditReport() {
       <section className="py-12 px-4 sm:px-6 md:px-12 border-b border-white/10">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-display font-extrabold uppercase mb-6">Executive Summary</h2>
-          <p className="font-serif text-lg text-white/70 leading-relaxed">
+          <p className="font-sans text-lg text-white/70 leading-relaxed">
             {report?.executiveSummary}
           </p>
         </div>
@@ -335,7 +335,7 @@ export default function AuditReport() {
               <div className="font-mono text-xs uppercase tracking-wider text-white/40 mb-3">
                 Claude's Knowledge ({aiVisibility.claudeKnowledge.sentiment})
               </div>
-              <p className="font-serif text-lg italic text-white/80 leading-relaxed">
+              <p className="font-sans text-lg italic text-white/80 leading-relaxed">
                 "{aiVisibility.claudeKnowledge.whatClaudeSays}"
               </p>
             </div>
@@ -378,7 +378,7 @@ export default function AuditReport() {
           {report?.competitorInsight && (
             <div className="mt-8">
               <h4 className="font-mono text-xs uppercase tracking-wider text-white/40 mb-3">Competitor Insight</h4>
-              <p className="font-serif text-white/70">{report.competitorInsight}</p>
+              <p className="font-sans text-white/70">{report.competitorInsight}</p>
             </div>
           )}
         </div>
@@ -393,7 +393,7 @@ export default function AuditReport() {
             {report?.categoryAnalysis.map((cat, i) => (
               <div key={i} className="bg-white/5 border border-white/10 p-6">
                 <h3 className="text-lg font-display font-extrabold uppercase mb-3">{cat.category}</h3>
-                <p className="font-serif text-white/70 mb-4">{cat.analysis}</p>
+                <p className="font-sans text-white/70 mb-4">{cat.analysis}</p>
                 
                 {cat.quickWins && cat.quickWins.length > 0 && (
                   <div>
@@ -504,7 +504,7 @@ export default function AuditReport() {
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold uppercase mb-4">
             Ready to Own Your AI Search Results?
           </h2>
-          <p className="font-serif text-lg text-white/60 max-w-xl mx-auto mb-8">
+          <p className="font-sans text-lg text-white/60 max-w-xl mx-auto mb-8">
             This audit identified {report?.topRecommendations.length || 0} high-impact opportunities. 
             Let's build your AEO strategy.
           </p>

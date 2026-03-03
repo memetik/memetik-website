@@ -137,7 +137,7 @@ export default function ResourcePost() {
 
           {/* Meta Description */}
           {article.metaDescription && (
-            <p className="font-serif text-lg sm:text-xl text-foreground/70 mb-8">
+            <p className="font-sans text-lg sm:text-xl text-foreground/70 mb-8">
               {article.metaDescription}
             </p>
           )}

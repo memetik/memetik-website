@@ -13,7 +13,7 @@ export function BrandManifesto() {
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold leading-[0.85] mb-2 tracking-tight text-foreground">
                 The Industry Is Broken.
               </h2>
-              <p className="font-serif text-lg sm:text-xl md:text-2xl text-foreground/60 mb-6">
+              <p className="font-sans text-lg sm:text-xl md:text-2xl text-foreground/60 mb-6">
                 Memetik was built as the antidote.
               </p>
               

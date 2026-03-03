@@ -16,7 +16,7 @@ export function Differentiation() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold leading-[0.9] mb-2 tracking-tight text-foreground">
               Not Another SEO Agency.
             </h2>
-            <p className="font-serif text-lg sm:text-xl text-foreground/60 mb-6">
+            <p className="font-sans text-lg sm:text-xl text-foreground/60 mb-6">
               We built Memetik because traditional agencies can't solve this problem.
             </p>
 

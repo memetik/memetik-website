@@ -160,7 +160,7 @@ function Block({ block }: { block: NotionBlock }) {
       const richText = block.quote?.rich_text || [];
       return (
         <blockquote className="border-l-4 border-foreground pl-6 my-6">
-          <p className="font-serif text-lg italic text-foreground/80">
+          <p className="font-sans text-lg italic text-foreground/80">
             <RichText richText={richText} />
           </p>
         </blockquote>

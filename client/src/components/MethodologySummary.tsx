@@ -94,7 +94,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
 
         <div className="mt-auto relative z-10">
           <div className="mb-6 border-l-2 border-accent pl-6">
-            <p className="font-serif text-lg text-foreground leading-tight">
+            <p className="font-sans text-lg text-foreground leading-tight">
               {phase.description}
             </p>
           </div>

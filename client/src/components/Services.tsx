@@ -40,7 +40,7 @@ function DeliverableCard({ item, index }: { item: typeof deliverables[0], index:
       </h3>
       
       {/* Subtitle - Benefit focused */}
-      <p className="font-serif text-lg sm:text-xl text-foreground mb-4">
+      <p className="font-sans text-lg sm:text-xl text-foreground mb-4">
         {item.subtitle}
       </p>
 

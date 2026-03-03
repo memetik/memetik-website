@@ -18,7 +18,7 @@ export function Guarantee() {
           </h2>
           
           {/* Subhead */}
-          <p className="font-serif text-lg md:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
+          <p className="font-sans text-lg md:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
             If there's no measurable movement in your AI visibility within 90 days, you get a full refund. No questions asked.
           </p>
           
