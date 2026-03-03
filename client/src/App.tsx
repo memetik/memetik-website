@@ -44,7 +44,7 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="light" storageKey="memetik-theme">
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
 
           <Toaster />

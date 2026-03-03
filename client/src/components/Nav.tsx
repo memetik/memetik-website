@@ -1,12 +1,10 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useTheme } from "@/components/theme-provider";
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
   const [location] = useLocation();
 
   useEffect(() => {
@@ -84,13 +82,6 @@ export function Nav() {
               </a>
             )
           ))}
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="h-full flex items-center px-4 hover:text-accent transition-colors"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
           <Link
             href="/audit"
             className="flex items-center px-5 py-2 text-xs font-mono font-bold tracking-widest bg-foreground text-background rounded hover:opacity-90 transition-opacity ml-4"
@@ -101,13 +92,6 @@ export function Nav() {
 
         {/* Mobile Menu Toggle */}
         <div className="flex items-center gap-3 md:hidden relative z-50">
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 hover:bg-primary/10 transition-colors"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
           <Link
             href="/audit"
             className="px-3 py-2 text-[10px] font-mono font-bold tracking-widest bg-foreground text-background rounded"
