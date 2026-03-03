@@ -3,7 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const DOMAIN = "https://memetik.ai";
+const DOMAIN = "https://www.memetik.ai";
 const ARTICLES_CACHE = path.join(__dirname, "..", "client", "public", "cache", "resources-articles.json");
 const OUTPUT = path.join(__dirname, "..", "client", "public", "sitemap.xml");
 

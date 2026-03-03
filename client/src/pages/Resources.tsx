@@ -10,6 +10,8 @@ export default function Resources() {
 
   useEffect(() => {
     document.title = "Resources | MEMETIK - AEO & SEO Insights";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Expert articles on Answer Engine Optimization, AI search visibility, ChatGPT citations, and LLM SEO strategies for B2B brands.");
 
     // Fetch cached articles
     fetch("/cache/resources-articles.json")

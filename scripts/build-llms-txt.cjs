@@ -6,7 +6,7 @@ const path = require("path");
 const ARTICLES_CACHE = path.join(__dirname, "..", "client", "public", "cache", "resources-articles.json");
 const OUTPUT = path.join(__dirname, "..", "client", "public", "llms.txt");
 
-const DOMAIN = "https://memetik.ai";
+const DOMAIN = "https://www.memetik.ai";
 
 function buildLlmsTxt() {
   console.log("Building llms.txt...");
@@ -27,7 +27,7 @@ function buildLlmsTxt() {
 
 > MEMETIK is an Answer Engine Optimization (AEO) agency that engineers B2B brands into AI search recommendations across ChatGPT, Perplexity, and Gemini. We help Series A-C SaaS, E-commerce, and B2B service companies become the default answer when buyers ask AI for recommendations.
 
-MEMETIK offers AEO retainer engagements: Foundation ($7K/mo) for baseline AI visibility, Ownership ($12K/mo) for category leadership, and Dominance ($15K/mo) for full AI search dominance. All engagements are 6-month sprints with a 90-day performance guarantee.
+MEMETIK offers custom AEO retainer engagements scoped to your category, competitive landscape, and goals. All engagements include a 90-day performance guarantee.
 
 Key topics: Answer Engine Optimization (AEO), AI search visibility and citations, ChatGPT/Perplexity/Gemini optimization, zero-click search strategy, LLM SEO, B2B SaaS marketing for AI-first buyers.
 

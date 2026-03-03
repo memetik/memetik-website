@@ -26,6 +26,8 @@ export default function Audit() {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "Free AEO Audit | MEMETIK";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Get a free AI visibility audit. See exactly where your brand ranks in ChatGPT, Perplexity, and Gemini vs competitors. Results in 48 hours.");
   }, []);
 
   const AUDIT_API = "https://wonderful-rebirth-production-7f52.up.railway.app";

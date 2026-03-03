@@ -249,11 +249,11 @@ export default function ResourcePost() {
               publisher: {
                 "@type": "Organization",
                 name: "MEMETIK",
-                url: "https://memetik.com",
+                url: "https://www.memetik.ai",
               },
               mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": `https://memetik.com/resources/${article.slug}`,
+                "@id": `https://www.memetik.ai/resources/${article.slug}`,
               },
               wordCount: article.wordCount,
             }),

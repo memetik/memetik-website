@@ -12,7 +12,9 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "MEMETIK | AEO & SEO Agency";
+    document.title = "MEMETIK | Be The Brand AI Recommends | AEO Agency";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "We engineer your brand into ChatGPT, Perplexity, and Gemini responses. AEO & SEO agency for B2B SaaS, E-commerce, and professional services. 90-day results guaranteed.");
   }, []);
 
   return (

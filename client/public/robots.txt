@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://memetik.ai/sitemap.xml
-LLMs-txt: https://memetik.ai/llms.txt
+Sitemap: https://www.memetik.ai/sitemap.xml
+LLMs-txt: https://www.memetik.ai/llms.txt
