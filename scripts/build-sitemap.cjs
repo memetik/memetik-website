@@ -10,7 +10,7 @@ const OUTPUT = path.join(__dirname, "..", "client", "public", "sitemap.xml");
 const STATIC_PAGES = [
   { loc: "/", priority: "1.0", changefreq: "weekly" },
   { loc: "/audit", priority: "0.9", changefreq: "monthly" },
-  { loc: "/strategy", priority: "0.8", changefreq: "monthly" },
+
   { loc: "/resources", priority: "0.8", changefreq: "daily" },
   { loc: "/bts", priority: "0.6", changefreq: "monthly" },
   // ICP segment pages

@@ -361,8 +361,8 @@ function generatePage(page) {
   html = html.replace(/<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${esc(page.title)}"`);
   html = html.replace(/<meta name="twitter:description" content="[^"]*"/, `<meta name="twitter:description" content="${esc(page.description)}"`);
 
-  // noindex for 404
-  if (page.is404) {
+  // noindex for 404 and strategy proposal pages
+  if (page.is404 || page.route.startsWith("/strategy/")) {
     html = html.replace(/<meta name="robots" content="[^"]*"/, '<meta name="robots" content="noindex, nofollow"');
   }
 

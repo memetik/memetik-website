@@ -35,7 +35,6 @@ Key topics: Answer Engine Optimization (AEO), AI search visibility and citations
 
 - [Home](${DOMAIN}/): AEO agency for B2B brands -- become the brand AI recommends
 - [Free AEO Audit](${DOMAIN}/audit): Free AI visibility audit -- enter your domain to see where you rank vs competitors in ChatGPT, Perplexity, and Gemini
-- [Strategy Protocol](${DOMAIN}/strategy): The 90-day protocol to become the default AI recommendation in your category
 - [Resources](${DOMAIN}/resources): ${articles.length} articles on AEO, AI search optimization, and AI visibility
 
 ## For Specific Industries

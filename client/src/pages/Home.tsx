@@ -95,7 +95,6 @@ export default function Home() {
               <div>
                 <h4 className="font-mono text-xs uppercase tracking-wider text-foreground/40 mb-4">Company</h4>
                 <ul className="space-y-2">
-                  <li><a href="/strategy" className="text-sm text-foreground/70 hover:text-foreground transition-colors">Strategy</a></li>
                   <li><a href="/bts" className="text-sm text-foreground/70 hover:text-foreground transition-colors">Behind the Scenes</a></li>
                   <li><a href="https://cal.com/memetik/letstalk" className="text-sm text-foreground/70 hover:text-foreground transition-colors">Contact</a></li>
                 </ul>
