@@ -1,8 +1,8 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "AEO for Beginners: A Step-by-Step Guide to Answer Engine Optimization"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: 'AEO for Beginners: A Step-by-Step Guide to Answer Engine Optimization'
 slug: aeo-answer-engine-optimization-guide
 type: Problem-Solution
 word_count: 3311
@@ -14,7 +14,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+meta_description: >-
+  Answer Engine Optimization (AEO) is the practice of structuring your content
+  so AI assistants like ChatGPT, Perplexity, and Gemini can easily extract,
 ---
 
 **Answer Engine Optimization (AEO) is the practice of structuring your content so AI assistants like ChatGPT, Perplexity, and Gemini can easily extract, understand, and cite your information when answering user queries.** Unlike traditional SEO that optimizes for Google's search results page, AEO optimizes for being the source that AI engines quote directly in their responses. For beginners, AEO starts with three core actions: organizing content with clear headings and concise answers, establishing topical authority through comprehensive coverage, and tracking where AI engines cite your content.

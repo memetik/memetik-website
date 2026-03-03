@@ -1,8 +1,8 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "AEO Mistakes: What Most Marketers Get Wrong About AI Search"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: 'AEO Mistakes: What Most Marketers Get Wrong About AI Search'
 slug: aeo-mistakes-ai-search-optimization
 type: Mistakes Article
 word_count: 3333
@@ -14,7 +14,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+meta_description: >-
+  The most common AEO mistakes include treating answer engine optimization as
+  identical to traditional SEO, attempting to optimize equally for all AI
+  platforms
 ---
 
 The most common AEO mistakes include treating answer engine optimization as identical to traditional SEO, attempting to optimize equally for all AI platforms without prioritization, and launching tactical optimization without establishing baseline AI visibility tracking. According to our analysis of 500+ B2B websites transitioning to AEO strategies, 73% fail to implement proper AI citation tracking before executing content changes, making it impossible to measure ROI or attribute revenue to AI-driven traffic. These foundational errors cost companies an average of 4-6 months in wasted optimization efforts before they establish proper measurement infrastructure.

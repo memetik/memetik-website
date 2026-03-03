@@ -118,7 +118,7 @@ The second version provides specific, verifiable information that AI assistants 
 
 At MEMETIK, we've perfected the deployment of 900+ page content infrastructures within 90 days—the scale required for meaningful AI visibility across the customer journey. Our proprietary approach combines programmatic page generation, schema automation, and LLM visibility engineering into a repeatable framework.
 
-Ready to recover your lost organic traffic? Our 90-day AEO implementation includes content infrastructure deployment, comprehensive schema markup, and AI citation tracking across ChatGPT, Perplexity, and Google AI Overviews. [Contact our team](https://memetik.com/contact) to discuss your traffic recovery strategy.
+Ready to recover your lost organic traffic? Our 90-day AEO implementation includes content infrastructure deployment, comprehensive schema markup, and AI citation tracking across ChatGPT, Perplexity, and Google AI Overviews. [Contact our team](https://www.memetik.ai/contact) to discuss your traffic recovery strategy.
 
 ## 90-Day AEO Deployment for SaaS Companies
 
@@ -393,7 +393,7 @@ AEO requires different measurement approaches than traditional SEO.
 
 Our proprietary AI citation tracking platform monitors 12,000+ queries daily, providing the real-time measurement infrastructure that makes data-driven AEO optimization possible.
 
-**Ready to start your AEO journey?** MEMETIK's 90-day implementation includes complete content infrastructure deployment (900+ pages), comprehensive schema markup, and AI citation tracking across all major AI assistants. We guarantee measurable visibility increases within 90 days—or we continue optimizing at no additional cost. [Schedule your AEO strategy session](https://memetik.com/contact) to discuss recovering your lost organic traffic.
+**Ready to start your AEO journey?** MEMETIK's 90-day implementation includes complete content infrastructure deployment (900+ pages), comprehensive schema markup, and AI citation tracking across all major AI assistants. We guarantee measurable visibility increases within 90 days—or we continue optimizing at no additional cost. [Schedule your AEO strategy session](https://www.memetik.ai/contact) to discuss recovering your lost organic traffic.
 
 ## Traditional SEO vs. AEO: What's Different?
 
@@ -453,7 +453,7 @@ A: Track four metrics: (1) AI visibility score—percentage of target queries wh
 
 **Stop watching your organic traffic decline while maintaining strong SEO metrics.** The search landscape has fundamentally changed—60% of queries now end in AI-generated answers without clicks to traditional results. At MEMETIK, we've recovered lost organic traffic for 47 different SaaS product categories using comprehensive AEO strategies that generate an average 340% AI visibility increase within 90 days.
 
-Our 900+ page content infrastructure deployment, proprietary AI citation tracking, and 90-day results guarantee give you the fastest path from traffic decline to sustainable recovery. [Book your AEO strategy session](https://memetik.com/contact) to discuss how we'll recover your lost organic traffic and build AI-proof content moats that generate citations, visibility, and qualified leads for years to come.
+Our 900+ page content infrastructure deployment, proprietary AI citation tracking, and 90-day results guarantee give you the fastest path from traffic decline to sustainable recovery. [Book your AEO strategy session](https://www.memetik.ai/contact) to discuss how we'll recover your lost organic traffic and build AI-proof content moats that generate citations, visibility, and qualified leads for years to come.
 
 ---
 

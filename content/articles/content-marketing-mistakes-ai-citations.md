@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 7 Content Marketing Mistakes Costing You AI Citations
 slug: content-marketing-mistakes-ai-citations
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  The seven most costly AI citation mistakes include: publishing content without
+  entity-rich metadata, ignoring structured data implementation, creating
+  content
 ---
 
 The seven most costly AI citation mistakes include: publishing content without entity-rich metadata, ignoring structured data implementation, creating content optimized only for traditional search engines, failing to use definitive statement formatting, neglecting factual claim verification, avoiding direct question-and-answer patterns, and not tracking LLM visibility metrics. Companies making these content marketing errors lose an average of 67% of potential AI citations, according to 2024 AEO research analyzing ChatGPT, Perplexity, and Claude response patterns. Content that addresses these AI citation mistakes through AEO-first optimization receives 4.3x more LLM mentions than traditionally optimized SEO content.

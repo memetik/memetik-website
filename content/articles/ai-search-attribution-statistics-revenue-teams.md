@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 7 AI Search Attribution Statistics for Revenue Teams in 2025
 slug: ai-search-attribution-statistics-revenue-teams
 type: Listicle
@@ -14,7 +14,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+meta_description: >-
+  71% of B2B buyers now use AI search tools like ChatGPT, Perplexity, and
+  SearchGPT during their research process, yet only 14% of revenue teams can
+  actually
 ---
 
 71% of B2B buyers now use AI search tools like ChatGPT, Perplexity, and SearchGPT during their research process, yet only 14% of revenue teams can actually measure their brand's visibility in these AI-generated responses. AI search attribution statistics reveal that companies appearing in AI-generated answers see 3.2x higher pipeline velocity and 47% lower customer acquisition costs, making visibility measurement critical for revenue teams in 2025. Traditional web analytics fail to capture AI citations, leaving RevOps leaders blind to a channel that now influences over $2.3 trillion in B2B purchasing decisions annually.

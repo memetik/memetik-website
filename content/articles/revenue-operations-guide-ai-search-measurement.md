@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: The Revenue Operations Guide to Measuring AI Search Performance
 slug: revenue-operations-guide-ai-search-measurement
 type: Industry Guide
@@ -15,7 +15,19 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+  - FAQPage
+meta_description: >-
+  Revenue operations teams can measure AI search visibility through three core
+  metrics: LLM citation frequency (how often AI assistants reference your
+  brand), AI
 ---
 
 Revenue operations teams can measure AI search visibility through three core metrics: LLM citation frequency (how often AI assistants reference your brand), AI visibility score (percentage of AI-generated responses that include your content), and share of AI voice (your brand mentions vs. competitors in AI responses). Unlike traditional SEO metrics that track rankings and clicks, this revenue operations guide focuses on attribution tracking across ChatGPT, Perplexity, Gemini, and other answer engines where 64% of B2B buyers now begin their software research. Modern RevOps professionals need specialized measurement frameworks that connect AI search performance directly to pipeline generation and revenue outcomes.

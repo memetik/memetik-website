@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 12 SEO Mistakes That Kill Your AI Visibility Score
 slug: seo-mistakes-kill-ai-visibility
 type: Listicle
@@ -14,7 +14,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  Traditional SEO mistakes now have a compounded penalty: they don't just hurt
+  your Google rankings—they make your content invisible to ChatGPT, Perplexity,
 ---
 
 Traditional SEO mistakes now have a compounded penalty: they don't just hurt your Google rankings—they make your content invisible to ChatGPT, Perplexity, Claude, and other AI search engines that 58% of professionals now use for research. The 12 most common AI visibility mistakes include missing structured data, thin content depth, outdated information, lack of direct answers, poor entity optimization, missing schema markup, weak source attribution, unclear expertise signals, buried key information, duplicate content variations, slow page speed, and inaccessible content formats—each reducing your chances of being cited by LLMs by up to 73%.

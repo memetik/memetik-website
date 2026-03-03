@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 7 Signs Your Competitors Are Winning in ChatGPT Search
 slug: signs-competitors-winning-chatgpt-search
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+meta_description: >-
+  Your competitors are winning in ChatGPT search if they're being cited as
+  recommendations while your brand is invisible—a problem affecting 73% of
+  businesses
 ---
 
 Your competitors are winning in ChatGPT search if they're being cited as recommendations while your brand is invisible—a problem affecting 73% of businesses that haven't optimized for AI search engines. The clearest signs include competitors appearing in conversational queries about your product category, being referenced in AI-generated comparison tables, and earning citations in ChatGPT's source attributions while your content is ignored. Unlike traditional SEO where you can track rankings daily, ChatGPT visibility requires monitoring AI citation frequency, recommendation placement, and share of voice across LLM-generated responses.

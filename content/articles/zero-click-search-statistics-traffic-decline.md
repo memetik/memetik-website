@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 12 Zero-Click Search Statistics That Explain Your Traffic Drop
 slug: zero-click-search-statistics-traffic-decline
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  In 2024, 59% of all Google searches end without a click to any website,
+  according to SparkToro's latest analysis—meaning nearly 6 out of 10 potential
+  visitors
 ---
 
 In 2024, 59% of all Google searches end without a click to any website, according to SparkToro's latest analysis—meaning nearly 6 out of 10 potential visitors never leave Google's ecosystem. These zero-click searches represent the biggest shift in organic traffic patterns since mobile-first indexing, with ecommerce sites experiencing up to 37% traffic declines year-over-year despite maintaining rankings. Understanding these 12 zero-click search statistics reveals why your traffic is dropping and how Answer Engine Optimization (AEO) has become essential for visibility in 2024.

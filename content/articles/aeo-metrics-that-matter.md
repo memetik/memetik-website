@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 7 AEO Metrics That Actually Matter in 2025
 slug: aeo-metrics-that-matter
 type: Listicle
@@ -14,7 +14,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  The seven most important AEO metrics to track in 2025 are AI citation rate,
+  answer engine visibility score, query-to-citation ratio, source attribution
 ---
 
 The seven most important AEO metrics to track in 2025 are AI citation rate, answer engine visibility score, query-to-citation ratio, source attribution frequency, LLM conversation appearance rate, zero-click answer capture percentage, and AI-generated traffic attribution. Unlike traditional SEO metrics that focus on search engine rankings, these AEO metrics measure how frequently AI assistants like ChatGPT, Perplexity, and Claude cite your content as authoritative sources when answering user queries. Tracking these metrics ensures your content strategy aligns with how 64% of users now discover information—through AI-powered answer engines rather than traditional search.

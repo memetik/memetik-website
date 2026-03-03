@@ -396,14 +396,14 @@ SEMrush. (2024). *AI Citation Study: Schema Markup Impact on LLM Visibility*.
     "name": "MEMETIK",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://memetik.com/logo.png"
+      "url": "https://www.memetik.ai/logo.png"
     }
   },
   "datePublished": "2024-01-15",
   "dateModified": "2024-01-15",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://memetik.com/citation-worthy-content"
+    "@id": "https://www.memetik.ai/citation-worthy-content"
   }
 }
 ```

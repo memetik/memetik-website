@@ -1,8 +1,10 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "Measuring AI Search Performance: The Complete Guide to Tracking LLM Citations and Visibility"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: >-
+  Measuring AI Search Performance: The Complete Guide to Tracking LLM Citations
+  and Visibility
 slug: measuring-ai-search-performance-llm-citations
 type: Use Case
 word_count: 4278
@@ -14,7 +16,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+meta_description: >-
+  Measuring AI search performance requires tracking three core metrics: citation
+  frequency across LLMs (ChatGPT, Perplexity, Claude), source attribution rank
 ---
 
 Measuring AI search performance requires tracking three core metrics: citation frequency across LLMs (ChatGPT, Perplexity, Claude), source attribution rank (position in cited sources), and visibility share compared to competitors. Unlike traditional SEO where Google Analytics suffices, AI search demands specialized monitoring tools that query major language models daily and track when, where, and how your content gets cited. The most effective measurement framework combines automated LLM query testing, citation position tracking, and revenue attribution modeling to demonstrate ROI from answer engine optimization efforts.

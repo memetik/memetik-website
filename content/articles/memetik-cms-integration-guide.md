@@ -46,7 +46,7 @@ The technical benefits compound over time. Automatic injection of FAQ schema, Ho
 
 Real-time AEO scoring within your existing workflow catches problems before they become missed opportunities. When an editor drafts a buying guide that lacks answer-worthy structure, they see the issue immediately—not weeks later when you realize the content isn't generating AI citations. This shift from reactive optimization to proactive engineering fundamentally changes content ROI.
 
-**Ready to see how our CMS integration works in your environment?** [Start your 90-day risk-free trial](https://memetik.com/trial) and connect your first property in under 15 minutes.
+**Ready to see how our CMS integration works in your environment?** [Start your 90-day risk-free trial](https://www.memetik.ai/trial) and connect your first property in under 15 minutes.
 
 ## What You Need Before Integration
 
@@ -204,7 +204,7 @@ For issues not covered here, use our integration diagnostics tool (Settings > In
 
 Professional plan users receive priority integration support with <2 hour response time via email. Enterprise customers get dedicated Slack channels and phone support for immediate assistance.
 
-**Experiencing integration challenges?** Our team has connected 900+ properties across every major CMS platform. [Contact our integration specialists](https://memetik.com/support) for hands-on troubleshooting.
+**Experiencing integration challenges?** Our team has connected 900+ properties across every major CMS platform. [Contact our integration specialists](https://www.memetik.ai/support) for hands-on troubleshooting.
 
 ## Frequently Asked Questions
 
@@ -276,7 +276,7 @@ Our 90-day guarantee removes the risk: if your content doesn't appear in AI answ
 
 Connect your first property in under 15 minutes. See real-time AEO scores in your existing editor. Start engineering content for AI visibility today—not optimizing yesterday's missed opportunities.
 
-[Start your 90-day risk-free trial](https://memetik.com/trial) and integrate MEMETIK with your CMS in under 15 minutes.
+[Start your 90-day risk-free trial](https://www.memetik.ai/trial) and integrate MEMETIK with your CMS in under 15 minutes.
 
 ---
 

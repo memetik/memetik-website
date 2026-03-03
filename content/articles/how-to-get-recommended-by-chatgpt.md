@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: How to Get Your SaaS Product Recommended by ChatGPT in 2025
 slug: how-to-get-recommended-by-chatgpt
 type: Educational How-To
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+meta_description: >-
+  To get your SaaS product recommended by ChatGPT in 2025, you need to build
+  authoritative citations across high-trust domains, create structured content
+  that
 ---
 
 To get your SaaS product recommended by ChatGPT in 2025, you need to build authoritative citations across high-trust domains, create structured content that LLMs can parse, and establish your brand in verified knowledge bases—a process that typically takes 90-120 days of consistent effort. Products appearing in ChatGPT recommendations have an average of 47+ citations from authoritative sources and maintain active presence in at least 3 knowledge graph entities (Wikipedia, Crunchbase, G2). This reverse-engineered playbook reveals the exact citation-building and content infrastructure strategies that get SaaS products surfaced in AI assistant responses.

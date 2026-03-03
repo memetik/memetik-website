@@ -1,8 +1,10 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: Why Your Organic Traffic Is Declining (And What Zero-Click Searches Mean for 2025)
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: >-
+  Why Your Organic Traffic Is Declining (And What Zero-Click Searches Mean for
+  2025)
 slug: why-organic-traffic-declining-zero-click-searches
 type: Problem-Solution
 word_count: 4172
@@ -15,7 +17,16 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+meta_description: >-
+  Your organic traffic is declining because 59% of Google searches now end
+  without a click, up from 34% in 2020, as AI Overviews, featured snippets, and
 ---
 
 Your organic traffic is declining because 59% of Google searches now end without a click, up from 34% in 2020, as AI Overviews, featured snippets, and ChatGPT-integrated search results answer queries directly on the SERP. If you've seen a 20-40% year-over-year traffic drop, attribution analysis shows that 40-60% of lost traffic goes to zero-click results, 15-25% to AI platforms like ChatGPT and Perplexity, and 10-15% to evolving search behavior changes. Understanding which channel is siphoning your traffic is critical to choosing the right recovery strategy for 2025.

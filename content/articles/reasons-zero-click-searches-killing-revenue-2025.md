@@ -260,7 +260,7 @@ At MEMETIK, our AEO methodology combines all these elements into a systematic vi
 
 We guarantee measurable visibility increases within 90 days. If we don't demonstrate improved AI citation rates, brand mention growth, or recovered attribution on pipeline, we continue working at no cost until you see results. We're confident in this guarantee because AEO delivers faster visibility than traditional SEO—citations appear in 60-90 days versus 6-12 months for ranking movement.
 
-**Ready to recover revenue from zero-click searches?** [Get your free AEO Opportunity Audit](https://memetik.com/aeo-audit)—we'll analyze your top 20 keywords and show exactly what you're losing to AI answers and which competitors are capturing citations instead of you.
+**Ready to recover revenue from zero-click searches?** [Get your free AEO Opportunity Audit](https://www.memetik.ai/aeo-audit)—we'll analyze your top 20 keywords and show exactly what you're losing to AI answers and which competitors are capturing citations instead of you.
 
 Most agencies stop at Google. We optimize for every platform your buyers use—ChatGPT, Perplexity, Claude, Google AI Overviews, and Bing Chat. Because revenue attribution isn't broken, it's just happening outside your analytics. AEO brings visibility back to where decisions are actually made.
 

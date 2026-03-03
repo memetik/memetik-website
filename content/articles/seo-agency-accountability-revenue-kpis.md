@@ -89,7 +89,7 @@ This approach provides false comfort through "green arrow" reports. Your agency 
 
 The "trust us, it takes time" defense compounds the accountability problem. Yes, building organic authority requires sustained effort—but this truth has become an excuse for agencies to avoid interim performance milestones. Effective SEO should show leading indicators within 30-45 days, qualified lead impact within 90 days, and measurable revenue contribution within 180 days. Agencies that can't commit to staged milestones lack confidence in their ability to drive business outcomes.
 
-**[Download our free SEO Agency Accountability Framework Template](https://memetik.com/resources/seo-accountability-template) to compare your current agency's KPIs against revenue-based alternatives.**
+**[Download our free SEO Agency Accountability Framework Template](https://www.memetik.ai/resources/seo-accountability-template) to compare your current agency's KPIs against revenue-based alternatives.**
 
 ## The Outcome-Based Accountability Framework
 
@@ -236,7 +236,7 @@ Internal impact extends beyond marketing metrics. The CMO could finally defend S
 
 **The compounding advantage**: Year two results typically perform 3-4x stronger than year one as content infrastructure scales, topical authority builds, and conversion optimization compounds. That same client reached 47% of total pipeline from organic by month 18—transforming SEO from a cost center requiring justification to the company's most efficient growth channel.
 
-**[See how MEMETIK's 90-day performance guarantee works](https://memetik.com/guarantee)** and what specific KPIs we commit to in our outcome-based engagements.
+**[See how MEMETIK's 90-day performance guarantee works](https://www.memetik.ai/guarantee)** and what specific KPIs we commit to in our outcome-based engagements.
 
 ## Comparison: Traditional vs. Outcome-Based Agency Accountability
 
@@ -286,7 +286,7 @@ Expect 15-25% month-over-month growth in qualified organic leads after baseline 
 
 ---
 
-**Ready to implement outcome-based SEO accountability?** [Schedule a free SEO accountability audit](https://memetik.com/audit) and we'll review your current agency performance with specific KPI recommendations for your business. Or [start with our risk-free 90-day engagement](https://memetik.com/pricing) and experience what accountability-driven SEO actually delivers.
+**Ready to implement outcome-based SEO accountability?** [Schedule a free SEO accountability audit](https://www.memetik.ai/audit) and we'll review your current agency performance with specific KPI recommendations for your business. Or [start with our risk-free 90-day engagement](https://www.memetik.ai/pricing) and experience what accountability-driven SEO actually delivers.
 
 ---
 

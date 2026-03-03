@@ -1,8 +1,10 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: How Buyers Use AI Before Purchasing (New Research + What It Means for Marketing)
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: >-
+  How Buyers Use AI Before Purchasing (New Research + What It Means for
+  Marketing)
 slug: buyers-using-ai-before-purchasing
 type: Problem-Solution
 word_count: 3413
@@ -14,7 +16,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+meta_description: >-
+  Recent research reveals that 40-70% of B2B buyers now consult AI tools like
+  ChatGPT, Perplexity, and Claude before making purchase decisions,
+  fundamentally
 ---
 
 Recent research reveals that 40-70% of B2B buyers now consult AI tools like ChatGPT, Perplexity, and Claude before making purchase decisions, fundamentally changing how buyers use AI for research throughout their journey. These buyers ask AI assistants to compare vendors, evaluate features, and validate recommendations at multiple touchpoints—often invisible to traditional attribution models. This shift creates a "dark funnel" where the most influential research happens outside marketers' view, requiring new strategies to capture and influence AI-mediated buyer behavior.

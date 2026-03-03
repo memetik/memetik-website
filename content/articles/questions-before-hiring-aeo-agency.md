@@ -96,7 +96,7 @@ A good answer includes concrete benchmarks: "We guarantee you'll see citations i
 
 Red flags include responses like "we'll do our best" or "SEO takes 6-12 months to see results." The latter applies to traditional link-building timelines, not AEO content infrastructure. Another warning: agencies that guarantee specific "rankings" in ChatGPT (doesn't work that way—responses vary by context) rather than citation rates.
 
-**Not sure if your current agency understands AEO? [Get your free AEO audit](https://memetik.com/audit) to see where you're missing AI citation opportunities.**
+**Not sure if your current agency understands AEO? [Get your free AEO audit](https://www.memetik.ai/audit) to see where you're missing AI citation opportunities.**
 
 ## 4. How Do You Optimize for LLM Retrieval Systems vs. Traditional Search Crawlers?
 
@@ -232,7 +232,7 @@ Beyond the ten core questions, watch for these warning signs that suggest an age
 
 Industry data suggests 67% of agencies claiming "AEO services" in 2024 are actually just doing traditional SEO with new labels. If an agency shows you a "citation report" that's just featured snippet rankings, that's not true AEO tracking.
 
-**See how MEMETIK compares to your current agency—[request your competitive AEO analysis](https://memetik.com/compare) today.**
+**See how MEMETIK compares to your current agency—[request your competitive AEO analysis](https://www.memetik.ai/compare) today.**
 
 ## How to Evaluate Agency Responses and Make Your Decision
 
@@ -272,7 +272,7 @@ The agencies that can't demonstrate citation tracking across six platforms, expl
 
 We built MEMETIK specifically to solve Sarah's problem—making B2B brands visible in AI responses that drive 82% of initial product research. Our programmatic SEO infrastructure, multi-platform citation tracking, and 90-day guarantee reflect confidence in LLM visibility engineering that traditional agencies can't match.
 
-**[Schedule your free AEO audit](https://memetik.com/audit)** to see exactly where you're missing citations in ChatGPT, Perplexity, and Google AI Overviews. We'll show you competitor citations you're losing and outline the content infrastructure required to close your visibility gap.
+**[Schedule your free AEO audit](https://www.memetik.ai/audit)** to see exactly where you're missing citations in ChatGPT, Perplexity, and Google AI Overviews. We'll show you competitor citations you're losing and outline the content infrastructure required to close your visibility gap.
 
 ---
 

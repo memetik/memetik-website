@@ -16,6 +16,36 @@ function estimateReadTime(wordCount) {
   return `${minutes} min read`;
 }
 
+function stripMarkdown(md) {
+  return md
+    .replace(/^#{1,6}\s+.*$/gm, "")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[[^\]]*\]\([^)]*\)/g, (m) => m.match(/\[([^\]]*)\]/)?.[1] || "")
+    .replace(/(\*\*|__)(.*?)\1/g, "$2")
+    .replace(/(\*|_)(.*?)\1/g, "$2")
+    .replace(/`{1,3}[^`]*`{1,3}/g, "")
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/^\s*[-*+]\s+/gm, "")
+    .replace(/^\s*\d+\.\s+/gm, "")
+    .replace(/^\s*>\s+/gm, "")
+    .replace(/\|[^\n]*\|/g, "")
+    .replace(/---+/g, "")
+    .replace(/\n{2,}/g, " ")
+    .replace(/\n/g, " ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
+function generateDescription(plainText) {
+  if (!plainText || plainText.length === 0) return "";
+  let desc = plainText.substring(0, 160);
+  if (plainText.length > 160) {
+    const lastSpace = desc.lastIndexOf(" ");
+    if (lastSpace > 100) desc = desc.substring(0, lastSpace);
+  }
+  return desc.trim();
+}
+
 function transformArticle(filePath) {
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
@@ -30,7 +60,7 @@ function transformArticle(filePath) {
     slug: data.slug,
     title: data.title || data.slug.replace(/-/g, " "),
     metaTitle: data.meta_title || data.title || "",
-    metaDescription: data.meta_description || "",
+    metaDescription: data.meta_description || generateDescription(stripMarkdown(content)),
     primaryKeyword: data.primary_keyword || "",
     secondaryKeywords: data.secondary_keywords || "",
     publicationDate: data.published_at || data.created || null,

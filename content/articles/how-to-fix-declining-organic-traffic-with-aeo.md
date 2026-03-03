@@ -1,8 +1,8 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "How to Fix Declining Organic Traffic with AEO: Recovery Strategy for 2024"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: 'How to Fix Declining Organic Traffic with AEO: Recovery Strategy for 2024'
 slug: how-to-fix-declining-organic-traffic-with-aeo
 type: Educational How-To
 word_count: 4688
@@ -14,7 +14,19 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+  - FAQPage
+meta_description: >-
+  To fix declining organic traffic in 2024, you need to diversify beyond
+  traditional Google SEO into answer engines like ChatGPT, Perplexity, and
+  Gemini, which
 ---
 
 To fix declining organic traffic in 2024, you need to diversify beyond traditional Google SEO into answer engines like ChatGPT, Perplexity, and Gemini, which now account for 15-25% of search behavior. Start by auditing which AI platforms are (or aren't) citing your content, then implement Answer Engine Optimization (AEO) to reclaim visibility across the expanding search landscape. This traffic recovery strategy combines traditional SEO fixes with AEO expansion to rebuild and diversify your organic channel within 90 days.

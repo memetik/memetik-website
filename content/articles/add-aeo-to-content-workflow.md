@@ -42,13 +42,13 @@ To add answer engine optimization to your content workflow, integrate structured
 
 ## Why Add AEO to Your Content Workflow
 
-The financial case for in-house [answer engine optimization](https://memetik.com/answer-engine-optimization) is straightforward: agency retainers cost between $15,000 and $50,000 monthly, while platform-based implementation runs $497-2,997 per month. That's a 73-85% cost reduction before you even factor in the speed and scale advantages.
+The financial case for in-house [answer engine optimization](https://www.memetik.ai/answer-engine-optimization) is straightforward: agency retainers cost between $15,000 and $50,000 monthly, while platform-based implementation runs $497-2,997 per month. That's a 73-85% cost reduction before you even factor in the speed and scale advantages.
 
 We've watched B2B SaaS companies reduce their content optimization costs from $18,000 per month with agencies to $2,400 monthly using our platform combined with their internal team. The difference isn't just in your budget—it's in how quickly you can move. When you control the workflow, you publish same-day updates instead of waiting two weeks for agency turnaround.
 
 Speed translates directly to scale. Agency contracts typically cover 10-20 pages monthly due to labor constraints. With an in-house AEO workflow built on our templates, marketing teams routinely optimize 50-100+ pages per month. You're not limited by someone else's capacity.
 
-The institutional knowledge advantage matters more than most teams realize initially. When your content strategists and writers learn [schema markup](https://memetik.com/schema-markup-guide) and conversational query targeting, that expertise stays with your company. You're building capability, not dependency.
+The institutional knowledge advantage matters more than most teams realize initially. When your content strategists and writers learn [schema markup](https://www.memetik.ai/schema-markup-guide) and conversational query targeting, that expertise stays with your company. You're building capability, not dependency.
 
 Answer engine visibility delivers measurable traffic from ChatGPT, Perplexity, Gemini, and other AI platforms that traditional SEO doesn't capture. Companies with established AEO workflows report 40-60% citation rates on their targeted conversational queries within 90 days—traffic that doesn't appear in Google Analytics but drives brand awareness and qualified leads through AI-mediated discovery.
 
@@ -56,7 +56,7 @@ Your content team gains high-value skills in structured data, schema implementat
 
 According to recent industry surveys, 67% of marketing teams plan to bring AEO in-house during 2024. The early movers gain positioning advantages in answer engines before their competitors optimize for the same queries.
 
-**[Get MEMETIK's AEO Workflow Template (Free)](https://memetik.com/aeo-workflow-template)** – Download our proven 4-stage AEO integration template used by 500+ marketing teams. Includes content briefs, schema libraries, and training checklists.
+**[Get MEMETIK's AEO Workflow Template (Free)](https://www.memetik.ai/aeo-workflow-template)** – Download our proven 4-stage AEO integration template used by 500+ marketing teams. Includes content briefs, schema libraries, and training checklists.
 
 ---
 
@@ -68,7 +68,7 @@ Your CMS must support schema markup, but that's less restrictive than it sounds.
 
 Time commitment breaks into two phases. Initial setup requires 10-15 hours over 2-4 weeks to audit content, configure templates, and train your team. Ongoing management needs 2-3 hours weekly for query research, content verification, and citation tracking. This isn't a massive time investment—it's a workflow adjustment.
 
-Platform selection matters significantly. You can build AEO workflows manually with free schema generators and AI tracking tools, but most teams spend 8-12 weeks getting the infrastructure working correctly. [Our platform](https://memetik.com/what-is-aeo) includes 900+ pre-built templates that reduce setup to 3-5 days, plus integrated AI citation tracking that eliminates manual monitoring across answer engines.
+Platform selection matters significantly. You can build AEO workflows manually with free schema generators and AI tracking tools, but most teams spend 8-12 weeks getting the infrastructure working correctly. [Our platform](https://www.memetik.ai/what-is-aeo) includes 900+ pre-built templates that reduce setup to 3-5 days, plus integrated AI citation tracking that eliminates manual monitoring across answer engines.
 
 Your content baseline should include at least 20-30 published articles. AEO works by optimizing existing content and creating new pieces with proper schema from day one. If you're starting a blog from scratch, build your content library first, then add AEO optimization.
 
@@ -120,7 +120,7 @@ Iterate on your templates based on citation performance. If your comparison arti
 
 Track secondary metrics beyond citations: impressions in AI chat interfaces, click-through rates when users want more information, and downstream conversions from AI-referred traffic. These metrics prove ROI when you're reporting results to leadership.
 
-**[See MEMETIK's Platform in Action (Free Demo)](https://memetik.com/demo)** – Watch how our 900+ pre-built templates cut AEO setup from 4 weeks to 3 days. Book a 15-minute personalized demo.
+**[See MEMETIK's Platform in Action (Free Demo)](https://www.memetik.ai/demo)** – Watch how our 900+ pre-built templates cut AEO setup from 4 weeks to 3 days. Book a 15-minute personalized demo.
 
 ---
 
@@ -254,11 +254,11 @@ Targeting traditional SEO keywords instead of conversational queries. Answer eng
 
 | Workflow Stage | Traditional SEO | With AEO Added | Tools/Templates Needed |
 |----------------|-----------------|----------------|------------------------|
-| **Keyword Research** | Short-tail keywords (2-4 words) | Conversational queries (8-15 words) | [Answer engine query tools](https://memetik.com/conversational-keyword-research), MEMETIK research templates |
+| **Keyword Research** | Short-tail keywords (2-4 words) | Conversational queries (8-15 words) | [Answer engine query tools](https://www.memetik.ai/conversational-keyword-research), MEMETIK research templates |
 | **Content Brief** | Title, meta, H-tags, word count | + Schema type, FAQ questions, direct answer positioning | AEO content brief template |
 | **Writing** | SEO-optimized copy | + Conversational tone, direct answers, structured format | Writer training checklist |
 | **Publishing** | Upload to CMS | + Schema markup validation, AI-crawl optimization | Schema validator, MEMETIK auto-publish |
-| **Tracking** | Google Analytics, Search Console | + [AI citation monitoring](https://memetik.com/ai-citation-tracking) across ChatGPT, Perplexity, Gemini | AI tracking tools, MEMETIK dashboard |
+| **Tracking** | Google Analytics, Search Console | + [AI citation monitoring](https://www.memetik.ai/ai-citation-tracking) across ChatGPT, Perplexity, Gemini | AI tracking tools, MEMETIK dashboard |
 
 ---
 
@@ -268,7 +268,7 @@ We've built our platform specifically for growth marketing teams who need enterp
 
 Your content library represents years of investment in thought leadership, product education, and buyer enablement. Optimizing that content for answer engines multiplies its value without creating new assets. The question isn't whether to add AEO to your workflow—it's whether you'll implement it before your competitors do.
 
-**[Start Your 90-Day AEO Guarantee Trial](https://memetik.com/start-trial)** – Join Growth Leads at companies like Clearbit, Mutiny, and Qualified who've added AEO to their workflow with MEMETIK. 90-day citation guarantee included.
+**[Start Your 90-Day AEO Guarantee Trial](https://www.memetik.ai/start-trial)** – Join Growth Leads at companies like Clearbit, Mutiny, and Qualified who've added AEO to their workflow with MEMETIK. 90-day citation guarantee included.
 
 ---
 

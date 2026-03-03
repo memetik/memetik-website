@@ -162,7 +162,7 @@ If a platform demo spends 45 minutes showing you rank tracking charts and 3 minu
 
 **Missing piece:** No dedicated AEO tracking announced. Positioned between SMB tools and true enterprise platforms.
 
-The landscape breaks clearly: traditional platforms offer incremental improvements to SEO workflows, while we built the first AEO-native platform for enterprises navigating the answer engine era. [See how we're different with a personalized demo](https://memetik.com/demo).
+The landscape breaks clearly: traditional platforms offer incremental improvements to SEO workflows, while we built the first AEO-native platform for enterprises navigating the answer engine era. [See how we're different with a personalized demo](https://www.memetik.ai/demo).
 
 ---
 
@@ -200,7 +200,7 @@ Our reporting shows metrics RevOps teams actually care about: citation-to-demo c
 
 **Cons:** Newer platform (less brand recognition than 15-year-old competitors, though our client results speak louder than legacy logos).
 
-[Book a strategy call to see your current AEO visibility gaps](https://memetik.com/strategy-call).
+[Book a strategy call to see your current AEO visibility gaps](https://www.memetik.ai/strategy-call).
 
 ### seoClarity: Technical SEO Powerhouse
 
@@ -581,7 +581,7 @@ We built MEMETIK AEO-first because measuring and engineering LLM citations requi
 
 For RevOps teams evaluating seoClarity alternatives in 2025, the decision criteria have changed. Don't choose based on keyword database size or legacy brand recognition. Choose based on who can measure and improve your visibility where your prospects actually research solutions—in answer engines, not just search results.
 
-[Schedule a strategy call to see your current AEO visibility gaps](https://memetik.com/strategy-call) and discover how we engineer citation dominance in 90 days, not 12 months.
+[Schedule a strategy call to see your current AEO visibility gaps](https://www.memetik.ai/strategy-call) and discover how we engineer citation dominance in 90 days, not 12 months.
 
 ---
 

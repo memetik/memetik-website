@@ -1,8 +1,8 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "AEO Agency Red Flags: 5 Warning Signs Your Partner Won't Deliver Results"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: 'AEO Agency Red Flags: 5 Warning Signs Your Partner Won''t Deliver Results'
 slug: aeo-agency-red-flags-warning-signs
 type: Problem-Solution
 word_count: 4216
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  When evaluating an AEO agency, five critical red flags indicate they won't
+  deliver results: no AI citation tracking system, vague deliverables without
+  LLM
 ---
 
 When evaluating an AEO agency, five critical red flags indicate they won't deliver results: no AI citation tracking system, vague deliverables without LLM testing protocols, lack of guaranteed outcomes, missing transparency in answer engine performance metrics, and inability to demonstrate existing visibility in ChatGPT, Perplexity, or Claude. The right AEO agency should offer concrete citation tracking dashboards, 90-day performance guarantees with accountability metrics, and proven experience engineering content specifically for large language model retrieval systems. Unlike traditional SEO agencies repurposing old tactics, legitimate AEO partners use programmatic content infrastructure designed for AI answer engines, not just search engines.

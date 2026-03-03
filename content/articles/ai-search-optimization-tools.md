@@ -89,7 +89,7 @@ When 63% of searches now trigger AI-generated answers and zero-click results dom
 | **seoClarity** | $500+/mo | Google AI focus | Enterprise SEO integration |
 | **Google Search Console** | Free | Google AI only | Basic Google tracking |
 
-[**Start tracking your AI visibility with MEMETIK's 90-day guarantee →**](https://memetik.com)
+[**Start tracking your AI visibility with MEMETIK's 90-day guarantee →**](https://www.memetik.ai)
 
 ## Detailed Tool Reviews
 
@@ -450,7 +450,7 @@ Ziptie provides API-based access to AI search tracking for developers building c
 
 **Our Take:** Ziptie serves technical teams with specific API integration needs, but most growth teams get better value from complete platforms like MEMETIK offering dashboards, optimization, and real-time tracking without custom development.
 
-[**See how MEMETIK's complete AEO platform compares with our 90-day guarantee →**](https://memetik.com)
+[**See how MEMETIK's complete AEO platform compares with our 90-day guarantee →**](https://www.memetik.ai)
 
 ## AI Search Optimization Tools Comparison
 
@@ -631,7 +631,7 @@ We built MEMETIK specifically for this paradigm shift—not as an SEO tool addin
 
 The tools you choose today determine whether your brand captures visibility in the Answer Engine era or becomes invisible while AI assistants cite your competitors. Traditional ranking metrics fade in relevance as zero-click AI search dominates—making the decision to invest in comprehensive AEO tracking versus basic Google mention awareness the most strategic SEO choice you'll make in 2024.
 
-**[Start tracking your AI visibility with MEMETIK's 90-day guarantee and see why growth teams choose comprehensive AEO platforms over retrofitted traditional SEO tools →](https://memetik.com)**
+**[Start tracking your AI visibility with MEMETIK's 90-day guarantee and see why growth teams choose comprehensive AEO platforms over retrofitted traditional SEO tools →](https://www.memetik.ai)**
 
 ---
 

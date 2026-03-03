@@ -318,7 +318,7 @@ The 90-day playbook balances immediate results with sustainable growth:
 
 The companies that win combine both approaches—generating early momentum with quick wins while building the infrastructure that sustains 6x traffic growth over 12-24 months.
 
-[**Start with a free AI visibility audit**](https://memetik.com) to see exactly where your brand appears (or doesn't) across ChatGPT, Perplexity, Claude, and Gemini for your most important buyer queries.
+[**Start with a free AI visibility audit**](https://www.memetik.ai) to see exactly where your brand appears (or doesn't) across ChatGPT, Perplexity, Claude, and Gemini for your most important buyer queries.
 
 ---
 
@@ -494,7 +494,7 @@ Imagine your SaaS brand as the default answer when buyers ask ChatGPT about your
 
 The companies winning in 2024 aren't the ones with the biggest traditional SEO budgets. They're the ones who recognized the paradigm shift early, adapted their strategies accordingly, and built visibility infrastructure that serves both traditional search engines and AI answer engines simultaneously.
 
-[**Get your free AI visibility audit**](https://memetik.com) to see exactly where your brand appears across ChatGPT, Perplexity, Claude, and Gemini for the buyer questions that matter most to your pipeline—and get a customized roadmap for closing the visibility gap within 90 days.
+[**Get your free AI visibility audit**](https://www.memetik.ai) to see exactly where your brand appears across ChatGPT, Perplexity, Claude, and Gemini for the buyer questions that matter most to your pipeline—and get a customized roadmap for closing the visibility gap within 90 days.
 
 ---
 

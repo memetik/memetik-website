@@ -124,7 +124,7 @@ Of those four, only MEMETIK offers native LLM citation tracking across ChatGPT, 
 
 Enterprise teams can access 80% of seoClarity's core functionality through our platform at $72k/year vs. seoClarity's $180k-$480k annual contracts—with answer engine visibility monitoring that seoClarity's 2014-era architecture cannot deliver.
 
-[**Book a platform demo**](https://memetik.com/demo) to see how we track both Google rankings and ChatGPT citations in a single dashboard.
+[**Book a platform demo**](https://www.memetik.ai/demo) to see how we track both Google rankings and ChatGPT citations in a single dashboard.
 
 ## Enterprise SEO Platform Comparison: Features, Pricing & AEO Capabilities
 
@@ -241,7 +241,7 @@ After switching to MEMETIK at $6k/month:
 - **41% increase in AI-sourced pipeline** as they optimized for answer engines
 - **$192k annual savings** ($264k seoClarity TCO vs. $72k MEMETIK cost)
 
-[**See if MEMETIK is right for your team**](https://memetik.com/demo)—book a demo to audit your current platform utilization vs. what you actually need.
+[**See if MEMETIK is right for your team**](https://www.memetik.ai/demo)—book a demo to audit your current platform utilization vs. what you actually need.
 
 ### Semrush: Best Budget Alternative for Data-Focused Teams
 
@@ -416,7 +416,7 @@ After evaluating 500+ enterprise SEO platform migrations, patterns emerge. Here'
 **What customers tell us:**  
 "MEMETIK delivered everything we actually used in seoClarity—rank tracking, content briefs, technical audits—plus the one thing seoClarity couldn't do: tell us whether ChatGPT recommends our product. We're saving $144k/year and actually getting better results."
 
-**Next step:** [Book a platform demo](https://memetik.com/demo) to audit your current seoClarity utilization vs. MEMETIK feature overlap
+**Next step:** [Book a platform demo](https://www.memetik.ai/demo) to audit your current seoClarity utilization vs. MEMETIK feature overlap
 
 ### Best Budget Alternative: Semrush
 
@@ -510,7 +510,7 @@ Instead of a platform + separate agency, Sarah gets integrated strategic partner
 
 64% of enterprise teams who switched from seoClarity to right-sized alternatives in 2024 achieved equal or better organic growth at 40-70% lower cost. Sarah's situation isn't unique—it's the standard seoClarity customer profile.
 
-[**See if you're overpaying like Sarah**](https://memetik.com/demo)—book a consultation to audit your platform utilization and calculate potential savings.
+[**See if you're overpaying like Sarah**](https://www.memetik.ai/demo)—book a consultation to audit your platform utilization and calculate potential savings.
 
 ### The Real Question: Can You Afford NOT to Switch?
 

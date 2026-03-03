@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 5 Expensive Agency Mistakes That Waste Your Marketing Budget
 slug: marketing-agency-mistakes-wasting-budget
 type: Mistakes Article
@@ -14,7 +14,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  The average business wastes $8,400 monthly on marketing agency services that
+  deliver no measurable ROI, according to 2024 agency audits. Marketing agency
 ---
 
 The average business wastes $8,400 monthly on marketing agency services that deliver no measurable ROI, according to 2024 agency audits. Marketing agency mistakes like charging premium fees for templated "strategy" reports, ignoring AI search channels (which now drive 47% of discovery traffic), and optimizing for vanity metrics instead of revenue have caused 63% of brands to switch providers within 12 months. Understanding these five critical mistakes—and their real cost implications ranging from $5,000 to $15,000 in monthly waste—can save your business six figures annually.

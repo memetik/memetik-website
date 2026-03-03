@@ -46,7 +46,7 @@ The infrastructure required to track AI citations spans completely different tec
 
 For growth leaders like you, the stakes are clear: Without AI visibility tracking features, you're spending content budgets without knowing your true reach. You're optimizing for yesterday's platforms while your competitors capture tomorrow's traffic. You need visibility into where AI assistants mention your brand, which content they cite, and how you compare to competitors—across every major LLM platform, updated daily, with historical trends showing whether you're winning or losing.
 
-**Curious where you stand? [MEMETIK's free citation audit](https://memetik.com) reveals your current visibility across ChatGPT, Claude, and Perplexity—no credit card required.**
+**Curious where you stand? [MEMETIK's free citation audit](https://www.memetik.ai) reveals your current visibility across ChatGPT, Claude, and Perplexity—no credit card required.**
 
 The 10 features below separate basic AI tracking toys from comprehensive AEO platforms. Some tools offer 2-3 of these capabilities as retrofitted add-ons to existing SEO products. Comprehensive platforms like MEMETIK were purpose-built with all 10 features because answer engine optimization demands a completely different architecture than search engine optimization.
 
@@ -90,7 +90,7 @@ Prompt variation testing simulates 50+ formulations of target queries to measure
 
 The feature should support custom prompt libraries where you test industry-specific question patterns. A cybersecurity company needs different prompt variations than an e-commerce platform—generic templates miss nuanced opportunities. Our prompt testing identifies which question formulations favor your content, which favor competitors, and which represent white space opportunities where nobody gets consistently cited.
 
-**Watch a [15-minute demo](https://memetik.com/demo) showing real citation tracking, competitor analysis, and content gap identification for your industry.**
+**Watch a [15-minute demo](https://www.memetik.ai/demo) showing real citation tracking, competitor analysis, and content gap identification for your industry.**
 
 Advanced implementations reveal second-order insights: Which prompt variations indicate higher commercial intent? Which formulations suggest the user is early versus late in their buying journey? This intelligence shapes not just content optimization but entire content strategies.
 
@@ -197,7 +197,7 @@ Integration with existing SEO and content workflows is critical. AEO doesn't rep
 
 Our approach transforms the typical growth leader journey from "We spend $50K on content without knowing if AI assistants mention us" to "We track citations across six LLM platforms daily, know exactly which content drives AI visibility, and systematically displace competitors in high-value query categories."
 
-**[Start tracking with MEMETIK's 90-day guarantee](https://memetik.com/pricing)—try all 10 features risk-free with our visibility improvement guarantee. Join growth leaders who've eliminated AI visibility blindspots.**
+**[Start tracking with MEMETIK's 90-day guarantee](https://www.memetik.ai/pricing)—try all 10 features risk-free with our visibility improvement guarantee. Join growth leaders who've eliminated AI visibility blindspots.**
 
 ## Frequently Asked Questions
 

@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 4 Signs You're Paying Too Much for SEO Without AI Visibility Metrics
 slug: paying-too-much-seo-no-ai-metrics
 type: Signs Article
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+meta_description: >-
+  Your SEO agency is too expensive if you're paying over $15,000/month without
+  receiving AI visibility metrics, citation tracking across LLMs like ChatGPT
+  and
 ---
 
 Your SEO agency is too expensive if you're paying over $15,000/month without receiving AI visibility metrics, citation tracking across LLMs like ChatGPT and Perplexity, or AEO (Answer Engine Optimization) deliverables. Traditional enterprise SEO agencies focus exclusively on Google rankings while ignoring the 67% of B2B buyers now using AI search tools for vendor research, leaving you paying premium prices for incomplete visibility strategies. If your agency can't show how often your brand appears in AI-generated answers or track citations in LLM responses, you're overpaying for yesterday's SEO.

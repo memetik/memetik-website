@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: How to Create an AEO Content Calendar That Drives AI Citations
 slug: how-to-create-aeo-content-calendar
 type: Educational How-To
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+  - FAQPage
+meta_description: >-
+  An AEO content calendar is a strategic editorial framework that prioritizes
+  content formats, structures, and topics specifically optimized for AI language
 ---
 
 An AEO content calendar is a strategic editorial framework that prioritizes content formats, structures, and topics specifically optimized for AI language models and answer engines, ensuring your brand earns citations in ChatGPT, Perplexity, and Claude responses. Unlike traditional SEO calendars focused solely on keyword rankings, an effective AEO content calendar balances 60% citation-optimized content (structured data, direct answers, comparison tables) with 40% traditional long-tail content, updated on a 90-day cycle to maintain AI training data relevance. Building this calendar requires mapping buyer journey questions to AI-preferred formats like FAQ schema, HowTo markup, and product comparison matrices that LLMs can easily parse and quote.
@@ -379,7 +390,7 @@ Build your first 90-day sprint calendar: 4-6 comprehensive pillar resources addr
 
 At MEMETIK, we've engineered this process into a systematic infrastructure that delivers results within our 90-day guarantee. Our LLM visibility engineering approach combines programmatic SEO scale (900+ pages) with citation-first architecture (structured formats, schema stacking, quarterly updates) to dominate AI answer engines in your industry.
 
-The buyer journey has changed. Your content calendar must change with it. The brands that appear in hundreds of AI citations monthly aren't lucky—they're strategic. **[Ready to engineer your AI visibility? Let's build your citation-optimized content infrastructure together.](https://memetik.com)**
+The buyer journey has changed. Your content calendar must change with it. The brands that appear in hundreds of AI citations monthly aren't lucky—they're strategic. **[Ready to engineer your AI visibility? Let's build your citation-optimized content infrastructure together.](https://www.memetik.ai)**
 
 ---
 

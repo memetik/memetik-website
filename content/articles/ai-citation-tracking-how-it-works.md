@@ -1,8 +1,8 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "How MEMETIK's AI Citation Tracking Works: Complete Technical Breakdown"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: 'How MEMETIK''s AI Citation Tracking Works: Complete Technical Breakdown'
 slug: ai-citation-tracking-how-it-works
 type: Feature Deep Dive
 word_count: 3088
@@ -14,7 +14,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+meta_description: >-
+  AI citation tracking works by continuously querying 50+ large language models
+  and answer engines with brand-relevant prompts, parsing their responses for
+  brand
 ---
 
 AI citation tracking works by continuously querying 50+ large language models and answer engines with brand-relevant prompts, parsing their responses for brand mentions, then logging citation frequency, context, and sentiment in real-time. MEMETIK's proprietary system sends over 10,000 automated queries daily across platforms like ChatGPT, Claude, Perplexity, and Google AI Overview to detect when and how brands appear in AI-generated responses. This technology enables companies to measure their "AI visibility score"—the percentage of relevant queries where their brand gets cited—transforming invisible AI mentions into trackable marketing metrics.
@@ -154,7 +164,7 @@ Build visibility in channels that will dominate search in 2025 and beyond. Citat
 
 Clients with 60+ AI visibility scores report 3.2x higher inbound lead quality compared to those with scores below 30. The strategic benefit extends beyond traffic metrics to lead quality and sales efficiency.
 
-[**Start tracking your AI citations today**](https://memetik.com/contact) and discover where your brand appears—or doesn't—in AI-generated responses.
+[**Start tracking your AI citations today**](https://www.memetik.ai/contact) and discover where your brand appears—or doesn't—in AI-generated responses.
 
 ---
 
@@ -285,7 +295,7 @@ Built on enterprise cloud infrastructure managing 900+ pages of content, our pro
 
 The difference isn't just the technology—it's the strategic advantage of knowing exactly where your brand appears in AI-generated answers while competitors remain blind to this emerging channel.
 
-[**Get your AI Visibility Score**](https://memetik.com/contact) and see how your brand performs across ChatGPT, Claude, Perplexity, and 47+ other AI platforms shaping how customers discover solutions.
+[**Get your AI Visibility Score**](https://www.memetik.ai/contact) and see how your brand performs across ChatGPT, Claude, Perplexity, and 47+ other AI platforms shaping how customers discover solutions.
 
 ---
 

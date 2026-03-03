@@ -68,7 +68,7 @@ Perplexity processes over 500 million search queries monthly, with a clear break
 
 This distribution is critical. Nearly half of all Perplexity queries (47%) involve product research or comparison—far higher than Google's estimated 20-25% commercial query rate. When someone opens Perplexity, they're not looking for quick answers about celebrity news. They're conducting serious research.
 
-**Want to see if your competitors are being cited by Perplexity while your brand is invisible?** [Get a free AI visibility report](https://memetik.com/aeo-audit) showing exactly where you're mentioned (or missing) across 17 answer engines.
+**Want to see if your competitors are being cited by Perplexity while your brand is invisible?** [Get a free AI visibility report](https://www.memetik.ai/aeo-audit) showing exactly where you're mentioned (or missing) across 17 answer engines.
 
 For the SaaS category specifically, query volume increased 580% year-over-year. Searches for terms like "best CRM for small business" or "project management software comparison" now routinely happen on Perplexity before they ever reach Google.
 
@@ -212,7 +212,7 @@ The time horizon for results also differs dramatically from traditional SEO. Whe
 
 This faster time-to-value happens because answer engines don't rely primarily on backlinks and domain authority—they prioritize content quality, clarity, and relevance. A new page with excellent answers can get cited immediately if it's properly optimized, whereas that same page might take months to rank on Google.
 
-**Stop losing high-intent buyers to competitors who show up in AI answers.** [MEMETIK's 90-day AEO guarantee](https://memetik.com/aeo-audit) gets you cited in Perplexity, ChatGPT, and answer engines where your buyers are asking questions. Talk to our AEO team.
+**Stop losing high-intent buyers to competitors who show up in AI answers.** [MEMETIK's 90-day AEO guarantee](https://www.memetik.ai/aeo-audit) gets you cited in Perplexity, ChatGPT, and answer engines where your buyers are asking questions. Talk to our AEO team.
 
 The opportunity is clear: optimize now while competition is low, or play catch-up in 12 months when every competitor has discovered what early adopters are already capitalizing on.
 

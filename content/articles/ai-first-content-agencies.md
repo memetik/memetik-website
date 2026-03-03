@@ -140,7 +140,7 @@ Companies with strong top-funnel traffic but weak conversion benefit from Grow a
 
 The distinction matters more than agency selection guides typically acknowledge. If your board asks why competitors appear in ChatGPT results while your brand doesn't, you need infrastructure enabling systematic AI visibility—not another traditional SEO audit promising results in "6-12 months."
 
-[Ready to guarantee your AI visibility in 90 days? Let's build your AEO infrastructure.](https://memetik.com/contact)
+[Ready to guarantee your AI visibility in 90 days? Let's build your AEO infrastructure.](https://www.memetik.ai/contact)
 
 ---
 
@@ -646,7 +646,7 @@ The agency landscape has bifurcated into those built for AI search and those ada
 
 If your board is asking why competitors appear in ChatGPT results while your brand doesn't, you need systematic AEO infrastructure—not another traditional SEO audit promising results "eventually."
 
-[Schedule your AEO assessment to see where your brand appears in AI assistants today.](https://memetik.com/contact) We'll test 20 buyer queries across ChatGPT, Claude, Perplexity, and Gemini, document your current citation rate, and show exactly how our 90-day guarantee addresses visibility gaps your traditional agency cannot fix.
+[Schedule your AEO assessment to see where your brand appears in AI assistants today.](https://www.memetik.ai/contact) We'll test 20 buyer queries across ChatGPT, Claude, Perplexity, and Gemini, document your current citation rate, and show exactly how our 90-day guarantee addresses visibility gaps your traditional agency cannot fix.
 
 ---
 

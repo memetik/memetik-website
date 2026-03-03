@@ -46,7 +46,7 @@ The integration also enables **performance comparison across all channels**. You
 
 Conversion correlation is perhaps the most valuable benefit. By tracking brand mention sentiment in AI responses as a custom metric and correlating it with downstream revenue, you can identify which types of AI citations actually drive business outcomes. Not all mentions are equal—a detailed citation with a direct recommendation converts at different rates than a passing reference in a list of options.
 
-[**Start Your 90-Day AEO Trial →**](https://memetik.com/trial)
+[**Start Your 90-Day AEO Trial →**](https://www.memetik.ai/trial)
 
 ## Requirements for ChatGPT Analytics Integration
 
@@ -138,7 +138,7 @@ Once data flows reliably, create custom Explorations in GA4 to visualize AI visi
 3. **AI-to-Conversion Funnel** - Attribution path from citation → website visit → conversion
 4. **Competitive Benchmark** - Your mentions vs. competitor mentions across query categories
 
-[**Book a Free Integration Setup Call →**](https://memetik.com/setup-call)
+[**Book a Free Integration Setup Call →**](https://www.memetik.ai/setup-call)
 
 ## Use Cases and Reporting Examples
 
@@ -271,7 +271,7 @@ No, we track all major AI models automatically and send model type as a custom d
 
 ---
 
-**Ready to unify your SEO and AEO analytics?** Start tracking ChatGPT visibility in Google Analytics today. Our 90-day guarantee includes complete integration support, and our 900+ page content infrastructure is engineered specifically for maximum AI visibility. [**Start Your Free Trial →**](https://memetik.com/trial)
+**Ready to unify your SEO and AEO analytics?** Start tracking ChatGPT visibility in Google Analytics today. Our 90-day guarantee includes complete integration support, and our 900+ page content infrastructure is engineered specifically for maximum AI visibility. [**Start Your Free Trial →**](https://www.memetik.ai/trial)
 
 ---
 

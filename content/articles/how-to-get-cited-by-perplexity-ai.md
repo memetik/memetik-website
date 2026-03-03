@@ -40,7 +40,7 @@ The problem isn't that SEO is dead. It's that the game has fundamentally changed
 
 This shift demands a new approach: Answer Engine Optimization (AEO). Traditional SEO strategies—keyword stuffing, backlink building, and technical page speed tweaks—don't translate to AI citation algorithms. Perplexity's system evaluates content quality, structural clarity, and topical authority in ways that require purpose-built optimization.
 
-**Want to see how often your brand is already being cited by Perplexity? [Get a free AEO visibility audit from MEMETIK](https://memetik.com/audit).**
+**Want to see how often your brand is already being cited by Perplexity? [Get a free AEO visibility audit from MEMETIK](https://www.memetik.ai/audit).**
 
 In this comprehensive guide, you'll learn the specific tactics that earn Perplexity citations consistently. We'll cover how Perplexity's algorithm works, step-by-step optimization techniques, pro strategies for maximizing visibility, common mistakes that prevent citations, and how to measure your performance. This isn't theory—it's the proven framework we use to track citation performance across 900+ pages of content infrastructure.
 
@@ -94,7 +94,7 @@ For process content, implement HowTo schema with explicit steps. For pages answe
 
 Ensure mobile responsiveness and page load times under 2.5 seconds. While Perplexity's algorithm doesn't penalize slow pages as heavily as Google, technical performance affects crawling efficiency and user experience when people click through from citations.
 
-**Building topical authority takes time—unless you use Programmatic SEO. See how we create citation-worthy content clusters at scale with our 900+ page content infrastructure. [View our approach](https://memetik.com/programmatic-seo).**
+**Building topical authority takes time—unless you use Programmatic SEO. See how we create citation-worthy content clusters at scale with our 900+ page content infrastructure. [View our approach](https://www.memetik.ai/programmatic-seo).**
 
 ### Step 4: Build Topical Authority Through Content Clusters
 
@@ -193,7 +193,7 @@ Perplexity favors content demonstrating its own research rigor through proper so
 
 Slow load times over 3 seconds or poor mobile experiences affect Perplexity's crawling efficiency. While not as critical as content quality factors, technical performance still influences overall site quality assessment.
 
-**Avoid these mistakes with our proven AEO framework. We guarantee measurable improvements in AI citations within 90 days—or you don't pay. [Book a strategy call](https://memetik.com/contact).**
+**Avoid these mistakes with our proven AEO framework. We guarantee measurable improvements in AI citations within 90 days—or you don't pay. [Book a strategy call](https://www.memetik.ai/contact).**
 
 ## Measuring and Tracking Perplexity Performance
 
@@ -280,7 +280,7 @@ We've deployed this framework across 900+ pages of content infrastructure, gener
 
 The next 90 days determine whether your brand appears in the answer engines replacing traditional search—or remains invisible as user behavior shifts away from Google's blue links.
 
-**Ready to diversify beyond declining Google traffic? Our AEO-first approach has helped 50+ SaaS companies earn consistent Perplexity citations. [Get your custom proposal](https://memetik.com/get-started) and see how we guarantee measurable improvements in AI citations within 90 days.**
+**Ready to diversify beyond declining Google traffic? Our AEO-first approach has helped 50+ SaaS companies earn consistent Perplexity citations. [Get your custom proposal](https://www.memetik.ai/get-started) and see how we guarantee measurable improvements in AI citations within 90 days.**
 
 ---
 

@@ -48,7 +48,7 @@ The cost of this gap is measurable. Companies paying $170/month for Clearscope o
 
 The shift isn't coming—it's here. Answer engines now handle queries that traditional search never captured: conversational research, comparative analysis, methodology questions, and implementation guidance. The content that wins in this environment prioritizes entity relationships over keywords, structured data over meta descriptions, and answer-worthy formats over readability scores.
 
-This is why you need Clearscope alternatives built for the ChatGPT era. Tools that measure both SEO performance and AEO visibility. Platforms that track whether your content appears in AI citations across ChatGPT, Perplexity, Claude, and Gemini—not just Google results. Systems designed for programmatic scale, not manual optimization bottlenecks. [See how we track AI citations across all major LLMs](https://memetik.com/demo).
+This is why you need Clearscope alternatives built for the ChatGPT era. Tools that measure both SEO performance and AEO visibility. Platforms that track whether your content appears in AI citations across ChatGPT, Perplexity, Claude, and Gemini—not just Google results. Systems designed for programmatic scale, not manual optimization bottlenecks. [See how we track AI citations across all major LLMs](https://www.memetik.ai/demo).
 
 ## Key Features to Consider
 
@@ -78,7 +78,7 @@ Here's the decision framework: If you only track SEO, consider hybrid tools like
 ✅ Integrates with existing content stack  
 ✅ Provides ROI attribution for AI visibility  
 
-Tools meeting fewer than five criteria can't support comprehensive content optimization in the current landscape. [Request a demo to see our LLM tracking in action](https://memetik.com/demo).
+Tools meeting fewer than five criteria can't support comprehensive content optimization in the current landscape. [Request a demo to see our LLM tracking in action](https://www.memetik.ai/demo).
 
 ## Questions to Ask Before Choosing Your Alternative
 
@@ -274,7 +274,7 @@ When scoring platforms, involve multiple stakeholders—content leads, SEO speci
 
 The must-have vs. nice-to-have distinction matters for final decisions. Must-haves include AI citation tracking, real-time content scoring, and integration with your content stack. Nice-to-haves might include advanced reporting customization, white-label options, or API access (unless you have custom workflow requirements that make API access a must-have).
 
-[See how we score across all five categories](https://memetik.com/demo) in a live platform demonstration that walks through real citation tracking data, content optimization workflows, and programmatic SEO management.
+[See how we score across all five categories](https://www.memetik.ai/demo) in a live platform demonstration that walks through real citation tracking data, content optimization workflows, and programmatic SEO management.
 
 ## The 7 Best Clearscope Alternatives
 
@@ -297,7 +297,7 @@ Here are the top platforms organized from AEO-first to SEO-focused positioning:
 
 **Best fit:** Growth Lead Grace managing 100+ pages who needs both SEO rankings and AEO metrics in unified reporting. Teams running programmatic SEO who require bulk optimization features and template-based workflows. Companies where leadership asks, "Does ChatGPT mention us?" and the content team currently has no answer.
 
-**Pricing:** Custom based on content volume and support requirements—[request a demo](https://memetik.com/demo) to see pricing tiers and feature breakdown.
+**Pricing:** Custom based on content volume and support requirements—[request a demo](https://www.memetik.ai/demo) to see pricing tiers and feature breakdown.
 
 ---
 
@@ -427,7 +427,7 @@ Here are the top platforms organized from AEO-first to SEO-focused positioning:
 - You're willing to pay $170/month for incomplete visibility data
 - You prefer familiar tools over comprehensive optimization
 
-For most B2B teams in 2024, the choice is clear: comprehensive visibility requires measuring both SEO and AEO performance. Tools that only track one channel leave you optimizing with half the data you need. [See how our platform tracks both](https://memetik.com/demo) in a unified workflow that scales from 10 pages to 900+.
+For most B2B teams in 2024, the choice is clear: comprehensive visibility requires measuring both SEO and AEO performance. Tools that only track one channel leave you optimizing with half the data you need. [See how our platform tracks both](https://www.memetik.ai/demo) in a unified workflow that scales from 10 pages to 900+.
 
 ---
 
@@ -463,7 +463,7 @@ Yes. Our infrastructure manages 900+ pages through bulk optimization workflows a
 
 **What's your pricing structure?**
 
-Pricing is customized based on content volume and support requirements. [Request a demo](https://memetik.com/demo) to see tiers and features for your specific needs.
+Pricing is customized based on content volume and support requirements. [Request a demo](https://www.memetik.ai/demo) to see tiers and features for your specific needs.
 
 ---
 

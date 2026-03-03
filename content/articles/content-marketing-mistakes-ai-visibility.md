@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 5 Expensive Content Marketing Mistakes Costing You AI Visibility
 slug: content-marketing-mistakes-ai-visibility
 type: Mistakes Article
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  The most expensive content marketing mistake in 2024 is creating content
+  exclusively for Google's algorithms while ignoring the 40-70% of buyers now
+  using AI
 ---
 
 The most expensive content marketing mistake in 2024 is creating content exclusively for Google's algorithms while ignoring the 40-70% of buyers now using AI assistants like ChatGPT and Perplexity before making purchase decisions. Traditional content marketing mistakes—thin listicles, keyword-stuffed articles, and gated whitepapers—cost businesses an average of $43,000 annually in wasted content production while generating zero citations from LLMs that influence modern buying decisions. Companies investing in AEO (Answer Engine Optimization) alongside SEO are capturing 3-5x more qualified traffic by creating depth-focused, conversational content that AI assistants actually cite and recommend.
@@ -213,7 +224,7 @@ Calculate what percentage of your content is optimized for AEO versus SEO-only. 
 
 For most B2B companies we audit, it's between $35,000 and $65,000 annually—money spent on content that works for an algorithm from 2019 but fails to reach nearly half of today's buyers.
 
-[Ready to fix your AI visibility gaps? Our 90-day AEO implementation identifies your highest-impact opportunities and guarantees measurable citation improvement—or we work for free.](https://memetik.com)
+[Ready to fix your AI visibility gaps? Our 90-day AEO implementation identifies your highest-impact opportunities and guarantees measurable citation improvement—or we work for free.](https://www.memetik.ai)
 
 ---
 
@@ -330,7 +341,7 @@ Choose depth over breadth. Choose conversational over keyword-focused. Choose ex
 
 Choose AEO. Choose AI visibility. Choose growth.
 
-[Let's build your AEO strategy together. Our 90-day implementation guarantees measurable improvement in AI citations and qualified traffic—or you don't pay. Schedule your content audit today.](https://memetik.com)
+[Let's build your AEO strategy together. Our 90-day implementation guarantees measurable improvement in AI citations and qualified traffic—or you don't pay. Schedule your content audit today.](https://www.memetik.ai)
 
 ---
 

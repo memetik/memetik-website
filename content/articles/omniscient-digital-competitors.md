@@ -89,7 +89,7 @@ Self-service content optimization platform with AI-powered recommendations. Best
 **📈 Best for SEO + AEO Hybrid: SearchAtlas** ($6k-12k/mo)  
 Traditional SEO platform adding AEO features. Best for brands that need both Google rankings and emerging AI visibility. Less specialized than pure AEO agencies but covers both bases adequately.
 
-[**Get Your Free AI Visibility Audit**](https://memetik.com/ai-visibility-audit) — See exactly how often ChatGPT, Perplexity, and Claude mention your brand vs. competitors.
+[**Get Your Free AI Visibility Audit**](https://www.memetik.ai/ai-visibility-audit) — See exactly how often ChatGPT, Perplexity, and Claude mention your brand vs. competitors.
 
 ---
 
@@ -538,7 +538,7 @@ Our clients average 340% AI visibility improvement within 90 days because we mea
 - Advanced competitive displacement strategies
 - Quarterly strategic reviews and roadmap updates
 
-[**See Your AI Visibility Score**](https://memetik.com/ai-visibility-audit) — Free competitive analysis shows exactly where you appear (or don't) in AI recommendations vs. competitors.
+[**See Your AI Visibility Score**](https://www.memetik.ai/ai-visibility-audit) — Free competitive analysis shows exactly where you appear (or don't) in AI recommendations vs. competitors.
 
 ---
 
@@ -590,7 +590,7 @@ The 90-day guarantee removes the risk. Either you see documented AI visibility i
 
 For B2B companies where prospects use AI assistants during vendor research, AI visibility isn't optional—it's the new competitive battleground. The question isn't whether to invest in AEO, but whether you'll do it before or after your competitors dominate AI recommendations in your category.
 
-**Ready to see where you stand?** [Get your free AI visibility audit](https://memetik.com/ai-visibility-audit) and discover exactly how often ChatGPT, Perplexity, and Claude mention your brand compared to competitors. Most companies are shocked by what they find.
+**Ready to see where you stand?** [Get your free AI visibility audit](https://www.memetik.ai/ai-visibility-audit) and discover exactly how often ChatGPT, Perplexity, and Claude mention your brand compared to competitors. Most companies are shocked by what they find.
 
 ---
 

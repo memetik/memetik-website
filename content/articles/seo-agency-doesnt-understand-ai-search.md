@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: Why Your SEO Agency Doesn't Get AI Search (And What to Do About It)
 slug: seo-agency-doesnt-understand-ai-search
 type: Problem-Solution
@@ -15,7 +15,16 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+meta_description: >-
+  Traditional SEO agencies lack AI search expertise because they're structurally
+  built around Google's PageRank algorithms, not LLM training data and citation
 ---
 
 Traditional SEO agencies lack AI search expertise because they're structurally built around Google's PageRank algorithms, not LLM training data and citation mechanisms used by ChatGPT, Perplexity, and Claude. Most agencies still measure success through keyword rankings and organic traffic—metrics that don't capture whether your brand appears in AI-generated answers, which now influence 64% of search sessions. The gap isn't just knowledge—it's tools, training data, and an entirely different optimization framework that requires [AEO (Answer Engine Optimization)](/what-is-aeo-answer-engine-optimization) capabilities most agencies won't develop for 18-24 months.

@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 15 Ways to Optimize Your Content for Perplexity AI in 2025
 slug: optimize-content-perplexity-ai
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+  - FAQPage
+meta_description: >-
+  To optimize for Perplexity AI, structure your content with clear answer blocks
+  in the first 100 words, use semantic HTML5 tags (especially , , and structured
 ---
 
 To optimize for Perplexity AI, structure your content with clear answer blocks in the first 100 words, use semantic HTML5 tags (especially `<article>`, `<section>`, and structured headings), and include cited statistics with publication dates within 12 months. Perplexity's LLM prioritizes content with factual density (3-5 specific data points per 300 words), authoritative external citations, and conversational Q&A formatting that mirrors natural user queries. Content optimized for Perplexity sees 3-4x higher citation rates when it includes structured data markup, descriptive alt text, and scannable bullet lists that answer "how," "what," and "why" questions directly.

@@ -96,7 +96,7 @@ The pattern analysis component is crucial. When you identify pages generating co
 
 We provide real-time AI citation tracking as core platform functionality because it's impossible to do effective AEO without visibility into LLM behavior. Our dashboard shows not just that you were cited, but the exact query context, competing sources, and citation accuracy (whether the AI correctly represented your content).
 
-**Ready to see your current AI visibility baseline?** [Start with our free AEO audit tool](https://memetik.com) to benchmark how often ChatGPT and other AI assistants currently cite your brand.
+**Ready to see your current AI visibility baseline?** [Start with our free AEO audit tool](https://www.memetik.ai) to benchmark how often ChatGPT and other AI assistants currently cite your brand.
 
 ## Strategy 5: Optimize for Semantic HTML and Content Hierarchy
 
@@ -270,7 +270,7 @@ Strategy 10: Citation analytics and competitive intelligence showing query patte
 
 **Getting Started with MEMETIK**
 
-[Start with our AEO audit tool](https://memetik.com) to benchmark your current AI visibility across major answer engines. The audit is free and takes under five minutes—you'll get a detailed report showing citation baseline, schema implementation gaps, and specific quick-win opportunities.
+[Start with our AEO audit tool](https://www.memetik.ai) to benchmark your current AI visibility across major answer engines. The audit is free and takes under five minutes—you'll get a detailed report showing citation baseline, schema implementation gaps, and specific quick-win opportunities.
 
 Our 90-day guarantee means risk-free implementation of all ten strategies outlined in this guide. Most customers deploy 900+ optimized pages within their first quarter and see measurable citation increases by day 60.
 

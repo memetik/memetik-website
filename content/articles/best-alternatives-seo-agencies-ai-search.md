@@ -200,7 +200,7 @@ Their pricing model locks you into 12+ months before AEO results are possible. T
 
 Our 90-day guarantee solves the commitment problem. Test real AEO for $7,500 total. See your brand cited in ChatGPT, Perplexity, or Claude. If results don't materialize, we refund everything. No traditional agency offers this because they can't confidently deliver AEO outcomes on that timeline.
 
-[**Book a free AEO audit**](https://memetik.com) to see where your brand currently appears—or doesn't—in ChatGPT, Perplexity, and Claude results.
+[**Book a free AEO audit**](https://www.memetik.ai) to see where your brand currently appears—or doesn't—in ChatGPT, Perplexity, and Claude results.
 
 ---
 
@@ -226,7 +226,7 @@ At $2,500/month, we cost 70-80% less than traditional full-service agencies whil
 
 For B2B SaaS founders frustrated with expensive agencies that don't understand LLMs, we offer the optimal balance: specialized expertise, measurable results, affordable pricing, and risk reversal through our guarantee.
 
-[**Start your 90-day guaranteed AEO engagement**](https://memetik.com)—if you don't see measurable LLM citations, we refund everything.
+[**Start your 90-day guaranteed AEO engagement**](https://www.memetik.ai)—if you don't see measurable LLM citations, we refund everything.
 
 ---
 

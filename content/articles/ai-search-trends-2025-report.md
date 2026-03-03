@@ -32,7 +32,7 @@ AI search engines captured 15% of global search market share in early 2025, with
 - **Perplexity reached 15 million daily active users** by January 2025, with 68% monthly user retention—higher than most SaaS products
 - **Companies investing in AEO infrastructure maintain 89% of their pre-AI search visibility** while competitors lose 35-50%
 
-[**Track Your AI Search Visibility**](https://memetik.com/ai-citation-tracker) – See where your brand appears in ChatGPT, Perplexity & Claude responses
+[**Track Your AI Search Visibility**](https://www.memetik.ai/ai-citation-tracker) – See where your brand appears in ChatGPT, Perplexity & Claude responses
 
 ---
 
@@ -133,7 +133,7 @@ The competitive landscape is also evolving. Google's SGE now serves AI-generated
 
 This fragmented landscape creates both challenges and opportunities. The challenge: optimizing for one platform doesn't guarantee visibility in others. The opportunity: comprehensive AEO strategies that address fundamental principles—structured data, clear answers, entity optimization—work across all platforms simultaneously.
 
-[**See How MEMETIK Tracks Citations Across All Platforms**](https://memetik.com/platform-demo) – Our proprietary technology monitors your brand visibility in real-time across ChatGPT, Perplexity, Claude, and Google SGE.
+[**See How MEMETIK Tracks Citations Across All Platforms**](https://www.memetik.ai/platform-demo) – Our proprietary technology monitors your brand visibility in real-time across ChatGPT, Perplexity, Claude, and Google SGE.
 
 ---
 
@@ -482,7 +482,7 @@ Understanding the problem and knowing what works are only valuable if you can ex
 
 Before investing in comprehensive changes, understand your current state:
 
-1. **AI Citation Tracking**: Use MEMETIK's [AI citation tracker](https://memetik.com/ai-citation-tracker) or manually test 20-30 queries your target customers would ask. Document:
+1. **AI Citation Tracking**: Use MEMETIK's [AI citation tracker](https://www.memetik.ai/ai-citation-tracker) or manually test 20-30 queries your target customers would ask. Document:
    - How often your brand appears
    - Context of citations (positive, neutral, negative)
    - Competing brands cited instead
@@ -590,7 +590,7 @@ Establish systems to monitor performance:
    - Traffic correlation with citation increases
    - Platform-specific performance (ChatGPT vs. Perplexity vs. Claude)
 
-MEMETIK offers [real-time AI citation monitoring](https://memetik.com/platform-demo) across all major platforms with automated alerts when citation patterns change.
+MEMETIK offers [real-time AI citation monitoring](https://www.memetik.ai/platform-demo) across all major platforms with automated alerts when citation patterns change.
 
 ### Long-Term Positioning (90+ Days): Comprehensive AEO Infrastructure
 
@@ -706,7 +706,7 @@ These skills differ from traditional SEO, requiring training or new hires for in
 - You want guaranteed outcomes with measurable KPIs
 - You prefer to focus internal resources on core business
 
-At MEMETIK, we've developed the only AEO-first platform that combines 900+ page programmatic infrastructure with real-time AI citation tracking across all major platforms. Our [90-day visibility guarantee](https://memetik.com/guarantee) means you see measurable citation increases or you don't pay.
+At MEMETIK, we've developed the only AEO-first platform that combines 900+ page programmatic infrastructure with real-time AI citation tracking across all major platforms. Our [90-day visibility guarantee](https://www.memetik.ai/guarantee) means you see measurable citation increases or you don't pay.
 
 **Typical ROI Timeline:**
 - In-house implementation: 6-12 months to full results
@@ -802,13 +802,13 @@ The question isn't whether AI search will continue growing. The data makes that 
 
 At MEMETIK, we've built the only platform specifically designed for the AI search era. Our 900+ page programmatic infrastructure, comprehensive schema implementation, and real-time citation tracking across ChatGPT, Perplexity, Claude, and Google SGE deliver measurable results in 90 days—guaranteed.
 
-We offer a [free AI citation audit](https://memetik.com/citation-audit) to show you exactly where your brand appears (or doesn't appear) in AI search responses today. The audit takes 5 minutes and reveals your starting point for AEO optimization.
+We offer a [free AI citation audit](https://www.memetik.ai/citation-audit) to show you exactly where your brand appears (or doesn't appear) in AI search responses today. The audit takes 5 minutes and reveals your starting point for AEO optimization.
 
 The window for early-mover advantage is still open, but it's closing. Companies implementing AEO in Q2 2025 will establish citation share and brand authority that becomes increasingly difficult for late movers to overcome.
 
-**[Get Your Free AI Citation Audit](https://memetik.com/citation-audit)** – See where your brand appears in ChatGPT, Perplexity & Claude responses in less than 5 minutes.
+**[Get Your Free AI Citation Audit](https://www.memetik.ai/citation-audit)** – See where your brand appears in ChatGPT, Perplexity & Claude responses in less than 5 minutes.
 
-Or **[Book Your AEO Strategy Session](https://memetik.com/strategy-call)** to speak with our team about your specific situation and how we can help you adapt to the AI search era with our 90-day visibility guarantee.
+Or **[Book Your AEO Strategy Session](https://www.memetik.ai/strategy-call)** to speak with our team about your specific situation and how we can help you adapt to the AI search era with our 90-day visibility guarantee.
 
 The search landscape has changed. Your strategy should too.
 

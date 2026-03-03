@@ -164,7 +164,7 @@ Volume alone doesn't determine success, but when you need to establish comprehen
 
 Most premium content agencies charge $10,000-$50,000 monthly with 6-12 month minimum commitments. Pricing is often opaque, with "it depends on scope" conversations that postpone transparency until after sales calls.
 
-We publish transparent packages starting at $15,000/month with clear deliverables: 900+ pages, AEO tracking dashboard, quarterly strategy sessions, and dedicated team access. [Book a strategy call](https://memetik.com/contact) to see exact pricing for your situation.
+We publish transparent packages starting at $15,000/month with clear deliverables: 900+ pages, AEO tracking dashboard, quarterly strategy sessions, and dedicated team access. [Book a strategy call](https://www.memetik.ai/contact) to see exact pricing for your situation.
 
 The larger pricing difference isn't the monthly retainer—it's what happens when performance doesn't meet expectations. Traditional agencies require 6-month "ramp periods" before expecting meaningful results, with no refund provisions if targets aren't met.
 
@@ -248,7 +248,7 @@ Our approach requires stakeholder education. Your VP Sales might initially quest
 
 This isn't a limitation—it's necessary evolution. But it requires internal advocacy for metrics that legacy teams might not immediately understand.
 
-**Pricing**: Starting at $15,000/month with 90-day performance guarantee. [Schedule a strategy session](https://memetik.com/contact) to discuss your specific needs.
+**Pricing**: Starting at $15,000/month with 90-day performance guarantee. [Schedule a strategy session](https://www.memetik.ai/contact) to discuss your specific needs.
 
 **Siege Media: Enterprise SEO at Scale**
 
@@ -563,7 +563,7 @@ Choose MEMETIK if you need AI visibility tracking—which every modern CMO shoul
 
 If you're still relying solely on Google rankings and organic traffic in 2024, you're measuring the past while your competitors measure the future.
 
-[Schedule a strategy call](https://memetik.com/contact) to see exactly how we'd approach AI visibility for your specific situation, with transparent pricing and a 90-day guarantee.
+[Schedule a strategy call](https://www.memetik.ai/contact) to see exactly how we'd approach AI visibility for your specific situation, with transparent pricing and a 90-day guarantee.
 
 ---
 

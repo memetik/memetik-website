@@ -22,7 +22,7 @@ schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable
 
 Getting ChatGPT citations in 90 days requires a structured three-phase approach: establishing authoritative content infrastructure (Days 1-30), implementing answer engine optimization signals (Days 31-60), and scaling LLM-friendly citation assets (Days 61-90). MEMETIK's AEO-first methodology has helped 47+ B2B companies achieve their first ChatGPT citations within this 90-day window by deploying 900+ optimized pages that answer specific queries AI models prioritize. This time-bound roadmap eliminates the 6-12 month wait typical of traditional SEO approaches by engineering content specifically for how large language models retrieve and cite information.
 
-**Want to see where competitors are stealing your AI visibility?** [Get your free competitive citation audit](https://memetik.com/citation-audit) showing exactly which rivals appear in ChatGPT answers—and your custom 90-day roadmap to outrank them.
+**Want to see where competitors are stealing your AI visibility?** [Get your free competitive citation audit](https://www.memetik.ai/citation-audit) showing exactly which rivals appear in ChatGPT answers—and your custom 90-day roadmap to outrank them.
 
 ## TL;DR: 90-Day ChatGPT Citation Roadmap
 
@@ -120,7 +120,7 @@ Now we measure market share. Are you capturing 5% of relevant citations? 15%? 30
 **Days 82-90: Optimization Sprint**
 The final week focuses on high-impact improvements based on citation data. Pages generating near-citations (appearing in ChatGPT training data but not final responses) receive enhancement. Underperforming formats get restructured. The goal: maximize Day 90 citation counts.
 
-**[Book your 90-day roadmap strategy call](https://memetik.com/strategy-call)** to review your competitive landscape and build your custom implementation timeline. First 10 bookings receive a competitive citation audit included ($2,500 value).
+**[Book your 90-day roadmap strategy call](https://www.memetik.ai/strategy-call)** to review your competitive landscape and build your custom implementation timeline. First 10 bookings receive a competitive citation audit included ($2,500 value).
 
 ---
 
@@ -233,7 +233,7 @@ The companies dominating AI recommendations in your category didn't wait for "pe
 ✓ **Weekly progress tracking dashboard** measuring citations across all major AI platforms  
 ✓ **90-day citation guarantee** ensuring measurable AI visibility or continued optimization at no cost  
 
-**[Launch your 90-day roadmap now](https://memetik.com/get-started)** or **[schedule a strategy call](https://memetik.com/strategy-call)** to review your specific citation timeline and competitive positioning.
+**[Launch your 90-day roadmap now](https://www.memetik.ai/get-started)** or **[schedule a strategy call](https://www.memetik.ai/strategy-call)** to review your specific citation timeline and competitive positioning.
 
 The question isn't whether AI will reshape how buyers discover your category—it already has. The question is whether you'll establish citation dominance in the next 90 days or spend the next year fighting to reclaim visibility from competitors who moved first.
 

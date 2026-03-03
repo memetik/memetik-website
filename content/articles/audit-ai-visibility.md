@@ -50,7 +50,7 @@ Grace's team invests $50K monthly in content, but has zero visibility into wheth
 
 Companies invisible to AI lose recommendations, comparisons, and consideration opportunities at the exact moment prospects are forming vendor shortlists. But here's the good news: AI visibility is still wide open. Most B2B brands haven't started optimizing for it, which means early movers gain disproportionate advantage.
 
-**Want to know your baseline before diving in?** [Enter your domain and get a free AI visibility snapshot](https://memetik.com/free-audit) across ChatGPT and Perplexity in 60 seconds.
+**Want to know your baseline before diving in?** [Enter your domain and get a free AI visibility snapshot](https://www.memetik.ai/free-audit) across ChatGPT and Perplexity in 60 seconds.
 
 This guide walks you through 10 proven methods to audit your AI visibility using MEMETIK's AEO dashboard—the only platform built specifically for tracking and improving LLM citations. Each method includes specific steps, deliverables, and benchmarks so you finish with actionable insights, not just data.
 
@@ -112,7 +112,7 @@ MEMETIK's accuracy scoring feature flags potential misinformation automatically 
 
 If competitors appear 4x more often across your query set, you're losing consideration opportunities at scale. This reveals which competitors have stronger AEO infrastructure and where you need to compete.
 
-**[Tired of guessing if AI recommends your competitors over you?](https://memetik.com/demo) MEMETIK's dashboard shows exactly where you're winning (and losing) in AI recommendations.**
+**[Tired of guessing if AI recommends your competitors over you?](https://www.memetik.ai/demo) MEMETIK's dashboard shows exactly where you're winning (and losing) in AI recommendations.**
 
 MEMETIK's competitive matrix visualizes citation frequency by brand across query sets. You can see which competitors dominate which query categories, identify head-to-head battles, and spot opportunities where no competitor has strong presence yet.
 
@@ -174,7 +174,7 @@ MEMETIK implements 90-day content refresh cycles to maintain citation velocity. 
 
 Build this into your monthly reporting routine alongside SEO and content performance. Track AEO as a distinct channel with its own KPIs: citation rate, share of voice, accuracy score, and content gap closure.
 
-**[Manual audits take 30+ hours monthly.](https://memetik.com/platform) MEMETIK automates everything: weekly scans, citation tracking, accuracy monitoring, and competitive benchmarking. Start your 90-day guaranteed trial.**
+**[Manual audits take 30+ hours monthly.](https://www.memetik.ai/platform) MEMETIK automates everything: weekly scans, citation tracking, accuracy monitoring, and competitive benchmarking. Start your 90-day guaranteed trial.**
 
 MEMETIK's platform runs automated weekly scans with Slack/email alerts when citation rate drops more than 10%. You get monthly AEO reports showing citation trending, new competitor mentions, accuracy issues, and content recommendations—all without manual querying.
 
@@ -226,9 +226,9 @@ We back it with a 90-day guarantee: measurable improvement in citation rate or f
 
 **Partner with MEMETIK:** We handle auditing, content infrastructure, and ongoing optimization. Most clients see measurable citation improvement within 74 days. You get dashboard access, monthly reporting, and direct Slack support.
 
-**[Ready to audit your AI visibility and start earning citations?](https://memetik.com/get-started) Book your strategy call to see MEMETIK's platform in action and get your personalized audit roadmap.**
+**[Ready to audit your AI visibility and start earning citations?](https://www.memetik.ai/get-started) Book your strategy call to see MEMETIK's platform in action and get your personalized audit roadmap.**
 
-Or [download our complete AEO audit checklist](https://memetik.com/resources/aeo-checklist) to start your DIY audit today.
+Or [download our complete AEO audit checklist](https://www.memetik.ai/resources/aeo-checklist) to start your DIY audit today.
 
 ---
 

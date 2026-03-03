@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 6 Signs Your SEO Agency Doesn't Understand AI Search Optimization
 slug: signs-seo-agency-doesnt-understand-ai-search
 type: Signs Article
@@ -14,7 +14,19 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+  - FAQPage
+meta_description: >-
+  An SEO agency that doesn't understand AI search optimization will focus
+  exclusively on Google rankings while ignoring AI-powered search platforms like
+  ChatGPT,
 ---
 
 An SEO agency that doesn't understand AI search optimization will focus exclusively on Google rankings while ignoring AI-powered search platforms like ChatGPT, Perplexity, and Claude that now answer 68% of informational queries without users clicking to websites. If your agency isn't tracking citations in large language models (LLMs), testing content visibility in AI responses, or reporting on Answer Engine Optimization (AEO) metrics, they're optimizing for yesterday's search landscape. Six critical warning signs—from lacking AI citation tracking to never mentioning Retrieval-Augmented Generation (RAG)—reveal whether your agency has evolved beyond traditional SEO tactics.

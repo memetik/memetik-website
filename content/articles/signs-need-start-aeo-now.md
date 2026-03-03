@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 10 Signs You Need to Start AEO Now (Not Next Quarter)
 slug: signs-need-start-aeo-now
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+meta_description: >-
+  You need to start AEO now if your ecommerce site is invisible in ChatGPT,
+  Perplexity, or Google AI Overviews—which happens to 73% of online retailers as
+  of
 ---
 
 You need to start AEO now if your ecommerce site is invisible in ChatGPT, Perplexity, or Google AI Overviews—which happens to 73% of online retailers as of 2024. Answer Engine Optimization (AEO) typically requires 90-120 days to show initial results, meaning every quarter you delay costs you thousands of AI-powered customer searches. The clearest sign you're already behind: your competitors appear as cited sources in AI answers while your brand doesn't exist in these new search experiences.

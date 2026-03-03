@@ -1,8 +1,10 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "Recovering from Google Traffic Decline: The AI Search Recovery Playbook for 2025"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: >-
+  Recovering from Google Traffic Decline: The AI Search Recovery Playbook for
+  2025
 slug: recovering-from-google-traffic-decline
 type: Use Case
 word_count: 4441
@@ -14,7 +16,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  Recovering from Google traffic decline requires a strategic three-phase
+  approach: immediate stabilization (0-30 days), AI search expansion (30-90
+  days), and
 ---
 
 Recovering from Google traffic decline requires a strategic three-phase approach: immediate stabilization (0-30 days), AI search expansion (30-90 days), and traffic diversification (90+ days), with companies typically recovering 60-80% of lost traffic within 90 days while building resilience against future algorithm changes. The most successful recovery strategies in 2025 treat traffic loss not as a crisis to reverse, but as a catalyst to build presence across AI search platforms like ChatGPT, Perplexity, and Google AI Overviews where 47% of searches now occur. MEMETIK's AI Search Recovery Framework combines traditional SEO fixes with AEO-first infrastructure, creating 900+ optimized pages that appear in both traditional search results and LLM citations within 90 days.

@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 7 Companies That Failed at AEO (And What They Learned)
 slug: aeo-failure-examples-lessons-learned
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  The most common AEO mistakes to avoid include failing to provide direct,
+  quotable answers in the first 100 words, ignoring conversational query
+  patterns that
 ---
 
 The most common AEO mistakes to avoid include failing to provide direct, quotable answers in the first 100 words, ignoring conversational query patterns that AI assistants prioritize, and treating AEO as an afterthought to traditional SEO rather than a distinct discipline. According to analysis of 847 brand visibility audits across ChatGPT, Perplexity, and Google AI Overviews, companies that approach AEO with traditional SEO tactics experience 73% lower citation rates in AI-generated responses. These seven cautionary tales reveal why conventional SEO agencies struggle with answer engine optimization and what forward-thinking companies learned from their failures.

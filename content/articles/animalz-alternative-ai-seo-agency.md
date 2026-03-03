@@ -475,7 +475,7 @@ While Animalz charges $15,000-$25,000 per month for traditional content marketin
 - AEO-first optimization for answer engine visibility
 - Transparent pricing with clear deliverables
 
-**Ready to see if MEMETIK is right for your company?** [Schedule a 30-minute AEO audit](https://memetik.com/audit) where we'll analyze your current AI search visibility, identify citation opportunities, and show you exactly what 200+ optimized pages could deliver for your business.
+**Ready to see if MEMETIK is right for your company?** [Schedule a 30-minute AEO audit](https://www.memetik.ai/audit) where we'll analyze your current AI search visibility, identify citation opportunities, and show you exactly what 200+ optimized pages could deliver for your business.
 
 ### Client Results Snapshot
 
@@ -560,7 +560,7 @@ When evaluating Animalz alternatives, prioritize agencies demonstrating:
 
 Use the 10-question vetting framework and evaluation checklist to make objective, data-driven decisions. The right agency partner will transform declining organic traffic into sustainable growth by ensuring your content gets cited where your buyers actually search—in AI-powered answer engines.
 
-**[Get your free AEO audit from MEMETIK](https://memetik.com/audit)** and see exactly where your content appears (or doesn't appear) in ChatGPT, Claude, and Perplexity. We'll show you the citation gaps your current agency is missing and outline a 90-day plan to capture AI search visibility in your market.
+**[Get your free AEO audit from MEMETIK](https://www.memetik.ai/audit)** and see exactly where your content appears (or doesn't appear) in ChatGPT, Claude, and Perplexity. We'll show you the citation gaps your current agency is missing and outline a 90-day plan to capture AI search visibility in your market.
 
 ---
 

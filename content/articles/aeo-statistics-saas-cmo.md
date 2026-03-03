@@ -42,7 +42,7 @@ Consider Sarah, a typical SaaS CMO managing a $2.3 million marketing budget. She
 
 The measurement gap is real and costly. Gartner research indicates only 12% of B2B marketing budgets currently account for AEO, despite 64% of buyers using AI research tools. Most CMOs are flying blind, optimizing for metrics that matter less each quarter while the actual buyer journey shifts beneath their feet.
 
-These 15 statistics illuminate the true scale of the AEO opportunity—and the risk of inaction. Each data point carries specific budget implications, from understanding market size to calculating ROI against traditional channels. We've assembled these numbers from industry research, our work optimizing 900+ pages for LLM visibility, and AI citation tracking across every major platform. **[Track your current AEO visibility with a free citation audit](https://memetik.com/citation-audit)** to understand where you stand before diving into the data.
+These 15 statistics illuminate the true scale of the AEO opportunity—and the risk of inaction. Each data point carries specific budget implications, from understanding market size to calculating ROI against traditional channels. We've assembled these numbers from industry research, our work optimizing 900+ pages for LLM visibility, and AI citation tracking across every major platform. **[Track your current AEO visibility with a free citation audit](https://www.memetik.ai/citation-audit)** to understand where you stand before diving into the data.
 
 ## The 15 AEO Statistics That Define 2025
 
@@ -72,7 +72,7 @@ Forrester and Gartner research confirms that AI assistants have become standard 
 
 ### 7. Poor AEO Costs the Average SaaS Company 127 Citations Monthly
 
-Our AI citation tracking reveals that typical B2B SaaS companies without AEO optimization lose approximately 127 potential citations each month—moments when prospects receive AI-generated recommendations that mention competitors but not them. When you calculate average enterprise SaaS pipeline value per qualified opportunity, these lost citations represent roughly $43,000 in monthly pipeline leakage. **[Calculate your specific pipeline loss from poor AEO](https://memetik.com/pipeline-calculator)** based on your deal size and conversion rates.
+Our AI citation tracking reveals that typical B2B SaaS companies without AEO optimization lose approximately 127 potential citations each month—moments when prospects receive AI-generated recommendations that mention competitors but not them. When you calculate average enterprise SaaS pipeline value per qualified opportunity, these lost citations represent roughly $43,000 in monthly pipeline leakage. **[Calculate your specific pipeline loss from poor AEO](https://www.memetik.ai/pipeline-calculator)** based on your deal size and conversion rates.
 
 ### 8. Structured Content Is 5.8x More Likely to Be Cited
 
@@ -132,7 +132,7 @@ Measurement differentiates effective AEO from optimization theater. You need AI 
 
 Our 90-day guarantee reflects confidence in this systematic approach. When you combine comprehensive content infrastructure with proper technical optimization and ongoing citation tracking, citation increases become predictable within one quarter. The transformation isn't instantaneous—you're training large language models, not just updating meta tags—but it's measurable, consistent, and compounding.
 
-**[Start your 90-day AEO transformation with a strategy consultation](https://memetik.com/strategy-call)** to map your specific category, competitive landscape, and content infrastructure requirements. We'll audit your current citations, identify the highest-value content opportunities, and build a programmatic roadmap to category dominance.
+**[Start your 90-day AEO transformation with a strategy consultation](https://www.memetik.ai/strategy-call)** to map your specific category, competitive landscape, and content infrastructure requirements. We'll audit your current citations, identify the highest-value content opportunities, and build a programmatic roadmap to category dominance.
 
 ---
 

@@ -58,7 +58,7 @@ The risk profile difference is stark:
 
 For ecommerce directors managing P&L responsibility, this isn't just about risk mitigation—it's about capital efficiency. Every dollar committed to a traditional retainer is a dollar not available for inventory, paid acquisition testing, or product development. Performance-based models preserve cash flow while maintaining SEO investment.
 
-The shift to AI-powered search makes this accountability even more critical. ChatGPT, Perplexity, and Claude recommendations change weekly as these models are updated. An agency that can't prove they're monitoring and optimizing for AI citations is selling you a 2019 playbook in a 2025 market. **[Ready to see where you rank in ChatGPT? Get our free AEO audit](https://memetik.com/contact)** to discover your AI visibility gaps before your competitors exploit them.
+The shift to AI-powered search makes this accountability even more critical. ChatGPT, Perplexity, and Claude recommendations change weekly as these models are updated. An agency that can't prove they're monitoring and optimizing for AI citations is selling you a 2019 playbook in a 2025 market. **[Ready to see where you rank in ChatGPT? Get our free AEO audit](https://www.memetik.ai/contact)** to discover your AI visibility gaps before your competitors exploit them.
 
 ---
 
@@ -194,7 +194,7 @@ This is the differentiator question. Look for: Specific AEO methodologies (entit
 
 Look for: Demonstrated capability to scale 500+ pages efficiently. Red flag: "We create custom content for every page" (doesn't scale for ecommerce catalogs).
 
-**[Want these questions in a downloadable checklist? Grab our agency evaluation framework](https://memetik.com/contact)** with scoring rubrics for different agency responses.
+**[Want these questions in a downloadable checklist? Grab our agency evaluation framework](https://www.memetik.ai/contact)** with scoring rubrics for different agency responses.
 
 ---
 
@@ -675,7 +675,7 @@ The solution is a hybrid model that balances quality (adequate base retainer for
 
 If you're currently locked in a traditional retainer with no ChatGPT visibility and vague deliverables, you're paying $18,000-$25,000/month for a strategy that's becoming obsolete in real-time.
 
-**[Let's audit where you actually rank in ChatGPT versus your competitors](https://memetik.com/contact)**. We'll show you the AI visibility gaps your current agency isn't tracking—and exactly how we'd fill them with guaranteed 90-day results. No more paying for unaccountable deliverables. No more watching competitors appear in AI recommendations while your brand remains invisible.
+**[Let's audit where you actually rank in ChatGPT versus your competitors](https://www.memetik.ai/contact)**. We'll show you the AI visibility gaps your current agency isn't tracking—and exactly how we'd fill them with guaranteed 90-day results. No more paying for unaccountable deliverables. No more watching competitors appear in AI recommendations while your brand remains invisible.
 
 Performance-based SEO works when it's built on sophisticated attribution, AEO expertise, and genuine accountability. That's the model we've built at MEMETIK, and it's why brands are switching from traditional agencies to finally see ROI from their SEO investment.
 

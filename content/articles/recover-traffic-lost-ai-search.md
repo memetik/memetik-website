@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 10 Ways to Recover Traffic Lost to AI Search in 2025
 slug: recover-traffic-lost-ai-search
 type: Listicle
@@ -14,7 +14,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+meta_description: >-
+  To recover traffic lost to AI search, businesses must shift from traditional
+  SEO to Answer Engine Optimization (AEO) by restructuring content into
 ---
 
 To recover traffic lost to AI search, businesses must shift from traditional SEO to Answer Engine Optimization (AEO) by restructuring content into citation-worthy formats that language models can extract and attribute. Companies implementing AEO strategies—including structured data markup, direct-answer formatting, and AI citation tracking—have recovered 30-60% of lost organic traffic within 90 days by earning mentions in ChatGPT, Perplexity, and Google AI Overviews. The key is making your content the most quotable, authoritative source that AI assistants can confidently cite when answering user queries.

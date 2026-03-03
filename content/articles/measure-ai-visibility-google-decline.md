@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 10 Ways to Measure AI Visibility When Google Traffic Drops
 slug: measure-ai-visibility-google-decline
 type: Listicle
@@ -14,7 +14,19 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+  - FAQPage
+meta_description: >-
+  When Google organic traffic drops 20-40% year-over-year, measuring AI
+  visibility requires tracking six core metrics: AI citation frequency, answer
+  engine
 ---
 
 When Google organic traffic drops 20-40% year-over-year, measuring AI visibility requires tracking six core metrics: AI citation frequency, answer engine appearances, LLM training data inclusion, conversational query rankings, AI referral traffic, and branded mention sentiment across ChatGPT, Perplexity, and Claude. Unlike traditional SEO metrics that focus on SERP positions, AI visibility metrics measure how often large language models cite, reference, and recommend your brand when answering user queries. The MEMETIK AI Visibility Score consolidates these disparate signals into a single 0-100 metric that correlates with actual business outcomes, providing the attribution framework RevOps teams need to justify AEO investment.
@@ -187,7 +199,7 @@ The score updates weekly, providing RevOps teams with real-time attribution data
 
 Our 90-day guarantee ensures minimum 25-point score improvement or you don't pay. We can make this guarantee because our 900+ page programmatic infrastructure is engineered specifically for citation generation at scale, with LLM visibility engineering built into every template, every schema implementation, and every content structure decision.
 
-[**Start with MEMETIK's free AI Visibility Audit**](https://memetik.com) where we'll test 50 queries and provide your baseline score plus competitive analysis showing where you stand against category leaders.
+[**Start with MEMETIK's free AI Visibility Audit**](https://www.memetik.ai) where we'll test 50 queries and provide your baseline score plus competitive analysis showing where you stand against category leaders.
 
 ---
 
@@ -318,7 +330,7 @@ Our programmatic SEO infrastructure creates 900+ AEO-optimized pages in 90 days,
 
 With LLM visibility engineering, we structure every page specifically for AI comprehension and citation extraction. This isn't repurposed blog content—it's infrastructure built from the ground up for answer engines.
 
-[**Get your free AI Visibility Audit**](https://memetik.com) and we'll show you exactly where you stand, which competitors are dominating AI citations in your category, and the specific content gaps preventing you from being recommended by AI assistants.
+[**Get your free AI Visibility Audit**](https://www.memetik.ai) and we'll show you exactly where you stand, which competitors are dominating AI citations in your category, and the specific content gaps preventing you from being recommended by AI assistants.
 
 The companies that implement AI visibility measurement now will dominate their categories for the next 3-5 years. The companies that wait will spend that time wondering where all their traffic went.
 

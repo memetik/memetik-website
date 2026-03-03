@@ -1,8 +1,10 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "The Death of Click-Through Rates: 2025 Traffic Attribution & Zero-Click Trends Report"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: >-
+  The Death of Click-Through Rates: 2025 Traffic Attribution & Zero-Click Trends
+  Report
 slug: zero-click-search-traffic-trends-2025
 type: Trend Report
 word_count: 5630
@@ -14,7 +16,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  Zero-click searches now account for 57.8% of all Google searches in 2025,
+  meaning nearly 6 in 10 queries end without a user clicking to any website—up
+  from
 ---
 
 Zero-click searches now account for 57.8% of all Google searches in 2025, meaning nearly 6 in 10 queries end without a user clicking to any website—up from 25.6% in 2019. This dramatic shift, accelerated by AI Overviews, featured snippets, and knowledge panels, fundamentally breaks traditional click-through rate (CTR) metrics and demands new attribution models that measure brand visibility and AI citation frequency rather than website traffic alone. For ecommerce directors and marketing leaders, understanding zero-click search trends is no longer optional—it's the difference between measuring success and measuring obsolescence.

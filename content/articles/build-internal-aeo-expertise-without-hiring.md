@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 15 Ways to Build Internal AEO Expertise Without Hiring
 slug: build-internal-aeo-expertise-without-hiring
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+  - FAQPage
+meta_description: >-
+  Building AEO expertise internally requires a structured 90-day training
+  program combining self-directed learning, vendor partnerships, and hands-on
 ---
 
 Building AEO expertise internally requires a structured 90-day training program combining self-directed learning, vendor partnerships, and hands-on experimentation with AI answer engines like ChatGPT, Perplexity, and Google AI Overviews. Companies can develop in-house AEO capabilities through 15 proven methods including vendor-led workshops, certification programs, weekly prompt testing sessions, and dedicated AI visibility tracking—all without adding headcount. Organizations that invest 8-10 hours per team member monthly in AEO skill development see measurable improvements in LLM citation rates within 60-90 days.

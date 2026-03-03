@@ -125,7 +125,7 @@ AI assistants actively avoid citing sources with conflicting information across 
 
 Early AI citations create reinforcement loops where cited content gets cited more frequently, and market leaders in AEO capture disproportionate share of AI-referred traffic. Companies starting AEO in Q1 2025 will dominate their categories by Q4 because each citation increases the probability of future citations. The compounding effect is real: the first three brands cited in any SaaS category capture 70% of AI-referred traffic. Delay costs exponentially more in lost visibility—competitors establishing citation dominance now will be exponentially harder to displace later.
 
-**[Get Your Free AI Visibility Audit](https://memetik.com/contact)** — See exactly where your SaaS appears (or doesn't appear) when prospects search in ChatGPT, Perplexity, and Claude. We'll show you the citation gap between you and competitors.
+**[Get Your Free AI Visibility Audit](https://www.memetik.ai/contact)** — See exactly where your SaaS appears (or doesn't appear) when prospects search in ChatGPT, Perplexity, and Claude. We'll show you the citation gap between you and competitors.
 
 ---
 
@@ -233,7 +233,7 @@ The AEO opportunity window is Q1-Q2 2025. After that, market leaders will be ent
 
 With our 90-day guarantee, there's no risk to starting immediately. The cost of delay—invisible while competitors capture your prospects' attention in AI search—far exceeds the investment in getting this right.
 
-**[Book Your Free AEO Visibility Audit](https://memetik.com/contact)** and we'll show you exactly where your SaaS stands in AI search results, which competitors are being cited instead, and the specific content gaps costing you pipeline right now.
+**[Book Your Free AEO Visibility Audit](https://www.memetik.ai/contact)** and we'll show you exactly where your SaaS stands in AI search results, which competitors are being cited instead, and the specific content gaps costing you pipeline right now.
 
 ---
 

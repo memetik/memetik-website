@@ -231,7 +231,7 @@ For mid-market companies, specialized alternatives deliver 85-95% of enterprise 
 
 At MEMETIK, we've structured our 90-day guarantee specifically to eliminate decision risk. You validate results before committing long-term—a model we believe all SEO providers should consider given the 6-12 month lag traditional agencies require before material results.
 
-**Ready to explore performance-based SEO with guaranteed results?** [Book a MEMETIK consultation](https://memetik.com/contact) to discuss your specific situation and see if our AEO-first approach fits your needs.
+**Ready to explore performance-based SEO with guaranteed results?** [Book a MEMETIK consultation](https://www.memetik.ai/contact) to discuss your specific situation and see if our AEO-first approach fits your needs.
 
 ## Making the Switch: Implementation Steps
 
@@ -306,7 +306,7 @@ The SEO landscape evolved. AI answer engines transformed how prospects research 
 
 The alternatives exist. The results prove themselves. The only question is which specialized approach fits your specific situation.
 
-**Ready to validate whether performance-based AEO delivers better results at lower costs?** [Schedule your MEMETIK consultation](https://memetik.com/contact) and let's review your current SEO investment against what specialized alternatives can deliver.
+**Ready to validate whether performance-based AEO delivers better results at lower costs?** [Schedule your MEMETIK consultation](https://www.memetik.ai/contact) and let's review your current SEO investment against what specialized alternatives can deliver.
 
 ---
 

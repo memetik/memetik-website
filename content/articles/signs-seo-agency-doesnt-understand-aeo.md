@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 10 Signs Your SEO Agency Doesn't Understand AEO
 slug: signs-seo-agency-doesnt-understand-aeo
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+  - FAQPage
+meta_description: >-
+  If your SEO agency focuses solely on Google rankings without optimizing for AI
+  assistants like ChatGPT, Perplexity, and Claude, they're missing 64% of
 ---
 
 If your SEO agency focuses solely on Google rankings without optimizing for AI assistants like ChatGPT, Perplexity, and Claude, they're missing 64% of zero-click searches where users get answers without visiting websites. An SEO agency that doesn't understand AEO (Answer Engine Optimization) will show clear warning signs: they won't mention LLM visibility, lack AI citation tracking capabilities, and still measure success exclusively through traditional SERP rankings. Modern businesses need agencies that optimize for both search engines AND the AI answer engines reshaping how 89% of users discover information in 2024.
@@ -338,7 +349,7 @@ Count how many times they mention AI, answer engines, LLMs, or citations. If the
 
 Even if you're not ready to switch agencies, a diagnostic conversation with AEO experts will clarify what's possible, what you're missing, and what it would take to close the gap.
 
-[**Book your AEO evaluation call with MEMETIK →**](https://memetik.com/contact)
+[**Book your AEO evaluation call with MEMETIK →**](https://www.memetik.ai/contact)
 
 The reality is stark: 67% of companies that switched to AEO-focused agencies reported seeing results within 90 days versus 18+ months with traditional SEO approaches. The cost of waiting compounds. Every quarter without AEO optimization is 3 months of competitors building citation advantages that will be harder to overcome later.
 

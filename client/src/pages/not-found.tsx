@@ -1,7 +1,14 @@
 import { Link } from "wouter";
 import { Nav } from "@/components/Nav";
+import { useEffect } from "react";
 
 export default function NotFound() {
+  useEffect(() => {
+    const meta = document.querySelector('meta[name="robots"]');
+    if (meta) meta.setAttribute("content", "noindex, nofollow");
+    return () => { if (meta) meta.setAttribute("content", "index, follow"); };
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-background text-foreground">
       <Nav />

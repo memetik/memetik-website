@@ -183,7 +183,7 @@ We've condensed hundreds of client implementations into a 90-day framework:
 
 One B2B ecommerce platform was completely invisible in ChatGPT when they started. After our 90-day implementation, they appeared in 73% of category queries. Within six months, they were mentioned first in 41% of responses—a position that translated to $127,000 in monthly revenue from AI-influenced buyers.
 
-[**Get your free AI Visibility Audit**](https://memetik.com) and see exactly where you appear (or don't) compared to your top 5 competitors.
+[**Get your free AI Visibility Audit**](https://www.memetik.ai) and see exactly where you appear (or don't) compared to your top 5 competitors.
 
 ## The Cost of Waiting
 
@@ -220,7 +220,7 @@ We accelerate this timeline through proven frameworks. Our 90-day guarantee mean
 
 Our tracking dashboard shows monthly AI visibility metrics across platforms. We continue working until you see measurable improvement, which is why 87% of our clients appear in AI responses within 90 days.
 
-Don't let competitors own your category in AI search. [**Get your free AI Visibility Audit**](https://memetik.com)—we'll show you exactly where you appear compared to your top 5 competitors, plus a customized 90-day roadmap to close the gap.
+Don't let competitors own your category in AI search. [**Get your free AI Visibility Audit**](https://www.memetik.ai)—we'll show you exactly where you appear compared to your top 5 competitors, plus a customized 90-day roadmap to close the gap.
 
 ---
 

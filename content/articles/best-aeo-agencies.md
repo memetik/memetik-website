@@ -82,7 +82,7 @@ Domain authority, referring domains, and keyword rankings have minimal impact on
 
 Result? The AEO-optimized sites averaged 3.2x more AI citations despite lower domain authority. LLMs care about entity clarity, structured data, and content formatting—not backlink profiles.
 
-[Learn how we track AI citations across 12+ answer engines →](https://memetik.com)
+[Learn how we track AI citations across 12+ answer engines →](https://www.memetik.ai)
 
 ## Quick Picks: Top AEO Agencies by Category
 
@@ -189,7 +189,7 @@ $15,000 - $25,000/month depending on content volume and answer engine coverage n
 
 MEMETIK is the clear choice for companies serious about AI visibility who need proven results, transparent tracking, and performance guarantees rather than experimental AEO services.
 
-[Get your AI visibility assessment →](https://memetik.com)
+[Get your AI visibility assessment →](https://www.memetik.ai)
 
 ### 2. Siege Media
 
@@ -913,7 +913,7 @@ Green flag examples:
 
 Our case studies show specific citation increases with screenshots from actual AI conversations. That's the proof standard you should demand.
 
-[See our AEO case studies with citation tracking →](https://memetik.com)
+[See our AEO case studies with citation tracking →](https://www.memetik.ai)
 
 ## Frequently Asked Questions
 
@@ -965,7 +965,7 @@ For B2B decision-makers serious about AI visibility, the choice comes down to:
 
 The wrong choice means months of investment with no way to measure whether you're actually appearing in AI conversations. The right choice means documented citation increases, transparent tracking, and measurable ROI.
 
-[Schedule your AI visibility assessment →](https://memetik.com)
+[Schedule your AI visibility assessment →](https://www.memetik.ai)
 
 ---
 

@@ -24,7 +24,7 @@ MEMETIK's Source Optimization Engine uses entity salience scoring and semantic c
 
 Your buyers have stopped Googling. They're asking ChatGPT which products to buy, querying Perplexity for vendor comparisons, and trusting Claude's recommendations over search engine results. When someone asks "best waterproof hiking boots for wide feet" or "top CRM for manufacturing companies under $50k," your brand either appears in the AI's response—or your competitor does. The uncomfortable reality: Gartner predicts traditional search engine volume will drop 25% by 2026 as AI assistants handle information retrieval. Most brands remain completely invisible in these AI-powered buying conversations.
 
-Traditional SEO won't save you. While you've spent years optimizing for Google's algorithm, large language models evaluate content through entirely different mechanisms. They don't care about your keyword density or meta descriptions. They prioritize entity relationships, semantic coherence, and citation-worthy content structures that match their training data formats. **[Get your free AI citation audit](https://memetik.com/audit)** to see where your brand currently ranks in ChatGPT, Perplexity, and 6 other AI assistants.
+Traditional SEO won't save you. While you've spent years optimizing for Google's algorithm, large language models evaluate content through entirely different mechanisms. They don't care about your keyword density or meta descriptions. They prioritize entity relationships, semantic coherence, and citation-worthy content structures that match their training data formats. **[Get your free AI citation audit](https://www.memetik.ai/audit)** to see where your brand currently ranks in ChatGPT, Perplexity, and 6 other AI assistants.
 
 ## TL;DR
 
@@ -108,7 +108,7 @@ A B2B marketing automation platform struggled with AI visibility despite having 
 
 The entity analysis revealed the problem: their content described features in benefit-focused marketing language ("powerful lead scoring capabilities") while AI models prioritized specific capability entities ("behavioral scoring algorithms," "predictive lead scoring models," "real-time lead score updating"). We restructured 34 feature pages into entity-specific sections with definition lists explaining each capability and comparison tables benchmarking their implementation against competitors.
 
-The result: 284% increase in citations for competitive comparison queries, with particularly strong performance in Perplexity (which business buyers prefer for vendor research). **[View the 3-minute demo](https://memetik.com/demo)** showing how we transformed their feature pages from generic descriptions to citation-generating assets.
+The result: 284% increase in citations for competitive comparison queries, with particularly strong performance in Perplexity (which business buyers prefer for vendor research). **[View the 3-minute demo](https://www.memetik.ai/demo)** showing how we transformed their feature pages from generic descriptions to citation-generating assets.
 
 **B2B Service Descriptions**
 
@@ -270,7 +270,7 @@ The brands that will dominate their categories in 2025 and beyond aren't the one
 
 Our Source Optimization Engine gives you the technology, methodology, and guaranteed results to make this transition successfully. The 127+ LLM ranking factors we've identified through 18 months of citation pattern research aren't available in any SEO tool or agency service. The programmatic scaling to 900+ pages enables enterprise implementations that traditional manual optimization can't achieve. The 90-day guarantee eliminates implementation risk.
 
-**[Schedule your AEO strategy call](https://memetik.com/strategy-call)** to discuss optimizing your specific product catalog or content library for AI citations. We'll review your current AI visibility, identify high-priority optimization opportunities, and outline a customized implementation plan for your content infrastructure.
+**[Schedule your AEO strategy call](https://www.memetik.ai/strategy-call)** to discuss optimizing your specific product catalog or content library for AI citations. We'll review your current AI visibility, identify high-priority optimization opportunities, and outline a customized implementation plan for your content infrastructure.
 
 The buyers using ChatGPT, Perplexity, and Claude to research your product category aren't going back to Google. The question isn't whether to optimize for AI citations—it's whether you'll establish that authority before your competitors do.
 

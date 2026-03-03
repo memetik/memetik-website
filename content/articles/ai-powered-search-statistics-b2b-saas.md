@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 15 AI-Powered Search Statistics for B2B SaaS in 2025
 slug: ai-powered-search-statistics-b2b-saas
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  Recent studies reveal that 68% of B2B SaaS buyers now consult AI chatbots like
+  ChatGPT, Perplexity, and Claude before making purchase decisions,
+  fundamentally
 ---
 
 Recent studies reveal that 68% of B2B SaaS buyers now consult AI chatbots like ChatGPT, Perplexity, and Claude before making purchase decisions, fundamentally transforming the enterprise software buying journey. These AI search statistics for B2B SaaS in 2025 demonstrate that traditional SEO alone no longer captures the full buyer journey—with 40-70% of software evaluation now happening in AI answer engines where your brand either gets cited or becomes invisible. Understanding these 15 critical AI-powered search statistics helps SaaS marketing leaders adapt their content strategy to maintain visibility across both traditional search engines and emerging AI platforms.

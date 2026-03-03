@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 10 ChatGPT Citation Statistics Every Marketer Should Track
 slug: chatgpt-citation-statistics-marketers
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  ChatGPT citation statistics reveal that only 3-7% of AI-generated responses
+  include source citations, with branded content appearing in approximately 1 in
+  15
 ---
 
 ChatGPT citation statistics reveal that only 3-7% of AI-generated responses include source citations, with branded content appearing in approximately 1 in 15 relevant queries according to recent LLM visibility studies. For marketers investing in content strategy, tracking ChatGPT citation statistics like citation rate percentage, source diversity, and attribution consistency provides measurable ROI data that traditional SEO metrics miss entirely. Understanding these 10 critical ChatGPT citation statistics enables marketing teams to justify AEO investments, optimize content for AI discoverability, and capture visibility in the 85% of search journeys that now touch AI-powered platforms.

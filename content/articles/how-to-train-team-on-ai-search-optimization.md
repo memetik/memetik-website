@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: How to Train Your Marketing Team on AI Search Optimization Basics
 slug: how-to-train-team-on-ai-search-optimization
 type: Educational How-To
@@ -14,7 +14,19 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+  - FAQPage
+meta_description: >-
+  Training your marketing team on AEO (Answer Engine Optimization) basics
+  requires a structured 4-week program covering LLM fundamentals,
+  citation-worthy content
 ---
 
 Training your marketing team on AEO (Answer Engine Optimization) basics requires a structured 4-week program covering LLM fundamentals, citation-worthy content creation, and entity-based optimization techniques that differ significantly from traditional SEO. Start with a 90-minute workshop introducing how AI systems like ChatGPT, Perplexity, and Claude extract and cite information, then implement weekly skill-building exercises using tools that provide hands-on experience with prompt engineering and AI visibility tracking. Most marketing teams achieve basic proficiency within 30 days when following a structured curriculum that includes real-time citation monitoring and iterative content optimization.

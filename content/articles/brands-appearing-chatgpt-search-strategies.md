@@ -301,7 +301,7 @@ The choice isn't whether to invest in AEO—it's whether to lead or follow. The 
 
 ---
 
-**Ready to appear in ChatGPT recommendations like these 15 brands?** Our AI citation tracking dashboard shows exactly where you stand today versus competitors. [Get your free AI visibility audit](https://memetik.com/ai-visibility-audit) and see your current citation rate across 100+ product queries in your category.
+**Ready to appear in ChatGPT recommendations like these 15 brands?** Our AI citation tracking dashboard shows exactly where you stand today versus competitors. [Get your free AI visibility audit](https://www.memetik.ai/ai-visibility-audit) and see your current citation rate across 100+ product queries in your category.
 
 ## FAQ
 

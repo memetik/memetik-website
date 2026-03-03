@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: 7 Signs You Need an AI Search Optimization (AEO) Strategy in 2024
 slug: signs-you-need-aeo-strategy
 type: Listicle
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, ItemList, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - ItemList
+  - FAQPage
+meta_description: >-
+  You need an AI search optimization strategy in 2024 if your brand appears in
+  fewer than 30% of AI-generated answers for your target keywords, your organic
 ---
 
 You need an AI search optimization strategy in 2024 if your brand appears in fewer than 30% of AI-generated answers for your target keywords, your organic traffic has declined by 15%+ in the past 6 months despite stable rankings, or your competitors are being cited in ChatGPT and Perplexity while you're invisible. These three indicators signal that AI search engines—which now handle over 1 billion queries monthly—are bypassing your traditional SEO efforts and routing potential customers to competitors who've invested in Answer Engine Optimization (AEO). The shift from Google-first to AI-first search isn't coming; it's already reshaping how B2B buyers discover solutions.

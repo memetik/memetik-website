@@ -1,8 +1,10 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "Answer Engine Optimization for Ecommerce: Complete Implementation Guide for Online Retailers"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: >-
+  Answer Engine Optimization for Ecommerce: Complete Implementation Guide for
+  Online Retailers
 slug: answer-engine-optimization-for-ecommerce
 type: Use Case
 word_count: 3899
@@ -14,7 +16,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+meta_description: >-
+  Answer Engine Optimization (AEO) for ecommerce involves structuring product
+  data, reviews, and inventory feeds so AI assistants like ChatGPT, Perplexity,
+  and
 ---
 
 Answer Engine Optimization (AEO) for ecommerce involves structuring product data, reviews, and inventory feeds so AI assistants like ChatGPT, Perplexity, and Google's SGE recommend your products when users ask shopping questions. Unlike traditional SEO that optimizes for search result rankings, ecommerce AEO requires implementing structured product schemas, optimizing product descriptions for conversational queries, and ensuring your inventory feeds are accessible to LLM crawlers. Online retailers implementing comprehensive AEO strategies see their products cited in 3-5x more AI-generated shopping recommendations within 90 days.

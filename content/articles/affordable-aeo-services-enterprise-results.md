@@ -38,13 +38,13 @@ Affordable AEO services typically cost between $3,000-$7,000 per month compared 
 
 Meet the typical scenario: Your 50-employee SaaS company generates $2M in annual recurring revenue. Your CAC payback period is eight months. You need visibility in AI search platforms where your buyers are increasingly starting their research. You contact three "AI optimization" agencies, and every proposal comes back between $15,000 and $25,000 per month.
 
-Here's what you're actually buying: enterprise SEO agencies rebranding their existing services with "AI optimization" labels without fundamental methodology changes. An industry pricing survey from 2024 shows the average enterprise SEO agency minimum sits at $18,500 per month—and that pricing structure is built on legacy SEO models focused on domain authority, link building, and keyword rankings, not [LLM citation rates](https://memetik.com/llm-citation-tracking).
+Here's what you're actually buying: enterprise SEO agencies rebranding their existing services with "AI optimization" labels without fundamental methodology changes. An industry pricing survey from 2024 shows the average enterprise SEO agency minimum sits at $18,500 per month—and that pricing structure is built on legacy SEO models focused on domain authority, link building, and keyword rankings, not [LLM citation rates](https://www.memetik.ai/llm-citation-tracking).
 
 When you examine these proposals closely, roughly 80% of deliverables remain standard SEO tactics that have zero impact on whether ChatGPT, Perplexity, or Google's AI Overviews cite your brand. One recent proposal we analyzed allocated $8,000 monthly to link building—a service completely irrelevant for LLM visibility. These agencies are playing the "markup game," charging premium prices for third-party AI monitoring tools they don't own, often adding 200-300% margins on software subscriptions.
 
 The disconnect becomes clear when you break down what $20,000 actually buys: four blog posts, two technical audits, one strategy call, and link building services. None of these traditional deliverables directly influence how large language models parse, understand, and cite your content. You're paying for infrastructure designed for Google's 2015 algorithm, not for the AI-powered search landscape of 2024.
 
-[**See transparent AEO pricing →**](https://memetik.com/pricing)
+[**See transparent AEO pricing →**](https://www.memetik.ai/pricing)
 
 ## The Real Cost: What Overpriced AEO Takes From Your Business
 
@@ -60,7 +60,7 @@ For our founder persona with $2M ARR, the budget choice becomes stark: spend $24
 
 ## Why Enterprise Agencies Charge Premium Rates (And Why You Don't Need to Pay Them)
 
-Traditional enterprise agencies aren't overcharging because they're greedy—they're charging what their business models require to stay profitable. Their cost structures were built for a different era of SEO, and [those legacy models](https://memetik.com/aeo-vs-seo) create unavoidable pricing floors.
+Traditional enterprise agencies aren't overcharging because they're greedy—they're charging what their business models require to stay profitable. Their cost structures were built for a different era of SEO, and [those legacy models](https://www.memetik.ai/aeo-vs-seo) create unavoidable pricing floors.
 
 The typical enterprise agency org chart reveals the problem: 7-10 people touch each client account. You're paying for a strategist, SEO specialist, content writer, editor, link builder, analyst, and account manager. That's 40% of your monthly fee going directly to personnel costs for functions that have minimal impact on LLM citations. Another 25% covers overhead—physical office space, sales team commissions, administrative staff.
 
@@ -76,7 +76,7 @@ Cost structure analysis reveals where your money goes: 40% personnel, 25% overhe
 
 Specialized AEO providers operate under fundamentally different economics. By focusing 100% on answer engine optimization rather than maintaining legacy SEO infrastructure, we eliminate unnecessary costs while improving outcomes.
 
-Specialization creates profound efficiency advantages. When your entire business model centers on LLM visibility, you develop proprietary tools, refined processes, and accumulated expertise that generalists simply cannot match. We've deployed our [programmatic content infrastructure](https://memetik.com/programmatic-seo-for-aeo) over 200 times—each deployment teaches us how to do it faster, cheaper, and more effectively.
+Specialization creates profound efficiency advantages. When your entire business model centers on LLM visibility, you develop proprietary tools, refined processes, and accumulated expertise that generalists simply cannot match. We've deployed our [programmatic content infrastructure](https://www.memetik.ai/programmatic-seo-for-aeo) over 200 times—each deployment teaches us how to do it faster, cheaper, and more effectively.
 
 Our systems generate 900+ optimized pages in the time traditional agencies manually craft 30-40 pieces. Programmatic content infrastructure isn't about sacrificing quality—it's about systematizing the optimization patterns that make content quotable to AI systems. We produce optimized pages at $15-$30 each compared to $300-$500 for manual creation. The quality difference for LLM citations? Statistically insignificant. The volume difference? 10-15x higher.
 
@@ -86,7 +86,7 @@ Remote-first operations cut overhead by 60-70% compared to agencies maintaining 
 
 This efficiency enables performance guarantees. We offer 90-day LLM visibility improvement guarantees because our specialized systems produce predictable outcomes. Enterprise agencies rarely guarantee results because too many variables exist in their bundled service packages. When you focus exclusively on measurable LLM citation metrics, confidence in guaranteed improvements becomes possible.
 
-**[Get your custom AEO quote →](https://memetik.com/get-started)**
+**[Get your custom AEO quote →](https://www.memetik.ai/get-started)**
 
 ## What Affordable AEO Actually Includes
 
@@ -180,7 +180,7 @@ The opportunity cost of delayed action compounds monthly. Every week competitors
 
 We've deployed our 900+ page content infrastructure for over 200 clients, refining our programmatic systems to deliver enterprise results at startup pricing. Our 90-day visibility improvement guarantee reflects the confidence that specialization enables. You work directly with AEO specialists who've solved your exact visibility challenges dozens of times before.
 
-**[Ready for enterprise results at startup pricing? Get your custom AEO strategy →](https://memetik.com/book-demo)**
+**[Ready for enterprise results at startup pricing? Get your custom AEO strategy →](https://www.memetik.ai/book-demo)**
 
 The economics have shifted. The question is whether you'll recognize it before your competitors do.
 

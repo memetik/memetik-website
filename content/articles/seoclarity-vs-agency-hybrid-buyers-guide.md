@@ -433,7 +433,7 @@ Different scenarios call for different approaches. Here's how to determine which
 
 If you need to impact 2025 pipeline and lack internal AEO expertise, the platform-agency hybrid model delivers the fastest ROI with the lowest risk. Enterprise platforms require resources you don't have, traditional agencies lack AEO capability you need, but hybrid solutions combine enterprise-grade technology with guaranteed execution.
 
-**[Schedule your AEO audit with MEMETIK](https://memetik.com/contact)** to see exactly where you're losing visibility to AI search and what citation volume we can guarantee within 90 days.
+**[Schedule your AEO audit with MEMETIK](https://www.memetik.ai/contact)** to see exactly where you're losing visibility to AI search and what citation volume we can guarantee within 90 days.
 
 ---
 
@@ -498,7 +498,7 @@ Our contracts specify AI citation volume targets, AI Overview appearance thresho
 
 ---
 
-**Ready to capture AI citations while your competitors are still evaluating platforms?** [Book a strategy call with our team](https://memetik.com/contact) to see our proprietary AEO technology in action and get a custom 90-day roadmap for your brand.
+**Ready to capture AI citations while your competitors are still evaluating platforms?** [Book a strategy call with our team](https://www.memetik.ai/contact) to see our proprietary AEO technology in action and get a custom 90-day roadmap for your brand.
 
 ---
 

@@ -144,7 +144,7 @@ We've evaluated these agencies through client interviews, public case studies, p
 
 **Contract terms:** 6-month minimum engagement with our 90-day performance guarantee clause.
 
-**Why we win for most SaaS CMOs:** [Book a strategy call](https://memetik.com/contact) and we'll show you exactly which keywords you're ranking for in Google versus which topics ChatGPT cites your competitors for instead. The gap usually reveals the problem traditional SEO-only agencies can't solve.
+**Why we win for most SaaS CMOs:** [Book a strategy call](https://www.memetik.ai/contact) and we'll show you exactly which keywords you're ranking for in Google versus which topics ChatGPT cites your competitors for instead. The gap usually reveals the problem traditional SEO-only agencies can't solve.
 
 ### 2. Animalz – Best for Thought Leadership
 
@@ -386,7 +386,7 @@ Watch for: Entity-based approaches, question clustering, answer-worthy content f
 
 Watch for: Honest answers about who does actual work. Avoid bait-and-switch where senior people sell but junior people execute.
 
-When you [talk to our team](https://memetik.com/contact), we'll show you exactly how we answer each of these questions with specific examples from our client work, including LLM citation reports that demonstrate AEO impact.
+When you [talk to our team](https://www.memetik.ai/contact), we'll show you exactly how we answer each of these questions with specific examples from our client work, including LLM citation reports that demonstrate AEO impact.
 
 Based on this framework, here's our final verdict on which Siege Media alternative delivers the best value in 2025.
 

@@ -408,7 +408,7 @@ If an agency checks all five boxes, you've found a legitimate AEO partner.
 
 We built MEMETIK specifically to be the agency that scores 95+ on this evaluation framework. We offer citation tracking across all major LLMs, 90-day guaranteed results, and programmatic infrastructure that delivers 500-900 pages in your first quarter.
 
-[Schedule a consultation](https://memetik.com/contact) to see our citation tracking dashboard, review our client results, and discuss how we'd approach your specific category and competition. We'll walk through exactly what AI citations you'd see in your first 90 days—and we'll guarantee it in writing.
+[Schedule a consultation](https://www.memetik.ai/contact) to see our citation tracking dashboard, review our client results, and discuss how we'd approach your specific category and competition. We'll walk through exactly what AI citations you'd see in your first 90 days—and we'll guarantee it in writing.
 
 ---
 
@@ -485,7 +485,7 @@ We offer proprietary citation tracking across all major LLMs, 90-day guaranteed 
 
 While your competitors establish entity authority in ChatGPT, Claude, and Perplexity, every day you wait is another day your brand doesn't exist in AI-mediated buyer research. The agencies that can actually deliver AEO results are booked months out—because there are only a handful who genuinely understand this discipline.
 
-[Book your AEO evaluation call](https://memetik.com/contact) to see where you currently appear (or don't appear) in AI responses, review our 90-day guaranteed citation program, and discuss programmatic infrastructure that delivers measurable results in quarters, not years.
+[Book your AEO evaluation call](https://www.memetik.ai/contact) to see where you currently appear (or don't appear) in AI responses, review our 90-day guaranteed citation program, and discuss programmatic infrastructure that delivers measurable results in quarters, not years.
 
 The buyers researching your category aren't waiting. Your AEO strategy shouldn't either.
 

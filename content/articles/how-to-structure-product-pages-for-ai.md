@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
 title: How to Structure Product Pages for Maximum AI Discoverability
 slug: how-to-structure-product-pages-for-ai
 type: Educational How-To
@@ -14,7 +14,19 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+  - FAQPage
+meta_description: >-
+  To optimize product pages for AI search engines, implement Product schema
+  markup with detailed specifications, structure content in comparison-friendly
+  tables
 ---
 
 To optimize product pages for AI search engines, implement Product schema markup with detailed specifications, structure content in comparison-friendly tables with clear attribute labels, and include FAQ sections that answer specific purchase-decision questions using natural language. AI models like ChatGPT and Perplexity prioritize product pages with structured data, explicit pricing information, and specification tables that enable direct comparisons across competitors. This tactical approach increases your likelihood of being cited in AI-generated shopping recommendations by up to 340% compared to standard SEO-only optimization.

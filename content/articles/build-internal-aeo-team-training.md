@@ -1,8 +1,8 @@
 ---
 status: draft
-created: 2026-01-25
-updated: 2026-01-25
-title: "How to Build an Internal AEO Team: Training Your SEO Team for AI Search"
+created: 2026-01-25T00:00:00.000Z
+updated: 2026-01-25T00:00:00.000Z
+title: 'How to Build an Internal AEO Team: Training Your SEO Team for AI Search'
 slug: build-internal-aeo-team-training
 type: Use Case
 word_count: 3907
@@ -14,7 +14,18 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, HowTo, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - HowTo
+  - FAQPage
+meta_description: >-
+  Building an AEO team from your existing SEO staff requires a structured 90-day
+  transformation program that includes LLM prompting training, AI citation
 ---
 
 Building an AEO team from your existing SEO staff requires a structured 90-day transformation program that includes LLM prompting training, AI citation tracking tools, and answer-first content workflows. Most marketing teams can successfully upskill 3-5 SEO professionals into AEO specialists by focusing on four core competencies: answer engine response analysis, structured data implementation for AI, conversational query optimization, and LLM visibility measurement. The transition typically costs 60% less than hiring external AEO consultants while building permanent in-house capability.

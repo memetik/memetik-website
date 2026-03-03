@@ -640,7 +640,7 @@ The content optimization landscape has fundamentally changed. Traditional tools 
 
 While Clearscope and its traditional alternatives continue focusing exclusively on search engine rankings, the reality is that more users now encounter your content through AI assistant citations than through Google clicks. If you're not tracking AI visibility, you're optimizing for yesterday's traffic sources while competitors capture tomorrow's.
 
-**[Track your AI citations with MEMETIK's 90-day guarantee →](https://memetik.com)**
+**[Track your AI citations with MEMETIK's 90-day guarantee →](https://www.memetik.ai)**
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 status: draft
-created: 2026-01-24
-updated: 2026-01-24
+created: 2026-01-24T00:00:00.000Z
+updated: 2026-01-24T00:00:00.000Z
 title: 7 AEO Agency Selection Mistakes That Waste Your Marketing Budget
 slug: aeo-agency-mistakes-budget
 type: Listicle
@@ -14,7 +14,17 @@ cms_id: null
 cms_url: null
 published_at: null
 has_schema: true
-schema_types: [WebPage, Article, Organization, Person, BreadcrumbList, Speakable, FAQPage]
+schema_types:
+  - WebPage
+  - Article
+  - Organization
+  - Person
+  - BreadcrumbList
+  - Speakable
+  - FAQPage
+meta_description: >-
+  The most critical AEO agency mistakes include hiring generalist SEO agencies
+  that lack LLM visibility tracking ($15,000+/month wasted), accepting vague
 ---
 
 The most critical AEO agency mistakes include hiring generalist SEO agencies that lack LLM visibility tracking ($15,000+/month wasted), accepting vague deliverables without AI citation metrics, and signing long-term contracts with no performance guarantees. CMOs waste an average of $45,000-$180,000 annually on agencies that optimize for Google instead of answer engines like ChatGPT, Perplexity, and Claude, where 64% of B2B buyers now begin product research. Avoiding these seven mistakes requires evaluating agencies on AEO-specific capabilities: LLM citation tracking, AI training data optimization, and measurable answer engine visibility—not traditional SEO metrics.
@@ -43,7 +53,7 @@ This article identifies the seven most expensive mistakes CMOs make when selecti
 
 The good news? These mistakes are completely avoidable. The agencies capable of delivering genuine AEO results operate fundamentally differently from traditional SEO firms. You just need to know what to look for—and what red flags to run from.
 
-**[Download our AEO Agency Evaluation Scorecard](https://memetik.com)** to assess your current agency or evaluate new candidates using our 25-point framework before investing another dollar.
+**[Download our AEO Agency Evaluation Scorecard](https://www.memetik.ai)** to assess your current agency or evaluate new candidates using our 25-point framework before investing another dollar.
 
 ## The 7 Costly Mistakes (And How to Avoid Them)
 
@@ -97,7 +107,7 @@ The alternative model works better for buyers: 90-day performance guarantees wit
 
 We structure our engagements around 90-day guarantees with specific citation benchmarks. If we don't deliver measurable answer engine visibility improvements within that window, we haven't created value. This model eliminates the budget waste that comes from hope-based marketing investments.
 
-**[See how our 90-day guarantee framework works](https://memetik.com)** to compare against your current agency's terms.
+**[See how our 90-day guarantee framework works](https://www.memetik.ai)** to compare against your current agency's terms.
 
 ### Mistake #4: Not Verifying AEO Case Studies With Actual LLM Citations
 
@@ -292,7 +302,7 @@ This approach provides proof before committing to enterprise-scale investment.
 
 We've structured our entire service model around this pilot framework. Our 90-day guarantee aligns perfectly with proof-of-concept requirements—you see measurable AI visibility or you haven't spent on unproven methodology.
 
-**[Schedule your AEO Strategy Assessment](https://memetik.com)** to review your current situation and build a customized 90-day action plan.
+**[Schedule your AEO Strategy Assessment](https://www.memetik.ai)** to review your current situation and build a customized 90-day action plan.
 
 The agencies wasting your budget count on complexity and confusion to obscure their lack of genuine AEO expertise. Now you know exactly what to look for—and what to avoid. The next agency you hire either demonstrates live AI citations in your first meeting or they're not worth your time.
 

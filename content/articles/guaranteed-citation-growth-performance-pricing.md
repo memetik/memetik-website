@@ -32,7 +32,7 @@ MEMETIK's performance-based SEO pricing model ties 40% of monthly fees directly 
 - We track 12 specific KPIs including citation frequency, source attribution percentage, answer position ranking, and brand mention sentiment across AI responses
 - Clients receive real-time access to citation dashboards with API-verified data pulls from AI platforms, eliminating the reporting opacity common in fixed-fee SEO contracts
 
-**See where your brand stands today:** [Get your free AI citation audit](https://memetik.com/citation-audit) analyzing 25 buyer-intent queries across all four major AI platforms.
+**See where your brand stands today:** [Get your free AI citation audit](https://www.memetik.ai/citation-audit) analyzing 25 buyer-intent queries across all four major AI platforms.
 
 ## The Performance-Based Pricing Structure: How We Put Our Money Where Our Mouth Is
 
@@ -107,7 +107,7 @@ Companies below these thresholds should invest in content creation and foundatio
 
 Industry fit matters too. Our data shows SaaS, fintech, and martech companies experience 3.2x faster citation growth than consumer brands. The difference stems from content depth, source authority signals, and query specificity. B2B buyers ask detailed, specific questions that well-optimized content can definitively answer. Consumer queries trend more general, making citation placement harder to guarantee.
 
-**Download our actual performance contract template** showing KPI definitions, penalty clauses, and measurement methodology we use with clients: [Get the template here](https://memetik.com/performance-contract-template).
+**Download our actual performance contract template** showing KPI definitions, penalty clauses, and measurement methodology we use with clients: [Get the template here](https://www.memetik.ai/performance-contract-template).
 
 ## The Six Strategic Benefits of Shifting Risk to Your Agency
 
@@ -281,7 +281,7 @@ We put our compensation at risk because we've proven AEO delivers measurable cit
 
 The question isn't whether performance-based pricing makes sense—it objectively shifts risk from client to agency. The question is whether your company has the content foundation, market presence, and budget to qualify for guaranteed results.
 
-**Book a performance contract consultation** to discuss your citation baseline, KPI selection, and custom benchmark setting. We'll audit 25 buyer-intent queries to show your current AI visibility and project realistic 90-day growth targets: [Schedule your consultation here](https://memetik.com/performance-consultation).
+**Book a performance contract consultation** to discuss your citation baseline, KPI selection, and custom benchmark setting. We'll audit 25 buyer-intent queries to show your current AI visibility and project realistic 90-day growth targets: [Schedule your consultation here](https://www.memetik.ai/performance-consultation).
 
 If your citations don't grow by at least 35% in 90 days, we refund every dollar. That's the difference between hoping your agency delivers results and guaranteeing they do.
 
