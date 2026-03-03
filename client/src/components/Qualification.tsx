@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Qualification() {
   return (
@@ -19,7 +20,13 @@ export function Qualification() {
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <div className="border border-foreground/15 rounded p-6 md:p-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="border border-foreground/15 rounded p-6 md:p-8"
+          >
             <div className="flex items-center gap-2 mb-6">
               <span className="text-accent text-xl">&#10003;</span>
               <h3 className="font-mono text-sm font-bold uppercase tracking-wider">You're a Great Fit If:</h3>
@@ -32,18 +39,31 @@ export function Qualification() {
                 { main: "Category leader or ambitious challenger", sub: "You want to dominate, not just compete" },
                 { main: "In-house marketing team", sub: "Someone to collaborate with and hand off to" }
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.1 }}
+                  className="flex items-start gap-3"
+                >
                   <span className="text-accent mt-1">&bull;</span>
                   <div>
                     <span className="text-sm font-semibold">{item.main}</span>
                     <span className="text-sm text-foreground/60"> &mdash; {item.sub}</span>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="border border-foreground/15 rounded p-6 md:p-8 bg-muted">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
+            className="border border-foreground/15 rounded p-6 md:p-8 bg-muted"
+          >
             <div className="flex items-center gap-2 mb-6">
               <span className="text-red-400 text-xl">&#10007;</span>
               <h3 className="font-mono text-sm font-bold uppercase tracking-wider">Not a Fit If:</h3>
@@ -56,16 +76,23 @@ export function Qualification() {
                 { main: "Highly regulated industry", sub: "Healthcare, finance require specialized compliance" },
                 { main: "Want to 'set and forget'", sub: "This is a partnership, not a service subscription" }
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.1 }}
+                  className="flex items-start gap-3"
+                >
                   <span className="text-red-400 mt-1">&bull;</span>
                   <div>
                     <span className="text-sm font-semibold">{item.main}</span>
                     <span className="text-sm text-foreground/60"> &mdash; {item.sub}</span>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
 
         <div className="border-t border-foreground/10 pt-8 mb-12">

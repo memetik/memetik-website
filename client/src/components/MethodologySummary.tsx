@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle2, Target, Database, Share2, RotateCw, ArrowRight } from "lucide-react";
-import { Link } from "wouter";
-import React, { useRef } from "react";
+import { Target, Database, Share2, RotateCw } from "lucide-react";
+import { useRef } from "react";
 
 const overviewPoints = [
   "AEO (Answer Engine Optimization)",
@@ -76,8 +75,12 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
   const ref = useRef<HTMLDivElement>(null);
   
   return (
-    <div
+    <motion.div
       ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.15 }}
       className="group relative flex flex-col justify-between min-h-[500px] p-8 md:p-12 bg-background border border-foreground/10 rounded hover:bg-muted transition-all duration-300 overflow-hidden"
     >
       {/* Top Section */}
@@ -117,7 +120,7 @@ function PhaseCard({ phase, index }: { phase: typeof phases[0], index: number })
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,4 +1,5 @@
 import { Check, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Differentiation() {
   return (
@@ -6,7 +7,12 @@ export function Differentiation() {
       <div className="max-w-6xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <div className="inline-flex items-center gap-2 border border-foreground/15 px-3 py-1.5 rounded-full mb-6">
               <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">
                 Why We're Different
@@ -23,10 +29,16 @@ export function Differentiation() {
             <p className="text-base leading-relaxed text-foreground/70">
               Most agencies are still optimizing for Google rankings while your buyers are getting answers from ChatGPT. We engineer your brand into the AI layer itself.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="border border-foreground/15 rounded p-6">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="border border-foreground/15 rounded p-6"
+            >
               <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/50 mb-4 pb-2 border-b border-foreground/10">
                 THE OLD WAY
               </div>
@@ -38,9 +50,15 @@ export function Differentiation() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="border border-foreground/15 rounded p-6 bg-foreground text-background">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+              className="border border-foreground/15 rounded p-6 bg-foreground text-background"
+            >
               <div className="font-mono text-[10px] uppercase tracking-widest text-background/60 mb-4 pb-2 border-b border-background/15">
                 THE MEMETIK WAY
               </div>
@@ -52,7 +70,7 @@ export function Differentiation() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

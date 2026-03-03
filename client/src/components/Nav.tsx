@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -109,35 +110,50 @@ export function Nav() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div
-          className="absolute top-full left-0 w-full bg-background border-b border-border md:hidden shadow-lg h-screen"
-        >
-          <div className="flex flex-col p-8 gap-8 items-center justify-center h-full pb-32">
-            {links.map((link) => (
-              link.isPage ? (
-                <Link 
-                  key={link.label} 
-                  href={link.href}
-                  className="text-3xl font-display font-bold hover:text-primary transition-colors tracking-tighter cursor-pointer"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-3xl font-display font-bold hover:text-primary transition-colors tracking-tighter cursor-pointer"
-                  onClick={(e) => scrollToSection(e, link.href)}
-                >
-                  {link.label}
-                </a>
-              )
-            ))}
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="absolute top-full left-0 w-full bg-background border-b border-border md:hidden shadow-lg h-screen"
+          >
+            <div className="flex flex-col p-8 gap-8 items-center justify-center h-full pb-32">
+              {links.map((link, i) => (
+                link.isPage ? (
+                  <motion.div
+                    key={link.label}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut", delay: i * 0.05 }}
+                  >
+                    <Link 
+                      href={link.href}
+                      className="text-3xl font-display font-bold hover:text-primary transition-colors tracking-tighter cursor-pointer"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.a
+                    key={link.label}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut", delay: i * 0.05 }}
+                    href={link.href}
+                    className="text-3xl font-display font-bold hover:text-primary transition-colors tracking-tighter cursor-pointer"
+                    onClick={(e) => scrollToSection(e, link.href)}
+                  >
+                    {link.label}
+                  </motion.a>
+                )
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

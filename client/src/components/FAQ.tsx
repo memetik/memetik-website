@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -36,9 +37,15 @@ const faqs = [
   }
 ];
 
-function FAQItem({ faq, isOpen, onToggle }: { faq: typeof faqs[0], isOpen: boolean, onToggle: () => void }) {
+function FAQItem({ faq, isOpen, onToggle, index }: { faq: typeof faqs[0], isOpen: boolean, onToggle: () => void, index: number }) {
   return (
-    <div className="border-b border-foreground/10 last:border-b-0">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
+      className="border-b border-foreground/10 last:border-b-0"
+    >
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between py-6 text-left group"
@@ -50,14 +57,24 @@ function FAQItem({ faq, isOpen, onToggle }: { faq: typeof faqs[0], isOpen: boole
           {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
         </span>
       </button>
-      {isOpen && (
-        <div className="pb-6">
-          <p className="text-base text-foreground/70 leading-relaxed max-w-3xl">
-            {faq.answer}
-          </p>
-        </div>
-      )}
-    </div>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="overflow-hidden"
+          >
+            <div className="pb-6">
+              <p className="text-base text-foreground/70 leading-relaxed max-w-3xl">
+                {faq.answer}
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }
 
@@ -86,6 +103,7 @@ export function FAQ() {
               faq={faq}
               isOpen={openIndex === i}
               onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+              index={i}
             />
           ))}
         </div>
