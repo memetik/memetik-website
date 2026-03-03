@@ -38,7 +38,7 @@ export const segments: Record<string, Segment> = {
       },
       {
         icon: "alert-triangle",
-        text: "You're spending $50K/month on content that AI search engines ignore",
+        text: "You're investing heavily in content that AI search engines completely ignore",
       },
       {
         icon: "clock",

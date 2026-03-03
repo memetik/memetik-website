@@ -33,31 +33,31 @@
 }
 
 :root {
-  /* Background: #FAFAF8 - Warm White */
-  --background: 60 20% 97%;
+  /* Background: Pure White */
+  --background: 0 0% 100%;
   /* Foreground: #1a1a1a - Dark Charcoal */
   --foreground: 0 0% 10%;
   
-  --card: 60 20% 97%;
+  --card: 0 0% 100%;
   --card-foreground: 0 0% 10%;
   
-  --popover: 60 20% 97%;
+  --popover: 0 0% 100%;
   --popover-foreground: 0 0% 10%;
   
   /* Primary: Dark Charcoal */
   --primary: 0 0% 10%;
-  --primary-foreground: 60 20% 97%;
+  --primary-foreground: 0 0% 100%;
   
   --secondary: 0 0% 10%;
-  --secondary-foreground: 60 20% 97%;
+  --secondary-foreground: 0 0% 100%;
   
-  /* Muted: Subtle warm gray */
-  --muted: 60 10% 93%;
+  /* Muted: Light neutral gray */
+  --muted: 0 0% 96%;
   --muted-foreground: 0 0% 40%;
   
   /* Accent: Muted teal for trust */
   --accent: 166 49% 33%;
-  --accent-foreground: 60 20% 97%;
+  --accent-foreground: 0 0% 100%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;

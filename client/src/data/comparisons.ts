@@ -36,8 +36,8 @@ export const comparisons: Record<string, Comparison> = {
       },
       {
         category: "Cost (first year)",
-        them: "$150-250K (salary + tools + opportunity cost)",
-        us: "$84-180K (retainer, fully managed)",
+        them: "Salary + tools + opportunity cost of ramping",
+        us: "Fully managed retainer — no hiring, no ramp-up",
       },
       {
         category: "AI citation tracking",
@@ -72,8 +72,8 @@ export const comparisons: Record<string, Comparison> = {
         a: "There are no mature AEO tools yet. You'd need to build custom monitoring, manually query AI engines, and develop scoring frameworks from scratch. That's exactly what we've already built.",
       },
       {
-        q: "Is $7K/month really cheaper than hiring someone?",
-        a: "A junior SEO hire costs $60-80K/year, won't have AEO expertise, and needs 6+ months to ramp. Our Foundation tier is $84K/year with a team of AEO specialists delivering from day one.",
+        q: "Is outsourcing really cheaper than hiring someone?",
+        a: "A junior SEO hire won't have AEO expertise and needs 6+ months to ramp. With us, you get a team of AEO specialists delivering from day one — no recruiting, no training, no ramp-up period.",
       },
     ],
   },

@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "What's the investment?",
-    answer: "Our engagements start at $15,000/month for a minimum 6-month partnership. This isn't for everyone—we work with established brands doing $1M+ in annual revenue who understand the strategic value of AI visibility. During your audit, we'll discuss whether this makes sense for your business."
+    answer: "We scope every engagement based on your category, competitive landscape, and goals. This isn't a one-size-fits-all retainer — it's a custom strategy built around what it takes to win your specific market. Book a free audit call and we'll walk through exactly what it looks like for your business."
   },
   {
     question: "Do you work with competitors in the same space?",

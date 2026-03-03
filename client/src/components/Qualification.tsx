@@ -26,7 +26,7 @@ export function Qualification() {
             </div>
             <ul className="space-y-4">
               {[
-                { main: "$1M+ ARR", sub: "You have the revenue to invest in long-term growth" },
+                { main: "Established revenue", sub: "You have the resources to invest in long-term growth" },
                 { main: "6-month commitment mindset", sub: "You understand AEO is a strategic play, not a quick fix" },
                 { main: "B2B SaaS or E-commerce", sub: "Your customers research purchases with AI" },
                 { main: "Category leader or ambitious challenger", sub: "You want to dominate, not just compete" },
@@ -52,7 +52,7 @@ export function Qualification() {
               {[
                 { main: "Pre-revenue or early stage", sub: "Focus on product-market fit first" },
                 { main: "Looking for quick wins", sub: "AEO compounds over 6-12 months" },
-                { main: "Budget under $15K/month", sub: "We can't deliver results at lower price points" },
+                { main: "Not ready to commit resources", sub: "AEO requires meaningful investment to execute properly" },
                 { main: "Highly regulated industry", sub: "Healthcare, finance require specialized compliance" },
                 { main: "Want to 'set and forget'", sub: "This is a partnership, not a service subscription" }
               ].map((item, i) => (

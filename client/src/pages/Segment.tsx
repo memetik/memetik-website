@@ -7,7 +7,6 @@ import {
   TrendingDown,
   AlertTriangle,
   Clock,
-  CheckCircle,
   ChevronDown,
 } from "lucide-react";
 import { segments } from "@/data/segments";
@@ -145,62 +144,25 @@ export default function Segment() {
         </div>
       </section>
 
-      {/* Pricing Preview */}
+      {/* Custom Engagement CTA */}
       <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-4">
-            Investment
+            Every Engagement Is Custom
           </h2>
-          <p className="font-mono text-sm text-foreground/60 mb-12">
-            6-month sprint engagements. 90-day performance guarantee.
+          <p className="font-mono text-sm text-foreground/60 mb-8">
+            We scope your strategy based on your category, competitive landscape, and goals. 90-day performance guarantee included.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-foreground">
-            {[
-              {
-                tier: "Foundation",
-                price: "$7K",
-                description: "Baseline AI visibility for companies starting AEO",
-                features: ["AI visibility audit", "Content optimization", "Monthly reporting", "Citation monitoring"],
-              },
-              {
-                tier: "Ownership",
-                price: "$12K",
-                description: "Category leadership in AI search",
-                features: ["Everything in Foundation", "Competitive displacement", "Content creation", "Weekly reporting", "Priority support"],
-                highlight: true,
-              },
-              {
-                tier: "Dominance",
-                price: "$15K",
-                description: "Full AI search dominance across all engines",
-                features: ["Everything in Ownership", "Multi-engine optimization", "Category exclusivity", "Executive reporting", "Dedicated strategist"],
-              },
-            ].map((t, i) => (
-              <div
-                key={i}
-                className={`p-6 md:p-8 border-b md:border-b-0 md:border-r border-foreground/20 last:border-r-0 last:border-b-0 ${
-                  t.highlight ? "bg-foreground text-background" : ""
-                }`}
-              >
-                <div className="font-mono text-xs uppercase tracking-wider text-current opacity-60 mb-2">
-                  {t.tier}
-                </div>
-                <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-3xl md:text-4xl font-display font-extrabold">{t.price}</span>
-                  <span className="font-mono text-xs opacity-60">/month</span>
-                </div>
-                <p className="font-mono text-xs opacity-70 mb-6">{t.description}</p>
-                <ul className="space-y-2">
-                  {t.features.map((f, j) => (
-                    <li key={j} className="flex items-center gap-2 font-mono text-xs">
-                      <CheckCircle className="w-3 h-3 flex-shrink-0 opacity-60" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <a
+            href="https://cal.com/memetik/letstalk"
+            className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded hover:opacity-90 transition-opacity"
+          >
+            GET YOUR CUSTOM PROPOSAL
+            <span>→</span>
+          </a>
+          <p className="font-mono text-xs text-foreground/40 mt-4 uppercase">
+            30-min strategy call · No obligation
+          </p>
         </div>
       </section>
 
