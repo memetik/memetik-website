@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const deliverables = [
   {
     id: "01",
@@ -29,13 +27,7 @@ const deliverables = [
 
 function DeliverableCard({ item, index }: { item: typeof deliverables[0], index: number }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.15 }}
-      whileHover={{ y: -4 }}
-      className="group relative flex flex-col min-h-[480px] p-6 md:p-8 bg-background border border-foreground/10 rounded">
+    <div className="group relative flex flex-col min-h-[480px] p-6 md:p-8 bg-background border border-foreground/10 rounded">
       
       {/* Number */}
       <div className="flex items-center justify-between mb-6">
@@ -73,7 +65,7 @@ function DeliverableCard({ item, index }: { item: typeof deliverables[0], index:
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }
 

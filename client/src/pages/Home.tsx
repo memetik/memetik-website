@@ -1,6 +1,5 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
-import { Marquee } from "@/components/Marquee";
 import { Services } from "@/components/Services";
 import { Differentiation } from "@/components/Differentiation";
 import { MethodologySummary } from "@/components/MethodologySummary";
@@ -24,7 +23,6 @@ export default function Home() {
       <MobileStickyCTA />
       <main>
         <Hero />
-        <Marquee />
         <Services />
         <Differentiation />
         <MethodologySummary />

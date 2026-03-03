@@ -1,18 +1,11 @@
 import { Shield, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function Guarantee() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background text-foreground border-b border-foreground/10">
       <div className="max-w-4xl mx-auto">
         
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="border border-foreground/15 rounded-lg p-8 md:p-12 text-center"
-        >
+        <div className="border border-foreground/15 rounded-lg p-8 md:p-12 text-center">
           
           {/* Shield Icon */}
           <div className="w-16 h-16 mx-auto mb-6 border border-foreground/15 rounded-full flex items-center justify-center">
@@ -48,7 +41,7 @@ export function Guarantee() {
             We've never paid out on this guarantee — because our methodology works. But it exists because we believe you shouldn't risk your investment on promises. You should risk it on proof.
           </p>
           
-        </motion.div>
+        </div>
 
       </div>
     </section>
