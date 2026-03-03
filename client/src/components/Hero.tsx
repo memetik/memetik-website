@@ -16,7 +16,7 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a 
             href="https://cal.com/memetik/letstalk" 
-            className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded-full hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded-full hover:opacity-90 transition-opacity"
           >
             Get Your Free Audit
           </a>
@@ -27,6 +27,10 @@ export function Hero() {
             See How It Works
           </a>
         </div>
+
+        <p className="font-mono text-xs text-foreground/40 uppercase tracking-widest mt-10">
+          B2B SaaS · E-commerce · Professional Services
+        </p>
 
       </div>
     </section>
