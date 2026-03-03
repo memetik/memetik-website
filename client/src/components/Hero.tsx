@@ -6,7 +6,7 @@ export function Hero() {
         
         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[0.9] tracking-tight text-foreground mb-6">
           Be the Brand<br/>
-          <em className="font-sans font-normal italic">AI Recommends</em>
+          <em className="font-normal italic" style={{ fontFamily: "'Newsreader', serif" }}>AI Recommends</em>
         </h1>
         
         <p className="text-base text-foreground/60 max-w-2xl mb-10">
