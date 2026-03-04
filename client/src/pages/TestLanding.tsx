@@ -459,8 +459,8 @@ export default function TestLanding() {
         <TestMethodology />
         <TestGuarantee />
         <TestQualification />
-        <TestTestimonials />
-        <TestCaseStudies />
+        {/* <TestTestimonials /> */}
+        {/* <TestCaseStudies /> */}
         <TestFAQ />
         <TestEmailCapture />
 
