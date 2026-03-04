@@ -248,7 +248,7 @@ function TestQualification() {
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
               <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">March 2026: 2 spots remaining</span>
             </div>
-            <p className="text-2xl md:text-4xl font-display font-extrabold tracking-tight mb-4">Your Brand Is Already Being Ranked by AI. You're Just Not in the Room.</p>
+            <p className="text-2xl md:text-4xl font-display font-extrabold tracking-tight mb-4">Your Buyers Are Asking AI. Let's Make Sure It Recommends You.</p>
             <p className="text-base text-foreground/60 mb-6">Free 30-min audit · See your brand vs. competitors across ChatGPT, Perplexity, and Gemini</p>
             <a href="https://cal.com/memetik/letstalk" className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded hover:opacity-90 transition-opacity">SEE YOUR AI VISIBILITY SCORE<ArrowRight className="w-4 h-4" /></a>
           </div>
@@ -468,7 +468,7 @@ export default function TestLanding() {
         <footer className="bg-background text-foreground py-16 md:py-24 px-4 sm:px-6 md:px-12 relative overflow-hidden border-t border-foreground/10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 pb-16 border-b border-foreground/15">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight mb-4">Your Brand Is Already Being Ranked by AI. You're Just Not in the Room.</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight mb-4">Your Buyers Are Asking AI. Let's Make Sure It Recommends You.</h2>
               <p className="text-base text-foreground/60 mb-8 max-w-xl mx-auto">Every week you wait, your competitors are building the AI visibility infrastructure that makes them the default recommendation. The window to own your category is open. It won't be forever.</p>
               <a href="https://cal.com/memetik/letstalk" className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded hover:opacity-90 transition-opacity">SEE WHAT AI SAYS ABOUT YOU — FREE AUDIT<span>→</span></a>
               <p className="font-mono text-xs text-foreground/40 mt-4 uppercase">See exactly where you rank vs competitors · Free 30-min audit</p>
