@@ -9,6 +9,10 @@ const REQUIRED_SECTION_PATTERNS = [
   /state of search/i,
   /current state/i,
   /competitive/i,
+  /total addressable search market|tasm|tam/i,
+  /phased upside|phase 1 \(months 0-3\)|months 0-3/i,
+  /assumptions|assumption table|assumption/i,
+  /estimate-only|modeled estimate|modeled/i,
   /book a strategy call/i,
 ];
 
@@ -60,6 +64,20 @@ function validateResearchForGeneration(researchData) {
 
   if (!allowLowConfidence && payloadConfidence?.level === "low") {
     throw new Error(`Payload confidence is low (${payloadConfidence.score}/100). Refusing generation.`);
+  }
+
+  const tamModel = researchData?.tamModel;
+  if (!tamModel) {
+    throw new Error("Research payload is missing tamModel. Re-run research with TAM modeling enabled.");
+  }
+  if (!tamModel?.totals?.totalAddressableSearchDemand) {
+    throw new Error("TAM model missing totalAddressableSearchDemand.");
+  }
+  if (!Array.isArray(tamModel?.phasedUpside) || tamModel.phasedUpside.length === 0) {
+    throw new Error("TAM model missing phasedUpside data.");
+  }
+  if (!tamModel?.assumptions) {
+    throw new Error("TAM model missing assumptions table data.");
   }
 }
 
@@ -202,7 +220,12 @@ CRITICAL RULES:
 17. First major section must be "State of Search 2026" and include AEO/GEO/AI-search behavior context.
 18. Do not fabricate competitors or metrics. If data is missing, explicitly label "Data unavailable in current payload" and include next action to fill it.
 19. Include a "Current State Snapshot" section with explicit confidence level from research payload when available.
-20. Include a "Data-backed Competitive Landscape" section where every table row is grounded in research data (or clearly labeled inferred).`;
+20. Include a "Data-backed Competitive Landscape" section where every table row is grounded in research data (or clearly labeled inferred).
+21. Include a dedicated section titled "Total Addressable Search Market (12 months)" using researchData.tamModel values.
+22. Include a dedicated section titled "Phased Upside (12 months)" with three phases: Phase 1 (Months 0-3), Phase 2 (Months 4-8), Phase 3 (Months 9-12), each with low/base/high scenario numbers.
+23. Include a dedicated section titled "Assumptions & Confidence" showing methodology assumptions, estimate-only labels, and confidence notes.
+24. Keep TAM-first framing: demand + reachable opportunity first; include revenue scenario only if researchData.tamModel.revenueModel.enabled is true. Otherwise explicitly state revenue requires client inputs.
+25. Every projected number must include "estimate-only" language nearby.`;
 }
 
 async function generateStrategyPage(company, researchData) {
@@ -227,6 +250,12 @@ ${JSON.stringify(researchData, null, 2)}
 
 The component should be named Strategy${pascalCase(company.slug)} and exported as default.
 The file will be saved at client/src/pages/strategy/${pascalCase(company.slug)}.tsx
+
+Mandatory output structure additions:
+- Section: "Total Addressable Search Market (12 months)"
+- Section: "Phased Upside (12 months)"
+- Section: "Assumptions & Confidence"
+- If tamModel.revenueModel.enabled is false, include a clear note: "Revenue modeling requires client ACV/AOV and funnel inputs."
 
 Generate the complete TSX file now.`;
 

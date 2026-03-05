@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Target, Database, Share2, RotateCw, CheckCircle, Zap, ArrowRight, Globe, AlertTriangle, Search, Bot, FileText, TrendingUp, Shield, Users, BarChart3, Swords, Eye, Megaphone, MapPin, Clock, DollarSign, Star, ExternalLink, Lock } from "lucide-react";
 import { Nav } from "@/components/Nav";
+import { SectionHeader, HighlightBox, BulletList } from "@/components/strategy";
 
 const GATE_KEY = "bts-strategy-auth";
 const CORRECT_HASH = ",[a`y&0#IGrF<C#Z";
@@ -65,30 +66,6 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
   );
 }
 
-const SectionHeader = ({ number, title }: { number: string; title: string }) => (
-  <div className="flex items-center gap-4 mb-8 md:mb-12 border-b border-primary/20 pb-4">
-    <span className="text-primary font-mono text-xl font-bold">{number}</span>
-    <h2 className="text-2xl md:text-4xl font-display font-bold text-foreground tracking-tight">{title}</h2>
-  </div>
-);
-
-const HighlightBox = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <div className={`bg-secondary/10 border border-primary/20 p-6 md:p-8 relative overflow-hidden ${className}`}>
-    <div className="absolute top-0 left-0 w-1 h-full bg-primary/50"></div>
-    {children}
-  </div>
-);
-
-const BulletList = ({ items }: { items: string[] }) => (
-  <ul className="space-y-3 text-sm text-muted-foreground">
-    {items.map((item, i) => (
-      <li key={i} className="flex gap-2">
-        <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-        <span>{item}</span>
-      </li>
-    ))}
-  </ul>
-);
 
 const competitorSpend = [
   { platform: "Patreon", funding: "$413M", employees: "1,135", spend: "$200K–$400K/mo" },

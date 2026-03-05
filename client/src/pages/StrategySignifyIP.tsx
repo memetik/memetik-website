@@ -1,42 +1,7 @@
 import { useEffect } from "react";
 import { Target, Database, Share2, RotateCw, CheckCircle, Zap, ArrowRight, Globe, AlertTriangle, Search, Bot, FileText, TrendingUp, Shield, MapPin, Scale, Star, Users, BarChart3 } from "lucide-react";
 import { Nav } from "@/components/Nav";
-
-const SectionHeader = ({ number, title }: { number: string; title: string }) => (
-  <div className="flex items-center gap-4 mb-8 md:mb-12 border-b border-primary/20 pb-4">
-    <span className="text-primary font-mono text-xl font-bold">{number}</span>
-    <h2 className="text-2xl md:text-4xl font-display font-bold text-foreground tracking-tight">{title}</h2>
-  </div>
-);
-
-const HighlightBox = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <div className={`bg-secondary/10 border border-primary/20 p-6 md:p-8 relative overflow-hidden ${className}`}>
-    <div className="absolute top-0 left-0 w-1 h-full bg-primary/50"></div>
-    {children}
-  </div>
-);
-
-const PhaseBlock = ({ number, icon, label, title, children }: { number: string; icon: React.ReactNode; label: string; title: string; children: React.ReactNode }) => (
-  <div className="relative">
-    <span className="absolute -left-14 md:-left-26 top-0 flex h-8 w-8 items-center justify-center rounded-none bg-primary text-primary-foreground font-bold text-sm shadow-none border border-primary">{number}</span>
-    <div className="mb-2 flex items-center gap-3 text-primary font-mono text-sm font-bold uppercase tracking-wider">
-      {icon} {label}
-    </div>
-    <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">{title}</h3>
-    {children}
-  </div>
-);
-
-const BulletList = ({ items }: { items: string[] }) => (
-  <ul className="space-y-3 text-sm text-muted-foreground">
-    {items.map((item, i) => (
-      <li key={i} className="flex gap-2">
-        <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-        <span>{item}</span>
-      </li>
-    ))}
-  </ul>
-);
+import { SectionHeader, HighlightBox, PhaseBlock, BulletList } from "@/components/strategy";
 
 const boutiqueTier = [
   { firm: "The Trademark Factory", url: "ttmf.com.au", positioning: "Fixed fee from $350, 9000+ TMs, online-first", content: "Pricing pages, guides, blog" },

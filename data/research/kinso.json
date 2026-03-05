@@ -1,0 +1,1030 @@
+{
+  "slug": "kinso",
+  "company": {
+    "name": "Kinso",
+    "domain": "kinso.ai",
+    "category": "Communication / Unified AI Inbox",
+    "industry": "Communication / Collaboration"
+  },
+  "seoMetrics": {
+    "organicTraffic": 556.7749864012003,
+    "organicKeywords": 24,
+    "paidTraffic": 0,
+    "paidKeywords": 0,
+    "backlinks": null,
+    "referringDomains": null,
+    "markets": {
+      "US": {
+        "organicTraffic": 95.4660008624196,
+        "organicKeywords": 16,
+        "paidTraffic": 0,
+        "paidKeywords": 0,
+        "backlinks": null,
+        "referringDomains": null
+      },
+      "AU": {
+        "organicTraffic": 461.3089855387807,
+        "organicKeywords": 8,
+        "paidTraffic": 0,
+        "paidKeywords": 0,
+        "backlinks": null,
+        "referringDomains": null
+      }
+    },
+    "marketsIncluded": [
+      "US",
+      "AU"
+    ]
+  },
+  "rankedKeywords": [
+    {
+      "keyword": "kinso",
+      "volume": 1090,
+      "position": 1,
+      "cpc": 6.510000228881836,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US",
+        "AU"
+      ]
+    },
+    {
+      "keyword": "ai kin",
+      "volume": 1000,
+      "position": 100,
+      "cpc": 0.1599999964237213,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "kinso ai",
+      "volume": 550,
+      "position": 1,
+      "cpc": 8.239999771118164,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US",
+        "AU"
+      ]
+    },
+    {
+      "keyword": "kimso",
+      "volume": 260,
+      "position": 8,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "so ai",
+      "volume": 140,
+      "position": 70,
+      "cpc": 8.270000457763672,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "kenso",
+      "volume": 140,
+      "position": 4,
+      "cpc": 0.8500000238418579,
+      "competition": "MEDIUM",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "AU"
+      ]
+    },
+    {
+      "keyword": "kinso app",
+      "volume": 110,
+      "position": 1,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "AU"
+      ]
+    },
+    {
+      "keyword": "all inboxes gmail",
+      "volume": 90,
+      "position": 60,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "gmail all inboxes",
+      "volume": 90,
+      "position": 105,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "knso",
+      "volume": 90,
+      "position": 31,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "unified messaging app",
+      "volume": 90,
+      "position": 100,
+      "cpc": 21.940000534057617,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "k-so",
+      "volume": 90,
+      "position": 59,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "AU"
+      ]
+    },
+    {
+      "keyword": "kinso furniture",
+      "volume": 90,
+      "position": 19,
+      "cpc": 1.7100000381469727,
+      "competition": "HIGH",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "AU"
+      ]
+    },
+    {
+      "keyword": "gmail automatic labels",
+      "volume": 70,
+      "position": 80,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "AU"
+      ]
+    },
+    {
+      "keyword": "ai inbox",
+      "volume": 40,
+      "position": 105,
+      "cpc": 40.439998626708984,
+      "competition": "MEDIUM",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "tiktok inbox app",
+      "volume": 40,
+      "position": 82,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "unified inbox email",
+      "volume": 40,
+      "position": 40,
+      "cpc": 25.229999542236328,
+      "competition": "MEDIUM",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "multiple inboxes gmail",
+      "volume": 40,
+      "position": 110,
+      "cpc": 36.119998931884766,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "AU"
+      ]
+    },
+    {
+      "keyword": "ai for messages",
+      "volume": 30,
+      "position": 41,
+      "cpc": 3.8899998664855957,
+      "competition": "HIGH",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "oneinbox ai",
+      "volume": 30,
+      "position": 23,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "slack sort by priority",
+      "volume": 30,
+      "position": 91,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "unified inbox app",
+      "volume": 30,
+      "position": 29,
+      "cpc": 9.350000381469727,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "markets": [
+        "US"
+      ]
+    }
+  ],
+  "keywordGaps": [
+    {
+      "keyword": "all inboxes gmail",
+      "volume": 90,
+      "competition": "LOW",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "unified messaging app",
+      "volume": 90,
+      "competition": "LOW",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "gmail all inboxes",
+      "volume": 90,
+      "competition": "LOW",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "gmail automatic labels",
+      "volume": 70,
+      "competition": "LOW",
+      "markets": [
+        "AU"
+      ]
+    },
+    {
+      "keyword": "unified inbox email",
+      "volume": 40,
+      "competition": "MEDIUM",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "ai inbox",
+      "volume": 40,
+      "competition": "MEDIUM",
+      "markets": [
+        "US"
+      ]
+    },
+    {
+      "keyword": "multiple inboxes gmail",
+      "volume": 40,
+      "competition": "LOW",
+      "markets": [
+        "AU"
+      ]
+    },
+    {
+      "keyword": "unified inbox app",
+      "volume": 30,
+      "competition": "LOW",
+      "markets": [
+        "US"
+      ]
+    }
+  ],
+  "competitors": [
+    {
+      "domain": "missiveapp.com",
+      "source": "product_competitor_discovery",
+      "evidence": {
+        "queryHits": 3,
+        "queryCount": 2,
+        "queries": [
+          "best unified ai inbox software",
+          "unified ai inbox alternatives"
+        ],
+        "markets": [
+          "US",
+          "AU"
+        ],
+        "bestRank": 8
+      },
+      "score": 160,
+      "metrics": {
+        "organicTraffic": 166300.31167035736,
+        "organicKeywords": 10931,
+        "paidTraffic": 0,
+        "paidKeywords": 0,
+        "backlinks": null,
+        "referringDomains": null,
+        "markets": {
+          "US": {
+            "organicTraffic": 160021.10517724603,
+            "organicKeywords": 10137,
+            "paidTraffic": 0,
+            "paidKeywords": 0,
+            "backlinks": null,
+            "referringDomains": null
+          },
+          "AU": {
+            "organicTraffic": 6279.206493111327,
+            "organicKeywords": 794,
+            "paidTraffic": 0,
+            "paidKeywords": 0,
+            "backlinks": null,
+            "referringDomains": null
+          }
+        },
+        "marketsIncluded": [
+          "US",
+          "AU"
+        ]
+      }
+    },
+    {
+      "domain": "front.com",
+      "source": "seeded_competitor",
+      "evidence": {
+        "queryHits": 0,
+        "queryCount": 0,
+        "queries": [],
+        "bestRank": null
+      },
+      "score": 100,
+      "metrics": {
+        "organicTraffic": 86294.75961692631,
+        "organicKeywords": 12224,
+        "paidTraffic": 1354.5920000374317,
+        "paidKeywords": 69,
+        "backlinks": null,
+        "referringDomains": null,
+        "markets": {
+          "US": {
+            "organicTraffic": 83776.35032854788,
+            "organicKeywords": 11480,
+            "paidTraffic": 1273.6579985916615,
+            "paidKeywords": 63,
+            "backlinks": null,
+            "referringDomains": null
+          },
+          "AU": {
+            "organicTraffic": 2518.4092883784324,
+            "organicKeywords": 744,
+            "paidTraffic": 80.93400144577026,
+            "paidKeywords": 6,
+            "backlinks": null,
+            "referringDomains": null
+          }
+        },
+        "marketsIncluded": [
+          "US",
+          "AU"
+        ]
+      }
+    },
+    {
+      "domain": "intercom.com",
+      "source": "seeded_competitor",
+      "evidence": {
+        "queryHits": 0,
+        "queryCount": 0,
+        "queries": [],
+        "bestRank": null
+      },
+      "score": 100,
+      "metrics": {
+        "organicTraffic": 91288.66046237387,
+        "organicKeywords": 26720,
+        "paidTraffic": 4417.890003025532,
+        "paidKeywords": 62,
+        "backlinks": null,
+        "referringDomains": null,
+        "markets": {
+          "US": {
+            "organicTraffic": 84260.14479432814,
+            "organicKeywords": 24195,
+            "paidTraffic": 3563.9009962677956,
+            "paidKeywords": 47,
+            "backlinks": null,
+            "referringDomains": null
+          },
+          "AU": {
+            "organicTraffic": 7028.515668045729,
+            "organicKeywords": 2525,
+            "paidTraffic": 853.9890067577362,
+            "paidKeywords": 15,
+            "backlinks": null,
+            "referringDomains": null
+          }
+        },
+        "marketsIncluded": [
+          "US",
+          "AU"
+        ]
+      }
+    },
+    {
+      "domain": "zendesk.com",
+      "source": "seeded_competitor",
+      "evidence": {
+        "queryHits": 0,
+        "queryCount": 0,
+        "queries": [],
+        "bestRank": null
+      },
+      "score": 100,
+      "metrics": {
+        "organicTraffic": 5515761.672491683,
+        "organicKeywords": 846083,
+        "paidTraffic": 6951.95986700058,
+        "paidKeywords": 54,
+        "backlinks": null,
+        "referringDomains": null,
+        "markets": {
+          "US": {
+            "organicTraffic": 5176483.264561467,
+            "organicKeywords": 795886,
+            "paidTraffic": 6934.817866563797,
+            "paidKeywords": 49,
+            "backlinks": null,
+            "referringDomains": null
+          },
+          "AU": {
+            "organicTraffic": 339278.4079302158,
+            "organicKeywords": 50197,
+            "paidTraffic": 17.142000436782837,
+            "paidKeywords": 5,
+            "backlinks": null,
+            "referringDomains": null
+          }
+        },
+        "marketsIncluded": [
+          "US",
+          "AU"
+        ]
+      }
+    },
+    {
+      "domain": "helpscout.com",
+      "source": "seeded_competitor",
+      "evidence": {
+        "queryHits": 0,
+        "queryCount": 0,
+        "queries": [],
+        "bestRank": null
+      },
+      "score": 100,
+      "metrics": {
+        "organicTraffic": 170959.45547654666,
+        "organicKeywords": 24924,
+        "paidTraffic": 13.442999839782715,
+        "paidKeywords": 5,
+        "backlinks": null,
+        "referringDomains": null,
+        "markets": {
+          "US": {
+            "organicTraffic": 162560.42150846682,
+            "organicKeywords": 23363,
+            "paidTraffic": 13.442999839782715,
+            "paidKeywords": 5,
+            "backlinks": null,
+            "referringDomains": null
+          },
+          "AU": {
+            "organicTraffic": 8399.033968079835,
+            "organicKeywords": 1561,
+            "paidTraffic": 0,
+            "paidKeywords": 0,
+            "backlinks": null,
+            "referringDomains": null
+          }
+        },
+        "marketsIncluded": [
+          "US",
+          "AU"
+        ]
+      }
+    },
+    {
+      "domain": "hiverhq.com",
+      "source": "seeded_competitor",
+      "evidence": {
+        "queryHits": 0,
+        "queryCount": 0,
+        "queries": [],
+        "bestRank": null
+      },
+      "score": 100,
+      "metrics": {
+        "organicTraffic": 282533.58254896477,
+        "organicKeywords": 26665,
+        "paidTraffic": 69.49499875307083,
+        "paidKeywords": 9,
+        "backlinks": null,
+        "referringDomains": null,
+        "markets": {
+          "US": {
+            "organicTraffic": 278093.03074364923,
+            "organicKeywords": 24795,
+            "paidTraffic": 69.49499875307083,
+            "paidKeywords": 9,
+            "backlinks": null,
+            "referringDomains": null
+          },
+          "AU": {
+            "organicTraffic": 4440.551805315539,
+            "organicKeywords": 1870,
+            "paidTraffic": 0,
+            "paidKeywords": 0,
+            "backlinks": null,
+            "referringDomains": null
+          }
+        },
+        "marketsIncluded": [
+          "US",
+          "AU"
+        ]
+      }
+    },
+    {
+      "domain": "crisp.chat",
+      "source": "product_competitor_discovery",
+      "evidence": {
+        "queryHits": 5,
+        "queryCount": 3,
+        "queries": [
+          "best unified ai inbox software",
+          "unified ai inbox alternatives",
+          "unified ai inbox comparison"
+        ],
+        "markets": [
+          "US",
+          "AU"
+        ],
+        "bestRank": 1
+      },
+      "score": 55,
+      "metrics": {
+        "organicTraffic": 57022.49204095267,
+        "organicKeywords": 7580,
+        "paidTraffic": 0,
+        "paidKeywords": 0,
+        "backlinks": null,
+        "referringDomains": null,
+        "markets": {
+          "US": {
+            "organicTraffic": 55126.91827315651,
+            "organicKeywords": 7111,
+            "paidTraffic": 0,
+            "paidKeywords": 0,
+            "backlinks": null,
+            "referringDomains": null
+          },
+          "AU": {
+            "organicTraffic": 1895.5737677961588,
+            "organicKeywords": 469,
+            "paidTraffic": 0,
+            "paidKeywords": 0,
+            "backlinks": null,
+            "referringDomains": null
+          }
+        },
+        "marketsIncluded": [
+          "US",
+          "AU"
+        ]
+      }
+    }
+  ],
+  "tamModel": {
+    "timeframeMonths": 12,
+    "estimateOnly": true,
+    "markets": [
+      "US",
+      "AU"
+    ],
+    "methodology": {
+      "version": "tam_v1",
+      "formula": "ReachableDemand = SearchVolume × VisibilityCaptureRate × ChannelSplit × ChannelClickThrough",
+      "notes": [
+        "Modeled estimate; not actual analytics traffic.",
+        "US+AU only.",
+        "Use first-party analytics to calibrate conversion assumptions."
+      ]
+    },
+    "assumptions": {
+      "channelSplit": {
+        "google": 0.86,
+        "ai": 0.14
+      },
+      "channelClickThrough": {
+        "google": 0.464,
+        "ai": 0.018
+      },
+      "captureRates": {
+        "BOFU": {
+          "low": 0.06,
+          "base": 0.1,
+          "high": 0.16
+        },
+        "MOFU": {
+          "low": 0.03,
+          "base": 0.06,
+          "high": 0.1
+        },
+        "TOFU": {
+          "low": 0.015,
+          "base": 0.03,
+          "high": 0.05
+        }
+      },
+      "scenarios": [
+        "low",
+        "base",
+        "high"
+      ],
+      "selectedHorizonMonths": 12,
+      "conversionRangePolicy": "low_base_high"
+    },
+    "totals": {
+      "totalAddressableSearchDemand": 4180,
+      "estimatedReachableVisits": {
+        "low": 31.5,
+        "base": 60.19,
+        "high": 99.39
+      },
+      "byChannel": {
+        "google": {
+          "demand": 3594.8,
+          "estimatedReachableVisits": {
+            "low": 31.3,
+            "base": 59.82,
+            "high": 98.76
+          }
+        },
+        "ai": {
+          "demand": 585.2,
+          "estimatedReachableVisits": {
+            "low": 0.2,
+            "base": 0.38,
+            "high": 0.62
+          }
+        }
+      }
+    },
+    "byIntent": [
+      {
+        "intent": "BOFU",
+        "phase": "Phase 1 (Months 0-3)",
+        "demand": 350,
+        "keywordCount": 6,
+        "estimatedReachableVisits": {
+          "low": 8.43,
+          "base": 14.05,
+          "high": 22.49
+        }
+      },
+      {
+        "intent": "MOFU",
+        "phase": "Phase 2 (Months 4-8)",
+        "demand": 0,
+        "keywordCount": 0,
+        "estimatedReachableVisits": {
+          "low": 0,
+          "base": 0,
+          "high": 0
+        }
+      },
+      {
+        "intent": "TOFU",
+        "phase": "Phase 3 (Months 9-12)",
+        "demand": 3830,
+        "keywordCount": 16,
+        "estimatedReachableVisits": {
+          "low": 23.07,
+          "base": 46.14,
+          "high": 76.9
+        }
+      }
+    ],
+    "phasedUpside": [
+      {
+        "phase": "Phase 1 (Months 0-3)",
+        "intent": "BOFU",
+        "demand": 350,
+        "keywordCount": 6,
+        "estimatedReachableVisits": {
+          "low": 8.43,
+          "base": 14.05,
+          "high": 22.49
+        }
+      },
+      {
+        "phase": "Phase 2 (Months 4-8)",
+        "intent": "MOFU",
+        "demand": 0,
+        "keywordCount": 0,
+        "estimatedReachableVisits": {
+          "low": 0,
+          "base": 0,
+          "high": 0
+        }
+      },
+      {
+        "phase": "Phase 3 (Months 9-12)",
+        "intent": "TOFU",
+        "demand": 3830,
+        "keywordCount": 16,
+        "estimatedReachableVisits": {
+          "low": 23.07,
+          "base": 46.14,
+          "high": 76.9
+        }
+      }
+    ],
+    "topOpportunityClusters": [
+      {
+        "cluster": "Category & Brand Demand",
+        "intent": "TOFU",
+        "phase": "Phase 3 (Months 9-12)",
+        "demand": 3830,
+        "keywordCount": 16,
+        "estimatedReachableVisits": {
+          "low": 23.07,
+          "base": 46.14,
+          "high": 76.9
+        },
+        "sampleKeywords": [
+          "kinso",
+          "ai kin",
+          "kinso ai",
+          "kimso",
+          "so ai",
+          "kenso"
+        ],
+        "markets": [
+          "US",
+          "AU"
+        ]
+      },
+      {
+        "cluster": "Buyer Guides",
+        "intent": "BOFU",
+        "phase": "Phase 1 (Months 0-3)",
+        "demand": 350,
+        "keywordCount": 6,
+        "estimatedReachableVisits": {
+          "low": 8.43,
+          "base": 14.05,
+          "high": 22.49
+        },
+        "sampleKeywords": [
+          "kinso app",
+          "unified messaging app",
+          "ai inbox",
+          "tiktok inbox app",
+          "unified inbox email",
+          "unified inbox app"
+        ],
+        "markets": [
+          "AU",
+          "US"
+        ]
+      }
+    ],
+    "keywordGapCount": 8,
+    "aiVisibilitySignals": {
+      "promptsAnalyzed": 8,
+      "successfulPrompts": 8,
+      "clientMentionedPrompts": 2
+    },
+    "revenueModel": {
+      "enabled": false,
+      "modelType": "none",
+      "reason": "Revenue inputs missing (acv/aov). Showing TAM + pipeline potential only.",
+      "pipelinePotential": {
+        "leads": {
+          "low": 0.13,
+          "base": 0.54,
+          "high": 1.49
+        }
+      },
+      "assumptions": {
+        "visitorToLead": {
+          "low": 0.004,
+          "base": 0.009,
+          "high": 0.015
+        }
+      }
+    },
+    "confidence": {
+      "score": 65,
+      "level": "medium",
+      "reasons": [
+        "Sufficient TAM volume identified.",
+        "Keyword coverage is limited; expand seed set.",
+        "AI visibility prompts provide directional coverage.",
+        "Revenue model is estimate-only and missing first-party monetary inputs."
+      ]
+    }
+  },
+  "aiVisibility": {
+    "mentionsByDomain": [],
+    "promptResults": [
+      {
+        "query": "best unified ai inbox tools",
+        "platform": "chatgpt",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"best unified ai inbox tools\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20tools\",\"datetime\":\"2026-03-05 06:16:26 +00:00\",\"markdown\":\"Unified AI inbox tools aim to streamline communication across various channels—email, messaging apps, and social media—into a single, cohesive inbox. These tools often use AI to automate workflows, prioritize important messages, and enhance overall productivity. Here are some of the best unified AI inbox tools currently available:\\n\\n### 1. **Front**\\n   - **Best For**: Teams and collaboration\\n   - **Features**:\\n     - Integrates emails, messages, and social media channels (like SMS, Slack, etc.) into a single platform.\\n     - AI-driven workflows, such as automated tagging, task assignments, and smart replies.\\n     - Advanced team collaboration features, including shared inboxes, commenting, and assigning messages.\\n     - Analytics for email performance and response times.\\n\\n   - **Why It’s Great**: It's perfect for teams working across different communication channels. Its AI helps prioritize emails, and team members can collaborate within the inbo"
+      },
+      {
+        "query": "best unified ai inbox software",
+        "platform": "chatgpt",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"best unified ai inbox software\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20software\",\"datetime\":\"2026-03-05 06:16:54 +00:00\",\"markdown\":\"A **unified AI inbox** means one place to manage messages from multiple channels (email, Slack, SMS, social, etc.) with AI that summarizes, prioritizes, drafts replies, or automates workflows. These tools vary depending on whether you want **personal productivity**, **team collaboration**, or **customer communication**.\\n\\nBelow are the **best unified AI inbox platforms in 2026**, grouped by use case.\\n\\n---\\n\\n# 🧠 Best Unified AI Inbox Software\\n\\n## 1. Superhuman Mail\\n**Best for: power users with heavy email volume**\\n\\n**Why it’s popular**\\n- AI triage to prioritize important emails\\n- AI-generated replies and summaries\\n- lightning-fast keyboard workflow\\n- split inbox and follow-up reminders\\n- Gmail & Outlook integration\\n\\nUsers often report **saving several hours per week** through automation and faster processing. [blog.superhuman.com](https://blog.superhuman.com/superhuman-alternatives/?utm_source=chatgpt.com)  \\n\\n**Pros**\\n- Best AI wo"
+      },
+      {
+        "query": "Kinso alternatives",
+        "platform": "chatgpt",
+        "clientMentioned": true,
+        "responsePreview": "{\"keyword\":\"Kinso alternatives\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=Kinso%20alternatives\",\"datetime\":\"2026-03-05 06:17:46 +00:00\",\"markdown\":\"Sure—could you tell me what Kinso is used for in your case (e.g., knowledge base / notes, CRM, automation, project management, etc.)? That’ll help me tailor the best alternatives.\\n\\nIn the meantime, here are quick alternative lists by common use cases:\\n\\n---\\n\\n### If Kinso is a **knowledge management / notes** tool\\n- **Notion** – flexible all-in-one workspace\\n- **Craft** – polished notes & docs\\n- **Obsidian** – local-first, markdown-based linking\\n- **Roam Research** – bidirectional notes & graph\\n- **Confluence** – team wiki & docs\\n- **Evernote** – classic note-taking\\n\\n### If Kinso is a **CRM / sales** tool\\n- **HubSpot CRM** – free tier, easy to start\\n- **Pipedrive** – visual sales pipeline\\n- **Salesforce** – robust, enterprise-grade\\n- **Zoho CRM** – affordable, feature-rich\\n- **Freshsales** – built-in phone/email, AI features\\n\\n### If Kinso is for **automation / workflows**\\n- **Zapier** – huge app integrations\\n- **Make (Integromat)** – powerful, visual scenari"
+      },
+      {
+        "query": "Kinso vs competitors",
+        "platform": "chatgpt",
+        "clientMentioned": true,
+        "responsePreview": "{\"keyword\":\"Kinso vs competitors\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=Kinso%20vs%20competitors\",\"datetime\":\"2026-03-05 06:17:56 +00:00\",\"markdown\":\"Could you clarify what “Kinso” refers to in this context? Are you asking about a company, a product, a software platform, or something else? Once I know that, I can do a detailed comparison with its competitors.\",\"search_results\":null,\"sources\":null,\"fan_out_queries\":null,\"brand_entities\":null,\"se_results_count\":0,\"item_types\":[\"chat_gpt_text\"],\"items_count\":1,\"items\":[{\"type\":\"chat_gpt_text\",\"rank_group\":1,\"rank_absolute\":1,\"markdown\":\"Could you clarify what “Kinso” refers to in this context? Are you asking about a company, a product, a software platform, or something else? Once I know that, I can do a detailed comparison with its competitors.\",\"sources\":null,\"brand_entities\":null}]}"
+      },
+      {
+        "query": "best unified ai inbox for startups",
+        "platform": "chatgpt",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"best unified ai inbox for startups\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20for%20startups\",\"datetime\":\"2026-03-05 06:18:10 +00:00\",\"markdown\":\"Got it! Are you looking for a **unified AI inbox** specifically for **customer communication** (like email, chat, and social media messages) or more broadly for **team collaboration and internal workflows**? That will help narrow the best options for startups.  \\n\\nAssuming you mean **customer-facing communications**, here are some of the top unified AI inbox solutions for startups right now:  \\n\\n---\\n\\n### **1. Front**\\n- **Overview:** Centralizes email, chat, SMS, and social channels in one inbox. AI features include suggested replies and automated routing.\\n- **Pros:** \\n  - Very startup-friendly with scalable pricing\\n  - Strong team collaboration features\\n  - Integrates with CRMs, Slack, and project management tools\\n- **Cons:** AI capabilities are more about productivity than full automation  \\n\\n---\\n\\n### **2. Superhuman (with AI features)**\\n- **Overview:** Premium email client with AI-assisted email drafting, summarization, and"
+      },
+      {
+        "query": "best unified ai inbox for enterprise",
+        "platform": "chatgpt",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"best unified ai inbox for enterprise\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20for%20enterprise\",\"datetime\":\"2026-03-05 06:18:52 +00:00\",\"markdown\":\"When looking for the **best unified AI inbox for enterprise**, it helps to clarify that you’re seeking a platform that can **consolidate multiple communication channels** (email, chat, social media, support tickets, etc.) while leveraging **AI to triage, respond, and analyze messages**. Here’s a breakdown of strong options in 2026:  \\n\\n---\\n\\n### **Top Unified AI Inbox Solutions for Enterprise**\\n\\n#### 1. **Front**\\n- **Overview:** Front is designed as a shared inbox for teams, handling emails, SMS, chat, social messages, and more.\\n- **AI Capabilities:** AI can summarize threads, suggest responses, prioritize messages, and detect sentiment.\\n- **Strengths:** Highly customizable workflows, integration with CRMs (Salesforce, HubSpot), robust analytics.\\n- **Best For:** Teams that need collaborative inboxes with AI-driven prioritization.\\n\\n#### 2. **Superhuman for Teams**\\n- **Overview:** While primarily an email client, Superhuman no"
+      },
+      {
+        "query": "how to choose unified ai inbox platform",
+        "platform": "chatgpt",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"how to choose unified ai inbox platform\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=how%20to%20choose%20unified%20ai%20inbox%20platform\",\"datetime\":\"2026-03-05 06:19:56 +00:00\",\"markdown\":\"Choosing a unified AI inbox platform depends on several factors, including your business needs, budget, and the features that matter most to you. A \\\"unified AI inbox\\\" typically combines communication channels (like email, SMS, social media, live chat) into a single interface, often using AI to help automate responses, categorize messages, and improve customer service. Here's a guide to help you choose the right platform for your needs:\\n\\n### 1. **Define Your Needs**\\n   - **Type of Communication Channels**: What channels do you need to integrate? Email, live chat, social media, SMS, phone calls? Make sure the platform supports all the ones you need.\\n   - **Automated Features**: Do you want AI-driven automation, like auto-responses, message categorization, or sentiment analysis?\\n   - **Customer Support Focus**: Are you primarily focused on customer service, sales, or marketing? Some platforms may offer more advanced AI feat"
+      },
+      {
+        "query": "unified ai inbox comparison",
+        "platform": "chatgpt",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"unified ai inbox comparison\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=unified%20ai%20inbox%20comparison\",\"datetime\":\"2026-03-05 06:20:22 +00:00\",\"markdown\":\"A **unified AI inbox** generally refers to a system that consolidates various forms of communication—such as emails, messages, tasks, and notifications—into a single interface. It's designed to streamline communication and boost productivity by using AI to prioritize, sort, or even respond to messages based on context. Here's a comparison of several AI-powered inbox systems based on their features, strengths, and weaknesses:\\n\\n### 1. **Superhuman**\\n   - **Key Features**: \\n     - AI-assisted email management.\\n     - Speed-focused design, with features like one-click unsubscribe, customizable shortcuts, and the ability to snooze emails.\\n     - Priority inbox for smart sorting.\\n   - **AI Capabilities**:\\n     - The AI sorts your inbox intelligently, helping you prioritize important emails.\\n     - Smart Compose for writing emails faster.\\n     - Automatic scheduling and follow-up reminders.\\n   - **Pros**:\\n     - Fast and highly responsive UI.\\n     - S"
+      }
+    ]
+  },
+  "websiteAudit": {
+    "onPage": {
+      "title": "Kinso: Unified Inbox, AI Assistant for Business Messages",
+      "description": "Bring every email, message and contact into one smart workspace. Kinso learns your goals, prioritises what matters and drafts replies in your voice.",
+      "wordCount": 724,
+      "internalLinks": 5,
+      "externalLinks": 4,
+      "schemaTypes": [],
+      "statusCode": 200,
+      "pageTiming": {
+        "timeToInteractiveMs": 713,
+        "domCompleteMs": 2693,
+        "largestContentfulPaintMs": 0
+      }
+    },
+    "pageSpeed": {
+      "source": "dataforseo_onpage_timing",
+      "timeToInteractiveMs": 713,
+      "domCompleteMs": 2693,
+      "largestContentfulPaintMs": 0,
+      "note": "Derived from DataForSEO on_page timing metrics."
+    }
+  },
+  "qualityGate": {
+    "mode": "strict",
+    "thresholds": {
+      "competitors": 3,
+      "keywords": 10,
+      "prompts": 6
+    },
+    "metrics": {
+      "competitors": 7,
+      "keywords": 22,
+      "prompts": 8,
+      "hasOnPage": true,
+      "hasTam": true,
+      "hasPageSpeed": true
+    },
+    "passed": true,
+    "failures": []
+  },
+  "meta": {
+    "generatedAt": "2026-03-05T06:20:37.316Z",
+    "researchMode": "strict",
+    "targetMarkets": [
+      {
+        "key": "US",
+        "locationCode": 2840
+      },
+      {
+        "key": "AU",
+        "locationCode": 2036
+      }
+    ],
+    "timingsMs": {
+      "preflight": 2014,
+      "discover_competitors": 2743,
+      "product_competitor_query_1": 14845,
+      "product_competitor_query_2": 10701,
+      "product_competitor_query_3": 12578,
+      "product_competitor_query_4": 14732,
+      "product_competitor_query_5": 20046,
+      "discover_product_competitors": 72905,
+      "target_domain_metrics": 1192,
+      "competitor_metrics_missiveapp.com": 981,
+      "competitor_metrics_front.com": 956,
+      "competitor_metrics_intercom.com": 1048,
+      "competitor_metrics_zendesk.com": 1153,
+      "competitor_metrics_helpscout.com": 932,
+      "competitor_metrics_hiverhq.com": 1152,
+      "competitor_metrics_kinso.com.au": 952,
+      "competitor_metrics_crisp.chat": 933,
+      "keyword_analysis": 1588,
+      "keyword_gap_analysis": 1616,
+      "ai_visibility": 256916,
+      "tam_model": 1,
+      "website_audit": 13069
+    },
+    "issues": [
+      {
+        "step": "ai_mentions",
+        "error": "[/v3/ai_optimization/llm_mentions/live] DataForSEO status 40400: Not Found."
+      }
+    ],
+    "totalDurationMs": 363364,
+    "payloadConfidence": {
+      "score": 87,
+      "level": "high"
+    }
+  }
+}
