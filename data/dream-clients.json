@@ -1,0 +1,709 @@
+[
+  {
+    "slug": "lattice",
+    "name": "Lattice",
+    "domain": "lattice.com",
+    "category": "HR Tech / Performance Management",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "15five",
+    "name": "15Five",
+    "domain": "15five.com",
+    "category": "HR Tech / Employee Engagement",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "leapsome",
+    "name": "Leapsome",
+    "domain": "leapsome.com",
+    "category": "HR Tech / People Enablement",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "charthop",
+    "name": "ChartHop",
+    "domain": "charthop.com",
+    "category": "HR Tech / Org Planning",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "deel",
+    "name": "Deel",
+    "domain": "deel.com",
+    "category": "HR Tech / Global Payroll",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "remote",
+    "name": "Remote.com",
+    "domain": "remote.com",
+    "category": "HR Tech / Global HR",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "oyster-hr",
+    "name": "Oyster HR",
+    "domain": "oysterhr.com",
+    "category": "HR Tech / Distributed Workforce",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "personio",
+    "name": "Personio",
+    "domain": "personio.com",
+    "category": "HR Tech / HR Software SMB",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "hibob",
+    "name": "HiBob",
+    "domain": "hibob.com",
+    "category": "HR Tech / HRIS",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "keka",
+    "name": "Keka",
+    "domain": "keka.com",
+    "category": "HR Tech / HR Payroll",
+    "industry": "HR Tech"
+  },
+  {
+    "slug": "linear",
+    "name": "Linear",
+    "domain": "linear.app",
+    "category": "Dev Tools / Issue Tracking",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "raycast",
+    "name": "Raycast",
+    "domain": "raycast.com",
+    "category": "Dev Tools / Productivity Launcher",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "postman",
+    "name": "Postman",
+    "domain": "postman.com",
+    "category": "Dev Tools / API Platform",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "retool",
+    "name": "Retool",
+    "domain": "retool.com",
+    "category": "Dev Tools / Internal Tools",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "supabase",
+    "name": "Supabase",
+    "domain": "supabase.com",
+    "category": "Dev Tools / Backend as a Service",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "planetscale",
+    "name": "PlanetScale",
+    "domain": "planetscale.com",
+    "category": "Dev Tools / Serverless MySQL",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "railway",
+    "name": "Railway",
+    "domain": "railway.app",
+    "category": "Dev Tools / Deployment Platform",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "neon",
+    "name": "Neon",
+    "domain": "neon.tech",
+    "category": "Dev Tools / Serverless Postgres",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "clerk",
+    "name": "Clerk",
+    "domain": "clerk.com",
+    "category": "Dev Tools / Auth",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "resend",
+    "name": "Resend",
+    "domain": "resend.com",
+    "category": "Dev Tools / Email",
+    "industry": "Dev Tools"
+  },
+  {
+    "slug": "gong",
+    "name": "Gong",
+    "domain": "gong.io",
+    "category": "Sales Tech / Revenue Intelligence",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "chorus",
+    "name": "Chorus.ai",
+    "domain": "chorus.ai",
+    "category": "Sales Tech / Conversation Intelligence",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo.io",
+    "domain": "apollo.io",
+    "category": "Sales Tech / Sales Intelligence",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "outreach",
+    "name": "Outreach",
+    "domain": "outreach.io",
+    "category": "Sales Tech / Sales Engagement",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "salesloft",
+    "name": "Salesloft",
+    "domain": "salesloft.com",
+    "category": "Sales Tech / Sales Engagement",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "clari",
+    "name": "Clari",
+    "domain": "clari.com",
+    "category": "Sales Tech / Revenue Platform",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "people-ai",
+    "name": "People.ai",
+    "domain": "people.ai",
+    "category": "Sales Tech / Revenue Intelligence",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "lavender",
+    "name": "Lavender",
+    "domain": "lavender.ai",
+    "category": "Sales Tech / Email Coaching",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "regie-ai",
+    "name": "Regie.ai",
+    "domain": "regie.ai",
+    "category": "Sales Tech / AI Sales Content",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "orum",
+    "name": "Orum",
+    "domain": "orum.com",
+    "category": "Sales Tech / AI Dialer",
+    "industry": "Sales Tech"
+  },
+  {
+    "slug": "mutiny",
+    "name": "Mutiny",
+    "domain": "mutinyhq.com",
+    "category": "MarTech / Website Personalization",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "clearbit",
+    "name": "Clearbit",
+    "domain": "clearbit.com",
+    "category": "MarTech / Data Enrichment",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "6sense",
+    "name": "6sense",
+    "domain": "6sense.com",
+    "category": "MarTech / ABM Platform",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "metadata-io",
+    "name": "Metadata.io",
+    "domain": "metadata.io",
+    "category": "MarTech / Demand Gen",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "unbounce",
+    "name": "Unbounce",
+    "domain": "unbounce.com",
+    "category": "MarTech / Landing Pages",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "typeform",
+    "name": "Typeform",
+    "domain": "typeform.com",
+    "category": "MarTech / Forms & Surveys",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "hotjar",
+    "name": "Hotjar",
+    "domain": "hotjar.com",
+    "category": "MarTech / Heatmaps & Analytics",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "fullstory",
+    "name": "FullStory",
+    "domain": "fullstory.com",
+    "category": "MarTech / Digital Experience",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "heap",
+    "name": "Heap",
+    "domain": "heap.io",
+    "category": "MarTech / Product Analytics",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "customer-io",
+    "name": "Customer.io",
+    "domain": "customer.io",
+    "category": "MarTech / Email Automation",
+    "industry": "MarTech"
+  },
+  {
+    "slug": "intercom",
+    "name": "Intercom",
+    "domain": "intercom.com",
+    "category": "Customer Success / Messaging",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "zendesk",
+    "name": "Zendesk",
+    "domain": "zendesk.com",
+    "category": "Customer Success / Support Platform",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "front",
+    "name": "Front",
+    "domain": "front.com",
+    "category": "Customer Success / Shared Inbox",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "gladly",
+    "name": "Gladly",
+    "domain": "gladly.com",
+    "category": "Customer Success / Customer Service",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "kustomer",
+    "name": "Kustomer",
+    "domain": "kustomer.com",
+    "category": "Customer Success / CRM for Support",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "vitally",
+    "name": "Vitally",
+    "domain": "vitally.io",
+    "category": "Customer Success / CS Platform",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "churnzero",
+    "name": "ChurnZero",
+    "domain": "churnzero.com",
+    "category": "Customer Success / Churn Prevention",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "catalyst",
+    "name": "Catalyst",
+    "domain": "catalyst.io",
+    "category": "Customer Success / CS Platform",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "planhat",
+    "name": "Planhat",
+    "domain": "planhat.com",
+    "category": "Customer Success / Customer Platform",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "totango",
+    "name": "Totango",
+    "domain": "totango.com",
+    "category": "Customer Success / Enterprise CS",
+    "industry": "Customer Success"
+  },
+  {
+    "slug": "ramp",
+    "name": "Ramp",
+    "domain": "ramp.com",
+    "category": "Fintech B2B / Corporate Cards",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "brex",
+    "name": "Brex",
+    "domain": "brex.com",
+    "category": "Fintech B2B / Corporate Cards",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "mercury",
+    "name": "Mercury",
+    "domain": "mercury.com",
+    "category": "Fintech B2B / Startup Banking",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "airbase",
+    "name": "Airbase",
+    "domain": "airbase.com",
+    "category": "Fintech B2B / Spend Management",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "puzzle",
+    "name": "Puzzle",
+    "domain": "puzzle.io",
+    "category": "Fintech B2B / Startup Accounting",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "runway-finance",
+    "name": "Runway",
+    "domain": "runway.com",
+    "category": "Fintech B2B / Financial Planning",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "mosaic",
+    "name": "Mosaic",
+    "domain": "mosaic.tech",
+    "category": "Fintech B2B / Strategic Finance",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "digits",
+    "name": "Digits",
+    "domain": "digits.com",
+    "category": "Fintech B2B / AI Accounting",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "pleo",
+    "name": "Pleo",
+    "domain": "pleo.io",
+    "category": "Fintech B2B / Company Cards",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "spendesk",
+    "name": "Spendesk",
+    "domain": "spendesk.com",
+    "category": "Fintech B2B / Spend Management",
+    "industry": "Fintech B2B"
+  },
+  {
+    "slug": "loom",
+    "name": "Loom",
+    "domain": "loom.com",
+    "category": "Product & Design / Video Messaging",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "miro",
+    "name": "Miro",
+    "domain": "miro.com",
+    "category": "Product & Design / Visual Collaboration",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "whimsical",
+    "name": "Whimsical",
+    "domain": "whimsical.com",
+    "category": "Product & Design / Docs & Wireframes",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "maze",
+    "name": "Maze",
+    "domain": "maze.co",
+    "category": "Product & Design / User Testing",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "sprig",
+    "name": "Sprig",
+    "domain": "sprig.com",
+    "category": "Product & Design / Product Research",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "pendo",
+    "name": "Pendo",
+    "domain": "pendo.io",
+    "category": "Product & Design / Product Analytics",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "amplitude",
+    "name": "Amplitude",
+    "domain": "amplitude.com",
+    "category": "Product & Design / Product Analytics",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "mixpanel",
+    "name": "Mixpanel",
+    "domain": "mixpanel.com",
+    "category": "Product & Design / Product Analytics",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "dovetail",
+    "name": "Dovetail",
+    "domain": "dovetail.com",
+    "category": "Product & Design / Research Repository",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "productboard",
+    "name": "Productboard",
+    "domain": "productboard.com",
+    "category": "Product & Design / Product Management",
+    "industry": "Product & Design"
+  },
+  {
+    "slug": "vanta",
+    "name": "Vanta",
+    "domain": "vanta.com",
+    "category": "Security / Compliance Automation",
+    "industry": "Security"
+  },
+  {
+    "slug": "drata",
+    "name": "Drata",
+    "domain": "drata.com",
+    "category": "Security / Compliance Automation",
+    "industry": "Security"
+  },
+  {
+    "slug": "secureframe",
+    "name": "Secureframe",
+    "domain": "secureframe.com",
+    "category": "Security / Compliance",
+    "industry": "Security"
+  },
+  {
+    "slug": "snyk",
+    "name": "Snyk",
+    "domain": "snyk.io",
+    "category": "Security / Developer Security",
+    "industry": "Security"
+  },
+  {
+    "slug": "lacework",
+    "name": "Lacework",
+    "domain": "lacework.com",
+    "category": "Security / Cloud Security",
+    "industry": "Security"
+  },
+  {
+    "slug": "wiz",
+    "name": "Wiz",
+    "domain": "wiz.io",
+    "category": "Security / Cloud Security",
+    "industry": "Security"
+  },
+  {
+    "slug": "orca-security",
+    "name": "Orca Security",
+    "domain": "orca.security",
+    "category": "Security / Cloud Security",
+    "industry": "Security"
+  },
+  {
+    "slug": "1password",
+    "name": "1Password",
+    "domain": "1password.com",
+    "category": "Security / Password Management",
+    "industry": "Security"
+  },
+  {
+    "slug": "keeper",
+    "name": "Keeper",
+    "domain": "keepersecurity.com",
+    "category": "Security / Password Management",
+    "industry": "Security"
+  },
+  {
+    "slug": "dashlane",
+    "name": "Dashlane",
+    "domain": "dashlane.com",
+    "category": "Security / Password Management",
+    "industry": "Security"
+  },
+  {
+    "slug": "dbt-labs",
+    "name": "dbt Labs",
+    "domain": "getdbt.com",
+    "category": "Data & Analytics / Data Transformation",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "fivetran",
+    "name": "Fivetran",
+    "domain": "fivetran.com",
+    "category": "Data & Analytics / Data Integration",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "airbyte",
+    "name": "Airbyte",
+    "domain": "airbyte.com",
+    "category": "Data & Analytics / Data Integration",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "census",
+    "name": "Census",
+    "domain": "getcensus.com",
+    "category": "Data & Analytics / Reverse ETL",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "hightouch",
+    "name": "Hightouch",
+    "domain": "hightouch.com",
+    "category": "Data & Analytics / Reverse ETL",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "monte-carlo",
+    "name": "Monte Carlo",
+    "domain": "montecarlodata.com",
+    "category": "Data & Analytics / Data Observability",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "atlan",
+    "name": "Atlan",
+    "domain": "atlan.com",
+    "category": "Data & Analytics / Data Catalog",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "alation",
+    "name": "Alation",
+    "domain": "alation.com",
+    "category": "Data & Analytics / Data Catalog",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "hex",
+    "name": "Hex",
+    "domain": "hex.tech",
+    "category": "Data & Analytics / Data Notebooks",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "mode",
+    "name": "Mode",
+    "domain": "mode.com",
+    "category": "Data & Analytics / BI & Analytics",
+    "industry": "Data & Analytics"
+  },
+  {
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "domain": "klaviyo.com",
+    "category": "E-commerce Tech / Email for E-commerce",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "yotpo",
+    "name": "Yotpo",
+    "domain": "yotpo.com",
+    "category": "E-commerce Tech / Reviews & Loyalty",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "gorgias",
+    "name": "Gorgias",
+    "domain": "gorgias.com",
+    "category": "E-commerce Tech / E-commerce Helpdesk",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "rebuy",
+    "name": "Rebuy",
+    "domain": "rebuyengine.com",
+    "category": "E-commerce Tech / Personalization",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "triple-whale",
+    "name": "Triple Whale",
+    "domain": "triplewhale.com",
+    "category": "E-commerce Tech / Attribution",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "northbeam",
+    "name": "Northbeam",
+    "domain": "northbeam.io",
+    "category": "E-commerce Tech / Attribution",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "elevar",
+    "name": "Elevar",
+    "domain": "getelevar.com",
+    "category": "E-commerce Tech / Server-side Tracking",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "attentive",
+    "name": "Attentive",
+    "domain": "attentive.com",
+    "category": "E-commerce Tech / SMS Marketing",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "postscript",
+    "name": "Postscript",
+    "domain": "postscript.io",
+    "category": "E-commerce Tech / SMS for Shopify",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "omnisend",
+    "name": "Omnisend",
+    "domain": "omnisend.com",
+    "category": "E-commerce Tech / Email & SMS",
+    "industry": "E-commerce Tech"
+  },
+  {
+    "slug": "kinso",
+    "name": "Kinso",
+    "domain": "kinso.ai",
+    "category": "Communication / Unified AI Inbox",
+    "industry": "Communication / Collaboration"
+  }
+]
