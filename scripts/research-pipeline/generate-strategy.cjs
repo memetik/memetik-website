@@ -1,10 +1,78 @@
-const https = require("https");
 const fs = require("fs");
 const path = require("path");
 
 const OPENAI_BASE_URL = process.env.OPENAI_BASE_URL || "http://127.0.0.1:8317/v1";
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "dummy";
 const STRATEGY_MODEL = process.env.STRATEGY_MODEL || "gpt-5.3-codex";
+
+const REQUIRED_SECTION_PATTERNS = [
+  /state of search/i,
+  /current state/i,
+  /competitive/i,
+  /book a strategy call/i,
+];
+
+function loadStrategicContextDocs() {
+  const defaultDocs = [
+    "/Users/house/Mind/Areas/Agency/Lead-Magnets/MEMETIK-2026-AEO-Playbook.md",
+    "/Users/house/Mind/Specs/dream-client-strategy-pages-spec.md",
+    "/Users/house/Mind/Specs/dream-client-pipeline.md",
+  ];
+
+  const extraDocs = (process.env.STRATEGY_CONTEXT_FILES || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  const docs = [...new Set([...defaultDocs, ...extraDocs])]
+    .filter((filePath) => fs.existsSync(filePath))
+    .map((filePath) => {
+      const content = fs.readFileSync(filePath, "utf-8");
+      return {
+        filePath,
+        content: content.slice(0, 24000),
+      };
+    });
+
+  return docs;
+}
+
+function validateResearchForGeneration(researchData) {
+  const qualityGate = researchData?.qualityGate;
+  const payloadConfidence = researchData?.meta?.payloadConfidence;
+  const allowLowConfidence = process.env.ALLOW_LOW_CONFIDENCE_GENERATION === "true";
+
+  if (!qualityGate) {
+    throw new Error(
+      "Research payload is missing qualityGate metadata. Re-run research with the updated pipeline before generation."
+    );
+  }
+
+  if (!payloadConfidence) {
+    throw new Error(
+      "Research payload is missing payloadConfidence metadata. Re-run research with the updated pipeline before generation."
+    );
+  }
+
+  if (!allowLowConfidence && qualityGate && !qualityGate.passed) {
+    throw new Error(`Research quality gate failed: ${qualityGate.failures.join("; ")}`);
+  }
+
+  if (!allowLowConfidence && payloadConfidence?.level === "low") {
+    throw new Error(`Payload confidence is low (${payloadConfidence.score}/100). Refusing generation.`);
+  }
+}
+
+function validateGeneratedTsx(tsxContent) {
+  const missing = REQUIRED_SECTION_PATTERNS.filter((pattern) => !pattern.test(tsxContent));
+  if (missing.length > 0) {
+    throw new Error(
+      `Generated page failed required section checks. Missing patterns: ${missing
+        .map((p) => p.toString())
+        .join(", ")}`
+    );
+  }
+}
 
 async function codexRequest(systemPrompt, userPrompt) {
   const endpoint = `${OPENAI_BASE_URL.replace(/\/$/, "")}/chat/completions`;
@@ -91,6 +159,10 @@ function buildSystemPrompt(examples, components) {
     .map(([name, content]) => `--- ${name} ---\n${content}`)
     .join("\n\n");
 
+  const strategicContext = loadStrategicContextDocs()
+    .map((doc) => `--- ${doc.filePath} ---\n${doc.content}`)
+    .join("\n\n");
+
   return `You are a senior frontend developer and AEO/SEO strategist building a strategy page for Memetik (memetik.ai), an Answer Engine Optimization agency.
 
 You are generating a complete, production-ready TSX file for a strategy page. This page will be a hyper-personalized, deeply researched AEO/SEO strategy for a specific company. It serves as:
@@ -106,6 +178,9 @@ ${components.index}
 
 STYLE EXAMPLES (match this exact visual style, design system, and tone):
 ${exampleSnippets}
+
+STRATEGIC CONTEXT (MANDATORY GROUNDING):
+${strategicContext}
 
 CRITICAL RULES:
 1. Output ONLY the complete TSX file content — no markdown fences, no explanation, no commentary.
@@ -123,12 +198,18 @@ CRITICAL RULES:
 13. The strategy must feel like a $5,000-$10,000 consulting deliverable. Deep, specific, actionable.
 14. Frame everything around AI visibility — that's Memetik's core value prop. Show how the company is invisible (or underrepresented) in AI search and what to do about it.
 15. The page is PUBLIC. Do not include passwords or gates.
-16. Add the company's hero tags (domain, industry, location if known, key descriptor).`;
+16. Add the company's hero tags (domain, industry, location if known, key descriptor).
+17. First major section must be "State of Search 2026" and include AEO/GEO/AI-search behavior context.
+18. Do not fabricate competitors or metrics. If data is missing, explicitly label "Data unavailable in current payload" and include next action to fill it.
+19. Include a "Current State Snapshot" section with explicit confidence level from research payload when available.
+20. Include a "Data-backed Competitive Landscape" section where every table row is grounded in research data (or clearly labeled inferred).`;
 }
 
 async function generateStrategyPage(company, researchData) {
   console.log(`\nGenerating strategy page for ${company.name}...`);
   console.log(`  Using model: ${STRATEGY_MODEL} via ${OPENAI_BASE_URL}`);
+
+  validateResearchForGeneration(researchData);
 
   const examples = loadExamplePages();
   const components = loadComponentLibrary();
@@ -151,11 +232,13 @@ Generate the complete TSX file now.`;
 
   const tsxContent = await codexRequest(systemPrompt, userPrompt);
 
-  // Clean up any markdown fences if Claude adds them
+  // Clean up markdown fences if model adds them
   let cleaned = tsxContent;
   if (cleaned.startsWith("```")) {
     cleaned = cleaned.replace(/^```(?:tsx|typescript|ts)?\n/, "").replace(/\n```$/, "");
   }
+
+  validateGeneratedTsx(cleaned);
 
   // Save the file
   const outDir = path.join(__dirname, "..", "..", "client", "src", "pages", "strategy");
@@ -199,5 +282,8 @@ if (require.main === module) {
     console.error(`Company "${slug}" not found in dream-clients.json`);
     process.exit(1);
   }
-  generateStrategyPage(company, research).catch(console.error);
+  generateStrategyPage(company, research).catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 }

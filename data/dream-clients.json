@@ -704,6 +704,32 @@
     "name": "Kinso",
     "domain": "kinso.ai",
     "category": "Communication / Unified AI Inbox",
-    "industry": "Communication / Collaboration"
+    "industry": "Communication / Collaboration",
+    "competitorSeeds": [
+      {
+        "name": "Front",
+        "domain": "front.com"
+      },
+      {
+        "name": "Intercom",
+        "domain": "intercom.com"
+      },
+      {
+        "name": "Zendesk",
+        "domain": "zendesk.com"
+      },
+      {
+        "name": "Help Scout",
+        "domain": "helpscout.com"
+      },
+      {
+        "name": "Missive",
+        "domain": "missiveapp.com"
+      },
+      {
+        "name": "Hiver",
+        "domain": "hiverhq.com"
+      }
+    ]
   }
 ]

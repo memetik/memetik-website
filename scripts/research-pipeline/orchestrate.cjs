@@ -1,25 +1,43 @@
 /**
- * Research-only orchestrator.
- * 
- * This script handles the MECHANICAL part: calling DataForSEO APIs to gather
- * research data for each dream client company.
- * 
- * The INTELLIGENT part (analyzing research, building the strategy page, deploying)
- * is handled by the strategy-builder droid at .factory/droids/strategy-builder.md
- * 
- * Workflow:
- *   1. Run this script to generate research data → /data/research/{slug}.json
- *   2. Ask droid: "Use the strategy-builder subagent to build a strategy page for linear"
- *   3. The droid reads the research, studies existing pages, builds the TSX, adds routing,
- *      type-checks, fixes errors, and commits.
+ * End-to-end orchestrator.
+ *
+ * Supports:
+ *   - research only
+ *   - research + strategy generation in one command
+ *   - strict/fast research mode
  */
 
 const fs = require("fs");
 const path = require("path");
 const { runResearch } = require("./index.cjs");
+const { generateStrategyPage } = require("./generate-strategy.cjs");
+
+function parseArg(args, name, fallback = null) {
+  if (!args.includes(name)) return fallback;
+  const value = args[args.indexOf(name) + 1];
+  return value ?? fallback;
+}
+
+async function runOne(company, opts) {
+  const startedAt = Date.now();
+  const research = await runResearch(company);
+
+  let generated = null;
+  if (opts.generate) {
+    generated = await generateStrategyPage(company, research);
+  }
+
+  const totalMs = Date.now() - startedAt;
+  return { research, generated, totalMs };
+}
 
 async function main() {
   const args = process.argv.slice(2);
+  const mode = parseArg(args, "--mode", "strict");
+  const generate = args.includes("--generate");
+
+  process.env.RESEARCH_MODE = mode;
+
   const clientsPath = path.join(__dirname, "..", "..", "data", "dream-clients.json");
   const clients = JSON.parse(fs.readFileSync(clientsPath, "utf-8"));
 
@@ -32,20 +50,36 @@ async function main() {
       console.error(`Company "${companyName}" not found in dream-clients.json`);
       process.exit(1);
     }
-    await runResearch(company);
-    console.log(`\nResearch complete. Now ask droid:`);
-    console.log(`  "Use the strategy-builder subagent to build a strategy page for ${company.slug}"`);
+
+    const result = await runOne(company, { generate });
+    console.log(`\n${"=".repeat(60)}`);
+    console.log(`COMPLETE: ${company.slug}`);
+    console.log(`Mode: ${mode}`);
+    console.log(`Research output: data/research/${company.slug}.json`);
+    if (result.generated) {
+      console.log(`Strategy page: client/src/pages/strategy/${result.generated.fileName}`);
+      console.log(`Route reminder: /strategy/${company.slug}`);
+    }
+    console.log(`Total runtime: ${(result.totalMs / 1000).toFixed(1)}s`);
+    console.log(`${"=".repeat(60)}`);
   } else if (args.includes("--batch")) {
-    const startIdx = args.includes("--start") ? parseInt(args[args.indexOf("--start") + 1]) : 0;
-    const limit = args.includes("--limit") ? parseInt(args[args.indexOf("--limit") + 1]) : clients.length;
+    const startIdx = Number(parseArg(args, "--start", 0));
+    const limit = Number(parseArg(args, "--limit", clients.length));
     const batch = clients.slice(startIdx, startIdx + limit);
 
-    console.log(`\nResearching ${batch.length} companies (starting at index ${startIdx})...\n`);
+    console.log(
+      `\nRunning ${batch.length} companies (starting at index ${startIdx}) [mode=${mode}, generate=${generate}]...\n`
+    );
 
     const results = { success: [], failed: [] };
     for (const company of batch) {
       try {
-        await runResearch(company);
+        const result = await runOne(company, { generate });
+        console.log(
+          `  OK ${company.slug} (${(result.totalMs / 1000).toFixed(1)}s)${
+            result.generated ? " + strategy" : ""
+          }`
+        );
         results.success.push(company.name);
       } catch (e) {
         console.error(`  FAILED: ${company.name} — ${e.message}`);
@@ -55,26 +89,33 @@ async function main() {
     }
 
     console.log(`\n${"=".repeat(60)}`);
-    console.log("RESEARCH COMPLETE");
+    console.log("RUN COMPLETE");
     console.log(`  Success: ${results.success.length} — ${results.success.join(", ")}`);
     console.log(`  Failed:  ${results.failed.length} — ${results.failed.join(", ")}`);
     console.log(`${"=".repeat(60)}`);
-    console.log(`\nNow ask droid to build strategy pages for each company.`);
   } else {
-    console.log("Dream Client Research Pipeline");
-    console.log("==============================");
+    console.log("Dream Client Research + Strategy Orchestrator");
+    console.log("============================================");
     console.log("");
-    console.log("Step 1 — Run research (this script):");
-    console.log('  node scripts/research-pipeline/orchestrate.cjs --company "Linear"');
-    console.log("  node scripts/research-pipeline/orchestrate.cjs --batch");
-    console.log("  node scripts/research-pipeline/orchestrate.cjs --batch --start 10 --limit 5");
+    console.log("Research only:");
+    console.log('  node scripts/research-pipeline/orchestrate.cjs --company "Kinso" --mode strict');
     console.log("");
-    console.log("Step 2 — Build strategy page (droid):");
-    console.log('  Ask droid: "Use the strategy-builder subagent to build a strategy page for linear"');
+    console.log("Research + generation:");
+    console.log(
+      '  node scripts/research-pipeline/orchestrate.cjs --company "Kinso" --mode strict --generate'
+    );
     console.log("");
-    console.log("Environment variables required (in .env):");
+    console.log("Batch:");
+    console.log(
+      "  node scripts/research-pipeline/orchestrate.cjs --batch --start 0 --limit 5 --mode strict --generate"
+    );
+    console.log("");
+    console.log("Environment variables (required):");
     console.log("  DATAFORSEO_LOGIN      — DataForSEO API login");
     console.log("  DATAFORSEO_PASSWORD   — DataForSEO API password");
+    console.log("  OPENAI_BASE_URL       — VibeProxy base URL (for --generate)");
+    console.log("  OPENAI_API_KEY        — VibeProxy key placeholder (for --generate)");
+    console.log("  STRATEGY_MODEL        — model name (default: gpt-5.3-codex)");
     console.log("");
     console.log(`Companies loaded: ${clients.length}`);
   }
