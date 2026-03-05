@@ -9,6 +9,7 @@ const REQUIRED_SECTION_PATTERNS = [
   /state of search/i,
   /current state/i,
   /competitive/i,
+  /executive summary|top 3 actions/i,
   /full keyword universe|keyword universe/i,
   /ai visibility by llm|ai visibility by platform/i,
   /total addressable search market|tasm|tam/i,
@@ -89,6 +90,14 @@ function validateResearchForGeneration(researchData) {
 
   if (!researchData?.aiVisibility?.platformSummary) {
     throw new Error("Research payload is missing aiVisibility.platformSummary for per-LLM tracking.");
+  }
+
+  if (!researchData?.seoMetrics?.backlinkMetrics) {
+    throw new Error("Research payload is missing seoMetrics.backlinkMetrics. Re-run research with backlinks summary enabled.");
+  }
+
+  if (!Array.isArray(researchData?.aiVisibility?.competitorEvidence)) {
+    throw new Error("Research payload is missing aiVisibility.competitorEvidence.");
   }
 }
 
@@ -229,19 +238,23 @@ CRITICAL RULES:
 15. The page is PUBLIC. Do not include passwords or gates.
 16. Add the company's hero tags (domain, industry, location if known, key descriptor).
 17. First major section must be "State of Search 2026" and include AEO/GEO/AI-search behavior context.
-18. Do not fabricate competitors or metrics. If data is missing, explicitly label "Data unavailable in current payload" and include next action to fill it.
+18. Do not fabricate competitors or metrics. Use researchData.seoMetrics.backlinkMetrics and competitor metrics for backlink/ref-domain values wherever present.
 19. Include a "Current State Snapshot" section with explicit confidence level from research payload when available.
 20. Include a "Data-backed Competitive Landscape" section where every table row is grounded in research data (or clearly labeled inferred).
 21. Include a dedicated section titled "Total Addressable Search Market (12 months)" using researchData.tamModel values.
 22. Include a dedicated section titled "Phased Upside (12 months)" with three phases: Phase 1 (Months 0-3), Phase 2 (Months 4-8), Phase 3 (Months 9-12), each with low/base/high scenario numbers.
 23. Include a dedicated section titled "Assumptions & Confidence" showing methodology assumptions, estimate-only labels, and confidence notes.
 24. Keep TAM-first framing: demand + reachable opportunity first; include revenue scenario only if researchData.tamModel.revenueModel.enabled is true. Otherwise explicitly state revenue requires client inputs.
-25. Every projected number must include "estimate-only" language nearby.
+25. Keep estimate-only disclosure consolidated to section-level labels and assumptions blocks; do NOT add repetitive micro text directly under Current State Snapshot.
 26. Include a dedicated section titled "Full Keyword Universe" with intent/cluster breakdown from researchData.keywordUniverse and tamModel.keywordUniverse.
 27. Include a dedicated section titled "AI Visibility by LLM" using researchData.aiVisibility.platformSummary and prompt evidence.
 28. Include a visible "TAM × LTV Calculator" block using the shared TamRoiCalculator component.
 29. Include a visual phased bar chart using the shared PhasedUpsideChart component.
-30. Prioritize consumability: shorter paragraphs, card-based summaries, explicit "What matters / Why it matters / What to do next" blocks in each major section.`;
+30. Prioritize consumability: shorter paragraphs, card-based summaries, explicit "What matters / Why it matters / What to do next" blocks in each major section.
+31. Round all displayed phased upside values to whole numbers.
+32. Add an executive summary strip near top: top 3 numbers + top 3 actions.
+33. Competitive tables must include backlinks, referring domains, and prompt-evidence query hits when available.
+34. In AI Visibility by LLM, show platform status (available/unavailable) from researchData.aiVisibility.platformAvailability and avoid hiding unavailable reasons.`;
 }
 
 async function generateStrategyPage(company, researchData) {
@@ -268,12 +281,16 @@ The component should be named Strategy${pascalCase(company.slug)} and exported a
 The file will be saved at client/src/pages/strategy/${pascalCase(company.slug)}.tsx
 
 Mandatory output structure additions:
+- Add an "Executive Summary" strip with 3 headline numbers and 3 immediate actions.
 - Section: "Full Keyword Universe"
 - Section: "AI Visibility by LLM"
 - Section: "Total Addressable Search Market (12 months)"
 - Section: "Phased Upside (12 months)"
 - Section: "TAM × LTV Calculator"
 - Section: "Assumptions & Confidence"
+- Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
+- Keep Current State Snapshot concise and remove repetitive estimate-only microtext under that block.
+- Display phased upside numbers as whole integers in visible UI labels.
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue modeling requires client ACV/AOV and funnel inputs."
 
 Generate the complete TSX file now.`;

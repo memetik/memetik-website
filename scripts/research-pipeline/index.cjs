@@ -129,7 +129,7 @@ const INTENT_PATTERNS = {
   BOFU:
     /\b(vs|versus|alternative|alternatives|compare|comparison|best|top|review|reviews|pricing|price|cost|software|tool|tools|platform|app|apps|inbox|competitor|competitors)\b/i,
   MOFU:
-    /\b(template|templates|calculator|generator|checklist|case study|case studies|workflow|integration|integrations|migration|implementation|playbook)\b/i,
+    /\b(template|templates|calculator|generator|checklist|case study|case studies|workflow|workflows|integration|integrations|migration|implementation|playbook|playbooks|framework|frameworks|process|processes|automation|automations|setup|onboarding|rollout|prioritization|triage|taxonomy|governance|collaboration|management|productivity|routing|categorization|organization|organizer)\b/i,
   TOFU: /\b(what is|how to|guide|tips|ideas|trends|news|definition)\b/i,
 };
 
@@ -151,16 +151,32 @@ const PHASE_BY_INTENT = {
 const KEYWORD_UNIVERSE_LIMIT = Number(process.env.KEYWORD_UNIVERSE_LIMIT || 800);
 const KEYWORD_UNIVERSE_MIN_VOLUME = Number(process.env.KEYWORD_UNIVERSE_MIN_VOLUME || 10);
 const COMPETITOR_KEYWORD_FETCH_LIMIT = Number(process.env.COMPETITOR_KEYWORD_FETCH_LIMIT || 5);
+const SEMANTIC_SEED_LIMIT = Number(process.env.SEMANTIC_SEED_LIMIT || 8);
+const SEMANTIC_KEYWORD_LIMIT_PER_ENDPOINT = Number(process.env.SEMANTIC_KEYWORD_LIMIT_PER_ENDPOINT || 120);
 const FULL_UNIVERSE_REQUIRE_RELEVANCE = process.env.FULL_UNIVERSE_REQUIRE_RELEVANCE !== "false";
 const KEYWORD_UNIVERSE_ANCHORS = (process.env.KEYWORD_UNIVERSE_ANCHORS ||
   "unified inbox,shared inbox,team inbox,inbox management,ai inbox,multi-channel inbox,email triage,message prioritization")
   .split(",")
   .map((s) => s.trim().toLowerCase())
   .filter(Boolean);
+const MOFU_SEED_TEMPLATES = (process.env.MOFU_SEED_TEMPLATES ||
+  "{{anchor}} workflow,{{anchor}} integration,{{anchor}} implementation,{{anchor}} migration,{{anchor}} playbook")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
 
 const AI_VISIBILITY_PLATFORMS = {
   chatgpt: process.env.ENABLE_CHATGPT_TRACKING !== "false",
   googleAiOverview: process.env.ENABLE_GOOGLE_AIO_TRACKING !== "false",
+  gemini: process.env.ENABLE_GEMINI_TRACKING !== "false",
+  perplexity: process.env.ENABLE_PERPLEXITY_TRACKING !== "false",
+};
+const AI_PROMPT_LIMIT = Number(process.env.AI_PROMPT_LIMIT || 8);
+
+const AI_LLM_ENDPOINTS = {
+  chatgpt: "/v3/ai_optimization/chat_gpt/llm_scraper/live/advanced",
+  gemini: "/v3/ai_optimization/gemini/llm_scraper/live/advanced",
+  perplexity: "/v3/ai_optimization/perplexity/llm_scraper/live/advanced",
 };
 
 const FIRST_PARTY_CALIBRATION = {
@@ -344,6 +360,63 @@ function buildCoreAnchors(company) {
   const companyName = String(company?.name || "").toLowerCase().trim();
 
   return [...new Set([...explicitAnchors, ...categoryPhrases, companyName].filter(Boolean))];
+}
+
+function pickSemanticSeeds(company, rankedKeywords = [], keywordGaps = []) {
+  const anchors = buildCoreAnchors(company).slice(0, 5);
+  const priorityAnchors = anchors.slice(0, 3);
+  const rankedSeeds = rankedKeywords
+    .slice(0, 30)
+    .filter((row) => Number(row?.volume || 0) >= 40)
+    .map((row) => row.keyword)
+    .filter(Boolean)
+    .slice(0, 2);
+
+  const gapSeeds = keywordGaps
+    .slice(0, 20)
+    .filter((row) => Number(row?.volume || 0) >= 30)
+    .map((row) => row.keyword)
+    .filter(Boolean)
+    .slice(0, 2);
+
+  const mofuSeeds = [];
+  for (const anchor of priorityAnchors) {
+    for (const template of MOFU_SEED_TEMPLATES) {
+      mofuSeeds.push(template.replace(/\{\{\s*anchor\s*\}\}/gi, anchor).trim());
+    }
+  }
+
+  const orderedSeeds = [
+    ...priorityAnchors,
+    ...mofuSeeds.slice(0, 6),
+    ...rankedSeeds,
+    ...gapSeeds,
+    ...anchors.slice(3),
+    String(company?.name || "").trim(),
+  ];
+
+  return [...new Set(orderedSeeds)]
+    .map((seed) => String(seed || "").trim().toLowerCase())
+    .filter((seed) => seed.length >= 3)
+    .slice(0, SEMANTIC_SEED_LIMIT);
+}
+
+function getKeywordFromLabsItem(item) {
+  return item?.keyword_data?.keyword || item?.keyword || null;
+}
+
+function parseLabsKeywordItem(item, marketKey) {
+  const keyword = getKeywordFromLabsItem(item);
+  if (!keyword) return null;
+
+  const info = item?.keyword_data?.keyword_info || item?.keyword_info || {};
+  return {
+    keyword,
+    volume: Number(info.search_volume || 0),
+    cpc: typeof info.cpc === "number" ? info.cpc : null,
+    competition: info.competition_level || null,
+    markets: marketKey ? [marketKey] : [],
+  };
 }
 
 function hasCoreAnchorMatch(keyword, anchors) {
@@ -562,12 +635,28 @@ function buildTamConfidence(tamModel, keywordUniverse, keywordGaps, aiVisibility
     reasons.push("Gap analysis provides enough expansion signals.");
   }
 
+  const semanticKeywords = Number(tamModel?.keywordUniverse?.semanticContribution?.keywordCount || 0);
+  if (semanticKeywords >= 20) {
+    score += 5;
+    reasons.push("Semantic keyword expansion contributed meaningful TAM coverage.");
+  } else {
+    reasons.push("Semantic keyword expansion is light; broaden middle-funnel query seeds.");
+  }
+
   const aiPromptCount = aiVisibility?.promptResults?.filter(
     (r) => !r.error && typeof r.responsePreview === "string" && r.responsePreview.length > 0
   ).length;
   if (aiPromptCount >= 6) {
     score += 5;
     reasons.push("AI visibility prompts provide directional coverage.");
+  }
+
+  const sampledPlatforms = Object.values(aiVisibility?.platformSummary || {}).filter(
+    (row) => Number(row?.total || 0) > 0
+  ).length;
+  if (sampledPlatforms >= 2) {
+    score += 5;
+    reasons.push("AI visibility sampled across multiple platforms.");
   }
 
   if (tamModel?.revenueModel?.enabled) {
@@ -582,7 +671,7 @@ function buildTamConfidence(tamModel, keywordUniverse, keywordGaps, aiVisibility
   return { score, level, reasons };
 }
 
-function buildKeywordUniverse(company, rankedKeywords, keywordGaps, competitorKeywordSets) {
+function buildKeywordUniverse(company, rankedKeywords, keywordGaps, competitorKeywordSets, semanticKeywordSets = []) {
   const lexicon = buildCategoryLexicon(company);
   const coreAnchors = buildCoreAnchors(company);
   const keywordMap = new Map();
@@ -601,12 +690,20 @@ function buildKeywordUniverse(company, rankedKeywords, keywordGaps, competitorKe
     }
   }
 
+  for (const set of semanticKeywordSets) {
+    for (const row of set.keywords || []) {
+      mergeKeywordRow(keywordMap, row, "semantic_expansion", set.source || "semantic_seed");
+    }
+  }
+
   const universe = [];
   for (const row of keywordMap.values()) {
     row.relevanceScore = keywordRelevanceScore(row.keyword, lexicon);
     const anchorMatch = hasCoreAnchorMatch(row.keyword, coreAnchors);
     const hasTargetSignal = row.sources.has("target_ranked_keywords") || row.sources.has("keyword_gaps");
     const onlyCompetitorSource = row.sources.size === 1 && row.sources.has("competitor_keywords");
+    const semanticOnly = row.sources.size === 1 && row.sources.has("semantic_expansion");
+    const isMofu = classifyIntent(row.keyword) === "MOFU";
 
     if (row.volume < KEYWORD_UNIVERSE_MIN_VOLUME) continue;
     if (FULL_UNIVERSE_REQUIRE_RELEVANCE && row.relevanceScore <= 0 && !hasTargetSignal) {
@@ -619,6 +716,10 @@ function buildKeywordUniverse(company, rankedKeywords, keywordGaps, competitorKe
     }
 
     if (!hasTargetSignal && !anchorMatch && row.relevanceScore < 0.2) {
+      continue;
+    }
+
+    if (semanticOnly && isMofu && row.relevanceScore < 0.15 && !anchorMatch) {
       continue;
     }
 
@@ -882,6 +983,17 @@ function buildTamModel(company, keywordUniverse, keywordGaps, aiVisibility) {
       return acc;
     }, {}),
     anchorMatchedCount: keywordUniverse.filter((row) => row.anchorMatched).length,
+    semanticContribution: (() => {
+      const semanticRows = keywordUniverse.filter((row) =>
+        Array.isArray(row.sources) ? row.sources.includes("semantic_expansion") : false
+      );
+      const semanticDemand = semanticRows.reduce((sum, row) => sum + Number(row.volume || 0), 0);
+      return {
+        keywordCount: semanticRows.length,
+        demand: roundNumber(semanticDemand),
+        demandSharePercent: roundNumber(safeRatio(semanticDemand, totalDemand) * 100, 2),
+      };
+    })(),
   };
 
   const defaultLtv = Number(company?.ltv || process.env.DEFAULT_CUSTOMER_LTV || 0);
@@ -898,13 +1010,14 @@ function buildTamModel(company, keywordUniverse, keywordGaps, aiVisibility) {
     estimateOnly: true,
     markets: TARGET_MARKETS.map((m) => m.key),
     methodology: {
-      version: "tam_v1",
+      version: "tam_v2",
       formula:
         "ReachableDemand = SearchVolume × VisibilityCaptureRate × ChannelSplit × ChannelClickThrough",
       notes: [
         "Modeled estimate; not actual analytics traffic.",
         "US+AU only.",
         "Use first-party analytics to calibrate conversion assumptions.",
+        "Displayed phased values should be rounded to whole numbers for planning readability.",
       ],
     },
     assumptions: {
@@ -1469,8 +1582,6 @@ async function getDomainMetrics(domain, debug, stepName = "domain_metrics") {
   let organicKeywords = 0;
   let paidTraffic = 0;
   let paidKeywords = 0;
-  let backlinks = null;
-  let referringDomains = null;
 
   for (const { market, parsed } of responses) {
     const result = getStepResult(parsed);
@@ -1483,8 +1594,6 @@ async function getDomainMetrics(domain, debug, stepName = "domain_metrics") {
       organicKeywords: Number(organic.count ?? data.se_keywords ?? 0),
       paidTraffic: Number(paid.etv ?? data.paid_etv ?? 0),
       paidKeywords: Number(paid.count ?? data.paid_se_keywords ?? 0),
-      backlinks: data.backlinks ?? null,
-      referringDomains: data.referring_domains ?? null,
     };
 
     markets[market.key] = entry;
@@ -1492,8 +1601,6 @@ async function getDomainMetrics(domain, debug, stepName = "domain_metrics") {
     organicKeywords += entry.organicKeywords;
     paidTraffic += entry.paidTraffic;
     paidKeywords += entry.paidKeywords;
-    if (entry.backlinks != null) backlinks = entry.backlinks;
-    if (entry.referringDomains != null) referringDomains = entry.referringDomains;
   }
 
   return {
@@ -1501,10 +1608,41 @@ async function getDomainMetrics(domain, debug, stepName = "domain_metrics") {
     organicKeywords,
     paidTraffic,
     paidKeywords,
-    backlinks,
-    referringDomains,
+    backlinks: null,
+    referringDomains: null,
     markets,
     marketsIncluded: TARGET_MARKETS.map((m) => m.key),
+  };
+}
+
+async function getBacklinkSummary(domain, debug, stepName = "backlink_summary") {
+  const parsed = await dfRequest(
+    "/v3/backlinks/summary/live",
+    [
+      {
+        target: normalizeDomain(domain),
+        include_subdomains: true,
+        backlinks_status_type: "live",
+      },
+    ],
+    debug,
+    stepName
+  );
+
+  const row = getStepResult(parsed) || {};
+  return {
+    domain: normalizeDomain(domain),
+    backlinks: Number(row.backlinks || 0),
+    referringDomains: Number(row.referring_domains || 0),
+    referringMainDomains: Number(row.referring_main_domains || 0),
+    referringPages: Number(row.referring_pages || 0),
+    brokenBacklinks: Number(row.broken_backlinks || 0),
+    rank: Number(row.rank || 0),
+    backlinksSpamScore: Number(row.backlinks_spam_score || 0),
+    targetSpamScore: Number(row.info?.target_spam_score || 0),
+    firstSeen: row.first_seen || null,
+    source: "dataforseo_backlinks_summary_live",
+    fetchedAt: nowIso(),
   };
 }
 
@@ -1638,6 +1776,113 @@ async function getKeywordGaps(targetDomain, competitorDomains, debug) {
     .slice(0, 100);
 }
 
+function semanticStepSuffix(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "")
+    .slice(0, 40);
+}
+
+function mergeKeywordCandidate(map, row) {
+  if (!row?.keyword) return;
+  const existing = map.get(row.keyword) || {
+    keyword: row.keyword,
+    volume: 0,
+    cpc: null,
+    competition: null,
+    markets: new Set(),
+  };
+
+  existing.volume += Number(row.volume || 0);
+  if (typeof row.cpc === "number") {
+    existing.cpc = typeof existing.cpc === "number" ? Math.max(existing.cpc, row.cpc) : row.cpc;
+  }
+  existing.competition = strongerCompetitionLevel(existing.competition, row.competition);
+  for (const market of row.markets || []) {
+    existing.markets.add(market);
+  }
+
+  map.set(row.keyword, existing);
+}
+
+async function collectSemanticKeywords(company, rankedKeywords, keywordGaps, debug, issues, timings) {
+  const seeds = pickSemanticSeeds(company, rankedKeywords, keywordGaps);
+  const semanticSets = [];
+
+  const endpointConfigs = [
+    {
+      endpoint: "/v3/dataforseo_labs/google/related_keywords/live",
+      source: "related_keywords",
+      buildTask: (seed) => ({ keyword: seed, depth: 1, limit: SEMANTIC_KEYWORD_LIMIT_PER_ENDPOINT }),
+    },
+    {
+      endpoint: "/v3/dataforseo_labs/google/keyword_suggestions/live",
+      source: "keyword_suggestions",
+      buildTask: (seed) => ({ keyword: seed, limit: SEMANTIC_KEYWORD_LIMIT_PER_ENDPOINT }),
+    },
+    {
+      endpoint: "/v3/dataforseo_labs/google/keyword_ideas/live",
+      source: "keyword_ideas",
+      buildTask: (seed) => ({ keywords: [seed], limit: SEMANTIC_KEYWORD_LIMIT_PER_ENDPOINT }),
+    },
+  ];
+
+  for (const seed of seeds) {
+    for (const endpointConfig of endpointConfigs) {
+      const merged = new Map();
+
+      for (const market of TARGET_MARKETS) {
+        const step = `semantic_${endpointConfig.source}_${semanticStepSuffix(seed)}_${market.key.toLowerCase()}`;
+        const res = await runStep(
+          step,
+          () =>
+            dfRequest(
+              endpointConfig.endpoint,
+              [withMarketTask(endpointConfig.buildTask(seed), market)],
+              debug,
+              step
+            ),
+          issues,
+          timings,
+          false
+        );
+
+        if (!res) continue;
+        const items = getStepResult(res).items || [];
+        for (const item of items) {
+          const parsed = parseLabsKeywordItem(item, market.key);
+          if (!parsed) continue;
+          mergeKeywordCandidate(merged, parsed);
+        }
+
+        await sleep(120);
+      }
+
+      semanticSets.push({
+        source: `${endpointConfig.source}:${seed}`,
+        seed,
+        endpoint: endpointConfig.source,
+        keywords: Array.from(merged.values()).map((row) => ({
+          keyword: row.keyword,
+          volume: row.volume,
+          cpc: row.cpc,
+          competition: row.competition,
+          markets: Array.from(row.markets),
+        })),
+      });
+
+      await sleep(120);
+    }
+  }
+
+  return {
+    seeds,
+    sets: semanticSets,
+    totalCandidates: semanticSets.reduce((acc, set) => acc + (set.keywords?.length || 0), 0),
+  };
+}
+
 async function buildFullKeywordUniverse(company, rankedKeywords, keywordGaps, competitorMetrics, debug, issues, timings) {
   const competitorKeywordSets = [];
   const candidateCompetitors = (competitorMetrics || [])
@@ -1670,7 +1915,28 @@ async function buildFullKeywordUniverse(company, rankedKeywords, keywordGaps, co
     await sleep(300);
   }
 
-  return buildKeywordUniverse(company, rankedKeywords, keywordGaps, competitorKeywordSets);
+  const semanticKeywordExpansion =
+    (await runStep(
+      "semantic_keyword_expansion",
+      () => collectSemanticKeywords(company, rankedKeywords, keywordGaps, debug, issues, timings),
+      issues,
+      timings,
+      false
+    )) || { seeds: [], sets: [], totalCandidates: 0 };
+
+  pushDebug(debug, "semantic_keyword_expansion_summary", {
+    seeds: semanticKeywordExpansion.seeds,
+    setCount: semanticKeywordExpansion.sets.length,
+    totalCandidates: semanticKeywordExpansion.totalCandidates,
+  });
+
+  return buildKeywordUniverse(
+    company,
+    rankedKeywords,
+    keywordGaps,
+    competitorKeywordSets,
+    semanticKeywordExpansion.sets
+  );
 }
 
 function promptStepName(prefix, prompt) {
@@ -1686,20 +1952,25 @@ function isClientMentionedInText(company, text) {
 }
 
 async function runChatGptPrompt(company, prompt, debug, issues) {
+  return runLlmScraperPrompt(company, prompt, "chatgpt", AI_LLM_ENDPOINTS.chatgpt, debug, issues);
+}
+
+async function runLlmScraperPrompt(company, prompt, platform, endpoint, debug, issues) {
   const platformResults = [];
+
   for (const market of TARGET_MARKETS) {
-    const step = `${promptStepName("ai_prompt_chatgpt", prompt)}_${market.key.toLowerCase()}`;
+    const step = `${promptStepName(`ai_prompt_${platform}`, prompt)}_${market.key.toLowerCase()}`;
     const promptRes = await runStep(
       step,
       () =>
         dfRequest(
-          "/v3/ai_optimization/chat_gpt/llm_scraper/live/advanced",
+          endpoint,
           [
             {
               keyword: prompt,
               location_name: market.locationName,
               language_name: market.languageName,
-              tag: `${company.slug}-research-${market.key.toLowerCase()}`,
+              tag: `${company.slug}-research-${platform}-${market.key.toLowerCase()}`,
             },
           ],
           debug,
@@ -1713,7 +1984,7 @@ async function runChatGptPrompt(company, prompt, debug, issues) {
     if (!promptRes) {
       platformResults.push({
         query: prompt,
-        platform: "chatgpt",
+        platform,
         market: market.key,
         clientMentioned: false,
         responsePreview: null,
@@ -1723,16 +1994,20 @@ async function runChatGptPrompt(company, prompt, debug, issues) {
     }
 
     const response = getStepResult(promptRes);
-    const serialized = JSON.stringify(response);
+    const serialized = JSON.stringify(response || {});
+    const citations = Array.isArray(response?.citations) ? response.citations.length : 0;
+
     platformResults.push({
       query: prompt,
-      platform: "chatgpt",
+      platform,
       market: market.key,
       clientMentioned: isClientMentionedInText(company, serialized),
       responsePreview: serialized.slice(0, 1200),
+      citations,
+      model: response?.model || null,
     });
 
-    await sleep(350);
+    await sleep(250);
   }
 
   return platformResults;
@@ -1840,6 +2115,7 @@ function summarizePlatformVisibility(promptResults) {
 
 function buildPromptSet(company) {
   const categoryBase = company.category.split("/").pop().trim().toLowerCase();
+  const categoryStem = categoryBase.replace(/software|platform/g, "").trim() || categoryBase;
   return [
     `best ${categoryBase} tools`,
     `best ${categoryBase} software`,
@@ -1849,19 +2125,160 @@ function buildPromptSet(company) {
     `best ${categoryBase} for enterprise`,
     `how to choose ${categoryBase} platform`,
     `${categoryBase} comparison`,
-  ];
+    `${categoryStem} workflow template`,
+    `${categoryStem} implementation playbook`,
+    `${categoryStem} integration checklist`,
+    `${categoryStem} migration guide`,
+  ].slice(0, Math.max(4, AI_PROMPT_LIMIT));
 }
 
-async function checkAIVisibility(company, debug, issues) {
+async function probeLlmPlatformAvailability(company, platform, endpoint, debug, issues) {
+  if (!AI_VISIBILITY_PLATFORMS[platform]) {
+    return {
+      configured: false,
+      status: "disabled",
+      endpoint,
+      reason: "Disabled by environment flag.",
+    };
+  }
+
+  const market = TARGET_MARKETS[0] || MARKET_CONFIG.US;
+  const step = `ai_platform_probe_${platform}`;
+  try {
+    const parsed = await dfRequest(
+      endpoint,
+      [
+        {
+          keyword: `${company.name} alternatives`,
+          location_name: market.locationName,
+          language_name: market.languageName,
+          tag: `${company.slug}-probe-${platform}`,
+        },
+      ],
+      debug,
+      step
+    );
+
+    const result = getStepResult(parsed) || {};
+    return {
+      configured: true,
+      status: "available",
+      endpoint,
+      sampleFields: Object.keys(result).slice(0, 10),
+    };
+  } catch (error) {
+    issues.push({ step, error: error.message });
+    pushDebug(debug, step, { error: error.message, endpoint });
+    return {
+      configured: true,
+      status: "unavailable",
+      endpoint,
+      reason: error.message,
+    };
+  }
+}
+
+function buildCompetitorPromptEvidence(competitors, promptResults) {
+  const rows = new Map();
+
+  for (const comp of competitors || []) {
+    const domain = normalizeDomain(comp?.domain);
+    if (!domain) continue;
+    rows.set(domain, {
+      domain,
+      name: comp?.name || null,
+      queryHits: 0,
+      queryCount: 0,
+      matchedQueries: new Set(),
+      markets: new Set(),
+      platforms: {},
+      sampleEvidence: [],
+    });
+  }
+
+  for (const row of promptResults || []) {
+    const text = String(row?.responsePreview || "").toLowerCase();
+    if (!text) continue;
+
+    for (const entry of rows.values()) {
+      const nameToken = String(entry.name || "").toLowerCase().trim();
+      const domainMentioned = text.includes(entry.domain);
+      const nameMentioned = nameToken.length >= 3 ? text.includes(nameToken) : false;
+      if (!domainMentioned && !nameMentioned) continue;
+
+      entry.queryHits += 1;
+      entry.matchedQueries.add(row.query);
+      entry.markets.add(row.market || "global");
+      const platform = row.platform || "unknown";
+      entry.platforms[platform] = (entry.platforms[platform] || 0) + 1;
+
+      if (entry.sampleEvidence.length < 4) {
+        entry.sampleEvidence.push({
+          query: row.query,
+          platform,
+          market: row.market || null,
+        });
+      }
+    }
+  }
+
+  return Array.from(rows.values())
+    .map((row) => ({
+      domain: row.domain,
+      name: row.name,
+      queryHits: row.queryHits,
+      queryCount: row.matchedQueries.size,
+      matchedQueries: Array.from(row.matchedQueries),
+      markets: Array.from(row.markets),
+      platformHits: row.platforms,
+      sampleEvidence: row.sampleEvidence,
+    }))
+    .sort((a, b) => b.queryHits - a.queryHits);
+}
+
+async function checkAIVisibility(company, competitors, debug, issues) {
+  const chatgptAvailability = await probeLlmPlatformAvailability(
+    company,
+    "chatgpt",
+    AI_LLM_ENDPOINTS.chatgpt,
+    debug,
+    issues
+  );
+  const geminiAvailability = await probeLlmPlatformAvailability(
+    company,
+    "gemini",
+    AI_LLM_ENDPOINTS.gemini,
+    debug,
+    issues
+  );
+  const perplexityAvailability = await probeLlmPlatformAvailability(
+    company,
+    "perplexity",
+    AI_LLM_ENDPOINTS.perplexity,
+    debug,
+    issues
+  );
+
   const results = {
     mentionsByDomain: [],
     promptResults: [],
     platformSummary: {},
+    competitorEvidence: [],
     platformAvailability: {
-      chatgpt: AI_VISIBILITY_PLATFORMS.chatgpt,
+      chatgpt: chatgptAvailability,
+      gemini: geminiAvailability,
+      perplexity: perplexityAvailability,
+      google_ai_overview: {
+        configured: AI_VISIBILITY_PLATFORMS.googleAiOverview,
+        status: AI_VISIBILITY_PLATFORMS.googleAiOverview ? "available_via_serp" : "disabled",
+        endpoint: "/v3/serp/google/organic/live/advanced",
+      },
+    },
+    platformAvailabilityFlags: {
+      chatgpt: chatgptAvailability.status === "available",
+      gemini: geminiAvailability.status === "available",
+      perplexity: perplexityAvailability.status === "available",
       google_ai_overview: AI_VISIBILITY_PLATFORMS.googleAiOverview,
-      perplexity: false,
-      gemini: false,
     },
   };
 
@@ -1892,9 +2309,33 @@ async function checkAIVisibility(company, debug, issues) {
 
   const prompts = buildPromptSet(company);
   for (const prompt of prompts) {
-    if (AI_VISIBILITY_PLATFORMS.chatgpt) {
+    if (chatgptAvailability.status === "available") {
       const chatGptRows = await runChatGptPrompt(company, prompt, debug, issues);
       results.promptResults.push(...chatGptRows);
+    }
+
+    if (geminiAvailability.status === "available") {
+      const geminiRows = await runLlmScraperPrompt(
+        company,
+        prompt,
+        "gemini",
+        AI_LLM_ENDPOINTS.gemini,
+        debug,
+        issues
+      );
+      results.promptResults.push(...geminiRows);
+    }
+
+    if (perplexityAvailability.status === "available") {
+      const perplexityRows = await runLlmScraperPrompt(
+        company,
+        prompt,
+        "perplexity",
+        AI_LLM_ENDPOINTS.perplexity,
+        debug,
+        issues
+      );
+      results.promptResults.push(...perplexityRows);
     }
 
     if (AI_VISIBILITY_PLATFORMS.googleAiOverview) {
@@ -1906,6 +2347,7 @@ async function checkAIVisibility(company, debug, issues) {
   }
 
   results.platformSummary = summarizePlatformVisibility(results.promptResults);
+  results.competitorEvidence = buildCompetitorPromptEvidence(competitors, results.promptResults);
 
   return results;
 }
@@ -2052,7 +2494,11 @@ function evaluateQualityGate(research) {
     competitors: research.competitors.length,
     keywords: research.rankedKeywords.length,
     keywordUniverse: research.keywordUniverse?.length || 0,
+    mofuKeywords: research.keywordUniverse?.filter((row) => row.intent === "MOFU").length || 0,
     prompts: successfulPrompts,
+    aiPlatformsWithSamples: Object.values(research.aiVisibility?.platformSummary || {}).filter(
+      (row) => Number(row?.total || 0) > 0
+    ).length,
     hasOnPage: Boolean(research.websiteAudit?.onPage),
     hasTam: Number(research.tamModel?.totals?.totalAddressableSearchDemand || 0) > 0,
     hasPageSpeed:
@@ -2069,6 +2515,9 @@ function evaluateQualityGate(research) {
   }
   if (metrics.prompts < QUALITY_THRESHOLDS.prompts) {
     failures.push(`prompts ${metrics.prompts} < ${QUALITY_THRESHOLDS.prompts}`);
+  }
+  if (metrics.mofuKeywords < 8) {
+    failures.push(`mofu keywords ${metrics.mofuKeywords} < 8`);
   }
   if (!metrics.hasTam) failures.push("tam model missing");
   if (!metrics.hasOnPage) failures.push("onPage audit missing");
@@ -2176,17 +2625,49 @@ async function runResearch(company) {
       STRICT_MODE
     );
 
+    const targetBacklinks = await runStep(
+      "target_backlink_summary",
+      () => getBacklinkSummary(company.domain, debug, "target_backlink_summary"),
+      issues,
+      timings,
+      false
+    );
+
+    const mergedTargetMetrics = {
+      ...(targetMetrics || {}),
+      backlinks: targetBacklinks?.backlinks ?? targetMetrics?.backlinks ?? 0,
+      referringDomains: targetBacklinks?.referringDomains ?? targetMetrics?.referringDomains ?? 0,
+      backlinkMetrics: targetBacklinks || null,
+    };
+
     const competitorMetricsRaw = [];
     for (const comp of competitors.slice(0, 8)) {
+      const normalizedCompDomain = normalizeDomain(comp.domain);
       const metrics = await runStep(
-        `competitor_metrics_${normalizeDomain(comp.domain)}`,
-        () => getDomainMetrics(comp.domain, debug, `competitor_metrics_${normalizeDomain(comp.domain)}`),
+        `competitor_metrics_${normalizedCompDomain}`,
+        () => getDomainMetrics(comp.domain, debug, `competitor_metrics_${normalizedCompDomain}`),
         issues,
         timings,
         false
       );
 
-      competitorMetricsRaw.push({ ...comp, metrics: metrics || null });
+      const backlinkSummary = await runStep(
+        `competitor_backlinks_${normalizedCompDomain}`,
+        () => getBacklinkSummary(comp.domain, debug, `competitor_backlinks_${normalizedCompDomain}`),
+        issues,
+        timings,
+        false
+      );
+
+      competitorMetricsRaw.push({
+        ...comp,
+        metrics: {
+          ...(metrics || {}),
+          backlinks: backlinkSummary?.backlinks ?? metrics?.backlinks ?? null,
+          referringDomains: backlinkSummary?.referringDomains ?? metrics?.referringDomains ?? null,
+          backlinkMetrics: backlinkSummary || null,
+        },
+      });
       await sleep(400);
     }
 
@@ -2241,11 +2722,27 @@ async function runResearch(company) {
     const aiVisibility =
       (await runStep(
         "ai_visibility",
-        () => checkAIVisibility(company, debug, issues),
+        () => checkAIVisibility(company, competitorMetrics, debug, issues),
         issues,
         timings,
         STRICT_MODE
-      )) || { mentionsByDomain: [], promptResults: [] };
+      )) || { mentionsByDomain: [], promptResults: [], platformSummary: {}, competitorEvidence: [], platformAvailability: {} };
+
+    const competitorPromptEvidenceMap = new Map(
+      (aiVisibility?.competitorEvidence || []).map((row) => [normalizeDomain(row.domain), row])
+    );
+
+    const enrichedCompetitors = competitorMetrics.map((comp) => {
+      const domain = normalizeDomain(comp.domain);
+      const promptEvidence = competitorPromptEvidenceMap.get(domain) || null;
+      return {
+        ...comp,
+        evidence: {
+          ...(comp.evidence || {}),
+          promptEvidence,
+        },
+      };
+    });
 
     console.log(`  [6/7] Modeling TAM and phased upside for ${company.name}...`);
     const tamModel =
@@ -2275,7 +2772,7 @@ async function runResearch(company) {
         category: company.category,
         industry: company.industry,
       },
-      seoMetrics: targetMetrics || {
+      seoMetrics: mergedTargetMetrics || {
         organicTraffic: 0,
         organicKeywords: 0,
         paidTraffic: 0,
@@ -2286,7 +2783,7 @@ async function runResearch(company) {
       rankedKeywords,
       keywordUniverse,
       keywordGaps,
-      competitors: competitorMetrics,
+      competitors: enrichedCompetitors,
       tamModel,
       aiVisibility,
       websiteAudit,

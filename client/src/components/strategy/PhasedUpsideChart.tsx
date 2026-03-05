@@ -6,6 +6,12 @@ export interface PhasedUpsidePoint {
   high: number;
 }
 
+function formatWhole(value: number) {
+  return new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(
+    Number.isFinite(value) ? Math.round(value) : 0
+  );
+}
+
 export function PhasedUpsideChart({
   points,
   className = "",
@@ -36,7 +42,7 @@ export function PhasedUpsideChart({
               <div>
                 <div className="flex justify-between text-xs text-muted-foreground mb-1">
                   <span>Low</span>
-                  <span>{point.low.toFixed(2)}</span>
+                  <span>{formatWhole(point.low)}</span>
                 </div>
                 <div className="h-2 bg-secondary/20 border border-border">
                   <div className="h-full bg-primary/35" style={{ width: lowWidth }} />
@@ -46,7 +52,7 @@ export function PhasedUpsideChart({
               <div>
                 <div className="flex justify-between text-xs text-muted-foreground mb-1">
                   <span>Base</span>
-                  <span>{point.base.toFixed(2)}</span>
+                  <span>{formatWhole(point.base)}</span>
                 </div>
                 <div className="h-2 bg-secondary/20 border border-border">
                   <div className="h-full bg-primary/60" style={{ width: baseWidth }} />
@@ -56,7 +62,7 @@ export function PhasedUpsideChart({
               <div>
                 <div className="flex justify-between text-xs text-muted-foreground mb-1">
                   <span>High</span>
-                  <span>{point.high.toFixed(2)}</span>
+                  <span>{formatWhole(point.high)}</span>
                 </div>
                 <div className="h-2 bg-secondary/20 border border-border">
                   <div className="h-full bg-primary" style={{ width: highWidth }} />
