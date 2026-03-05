@@ -46,7 +46,7 @@ const services = [
   },
   {
     id: "03",
-    title: "COMPOUNDING SYSTEMS",
+    title: "COMPOUND SYSTEMS",
     subtitle: "Build a Compounding Revenue Engine",
     description:
       "We build bottom-of-funnel and programmatic content infrastructure designed to scale category coverage, reinforce authority, and keep generating qualified demand month after month.",
@@ -206,11 +206,11 @@ const faqs = [
 function TestTwoHero() {
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden bg-background text-foreground">
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 pt-24 pb-12">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 md:px-12 pt-24 pb-12">
         <motion.h1
           {...fadeUp}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[0.9] tracking-tight text-foreground mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[0.92] tracking-tight text-foreground mb-6"
         >
           Turn Search and AI Visibility<br />
           <em className="font-normal italic" style={{ fontFamily: "'Newsreader', serif" }}>
@@ -289,7 +289,7 @@ function TestTwoServices() {
               <div className="flex items-center justify-between mb-6">
                 <span className="font-mono text-xs text-foreground/40">{item.id}</span>
               </div>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight leading-[0.85] text-foreground mb-2">
+              <h3 className="text-2xl sm:text-3xl md:text-[2rem] font-display font-bold tracking-tight leading-[0.95] text-foreground mb-2 break-words">
                 {item.title}
               </h3>
               <p className="font-sans text-lg sm:text-xl text-foreground mb-4">{item.subtitle}</p>
