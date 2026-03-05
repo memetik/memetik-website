@@ -6,3 +6,6 @@ export { StatCard, StatsGrid } from "./StatsGrid";
 export type { Stat } from "./StatsGrid";
 export { DataTable } from "./DataTable";
 export type { DataTableProps } from "./DataTable";
+export { PhasedUpsideChart } from "./PhasedUpsideChart";
+export type { PhasedUpsidePoint } from "./PhasedUpsideChart";
+export { TamRoiCalculator } from "./TamRoiCalculator";

@@ -9,8 +9,11 @@ const REQUIRED_SECTION_PATTERNS = [
   /state of search/i,
   /current state/i,
   /competitive/i,
+  /full keyword universe|keyword universe/i,
+  /ai visibility by llm|ai visibility by platform/i,
   /total addressable search market|tasm|tam/i,
   /phased upside|phase 1 \(months 0-3\)|months 0-3/i,
+  /tam \× ltv calculator|tam x ltv calculator|ltv calculator/i,
   /assumptions|assumption table|assumption/i,
   /estimate-only|modeled estimate|modeled/i,
   /book a strategy call/i,
@@ -78,6 +81,14 @@ function validateResearchForGeneration(researchData) {
   }
   if (!tamModel?.assumptions) {
     throw new Error("TAM model missing assumptions table data.");
+  }
+
+  if (!Array.isArray(researchData?.keywordUniverse) || researchData.keywordUniverse.length === 0) {
+    throw new Error("Research payload is missing keywordUniverse. Re-run research with full keyword universe enabled.");
+  }
+
+  if (!researchData?.aiVisibility?.platformSummary) {
+    throw new Error("Research payload is missing aiVisibility.platformSummary for per-LLM tracking.");
   }
 }
 
@@ -203,7 +214,7 @@ ${strategicContext}
 CRITICAL RULES:
 1. Output ONLY the complete TSX file content — no markdown fences, no explanation, no commentary.
 2. The file must be a valid React component with a default export.
-3. Import shared components from "@/components/strategy" — use SectionHeader, HighlightBox, PhaseBlock, BulletList, DataTable, StatsGrid freely.
+3. Import shared components from "@/components/strategy" — use SectionHeader, HighlightBox, PhaseBlock, BulletList, DataTable, StatsGrid, PhasedUpsideChart, TamRoiCalculator freely.
 4. Import Nav from "@/components/Nav".
 5. Import icons from "lucide-react" as needed.
 6. You CAN and SHOULD create custom inline components, data arrays, and layouts unique to this company's situation. The shared components are building blocks, not constraints.
@@ -225,7 +236,12 @@ CRITICAL RULES:
 22. Include a dedicated section titled "Phased Upside (12 months)" with three phases: Phase 1 (Months 0-3), Phase 2 (Months 4-8), Phase 3 (Months 9-12), each with low/base/high scenario numbers.
 23. Include a dedicated section titled "Assumptions & Confidence" showing methodology assumptions, estimate-only labels, and confidence notes.
 24. Keep TAM-first framing: demand + reachable opportunity first; include revenue scenario only if researchData.tamModel.revenueModel.enabled is true. Otherwise explicitly state revenue requires client inputs.
-25. Every projected number must include "estimate-only" language nearby.`;
+25. Every projected number must include "estimate-only" language nearby.
+26. Include a dedicated section titled "Full Keyword Universe" with intent/cluster breakdown from researchData.keywordUniverse and tamModel.keywordUniverse.
+27. Include a dedicated section titled "AI Visibility by LLM" using researchData.aiVisibility.platformSummary and prompt evidence.
+28. Include a visible "TAM × LTV Calculator" block using the shared TamRoiCalculator component.
+29. Include a visual phased bar chart using the shared PhasedUpsideChart component.
+30. Prioritize consumability: shorter paragraphs, card-based summaries, explicit "What matters / Why it matters / What to do next" blocks in each major section.`;
 }
 
 async function generateStrategyPage(company, researchData) {
@@ -252,8 +268,11 @@ The component should be named Strategy${pascalCase(company.slug)} and exported a
 The file will be saved at client/src/pages/strategy/${pascalCase(company.slug)}.tsx
 
 Mandatory output structure additions:
+- Section: "Full Keyword Universe"
+- Section: "AI Visibility by LLM"
 - Section: "Total Addressable Search Market (12 months)"
 - Section: "Phased Upside (12 months)"
+- Section: "TAM × LTV Calculator"
 - Section: "Assumptions & Confidence"
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue modeling requires client ACV/AOV and funnel inputs."
 

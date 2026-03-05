@@ -282,6 +282,813 @@
       ]
     }
   ],
+  "keywordUniverse": [
+    {
+      "keyword": "inbox",
+      "volume": 159200,
+      "position": 16,
+      "cpc": 4.779999732971191,
+      "competition": "LOW",
+      "url": "https://missiveapp.com/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com",
+        "helpscout.com"
+      ],
+      "relevanceScore": 1,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "messaging company",
+      "volume": 27100,
+      "position": 13,
+      "cpc": 15.75,
+      "competition": "LOW",
+      "url": "https://www.intercom.com/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "AU"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "intercom.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "inbox gmail",
+      "volume": 18100,
+      "position": 38,
+      "cpc": 4.519999980926514,
+      "competition": "LOW",
+      "url": "https://missiveapp.com/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "bcc email",
+      "volume": 17200,
+      "position": 19,
+      "cpc": 0.3400000035762787,
+      "competition": "LOW",
+      "url": "https://missiveapp.com/blog/what-does-cc-bcc-mean-email",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "email bcc",
+      "volume": 17200,
+      "position": 23,
+      "cpc": 0.3400000035762787,
+      "competition": "LOW",
+      "url": "https://missiveapp.com/blog/what-does-cc-bcc-mean-email",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "email thread",
+      "volume": 16920,
+      "position": 2,
+      "cpc": 14.84000015258789,
+      "competition": "LOW",
+      "url": "https://missiveapp.com/blog/email-thread",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com",
+        "front.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "email application",
+      "volume": 16200,
+      "position": 48,
+      "cpc": 2.7699999809265137,
+      "competition": "MEDIUM",
+      "url": "https://missiveapp.com/blog/best-email-client-for-gmail",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com",
+        "front.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "email threads",
+      "volume": 16200,
+      "position": 2,
+      "cpc": 14.84000015258789,
+      "competition": "LOW",
+      "url": "https://missiveapp.com/blog/email-thread",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com",
+        "front.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "conversational assistant",
+      "volume": 12100,
+      "position": 58,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.intercom.com/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "intercom.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "cloud-based communication platform",
+      "volume": 12100,
+      "position": 57,
+      "cpc": 14.880000114440918,
+      "competition": "LOW",
+      "url": "https://front.com/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "front.com"
+      ],
+      "relevanceScore": 0.25,
+      "anchorMatched": true
+    },
+    {
+      "keyword": "email app",
+      "volume": 8980,
+      "position": 30,
+      "cpc": 2.7699999809265137,
+      "competition": "MEDIUM",
+      "url": "https://missiveapp.com/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "email apps",
+      "volume": 8100,
+      "position": 11,
+      "cpc": 2.7699999809265137,
+      "competition": "MEDIUM",
+      "url": "https://missiveapp.com/blog/best-email-client-for-gmail",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "ai email",
+      "volume": 7900,
+      "position": 19,
+      "cpc": 11.510000228881836,
+      "competition": "LOW",
+      "url": "https://missiveapp.com/blog/ai-email-assistant",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "email logo",
+      "volume": 6600,
+      "position": 100,
+      "cpc": 8.899999618530273,
+      "competition": "LOW",
+      "url": "https://missiveapp.com/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "missiveapp.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "email client",
+      "volume": 5400,
+      "position": 103,
+      "cpc": 10.75,
+      "competition": "LOW",
+      "url": "https://front.com/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "competitor_keywords"
+      ],
+      "sourceDetails": [
+        "front.com"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "kinso",
+      "volume": 1090,
+      "position": 1,
+      "cpc": 6.510000228881836,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 1,
+      "anchorMatched": true
+    },
+    {
+      "keyword": "ai kin",
+      "volume": 1000,
+      "position": 100,
+      "cpc": 0.1599999964237213,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "kinso ai",
+      "volume": 550,
+      "position": 1,
+      "cpc": 8.239999771118164,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": true
+    },
+    {
+      "keyword": "kimso",
+      "volume": 260,
+      "position": 8,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "unified messaging app",
+      "volume": 180,
+      "position": 100,
+      "cpc": 21.940000534057617,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords",
+        "keyword_gaps"
+      ],
+      "sourceDetails": [
+        "target",
+        "gap"
+      ],
+      "relevanceScore": 0.667,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "all inboxes gmail",
+      "volume": 180,
+      "position": 60,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords",
+        "keyword_gaps"
+      ],
+      "sourceDetails": [
+        "target",
+        "gap"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "gmail all inboxes",
+      "volume": 180,
+      "position": 105,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords",
+        "keyword_gaps"
+      ],
+      "sourceDetails": [
+        "target",
+        "gap"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "so ai",
+      "volume": 140,
+      "position": 70,
+      "cpc": 8.270000457763672,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "kenso",
+      "volume": 140,
+      "position": 4,
+      "cpc": 0.8500000238418579,
+      "competition": "MEDIUM",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "AU"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "gmail automatic labels",
+      "volume": 140,
+      "position": 80,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "AU"
+      ],
+      "sources": [
+        "target_ranked_keywords",
+        "keyword_gaps"
+      ],
+      "sourceDetails": [
+        "target",
+        "gap"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "kinso app",
+      "volume": 110,
+      "position": 1,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "AU"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": true
+    },
+    {
+      "keyword": "kinso furniture",
+      "volume": 90,
+      "position": 19,
+      "cpc": 1.7100000381469727,
+      "competition": "HIGH",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "AU"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": true
+    },
+    {
+      "keyword": "knso",
+      "volume": 90,
+      "position": 31,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "k-so",
+      "volume": 90,
+      "position": 59,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "AU"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "unified inbox email",
+      "volume": 80,
+      "position": 40,
+      "cpc": 25.229999542236328,
+      "competition": "MEDIUM",
+      "url": "https://www.kinso.ai/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords",
+        "keyword_gaps"
+      ],
+      "sourceDetails": [
+        "target",
+        "gap"
+      ],
+      "relevanceScore": 1,
+      "anchorMatched": true
+    },
+    {
+      "keyword": "ai inbox",
+      "volume": 80,
+      "position": 105,
+      "cpc": 40.439998626708984,
+      "competition": "MEDIUM",
+      "url": "https://www.kinso.ai/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords",
+        "keyword_gaps"
+      ],
+      "sourceDetails": [
+        "target",
+        "gap"
+      ],
+      "relevanceScore": 0.5,
+      "anchorMatched": true
+    },
+    {
+      "keyword": "multiple inboxes gmail",
+      "volume": 80,
+      "position": 110,
+      "cpc": 36.119998931884766,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "AU"
+      ],
+      "sources": [
+        "target_ranked_keywords",
+        "keyword_gaps"
+      ],
+      "sourceDetails": [
+        "target",
+        "gap"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "unified inbox app",
+      "volume": 60,
+      "position": 29,
+      "cpc": 9.350000381469727,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords",
+        "keyword_gaps"
+      ],
+      "sourceDetails": [
+        "target",
+        "gap"
+      ],
+      "relevanceScore": 0.667,
+      "anchorMatched": true
+    },
+    {
+      "keyword": "tiktok inbox app",
+      "volume": 40,
+      "position": 82,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "BOFU",
+      "cluster": "Buyer Guides",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0.333,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "ai for messages",
+      "volume": 30,
+      "position": 41,
+      "cpc": 3.8899998664855957,
+      "competition": "HIGH",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "oneinbox ai",
+      "volume": 30,
+      "position": 23,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    },
+    {
+      "keyword": "slack sort by priority",
+      "volume": 30,
+      "position": 91,
+      "cpc": null,
+      "competition": "LOW",
+      "url": "https://www.kinso.ai/",
+      "intent": "TOFU",
+      "cluster": "Category & Brand Demand",
+      "markets": [
+        "US"
+      ],
+      "sources": [
+        "target_ranked_keywords"
+      ],
+      "sourceDetails": [
+        "target"
+      ],
+      "relevanceScore": 0,
+      "anchorMatched": false
+    }
+  ],
   "keywordGaps": [
     {
       "keyword": "all inboxes gmail",
@@ -316,7 +1123,7 @@
       ]
     },
     {
-      "keyword": "unified inbox email",
+      "keyword": "ai inbox",
       "volume": 40,
       "competition": "MEDIUM",
       "markets": [
@@ -324,7 +1131,7 @@
       ]
     },
     {
-      "keyword": "ai inbox",
+      "keyword": "unified inbox email",
       "volume": 40,
       "competition": "MEDIUM",
       "markets": [
@@ -353,7 +1160,7 @@
       "domain": "missiveapp.com",
       "source": "product_competitor_discovery",
       "evidence": {
-        "queryHits": 3,
+        "queryHits": 4,
         "queryCount": 2,
         "queries": [
           "best unified ai inbox software",
@@ -363,7 +1170,7 @@
           "US",
           "AU"
         ],
-        "bestRank": 8
+        "bestRank": 7
       },
       "score": 160,
       "metrics": {
@@ -603,42 +1410,41 @@
       }
     },
     {
-      "domain": "crisp.chat",
+      "domain": "foundr.ai",
       "source": "product_competitor_discovery",
       "evidence": {
-        "queryHits": 5,
-        "queryCount": 3,
+        "queryHits": 9,
+        "queryCount": 2,
         "queries": [
-          "best unified ai inbox software",
-          "unified ai inbox alternatives",
-          "unified ai inbox comparison"
+          "Kinso alternatives",
+          "Kinso vs"
         ],
         "markets": [
           "US",
           "AU"
         ],
-        "bestRank": 1
+        "bestRank": 2
       },
-      "score": 55,
+      "score": 60,
       "metrics": {
-        "organicTraffic": 57022.49204095267,
-        "organicKeywords": 7580,
+        "organicTraffic": 3554.4578311257064,
+        "organicKeywords": 1219,
         "paidTraffic": 0,
         "paidKeywords": 0,
         "backlinks": null,
         "referringDomains": null,
         "markets": {
           "US": {
-            "organicTraffic": 55126.91827315651,
-            "organicKeywords": 7111,
+            "organicTraffic": 3401.820149946958,
+            "organicKeywords": 1084,
             "paidTraffic": 0,
             "paidKeywords": 0,
             "backlinks": null,
             "referringDomains": null
           },
           "AU": {
-            "organicTraffic": 1895.5737677961588,
-            "organicKeywords": 469,
+            "organicTraffic": 152.6376811787486,
+            "organicKeywords": 135,
             "paidTraffic": 0,
             "paidKeywords": 0,
             "backlinks": null,
@@ -702,28 +1508,862 @@
       "selectedHorizonMonths": 12,
       "conversionRangePolicy": "low_base_high"
     },
+    "keywordUniverse": {
+      "size": 37,
+      "minVolumeThreshold": 10,
+      "coreAnchors": [
+        "unified inbox",
+        "shared inbox",
+        "team inbox",
+        "inbox management",
+        "ai inbox",
+        "multi-channel inbox",
+        "email triage",
+        "message prioritization",
+        "communication",
+        "unified ai inbox",
+        "kinso"
+      ],
+      "topKeywords": [
+        {
+          "keyword": "inbox",
+          "volume": 159200,
+          "position": 16,
+          "cpc": 4.779999732971191,
+          "competition": "LOW",
+          "url": "https://missiveapp.com/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US",
+            "AU"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com",
+            "helpscout.com"
+          ],
+          "relevanceScore": 1,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "messaging company",
+          "volume": 27100,
+          "position": 13,
+          "cpc": 15.75,
+          "competition": "LOW",
+          "url": "https://www.intercom.com/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "AU"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "intercom.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "inbox gmail",
+          "volume": 18100,
+          "position": 38,
+          "cpc": 4.519999980926514,
+          "competition": "LOW",
+          "url": "https://missiveapp.com/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "bcc email",
+          "volume": 17200,
+          "position": 19,
+          "cpc": 0.3400000035762787,
+          "competition": "LOW",
+          "url": "https://missiveapp.com/blog/what-does-cc-bcc-mean-email",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US",
+            "AU"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "email bcc",
+          "volume": 17200,
+          "position": 23,
+          "cpc": 0.3400000035762787,
+          "competition": "LOW",
+          "url": "https://missiveapp.com/blog/what-does-cc-bcc-mean-email",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US",
+            "AU"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "email thread",
+          "volume": 16920,
+          "position": 2,
+          "cpc": 14.84000015258789,
+          "competition": "LOW",
+          "url": "https://missiveapp.com/blog/email-thread",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US",
+            "AU"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com",
+            "front.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "email application",
+          "volume": 16200,
+          "position": 48,
+          "cpc": 2.7699999809265137,
+          "competition": "MEDIUM",
+          "url": "https://missiveapp.com/blog/best-email-client-for-gmail",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com",
+            "front.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "email threads",
+          "volume": 16200,
+          "position": 2,
+          "cpc": 14.84000015258789,
+          "competition": "LOW",
+          "url": "https://missiveapp.com/blog/email-thread",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com",
+            "front.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "conversational assistant",
+          "volume": 12100,
+          "position": 58,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.intercom.com/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "intercom.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "cloud-based communication platform",
+          "volume": 12100,
+          "position": 57,
+          "cpc": 14.880000114440918,
+          "competition": "LOW",
+          "url": "https://front.com/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "front.com"
+          ],
+          "relevanceScore": 0.25,
+          "anchorMatched": true
+        },
+        {
+          "keyword": "email app",
+          "volume": 8980,
+          "position": 30,
+          "cpc": 2.7699999809265137,
+          "competition": "MEDIUM",
+          "url": "https://missiveapp.com/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US",
+            "AU"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "email apps",
+          "volume": 8100,
+          "position": 11,
+          "cpc": 2.7699999809265137,
+          "competition": "MEDIUM",
+          "url": "https://missiveapp.com/blog/best-email-client-for-gmail",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "ai email",
+          "volume": 7900,
+          "position": 19,
+          "cpc": 11.510000228881836,
+          "competition": "LOW",
+          "url": "https://missiveapp.com/blog/ai-email-assistant",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US",
+            "AU"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "email logo",
+          "volume": 6600,
+          "position": 100,
+          "cpc": 8.899999618530273,
+          "competition": "LOW",
+          "url": "https://missiveapp.com/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "missiveapp.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "email client",
+          "volume": 5400,
+          "position": 103,
+          "cpc": 10.75,
+          "competition": "LOW",
+          "url": "https://front.com/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "competitor_keywords"
+          ],
+          "sourceDetails": [
+            "front.com"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "kinso",
+          "volume": 1090,
+          "position": 1,
+          "cpc": 6.510000228881836,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US",
+            "AU"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 1,
+          "anchorMatched": true
+        },
+        {
+          "keyword": "ai kin",
+          "volume": 1000,
+          "position": 100,
+          "cpc": 0.1599999964237213,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "kinso ai",
+          "volume": 550,
+          "position": 1,
+          "cpc": 8.239999771118164,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US",
+            "AU"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": true
+        },
+        {
+          "keyword": "kimso",
+          "volume": 260,
+          "position": 8,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "unified messaging app",
+          "volume": 180,
+          "position": 100,
+          "cpc": 21.940000534057617,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords",
+            "keyword_gaps"
+          ],
+          "sourceDetails": [
+            "target",
+            "gap"
+          ],
+          "relevanceScore": 0.667,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "all inboxes gmail",
+          "volume": 180,
+          "position": 60,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords",
+            "keyword_gaps"
+          ],
+          "sourceDetails": [
+            "target",
+            "gap"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "gmail all inboxes",
+          "volume": 180,
+          "position": 105,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords",
+            "keyword_gaps"
+          ],
+          "sourceDetails": [
+            "target",
+            "gap"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "so ai",
+          "volume": 140,
+          "position": 70,
+          "cpc": 8.270000457763672,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "kenso",
+          "volume": 140,
+          "position": 4,
+          "cpc": 0.8500000238418579,
+          "competition": "MEDIUM",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "AU"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "gmail automatic labels",
+          "volume": 140,
+          "position": 80,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "AU"
+          ],
+          "sources": [
+            "target_ranked_keywords",
+            "keyword_gaps"
+          ],
+          "sourceDetails": [
+            "target",
+            "gap"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "kinso app",
+          "volume": 110,
+          "position": 1,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "AU"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": true
+        },
+        {
+          "keyword": "kinso furniture",
+          "volume": 90,
+          "position": 19,
+          "cpc": 1.7100000381469727,
+          "competition": "HIGH",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "AU"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": true
+        },
+        {
+          "keyword": "knso",
+          "volume": 90,
+          "position": 31,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "k-so",
+          "volume": 90,
+          "position": 59,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "AU"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "unified inbox email",
+          "volume": 80,
+          "position": 40,
+          "cpc": 25.229999542236328,
+          "competition": "MEDIUM",
+          "url": "https://www.kinso.ai/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords",
+            "keyword_gaps"
+          ],
+          "sourceDetails": [
+            "target",
+            "gap"
+          ],
+          "relevanceScore": 1,
+          "anchorMatched": true
+        },
+        {
+          "keyword": "ai inbox",
+          "volume": 80,
+          "position": 105,
+          "cpc": 40.439998626708984,
+          "competition": "MEDIUM",
+          "url": "https://www.kinso.ai/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords",
+            "keyword_gaps"
+          ],
+          "sourceDetails": [
+            "target",
+            "gap"
+          ],
+          "relevanceScore": 0.5,
+          "anchorMatched": true
+        },
+        {
+          "keyword": "multiple inboxes gmail",
+          "volume": 80,
+          "position": 110,
+          "cpc": 36.119998931884766,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "AU"
+          ],
+          "sources": [
+            "target_ranked_keywords",
+            "keyword_gaps"
+          ],
+          "sourceDetails": [
+            "target",
+            "gap"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "unified inbox app",
+          "volume": 60,
+          "position": 29,
+          "cpc": 9.350000381469727,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords",
+            "keyword_gaps"
+          ],
+          "sourceDetails": [
+            "target",
+            "gap"
+          ],
+          "relevanceScore": 0.667,
+          "anchorMatched": true
+        },
+        {
+          "keyword": "tiktok inbox app",
+          "volume": 40,
+          "position": 82,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "BOFU",
+          "cluster": "Buyer Guides",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0.333,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "ai for messages",
+          "volume": 30,
+          "position": 41,
+          "cpc": 3.8899998664855957,
+          "competition": "HIGH",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "oneinbox ai",
+          "volume": 30,
+          "position": 23,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        },
+        {
+          "keyword": "slack sort by priority",
+          "volume": 30,
+          "position": 91,
+          "cpc": null,
+          "competition": "LOW",
+          "url": "https://www.kinso.ai/",
+          "intent": "TOFU",
+          "cluster": "Category & Brand Demand",
+          "markets": [
+            "US"
+          ],
+          "sources": [
+            "target_ranked_keywords"
+          ],
+          "sourceDetails": [
+            "target"
+          ],
+          "relevanceScore": 0,
+          "anchorMatched": false
+        }
+      ],
+      "countsBySource": {
+        "competitor_keywords": 15,
+        "target_ranked_keywords": 22,
+        "keyword_gaps": 8
+      },
+      "countsByIntent": {
+        "BOFU": 11,
+        "TOFU": 26
+      },
+      "anchorMatchedCount": 8
+    },
     "totals": {
-      "totalAddressableSearchDemand": 4180,
+      "totalAddressableSearchDemand": 353970,
       "estimatedReachableVisits": {
-        "low": 31.5,
-        "base": 60.19,
-        "high": 99.39
+        "low": 5873.18,
+        "base": 10083.65,
+        "high": 16251.86
       },
       "byChannel": {
         "google": {
-          "demand": 3594.8,
+          "demand": 304414.2,
           "estimatedReachableVisits": {
-            "low": 31.3,
-            "base": 59.82,
-            "high": 98.76
+            "low": 5836.32,
+            "base": 10020.37,
+            "high": 16149.87
           }
         },
         "ai": {
-          "demand": 585.2,
+          "demand": 49555.8,
           "estimatedReachableVisits": {
-            "low": 0.2,
-            "base": 0.38,
-            "high": 0.62
+            "low": 36.86,
+            "base": 63.28,
+            "high": 101.99
           }
         }
       }
@@ -732,12 +2372,12 @@
       {
         "intent": "BOFU",
         "phase": "Phase 1 (Months 0-3)",
-        "demand": 350,
-        "keywordCount": 6,
+        "demand": 207030,
+        "keywordCount": 11,
         "estimatedReachableVisits": {
-          "low": 8.43,
-          "base": 14.05,
-          "high": 22.49
+          "low": 4988.1,
+          "base": 8313.5,
+          "high": 13301.59
         }
       },
       {
@@ -754,12 +2394,12 @@
       {
         "intent": "TOFU",
         "phase": "Phase 3 (Months 9-12)",
-        "demand": 3830,
-        "keywordCount": 16,
+        "demand": 146940,
+        "keywordCount": 26,
         "estimatedReachableVisits": {
-          "low": 23.07,
-          "base": 46.14,
-          "high": 76.9
+          "low": 885.08,
+          "base": 1770.16,
+          "high": 2950.26
         }
       }
     ],
@@ -767,12 +2407,12 @@
       {
         "phase": "Phase 1 (Months 0-3)",
         "intent": "BOFU",
-        "demand": 350,
-        "keywordCount": 6,
+        "demand": 207030,
+        "keywordCount": 11,
         "estimatedReachableVisits": {
-          "low": 8.43,
-          "base": 14.05,
-          "high": 22.49
+          "low": 4988.1,
+          "base": 8313.5,
+          "high": 13301.59
         }
       },
       {
@@ -789,70 +2429,128 @@
       {
         "phase": "Phase 3 (Months 9-12)",
         "intent": "TOFU",
-        "demand": 3830,
-        "keywordCount": 16,
+        "demand": 146940,
+        "keywordCount": 26,
         "estimatedReachableVisits": {
-          "low": 23.07,
-          "base": 46.14,
-          "high": 76.9
+          "low": 885.08,
+          "base": 1770.16,
+          "high": 2950.26
         }
       }
     ],
     "topOpportunityClusters": [
       {
-        "cluster": "Category & Brand Demand",
-        "intent": "TOFU",
-        "phase": "Phase 3 (Months 9-12)",
-        "demand": 3830,
-        "keywordCount": 16,
+        "cluster": "Buyer Guides",
+        "intent": "BOFU",
+        "phase": "Phase 1 (Months 0-3)",
+        "demand": 207030,
+        "keywordCount": 11,
         "estimatedReachableVisits": {
-          "low": 23.07,
-          "base": 46.14,
-          "high": 76.9
+          "low": 4988.1,
+          "base": 8313.5,
+          "high": 13301.59
         },
         "sampleKeywords": [
-          "kinso",
-          "ai kin",
-          "kinso ai",
-          "kimso",
-          "so ai",
-          "kenso"
+          "inbox",
+          "inbox gmail",
+          "cloud-based communication platform",
+          "email app",
+          "email apps",
+          "unified messaging app"
         ],
         "markets": [
           "US",
           "AU"
+        ],
+        "sources": [
+          "competitor_keywords",
+          "target_ranked_keywords",
+          "keyword_gaps"
         ]
       },
       {
-        "cluster": "Buyer Guides",
-        "intent": "BOFU",
-        "phase": "Phase 1 (Months 0-3)",
-        "demand": 350,
-        "keywordCount": 6,
+        "cluster": "Category & Brand Demand",
+        "intent": "TOFU",
+        "phase": "Phase 3 (Months 9-12)",
+        "demand": 146940,
+        "keywordCount": 26,
         "estimatedReachableVisits": {
-          "low": 8.43,
-          "base": 14.05,
-          "high": 22.49
+          "low": 885.08,
+          "base": 1770.16,
+          "high": 2950.26
         },
         "sampleKeywords": [
-          "kinso app",
-          "unified messaging app",
-          "ai inbox",
-          "tiktok inbox app",
-          "unified inbox email",
-          "unified inbox app"
+          "messaging company",
+          "bcc email",
+          "email bcc",
+          "email thread",
+          "email application",
+          "email threads"
         ],
         "markets": [
           "AU",
           "US"
+        ],
+        "sources": [
+          "competitor_keywords",
+          "target_ranked_keywords",
+          "keyword_gaps"
         ]
       }
     ],
     "keywordGapCount": 8,
     "aiVisibilitySignals": {
-      "promptsAnalyzed": 8,
-      "successfulPrompts": 8,
-      "clientMentionedPrompts": 2
+      "promptsAnalyzed": 32,
+      "successfulPrompts": 32,
+      "clientMentionedPrompts": 4,
+      "byPlatform": {
+        "chatgpt": {
+          "total": 16,
+          "mentioned": 4,
+          "mentionRate": 25,
+          "markets": {
+            "US": {
+              "total": 8,
+              "mentioned": 2,
+              "mentionRate": 25
+            },
+            "AU": {
+              "total": 8,
+              "mentioned": 2,
+              "mentionRate": 25
+            }
+          }
+        },
+        "google_ai_overview": {
+          "total": 16,
+          "mentioned": 0,
+          "mentionRate": 0,
+          "markets": {
+            "US": {
+              "total": 8,
+              "mentioned": 0,
+              "mentionRate": 0
+            },
+            "AU": {
+              "total": 8,
+              "mentioned": 0,
+              "mentionRate": 0
+            }
+          }
+        }
+      },
+      "platformAvailability": {
+        "chatgpt": true,
+        "google_ai_overview": true,
+        "perplexity": false,
+        "gemini": false
+      }
+    },
+    "roiCalculatorDefaults": {
+      "customerLtv": 0,
+      "visitToCustomerRate": 0.01,
+      "formula": "EstimatedCustomers = ReachableVisits × VisitToCustomerRate; RevenuePotential = EstimatedCustomers × CustomerLTV",
+      "estimateOnly": true
     },
     "revenueModel": {
       "enabled": false,
@@ -860,9 +2558,9 @@
       "reason": "Revenue inputs missing (acv/aov). Showing TAM + pipeline potential only.",
       "pipelinePotential": {
         "leads": {
-          "low": 0.13,
-          "base": 0.54,
-          "high": 1.49
+          "low": 23.49,
+          "base": 90.75,
+          "high": 243.78
         }
       },
       "assumptions": {
@@ -873,12 +2571,17 @@
         }
       }
     },
+    "calibration": {
+      "enabled": false,
+      "status": "disabled",
+      "reason": "ENABLE_FIRST_PARTY_CALIBRATION is not true."
+    },
     "confidence": {
       "score": 65,
       "level": "medium",
       "reasons": [
         "Sufficient TAM volume identified.",
-        "Keyword coverage is limited; expand seed set.",
+        "Keyword universe is still limited; expand seed set and competitor coverage.",
         "AI visibility prompts provide directional coverage.",
         "Revenue model is estimate-only and missing first-party monetary inputs."
       ]
@@ -890,52 +2593,286 @@
       {
         "query": "best unified ai inbox tools",
         "platform": "chatgpt",
+        "market": "US",
         "clientMentioned": false,
-        "responsePreview": "{\"keyword\":\"best unified ai inbox tools\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20tools\",\"datetime\":\"2026-03-05 06:16:26 +00:00\",\"markdown\":\"Unified AI inbox tools aim to streamline communication across various channels—email, messaging apps, and social media—into a single, cohesive inbox. These tools often use AI to automate workflows, prioritize important messages, and enhance overall productivity. Here are some of the best unified AI inbox tools currently available:\\n\\n### 1. **Front**\\n   - **Best For**: Teams and collaboration\\n   - **Features**:\\n     - Integrates emails, messages, and social media channels (like SMS, Slack, etc.) into a single platform.\\n     - AI-driven workflows, such as automated tagging, task assignments, and smart replies.\\n     - Advanced team collaboration features, including shared inboxes, commenting, and assigning messages.\\n     - Analytics for email performance and response times.\\n\\n   - **Why It’s Great**: It's perfect for teams working across different communication channels. Its AI helps prioritize emails, and team members can collaborate within the inbo"
+        "responsePreview": "{\"keyword\":\"best unified ai inbox tools\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20tools\",\"datetime\":\"2026-03-05 07:34:51 +00:00\",\"markdown\":\"If you’re looking for **unified AI inbox tools**, you’re essentially looking for platforms that **consolidate multiple communication channels**—like email, chat, social media DMs, SMS, and sometimes even calls—while leveraging AI to help manage, respond, prioritize, or automate interactions. Here’s a careful breakdown of some of the best options currently:  \\n\\n---\\n\\n### **1. Front**\\n- **Overview:** Front is a highly rated shared inbox tool that centralizes email, social, SMS, and more.\\n- **AI Features:** Auto-categorization, suggested replies, response templates, prioritization of urgent messages.\\n- **Pros:** Collaborative features (team assignments, internal notes), integrations with CRM and workflow tools.\\n- **Use Case:** Great for customer support teams that want AI-assisted email management and multi-channel communication.\\n\\n---\\n\\n### **2. Superhuman**\\n- **Overview:** Primarily an email client with a speed-focused, productivity-oriented desig"
+      },
+      {
+        "query": "best unified ai inbox tools",
+        "platform": "chatgpt",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"best unified ai inbox tools\",\"location_code\":2036,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20tools\",\"datetime\":\"2026-03-05 07:35:27 +00:00\",\"markdown\":\"Unified AI inbox tools are designed to integrate various communication channels (like email, chat, social media, etc.) into a single interface, while utilizing AI to enhance productivity and efficiency. Some of the top tools in this category include:\\n\\n### 1. **Superhuman**\\n   - **Features**: While primarily an email client, Superhuman uses AI to speed up email management by providing features like smart search, automatic prioritization of emails, and intuitive shortcuts.\\n   - **AI Use**: AI assists with composing emails, automating repetitive tasks, and offering predictive actions to help users get through their inboxes faster.\\n   - **Best For**: Professionals looking to streamline email management with AI-powered efficiency.\\n\\n### 2. **Front**\\n   - **Features**: Front is a team collaboration tool that brings email, SMS, and social media conversations together in a unified inbox. It supports integrations with popular apps like Slack, Salesforce, an"
+      },
+      {
+        "query": "best unified ai inbox tools",
+        "platform": "google_ai_overview",
+        "market": "US",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"crisp.chat\",\"title\":\"Best Shared Inbox software with AI for 2026 and beyond\",\"url\":\"https://crisp.chat/en/blog/best-shared-inbox-software/\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://crisp.chat › blog › best-shared-inbox-software\",\"website_name\":\"Crisp IM\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"Oct 15, 2025 — Missive - Centralizes emails, SMS, and DMs into one shared inbox ; Front - Collaborative shared inboxes for mid-to-large teams ; Helpwise - Simple ... Read more\",\"pre_snippet\":\"10/15/2025 00:00:00\",\"extended_snippet\":\"4.7(461)  · Free · ‎Communication\",\"images\":null,\"amp_version\":false,\"rating\":{\"rating_type\":\"Max5\",\"value\":4.7,\"votes_count\":461,\"rating_max\":5},\"price\":null,\"highlighted\":[\"Missive\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":\"2025-10-15 00:00:00 +00:00\",\"rectangle\":null},{\"type\":\"organic\",\"rank_g",
+        "aiOverviewDetected": false
+      },
+      {
+        "query": "best unified ai inbox tools",
+        "platform": "google_ai_overview",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"zapier.com\",\"title\":\"The 9 best AI email assistants\",\"url\":\"https://zapier.com/blog/best-ai-email-assistant/\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://zapier.com › App picks › Best apps\",\"website_name\":\"Zapier\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"5 Aug 2025 — Shortwave for AI-powered email search. Microsoft Copilot Pro for Outlook for improving communication. Gemini for Gmail for Google Workspace ... Read more\",\"pre_snippet\":\"08/05/2025 00:00:00\",\"extended_snippet\":null,\"images\":null,\"amp_version\":false,\"rating\":null,\"price\":null,\"highlighted\":[\"Shortwave for AI-powered email search\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":\"2025-08-05 00:00:00 +00:00\",\"rectangle\":null},{\"type\":\"organic\",\"rank_group\":2,\"rank_absolute\":2,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/di",
+        "aiOverviewDetected": false
       },
       {
         "query": "best unified ai inbox software",
         "platform": "chatgpt",
+        "market": "US",
         "clientMentioned": false,
-        "responsePreview": "{\"keyword\":\"best unified ai inbox software\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20software\",\"datetime\":\"2026-03-05 06:16:54 +00:00\",\"markdown\":\"A **unified AI inbox** means one place to manage messages from multiple channels (email, Slack, SMS, social, etc.) with AI that summarizes, prioritizes, drafts replies, or automates workflows. These tools vary depending on whether you want **personal productivity**, **team collaboration**, or **customer communication**.\\n\\nBelow are the **best unified AI inbox platforms in 2026**, grouped by use case.\\n\\n---\\n\\n# 🧠 Best Unified AI Inbox Software\\n\\n## 1. Superhuman Mail\\n**Best for: power users with heavy email volume**\\n\\n**Why it’s popular**\\n- AI triage to prioritize important emails\\n- AI-generated replies and summaries\\n- lightning-fast keyboard workflow\\n- split inbox and follow-up reminders\\n- Gmail & Outlook integration\\n\\nUsers often report **saving several hours per week** through automation and faster processing. [blog.superhuman.com](https://blog.superhuman.com/superhuman-alternatives/?utm_source=chatgpt.com)  \\n\\n**Pros**\\n- Best AI wo"
+        "responsePreview": "{\"keyword\":\"best unified ai inbox software\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20software\",\"datetime\":\"2026-03-05 07:36:18 +00:00\",\"markdown\":\"A **unified AI inbox** usually means one app that pulls together **email + messaging + collaboration channels** (Gmail, Outlook, Slack, SMS, social DMs, etc.) and uses AI to **triage, summarize, draft replies, and automate workflows**. Here are some of the **best unified AI inbox tools in 2026**, depending on whether you’re an individual, founder, or team.\\n\\n---\\n\\n# Best Unified AI Inbox Software (2026)\\n\\n## 1. Front\\n**Best for:** teams managing customer conversations\\n\\n**Why it’s good**\\n- Shared inbox across email, SMS, WhatsApp, and social channels  \\n- AI routing & triage for incoming messages  \\n- Auto-generated replies and workflows  \\n- Built-in analytics and team collaboration  \\n\\n**Typical users:** support teams, sales teams, agencies.\\n\\nFront is widely used for **team inbox + customer support automation** and has ~9,000 customers globally. [en.wikipedia.org](https://en.wikipedia.org/wiki/Front_App%2C_Inc.?utm_source=chatgpt.com)\\n\\n"
+      },
+      {
+        "query": "best unified ai inbox software",
+        "platform": "chatgpt",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"best unified ai inbox software\",\"location_code\":2036,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20software\",\"datetime\":\"2026-03-05 07:36:42 +00:00\",\"markdown\":\"When you say “unified AI inbox software,” I’m assuming you’re looking for a platform that can **combine multiple communication channels (email, chat, social, SMS, etc.) into a single interface** and **leverage AI for automation, summarization, and response assistance**. Here’s a breakdown of some of the top options as of now:  \\n\\n---\\n\\n### **1. Superhuman**\\n- **What it is:** Premium email client.\\n- **AI features:** Smart triage, AI-assisted email drafts, follow-up reminders.\\n- **Best for:** Professionals who want speed and AI-powered productivity in email.\\n- **Pros:** Ultra-fast, clean UI, integrates with Gmail/Outlook.\\n- **Cons:** Expensive, mostly email-focused (less for multi-channel).\\n\\n---\\n\\n### **2. Front**\\n- **What it is:** Multi-channel inbox for teams.\\n- **AI features:** AI-generated drafts, smart suggestions, analytics.\\n- **Best for:** Teams managing email, SMS, chat, social in one place.\\n- **Pros:** Strong collaboration tools"
+      },
+      {
+        "query": "best unified ai inbox software",
+        "platform": "google_ai_overview",
+        "market": "US",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"gmelius.com\",\"title\":\"15 Best AI Assistants for Email Productivity in 2026 Tested\",\"url\":\"https://gmelius.com/blog/best-ai-assistants-for-email\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://gmelius.com › blog › best-ai-assistants-for-email\",\"website_name\":\"Gmelius\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"Jan 15, 2026 — We tested 15 top AI email assistants, including Gmelius, Superhuman, and Shortwave, by breaking down their technical specs, pros, cons, ...\",\"pre_snippet\":\"01/15/2026 00:00:00\",\"extended_snippet\":null,\"images\":null,\"amp_version\":false,\"rating\":null,\"price\":null,\"highlighted\":[\"Gmelius\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":\"2026-01-15 00:00:00 +00:00\",\"rectangle\":null},{\"type\":\"organic\",\"rank_group\":2,\"rank_absolute\":2,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/",
+        "aiOverviewDetected": false
+      },
+      {
+        "query": "best unified ai inbox software",
+        "platform": "google_ai_overview",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"crisp.chat\",\"title\":\"Best Shared Inbox software with AI for 2026 and beyond\",\"url\":\"https://crisp.chat/en/blog/best-shared-inbox-software/\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://crisp.chat › blog › best-shared-inbox-software\",\"website_name\":\"Crisp IM\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"15 Oct 2025 — 10 collaborative inbox company with AI-powered features ; Missive - Centralizes emails, SMS, and DMs into one shared inbox ; Front - Collaborative ... Read more\",\"pre_snippet\":\"10/15/2025 00:00:00\",\"extended_snippet\":\"4.7(461)  · Free · ‎Communication\",\"images\":null,\"amp_version\":false,\"rating\":{\"rating_type\":\"Max5\",\"value\":4.7,\"votes_count\":461,\"rating_max\":5},\"price\":null,\"highlighted\":[\"Missive\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":\"2025-10-15 00:00:00 +00:00\",\"rectangle\":null},{\"type\":\"organic\",\"rank_gr",
+        "aiOverviewDetected": false
       },
       {
         "query": "Kinso alternatives",
         "platform": "chatgpt",
+        "market": "US",
         "clientMentioned": true,
-        "responsePreview": "{\"keyword\":\"Kinso alternatives\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=Kinso%20alternatives\",\"datetime\":\"2026-03-05 06:17:46 +00:00\",\"markdown\":\"Sure—could you tell me what Kinso is used for in your case (e.g., knowledge base / notes, CRM, automation, project management, etc.)? That’ll help me tailor the best alternatives.\\n\\nIn the meantime, here are quick alternative lists by common use cases:\\n\\n---\\n\\n### If Kinso is a **knowledge management / notes** tool\\n- **Notion** – flexible all-in-one workspace\\n- **Craft** – polished notes & docs\\n- **Obsidian** – local-first, markdown-based linking\\n- **Roam Research** – bidirectional notes & graph\\n- **Confluence** – team wiki & docs\\n- **Evernote** – classic note-taking\\n\\n### If Kinso is a **CRM / sales** tool\\n- **HubSpot CRM** – free tier, easy to start\\n- **Pipedrive** – visual sales pipeline\\n- **Salesforce** – robust, enterprise-grade\\n- **Zoho CRM** – affordable, feature-rich\\n- **Freshsales** – built-in phone/email, AI features\\n\\n### If Kinso is for **automation / workflows**\\n- **Zapier** – huge app integrations\\n- **Make (Integromat)** – powerful, visual scenari"
+        "responsePreview": "{\"keyword\":\"Kinso alternatives\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=Kinso%20alternatives\",\"datetime\":\"2026-03-05 07:37:33 +00:00\",\"markdown\":\"It looks like you're asking for alternatives to **Kinso**—could you clarify what **Kinso** is? There are a few possibilities: it might be a business, app, product, or something else. Let me know a bit more, and I can offer the best alternatives!\",\"search_results\":null,\"sources\":null,\"fan_out_queries\":null,\"brand_entities\":null,\"se_results_count\":0,\"item_types\":[\"chat_gpt_text\"],\"items_count\":1,\"items\":[{\"type\":\"chat_gpt_text\",\"rank_group\":1,\"rank_absolute\":1,\"markdown\":\"It looks like you're asking for alternatives to **Kinso**—could you clarify what **Kinso** is? There are a few possibilities: it might be a business, app, product, or something else. Let me know a bit more, and I can offer the best alternatives!\",\"sources\":null,\"brand_entities\":null}]}"
+      },
+      {
+        "query": "Kinso alternatives",
+        "platform": "chatgpt",
+        "market": "AU",
+        "clientMentioned": true,
+        "responsePreview": "{\"keyword\":\"Kinso alternatives\",\"location_code\":2036,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=Kinso%20alternatives\",\"datetime\":\"2026-03-05 07:38:20 +00:00\",\"markdown\":\"If you mean **AI tools similar to** **Kinso** (the AI assistant that unifies messages from Gmail, Slack, WhatsApp, LinkedIn etc.), here are some good alternatives depending on what you want: unified inbox, AI replies, or message prioritization. [aidirectory.industry.gov.au](https://aidirectory.industry.gov.au/organisation/kinso-ai?utm_source=chatgpt.com)  \\n\\n---\\n\\n# Best Kinso Alternatives\\n\\n## 1. Superhuman\\n**Best for:** AI-powered email productivity  \\n- Super-fast Gmail/Outlook client  \\n- AI email writing and summarization  \\n- Keyboard-driven workflow  \\n- Great for founders and operators\\n\\n👍 Pros  \\n- Extremely fast  \\n- Smart AI email features  \\n\\n👎 Cons  \\n- Mostly email (not as many messaging platforms)\\n\\n---\\n\\n## 2. Missive\\n**Best for:** Teams handling many conversations  \\n- Shared inbox across email + chat  \\n- Internal team chat inside threads  \\n- Automation and rules  \\n\\n👍 Pros  \\n- Great for customer support or teams  \\n- Many integrations  \\n\\n👎 Co"
+      },
+      {
+        "query": "Kinso alternatives",
+        "platform": "google_ai_overview",
+        "market": "US",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"ai_overview\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"asynchronous_ai_overview\":true,\"markdown\":null,\"items\":null,\"references\":null,\"rectangle\":null}]",
+        "aiOverviewDetected": true
+      },
+      {
+        "query": "Kinso alternatives",
+        "platform": "google_ai_overview",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"ai_overview\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"asynchronous_ai_overview\":true,\"markdown\":null,\"items\":null,\"references\":null,\"rectangle\":null}]",
+        "aiOverviewDetected": true
       },
       {
         "query": "Kinso vs competitors",
         "platform": "chatgpt",
+        "market": "US",
         "clientMentioned": true,
-        "responsePreview": "{\"keyword\":\"Kinso vs competitors\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=Kinso%20vs%20competitors\",\"datetime\":\"2026-03-05 06:17:56 +00:00\",\"markdown\":\"Could you clarify what “Kinso” refers to in this context? Are you asking about a company, a product, a software platform, or something else? Once I know that, I can do a detailed comparison with its competitors.\",\"search_results\":null,\"sources\":null,\"fan_out_queries\":null,\"brand_entities\":null,\"se_results_count\":0,\"item_types\":[\"chat_gpt_text\"],\"items_count\":1,\"items\":[{\"type\":\"chat_gpt_text\",\"rank_group\":1,\"rank_absolute\":1,\"markdown\":\"Could you clarify what “Kinso” refers to in this context? Are you asking about a company, a product, a software platform, or something else? Once I know that, I can do a detailed comparison with its competitors.\",\"sources\":null,\"brand_entities\":null}]}"
+        "responsePreview": "{\"keyword\":\"Kinso vs competitors\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=Kinso%20vs%20competitors\",\"datetime\":\"2026-03-05 07:38:50 +00:00\",\"markdown\":\"Could you clarify what specific context you mean for “Kinso vs competitors”? Are you asking about:  \\n\\n- **Technology or software** (e.g., Kinso as a product vs other tools in its category),  \\n- **Financial services or investment platforms**,  \\n- **Retail or consumer goods**,  \\n- Or something else entirely?  \\n\\nThat way I can give a precise comparison including features, pricing, strengths, weaknesses, or market position.\",\"search_results\":null,\"sources\":null,\"fan_out_queries\":null,\"brand_entities\":null,\"se_results_count\":0,\"item_types\":[\"chat_gpt_text\"],\"items_count\":1,\"items\":[{\"type\":\"chat_gpt_text\",\"rank_group\":1,\"rank_absolute\":1,\"markdown\":\"Could you clarify what specific context you mean for “Kinso vs competitors”? Are you asking about:  \\n\\n- **Technology or software** (e.g., Kinso as a product vs other tools in its category),  \\n- **Financial services or investment platforms**,  \\n- **Retail or consumer goods**,  \\n- Or something else entirely?  \\n\\nThat way "
+      },
+      {
+        "query": "Kinso vs competitors",
+        "platform": "chatgpt",
+        "market": "AU",
+        "clientMentioned": true,
+        "responsePreview": "{\"keyword\":\"Kinso vs competitors\",\"location_code\":2036,\"language_code\":\"en\",\"model\":\"gpt-5-2\",\"check_url\":\"https://chatgpt.com/?prompt=Kinso%20vs%20competitors\",\"datetime\":\"2026-03-05 07:39:32 +00:00\",\"markdown\":\"Here’s a **comparison of Kinso and its competitors** — focusing on what Kinso is, who its main rivals are, and how it stacks up in the broader AI-powered inbox/communication productivity space:\\n\\n---\\n\\n## 📌 **What is Kinso?**\\n**Kinso** is an AI-driven platform designed to unify communications — including emails, messages, calendars, and contacts — into a single intelligent workspace. It uses artificial intelligence to prioritize conversations based on business impact, draft replies in your voice, summarize key actions, and surface opportunities across channels. The core idea is to reduce fragmentation across platforms like Gmail, Slack, WhatsApp, LinkedIn, etc., and help executives and founders stay on top of what matters most. [tracxn.com](https://tracxn.com/d/companies/kinso/__vF4pM7AifZYqNkMeK60ydmBo6UnKX8ExL8rwDr441Qk?utm_source=chatgpt.com)[www.kinso.ai](https://www.kinso.ai/?utm_source=chatgpt.com)\\n\\n---\\n\\n## 🥇 **Direct Kinso Competitors**\\nBased on business A"
+      },
+      {
+        "query": "Kinso vs competitors",
+        "platform": "google_ai_overview",
+        "market": "US",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"ai_overview\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"asynchronous_ai_overview\":true,\"markdown\":null,\"items\":null,\"references\":null,\"rectangle\":null}]",
+        "aiOverviewDetected": true
+      },
+      {
+        "query": "Kinso vs competitors",
+        "platform": "google_ai_overview",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"ai_overview\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"asynchronous_ai_overview\":true,\"markdown\":null,\"items\":null,\"references\":null,\"rectangle\":null}]",
+        "aiOverviewDetected": true
       },
       {
         "query": "best unified ai inbox for startups",
         "platform": "chatgpt",
+        "market": "US",
         "clientMentioned": false,
-        "responsePreview": "{\"keyword\":\"best unified ai inbox for startups\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20for%20startups\",\"datetime\":\"2026-03-05 06:18:10 +00:00\",\"markdown\":\"Got it! Are you looking for a **unified AI inbox** specifically for **customer communication** (like email, chat, and social media messages) or more broadly for **team collaboration and internal workflows**? That will help narrow the best options for startups.  \\n\\nAssuming you mean **customer-facing communications**, here are some of the top unified AI inbox solutions for startups right now:  \\n\\n---\\n\\n### **1. Front**\\n- **Overview:** Centralizes email, chat, SMS, and social channels in one inbox. AI features include suggested replies and automated routing.\\n- **Pros:** \\n  - Very startup-friendly with scalable pricing\\n  - Strong team collaboration features\\n  - Integrates with CRMs, Slack, and project management tools\\n- **Cons:** AI capabilities are more about productivity than full automation  \\n\\n---\\n\\n### **2. Superhuman (with AI features)**\\n- **Overview:** Premium email client with AI-assisted email drafting, summarization, and"
+        "responsePreview": "{\"keyword\":\"best unified ai inbox for startups\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20for%20startups\",\"datetime\":\"2026-03-05 07:40:00 +00:00\",\"markdown\":\"If you’re a startup looking for a **unified AI inbox**—a single place where you can manage all messages (email, chat, social, support tickets) with AI-powered assistance—your priorities are usually: **automation, AI assistance, integrations, scalability, and affordability**. Here’s a detailed breakdown of some of the best options:\\n\\n---\\n\\n### **1. Front**\\n- **What it does:** Combines email, SMS, social media, and chat into one inbox.\\n- **AI features:** AI drafting, summarization, suggested replies.\\n- **Why startups like it:** Excellent for team collaboration, shared inboxes, and automation workflows.\\n- **Pros:** Integrates with Slack, Salesforce, HubSpot, and more.\\n- **Cons:** AI features are limited compared to specialized AI assistants; pricing can scale quickly for larger teams.\\n\\n---\\n\\n### **2. Superhuman for Teams**\\n- **What it does:** Ultra-fast email client with AI features.\\n- **AI features:** Draft suggestions, email tri"
+      },
+      {
+        "query": "best unified ai inbox for startups",
+        "platform": "chatgpt",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"best unified ai inbox for startups\",\"location_code\":2036,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20for%20startups\",\"datetime\":\"2026-03-05 07:40:27 +00:00\",\"markdown\":\"For startups, the **best “AI unified inbox” tools** usually combine multiple channels (email, chat, social, LinkedIn, etc.) **+ AI features like drafting replies, prioritization, or automation**. The best option depends on whether your main use case is **support, sales outreach, or founder productivity**.\\n\\nHere are some of the **best unified AI inbox tools for startups right now:**\\n\\n---\\n\\n# 1. **Craftman AI** — best lightweight AI support inbox\\n- Built specifically for **founders and small startup teams**\\n- Combines **email + website chat** into one inbox\\n- AI drafts replies based on your knowledge base\\n- Designed as a **simpler, cheaper alternative to Intercom**\\n\\n**Key features**\\n- Unified chat + email feed  \\n- AI-generated reply drafts  \\n- Knowledge base training  \\n- analytics + response tracking  \\n\\n💰 ~$29/month starting price. [craftman.ai](https://craftman.ai/?utm_source=chatgpt.com)  \\n\\nBest for:\\n- early SaaS start"
+      },
+      {
+        "query": "best unified ai inbox for startups",
+        "platform": "google_ai_overview",
+        "market": "US",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"www.sparrowdesk.com\",\"title\":\"9 Best shared inbox software tools for teams in 2026\",\"url\":\"https://www.sparrowdesk.com/tools/shared-inbox-software\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://www.sparrowdesk.com › tools › shared-inbox-sof...\",\"website_name\":\"SparrowDesk\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"SparrowDesk is an AI-first shared inbox software built for speed, simplicity, and effortless teamwork. It brings all your customer-facing emails—support@, info@ ... Read more\",\"pre_snippet\":null,\"extended_snippet\":null,\"images\":null,\"amp_version\":false,\"rating\":null,\"price\":null,\"highlighted\":[\"SparrowDesk\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":null,\"rectangle\":null},{\"type\":\"organic\",\"rank_group\":2,\"rank_absolute\":2,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div",
+        "aiOverviewDetected": false
+      },
+      {
+        "query": "best unified ai inbox for startups",
+        "platform": "google_ai_overview",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"www.suitefiles.com\",\"title\":\"8 Best Email Management Tools to Tame Your Inbox\",\"url\":\"https://www.suitefiles.com/email-management-tools-best/\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://www.suitefiles.com › email-management-tools-best\",\"website_name\":\"SuiteFiles\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"Canary Mail is another great choice, especially for teams focused on productivity. It offers a unified inbox to manage multiple accounts and uses AI to help you ... Read more\",\"pre_snippet\":null,\"extended_snippet\":null,\"images\":null,\"amp_version\":false,\"rating\":null,\"price\":null,\"highlighted\":[\"Canary Mail\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":null,\"rectangle\":null},{\"type\":\"organic\",\"rank_group\":2,\"rank_absolute\":2,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div",
+        "aiOverviewDetected": false
       },
       {
         "query": "best unified ai inbox for enterprise",
         "platform": "chatgpt",
+        "market": "US",
         "clientMentioned": false,
-        "responsePreview": "{\"keyword\":\"best unified ai inbox for enterprise\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20for%20enterprise\",\"datetime\":\"2026-03-05 06:18:52 +00:00\",\"markdown\":\"When looking for the **best unified AI inbox for enterprise**, it helps to clarify that you’re seeking a platform that can **consolidate multiple communication channels** (email, chat, social media, support tickets, etc.) while leveraging **AI to triage, respond, and analyze messages**. Here’s a breakdown of strong options in 2026:  \\n\\n---\\n\\n### **Top Unified AI Inbox Solutions for Enterprise**\\n\\n#### 1. **Front**\\n- **Overview:** Front is designed as a shared inbox for teams, handling emails, SMS, chat, social messages, and more.\\n- **AI Capabilities:** AI can summarize threads, suggest responses, prioritize messages, and detect sentiment.\\n- **Strengths:** Highly customizable workflows, integration with CRMs (Salesforce, HubSpot), robust analytics.\\n- **Best For:** Teams that need collaborative inboxes with AI-driven prioritization.\\n\\n#### 2. **Superhuman for Teams**\\n- **Overview:** While primarily an email client, Superhuman no"
+        "responsePreview": "{\"keyword\":\"best unified ai inbox for enterprise\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20for%20enterprise\",\"datetime\":\"2026-03-05 07:41:04 +00:00\",\"markdown\":\"When looking for a unified AI inbox for enterprise use, you're likely seeking a platform that can streamline communication, automate workflows, integrate with various tools, and provide AI-driven insights. Here are some of the top options that could work well for enterprises:\\n\\n### 1. **Front**\\n   - **Features**: Front is a collaborative inbox that brings all your messages (email, SMS, chat, etc.) into one unified platform. It's AI-powered, helping prioritize and categorize messages, automate workflows, and assign tasks.\\n   - **AI Features**: It can suggest replies, automate task delegation, and offer data-driven insights. It integrates with CRMs, project management tools, and more.\\n   - **Best for**: Teams that handle high volumes of messages and need collaboration across departments.\\n\\n### 2. **Zoho Mail**\\n   - **Features**: Zoho Mail offers a unified inbox that integrates with Zoho CRM, Zoho Desk, and other Zoho products. It a"
+      },
+      {
+        "query": "best unified ai inbox for enterprise",
+        "platform": "chatgpt",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"best unified ai inbox for enterprise\",\"location_code\":2036,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=best%20unified%20ai%20inbox%20for%20enterprise\",\"datetime\":\"2026-03-05 07:41:36 +00:00\",\"markdown\":\"If you want a **unified AI inbox for enterprise** (email + Slack + tickets + knowledge + automation), there are a few serious platforms worth evaluating. They fall into **3 categories**:  \\n1) AI-native inbox platforms  \\n2) customer-communication hubs with AI  \\n3) “AI work hubs” that unify messages across apps.\\n\\nBelow are the **best enterprise-grade options in 2025–2026**.\\n\\n---\\n\\n# 1. Best true “AI unified inbox” platforms\\nThese are closest to a **single inbox for all communication channels**.\\n\\n### **Front**\\n- Enterprise **shared inbox + customer communication platform**\\n- Unifies: email, SMS, chat, social, and support channels\\n- AI features:\\n  - auto-draft replies\\n  - conversation summarization\\n  - routing + workflow automation\\n  - analytics and SLA tracking\\n- Used by **support, sales, and operations teams**  \\n- ~9,000 businesses globally use it. [en.wikipedia.org](https://en.wikipedia.org/wiki/Front_App%2C_Inc.?utm"
+      },
+      {
+        "query": "best unified ai inbox for enterprise",
+        "platform": "google_ai_overview",
+        "market": "US",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"insiderone.com\",\"title\":\"10 Best Conversational AI Platforms for Enterprises in 2026\",\"url\":\"https://insiderone.com/best-conversational-ai-platforms-enterprises/\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://insiderone.com › best-conversational-ai-platforms...\",\"website_name\":\"Insider One\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"Jan 22, 2026 — Salesforce Marketing Cloud: Best for enterprise-scale personalization unified with CRM, Data Cloud, and agentic AI. Salesforce Marketing ... Read more\",\"pre_snippet\":\"01/22/2026 00:00:00\",\"extended_snippet\":null,\"images\":null,\"amp_version\":false,\"rating\":null,\"price\":null,\"highlighted\":[\"Salesforce Marketing Cloud\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":\"2026-01-22 00:00:00 +00:00\",\"rectangle\":null},{\"type\":\"organic\",\"rank_group\":2,\"rank_absolute\":2,\"page\":1,\"position\":\"left\",",
+        "aiOverviewDetected": false
+      },
+      {
+        "query": "best unified ai inbox for enterprise",
+        "platform": "google_ai_overview",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"featured_snippet\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/block-component[1]\",\"domain\":\"monday.com\",\"title\":\"Enterprise Outreach Platforms with AI Automation: Top Picks\",\"featured_title\":\"15 best AI outreach tools for enterprise revenue teams\",\"description\":null,\"timestamp\":null,\"url\":\"https://monday.com/blog/crm-and-sales/enterprise-outreach-platforms-ai-automation/\",\"images\":null,\"table\":{\"table_header\":[\"Platform\",\"Use case\"],\"table_content\":[[\"Lavender\",\"Get real-time email writing help\"],[\"Clearout\",\"Verify emails and improve deliverability\"],[\"Smartlead.ai\",\"Scale cold email with improved deliverability\"],[\"Seamless.ai\",\"Find verified contact and company data\"]]},\"rectangle\":null},{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":2,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]\",\"domain\":\"insiderone.com\",\"title\":\"10 Best Conversational AI Platforms for Enterprises in 2026\",\"url\":\"https://insiderone.com/best-conversational-ai-platforms-enterprises/\",\"cache_url\":nu",
+        "aiOverviewDetected": false
       },
       {
         "query": "how to choose unified ai inbox platform",
         "platform": "chatgpt",
+        "market": "US",
         "clientMentioned": false,
-        "responsePreview": "{\"keyword\":\"how to choose unified ai inbox platform\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=how%20to%20choose%20unified%20ai%20inbox%20platform\",\"datetime\":\"2026-03-05 06:19:56 +00:00\",\"markdown\":\"Choosing a unified AI inbox platform depends on several factors, including your business needs, budget, and the features that matter most to you. A \\\"unified AI inbox\\\" typically combines communication channels (like email, SMS, social media, live chat) into a single interface, often using AI to help automate responses, categorize messages, and improve customer service. Here's a guide to help you choose the right platform for your needs:\\n\\n### 1. **Define Your Needs**\\n   - **Type of Communication Channels**: What channels do you need to integrate? Email, live chat, social media, SMS, phone calls? Make sure the platform supports all the ones you need.\\n   - **Automated Features**: Do you want AI-driven automation, like auto-responses, message categorization, or sentiment analysis?\\n   - **Customer Support Focus**: Are you primarily focused on customer service, sales, or marketing? Some platforms may offer more advanced AI feat"
+        "responsePreview": "{\"keyword\":\"how to choose unified ai inbox platform\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=how%20to%20choose%20unified%20ai%20inbox%20platform\",\"datetime\":\"2026-03-05 07:42:07 +00:00\",\"markdown\":\"Choosing a unified AI inbox platform requires careful consideration of several factors based on your specific needs and goals. A unified inbox integrates multiple communication channels—like email, chat, SMS, social media, etc.—into a single interface, often enhanced by AI to automate workflows, provide customer support, and improve overall efficiency.\\n\\nHere are the key factors to consider when choosing a unified AI inbox platform:\\n\\n### 1. **Integration with Communication Channels**\\n   - **Supported Channels:** Ensure that the platform supports all the communication channels you use or plan to use (e.g., email, live chat, SMS, social media, voice calls).\\n   - **APIs/Connectors:** Check if the platform has easy-to-use APIs or third-party connectors to integrate with other tools or platforms you rely on.\\n   \\n### 2. **AI and Automation Features**\\n   - **AI Capabilities:** Look for platforms with AI-driven features like au"
+      },
+      {
+        "query": "how to choose unified ai inbox platform",
+        "platform": "chatgpt",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"how to choose unified ai inbox platform\",\"location_code\":2036,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=how%20to%20choose%20unified%20ai%20inbox%20platform\",\"datetime\":\"2026-03-05 07:42:30 +00:00\",\"markdown\":\"Choosing a unified AI inbox platform involves evaluating several key features and capabilities that can help centralize communication across various channels, streamline workflows, and improve customer or user engagement. Here's a guide to help you choose the right platform for your needs:\\n\\n### 1. **Define Your Needs and Goals**\\n   - **Use Case**: Are you using the inbox platform for customer support, marketing, internal collaboration, or another purpose? Understanding your goals will help you focus on the right platform features.\\n   - **Integration**: How does the platform integrate with your existing systems (CRM, helpdesk, email, social media, etc.)? A unified inbox platform should centralize all communication (email, chat, social media, etc.) in one place.\\n\\n### 2. **Key Features to Look For**\\n   - **Multi-Channel Support**: Ensure the platform integrates with all the channels your team uses (e.g., email, live chat, s"
+      },
+      {
+        "query": "how to choose unified ai inbox platform",
+        "platform": "google_ai_overview",
+        "market": "US",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"airchannel.ai\",\"title\":\"Unified Inbox: The Complete Guide to Centralized ...\",\"url\":\"https://airchannel.ai/blogs/guide-to-centralized-communication/\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://airchannel.ai › guide-to-centralized-communication\",\"website_name\":\"AirChannel.ai\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"Jan 12, 2026 — When selecting a unified inbox platform, it's important to choose a system that fits both your current needs and future growth. Taking time ... Read more\",\"pre_snippet\":\"01/12/2026 00:00:00\",\"extended_snippet\":null,\"images\":null,\"amp_version\":false,\"rating\":null,\"price\":null,\"highlighted\":[\"choose a system that fits both your current needs and future growth\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":\"2026-01-12 00:00:00 +00:00\",\"rectangle\":null},{\"type\":\"organic\",\"rank_group\":2,\"rank_absolute",
+        "aiOverviewDetected": false
+      },
+      {
+        "query": "how to choose unified ai inbox platform",
+        "platform": "google_ai_overview",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"ai_overview\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"asynchronous_ai_overview\":true,\"markdown\":null,\"items\":null,\"references\":null,\"rectangle\":null}]",
+        "aiOverviewDetected": true
       },
       {
         "query": "unified ai inbox comparison",
         "platform": "chatgpt",
+        "market": "US",
         "clientMentioned": false,
-        "responsePreview": "{\"keyword\":\"unified ai inbox comparison\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=unified%20ai%20inbox%20comparison\",\"datetime\":\"2026-03-05 06:20:22 +00:00\",\"markdown\":\"A **unified AI inbox** generally refers to a system that consolidates various forms of communication—such as emails, messages, tasks, and notifications—into a single interface. It's designed to streamline communication and boost productivity by using AI to prioritize, sort, or even respond to messages based on context. Here's a comparison of several AI-powered inbox systems based on their features, strengths, and weaknesses:\\n\\n### 1. **Superhuman**\\n   - **Key Features**: \\n     - AI-assisted email management.\\n     - Speed-focused design, with features like one-click unsubscribe, customizable shortcuts, and the ability to snooze emails.\\n     - Priority inbox for smart sorting.\\n   - **AI Capabilities**:\\n     - The AI sorts your inbox intelligently, helping you prioritize important emails.\\n     - Smart Compose for writing emails faster.\\n     - Automatic scheduling and follow-up reminders.\\n   - **Pros**:\\n     - Fast and highly responsive UI.\\n     - S"
+        "responsePreview": "{\"keyword\":\"unified ai inbox comparison\",\"location_code\":2840,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=unified%20ai%20inbox%20comparison\",\"datetime\":\"2026-03-05 07:42:56 +00:00\",\"markdown\":\"Are you asking for a **comparison of AI inbox platforms** (like those that unify emails, chat, and AI tools in one interface), or are you looking for a **comparison of AI-powered features within traditional inboxes**? I can create a detailed comparison if you clarify.  \\n\\nMeanwhile, here’s a **preliminary framework** for a unified AI inbox comparison:\\n\\n| Feature / Platform | Gmail + AI (e.g., Smart Compose, Duet AI) | Microsoft Outlook + Copilot | Superhuman AI | Front + AI | Others (e.g., Hey AI) |\\n|-------------------|------------------------------------------|----------------------------|----------------|------------|----------------------|\\n| **Unified Inbox** | Email only (threaded) | Email only | Email only | Multi-channel (email, chat, SMS) | Varies |\\n| **AI Assistance** | Smart Compose, Smart Reply, Summarization | Drafting, Summarization, Meeting insights | AI draft & summarization | AI suggestions, tagging, routing | Summarization, reply sugg"
+      },
+      {
+        "query": "unified ai inbox comparison",
+        "platform": "chatgpt",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "{\"keyword\":\"unified ai inbox comparison\",\"location_code\":2036,\"language_code\":\"en\",\"model\":\"gpt-5-3\",\"check_url\":\"https://chatgpt.com/?prompt=unified%20ai%20inbox%20comparison\",\"datetime\":\"2026-03-05 07:43:12 +00:00\",\"markdown\":\"Could you clarify what you mean by “unified AI inbox comparison”? Are you asking about:  \\n\\n1. **Email inboxes enhanced with AI features** (e.g., Gmail with AI tools, Microsoft Copilot in Outlook, etc.), comparing their capabilities?  \\n2. **Platforms that consolidate multiple messaging channels (email, chat, social media) into a single AI-powered inbox**, like Front, Superhuman, or Hiver?  \\n3. Or something else entirely?  \\n\\nThis will help me give a precise and structured comparison.\",\"search_results\":null,\"sources\":null,\"fan_out_queries\":null,\"brand_entities\":null,\"se_results_count\":0,\"item_types\":[\"chat_gpt_text\"],\"items_count\":1,\"items\":[{\"type\":\"chat_gpt_text\",\"rank_group\":1,\"rank_absolute\":1,\"markdown\":\"Could you clarify what you mean by “unified AI inbox comparison”? Are you asking about:  \\n\\n1. **Email inboxes enhanced with AI features** (e.g., Gmail with AI tools, Microsoft Copilot in Outlook, etc.), comparing their capabilities?  \\n2. **Platfo"
+      },
+      {
+        "query": "unified ai inbox comparison",
+        "platform": "google_ai_overview",
+        "market": "US",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"crisp.chat\",\"title\":\"Best Shared Inbox software with AI for 2025 and beyond\",\"url\":\"https://crisp.chat/en/blog/best-shared-inbox-software/\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://crisp.chat › blog › best-shared-inbox-software\",\"website_name\":\"Crisp IM\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"Oct 15, 2025 — Higher price point compared to basic shared inbox solutions ... unified inbox. The difference is fundamental: humanized email (Help ... Read more\",\"pre_snippet\":\"10/15/2025 00:00:00\",\"extended_snippet\":\"4.7(461)  · Free · ‎Communication\",\"images\":null,\"amp_version\":false,\"rating\":{\"rating_type\":\"Max5\",\"value\":4.7,\"votes_count\":461,\"rating_max\":5},\"price\":null,\"highlighted\":[\"Higher price point compared to basic shared inbox solutions\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":\"2025-10-15 00:00:00 +00:00\",\"recta",
+        "aiOverviewDetected": false
+      },
+      {
+        "query": "unified ai inbox comparison",
+        "platform": "google_ai_overview",
+        "market": "AU",
+        "clientMentioned": false,
+        "responsePreview": "[{\"type\":\"organic\",\"rank_group\":1,\"rank_absolute\":1,\"page\":1,\"position\":\"left\",\"xpath\":\"/html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]\",\"domain\":\"www.podium.com.au\",\"title\":\"Top 10 Inbox Management Tools in Australia | 2025 Edition\",\"url\":\"https://www.podium.com.au/article/top-10-email-inbox-management-softwares-in-australia\",\"cache_url\":null,\"related_search_url\":null,\"breadcrumb\":\"https://www.podium.com.au › article › top-10-email-inb...\",\"website_name\":\"podium.com.au\",\"is_image\":false,\"is_video\":false,\"is_featured_snippet\":false,\"is_malicious\":false,\"is_web_story\":false,\"description\":\"4 Sept 2025 — Tackle email overload with the best inbox management software for Australian teams in 2025. See how Podium simplifies communication and lead ...\",\"pre_snippet\":\"09/04/2025 00:00:00\",\"extended_snippet\":null,\"images\":null,\"amp_version\":false,\"rating\":null,\"price\":null,\"highlighted\":[\"best inbox management software for Australian teams in 2025\"],\"links\":null,\"faq\":null,\"extended_people_also_search\":null,\"about_this_result\":null,\"related_result\":null,\"timestamp\":\"2025-09-04 00:00:00 +00:00\",\"rectangle\":null},{\"type\":\"organic\",\"rank_group\":2,\"",
+        "aiOverviewDetected": false
       }
-    ]
+    ],
+    "platformSummary": {
+      "chatgpt": {
+        "total": 16,
+        "mentioned": 4,
+        "mentionRate": 25,
+        "markets": {
+          "US": {
+            "total": 8,
+            "mentioned": 2,
+            "mentionRate": 25
+          },
+          "AU": {
+            "total": 8,
+            "mentioned": 2,
+            "mentionRate": 25
+          }
+        }
+      },
+      "google_ai_overview": {
+        "total": 16,
+        "mentioned": 0,
+        "mentionRate": 0,
+        "markets": {
+          "US": {
+            "total": 8,
+            "mentioned": 0,
+            "mentionRate": 0
+          },
+          "AU": {
+            "total": 8,
+            "mentioned": 0,
+            "mentionRate": 0
+          }
+        }
+      }
+    },
+    "platformAvailability": {
+      "chatgpt": true,
+      "google_ai_overview": true,
+      "perplexity": false,
+      "gemini": false
+    }
   },
   "websiteAudit": {
     "onPage": {
@@ -947,15 +2884,15 @@
       "schemaTypes": [],
       "statusCode": 200,
       "pageTiming": {
-        "timeToInteractiveMs": 713,
-        "domCompleteMs": 2693,
+        "timeToInteractiveMs": 194,
+        "domCompleteMs": 485,
         "largestContentfulPaintMs": 0
       }
     },
     "pageSpeed": {
       "source": "dataforseo_onpage_timing",
-      "timeToInteractiveMs": 713,
-      "domCompleteMs": 2693,
+      "timeToInteractiveMs": 194,
+      "domCompleteMs": 485,
       "largestContentfulPaintMs": 0,
       "note": "Derived from DataForSEO on_page timing metrics."
     }
@@ -970,7 +2907,8 @@
     "metrics": {
       "competitors": 7,
       "keywords": 22,
-      "prompts": 8,
+      "keywordUniverse": 37,
+      "prompts": 32,
       "hasOnPage": true,
       "hasTam": true,
       "hasPageSpeed": true
@@ -979,7 +2917,7 @@
     "failures": []
   },
   "meta": {
-    "generatedAt": "2026-03-05T06:20:37.316Z",
+    "generatedAt": "2026-03-05T07:43:30.516Z",
     "researchMode": "strict",
     "targetMarkets": [
       {
@@ -992,28 +2930,34 @@
       }
     ],
     "timingsMs": {
-      "preflight": 2014,
-      "discover_competitors": 2743,
-      "product_competitor_query_1": 14845,
-      "product_competitor_query_2": 10701,
-      "product_competitor_query_3": 12578,
-      "product_competitor_query_4": 14732,
-      "product_competitor_query_5": 20046,
-      "discover_product_competitors": 72905,
-      "target_domain_metrics": 1192,
-      "competitor_metrics_missiveapp.com": 981,
-      "competitor_metrics_front.com": 956,
-      "competitor_metrics_intercom.com": 1048,
-      "competitor_metrics_zendesk.com": 1153,
-      "competitor_metrics_helpscout.com": 932,
-      "competitor_metrics_hiverhq.com": 1152,
-      "competitor_metrics_kinso.com.au": 952,
-      "competitor_metrics_crisp.chat": 933,
-      "keyword_analysis": 1588,
-      "keyword_gap_analysis": 1616,
-      "ai_visibility": 256916,
-      "tam_model": 1,
-      "website_audit": 13069
+      "preflight": 3020,
+      "discover_competitors": 3962,
+      "product_competitor_query_1": 14400,
+      "product_competitor_query_2": 9221,
+      "product_competitor_query_3": 15476,
+      "product_competitor_query_4": 15885,
+      "product_competitor_query_5": 11610,
+      "discover_product_competitors": 66596,
+      "target_domain_metrics": 4668,
+      "competitor_metrics_missiveapp.com": 3995,
+      "competitor_metrics_front.com": 1820,
+      "competitor_metrics_intercom.com": 1870,
+      "competitor_metrics_zendesk.com": 1552,
+      "competitor_metrics_helpscout.com": 1748,
+      "competitor_metrics_hiverhq.com": 1544,
+      "competitor_metrics_foundr.ai": 1551,
+      "competitor_metrics_kinso.com.au": 4575,
+      "keyword_analysis": 2574,
+      "keyword_gap_analysis": 2045,
+      "competitor_keyword_universe_missiveapp.com": 10041,
+      "competitor_keyword_universe_front.com": 5277,
+      "competitor_keyword_universe_intercom.com": 5530,
+      "competitor_keyword_universe_zendesk.com": 4381,
+      "competitor_keyword_universe_helpscout.com": 6950,
+      "keyword_universe": 33696,
+      "ai_visibility": 548785,
+      "tam_model": 0,
+      "website_audit": 9016
     },
     "issues": [
       {
@@ -1021,9 +2965,9 @@
         "error": "[/v3/ai_optimization/llm_mentions/live] DataForSEO status 40400: Not Found."
       }
     ],
-    "totalDurationMs": 363364,
+    "totalDurationMs": 696242,
     "payloadConfidence": {
-      "score": 87,
+      "score": 91,
       "level": "high"
     }
   }
