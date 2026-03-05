@@ -1,12 +1,15 @@
 const https = require("https");
 const fs = require("fs");
 const path = require("path");
+const { execFile } = require("child_process");
 
 const DATAFORSEO_LOGIN = process.env.DATAFORSEO_LOGIN;
 const DATAFORSEO_PASSWORD = process.env.DATAFORSEO_PASSWORD;
 
 const RESEARCH_MODE = (process.env.RESEARCH_MODE || "strict").toLowerCase();
 const STRICT_MODE = RESEARCH_MODE !== "fast";
+const PERFORMANCE_PROVIDER = (process.env.PERFORMANCE_PROVIDER || "lighthouse").toLowerCase();
+const ALLOW_PSI_FALLBACK = process.env.ALLOW_PSI_FALLBACK === "true";
 
 const QUALITY_THRESHOLDS = {
   competitors: Number(process.env.MIN_COMPETITORS || 3),
@@ -26,6 +29,18 @@ const EXCLUDED_COMPETITOR_DOMAINS = new Set([
   "x.com",
   "tiktok.com",
   "wikipedia.org",
+]);
+
+const PUBLISHER_COMPETITOR_DOMAINS = new Set([
+  "medium.com",
+  "substack.com",
+  "forbes.com",
+  "businessinsider.com",
+  "zapier.com",
+  "g2.com",
+  "capterra.com",
+  "getapp.com",
+  "trustpilot.com",
 ]);
 
 function nowIso() {
@@ -50,12 +65,33 @@ function normalizeDomain(input) {
   }
 }
 
+function execFileAsync(command, args, options = {}) {
+  return new Promise((resolve, reject) => {
+    execFile(command, args, options, (error, stdout, stderr) => {
+      if (error) {
+        const err = new Error(`${error.message}\n${stderr || ""}`.trim());
+        err.stdout = stdout;
+        err.stderr = stderr;
+        reject(err);
+        return;
+      }
+      resolve({ stdout, stderr });
+    });
+  });
+}
+
 function isValidCompetitorDomain(domain, companyDomain) {
   const d = normalizeDomain(domain);
   if (!d) return false;
   if (d === normalizeDomain(companyDomain)) return false;
   if (EXCLUDED_COMPETITOR_DOMAINS.has(d)) return false;
   return true;
+}
+
+function isLikelyPublisherDomain(domain) {
+  const d = normalizeDomain(domain);
+  if (!d) return true;
+  return PUBLISHER_COMPETITOR_DOMAINS.has(d);
 }
 
 function ensureDfSuccess(parsed, endpoint) {
@@ -227,6 +263,55 @@ async function psiRequestWithRetry(url, retries = 3) {
   throw lastError;
 }
 
+async function runLighthouseAudit(url, debug) {
+  const startedAt = Date.now();
+  const args = [
+    "--yes",
+    "lighthouse",
+    url,
+    "--quiet",
+    "--chrome-flags=--headless --no-sandbox --disable-dev-shm-usage",
+    "--only-categories=performance,seo",
+    "--output=json",
+    "--output-path=stdout",
+  ];
+
+  const { stdout } = await execFileAsync("npx", args, {
+    maxBuffer: 50 * 1024 * 1024,
+    env: process.env,
+  });
+
+  const jsonStart = stdout.indexOf("{");
+  const jsonEnd = stdout.lastIndexOf("}");
+  if (jsonStart === -1 || jsonEnd === -1 || jsonEnd <= jsonStart) {
+    throw new Error("Unable to parse Lighthouse JSON output.");
+  }
+
+  const parsed = JSON.parse(stdout.slice(jsonStart, jsonEnd + 1));
+  const lighthouse = parsed?.lhr || parsed?.lighthouseResult || parsed;
+  if (!lighthouse?.categories) {
+    throw new Error("Lighthouse output missing categories.");
+  }
+
+  const output = {
+    source: "lighthouse_cli",
+    performanceScore: Math.round((lighthouse.categories?.performance?.score || 0) * 100),
+    seoScore: Math.round((lighthouse.categories?.seo?.score || 0) * 100),
+    lcp: lighthouse.audits?.["largest-contentful-paint"]?.displayValue || null,
+    cls: lighthouse.audits?.["cumulative-layout-shift"]?.displayValue || null,
+    tbt: lighthouse.audits?.["total-blocking-time"]?.displayValue || null,
+  };
+
+  pushDebug(debug, "lighthouse_audit", {
+    provider: PERFORMANCE_PROVIDER,
+    durationMs: elapsedMs(startedAt),
+    url,
+    summary: output,
+  });
+
+  return output;
+}
+
 function getStepResult(parsed) {
   return parsed?.tasks?.[0]?.result?.[0] || {};
 }
@@ -319,6 +404,135 @@ async function discoverCompetitorsByCategory(category, debug) {
   }
 
   return domains;
+}
+
+async function getSerpDomainsForQuery(query, debug, stepName) {
+  const res = await dfRequest(
+    "/v3/serp/google/organic/live/advanced",
+    [
+      {
+        keyword: query,
+        location_code: 2840,
+        language_code: "en",
+        depth: 30,
+      },
+    ],
+    debug,
+    stepName
+  );
+
+  const items = getStepResult(res).items || [];
+  const domains = [];
+
+  for (const item of items) {
+    if (item?.type && item.type !== "organic") continue;
+    const domain = normalizeDomain(item.domain || item.url);
+    if (!domain) continue;
+    domains.push({
+      domain,
+      rank: item.rank_absolute || item.rank_group || null,
+      title: item.title || null,
+    });
+  }
+
+  return domains;
+}
+
+async function discoverProductCompetitors(company, baselineCompetitors, debug, issues, timings) {
+  const seedSet = new Set(
+    (Array.isArray(company.competitorSeeds) ? company.competitorSeeds : [])
+      .map((seed) => (typeof seed === "string" ? seed : seed.domain))
+      .map((d) => normalizeDomain(d))
+      .filter((d) => isValidCompetitorDomain(d, company.domain))
+  );
+
+  const baseSet = new Set(
+    baselineCompetitors
+      .map((c) => normalizeDomain(c.domain))
+      .filter((d) => isValidCompetitorDomain(d, company.domain))
+  );
+
+  const categoryBase = company.category.split("/").pop().trim().toLowerCase();
+  const queries = [
+    `${company.name} alternatives`,
+    `${company.name} vs`,
+    `best ${categoryBase} software`,
+    `${categoryBase} alternatives`,
+    `${categoryBase} comparison`,
+  ];
+
+  const evidence = new Map();
+  for (let i = 0; i < queries.length; i += 1) {
+    const query = queries[i];
+    const stepName = `product_competitor_query_${i + 1}`;
+    const domains =
+      (await runStep(
+        stepName,
+        () => getSerpDomainsForQuery(query, debug, stepName),
+        issues,
+        timings,
+        false
+      )) || [];
+
+    for (const hit of domains) {
+      const domain = normalizeDomain(hit.domain);
+      if (!isValidCompetitorDomain(domain, company.domain)) continue;
+      const row = evidence.get(domain) || {
+        domain,
+        queryHits: 0,
+        queries: new Set(),
+        bestRank: Number.POSITIVE_INFINITY,
+      };
+      row.queryHits += 1;
+      row.queries.add(query);
+      if (typeof hit.rank === "number") row.bestRank = Math.min(row.bestRank, hit.rank);
+      evidence.set(domain, row);
+    }
+  }
+
+  const combined = [];
+  for (const [domain, row] of evidence.entries()) {
+    const isSeed = seedSet.has(domain);
+    const inBase = baseSet.has(domain);
+    const keep = isSeed || (row.queries.size >= 2 && !isLikelyPublisherDomain(domain));
+    if (!keep) continue;
+
+    let score = 0;
+    if (isSeed) score += 100;
+    if (inBase) score += 20;
+    score += row.queries.size * 15;
+    if (Number.isFinite(row.bestRank) && row.bestRank <= 10) score += 10;
+
+    combined.push({
+      domain,
+      source: "product_competitor_discovery",
+      evidence: {
+        queryHits: row.queryHits,
+        queryCount: row.queries.size,
+        queries: Array.from(row.queries),
+        bestRank: Number.isFinite(row.bestRank) ? row.bestRank : null,
+      },
+      score,
+    });
+  }
+
+  // Ensure seeds are always included.
+  for (const domain of seedSet) {
+    if (combined.some((c) => c.domain === domain)) continue;
+    combined.push({
+      domain,
+      source: "seeded_competitor",
+      evidence: {
+        queryHits: 0,
+        queryCount: 0,
+        queries: [],
+        bestRank: null,
+      },
+      score: 100,
+    });
+  }
+
+  return combined.sort((a, b) => b.score - a.score);
 }
 
 async function getDomainMetrics(domain, debug, stepName = "domain_metrics") {
@@ -526,46 +740,92 @@ async function auditWebsite(domain, debug) {
       externalLinks: page.meta?.external_links_count,
       schemaTypes: page.meta?.schema_types || [],
       statusCode: page.status_code,
+      pageTiming: {
+        timeToInteractiveMs: page.page_timing?.time_to_interactive ?? null,
+        domCompleteMs: page.page_timing?.dom_complete ?? null,
+        largestContentfulPaintMs: page.page_timing?.largest_contentful_paint ?? null,
+      },
     };
   }
 
   try {
-    const psi = await psiRequestWithRetry(`https://${domain}`);
-    const lighthouse = psi?.lighthouseResult;
-    if (lighthouse) {
-      audit.pageSpeed = {
-        source: "pagespeed_api",
-        performanceScore: Math.round((lighthouse.categories?.performance?.score || 0) * 100),
-        seoScore: Math.round((lighthouse.categories?.seo?.score || 0) * 100),
-        lcp: lighthouse.audits?.["largest-contentful-paint"]?.displayValue,
-        cls: lighthouse.audits?.["cumulative-layout-shift"]?.displayValue,
-        tbt: lighthouse.audits?.["total-blocking-time"]?.displayValue,
-      };
+    if (PERFORMANCE_PROVIDER === "lighthouse") {
+      audit.pageSpeed = await runLighthouseAudit(`https://${domain}`, debug);
+    } else {
+      const psi = await psiRequestWithRetry(`https://${domain}`);
+      const lighthouse = psi?.lighthouseResult;
+      if (lighthouse) {
+        audit.pageSpeed = {
+          source: "pagespeed_api",
+          performanceScore: Math.round((lighthouse.categories?.performance?.score || 0) * 100),
+          seoScore: Math.round((lighthouse.categories?.seo?.score || 0) * 100),
+          lcp: lighthouse.audits?.["largest-contentful-paint"]?.displayValue,
+          cls: lighthouse.audits?.["cumulative-layout-shift"]?.displayValue,
+          tbt: lighthouse.audits?.["total-blocking-time"]?.displayValue,
+        };
+      }
     }
   } catch (error) {
-    pushDebug(debug, "pagespeed_fallback", {
-      at: nowIso(),
-      domain,
-      reason: error.message,
-    });
+    if (PERFORMANCE_PROVIDER === "lighthouse" && ALLOW_PSI_FALLBACK) {
+      try {
+        const psi = await psiRequestWithRetry(`https://${domain}`);
+        const lighthouse = psi?.lighthouseResult;
+        if (lighthouse) {
+          audit.pageSpeed = {
+            source: "pagespeed_api_fallback",
+            performanceScore: Math.round((lighthouse.categories?.performance?.score || 0) * 100),
+            seoScore: Math.round((lighthouse.categories?.seo?.score || 0) * 100),
+            lcp: lighthouse.audits?.["largest-contentful-paint"]?.displayValue,
+            cls: lighthouse.audits?.["cumulative-layout-shift"]?.displayValue,
+            tbt: lighthouse.audits?.["total-blocking-time"]?.displayValue,
+          };
+        }
+      } catch (fallbackError) {
+        pushDebug(debug, "performance_fallback_error", {
+          domain,
+          provider: PERFORMANCE_PROVIDER,
+          error: fallbackError.message,
+        });
+      }
+    }
 
-    audit.pageSpeed = {
-      source: "fallback_no_psi",
-      error: error.message,
-      statusCode: audit.onPage?.statusCode ?? null,
-      note: "PSI unavailable (rate-limit/quota). Using fallback placeholder so pipeline remains observable.",
-    };
+    if (!audit.pageSpeed && audit.onPage?.pageTiming) {
+      audit.pageSpeed = {
+        source: "dataforseo_onpage_timing",
+        timeToInteractiveMs: audit.onPage.pageTiming.timeToInteractiveMs,
+        domCompleteMs: audit.onPage.pageTiming.domCompleteMs,
+        largestContentfulPaintMs: audit.onPage.pageTiming.largestContentfulPaintMs,
+        note: "Derived from DataForSEO on_page timing metrics.",
+      };
+    }
+
+    if (!audit.pageSpeed) {
+      pushDebug(debug, "performance_fallback", {
+        at: nowIso(),
+        domain,
+        provider: PERFORMANCE_PROVIDER,
+        reason: error.message,
+      });
+
+      audit.pageSpeed = {
+        source: "fallback_no_perf",
+        error: error.message,
+        statusCode: audit.onPage?.statusCode ?? null,
+        note: "Performance provider unavailable. Configure Lighthouse runtime or enable ALLOW_PSI_FALLBACK=true.",
+      };
+    }
   }
 
   return audit;
 }
 
-function mergeAndDedupeCompetitors(competitors, companyDomain) {
+function mergeAndDedupeCompetitors(competitors, companyDomain, includePublishers = false) {
   const map = new Map();
   for (const comp of competitors) {
     const domain = normalizeDomain(comp.domain);
     if (!domain) continue;
     if (!isValidCompetitorDomain(domain, companyDomain)) continue;
+    if (!includePublishers && isLikelyPublisherDomain(domain)) continue;
     if (!map.has(domain)) {
       map.set(domain, { ...comp, domain });
     }
@@ -588,7 +848,7 @@ function applySeededCompetitors(company, existingCompetitors) {
     })
     .filter((seed) => seed.domain);
 
-  return mergeAndDedupeCompetitors([...existingCompetitors, ...mapped], company.domain);
+  return mergeAndDedupeCompetitors([...existingCompetitors, ...mapped], company.domain, true);
 }
 
 function evaluateQualityGate(research) {
@@ -601,7 +861,9 @@ function evaluateQualityGate(research) {
     keywords: research.rankedKeywords.length,
     prompts: successfulPrompts,
     hasOnPage: Boolean(research.websiteAudit?.onPage),
-    hasPageSpeed: Boolean(research.websiteAudit?.pageSpeed),
+    hasPageSpeed:
+      Boolean(research.websiteAudit?.pageSpeed) &&
+      !String(research.websiteAudit?.pageSpeed?.source || "").startsWith("fallback"),
   };
 
   const failures = [];
@@ -681,6 +943,15 @@ async function runResearch(company) {
         STRICT_MODE
       )) || [];
 
+    competitors =
+      (await runStep(
+        "discover_product_competitors",
+        () => discoverProductCompetitors(company, competitors, debug, issues, timings),
+        issues,
+        timings,
+        false
+      )) || competitors;
+
     competitors = applySeededCompetitors(company, competitors);
 
     if (competitors.length < QUALITY_THRESHOLDS.competitors) {
@@ -692,7 +963,11 @@ async function runResearch(company) {
           timings,
           false
         )) || [];
-      competitors = mergeAndDedupeCompetitors([...competitors, ...categoryFallback], company.domain);
+      competitors = mergeAndDedupeCompetitors(
+        [...competitors, ...categoryFallback],
+        company.domain,
+        false
+      );
     }
 
     console.log(`  [2/6] Getting domain metrics for ${company.domain}...`);
@@ -704,7 +979,7 @@ async function runResearch(company) {
       STRICT_MODE
     );
 
-    const competitorMetrics = [];
+    const competitorMetricsRaw = [];
     for (const comp of competitors.slice(0, 8)) {
       const metrics = await runStep(
         `competitor_metrics_${normalizeDomain(comp.domain)}`,
@@ -714,9 +989,17 @@ async function runResearch(company) {
         false
       );
 
-      competitorMetrics.push({ ...comp, metrics: metrics || null });
+      competitorMetricsRaw.push({ ...comp, metrics: metrics || null });
       await sleep(400);
     }
+
+    const competitorMetrics = competitorMetricsRaw.filter((comp) => {
+      if (comp.source === "seeded_competitor") return true;
+      if (isLikelyPublisherDomain(comp.domain)) return false;
+      const queryCount = comp.evidence?.queryCount || 0;
+      const organicKeywords = comp.metrics?.organicKeywords || 0;
+      return queryCount >= 2 && organicKeywords >= 500;
+    });
 
     console.log(`  [3/6] Analyzing keywords for ${company.domain}...`);
     const rankedKeywords =
