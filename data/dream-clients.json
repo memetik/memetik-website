@@ -731,5 +731,46 @@
         "domain": "hiverhq.com"
       }
     ]
+  },
+  {
+    "slug": "bts-2",
+    "name": "Behind the Scenes",
+    "domain": "behindthescenes.com",
+    "category": "Creator Economy / Creator Platform",
+    "industry": "Creator Economy",
+    "competitorSeeds": [
+      {
+        "name": "Whop",
+        "domain": "whop.com"
+      },
+      {
+        "name": "Kajabi",
+        "domain": "kajabi.com"
+      },
+      {
+        "name": "Patreon",
+        "domain": "patreon.com"
+      },
+      {
+        "name": "Circle",
+        "domain": "circle.so"
+      },
+      {
+        "name": "Skool",
+        "domain": "skool.com"
+      },
+      {
+        "name": "Podia",
+        "domain": "podia.com"
+      },
+      {
+        "name": "Thinkific",
+        "domain": "thinkific.com"
+      },
+      {
+        "name": "Teachable",
+        "domain": "teachable.com"
+      }
+    ]
   }
 ]
