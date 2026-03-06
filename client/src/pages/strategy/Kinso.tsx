@@ -1,161 +1,412 @@
 import { useEffect } from "react";
 import {
-  Globe,
-  Search,
-  Bot,
-  Database,
-  Target,
   AlertTriangle,
-  CheckCircle,
   BarChart3,
-  ArrowRight,
-  Sparkles,
-  Radar,
-  Layers,
+  Bot,
+  Brain,
+  Building2,
+  CheckCircle2,
   Compass,
-  ShieldCheck,
+  Database,
+  Globe,
+  Layers,
   LineChart,
-  MessagesSquare,
   Link2,
+  MessagesSquare,
+  Radar,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  TrendingUp,
   Workflow,
-  Lightbulb,
 } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import {
-  SectionHeader,
-  HighlightBox,
-  PhaseBlock,
   BulletList,
   DataTable,
-  StatsGrid,
+  HighlightBox,
+  PhaseBlock,
   PhasedUpsideChart,
+  SectionHeader,
+  StatsGrid,
+  StrategyCTA,
+  StrategyCard,
+  StrategyEyebrow,
+  StrategyHero,
+  StrategyPageFrame,
+  StrategySectionShell,
   TamRoiCalculator,
 } from "@/components/strategy";
 
 const formatWhole = (value: number) =>
   new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(Math.round(value));
 
+const formatOne = (value: number) =>
+  new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(value);
+
 const formatPercent = (value: number) => `${value.toFixed(2)}%`;
 
-const topCompetitors = [
-  {
-    domain: "hiverhq.com",
-    source: "seeded_competitor",
-    organicTraffic: 282533.58254896477,
-    organicKeywords: 26665,
-    backlinks: 24240,
-    referringDomains: 6001,
-    queryHits: 0,
-    queryCount: 0,
-    promptHits: 0,
-    bestRank: null as number | null,
-  },
-  {
-    domain: "missiveapp.com",
-    source: "product_competitor_discovery",
-    organicTraffic: 166300.31167035736,
-    organicKeywords: 10931,
-    backlinks: 23611,
-    referringDomains: 2709,
-    queryHits: 3,
-    queryCount: 2,
-    promptHits: 0,
-    bestRank: 8,
-  },
-  {
-    domain: "intercom.com",
-    source: "seeded_competitor",
-    organicTraffic: 91288.66046237387,
-    organicKeywords: 26720,
-    backlinks: 1024186,
-    referringDomains: 42379,
-    queryHits: 0,
-    queryCount: 0,
-    promptHits: 0,
-    bestRank: null as number | null,
-  },
-  {
-    domain: "front.com",
-    source: "seeded_competitor",
-    organicTraffic: 86294.75961692631,
-    organicKeywords: 12224,
-    backlinks: 50566,
-    referringDomains: 6049,
-    queryHits: 0,
-    queryCount: 0,
-    promptHits: 0,
-    bestRank: null as number | null,
-  },
-  {
-    domain: "gmelius.com",
-    source: "product_competitor_discovery",
-    organicTraffic: 80442.91756520234,
-    organicKeywords: 10478,
-    backlinks: 8830,
-    referringDomains: 2337,
-    queryHits: 5,
-    queryCount: 3,
-    promptHits: 2,
-    bestRank: 1,
-  },
-  {
+const researchData = {
+  company: {
+    name: "Kinso",
     domain: "kinso.ai",
-    source: "target",
+    category: "Communication / Unified AI Inbox",
+    industry: "Communication / Collaboration",
+  },
+  seoMetrics: {
     organicTraffic: 556.7749864012003,
     organicKeywords: 24,
     backlinks: 426,
     referringDomains: 63,
-    queryHits: 0,
-    queryCount: 0,
-    promptHits: 8,
-    bestRank: 1,
+    markets: {
+      US: {
+        organicTraffic: 95.4660008624196,
+        organicKeywords: 16,
+      },
+      AU: {
+        organicTraffic: 461.3089855387807,
+        organicKeywords: 8,
+      },
+    },
+    backlinkMetrics: {
+      backlinks: 426,
+      referringDomains: 63,
+      backlinksSpamScore: 21,
+      targetSpamScore: 0,
+    },
+  },
+  aiVisibility: {
+    promptsAnalyzed: 36,
+    clientMentionedPrompts: 8,
+    platformSummary: {
+      chatgpt: { total: 12, mentioned: 4, mentionRate: 33.33 },
+      gemini: { total: 12, mentioned: 4, mentionRate: 33.33 },
+      google_ai_overview: { total: 12, mentioned: 0, mentionRate: 0 },
+    },
+    platformAvailability: {
+      chatgpt: {
+        status: "available",
+        endpoint: "/v3/ai_optimization/chat_gpt/llm_scraper/live/advanced",
+      },
+      gemini: {
+        status: "available",
+        endpoint: "/v3/ai_optimization/gemini/llm_scraper/live/advanced",
+      },
+      perplexity: {
+        status: "unavailable",
+        endpoint: "/v3/ai_optimization/perplexity/llm_scraper/live/advanced",
+        reason: "[/v3/ai_optimization/perplexity/llm_scraper/live/advanced] Task status 40402: Invalid Path.",
+      },
+      google_ai_overview: {
+        status: "available_via_serp",
+        endpoint: "/v3/serp/google/organic/live/advanced",
+      },
+    },
+  },
+  tamModel: {
+    estimateOnly: true,
+    timeframeMonths: 12,
+    markets: ["US", "AU"],
+    totals: {
+      totalAddressableSearchDemand: 14959680,
+      estimatedReachableVisits: {
+        low: 134463.13,
+        base: 249622.87,
+        high: 409603.65,
+      },
+      byChannel: {
+        google: {
+          demand: 12865324.8,
+          estimatedReachableVisits: {
+            low: 133619.3,
+            base: 248056.35,
+            high: 407033.17,
+          },
+        },
+        ai: {
+          demand: 2094355.2,
+          estimatedReachableVisits: {
+            low: 843.83,
+            base: 1566.51,
+            high: 2570.48,
+          },
+        },
+      },
+    },
+    byIntent: [
+      {
+        intent: "BOFU",
+        phase: "Phase 1 (Months 0-3)",
+        demand: 2403550,
+        keywordCount: 387,
+        estimatedReachableVisits: { low: 57910.17, base: 96516.95, high: 154427.13 },
+      },
+      {
+        intent: "MOFU",
+        phase: "Phase 2 (Months 4-8)",
+        demand: 153130,
+        keywordCount: 79,
+        estimatedReachableVisits: { low: 1844.73, base: 3689.45, high: 6149.09 },
+      },
+      {
+        intent: "TOFU",
+        phase: "Phase 3 (Months 9-12)",
+        demand: 12403000,
+        keywordCount: 93,
+        estimatedReachableVisits: { low: 74708.23, base: 149416.46, high: 249027.43 },
+      },
+    ],
+    keywordUniverse: {
+      size: 559,
+      anchorMatchedCount: 222,
+      countsByIntent: { TOFU: 93, BOFU: 387, MOFU: 79 },
+      countsBySource: {
+        semantic_expansion: 518,
+        competitor_keywords: 24,
+        target_ranked_keywords: 22,
+        keyword_gaps: 8,
+      },
+      semanticContribution: {
+        keywordCount: 518,
+        demand: 14587910,
+        demandSharePercent: 97.51,
+      },
+    },
+    topOpportunityClusters: [
+      {
+        cluster: "Category & Brand Demand",
+        intent: "TOFU",
+        phase: "Phase 3 (Months 9-12)",
+        demand: 12437710,
+        keywordCount: 168,
+        estimatedReachableVisits: { low: 75126.37, base: 150252.75, high: 250421.25 },
+        sampleKeywords: ["outlook email", "free email services", "outlook email login", "godaddy email login"],
+      },
+      {
+        cluster: "Buyer Guides",
+        intent: "BOFU",
+        phase: "Phase 1 (Months 0-3)",
+        demand: 2403290,
+        keywordCount: 381,
+        estimatedReachableVisits: { low: 57903.91, base: 96506.51, high: 154410.42 },
+        sampleKeywords: ["gmail inbox", "inbox", "shared inbox", "unified inbox", "team inbox", "ai inbox"],
+      },
+      {
+        cluster: "Tools & Templates",
+        intent: "MOFU",
+        phase: "Phase 2 (Months 4-8)",
+        demand: 118400,
+        keywordCount: 2,
+        estimatedReachableVisits: { low: 1426.34, base: 2852.68, high: 4754.47 },
+        sampleKeywords: ["email generator", "email signature generator"],
+      },
+      {
+        cluster: "Alternatives & Comparisons",
+        intent: "BOFU",
+        phase: "Phase 1 (Months 0-3)",
+        demand: 190,
+        keywordCount: 5,
+        estimatedReachableVisits: { low: 4.58, base: 7.63, high: 12.21 },
+        sampleKeywords: ["inbox alternative", "inbox vs gmail", "collaborative inbox vs shared mailbox"],
+      },
+      {
+        cluster: "Pricing & Cost",
+        intent: "BOFU",
+        phase: "Phase 1 (Months 0-3)",
+        demand: 70,
+        keywordCount: 1,
+        estimatedReachableVisits: { low: 1.69, base: 2.81, high: 4.5 },
+        sampleKeywords: ["google workspace email pricing"],
+      },
+    ],
+    revenueModel: {
+      enabled: false,
+      reason: "Revenue inputs missing (acv/aov). Showing TAM + pipeline potential only.",
+      pipelinePotential: {
+        leads: {
+          low: 537.85,
+          base: 2246.61,
+          high: 6144.05,
+        },
+      },
+    },
+    confidence: {
+      score: 90,
+      level: "high",
+      reasons: [
+        "Sufficient TAM volume identified.",
+        "Strong full keyword universe coverage.",
+        "Semantic keyword expansion contributed meaningful TAM coverage.",
+        "AI visibility prompts provide directional coverage.",
+        "AI visibility sampled across multiple platforms.",
+        "Revenue model is estimate-only and missing first-party monetary inputs.",
+      ],
+    },
+    assumptions: {
+      channelSplit: { google: 0.86, ai: 0.14 },
+      channelClickThrough: { google: 0.464, ai: 0.018 },
+      captureRates: {
+        BOFU: { low: 0.06, base: 0.1, high: 0.16 },
+        MOFU: { low: 0.03, base: 0.06, high: 0.1 },
+        TOFU: { low: 0.015, base: 0.03, high: 0.05 },
+      },
+    },
+  },
+  competitors: [
+    {
+      domain: "hiverhq.com",
+      source: "seeded_competitor",
+      queryHits: 0,
+      queryCount: 0,
+      bestRank: null as number | null,
+      metrics: {
+        organicTraffic: 282533.58254896477,
+        organicKeywords: 26665,
+        backlinks: 24240,
+        referringDomains: 6001,
+      },
+    },
+    {
+      domain: "missiveapp.com",
+      source: "product_competitor_discovery",
+      queryHits: 3,
+      queryCount: 2,
+      bestRank: 8,
+      metrics: {
+        organicTraffic: 166300.31167035736,
+        organicKeywords: 10931,
+        backlinks: 23611,
+        referringDomains: 2709,
+      },
+    },
+    {
+      domain: "intercom.com",
+      source: "seeded_competitor",
+      queryHits: 0,
+      queryCount: 0,
+      bestRank: null as number | null,
+      metrics: {
+        organicTraffic: 91288.66046237387,
+        organicKeywords: 26720,
+        backlinks: 1024186,
+        referringDomains: 42379,
+      },
+    },
+    {
+      domain: "front.com",
+      source: "seeded_competitor",
+      queryHits: 0,
+      queryCount: 0,
+      bestRank: null as number | null,
+      metrics: {
+        organicTraffic: 86294.75961692631,
+        organicKeywords: 12224,
+        backlinks: 50566,
+        referringDomains: 6049,
+      },
+    },
+    {
+      domain: "gmelius.com",
+      source: "product_competitor_discovery",
+      queryHits: 5,
+      queryCount: 3,
+      bestRank: 1,
+      metrics: {
+        organicTraffic: 80442.91756520234,
+        organicKeywords: 10478,
+        backlinks: 8830,
+        referringDomains: 2337,
+      },
+    },
+  ],
+  keywordGaps: [
+    { keyword: "all inboxes gmail", volume: 90, competition: "LOW", markets: ["US"], currentPosition: 60 },
+    { keyword: "unified messaging app", volume: 90, competition: "LOW", markets: ["US"], currentPosition: 100 },
+    { keyword: "gmail all inboxes", volume: 90, competition: "LOW", markets: ["US"], currentPosition: 105 },
+    { keyword: "gmail automatic labels", volume: 70, competition: "LOW", markets: ["AU"], currentPosition: 80 },
+    { keyword: "unified inbox email", volume: 40, competition: "MEDIUM", markets: ["US"], currentPosition: 40 },
+    { keyword: "ai inbox", volume: 40, competition: "MEDIUM", markets: ["US"], currentPosition: 105 },
+    { keyword: "multiple inboxes gmail", volume: 40, competition: "LOW", markets: ["AU"], currentPosition: 110 },
+    { keyword: "unified inbox app", volume: 30, competition: "LOW", markets: ["US"], currentPosition: 29 },
+  ],
+  qualityGate: {
+    passed: true,
+    mode: "strict",
+    metrics: {
+      competitors: 5,
+      keywords: 22,
+      keywordUniverse: 559,
+      prompts: 36,
+      aiPlatformsWithSamples: 3,
+      hasTam: true,
+      hasOnPage: true,
+    },
+  },
+  confidence: {
+    payload: { score: 96, level: "high" },
+    tam: { score: 90, level: "high" },
+  },
+  websiteAudit: {
+    title: "Kinso: Unified Inbox, AI Assistant for Business Messages",
+    description:
+      "Bring every email, message and contact into one smart workspace. Kinso learns your goals, prioritises what matters and drafts replies in your voice.",
+    wordCount: 724,
+    internalLinks: 5,
+    externalLinks: 4,
+    schemaTypes: [] as string[],
+    timeToInteractiveMs: 225,
+    domCompleteMs: 405,
+  },
+};
+
+const phasedPoints = researchData.tamModel.byIntent.map((item) => ({
+  phase: item.phase,
+  label: `${item.intent} capture`,
+  low: Math.round(item.estimatedReachableVisits.low),
+  base: Math.round(item.estimatedReachableVisits.base),
+  high: Math.round(item.estimatedReachableVisits.high),
+}));
+
+const llmRows = [
+  {
+    platform: "ChatGPT",
+    status: researchData.aiVisibility.platformAvailability.chatgpt.status,
+    totalPrompts: researchData.aiVisibility.platformSummary.chatgpt.total,
+    mentioned: researchData.aiVisibility.platformSummary.chatgpt.mentioned,
+    mentionRate: researchData.aiVisibility.platformSummary.chatgpt.mentionRate,
+    evidence: "Mentioned on brand/comparison prompts; absent on non-brand ‘best’ prompts.",
+  },
+  {
+    platform: "Gemini",
+    status: researchData.aiVisibility.platformAvailability.gemini.status,
+    totalPrompts: researchData.aiVisibility.platformSummary.gemini.total,
+    mentioned: researchData.aiVisibility.platformSummary.gemini.mentioned,
+    mentionRate: researchData.aiVisibility.platformSummary.gemini.mentionRate,
+    evidence: "Brand present on Kinso-specific prompts; category winners still competitor-led.",
+  },
+  {
+    platform: "Google AI Overviews",
+    status: researchData.aiVisibility.platformAvailability.google_ai_overview.status,
+    totalPrompts: researchData.aiVisibility.platformSummary.google_ai_overview.total,
+    mentioned: researchData.aiVisibility.platformSummary.google_ai_overview.mentioned,
+    mentionRate: researchData.aiVisibility.platformSummary.google_ai_overview.mentionRate,
+    evidence: "0/12 mentions despite AIO presence on relevant SERPs.",
+  },
+  {
+    platform: "Perplexity",
+    status: researchData.aiVisibility.platformAvailability.perplexity.status,
+    totalPrompts: 0,
+    mentioned: 0,
+    mentionRate: 0,
+    evidence: researchData.aiVisibility.platformAvailability.perplexity.reason,
   },
 ];
 
-const keywordGapRows = [
-  { keyword: "all inboxes gmail", volume: 90, competition: "LOW", market: "US", currentPosition: 60 },
-  { keyword: "unified messaging app", volume: 90, competition: "LOW", market: "US", currentPosition: 100 },
-  { keyword: "gmail all inboxes", volume: 90, competition: "LOW", market: "US", currentPosition: 105 },
-  { keyword: "gmail automatic labels", volume: 70, competition: "LOW", market: "AU", currentPosition: 80 },
-  { keyword: "unified inbox email", volume: 40, competition: "MEDIUM", market: "US", currentPosition: 40 },
-  { keyword: "ai inbox", volume: 40, competition: "MEDIUM", market: "US", currentPosition: 105 },
-  { keyword: "multiple inboxes gmail", volume: 40, competition: "LOW", market: "AU", currentPosition: 110 },
-  { keyword: "unified inbox app", volume: 30, competition: "LOW", market: "US", currentPosition: 29 },
-];
-
-const priorityMoneyQueries = [
-  { query: "best unified ai inbox tools", currentState: "Not mentioned in ChatGPT/Gemini sample", difficulty: "Hard", winner: "Superhuman / Shortwave / Gmelius" },
-  { query: "best unified ai inbox software", currentState: "Not mentioned", difficulty: "Hard", winner: "Gmelius / Front / Superhuman mentions" },
-  { query: "best unified ai inbox for startups", currentState: "Not mentioned", difficulty: "Hard", winner: "Front / Missive / Superhuman" },
-  { query: "best unified ai inbox for enterprise", currentState: "Not mentioned", difficulty: "Hard", winner: "Microsoft + Copilot / Google + Gemini ecosystem" },
-  { query: "Kinso alternatives", currentState: "Mentioned (brand query)", difficulty: "Medium", winner: "Kinso appears but mixed intent" },
-  { query: "Kinso vs competitors", currentState: "Mentioned (brand query)", difficulty: "Medium", winner: "Kinso appears with generic comparisons" },
-  { query: "unified inbox email", currentState: "Ranks #40", difficulty: "Medium", winner: "Mixed long-tail competitors" },
-  { query: "unified inbox app", currentState: "Ranks #29", difficulty: "Medium", winner: "Mixed long-tail competitors" },
-];
-
-const phasedPoints = [
-  {
-    phase: "Phase 1 (Months 0-3)",
-    label: "BOFU capture: buyer guides, alternatives, integrations",
-    low: Math.round(57910.17),
-    base: Math.round(96516.95),
-    high: Math.round(154427.13),
-  },
-  {
-    phase: "Phase 2 (Months 4-8)",
-    label: "MOFU capture: workflows, templates, implementation",
-    low: Math.round(1844.73),
-    base: Math.round(3689.45),
-    high: Math.round(6149.09),
-  },
-  {
-    phase: "Phase 3 (Months 9-12)",
-    label: "TOFU scale: broad category and demand-shaping terms",
-    low: Math.round(74708.23),
-    base: Math.round(149416.46),
-    high: Math.round(249027.43),
-  },
+const immediateActions = [
+  "Launch 12 high-intent Apex assets for unified inbox + shared inbox + alternatives within 45 days.",
+  "Build Bing-indexed comparison layer (Kinso vs Superhuman / Missive / Gmelius / Front) to lift ChatGPT recommendation frequency.",
+  "Deploy external authority sprint: Reddit, review surfaces, and expert bylines tied to each Apex asset within 14 days of publish.",
 ];
 
 export default function StrategyKinso() {
@@ -165,809 +416,786 @@ export default function StrategyKinso() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans overflow-x-hidden">
+    <StrategyPageFrame mainClassName="container mx-auto max-w-6xl">
       <Nav />
 
-      <main className="pt-24 pb-32 px-4 md:px-12 container mx-auto max-w-6xl">
-        <div className="mb-14 md:mb-20 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-primary/10 text-primary border border-primary/20 font-mono text-xs font-bold tracking-wider uppercase mb-6">
-            <Globe className="w-3 h-3" />
+      <StrategyHero
+        eyebrow={
+          <>
+            <Globe className="h-3.5 w-3.5" />
             Strategy Document /// March 2026
+          </>
+        }
+        title={
+          <>
+            KINSO
+            <br />
+            AEO + SEO
+          </>
+        }
+        accent="CATEGORY LOCK STRATEGY."
+        subtitle={
+          <>
+            Kinso has a product story AI models can repeat, but not yet the retrieval density or authority signals
+            required to win non-brand recommendation prompts. This plan is built to move Kinso from{" "}
+            <span className="text-white">brand-mentioned</span> to <span className="text-white">category-recommended</span>{" "}
+            across ChatGPT, Gemini, and Google AI surfaces.
+          </>
+        }
+        tags={[
+          "kinso.ai",
+          "Communication / Unified AI Inbox",
+          "US + AU",
+          "Strict Research Mode",
+          "TAM-first Planning",
+        ]}
+      >
+        <StrategySectionShell className="mt-6" glow="blue">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+            <div>
+              <StrategyEyebrow className="mb-4">Executive Summary</StrategyEyebrow>
+              <div className="grid gap-4 sm:grid-cols-3">
+                <StrategyCard>
+                  <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45 mb-2">Current Organic</div>
+                  <div className="text-3xl font-display font-bold text-white">
+                    {formatWhole(researchData.seoMetrics.organicTraffic)}
+                  </div>
+                  <div className="text-xs text-white/45 mt-2">monthly visits (US+AU estimate)</div>
+                </StrategyCard>
+                <StrategyCard>
+                  <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45 mb-2">BOFU Demand</div>
+                  <div className="text-3xl font-display font-bold text-white">
+                    {formatWhole(researchData.tamModel.byIntent[0].demand)}
+                  </div>
+                  <div className="text-xs text-white/45 mt-2">12-month demand in validated buyer-guide cluster</div>
+                </StrategyCard>
+                <StrategyCard>
+                  <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45 mb-2">AIO Mention Rate</div>
+                  <div className="text-3xl font-display font-bold text-white">0%</div>
+                  <div className="text-xs text-white/45 mt-2">0/12 prompts in Google AI Overviews sample</div>
+                </StrategyCard>
+              </div>
+            </div>
+            <StrategyCard glow="mixed">
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-[#f4e4cd] mb-3">Top 3 Actions (Next 30-60 Days)</div>
+              <BulletList items={immediateActions} />
+            </StrategyCard>
           </div>
+        </StrategySectionShell>
+      </StrategyHero>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-foreground tracking-tighter mb-6 leading-[0.95]">
-            KINSO <br />
-            <span className="text-primary">AEO + SEO GROWTH STRATEGY.</span>
-          </h1>
-
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl leading-relaxed mt-6 mb-4">
-            Make Kinso the default recommendation when buyers ask AI and search engines for a unified inbox,
-            shared inbox, team inbox, or AI-powered communication workflow.
-          </p>
-
-          <div className="flex flex-wrap gap-3 mt-6">
-            {["kinso.ai", "Communication / Unified AI Inbox", "US + AU", "AI Visibility Gap"].map((tag) => (
-              <span key={tag} className="px-3 py-1 bg-secondary/10 border border-border text-sm font-mono text-muted-foreground">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <section className="mb-20 md:mb-24">
-          <HighlightBox>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-sm font-mono text-primary mb-4 uppercase tracking-widest">Executive Summary</h3>
-                <div className="grid grid-cols-3 gap-3 mb-4">
-                  <div className="border border-border bg-background/40 p-3 text-center">
-                    <div className="text-xl font-display font-bold text-primary">559</div>
-                    <div className="text-[10px] font-mono text-muted-foreground uppercase">Keyword Universe</div>
-                  </div>
-                  <div className="border border-border bg-background/40 p-3 text-center">
-                    <div className="text-xl font-display font-bold text-primary">{formatWhole(249622.87)}</div>
-                    <div className="text-[10px] font-mono text-muted-foreground uppercase">12M Base Reachable Visits</div>
-                  </div>
-                  <div className="border border-border bg-background/40 p-3 text-center">
-                    <div className="text-xl font-display font-bold text-primary">33.33%</div>
-                    <div className="text-[10px] font-mono text-muted-foreground uppercase">ChatGPT/Gemini Mention Rate</div>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Kinso has product-market narrative fit, but search capture is still mostly brand-only. The core issue is not
-                  demand. The issue is answer-surface ownership.
+      <section className="mb-20">
+        <SectionHeader number="00" title="State of Search 2026" />
+        <StrategySectionShell glow="mixed">
+          <div className="grid gap-6 lg:grid-cols-3">
+            <StrategyCard className="lg:col-span-2">
+              <h3 className="text-xl font-display font-bold text-white mb-4">The market shift that matters for Kinso</h3>
+              <div className="space-y-4 text-sm leading-7 text-white/70">
+                <p>
+                  Unified inbox buyers now shortlist vendors inside answer engines before they click. In this dataset,
+                  Kinso appears in brand-comparison contexts (e.g., “Kinso vs competitors”), but disappears in
+                  high-intent non-brand prompts like “best unified AI inbox software.”
+                </p>
+                <p>
+                  This is exactly the 2026 AEO pattern: visibility is no longer just keyword rankings. Winning requires
+                  being repeatedly cited as the trusted entity across Google results, AI summaries, and external
+                  authority surfaces.
+                </p>
+                <p>
+                  The opportunity is not “more blog traffic.” It is recommendation share in buying prompts where
+                  category decisions are formed.
                 </p>
               </div>
+            </StrategyCard>
 
-              <div>
-                <h4 className="text-sm font-mono text-primary mb-3 uppercase tracking-widest">3 Immediate Actions (Next 30 Days)</h4>
-                <BulletList
-                  items={[
-                    "Publish 8 BOFU Apex pages for unified inbox, shared inbox, and team inbox comparisons before scaling TOFU.",
-                    "Deploy schema + entity consistency stack (Organization, Product, FAQ, HowTo, Review-ready templates) and activate Bing-first indexing protocol.",
-                    "Create AI citation assets: benchmark-style comparison page + transparent methodology + external distribution loop to LinkedIn/Reddit/review nodes.",
-                  ]}
-                />
-              </div>
-            </div>
-          </HighlightBox>
-        </section>
-
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="00" title="STATE OF SEARCH 2026" />
-
-          <HighlightBox className="mb-8">
-            <p className="text-xl md:text-2xl font-display font-medium text-foreground leading-tight">
-              Search has shifted from <span className="text-primary">rank-and-click</span> to <span className="text-primary">recommend-and-trust</span>.
-              If Kinso is not named in AI recommendation sets for “best unified AI inbox,” it loses high-intent demand before a click happens.
-            </p>
-          </HighlightBox>
-
-          <div className="grid md:grid-cols-3 gap-5 mb-8">
-            <div className="border border-border bg-secondary/5 p-5">
-              <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
-                <MessagesSquare className="w-4 h-4 text-primary" /> What matters
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                AI assistants now generate shortlists before users open vendor websites. Recommendation slots are the new first SERP positions.
-              </p>
-            </div>
-            <div className="border border-border bg-secondary/5 p-5">
-              <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
-                <Radar className="w-4 h-4 text-primary" /> Why it matters
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Kinso’s current mentions are concentrated in brand-led prompts. Non-brand category demand remains mostly owned by larger, better-cited players.
-              </p>
-            </div>
-            <div className="border border-border bg-secondary/5 p-5">
-              <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
-                <ArrowRight className="w-4 h-4 text-primary" /> What to do next
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Build category-lock assets for buyer-intent queries and external proof surfaces so LLMs repeatedly retrieve Kinso as a credible default.
-              </p>
-            </div>
-          </div>
-
-          <DataTable
-            headers={["Shift", "Legacy SEO Reality", "AEO/GEO 2026 Reality", "Implication for Kinso"]}
-            rows={[
-              [
-                "Discovery layer",
-                "Google clicks to blog posts",
-                "LLMs summarize and shortlist first",
-                "Need to be named in answers, not only ranked in blue links",
-              ],
-              [
-                "Winning asset",
-                "Keyword-optimized article",
-                "Structured, citable, decision-ready pages",
-                "Publish Apex assets that include direct verdicts + evidence",
-              ],
-              [
-                "Authority signal",
-                "Backlinks and on-page optimization",
-                "Entity consistency + multi-surface citations",
-                "Distribute each core page beyond kinso.ai",
-              ],
-              [
-                "Primary KPI",
-                "Sessions and clicks",
-                "AI mention rate + recommendation frequency",
-                "Track prompt wins per platform and market",
-              ],
-            ]}
-          />
-        </section>
-
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="01" title="CURRENT STATE SNAPSHOT" />
-
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-secondary/5 border border-border p-6">
-              <h3 className="text-sm font-mono text-primary mb-4 uppercase tracking-widest">Observed Strengths</h3>
+            <StrategyCard glow="amber">
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-[#f4e4cd] mb-3">What matters</div>
               <BulletList
                 items={[
-                  "Clear homepage proposition: unified inbox + AI assistant for business messages.",
-                  "Healthy early backlink base for stage: 426 backlinks from 63 referring domains.",
-                  "Brand defensibility: #1 for “kinso” and “kinso ai” in US/AU.",
-                  "Fast technical timing from crawl sample: TTI ~225ms, DOM complete ~405ms.",
+                  "ChatGPT mention rate: 33.33% (4/12), mostly brand-led prompts.",
+                  "Gemini mention rate: 33.33% (4/12), similar pattern.",
+                  "Google AI Overviews mention rate: 0% (0/12).",
+                  "Perplexity endpoint unavailable in payload: visibility not yet measured.",
                 ]}
               />
-            </div>
-
-            <div className="bg-secondary/5 border border-border p-6">
-              <h3 className="text-sm font-mono text-primary mb-4 uppercase tracking-widest">Current Bottlenecks</h3>
-              <div className="space-y-3">
-                {[
-                  "Organic footprint is shallow: ~557 monthly traffic, 24 ranking keywords.",
-                  "No meaningful schema coverage detected (Organization/Product/FAQ/HowTo absent).",
-                  "Category pages for shared inbox / team inbox / alternatives are missing.",
-                  "AI mention appears in 8/36 prompts, but almost entirely in brand-led intent.",
-                  "Google AI Overview sample has 0% mention rate across tested prompts.",
-                ].map((item) => (
-                  <div key={item} className="flex gap-2 text-sm text-muted-foreground">
-                    <AlertTriangle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            </StrategyCard>
           </div>
 
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <StrategyCard>
+              <div className="flex items-center gap-2 text-[#f4e4cd] mb-2">
+                <Brain className="h-4 w-4" />
+                <div className="text-xs font-mono uppercase tracking-wider">Why it matters</div>
+              </div>
+              <p className="text-sm text-white/68">
+                If Kinso is absent in non-brand recommendation prompts, it loses demand before users ever search
+                directly for “Kinso”.
+              </p>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="flex items-center gap-2 text-[#f4e4cd] mb-2">
+                <Radar className="h-4 w-4" />
+                <div className="text-xs font-mono uppercase tracking-wider">What to do next</div>
+              </div>
+              <p className="text-sm text-white/68">
+                Build a dense “best / alternatives / vs / implementation” asset graph and back it with third-party
+                citations and entity consistency.
+              </p>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="flex items-center gap-2 text-[#f4e4cd] mb-2">
+                <ShieldCheck className="h-4 w-4" />
+                <div className="text-xs font-mono uppercase tracking-wider">Guardrail</div>
+              </div>
+              <p className="text-sm text-white/68">
+                Headline targets are tied to validated topical buyer-guide clusters, not broad “email login” keyword
+                noise present in semantic expansion.
+              </p>
+            </StrategyCard>
+          </div>
+        </StrategySectionShell>
+      </section>
+
+      <section className="mb-20">
+        <SectionHeader number="01" title="Current State Snapshot" />
+        <StrategySectionShell glow="blue">
           <StatsGrid
             columns={4}
             stats={[
-              { label: "Organic Traffic (US+AU)", value: formatWhole(556.7749864012003), icon: <BarChart3 className="w-4 h-4" /> },
-              { label: "Organic Keywords", value: "24", icon: <Search className="w-4 h-4" /> },
-              { label: "Backlinks", value: formatWhole(426), icon: <Link2 className="w-4 h-4" /> },
-              { label: "Referring Domains", value: formatWhole(63), icon: <Database className="w-4 h-4" /> },
+              { label: "Organic Traffic", value: formatWhole(researchData.seoMetrics.organicTraffic), icon: <LineChart className="h-5 w-5" /> },
+              { label: "Organic Keywords", value: formatWhole(researchData.seoMetrics.organicKeywords), icon: <Search className="h-5 w-5" /> },
+              { label: "Backlinks", value: formatWhole(researchData.seoMetrics.backlinks), icon: <Link2 className="h-5 w-5" /> },
+              { label: "Referring Domains", value: formatWhole(researchData.seoMetrics.referringDomains), icon: <Globe className="h-5 w-5" /> },
             ]}
           />
 
-          <div className="mt-8 border border-border bg-secondary/5 p-6">
-            <h3 className="text-foreground font-bold mb-2">Research confidence level</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Current snapshot confidence is <strong className="text-foreground">High</strong> (Payload confidence: 96/100; TAM model confidence: 90/100).
-              Dataset passed strict quality gate with 5 competitors, 559-keyword universe, and 36 AI prompt tests across US/AU.
-            </p>
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <HighlightBox>
+              <h3 className="text-lg font-display font-bold text-white mb-4">Snapshot: where Kinso stands</h3>
+              <BulletList
+                items={[
+                  `US visibility baseline remains low (${formatOne(researchData.seoMetrics.markets.US.organicTraffic)} est. organic visits).`,
+                  `AU contributes most current organic share (${formatOne(researchData.seoMetrics.markets.AU.organicTraffic)} est. organic visits).`,
+                  "Homepage has no detected schema types in on-page sample.",
+                  "Current ranking footprint is mostly brand and adjacent terms, not controlled category entities.",
+                  "Backlink profile exists but authority gap vs category leaders remains large.",
+                ]}
+              />
+            </HighlightBox>
+
+            <StrategyCard glow="mixed">
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-[#f4e4cd] mb-3">
+                Confidence & Data Health
+              </div>
+              <div className="space-y-3 text-sm text-white/68">
+                <p>
+                  Research payload confidence:{" "}
+                  <span className="text-white font-medium">
+                    {researchData.confidence.payload.level} ({researchData.confidence.payload.score}/100)
+                  </span>
+                </p>
+                <p>
+                  TAM model confidence:{" "}
+                  <span className="text-white font-medium">
+                    {researchData.confidence.tam.level} ({researchData.confidence.tam.score}/100)
+                  </span>
+                </p>
+                <p>
+                  Quality gate mode: <span className="text-white font-medium">{researchData.qualityGate.mode}</span>{" "}
+                  (passed with {researchData.qualityGate.metrics.competitors} competitors,{" "}
+                  {researchData.qualityGate.metrics.keywordUniverse} universe keywords,{" "}
+                  {researchData.qualityGate.metrics.prompts} prompts).
+                </p>
+              </div>
+            </StrategyCard>
           </div>
-        </section>
+        </StrategySectionShell>
+      </section>
 
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="02" title="DATA-BACKED COMPETITIVE LANDSCAPE" />
-
-          <p className="text-sm text-muted-foreground mb-7 leading-relaxed">
-            This table is grounded in provided research payload metrics (DataForSEO domain + backlinks + prompt evidence). Rows are not estimated unless explicitly labeled.
-          </p>
-
+      <section className="mb-20">
+        <SectionHeader number="02" title="Data-backed Competitive Landscape" />
+        <StrategySectionShell glow="amber">
           <DataTable
             headers={[
               "Domain",
               "Organic Traffic",
               "Organic Keywords",
               "Backlinks",
-              "Ref. Domains",
-              "Discovery Query Hits",
-              "Prompt-Evidence Hits",
+              "Referring Domains",
+              "Prompt Query Hits",
+              "Best Observed Rank",
+              "Source",
             ]}
-            rows={topCompetitors.map((c) => [
-              <span className="font-mono text-xs text-foreground" key={`${c.domain}-d`}>
-                {c.domain}
-              </span>,
-              <span className="text-primary font-bold" key={`${c.domain}-t`}>
-                {formatWhole(c.organicTraffic)}
-              </span>,
-              formatWhole(c.organicKeywords),
-              formatWhole(c.backlinks),
-              formatWhole(c.referringDomains),
-              `${c.queryHits}/${c.queryCount}`,
-              c.promptHits.toString(),
+            rows={[
+              [
+                "kinso.ai (target)",
+                formatWhole(researchData.seoMetrics.organicTraffic),
+                formatWhole(researchData.seoMetrics.organicKeywords),
+                formatWhole(researchData.seoMetrics.backlinks),
+                formatWhole(researchData.seoMetrics.referringDomains),
+                "—",
+                "—",
+                "target",
+              ],
+              ...researchData.competitors.map((c) => [
+                c.domain,
+                formatWhole(c.metrics.organicTraffic),
+                formatWhole(c.metrics.organicKeywords),
+                formatWhole(c.metrics.backlinks),
+                formatWhole(c.metrics.referringDomains),
+                `${c.queryHits}/${c.queryCount}`,
+                c.bestRank ? `#${c.bestRank}` : "n/a",
+                c.source,
+              ]),
+            ]}
+            highlightRow={0}
+          />
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-[#f4e4cd] mb-2">What matters</div>
+              <p className="text-sm text-white/68">
+                Kinso competes against domains with 35x–2,700x more referring domains. Entity trust is the bottleneck,
+                not just on-page optimization.
+              </p>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-[#f4e4cd] mb-2">Why it matters</div>
+              <p className="text-sm text-white/68">
+                LLM recommendation frequency is heavily reinforced by external authority and repeated co-citation across
+                search surfaces.
+              </p>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-[#f4e4cd] mb-2">What to do next</div>
+              <p className="text-sm text-white/68">
+                Prioritize high-leverage comparison assets + authority placements that name Kinso next to Missive,
+                Front, and Gmelius in buyer contexts.
+              </p>
+            </StrategyCard>
+          </div>
+        </StrategySectionShell>
+      </section>
+
+      <section className="mb-20">
+        <SectionHeader number="03" title="AI Visibility by LLM" />
+        <StrategySectionShell glow="blue">
+          <div className="mb-6">
+            <StatsGrid
+              columns={4}
+              stats={[
+                {
+                  label: "Prompts Analyzed",
+                  value: formatWhole(researchData.aiVisibility.promptsAnalyzed),
+                  icon: <MessagesSquare className="h-5 w-5" />,
+                },
+                {
+                  label: "Client Mentioned Prompts",
+                  value: formatWhole(researchData.aiVisibility.clientMentionedPrompts),
+                  icon: <Bot className="h-5 w-5" />,
+                },
+                {
+                  label: "ChatGPT Mention Rate",
+                  value: formatPercent(researchData.aiVisibility.platformSummary.chatgpt.mentionRate),
+                  icon: <Brain className="h-5 w-5" />,
+                },
+                {
+                  label: "Google AIO Mention Rate",
+                  value: `${researchData.aiVisibility.platformSummary.google_ai_overview.mentionRate}%`,
+                  icon: <AlertTriangle className="h-5 w-5" />,
+                },
+              ]}
+            />
+          </div>
+
+          <DataTable
+            headers={["Platform", "Availability", "Mentions", "Total Tests", "Mention Rate", "Evidence Summary"]}
+            rows={llmRows.map((r) => [
+              r.platform,
+              r.status,
+              String(r.mentioned),
+              String(r.totalPrompts),
+              `${r.mentionRate}%`,
+              r.evidence,
             ])}
-            highlightRow={5}
-            className="mb-3"
           />
-          <p className="text-xs text-muted-foreground mb-8">Highlighted row = Kinso baseline.</p>
 
-          <div className="grid md:grid-cols-3 gap-5">
-            <div className="border border-border bg-secondary/5 p-5">
-              <h3 className="font-bold text-foreground mb-2">What matters</h3>
-              <p className="text-sm text-muted-foreground">
-                Kinso is competing against companies with 35x to 670x more referring domains and much deeper indexed content estates.
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <StrategyCard>
+              <h3 className="text-lg font-display font-bold text-white mb-3">Prompt evidence pattern</h3>
+              <BulletList
+                items={[
+                  "Kinso appears on brand prompts (“Kinso alternatives”, “Kinso vs competitors”).",
+                  "Kinso is absent in sampled generic “best unified AI inbox” prompts across ChatGPT and Gemini.",
+                  "Google AI Overviews sampled with 0 explicit Kinso mentions, despite AIO surfaces being present.",
+                  "Competitive evidence shows gmelius.com captured at least one high-intent query with cross-platform hits.",
+                ]}
+              />
+            </StrategyCard>
+
+            <HighlightBox>
+              <h3 className="text-lg font-display font-bold text-white mb-3">Platform caveat surfaced openly</h3>
+              <p className="text-sm text-white/68 leading-7">
+                Perplexity in this payload is marked <span className="text-white">unavailable</span> due to API path
+                status 40402. This strategy does not hide that gap. Perplexity coverage should be added in the next
+                audit pass before declaring full cross-LLM dominance.
               </p>
-            </div>
-            <div className="border border-border bg-secondary/5 p-5">
-              <h3 className="font-bold text-foreground mb-2">Why it matters</h3>
-              <p className="text-sm text-muted-foreground">
-                In AI retrieval, depth + authority repetition drives trust. High-volume competitor content creates denser retrieval footprints.
-              </p>
-            </div>
-            <div className="border border-border bg-secondary/5 p-5">
-              <h3 className="font-bold text-foreground mb-2">What to do next</h3>
-              <p className="text-sm text-muted-foreground">
-                Outflank on precision: own “unified inbox” and “shared inbox” buyer paths with sharper pages + faster refresh + targeted distribution.
-              </p>
-            </div>
+            </HighlightBox>
+          </div>
+        </StrategySectionShell>
+      </section>
+
+      <section className="mb-20">
+        <SectionHeader number="04" title="Full Keyword Universe" />
+        <StrategySectionShell glow="mixed">
+          <div className="grid gap-4 md:grid-cols-4 mb-6">
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45">Universe Size</div>
+              <div className="text-3xl font-display font-bold text-white mt-2">
+                {formatWhole(researchData.tamModel.keywordUniverse.size)}
+              </div>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45">Anchor-Matched Terms</div>
+              <div className="text-3xl font-display font-bold text-white mt-2">
+                {formatWhole(researchData.tamModel.keywordUniverse.anchorMatchedCount)}
+              </div>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45">Semantic Contribution</div>
+              <div className="text-3xl font-display font-bold text-white mt-2">
+                {formatPercent(researchData.tamModel.keywordUniverse.semanticContribution.demandSharePercent)}
+              </div>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45">Keyword Gaps</div>
+              <div className="text-3xl font-display font-bold text-white mt-2">
+                {formatWhole(researchData.keywordGaps.length)}
+              </div>
+            </StrategyCard>
           </div>
 
-          <HighlightBox className="mt-8">
-            <h3 className="text-sm font-mono text-primary mb-4 uppercase tracking-widest">Competitive signal that matters most</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">gmelius.com</strong> has the strongest direct prompt-evidence signal in this dataset
-              (2 platform hits on “best unified ai inbox tools” across Gemini + Google AI Overview),
-              while <strong className="text-foreground">missiveapp.com</strong> has broader discovery query presence and a materially larger authority footprint.
-              This indicates Kinso’s first objective is not broad TOFU coverage; it is targeted recommendation-page capture for high-intent category prompts.
-            </p>
-          </HighlightBox>
-        </section>
-
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="03" title="FULL KEYWORD UNIVERSE" />
-
-          <div className="grid md:grid-cols-4 gap-4 mb-8">
-            <div className="border border-border bg-secondary/5 p-4 text-center">
-              <div className="text-xl font-display font-bold text-foreground">559</div>
-              <div className="text-xs font-mono text-muted-foreground mt-1">Total Keywords</div>
-            </div>
-            <div className="border border-border bg-secondary/5 p-4 text-center">
-              <div className="text-xl font-display font-bold text-primary">387</div>
-              <div className="text-xs font-mono text-muted-foreground mt-1">BOFU Keywords</div>
-            </div>
-            <div className="border border-border bg-secondary/5 p-4 text-center">
-              <div className="text-xl font-display font-bold text-primary">79</div>
-              <div className="text-xs font-mono text-muted-foreground mt-1">MOFU Keywords</div>
-            </div>
-            <div className="border border-border bg-secondary/5 p-4 text-center">
-              <div className="text-xl font-display font-bold text-primary">93</div>
-              <div className="text-xs font-mono text-muted-foreground mt-1">TOFU Keywords</div>
-            </div>
+          <div className="grid gap-6 lg:grid-cols-2 mb-6">
+            <DataTable
+              headers={["Intent", "Keyword Count", "Primary Role", "Priority"]}
+              rows={[
+                ["BOFU", formatWhole(researchData.tamModel.keywordUniverse.countsByIntent.BOFU), "Buyer guides / alternatives / shared inbox software", "Highest"],
+                ["MOFU", formatWhole(researchData.tamModel.keywordUniverse.countsByIntent.MOFU), "Workflow tooling + implementation context", "Medium"],
+                ["TOFU", formatWhole(researchData.tamModel.keywordUniverse.countsByIntent.TOFU), "Broad category discovery / demand shaping", "Medium-Late"],
+              ]}
+              className="h-full"
+            />
+            <DataTable
+              headers={["Source", "Count", "Interpretation"]}
+              rows={[
+                [
+                  "semantic_expansion",
+                  formatWhole(researchData.tamModel.keywordUniverse.countsBySource.semantic_expansion),
+                  "Breadth signal; includes broad and sometimes ambiguous terms.",
+                ],
+                [
+                  "competitor_keywords",
+                  formatWhole(researchData.tamModel.keywordUniverse.countsBySource.competitor_keywords),
+                  "Direct evidence of what currently drives competing domains.",
+                ],
+                [
+                  "target_ranked_keywords",
+                  formatWhole(researchData.tamModel.keywordUniverse.countsBySource.target_ranked_keywords),
+                  "Current ranking footprint for Kinso.",
+                ],
+                [
+                  "keyword_gaps",
+                  formatWhole(researchData.tamModel.keywordUniverse.countsBySource.keyword_gaps),
+                  "Immediate ranking opportunities already detected.",
+                ],
+              ]}
+              className="h-full"
+            />
           </div>
 
           <DataTable
-            headers={["Cluster", "Intent", "Demand", "Keyword Count", "Estimated Reachable Visits (Base)", "Sample Terms"]}
-            rows={[
-              [
-                "Category & Brand Demand",
-                "TOFU",
-                formatWhole(12437710),
-                "168",
-                formatWhole(150252.75),
-                "outlook email, free email services, outlook email login",
-              ],
-              [
-                "Buyer Guides",
-                "BOFU",
-                formatWhole(2403290),
-                "381",
-                formatWhole(96506.51),
-                "gmail inbox, unified inbox, shared inbox, team inbox",
-              ],
-              [
-                "Tools & Templates",
-                "MOFU",
-                formatWhole(118400),
-                "2",
-                formatWhole(2852.68),
-                "email generator, email signature generator",
-              ],
-              [
-                "Alternatives & Comparisons",
-                "BOFU",
-                formatWhole(190),
-                "5",
-                formatWhole(7.63),
-                "inbox alternative, inbox vs outlook",
-              ],
-              [
-                "Pricing & Cost",
-                "BOFU",
-                formatWhole(70),
-                "1",
-                formatWhole(2.81),
-                "google workspace email pricing",
-              ],
-            ]}
-            className="mb-8"
+            headers={["Cluster", "Intent", "Demand", "Keyword Count", "Low/Base/High Reachable Visits", "Sample Keywords"]}
+            rows={researchData.tamModel.topOpportunityClusters.map((c) => [
+              c.cluster,
+              c.intent,
+              formatWhole(c.demand),
+              formatWhole(c.keywordCount),
+              `${formatWhole(c.estimatedReachableVisits.low)} / ${formatWhole(c.estimatedReachableVisits.base)} / ${formatWhole(c.estimatedReachableVisits.high)}`,
+              c.sampleKeywords.join(", "),
+            ])}
           />
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="border border-border bg-secondary/5 p-6">
-              <h3 className="font-bold text-foreground mb-3 flex items-center gap-2">
-                <Target className="w-4 h-4 text-primary" /> Priority keyword gaps (already visible but under-ranked)
-              </h3>
-              <DataTable
-                headers={["Keyword", "Volume", "Market", "Current Pos", "Comp."]}
-                rows={keywordGapRows.map((k) => [k.keyword, formatWhole(k.volume), k.market, `#${k.currentPosition}`, k.competition])}
-              />
-            </div>
-
-            <div className="border border-border bg-secondary/5 p-6">
-              <h3 className="font-bold text-foreground mb-3 flex items-center gap-2">
-                <Lightbulb className="w-4 h-4 text-primary" /> What matters / Why / Next
-              </h3>
-              <BulletList
-                items={[
-                  "What matters: The largest usable demand is concentrated in BOFU Buyer Guides where Kinso can convert intent quickly.",
-                  "Why it matters: TOFU volumes are huge but noisy; BOFU gives immediate signal loops for both SEO and AI citation.",
-                  "What to do next: Build a 40-page BOFU capture set before scaling to long-tail TOFU library.",
-                  "Use anchored terms with strong commercial CPC signal: shared inbox software, team inbox software, best shared inbox software.",
-                ]}
-              />
-            </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-[#f4e4cd] mb-2">What matters</div>
+              <p className="text-sm text-white/68">
+                BOFU “Buyer Guides” is the cleanest topical capture zone (387 keywords) and should anchor phase 1.
+              </p>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-[#f4e4cd] mb-2">Why it matters</div>
+              <p className="text-sm text-white/68">
+                Broad TOFU terms can inflate TAM with low-intent email navigation queries. They are useful for brand
+                education, but not first for conversion capture.
+              </p>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-[#f4e4cd] mb-2">What to do next</div>
+              <p className="text-sm text-white/68">
+                Keep headline planning metrics anchored to validated buyer-guide / alternatives / implementation
+                clusters before expanding to broad category demand.
+              </p>
+            </StrategyCard>
           </div>
-        </section>
+        </StrategySectionShell>
+      </section>
 
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="04" title="AI VISIBILITY BY LLM" />
-
-          <div className="grid md:grid-cols-3 gap-4 mb-8">
-            <div className="border border-border bg-secondary/5 p-5">
-              <div className="text-xs font-mono text-muted-foreground uppercase mb-1">ChatGPT Mention Rate</div>
-              <div className="text-2xl font-display font-bold text-primary">{formatPercent(33.33)}</div>
-              <div className="text-xs text-muted-foreground mt-1">4 mentions / 12 prompts</div>
-            </div>
-            <div className="border border-border bg-secondary/5 p-5">
-              <div className="text-xs font-mono text-muted-foreground uppercase mb-1">Gemini Mention Rate</div>
-              <div className="text-2xl font-display font-bold text-primary">{formatPercent(33.33)}</div>
-              <div className="text-xs text-muted-foreground mt-1">4 mentions / 12 prompts</div>
-            </div>
-            <div className="border border-border bg-secondary/5 p-5">
-              <div className="text-xs font-mono text-muted-foreground uppercase mb-1">Google AI Overview Mention Rate</div>
-              <div className="text-2xl font-display font-bold text-red-400">0.00%</div>
-              <div className="text-xs text-muted-foreground mt-1">0 mentions / 12 prompts</div>
-            </div>
-          </div>
-
-          <DataTable
-            headers={["Platform", "Status", "Availability", "Prompt Sample", "Implication"]}
-            rows={[
-              [
-                "ChatGPT",
-                "Configured",
-                "available",
-                "Kinso appears in brand prompts; absent in most category prompts",
-                "Need Bing-weighted category assets + exact-match query architecture",
-              ],
-              [
-                "Gemini",
-                "Configured",
-                "available",
-                "Similar pattern: brand recognition, weak category default presence",
-                "Increase Google entity trust + comparison page quality",
-              ],
-              [
-                "Google AI Overview",
-                "Configured",
-                "available_via_serp",
-                "0% Kinso mention rate in sampled prompts",
-                "Top-10 SEO wins are prerequisite for AIO inclusion",
-              ],
-              [
-                "Perplexity",
-                "Configured",
-                "unavailable",
-                "Endpoint returned Invalid Path (40402)",
-                "Cannot validate Perplexity coverage from this payload; track separately once endpoint is restored",
-              ],
-            ]}
-            className="mb-8"
-          />
-
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="border border-border bg-secondary/5 p-6">
-              <h3 className="font-bold text-foreground mb-3">Prompt evidence highlights</h3>
-              <BulletList
-                items={[
-                  "Kinso is consistently mentioned for brand-intent prompts like “Kinso vs competitors” and “Kinso alternatives.”",
-                  "Kinso is not reliably present for non-brand buyer prompts like “best unified ai inbox tools/software.”",
-                  "Gemini + Google AIO show external competitor citation for gmelius.com on “best unified ai inbox tools.”",
-                ]}
-              />
-            </div>
-            <div className="border border-border bg-secondary/5 p-6">
-              <h3 className="font-bold text-foreground mb-3">What matters / Why / Next</h3>
-              <BulletList
-                items={[
-                  "What matters: 8/36 total prompts mention Kinso (22.2%) and nearly all are brand-influenced.",
-                  "Why it matters: LLM shortlist behavior happens pre-click on category queries where Kinso is currently weak.",
-                  "What to do next: Build and distribute 12 money-entity pages targeting “best / alternatives / vs / pricing / implementation” patterns.",
-                ]}
-              />
-            </div>
-          </div>
-
-          <DataTable
-            headers={["Query", "Current State", "Difficulty", "Current Winner Set"]}
-            rows={priorityMoneyQueries.map((q) => [q.query, q.currentState, q.difficulty, q.winner])}
-          />
-        </section>
-
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="05" title="TOTAL ADDRESSABLE SEARCH MARKET (12 MONTHS)" />
-
+      <section className="mb-20">
+        <SectionHeader number="05" title="Total Addressable Search Market (12 months)" />
+        <StrategySectionShell glow="amber">
           <div className="flex items-center justify-between mb-5">
-            <h3 className="text-foreground font-bold text-lg">TAM Model (US + AU)</h3>
-            <span className="text-xs text-muted-foreground font-mono uppercase">estimate-only</span>
+            <StrategyEyebrow>estimate-only • US + AU modeled</StrategyEyebrow>
+            <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/42">
+              timeframe: {researchData.tamModel.timeframeMonths} months
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-4 mb-8">
-            <div className="border border-border bg-secondary/5 p-4 text-center">
-              <div className="text-xs font-mono text-muted-foreground mb-1">Total Addressable Search Demand</div>
-              <div className="text-2xl font-display font-bold text-primary">{formatWhole(14959680)}</div>
-            </div>
-            <div className="border border-border bg-secondary/5 p-4 text-center">
-              <div className="text-xs font-mono text-muted-foreground mb-1">Reachable Visits (Low)</div>
-              <div className="text-2xl font-display font-bold text-foreground">{formatWhole(134463.13)}</div>
-            </div>
-            <div className="border border-border bg-secondary/5 p-4 text-center">
-              <div className="text-xs font-mono text-muted-foreground mb-1">Reachable Visits (Base)</div>
-              <div className="text-2xl font-display font-bold text-primary">{formatWhole(249622.87)}</div>
-            </div>
-            <div className="border border-border bg-secondary/5 p-4 text-center">
-              <div className="text-xs font-mono text-muted-foreground mb-1">Reachable Visits (High)</div>
-              <div className="text-2xl font-display font-bold text-foreground">{formatWhole(409603.65)}</div>
-            </div>
+          <div className="grid gap-4 md:grid-cols-4 mb-6">
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45">Total Search Demand</div>
+              <div className="text-3xl font-display font-bold text-white mt-2">
+                {formatWhole(researchData.tamModel.totals.totalAddressableSearchDemand)}
+              </div>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45">Reachable Visits (Low)</div>
+              <div className="text-3xl font-display font-bold text-white mt-2">
+                {formatWhole(researchData.tamModel.totals.estimatedReachableVisits.low)}
+              </div>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45">Reachable Visits (Base)</div>
+              <div className="text-3xl font-display font-bold text-[#f4e4cd] mt-2">
+                {formatWhole(researchData.tamModel.totals.estimatedReachableVisits.base)}
+              </div>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45">Reachable Visits (High)</div>
+              <div className="text-3xl font-display font-bold text-white mt-2">
+                {formatWhole(researchData.tamModel.totals.estimatedReachableVisits.high)}
+              </div>
+            </StrategyCard>
           </div>
 
           <DataTable
-            headers={["Channel", "Demand", "Reachable Visits (Low)", "Reachable Visits (Base)", "Reachable Visits (High)"]}
+            headers={["Channel", "Demand", "Low Reachable", "Base Reachable", "High Reachable", "Assumed CTR"]}
             rows={[
               [
                 "Google",
-                formatWhole(12865324.8),
-                formatWhole(133619.3),
-                formatWhole(248056.35),
-                formatWhole(407033.17),
+                formatWhole(researchData.tamModel.totals.byChannel.google.demand),
+                formatWhole(researchData.tamModel.totals.byChannel.google.estimatedReachableVisits.low),
+                formatWhole(researchData.tamModel.totals.byChannel.google.estimatedReachableVisits.base),
+                formatWhole(researchData.tamModel.totals.byChannel.google.estimatedReachableVisits.high),
+                `${(researchData.tamModel.assumptions.channelClickThrough.google * 100).toFixed(1)}%`,
               ],
               [
-                "AI",
-                formatWhole(2094355.2),
-                formatWhole(843.83),
-                formatWhole(1566.51),
-                formatWhole(2570.48),
+                "AI Surfaces",
+                formatWhole(researchData.tamModel.totals.byChannel.ai.demand),
+                formatWhole(researchData.tamModel.totals.byChannel.ai.estimatedReachableVisits.low),
+                formatWhole(researchData.tamModel.totals.byChannel.ai.estimatedReachableVisits.base),
+                formatWhole(researchData.tamModel.totals.byChannel.ai.estimatedReachableVisits.high),
+                `${(researchData.tamModel.assumptions.channelClickThrough.ai * 100).toFixed(1)}%`,
               ],
             ]}
-            className="mb-8"
           />
 
-          <HighlightBox>
-            <h3 className="text-sm font-mono text-primary mb-3 uppercase tracking-widest">Interpretation</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              BOFU capture is Kinso’s fastest route to measurable growth. TOFU is the larger eventual pool, but BOFU is where recommendation authority and conversion loops can be proven first.
-            </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Revenue modeling requires client ACV/AOV and funnel inputs.</strong> Current model shows demand and lead potential only.
-            </p>
-          </HighlightBox>
-        </section>
-
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="06" title="PHASED UPSIDE (12 MONTHS)" />
-
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-foreground font-bold text-lg">Scenario model by phase (rounded planning values)</h3>
-            <span className="text-xs text-muted-foreground font-mono uppercase">estimate-only</span>
-          </div>
-
-          <PhasedUpsideChart points={phasedPoints} className="mb-8" />
-
-          <DataTable
-            headers={["Phase", "Intent Focus", "Low", "Base", "High", "Keyword Count"]}
-            rows={[
-              ["Phase 1 (Months 0-3)", "BOFU", formatWhole(57910.17), formatWhole(96516.95), formatWhole(154427.13), "387"],
-              ["Phase 2 (Months 4-8)", "MOFU", formatWhole(1844.73), formatWhole(3689.45), formatWhole(6149.09), "79"],
-              ["Phase 3 (Months 9-12)", "TOFU", formatWhole(74708.23), formatWhole(149416.46), formatWhole(249027.43), "93"],
-            ]}
-            className="mb-8"
-          />
-
-          <div className="grid md:grid-cols-3 gap-5">
-            <div className="border border-border bg-secondary/5 p-5">
-              <h3 className="font-bold text-foreground mb-2">What matters</h3>
-              <p className="text-sm text-muted-foreground">
-                Phase 1 BOFU alone can produce larger reachable upside than Phase 2 MOFU and creates stronger direct business signal.
-              </p>
-            </div>
-            <div className="border border-border bg-secondary/5 p-5">
-              <h3 className="font-bold text-foreground mb-2">Why it matters</h3>
-              <p className="text-sm text-muted-foreground">
-                Early wins in high-intent pages improve ranking, linking, and LLM retrieval confidence for later TOFU scale.
-              </p>
-            </div>
-            <div className="border border-border bg-secondary/5 p-5">
-              <h3 className="font-bold text-foreground mb-2">What to do next</h3>
-              <p className="text-sm text-muted-foreground">
-                Sequence execution BOFU → MOFU → TOFU exactly as modeled, with monthly prompt-evidence checks to validate mention lift.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="07" title="STRATEGY: CATEGORY LOCK FOR UNIFIED AI INBOX" />
-
-          <HighlightBox className="mb-16">
-            <p className="text-xl md:text-2xl font-display font-medium text-foreground leading-tight">
-              Build Kinso into the most citable answer for <span className="text-primary">unified inbox decision queries</span> by combining:
-              high-intent Apex assets, retrieval-dense support content, and cross-surface authority reinforcement.
+          <HighlightBox className="mt-6">
+            <h3 className="text-lg font-display font-bold text-white mb-2">Topical guardrail disclosure</h3>
+            <p className="text-sm text-white/68 leading-7">
+              The full TAM includes broad semantic demand where some terms are category-adjacent (e.g., generic email
+              login behavior). For execution planning, Kinso should prioritize the validated buyer-guide and
+              comparison-heavy subset first, then expand into broader TOFU once authority compounding is visible.
             </p>
           </HighlightBox>
 
-          <div className="space-y-20 md:space-y-24 relative before:absolute before:left-6 md:before:left-10 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-primary before:to-transparent before:opacity-30 pl-16 md:pl-32">
-            <PhaseBlock number="01" icon={<Target className="w-4 h-4" />} label="Phase 1 — Months 0-3" title="BOFU Category Capture">
-              <div className="space-y-7">
-                <div>
-                  <h4 className="text-foreground font-bold text-sm mb-3 flex items-center gap-2">
-                    <Layers className="w-4 h-4 text-primary" /> Apex asset set (publish first)
-                  </h4>
-                  <BulletList
-                    items={[
-                      "Best Unified AI Inbox Tools (2026): transparent scoring + clear winner criteria.",
-                      "Kinso vs Superhuman (for operators and founders).",
-                      "Kinso vs Shortwave (for Gmail-heavy teams).",
-                      "Kinso vs Missive (for collaborative inbox workflows).",
-                      "Kinso vs Front (for support-heavy teams).",
-                      "Best Shared Inbox Software for Gmail Teams (with Kinso fit guidance).",
-                      "Unified Inbox for Startups: implementation framework and tool comparison.",
-                      "Unified Inbox for Enterprise: fit matrix, security workflow, and adoption risk.",
-                    ]}
-                  />
-                </div>
-
-                <div>
-                  <h4 className="text-foreground font-bold text-sm mb-3 flex items-center gap-2">
-                    <Database className="w-4 h-4 text-primary" /> Technical AEO baseline
-                  </h4>
-                  <BulletList
-                    items={[
-                      "Add schema stack: Organization, Product, FAQPage, HowTo, BreadcrumbList, WebSite.",
-                      "Implement exact-match title/H1 pairings for money entities (Bing-sensitive and ChatGPT-relevant).",
-                      "Deploy Bing Webmaster + sitemap submission + IndexNow for rapid recrawl.",
-                      "Add canonical intent controls to avoid query cannibalization between “unified inbox” and “shared inbox” pages.",
-                    ]}
-                  />
-                </div>
+          {!researchData.tamModel.revenueModel.enabled ? (
+            <StrategyCard className="mt-6" glow="mixed">
+              <div className="flex items-center gap-2 text-[#f4e4cd] mb-2">
+                <AlertTriangle className="h-4 w-4" />
+                <div className="text-xs font-mono uppercase tracking-[0.18em]">Revenue model status</div>
               </div>
-            </PhaseBlock>
+              <p className="text-sm text-white/68">
+                Revenue modeling requires client ACV/AOV and funnel inputs. Current output is TAM + pipeline potential
+                only.
+              </p>
+            </StrategyCard>
+          ) : null}
+        </StrategySectionShell>
+      </section>
 
-            <PhaseBlock number="02" icon={<Workflow className="w-4 h-4" />} label="Phase 2 — Months 4-8" title="MOFU Expansion + Workflow Authority">
-              <div className="space-y-7">
-                <div>
-                  <h4 className="text-foreground font-bold text-sm mb-3 flex items-center gap-2">
-                    <Compass className="w-4 h-4 text-primary" /> Build retrieval density around operational intent
-                  </h4>
-                  <BulletList
-                    items={[
-                      "Email triage workflow playbooks for founders, sales, and customer success personas.",
-                      "Shared inbox implementation guides by stack: Gmail, Outlook, Slack-connected teams.",
-                      "Templates/tools cluster: AI reply frameworks, prioritization matrices, workflow diagrams.",
-                      "Migration content: adopting a unified inbox without losing context/history.",
-                    ]}
-                  />
-                </div>
-
-                <div>
-                  <h4 className="text-foreground font-bold text-sm mb-3 flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-primary" /> Trust reinforcement
-                  </h4>
-                  <BulletList
-                    items={[
-                      "Publish methodology pages documenting how Kinso prioritization and drafting are evaluated.",
-                      "Add author bios and operator credentials for E-E-A-T reinforcement on key assets.",
-                      "Ship quarterly benchmark notes from first-party usage patterns (if available).",
-                    ]}
-                  />
-                </div>
-              </div>
-            </PhaseBlock>
-
-            <PhaseBlock number="03" icon={<Sparkles className="w-4 h-4" />} label="Phase 3 — Months 9-12" title="TOFU Scale + Multi-Surface Distribution">
-              <div className="space-y-7">
-                <div>
-                  <h4 className="text-foreground font-bold text-sm mb-3 flex items-center gap-2">
-                    <Bot className="w-4 h-4 text-primary" /> LLM-facing distribution engine
-                  </h4>
-                  <BulletList
-                    items={[
-                      "For every Apex asset, publish 5-10 derivative placements (LinkedIn posts, founder threads, relevant Reddit discussions, partner guest posts).",
-                      "Create cross-linked summaries on independent high-trust nodes to increase citation repetition.",
-                      "Track mention frequency weekly for top 20 money prompts and refresh pages that lose recommendation share.",
-                    ]}
-                  />
-                </div>
-
-                <div>
-                  <h4 className="text-foreground font-bold text-sm mb-3 flex items-center gap-2">
-                    <LineChart className="w-4 h-4 text-primary" /> Defend and compound
-                  </h4>
-                  <BulletList
-                    items={[
-                      "Monthly refresh cadence for top 12 pages to maintain freshness and model trust.",
-                      "Expand comparisons whenever a competitor enters prompts repeatedly.",
-                      "Institutionalize a “rapid recovery” protocol: refresh page + 3 distribution placements inside 14 days for slipping entities.",
-                    ]}
-                  />
-                </div>
-              </div>
-            </PhaseBlock>
-          </div>
-        </section>
-
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="08" title="EXECUTION ROADMAP (OPERATING CADENCE)" />
-
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="border border-border bg-secondary/5 p-6">
-              <h3 className="font-bold text-foreground mb-4">Weekly cadence</h3>
-              <BulletList
-                items={[
-                  "Monday: entity map updates + prompt monitoring (top 20 money prompts, US/AU).",
-                  "Tuesday-Wednesday: write/publish one Apex asset and two support pages.",
-                  "Thursday: distribution relay to LinkedIn/Reddit/partner nodes + Bing recrawl checks.",
-                  "Friday: platform mention audit + ranking shifts + action log.",
-                ]}
-              />
-            </div>
-            <div className="border border-border bg-secondary/5 p-6">
-              <h3 className="font-bold text-foreground mb-4">90-day output target</h3>
-              <BulletList
-                items={[
-                  "8 Apex BOFU pages live and interlinked.",
-                  "20-30 support pages for workflow + implementation intent.",
-                  "30+ external placements tied to published pages.",
-                  "Prompt test scorecard operational across ChatGPT, Gemini, and Google AI Overview.",
-                ]}
-              />
-            </div>
+      <section className="mb-20">
+        <SectionHeader number="06" title="Phased Upside (12 months)" />
+        <StrategySectionShell glow="blue">
+          <div className="flex items-center justify-between mb-5">
+            <StrategyEyebrow>estimate-only • rounded planning values</StrategyEyebrow>
+            <div className="text-xs text-white/45">Low / Base / High scenarios</div>
           </div>
 
-          <DataTable
-            headers={["Month", "Primary Goal", "Deliverables", "Success Check"]}
-            rows={[
-              ["Month 1", "Foundation", "Schema + entity baseline, 3 Apex pages", "Indexing + first ranking movement in target pages"],
-              ["Month 2", "BOFU capture", "3 additional Apex pages + 10 support pages", "More non-brand impressions and first AI mention lift"],
-              ["Month 3", "Proof loop", "2 Apex pages + distribution cadence", "Prompt mention rate > baseline for at least 5 money queries"],
-              ["Month 4-8", "MOFU scale", "20+ workflow and implementation pages", "Sustained growth in query footprint and citations"],
-              ["Month 9-12", "TOFU expansion", "Category coverage + refresh cycle", "Stable recommendation presence across platforms"],
-            ]}
-          />
-        </section>
+          <PhasedUpsideChart points={phasedPoints} />
 
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="09" title="TAM × LTV CALCULATOR" />
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {researchData.tamModel.byIntent.map((phase) => (
+              <StrategyCard key={phase.phase}>
+                <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45 mb-2">{phase.phase}</div>
+                <div className="text-lg font-bold text-white mb-1">{phase.intent}</div>
+                <div className="text-sm text-white/68 mb-3">
+                  Demand: <span className="text-white">{formatWhole(phase.demand)}</span> • Keywords:{" "}
+                  <span className="text-white">{formatWhole(phase.keywordCount)}</span>
+                </div>
+                <div className="text-xs text-white/45">
+                  Reachable (L/B/H): {formatWhole(phase.estimatedReachableVisits.low)} /{" "}
+                  {formatWhole(phase.estimatedReachableVisits.base)} /{" "}
+                  {formatWhole(phase.estimatedReachableVisits.high)}
+                </div>
+              </StrategyCard>
+            ))}
+          </div>
+        </StrategySectionShell>
+      </section>
 
-          <div className="mb-6">
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Plug Kinso’s real ACV/AOV and visit→customer conversion rates into this model to estimate revenue potential from the base reachable TAM scenario.
-            </p>
+      <section className="mb-20">
+        <SectionHeader number="07" title="Execution Blueprint (What Kinso Should Ship)" />
+        <StrategySectionShell glow="mixed">
+          <div className="space-y-8">
+            <div className="grid gap-6 lg:grid-cols-2">
+              <PhaseBlock
+                number="01"
+                icon={<Target className="h-4 w-4" />}
+                label="Phase 1 — Months 0-3"
+                title="Money Entity Capture"
+              >
+                <div className="space-y-5">
+                  <div>
+                    <h4 className="text-white font-semibold mb-2 flex items-center gap-2 text-sm">
+                      <Search className="h-4 w-4 text-[#f4e4cd]" />
+                      What to publish first
+                    </h4>
+                    <BulletList
+                      items={[
+                        "Best unified AI inbox tools (with transparent methodology).",
+                        "Kinso vs Superhuman, Kinso vs Missive, Kinso vs Front, Kinso vs Gmelius.",
+                        "Superhuman alternatives for founders / GTM teams (with Kinso included).",
+                        "Shared inbox for Gmail / Outlook: implementation pages tied to Kinso workflows.",
+                        "Unified inbox app and AI inbox explainer pages answering in first 40-60 words.",
+                      ]}
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-2 text-sm">Expected outcome</h4>
+                    <p className="text-sm text-white/68 leading-7">
+                      Shift from mostly brand-only mentions to consistent inclusion in “best” and “alternatives”
+                      shortlists where purchase decisions begin.
+                    </p>
+                  </div>
+                </div>
+              </PhaseBlock>
+
+              <PhaseBlock
+                number="02"
+                icon={<Workflow className="h-4 w-4" />}
+                label="Phase 2 — Months 4-8"
+                title="Workflow & Implementation Layer"
+              >
+                <div className="space-y-5">
+                  <div>
+                    <h4 className="text-white font-semibold mb-2 flex items-center gap-2 text-sm">
+                      <Layers className="h-4 w-4 text-[#f4e4cd]" />
+                      MOFU depth build
+                    </h4>
+                    <BulletList
+                      items={[
+                        "Unified inbox workflow templates (sales, founder, support, recruiting).",
+                        "Email triage workflow playbooks linked to product proof.",
+                        "Migration guides from fragmented stacks to Kinso.",
+                        "Schema layer: FAQPage + HowTo + SoftwareApplication + Organization.",
+                        "Hub pages connecting each workflow page back to comparison and CTA assets.",
+                      ]}
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-2 text-sm">Expected outcome</h4>
+                    <p className="text-sm text-white/68 leading-7">
+                      Improve retrieval density and answer completeness so models can cite Kinso for “how to” and
+                      implementation prompts, not just vendor-name prompts.
+                    </p>
+                  </div>
+                </div>
+              </PhaseBlock>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              <PhaseBlock
+                number="03"
+                icon={<Compass className="h-4 w-4" />}
+                label="Phase 3 — Months 9-12"
+                title="Authority Distribution & Multi-surface Ownership"
+              >
+                <div className="space-y-5">
+                  <div>
+                    <h4 className="text-white font-semibold mb-2 flex items-center gap-2 text-sm">
+                      <Link2 className="h-4 w-4 text-[#f4e4cd]" />
+                      Trust relay execution
+                    </h4>
+                    <BulletList
+                      items={[
+                        "For each Apex asset, publish 5-10 derivative placements within 14 days.",
+                        "Bing-first technical hygiene: Bing Webmaster Tools + IndexNow + sitemap parity.",
+                        "Reddit and community seeding around practical unified inbox workflows.",
+                        "Review-surface consistency (G2/Capterra/Trustpilot where category-fit exists).",
+                        "Consistent entity naming across site, social profiles, and external citations.",
+                      ]}
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-2 text-sm">Expected outcome</h4>
+                    <p className="text-sm text-white/68 leading-7">
+                      Increase model trust signals required for default recommendation behavior, especially in
+                      ChatGPT/Gemini response scaffolds.
+                    </p>
+                  </div>
+                </div>
+              </PhaseBlock>
+
+              <PhaseBlock
+                number="04"
+                icon={<RotateIcon />}
+                label="Ongoing — Weekly / Monthly"
+                title="Measurement, Prompt Ops, and Reinforcement"
+              >
+                <div className="space-y-5">
+                  <div>
+                    <h4 className="text-white font-semibold mb-2 flex items-center gap-2 text-sm">
+                      <BarChart3 className="h-4 w-4 text-[#f4e4cd]" />
+                      Operating cadence
+                    </h4>
+                    <BulletList
+                      items={[
+                        "Weekly prompt pack across priority buyer queries in US + AU.",
+                        "Monthly competitor citation delta report (Kinso vs Missive/Front/Gmelius/Hiver).",
+                        "Quarterly refresh of top 10 money assets with new comparisons and proof.",
+                        "Cannibalization checks + internal link map updates for KG expansion.",
+                        "Re-audit Perplexity once endpoint support is restored.",
+                      ]}
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-2 text-sm">Expected outcome</h4>
+                    <p className="text-sm text-white/68 leading-7">
+                      Convert one-time content pushes into a compounding answer-share system with visible defensive
+                      moats.
+                    </p>
+                  </div>
+                </div>
+              </PhaseBlock>
+            </div>
+          </div>
+        </StrategySectionShell>
+      </section>
+
+      <section className="mb-20">
+        <SectionHeader number="08" title="TAM × LTV Calculator" />
+        <StrategySectionShell glow="amber">
+          <div className="mb-5 grid gap-4 md:grid-cols-3">
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45 mb-2">Base Reachable Visits</div>
+              <div className="text-2xl font-display font-bold text-white">
+                {formatWhole(researchData.tamModel.totals.estimatedReachableVisits.base)}
+              </div>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45 mb-2">Pipeline Potential (Base Leads)</div>
+              <div className="text-2xl font-display font-bold text-white">
+                {formatWhole(researchData.tamModel.revenueModel.pipelinePotential.leads.base)}
+              </div>
+            </StrategyCard>
+            <StrategyCard>
+              <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/45 mb-2">Modeling Status</div>
+              <div className="text-sm text-white/68 leading-6 mt-1">
+                Revenue modeling requires client ACV/AOV and funnel inputs.
+              </div>
+            </StrategyCard>
           </div>
 
           <TamRoiCalculator
-            baseReachableVisits={Math.round(249622.87)}
+            baseReachableVisits={Math.round(researchData.tamModel.totals.estimatedReachableVisits.base)}
             defaultLtv={0}
             defaultVisitToCustomerRate={0.01}
           />
+        </StrategySectionShell>
+      </section>
 
-          <div className="mt-6 border border-border bg-secondary/5 p-5">
-            <p className="text-sm text-muted-foreground">
-              <strong className="text-foreground">Revenue modeling requires client ACV/AOV and funnel inputs.</strong>{" "}
-              Current research model intentionally leaves revenue disabled and provides demand + lead potential ranges only.
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-24 md:mb-28">
-          <SectionHeader number="10" title="ASSUMPTIONS & CONFIDENCE" />
-
+      <section className="mb-20">
+        <SectionHeader number="09" title="Assumptions & Confidence" />
+        <StrategySectionShell glow="blue">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-foreground font-bold text-lg">Methodology and confidence notes</h3>
-            <span className="text-xs text-muted-foreground font-mono uppercase">estimate-only</span>
+            <StrategyEyebrow>estimate-only methodology</StrategyEyebrow>
+            <div className="text-xs font-mono uppercase tracking-[0.18em] text-white/42">
+              tam confidence: {researchData.tamModel.confidence.level} ({researchData.tamModel.confidence.score}/100)
+            </div>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2 mb-6">
+            <StrategyCard>
+              <h3 className="text-lg font-display font-bold text-white mb-3">Model assumptions used</h3>
+              <BulletList
+                items={[
+                  `Channel split: Google ${(researchData.tamModel.assumptions.channelSplit.google * 100).toFixed(0)}% / AI ${(researchData.tamModel.assumptions.channelSplit.ai * 100).toFixed(0)}%.`,
+                  `Channel CTR: Google ${(researchData.tamModel.assumptions.channelClickThrough.google * 100).toFixed(1)}%, AI ${(researchData.tamModel.assumptions.channelClickThrough.ai * 100).toFixed(1)}%.`,
+                  "Capture rates modeled by intent stage (BOFU/MOFU/TOFU) with low/base/high scenarios.",
+                  "Displayed phased upside values rounded to whole numbers for planning readability.",
+                  "US + AU only for this model horizon.",
+                ]}
+              />
+            </StrategyCard>
+
+            <StrategyCard>
+              <h3 className="text-lg font-display font-bold text-white mb-3">Confidence notes & caveats</h3>
+              <BulletList
+                items={[
+                  "No explicit topicalIntegrity object in payload; conservative topical filtering applied manually in strategy narrative.",
+                  "Large semantic expansion set includes ambiguous non-commercial queries; not all should be roadmap-priority.",
+                  "Perplexity sampling unavailable in this run due to endpoint error; platform view is incomplete.",
+                  "AI mention data is directional and should be re-tested on a fixed monthly query set.",
+                  "Revenue output disabled until first-party ACV/AOV and funnel rates are supplied.",
+                ]}
+              />
+            </StrategyCard>
           </div>
 
           <DataTable
-            headers={["Component", "Value", "Source / Note"]}
+            headers={["Component", "Status", "Confidence", "Notes"]}
             rows={[
-              ["Timeframe", "12 months", "tam_v2 model"],
-              ["Markets included", "US, AU", "research payload marketsIncluded"],
-              ["Channel split", "Google 86% / AI 14%", "tamModel.assumptions.channelSplit"],
-              ["Channel CTR", "Google 46.4% / AI 1.8%", "tamModel.assumptions.channelClickThrough"],
-              ["Capture rates", "BOFU 6-16% | MOFU 3-10% | TOFU 1.5-5%", "low/base/high scenario policy"],
-              ["Revenue model", "Disabled", "Missing ACV/AOV + funnel inputs"],
-              ["Payload confidence", "96 / High", "meta.payloadConfidence"],
-              ["TAM confidence", "90 / High", "tamModel.confidence"],
-              ["Perplexity status", "Unavailable", "Endpoint invalid path (40402) in audit metadata"],
+              ["Competitive metrics", "available", "high", "5 direct competitors with traffic, keyword, backlink, and ref-domain data."],
+              ["Prompt-based AI visibility", "available", "high", "36 prompts across ChatGPT, Gemini, Google AIO surfaces."],
+              ["Perplexity visibility", "unavailable", "low", researchData.aiVisibility.platformAvailability.perplexity.reason],
+              ["TAM model", "available", "high", "12-month low/base/high model with by-intent phasing."],
+              ["Revenue model", "disabled", "n/a", "Revenue modeling requires client ACV/AOV and funnel inputs."],
             ]}
-            className="mb-8"
           />
+        </StrategySectionShell>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="border border-border bg-secondary/5 p-6">
-              <h3 className="font-bold text-foreground mb-3">Confidence drivers</h3>
-              <BulletList
-                items={[
-                  "Strict quality gate passed (competitors, keyword depth, prompts, TAM present).",
-                  "Large keyword universe (559) with strong semantic coverage from multiple anchors.",
-                  "Prompt testing executed across ChatGPT, Gemini, and Google SERP/AIO context in both US and AU.",
-                  "Backlink and domain metrics available for all primary competitors and Kinso.",
-                ]}
-              />
-            </div>
-            <div className="border border-border bg-secondary/5 p-6">
-              <h3 className="font-bold text-foreground mb-3">Known limitations</h3>
-              <BulletList
-                items={[
-                  "Perplexity direct scrape endpoint unavailable in this dataset window.",
-                  "Revenue scenario intentionally omitted without first-party financial and conversion data.",
-                  "AI overview records include mixed states (AIO present vs organic-only response), requiring continued manual validation.",
-                  "Some broad TOFU terms are category-adjacent but not all are purchase-proximate for Kinso.",
-                ]}
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-20 md:mb-24">
-          <SectionHeader number="11" title="NEXT STEPS" />
-
-          <HighlightBox className="mb-10">
-            <div className="grid md:grid-cols-3 gap-5">
-              <div className="border border-border bg-background/40 p-4">
-                <div className="text-xs font-mono text-primary uppercase mb-1">Step 1</div>
-                <h3 className="font-bold text-foreground mb-2">Lock BOFU entities</h3>
-                <p className="text-sm text-muted-foreground">Finalize top 12 money prompts and assign page ownership + publication dates.</p>
-              </div>
-              <div className="border border-border bg-background/40 p-4">
-                <div className="text-xs font-mono text-primary uppercase mb-1">Step 2</div>
-                <h3 className="font-bold text-foreground mb-2">Ship + distribute</h3>
-                <p className="text-sm text-muted-foreground">Publish first 3 Apex assets and trigger distribution within 14 days for each.</p>
-              </div>
-              <div className="border border-border bg-background/40 p-4">
-                <div className="text-xs font-mono text-primary uppercase mb-1">Step 3</div>
-                <h3 className="font-bold text-foreground mb-2">Measure mention lift</h3>
-                <p className="text-sm text-muted-foreground">Run weekly prompt scorecards and iterate pages that fail to enter recommendation sets.</p>
-              </div>
-            </div>
-          </HighlightBox>
-
-          <div className="border border-primary/30 bg-primary/5 p-8 text-center">
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">
-              Ready to make Kinso a default answer in AI search?
-            </h3>
-            <p className="text-sm text-muted-foreground mb-6 max-w-2xl mx-auto">
-              We’ll translate this strategy into a weekly execution system: money entities, Apex assets, distribution, and AI mention tracking.
-            </p>
-            <a
-              href="https://cal.com/memetik/letstalk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-wider border border-primary hover:bg-primary/90 transition-colors"
-            >
-              Book a Strategy Call <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </section>
-      </main>
-    </div>
+      <StrategyCTA
+        eyebrow="Book Strategy Call"
+        title="Turn Kinso Into the Default Recommendation"
+        body="If you want, we’ll convert this into a live 90-day execution sprint: money-entity content map, LLM prompt monitoring, authority distribution plan, and weekly reinforcement cadence."
+        href="https://cal.com/memetik/letstalk"
+        ctaLabel="Book a Strategy Call"
+      />
+    </StrategyPageFrame>
   );
+}
+
+function RotateIcon() {
+  return <TrendingUp className="h-4 w-4" />;
 }

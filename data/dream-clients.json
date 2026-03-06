@@ -705,6 +705,16 @@
     "domain": "kinso.ai",
     "category": "Communication / Unified AI Inbox",
     "industry": "Communication / Collaboration",
+    "brandDisambiguation": "unified ai inbox platform",
+    "semanticSeeds": [
+      "unified ai inbox",
+      "shared inbox software",
+      "team inbox platform",
+      "ai inbox for teams",
+      "email triage software",
+      "multi channel inbox",
+      "unified messaging platform"
+    ],
     "competitorSeeds": [
       {
         "name": "Front",
@@ -738,6 +748,31 @@
     "domain": "behindthescenes.com",
     "category": "Creator Economy / Creator Platform",
     "industry": "Creator Economy",
+    "brandDisambiguation": "creator monetization platform",
+    "semanticSeeds": [
+      "creator platform",
+      "creator monetization platform",
+      "creator membership platform",
+      "creator business platform",
+      "patreon alternative",
+      "kajabi alternative",
+      "skool alternative",
+      "creator subscription platform"
+    ],
+    "semanticExclusions": [
+      "email",
+      "gmail",
+      "outlook",
+      "hotmail",
+      "inbox",
+      "shared mailbox",
+      "microsoft 365",
+      "aol",
+      "icloud"
+    ],
+    "promptModifiers": {
+      "categoryLabel": "creator monetization platform"
+    },
     "competitorSeeds": [
       {
         "name": "Whop",

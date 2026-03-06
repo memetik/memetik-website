@@ -18,6 +18,10 @@ const REQUIRED_SECTION_PATTERNS = [
   /assumptions|assumption table|assumption/i,
   /estimate-only|modeled estimate|modeled/i,
   /book a strategy call/i,
+  /StrategyPageFrame/i,
+  /StrategyHero/i,
+  /StrategySectionShell/i,
+  /StrategyCTA/i,
 ];
 
 function loadStrategicContextDocs() {
@@ -49,6 +53,7 @@ function validateResearchForGeneration(researchData) {
   const qualityGate = researchData?.qualityGate;
   const payloadConfidence = researchData?.meta?.payloadConfidence;
   const allowLowConfidence = process.env.ALLOW_LOW_CONFIDENCE_GENERATION === "true";
+  const allowLegacyResearch = process.env.ALLOW_LEGACY_RESEARCH_GENERATION === "true";
 
   if (!qualityGate) {
     throw new Error(
@@ -98,6 +103,14 @@ function validateResearchForGeneration(researchData) {
 
   if (!Array.isArray(researchData?.aiVisibility?.competitorEvidence)) {
     throw new Error("Research payload is missing aiVisibility.competitorEvidence.");
+  }
+
+  if (!researchData?.topicalIntegrity && !allowLegacyResearch) {
+    throw new Error("Research payload is missing topicalIntegrity metadata.");
+  }
+
+  if (!allowLowConfidence && researchData.topicalIntegrity && !researchData.topicalIntegrity.passed) {
+    throw new Error(`Topical integrity failed: ${researchData.topicalIntegrity.failures.join("; ")}`);
   }
 }
 
@@ -165,7 +178,7 @@ async function codexRequest(systemPrompt, userPrompt) {
 function loadExamplePages() {
   const pagesDir = path.join(__dirname, "..", "..", "client", "src", "pages");
   const examples = [];
-  for (const file of ["StrategyUleads.tsx", "StrategySignifyIP.tsx"]) {
+  for (const file of ["Home.tsx", "strategy/Kinso.tsx", "StrategyUleads.tsx"]) {
     const filePath = path.join(pagesDir, file);
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, "utf-8");
@@ -224,12 +237,13 @@ CRITICAL RULES:
 1. Output ONLY the complete TSX file content — no markdown fences, no explanation, no commentary.
 2. The file must be a valid React component with a default export.
 3. Import shared components from "@/components/strategy" — use SectionHeader, HighlightBox, PhaseBlock, BulletList, DataTable, StatsGrid, PhasedUpsideChart, TamRoiCalculator freely.
+3b. Prefer the premium homepage-aligned primitives: StrategyPageFrame, StrategyHero, StrategySectionShell, StrategyCard, StrategyEyebrow, StrategyCTA, StrategyGlow.
 4. Import Nav from "@/components/Nav".
 5. Import icons from "lucide-react" as needed.
 6. You CAN and SHOULD create custom inline components, data arrays, and layouts unique to this company's situation. The shared components are building blocks, not constraints.
 7. DO NOT include pricing. Ever. No dollar amounts for Memetik's services.
 8. End with a "Book a Strategy Call" CTA linking to https://cal.com/memetik/letstalk
-9. Match the dark theme design: font-display for headings, font-mono for labels/tags, font-sans for body. Use primary, foreground, muted-foreground, secondary, border color tokens.
+9. Match the current Memetik homepage design system: premium dark atmosphere, glass/translucent shells, larger rounded radii, mono metadata pills, premium CTA styling, and layered glow treatment. Use the homepage examples as the visual source of truth.
 10. Use useEffect to set document.title and scroll to top.
 11. Include numbered section headers ("00", "01", "02", etc.).
 12. Make it 600-900 lines. Be specific — reference actual competitor names, real queries, real keyword gaps, real data from the research.
@@ -238,7 +252,7 @@ CRITICAL RULES:
 15. The page is PUBLIC. Do not include passwords or gates.
 16. Add the company's hero tags (domain, industry, location if known, key descriptor).
 17. First major section must be "State of Search 2026" and include AEO/GEO/AI-search behavior context.
-18. Do not fabricate competitors or metrics. Use researchData.seoMetrics.backlinkMetrics and competitor metrics for backlink/ref-domain values wherever present.
+18. Do not fabricate competitors or metrics. Use researchData.seoMetrics.backlinkMetrics and competitor metrics for backlink/ref-domain values wherever present, and never promote contaminated or low-topicality keyword clusters into hero statistics.
 19. Include a "Current State Snapshot" section with explicit confidence level from research payload when available.
 20. Include a "Data-backed Competitive Landscape" section where every table row is grounded in research data (or clearly labeled inferred).
 21. Include a dedicated section titled "Total Addressable Search Market (12 months)" using researchData.tamModel values.
@@ -254,7 +268,9 @@ CRITICAL RULES:
 31. Round all displayed phased upside values to whole numbers.
 32. Add an executive summary strip near top: top 3 numbers + top 3 actions.
 33. Competitive tables must include backlinks, referring domains, and prompt-evidence query hits when available.
-34. In AI Visibility by LLM, show platform status (available/unavailable) from researchData.aiVisibility.platformAvailability and avoid hiding unavailable reasons.`;
+34. In AI Visibility by LLM, show platform status (available/unavailable) from researchData.aiVisibility.platformAvailability and avoid hiding unavailable reasons.
+35. If researchData.topicalIntegrity exists, treat it as a hard guardrail: only headline validated keyword/TAM insights, surface ambiguity risks honestly, and do not center excluded or low-quality semantic terms.
+36. The page should look homepage-premium, not report-template-flat: use StrategyPageFrame for the page, StrategyHero for the hero, StrategySectionShell for major sections, StrategyCard for sub-blocks, and StrategyCTA for the close.`;
 }
 
 async function generateStrategyPage(company, researchData) {
@@ -282,6 +298,7 @@ The file will be saved at client/src/pages/strategy/${pascalCase(company.slug)}.
 
 Mandatory output structure additions:
 - Add an "Executive Summary" strip with 3 headline numbers and 3 immediate actions.
+- Use StrategyPageFrame, StrategyHero, StrategySectionShell, and StrategyCTA as the default page architecture.
 - Section: "Full Keyword Universe"
 - Section: "AI Visibility by LLM"
 - Section: "Total Addressable Search Market (12 months)"
@@ -291,6 +308,8 @@ Mandatory output structure additions:
 - Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
 - Keep Current State Snapshot concise and remove repetitive estimate-only microtext under that block.
 - Display phased upside numbers as whole integers in visible UI labels.
+- Use researchData.topicalIntegrity to avoid headline claims from excluded or ambiguous keyword groups.
+- If the payload contains ambiguity or contamination caveats, surface them in the page and keep hero metrics tied to validated topical subsets.
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue modeling requires client ACV/AOV and funnel inputs."
 
 Generate the complete TSX file now.`;
