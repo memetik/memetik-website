@@ -326,7 +326,7 @@ function TestTwoHero() {
     <section className="relative min-h-[88vh] w-full flex flex-col justify-center overflow-hidden text-foreground pt-16 md:pt-20">
       <HeroSignalField />
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
-        <div className="max-w-[52rem]">
+        <div className="mx-auto max-w-[56rem] text-center">
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -340,7 +340,7 @@ function TestTwoHero() {
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="max-w-[14ch] text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-display font-extrabold leading-[0.94] tracking-tight text-white mb-6"
+            className="mx-auto max-w-[14ch] text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-display font-extrabold leading-[0.94] tracking-tight text-white mb-6"
           >
             Turn Search and AI Visibility <em className="inline text-[1.02em] font-medium italic tracking-[-0.02em] text-[#f4e4cd]" style={{ fontFamily: "'Newsreader', serif" }}>
               Into Revenue.
@@ -349,7 +349,7 @@ function TestTwoHero() {
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
-            className="text-base md:text-lg text-white/68 max-w-2xl mb-12 leading-8"
+            className="mx-auto max-w-2xl text-base leading-8 text-white/68 mb-12 md:text-lg"
           >
             We help growth-stage brands capture high-intent demand across traditional search and
             the AI surfaces shaping modern buying decisions.
@@ -357,7 +357,7 @@ function TestTwoHero() {
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }}
-            className="flex items-start mb-8"
+            className="mb-8 flex justify-center"
           >
             <a
               href="https://cal.com/memetik/letstalk"
