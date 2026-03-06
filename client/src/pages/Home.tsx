@@ -340,7 +340,7 @@ function TestTwoHero() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="max-w-[14ch] text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-display font-extrabold leading-[0.94] tracking-tight text-white mb-6"
           >
-            Turn Search and AI Visibility <em className="font-normal italic text-[#f4e4cd]" style={{ fontFamily: "'Newsreader', serif" }}>
+            Turn Search and AI Visibility <em className="block pt-2 text-[1.08em] font-semibold italic tracking-[-0.04em] text-[#f4e4cd]" style={{ fontFamily: "'Newsreader', serif" }}>
               Into Revenue.
             </em>
           </motion.h1>
@@ -349,8 +349,8 @@ function TestTwoHero() {
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
             className="text-base md:text-lg text-white/68 max-w-2xl mb-12 leading-8"
           >
-            Memetik helps growth-stage brands capture high-intent demand across Google, ChatGPT,
-            Perplexity, and Gemini.
+            We help growth-stage brands capture high-intent demand across traditional search and
+            the AI surfaces shaping modern buying decisions.
           </motion.p>
           <motion.div
             {...fadeUp}

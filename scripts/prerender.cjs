@@ -73,7 +73,7 @@ function homepageContent() {
     <main>
       <section>
         <h1>Turn Search and AI Visibility Into Revenue.</h1>
-        <p>Memetik helps growth-stage brands capture high-intent demand across Google, ChatGPT, Perplexity, and Gemini.</p>
+        <p>We help growth-stage brands capture high-intent demand across traditional search and the AI surfaces shaping modern buying decisions.</p>
         <p>B2B SaaS · Professional Services · E-commerce · Fund-backed operators</p>
       </section>
 
