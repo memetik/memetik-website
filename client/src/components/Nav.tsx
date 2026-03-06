@@ -59,22 +59,20 @@ export function Nav() {
         >
           <div className="absolute inset-0 rounded-[1.75rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.015))]" />
           <div className="relative flex items-center justify-between gap-4 px-5 py-3 md:px-6 md:py-4">
-            <Link href="/">
-              <a className="group relative z-50 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.05] text-white transition-colors group-hover:bg-white/[0.08]">
-                  <svg viewBox="0 0 100 100" fill="currentColor" className="h-5 w-5">
-                    <path d="M0 0 H100 V100 H70 V35 H65 V100 H35 V35 H30 V100 H0 V0 Z M35 0 V25 L50 45 L65 25 V0" fillRule="evenodd" />
-                  </svg>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-display text-xl font-bold leading-none tracking-[-0.06em] text-white md:text-[1.45rem]">
-                    MEMETIK
-                  </span>
-                  <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-white/32">
-                    Revenue-led search systems
-                  </span>
-                </div>
-              </a>
+            <Link href="/" className="group relative z-50 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.05] text-white transition-colors group-hover:bg-white/[0.08]">
+                <svg viewBox="0 0 100 100" fill="currentColor" className="h-5 w-5">
+                  <path d="M0 0 H100 V100 H70 V35 H65 V100 H35 V35 H30 V100 H0 V0 Z M35 0 V25 L50 45 L65 25 V0" fillRule="evenodd" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display text-xl font-bold leading-none tracking-[-0.06em] text-white md:text-[1.45rem]">
+                  MEMETIK
+                </span>
+                <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-white/32">
+                  Revenue-led search systems
+                </span>
+              </div>
             </Link>
 
             <div className="hidden items-center gap-8 md:flex">

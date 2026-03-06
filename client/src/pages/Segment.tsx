@@ -50,9 +50,7 @@ export default function Segment() {
           <MarketingContainer>
             <MarketingSectionShell className="px-8 py-16 text-center">
               <h1 className="text-3xl font-display font-extrabold uppercase mb-4">Page Not Found</h1>
-              <Link href="/">
-                <a className={marketingTheme.secondaryButton}>Back to home</a>
-              </Link>
+              <Link href="/" className={marketingTheme.secondaryButton}>Back to home</Link>
             </MarketingSectionShell>
           </MarketingContainer>
         </div>
@@ -87,11 +85,9 @@ export default function Segment() {
                   </p>
 
                   <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                    <Link href="/audit">
-                      <a className={marketingTheme.primaryButton}>
-                        {data.ctaText}
-                        <ArrowRight className="h-4 w-4" />
-                      </a>
+                    <Link href="/audit" className={marketingTheme.primaryButton}>
+                      {data.ctaText}
+                      <ArrowRight className="h-4 w-4" />
                     </Link>
                     <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/40">
                       {data.ctaSubtext}

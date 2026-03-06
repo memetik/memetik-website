@@ -176,11 +176,9 @@ export default function AuditReport() {
           <p className="font-mono text-white/60 mb-8">
             This audit report doesn't exist or has expired.
           </p>
-          <Link href="/audit">
-            <a className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 font-mono font-bold text-sm uppercase">
-              Get Your Free Audit
-              <ArrowRight className="w-4 h-4" />
-            </a>
+          <Link href="/audit" className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 font-mono font-bold text-sm uppercase">
+            Get Your Free Audit
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
@@ -524,9 +522,7 @@ export default function AuditReport() {
       {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 md:px-12 border-t border-white/10 no-print">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link href="/">
-            <a className="font-display font-extrabold text-xl uppercase">MEMETIK</a>
-          </Link>
+          <Link href="/" className="font-display font-extrabold text-xl uppercase">MEMETIK</Link>
           <div className="font-mono text-xs text-white/40 uppercase">
             &copy; 2026 MEMETIK
           </div>

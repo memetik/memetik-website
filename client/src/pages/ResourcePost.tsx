@@ -107,11 +107,9 @@ export default function ResourcePost() {
               <h1 className="text-3xl font-display font-extrabold uppercase mb-4 text-white">
                 {error || "Article Not Found"}
               </h1>
-              <Link href="/resources">
-                <a className={marketingTheme.secondaryButton}>
-                  <ArrowLeft className="h-4 w-4" />
-                  Back to resources
-                </a>
+              <Link href="/resources" className={marketingTheme.secondaryButton}>
+                <ArrowLeft className="h-4 w-4" />
+                Back to resources
               </Link>
             </MarketingSectionShell>
           </MarketingContainer>
@@ -129,11 +127,9 @@ export default function ResourcePost() {
             <MarketingSectionGlow className="-left-12 top-0 h-44 w-44" />
             <MarketingSectionGlow className="bottom-0 right-0 h-48 w-48" tone="amber" />
             <div className="relative z-10 max-w-3xl">
-              <Link href="/resources">
-                <a className="mb-8 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-white/42 transition hover:text-white/72">
-                  <ArrowLeft className="h-3 w-3" />
-                  Back to resources
-                </a>
+              <Link href="/resources" className="mb-8 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-white/42 transition hover:text-white/72">
+                <ArrowLeft className="h-3 w-3" />
+                Back to resources
               </Link>
 
               {article.articleType && <MarketingPill className="mb-6">{article.articleType}</MarketingPill>}
