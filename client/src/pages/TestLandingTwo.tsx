@@ -233,19 +233,16 @@ function HeroSignalField() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#08090c] via-[#060709] to-[#050608]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(91,123,255,0.16),transparent_26%),radial-gradient(circle_at_80%_20%,rgba(230,165,97,0.14),transparent_22%),radial-gradient(circle_at_58%_78%,rgba(255,255,255,0.05),transparent_20%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(91,123,255,0.14),transparent_24%),radial-gradient(circle_at_78%_18%,rgba(230,165,97,0.1),transparent_18%)]" />
       <div
-        className="absolute inset-x-0 bottom-0 h-[60%] opacity-[0.32]"
+        className="absolute inset-x-0 bottom-0 h-[52%] opacity-[0.22]"
         style={{
           backgroundImage:
             "linear-gradient(180deg, transparent 0%, rgba(5,6,8,0.1) 12%, rgba(5,6,8,0.88) 100%), repeating-linear-gradient(90deg, rgba(113,141,255,0.45) 0px, rgba(113,141,255,0.45) 1px, transparent 1px, transparent 58px)",
           backgroundSize: "100% 100%, 100% 100%",
         }}
       />
-      <div className="absolute inset-y-0 right-[-6%] hidden w-[48%] lg:block bg-[radial-gradient(circle_at_50%_50%,rgba(240,201,149,0.14),transparent_64%)] blur-2xl" />
-      <div className="absolute left-[6%] top-[18%] h-40 w-40 rounded-full border border-white/10 opacity-30 blur-sm" />
-      <div className="absolute right-[14%] top-[14%] h-64 w-64 rounded-full border border-white/10 opacity-20 blur-sm" />
-      <div className="absolute bottom-[12%] right-[18%] h-px w-40 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+      <div className="absolute bottom-[12%] left-[6%] h-px w-28 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
     </div>
   );
 }
@@ -264,100 +261,6 @@ function SectionGlow({
   };
 
   return <div aria-hidden className={`pointer-events-none absolute rounded-full blur-[110px] ${glowMap[color]} ${className ?? ""}`} />;
-}
-
-function HeroIntelligencePanel() {
-  return (
-    <motion.div
-      {...fadeUp}
-      transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
-      className={`w-full max-w-[30rem] lg:ml-auto ${cardShell}`}
-    >
-      <SectionGlow color="amber" className="-right-12 top-0 h-44 w-44 opacity-90" />
-      <SectionGlow color="blue" className="-left-12 bottom-0 h-48 w-48 opacity-80" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),transparent_28%,rgba(255,255,255,0.02))]" />
-      <div className="relative p-6 md:p-8">
-        <div className="flex items-center justify-between gap-4 mb-6">
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/45 mb-2">
-              Live category intelligence
-            </p>
-            <h3 className="text-xl md:text-2xl font-display font-semibold tracking-tight text-white">
-              Search + AI demand map
-            </h3>
-          </div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-200">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-            Updated weekly
-          </div>
-        </div>
-
-        <div className="rounded-[24px] border border-white/10 bg-black/20 p-5 md:p-6 mb-4">
-          <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/45 mb-3">
-            Answer share
-          </p>
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <div className="text-5xl md:text-6xl font-display font-semibold leading-none text-white">
-                41%
-              </div>
-              <p className="text-sm text-white/60 mt-2">Up from 18% across core buying prompts</p>
-            </div>
-            <div className="rounded-full border border-amber-200/15 bg-amber-200/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-amber-100">
-              +23 pts / 90 days
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          {[
-            { label: "High-intent prompts", value: "126" },
-            { label: "AI engines tracked", value: "4" },
-            { label: "Competitor gap closed", value: "68%" },
-            { label: "Priority surfaces won", value: "19" },
-          ].map((item) => (
-            <div key={item.label} className="rounded-[20px] border border-white/10 bg-white/[0.03] p-4">
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/45 mb-2">
-                {item.label}
-              </p>
-              <p className="text-2xl font-display font-semibold text-white">{item.value}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="rounded-[24px] border border-white/10 bg-black/20 p-5 md:p-6">
-          <div className="flex items-center justify-between gap-4 mb-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/45">
-              Prompt ownership
-            </p>
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/35">
-              Top revenue moments
-            </p>
-          </div>
-          <div className="space-y-3">
-            {[
-              { label: "Best [category] software", width: "78%" },
-              { label: "[Category] alternatives", width: "64%" },
-              { label: "Who to trust for [category]", width: "85%" },
-            ].map((item) => (
-              <div key={item.label}>
-                <div className="flex items-center justify-between gap-3 mb-2 text-xs text-white/60">
-                  <span>{item.label}</span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.16em]">Owned</span>
-                </div>
-                <div className="h-2 rounded-full bg-white/8 overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-[#5c7cff] via-[#8ea5ff] to-[#f0be83]"
-                    style={{ width: item.width }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
 }
 
 function TestTwoIntelligenceStrip() {
@@ -388,10 +291,10 @@ function TestTwoIntelligenceStrip() {
 
 function TestTwoHero() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden text-foreground pt-16 md:pt-20">
+    <section className="relative min-h-[88vh] w-full flex flex-col justify-center overflow-hidden text-foreground pt-16 md:pt-20">
       <HeroSignalField />
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
-        <div className="max-w-4xl">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
+        <div className="max-w-[52rem]">
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -405,7 +308,7 @@ function TestTwoHero() {
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-display font-extrabold leading-[0.92] tracking-tight text-white mb-6"
+            className="max-w-[14ch] text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-display font-extrabold leading-[0.94] tracking-tight text-white mb-6"
           >
             Turn Search and AI Visibility<br />
             <em className="font-normal italic text-[#f4e4cd]" style={{ fontFamily: "'Newsreader', serif" }}>
@@ -415,7 +318,7 @@ function TestTwoHero() {
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
-            className="text-base md:text-lg text-white/68 max-w-3xl mb-10"
+            className="text-base md:text-lg text-white/68 max-w-2xl mb-12 leading-8"
           >
             Memetik helps growth-stage brands capture high-intent demand across Google, ChatGPT,
             Perplexity, and Gemini — so more buyers discover, trust, and choose you before they ever
@@ -424,43 +327,26 @@ function TestTwoHero() {
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10"
+            className="flex items-start mb-8"
           >
             <a
               href="https://cal.com/memetik/letstalk"
               className="inline-flex items-center gap-3 rounded border border-[#f4e4cd] bg-[#f4e4cd] px-8 py-4 font-mono text-sm font-bold uppercase tracking-[0.14em] text-[#090b0d] hover:opacity-90 transition-opacity shadow-[0_12px_40px_rgba(244,228,205,0.14)]"
             >
               See Your Revenue Opportunities in AI Search
-            </a>
-            <a
-              href="#methodology"
-              className="inline-flex items-center gap-3 rounded border border-white/15 bg-white/[0.03] px-8 py-4 font-mono text-sm font-bold uppercase tracking-[0.14em] text-white hover:bg-white/[0.06] transition-colors"
-            >
-              Watch the 90-Day Process
+              <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.35 }}
-            className="flex flex-wrap items-center gap-3 text-white/48"
+            className="text-white/44"
           >
-            {[
-              "Series A-B+ SaaS",
-              "E-commerce",
-              "Professional Services",
-              "Fund Managers",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em]"
-              >
-                {item}
-              </div>
-            ))}
+            <p className="font-mono text-[10px] uppercase tracking-[0.22em]">
+              Built for Series A-B+ SaaS, professional services, e-commerce, and fund-backed operators.
+            </p>
           </motion.div>
         </div>
-
-        <HeroIntelligencePanel />
       </div>
     </section>
   );
