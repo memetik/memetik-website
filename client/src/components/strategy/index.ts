@@ -16,5 +16,7 @@ export { StrategyCard } from "./StrategyCard";
 export { StrategyEyebrow } from "./StrategyEyebrow";
 export { StrategyGlow } from "./StrategyGlow";
 export { StrategyCTA } from "./StrategyCTA";
+export { StrategySectionLead } from "./StrategySectionLead";
+export { StrategyAppendixSection } from "./StrategyAppendixSection";
 export { WorkstreamTimeline } from "./WorkstreamTimeline";
 export type { WorkstreamTimelineTrack, WorkstreamTimelineCell } from "./WorkstreamTimeline";
