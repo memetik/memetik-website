@@ -304,7 +304,7 @@ function TestTwoIntelligenceStrip() {
   ];
 
   return (
-    <section className="px-4 sm:px-6 md:px-12 -mt-4 md:-mt-6 mb-16 md:mb-24 relative z-20">
+    <section className="relative z-20 mt-3 px-4 sm:px-6 md:mt-4 md:px-12 mb-16 md:mb-24">
       <div className={`max-w-7xl mx-auto px-6 md:px-10 py-5 md:py-6 ${sectionShell}`}>
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-white/72">
             {items.map((item, index) => (
