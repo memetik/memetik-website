@@ -13,6 +13,7 @@ const REQUIRED_SECTION_PATTERNS = [
   /competitive gap|competitive landscape/i,
   /ai visibility by llm|ai visibility|answer-engine visibility/i,
   /90-day wedge|90 day wedge|first 90 days/i,
+  /what memetik will actually deliver|what we will actually deliver|what memetik will build|delivery engine/i,
   /operating model|monthly operating system|workstreams/i,
   /why memetik/i,
   /appendix|supporting evidence/i,
@@ -270,7 +271,7 @@ CRITICAL RULES:
 17. Every primary section MUST include one obvious takeaway, ideally using StrategySectionLead.
 18. A founder should be able to skim the main narrative in under 5 minutes.
 19. Put heavy detail into an Appendix / Supporting Evidence area using StrategyAppendixSection. The appendix can include keyword tables, detailed competitor data, assumptions, prompt evidence, and calculators.
-20. Keep the main narrative order tight and founder-first: Hero, State of Search, Current State, Opportunity, Why This Company Can Win, Competitive Gap, AI Visibility Gap, Revenue / Commercial Impact, 90-day Wedge, Operating Model, Why Memetik, CTA, then Appendix.
+20. Keep the main narrative order tight and founder-first: Hero, State of Search, Current State, Opportunity, Why This Company Can Win, Competitive Gap, AI Visibility Gap, Revenue / Commercial Impact, 90-day Wedge, What Memetik Will Actually Deliver, Operating Model, Why Memetik, CTA, then Appendix.
 21. Do not fabricate competitors or metrics. Use researchData.seoMetrics.backlinkMetrics and competitor metrics for backlink/ref-domain values wherever present, and never promote contaminated or low-topicality keyword clusters into hero statistics.
 22. Use the market truths above in the State of Search section, but keep that section compact and highly legible.
 23. Translate every major finding into commercial language: pipeline, shortlist share, CAC pressure, revenue leverage, moat, defensibility, and risk of waiting.
@@ -318,7 +319,7 @@ Mandatory output structure additions:
 - Add an "Executive Summary" strip with 4 headline numbers: Total search opportunity, Expected traffic in 12 months, Aggressive upside, and First 90-day target, plus 3 immediate actions.
 - Use StrategyPageFrame, StrategyHero, StrategySectionShell, and StrategyCTA as the default page architecture.
 - Every primary section should use StrategySectionLead or an equivalent one-takeaway block.
-- Main narrative sections: "State of Search 2026", "Where ${company.name} Is Today" (or "Current State Snapshot"), "The Opportunity", "Why ${company.name} Can Win", "Competitive Gap", "AI Visibility Gap", "Revenue / Commercial Impact", "90-day Wedge", "Operating Model", "Why Memetik".
+- Main narrative sections: "State of Search 2026", "Where ${company.name} Is Today" (or "Current State Snapshot"), "The Opportunity", "Why ${company.name} Can Win", "Competitive Gap", "AI Visibility Gap", "Revenue / Commercial Impact", "90-day Wedge", "What Memetik Will Actually Deliver", "Operating Model", "Why Memetik".
 - Add an appendix / supporting evidence section using StrategyAppendixSection.
 - Put detailed keyword universe, assumptions/confidence, detailed competitor evidence, prompt evidence, and optional calculator in the appendix rather than the primary flow.
 - Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
@@ -330,6 +331,8 @@ Mandatory output structure additions:
 - Use researchData.topicalIntegrity to avoid headline claims from excluded or ambiguous keyword groups.
 - Include 2-3 real prompt examples inside the AI visibility section.
 - Include a concrete 90-day wedge: first entity/category wedge, first pages to ship, first prompts to win, first competitors to attack.
+- Add a dedicated section that makes the scope of execution unmistakable. It should explicitly show: BOFU keyword targeting and content, MOFU keyword targeting and content, TOFU/programmatic content, aggressive backlink acquisition, digital PR / press release / listicle pushes, and third-party/forum/community placements.
+- Make the delivery section feel substantial enough that a founder can immediately see why this is a serious execution program rather than a light content retainer.
 - Prefer an infographic-style operating model visual that shows what Memetik is doing, what ships, and what BTS receives; avoid defaulting to a dense month-by-month grid unless it is clearly better.
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue planning requires client ACV/AOV and funnel inputs."
 - If researchData.tamModel.assumptions includes planning assumptions, keep them in the appendix and explain them in normal English rather than coefficient language.

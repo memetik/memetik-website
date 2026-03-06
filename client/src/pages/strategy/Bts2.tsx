@@ -794,7 +794,157 @@ export default function StrategyBts2() {
 
         <section className="mb-14 md:mb-20">
           <StrategySectionShell glow="mixed">
-            <SectionHeader number="08" title="Operating Model" />
+            <SectionHeader number="08" title="What Memetik Will Actually Deliver" />
+            <StrategySectionLead
+              takeaway="This is not a light content retainer. It is a full-funnel content, authority, and placement program built to move category visibility fast."
+              body="The work is not just 'make some SEO pages.' We map the exact bottom-, middle-, and top-of-funnel search demand, publish the right assets for each layer, and then push distribution hard enough that Google and AI engines have third-party evidence to trust BTS."
+              implication="The point is to make the execution scope feel obvious: more coverage, more placements, more proof, more momentum."
+            />
+
+            <div className="grid gap-4 md:grid-cols-3">
+              <StrategyCard glow="mixed">
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Search className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Bottom-of-funnel keyword map</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  We start by identifying the exact high-intent terms buyers use when they are close to choosing a platform.
+                </p>
+                <div className="mt-4">
+                  <BulletList
+                    items={[
+                      "Alternatives and comparison intent like 'patreon alternative', 'kajabi alternative', and 'skool alternative'.",
+                      "Commercial category terms like 'creator monetization platform' and 'creator platform'.",
+                      "Pricing, review, and competitor terms that signal shortlist behavior.",
+                    ]}
+                  />
+                </div>
+              </StrategyCard>
+
+              <StrategyCard glow="mixed">
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Compass className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Middle-of-funnel content engine</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  Then we build the content that helps buyers evaluate, compare, and understand implementation before they convert.
+                </p>
+                <div className="mt-4">
+                  <BulletList
+                    items={[
+                      "Use-case pages around creator monetization, membership, and community growth.",
+                      "Selection guides, migration pages, framework content, and proof assets.",
+                      "Decision-support pages that make BTS easier to trust and easier for AI to cite.",
+                    ]}
+                  />
+                </div>
+              </StrategyCard>
+
+              <StrategyCard glow="mixed">
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Globe className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Top-of-funnel programmatic coverage</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  The broader moat comes from large-surface category coverage that compounds authority and captures discovery demand at scale.
+                </p>
+                <div className="mt-4">
+                  <BulletList
+                    items={[
+                      "Programmatic listicles and category pages for creator-platform discovery patterns.",
+                      "Persona-, use-case-, and feature-led pages that expand thematic coverage quickly.",
+                      "Supporting glossary and educational content that feeds authority back into the money pages.",
+                    ]}
+                  />
+                </div>
+              </StrategyCard>
+
+              <StrategyCard glow="mixed">
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">BOFU content production</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  We produce the pages that directly attack revenue intent first, because that is where the fastest commercial lift comes from.
+                </p>
+                <div className="mt-4">
+                  <BulletList
+                    items={[
+                      "Patreon, Kajabi, Skool, Circle, and Teachable comparison pages.",
+                      "Best-platform verdict pages with direct-answer formatting and schema.",
+                      "Refresh loops on every money page so winners keep compounding instead of stalling.",
+                    ]}
+                  />
+                </div>
+              </StrategyCard>
+
+              <StrategyCard glow="mixed">
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Database className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Press, listicles, and backlinks</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  Publishing on BTS alone is not enough. We aggressively build the off-site evidence layer that search engines and answer engines use as trust signals.
+                </p>
+                <div className="mt-4">
+                  <BulletList
+                    items={[
+                      "Press release and digital PR pushes when BTS launches angles worth amplifying.",
+                      "Aggressive listicle and roundup placement work wherever creator-platform buyers do research.",
+                      "High-quality backlink acquisition tied to commercial and category authority, not vanity domain metrics.",
+                    ]}
+                  />
+                </div>
+              </StrategyCard>
+
+              <StrategyCard glow="mixed">
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Workflow className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Third-party placements + forums</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  We also go where buyers actually talk: communities, forums, and third-party surfaces that influence recommendations before direct visits happen.
+                </p>
+                <div className="mt-4">
+                  <BulletList
+                    items={[
+                      "Forum and community placement work where creator monetization decisions are actively discussed.",
+                      "Third-party pages and profiles that help BTS appear beyond its own domain footprint.",
+                      "Ongoing prompt tracking so we can see whether these surfaces actually improve AI mentions and category recall.",
+                    ]}
+                  />
+                </div>
+              </StrategyCard>
+            </div>
+
+            <HighlightBox className="mt-6">
+              <div className="grid gap-4 md:grid-cols-3">
+                <div>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">What BTS will see</div>
+                  <p className="mt-2 text-sm leading-7 text-white/68">
+                    A visible machine: keyword maps, BOFU pages, MOFU assets, TOFU programmatic coverage, backlink pushes, placements, and weekly answer-engine reporting.
+                  </p>
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">What changes</div>
+                  <p className="mt-2 text-sm leading-7 text-white/68">
+                    BTS stops relying on a small set of existing pages and starts building a much larger surface area for both Google rankings and AI recommendation capture.
+                  </p>
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Why it justifies the spend</div>
+                  <p className="mt-2 text-sm leading-7 text-white/68">
+                    The work includes strategy, production, distribution, authority building, and ongoing optimization — not just content publishing.
+                  </p>
+                </div>
+              </div>
+            </HighlightBox>
+          </StrategySectionShell>
+        </section>
+
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="mixed">
+            <SectionHeader number="09" title="Operating Model" />
             <StrategySectionLead
               takeaway="Run concurrent workstreams from month one: demand capture, authority, and measurement."
               body="This is not a linear SEO project. BTS needs a weekly publishing and feedback loop where pages, citations, and prompt testing reinforce each other continuously."
@@ -882,7 +1032,7 @@ export default function StrategyBts2() {
 
         <section className="mb-16 md:mb-20">
           <StrategySectionShell glow="amber">
-            <SectionHeader number="09" title="Why Memetik" />
+            <SectionHeader number="10" title="Why Memetik" />
             <StrategySectionLead
               takeaway="Memetik runs AEO and SEO as one commercial system: demand capture, answer visibility, and revenue accountability."
               body="Most teams either publish content without answer-engine strategy, or run AI experiments without durable search infrastructure. Memetik connects both so BTS can build compounding shortlist share."
@@ -930,7 +1080,7 @@ export default function StrategyBts2() {
 
         <section className="mt-14 md:mt-20">
           <StrategySectionShell>
-            <SectionHeader number="10" title="Appendix / Supporting Evidence" />
+            <SectionHeader number="11" title="Appendix / Supporting Evidence" />
             <StrategySectionLead
               takeaway="Detailed evidence, assumptions, and model inputs."
               body="Everything below supports the strategy narrative above and is included for team planning, internal reviews, and execution QA."
