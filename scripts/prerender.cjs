@@ -44,6 +44,14 @@ try { segmentsData = parseTS(path.join(DATA_DIR, "segments.ts"), "segments"); } 
 try { solutionsData = parseTS(path.join(DATA_DIR, "solutions.ts"), "solutions"); } catch(e) { console.warn("  Warning: solutions.ts parse failed"); }
 try { comparisonsData = parseTS(path.join(DATA_DIR, "comparisons.ts"), "comparisons"); } catch(e) { console.warn("  Warning: comparisons.ts parse failed"); }
 
+const HOME_FAQS = [
+  { q: "How is this different from traditional SEO?", a: "Traditional SEO optimizes for Google's ranking algorithm. We optimize for the full demand journey across Google, ChatGPT, Perplexity, and Gemini so visibility turns into pipeline, not vanity traffic." },
+  { q: "How long until we see movement?", a: "Most clients see early movement in citation frequency and answer-share within 30-45 days, then broader commercial impact as content, authority, and distribution compound over 60-90 days." },
+  { q: "What kinds of companies are the best fit?", a: "The strongest fit is growth-stage SaaS, professional services, e-commerce, and fund-backed operators with real buying journeys, clear ACV, and leadership teams that care about efficient growth." },
+  { q: "What makes Memetik different?", a: "We treat search and AI visibility as a revenue system. That means executive-level measurement, answer-share tracking, bottom-of-funnel coverage, and a buildout designed to influence shortlist decisions before sales gets involved." },
+  { q: "What if visibility does not improve?", a: "We baseline your category visibility at the start of the engagement. If there is no measurable movement in high-intent discovery within 90 days, we stand behind the work with a performance guarantee." },
+];
+
 // Regex fallback for meta extraction
 function extractMeta(fileContent, slug) {
   const block = fileContent.match(new RegExp(`"${slug}"[\\s\\S]*?(?=\\n  "\\w|\\n};)`, ""));
@@ -61,67 +69,81 @@ function loadArticles() {
 // ── Content generators ──────────────────────────────────────────
 
 function homepageContent() {
-  const faqs = [
-    { q: "How is this different from traditional SEO?", a: "Traditional SEO optimizes for Google's ranking algorithm. AEO (Answer Engine Optimization) optimizes for how LLMs like ChatGPT, Claude, and Perplexity understand and recommend brands. These are fundamentally different systems." },
-    { q: "How long until I see results?", a: "Most clients see measurable improvements in AI visibility within 60-90 days. Brands with existing authority move faster. We provide a detailed timeline during your free audit." },
-    { q: "What's the investment?", a: "We scope every engagement based on your category, competitive landscape, and goals. Book a free audit call and we'll walk through exactly what it looks like for your business." },
-    { q: "Do you work with competitors in the same space?", a: "No. We maintain strict category exclusivity. Once we partner with a brand in a vertical, we won't work with their direct competitors." },
-    { q: "What if it doesn't work?", a: "We offer a performance guarantee: if we don't measurably improve your AI visibility within 90 days, we'll refund your first month's investment." },
-    { q: "Can't I just do this myself?", a: "AEO requires deep expertise in how LLMs process information, proprietary tools for tracking AI citations, and relationships with high-authority platforms for distribution." },
-    { q: "How do you measure AI visibility?", a: "We use proprietary tools that run thousands of prompts across major AI models and track citation rates, recommendation frequency, and sentiment." },
-    { q: "What industries do you work with?", a: "We specialize in B2B SaaS, E-commerce (7-figures+), and professional services." },
-  ];
-
   return `
     <main>
       <section>
-        <h1>Be the Brand AI Recommends</h1>
-        <p>We engineer your brand into ChatGPT, Perplexity, and Gemini responses — so you're the answer, not your competitors.</p>
-        <p>B2B SaaS · E-commerce · Professional Services</p>
+        <h1>Turn Search and AI Visibility Into Revenue.</h1>
+        <p>Memetik helps growth-stage brands capture high-intent demand across Google, ChatGPT, Perplexity, and Gemini.</p>
+        <p>B2B SaaS · Professional Services · E-commerce · Fund-backed operators</p>
       </section>
 
       <section>
-        <h2>What We Do for You</h2>
-        <p>Every client engagement includes all three pillars. This is the complete system that makes your brand the answer AI gives.</p>
+        <h2>Revenue-First Search + AI Demand Intelligence</h2>
+        <p>We build the visibility, authority, and bottom-of-funnel infrastructure that helps your brand show up in buying moments and convert more discovery into pipeline.</p>
         <div>
-          <h3>LLM SEO — Get Recommended by AI</h3>
-          <p>When customers ask ChatGPT, Claude, or Gemini for recommendations, your brand is the answer. We engineer your presence into the models' knowledge base.</p>
+          <h3>Revenue Visibility</h3>
+          <p>Own the high-intent searches and AI prompts that influence shortlist decisions before your competitors ever get the call.</p>
         </div>
         <div>
-          <h3>Answer Engine Optimization — Win Zero-Click Searches</h3>
-          <p>70% of searches now end without a click. We structure your content so AI pulls YOUR answers into summaries, snippets, and direct responses.</p>
+          <h3>Zero-Click Capture</h3>
+          <p>Win the moments that end inside AI answers, summaries, and overviews by making your brand easier to cite, trust, and recommend.</p>
         </div>
         <div>
-          <h3>Scale Systems — Programmatic Dominance</h3>
-          <p>We build content infrastructure that compounds visibility over time — 100 bottom-of-funnel articles and 800 programmatic pages working around the clock.</p>
+          <h3>Compounding Systems</h3>
+          <p>Build a search and AI growth engine with bottom-of-funnel pages, comparison assets, programmatic coverage, and authority signals that compound over time.</p>
         </div>
       </section>
 
       <section>
-        <h2>Not Another SEO Agency</h2>
-        <p>Most agencies are still optimizing for Google rankings while your buyers are getting answers from ChatGPT. We engineer your brand into the AI layer itself.</p>
+        <h2>Rankings Are a Metric. Revenue Is the Goal.</h2>
+        <p>Most agencies still optimize for rankings and traffic in isolation. We optimize for high-intent discovery across search and AI so executive teams can measure answer-share, category visibility, and pipeline impact together.</p>
       </section>
 
       <section>
-        <h2>The 90-Day Guarantee</h2>
-        <p>If there's no measurable movement in your AI visibility within 90 days, you get a full refund. No questions asked.</p>
+        <h2>From Visibility to Revenue in 90 Days</h2>
+        <p>Our system maps demand, builds the content and comparison surfaces buyers actually use, strengthens the authority layer AI models rely on, and reinforces gains through continuous prompt and citation monitoring.</p>
       </section>
 
       <section>
-        <h2>Is This for You?</h2>
-        <p>We're selective about who we work with. AEO requires significant investment and commitment.</p>
-        <h3>You're a Great Fit If:</h3>
+        <h2>Built for Teams That Care About Efficient Growth.</h2>
+        <p>The best fit is a company with real buying journeys, meaningful ACV, and leadership teams that want search to become a compounding revenue channel again.</p>
+        <h3>Strong fit signals</h3>
         <ul>
-          <li>Established revenue — You have the resources to invest in long-term growth</li>
-          <li>6-month commitment mindset — You understand AEO is a strategic play, not a quick fix</li>
-          <li>B2B SaaS or E-commerce — Your customers research purchases with AI</li>
-          <li>Category leader or ambitious challenger — You want to dominate, not just compete</li>
+          <li>Growth-stage SaaS, professional services, e-commerce, or fund-backed operator</li>
+          <li>Clear buying journey with researched, compared, and validated decisions</li>
+          <li>Leadership team cares about pipeline contribution, not vanity traffic</li>
+          <li>Search and AI visibility are treated as strategic growth levers</li>
         </ul>
       </section>
 
       <section>
+        <h2>Explore by Use Case</h2>
+        <h3>For teams</h3>
+        <ul>
+          <li><a href="/for/saas-founders">AEO for SaaS founders</a></li>
+          <li><a href="/for/ecommerce-brands">AEO for e-commerce brands</a></li>
+          <li><a href="/for/b2b-services">AEO for B2B services</a></li>
+          <li><a href="/for/marketing-leaders">AEO for marketing leaders</a></li>
+        </ul>
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="/solutions/chatgpt-visibility">ChatGPT visibility</a></li>
+          <li><a href="/solutions/perplexity-citations">Perplexity citations</a></li>
+          <li><a href="/solutions/ai-overview-ranking">AI Overview ranking</a></li>
+          <li><a href="/solutions/competitor-displacement">Competitor displacement</a></li>
+        </ul>
+        <h3>Comparisons</h3>
+        <ul>
+          <li><a href="/vs/manual-seo">Memetik vs DIY AEO</a></li>
+          <li><a href="/vs/traditional-seo-agencies">Memetik vs SEO agencies</a></li>
+          <li><a href="/vs/content-marketing-agencies">Memetik vs content agencies</a></li>
+        </ul>
+        <p><a href="/audit">Get your free AI visibility audit</a></p>
+      </section>
+
+      <section>
         <h2>Questions &amp; Answers</h2>
-        ${faqs.map((f) => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("\n        ")}
+        ${HOME_FAQS.map((f) => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("\n        ")}
       </section>
     </main>`;
 }
@@ -222,9 +244,8 @@ function resourcesListContent(articles) {
       <section>
         <h2>All Articles</h2>
         <ul>
-          ${articles.slice(0, 50).map((a) => `<li><a href="/resources/${esc(a.slug)}">${esc(a.title)}</a>${a.metaDescription ? ` — ${esc(a.metaDescription)}` : ""}</li>`).join("\n          ")}
+          ${articles.map((a) => `<li><a href="/resources/${esc(a.slug)}">${esc(a.title)}</a>${a.metaDescription ? ` — ${esc(a.metaDescription)}` : ""}</li>`).join("\n          ")}
         </ul>
-        ${articles.length > 50 ? `<p>And ${articles.length - 50} more articles...</p>` : ""}
       </section>
     </main>`;
 }
@@ -335,6 +356,35 @@ function webPageSchema(title, description, canonicalUrl) {
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
+function professionalServiceSchema(description) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "MEMETIK",
+    url: DOMAIN,
+    logo: `${DOMAIN}/favicon.png`,
+    description,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "New York",
+      addressRegion: "NY",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "40.7128",
+      longitude: "-74.0060",
+    },
+    areaServed: "Worldwide",
+    serviceType: ["Revenue-first SEO", "Answer Engine Optimization", "AI Visibility", "Content Engineering"],
+    sameAs: [
+      "https://twitter.com/memetik",
+      "https://linkedin.com/company/memetik",
+    ],
+  };
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
 // ── HTML injector ───────────────────────────────────────────────
 
 function generatePage(page) {
@@ -404,16 +454,14 @@ function main() {
   // Homepage
   allPages.push({
     route: "/",
-    title: "MEMETIK | Be The Brand AI Recommends | AEO Agency",
-    description: "We engineer your brand into ChatGPT, Perplexity, and Gemini responses. AEO & SEO agency for B2B SaaS, E-commerce, and professional services. 90-day results guaranteed.",
+    title: "MEMETIK | Revenue-First SEO + GEO | Search and AI Pipeline Growth",
+    description: "Memetik helps growth-stage brands turn search and AI visibility into pipeline, category authority, and revenue.",
     bodyContent: homepageContent(),
-    extraSchemas: faqSchema([
-      { q: "How is this different from traditional SEO?", a: "Traditional SEO optimizes for Google's ranking algorithm. AEO optimizes for how LLMs like ChatGPT, Claude, and Perplexity understand and recommend brands." },
-      { q: "How long until I see results?", a: "Most clients see measurable improvements in AI visibility within 60-90 days." },
-      { q: "What's the investment?", a: "We scope every engagement based on your category, competitive landscape, and goals. Book a free audit call to discuss." },
-      { q: "Do you work with competitors in the same space?", a: "No. We maintain strict category exclusivity." },
-      { q: "What if it doesn't work?", a: "We offer a 90-day performance guarantee. If we don't measurably improve your AI visibility, we refund your first month." },
-    ]),
+    extraSchemas: [
+      professionalServiceSchema("Memetik helps growth-stage brands turn search and AI visibility into pipeline, category authority, and revenue."),
+      webPageSchema("MEMETIK | Revenue-First SEO + GEO | Search and AI Pipeline Growth", "Memetik helps growth-stage brands turn search and AI visibility into pipeline, category authority, and revenue.", DOMAIN),
+      faqSchema(HOME_FAQS),
+    ].join("\n"),
   });
 
   // Resources listing

@@ -18,6 +18,11 @@ interface ArticleWithContent extends ResourceArticle {
   html: string;
 }
 
+const legacyArticleRedirects: Record<string, string> = {
+  "questions-before-hiring-aeo-agency": "questions-to-ask-before-hiring-aeo-agency",
+  "chatgpt-search-statistics-b2b-2025": "chatgpt-search-statistics-b2b-marketers",
+};
+
 export default function ResourcePost() {
   const { slug } = useParams<{ slug: string }>();
   const [article, setArticle] = useState<ArticleWithContent | null>(null);
@@ -26,6 +31,12 @@ export default function ResourcePost() {
 
   useEffect(() => {
     if (!slug) return;
+
+    const redirectedSlug = legacyArticleRedirects[slug];
+    if (redirectedSlug) {
+      window.location.replace(`/resources/${redirectedSlug}`);
+      return;
+    }
 
     // Fetch article metadata
     fetch("/cache/resources-articles.json")

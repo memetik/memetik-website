@@ -1,10 +1,22 @@
 {
-  "buildCommand": "node scripts/build-articles.cjs && node scripts/build-sitemap.cjs && node scripts/build-llms-txt.cjs && npm run build:client && node scripts/prerender.cjs",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
   "framework": "vite",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/resources/questions-before-hiring-aeo-agency",
+      "destination": "/resources/questions-to-ask-before-hiring-aeo-agency",
+      "permanent": true
+    },
+    {
+      "source": "/resources/chatgpt-search-statistics-b2b-2025",
+      "destination": "/resources/chatgpt-search-statistics-b2b-marketers",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!.*\\.).*)",

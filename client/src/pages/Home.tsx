@@ -207,6 +207,36 @@ const faqs = [
   },
 ];
 
+const exploreGroups = [
+  {
+    title: "For teams",
+    links: [
+      { href: "/for/saas-founders", label: "AEO for SaaS founders" },
+      { href: "/for/ecommerce-brands", label: "AEO for e-commerce brands" },
+      { href: "/for/b2b-services", label: "AEO for B2B services" },
+      { href: "/for/marketing-leaders", label: "AEO for marketing leaders" },
+    ],
+  },
+  {
+    title: "Solutions",
+    links: [
+      { href: "/solutions/chatgpt-visibility", label: "ChatGPT visibility" },
+      { href: "/solutions/perplexity-citations", label: "Perplexity citations" },
+      { href: "/solutions/ai-overview-ranking", label: "AI Overview ranking" },
+      { href: "/solutions/competitor-displacement", label: "Competitor displacement" },
+    ],
+  },
+  {
+    title: "Comparisons",
+    links: [
+      { href: "/vs/manual-seo", label: "Memetik vs DIY AEO" },
+      { href: "/vs/traditional-seo-agencies", label: "Memetik vs SEO agencies" },
+      { href: "/vs/content-marketing-agencies", label: "Memetik vs content agencies" },
+      { href: "/resources", label: "Browse the resource library" },
+    ],
+  },
+];
+
 function GlobalAtmosphere() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
@@ -753,6 +783,55 @@ function TestTwoQualification() {
   );
 }
 
+function TestTwoExplorePaths() {
+  return (
+    <section className="border-b border-white/10 px-4 py-16 text-foreground sm:px-6 md:px-12 md:py-24 relative overflow-hidden">
+      <SectionGlow color="mixed" className="left-[12%] top-16 h-48 w-48" />
+      <SectionGlow color="blue" className="right-[10%] bottom-8 h-56 w-56" />
+      <div className={`max-w-6xl mx-auto p-8 md:p-12 ${sectionShell}`}>
+        <div className="relative z-10">
+          <div className="inline-flex items-center gap-2 border border-white/12 bg-white/[0.03] px-3 py-1.5 rounded-full mb-6">
+            <span className="font-mono text-xs uppercase tracking-wider text-white/60">
+              Explore the revenue system
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight text-white mb-4">
+            Go deeper by team, outcome, or comparison.
+          </h2>
+          <p className="max-w-2xl text-base text-white/65 mb-10">
+            These pages are built for the exact demand moments buyers, operators, and revenue teams are already researching across search and AI.
+          </p>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {exploreGroups.map((group, index) => (
+              <div key={group.title} className={`${cardShell} p-6 md:p-7`}>
+                <SectionGlow color={index === 1 ? "amber" : "blue"} className="-right-10 -bottom-12 h-32 w-32 opacity-80" />
+                <div className="relative z-10">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/42 mb-5">
+                    {group.title}
+                  </div>
+                  <div className="space-y-3">
+                    {group.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-black/15 px-4 py-3 text-sm text-white/76 transition hover:border-white/20 hover:text-white"
+                      >
+                        <span>{link.label}</span>
+                        <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/40">Open</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TestTwoFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -952,6 +1031,7 @@ export default function Home() {
         <TestTwoMethodology />
         <TestTwoGuarantee />
         <TestTwoQualification />
+        <TestTwoExplorePaths />
         <TestTwoFAQ />
         <TestTwoEmailCapture />
 
