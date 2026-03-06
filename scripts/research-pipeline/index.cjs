@@ -78,9 +78,9 @@ const TAM_CHANNEL_SPLIT = {
   google: Number(process.env.TAM_CHANNEL_SHARE_GOOGLE || 0.86),
   ai: Number(process.env.TAM_CHANNEL_SHARE_AI || 0.14),
 };
-const TAM_CHANNEL_CLICK_THROUGH = {
-  google: Number(process.env.TAM_CTR_GOOGLE || 0.464),
-  ai: Number(process.env.TAM_CTR_AI || 0.018),
+const TAM_CHANNEL_REACHABILITY = {
+  google: Number(process.env.TAM_REACHABLE_SHARE_GOOGLE || 0.12),
+  ai: Number(process.env.TAM_REACHABLE_SHARE_AI || 0.018),
 };
 const TAM_CAPTURE_RATES = {
   BOFU: {
@@ -101,6 +101,12 @@ const TAM_CAPTURE_RATES = {
 };
 
 const TAM_SCENARIOS = ["low", "base", "high"];
+
+const MONTHLY_TRAJECTORY_WEIGHTS = {
+  low: [0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.08, 0.09, 0.1, 0.11, 0.14, 0.15],
+  base: [0.04, 0.05, 0.06, 0.07, 0.07, 0.08, 0.08, 0.09, 0.09, 0.1, 0.13, 0.14],
+  high: [0.05, 0.06, 0.07, 0.08, 0.08, 0.09, 0.09, 0.09, 0.09, 0.1, 0.1, 0.1],
+};
 
 const DEFAULT_REVENUE_ASSUMPTIONS = {
   visitorToLead: {
@@ -582,8 +588,8 @@ function safeRatio(numerator, denominator, fallback = 0) {
 
 function applyCaptureToDemand(demand, intent) {
   const rates = TAM_CAPTURE_RATES[intent] || TAM_CAPTURE_RATES.TOFU;
-  const searchReachable = demand * TAM_CHANNEL_SPLIT.google * TAM_CHANNEL_CLICK_THROUGH.google;
-  const aiReachable = demand * TAM_CHANNEL_SPLIT.ai * TAM_CHANNEL_CLICK_THROUGH.ai;
+  const searchReachable = demand * TAM_CHANNEL_SPLIT.google * TAM_CHANNEL_REACHABILITY.google;
+  const aiReachable = demand * TAM_CHANNEL_SPLIT.ai * TAM_CHANNEL_REACHABILITY.ai;
 
   const totalReachable = initializeScenarioObject();
   const searchByScenario = initializeScenarioObject();
@@ -602,6 +608,113 @@ function applyCaptureToDemand(demand, intent) {
       google: searchByScenario,
       ai: aiByScenario,
     },
+  };
+}
+
+function buildMonthlyTrajectory(totalsReachable) {
+  return Array.from({ length: 12 }, (_, index) => {
+    const month = index + 1;
+    return {
+      month,
+      label: `M${month}`,
+      low: roundNumber(Number(totalsReachable?.low || 0) * MONTHLY_TRAJECTORY_WEIGHTS.low[index]),
+      base: roundNumber(Number(totalsReachable?.base || 0) * MONTHLY_TRAJECTORY_WEIGHTS.base[index]),
+      high: roundNumber(Number(totalsReachable?.high || 0) * MONTHLY_TRAJECTORY_WEIGHTS.high[index]),
+    };
+  });
+}
+
+function buildExecutionBlueprint(topOpportunityClusters = []) {
+  const months = Array.from({ length: 12 }, (_, index) => `M${index + 1}`);
+  const topBofu = topOpportunityClusters.filter((cluster) => cluster.intent === "BOFU").slice(0, 3);
+  const topMofu = topOpportunityClusters.filter((cluster) => cluster.intent === "MOFU").slice(0, 3);
+  const topTofu = topOpportunityClusters.filter((cluster) => cluster.intent === "TOFU").slice(0, 3);
+
+  return {
+    months,
+    tracks: [
+      {
+        name: "Money entity capture",
+        description:
+          topBofu.length > 0
+            ? `Priority BOFU coverage around ${topBofu.map((cluster) => cluster.cluster).join(", ")}.`
+            : "Priority BOFU pages and comparison assets ship from month 1 onward.",
+        cells: [
+          { label: "Prioritize", tone: "high" },
+          { label: "Build", tone: "high" },
+          { label: "Ship", tone: "high" },
+          { label: "Ship", tone: "high" },
+          { label: "Expand", tone: "base" },
+          { label: "Expand", tone: "base" },
+          { label: "Refresh", tone: "base" },
+          { label: "Refresh", tone: "base" },
+          { label: "Refresh", tone: "base" },
+          { label: "Defend", tone: "base" },
+          { label: "Defend", tone: "base" },
+          { label: "Defend", tone: "base" },
+        ],
+      },
+      {
+        name: "Workflow + implementation layer",
+        description:
+          topMofu.length > 0
+            ? `Implementation, workflow, and proof assets expand around ${topMofu.map((cluster) => cluster.cluster).join(", ")}.`
+            : "Implementation and workflow proof compounds in parallel with BOFU page launches.",
+        cells: [
+          { label: "Map", tone: "high" },
+          { label: "Implement", tone: "high" },
+          { label: "Instrument", tone: "base" },
+          { label: "Ship", tone: "base" },
+          { label: "Expand", tone: "base" },
+          { label: "Expand", tone: "base" },
+          { label: "Proof", tone: "base" },
+          { label: "Proof", tone: "base" },
+          { label: "Optimize", tone: "base" },
+          { label: "Optimize", tone: "base" },
+          { label: "Scale", tone: "base" },
+          { label: "Scale", tone: "base" },
+        ],
+      },
+      {
+        name: "Authority + distribution",
+        description:
+          topTofu.length > 0
+            ? `Authority building reinforces ${topTofu.map((cluster) => cluster.cluster).join(", ")} themes while supporting AI citation lift.`
+            : "Authority and distribution reinforce every shipped asset from the first month.",
+        cells: [
+          { label: "Seed", tone: "high" },
+          { label: "Seed", tone: "high" },
+          { label: "Launch", tone: "base" },
+          { label: "Distribute", tone: "base" },
+          { label: "Distribute", tone: "base" },
+          { label: "Expand", tone: "base" },
+          { label: "Expand", tone: "base" },
+          { label: "Refresh", tone: "base" },
+          { label: "Refresh", tone: "base" },
+          { label: "Scale", tone: "base" },
+          { label: "Scale", tone: "base" },
+          { label: "Defend", tone: "base" },
+        ],
+      },
+      {
+        name: "Measurement + prompt ops",
+        description: "Prompt testing, answer-share tracking, and iteration loops start in month 1 and never stop.",
+        cells: [
+          { label: "Baseline", tone: "high" },
+          { label: "Track", tone: "high" },
+          { label: "Tune", tone: "base" },
+          { label: "Tune", tone: "base" },
+          { label: "Report", tone: "base" },
+          { label: "Tune", tone: "base" },
+          { label: "Report", tone: "base" },
+          { label: "Tune", tone: "base" },
+          { label: "Report", tone: "base" },
+          { label: "Tune", tone: "base" },
+          { label: "Report", tone: "base" },
+          { label: "Systemize", tone: "base" },
+        ],
+      },
+    ],
   };
 }
 
@@ -1137,6 +1250,9 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
       sources: Array.from(cluster.sources),
     }));
 
+  const monthlyTrajectory = buildMonthlyTrajectory(totalsReachable);
+  const executionBlueprint = buildExecutionBlueprint(topOpportunityClusters);
+
   const keywordUniverseSummary = {
     size: keywordUniverse.length,
     minVolumeThreshold: KEYWORD_UNIVERSE_MIN_VOLUME,
@@ -1186,21 +1302,27 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
     methodology: {
       version: "tam_v2",
       formula:
-        "ReachableDemand = SearchVolume × VisibilityCaptureRate × ChannelSplit × ChannelClickThrough",
+        "ReachableDemand = SearchVolume × ChannelSplit × ModeledReachableShare × VisibilityCaptureRate",
       notes: [
         "Modeled estimate; not actual analytics traffic.",
         "US+AU only.",
+        "Google reachable-share defaults are intentionally conservative for founder planning.",
         "Use first-party analytics to calibrate conversion assumptions.",
-        "Displayed phased values should be rounded to whole numbers for planning readability.",
+        "Displayed monthly trajectory values should be rounded to whole numbers for planning readability.",
       ],
     },
     assumptions: {
       channelSplit: TAM_CHANNEL_SPLIT,
-      channelClickThrough: TAM_CHANNEL_CLICK_THROUGH,
+      modeledReachableShare: TAM_CHANNEL_REACHABILITY,
       captureRates: TAM_CAPTURE_RATES,
       scenarios: TAM_SCENARIOS,
       selectedHorizonMonths: 12,
       conversionRangePolicy: "low_base_high",
+      founderReadableSummary: [
+        "Google reachable-share assumptions are modeled conservatively rather than presented as raw CTR guarantees.",
+        "Capture rates vary by BOFU, MOFU, and TOFU intent because commercial intent converts into visibility at different speeds.",
+        "These numbers are planning coefficients, not a claim that the brand will capture the full market immediately.",
+      ],
     },
     keywordUniverse: keywordUniverseSummary,
     totals: {
@@ -1241,6 +1363,8 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
       },
     })),
     phasedUpside,
+    monthlyTrajectory,
+    executionBlueprint,
     topOpportunityClusters,
     keywordGapCount: keywordGaps.length,
     aiVisibilitySignals: {
