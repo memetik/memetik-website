@@ -22,7 +22,7 @@ export function Nav() {
     { href: "/resources", label: "RESOURCES", isPage: true },
   ];
 
-  const isMarketingHome = location === "/" || location === "/test-two";
+  const isMarketingHome = location === "/";
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();

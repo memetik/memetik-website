@@ -23,7 +23,6 @@ const Segment = lazy(() => import("@/pages/Segment"));
 const Comparison = lazy(() => import("@/pages/Comparison"));
 const Solution = lazy(() => import("@/pages/Solution"));
 const TestLanding = lazy(() => import("@/pages/TestLanding"));
-const TestLandingTwo = lazy(() => import("@/pages/TestLandingTwo"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 function Router() {
@@ -46,7 +45,6 @@ function Router() {
         <Route path="/vs/:comparison" component={Comparison} />
         <Route path="/solutions/:solution" component={Solution} />
         <Route path="/test" component={TestLanding} />
-        <Route path="/test-two" component={TestLandingTwo} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
