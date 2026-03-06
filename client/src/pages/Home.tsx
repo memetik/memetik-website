@@ -340,7 +340,7 @@ function TestTwoHero() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="max-w-[14ch] text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-display font-extrabold leading-[0.94] tracking-tight text-white mb-6"
           >
-            Turn Search and AI Visibility <em className="block pt-2 text-[1.08em] font-semibold italic tracking-[-0.04em] text-[#f4e4cd]" style={{ fontFamily: "'Newsreader', serif" }}>
+            Turn Search and AI Visibility <em className="inline text-[1.02em] font-medium italic tracking-[-0.02em] text-[#f4e4cd]" style={{ fontFamily: "'Newsreader', serif" }}>
               Into Revenue.
             </em>
           </motion.h1>
