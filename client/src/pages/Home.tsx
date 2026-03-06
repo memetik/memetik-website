@@ -330,7 +330,7 @@ function TestTwoHero() {
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 border border-white/10 bg-white/[0.03] px-4 py-2 rounded-full mb-6"
+            className="mb-6 hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 sm:inline-flex"
           >
             <span className="h-2 w-2 rounded-full bg-[#efc38b] shadow-[0_0_16px_rgba(239,195,139,0.8)]" />
             <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/65">
@@ -993,17 +993,14 @@ function TestTwoMobileStickyCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-foreground text-background p-4 border-t border-background/10 shadow-lg">
+    <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
       <a
         href="https://cal.com/memetik/letstalk"
-        className={`${primaryCtaButton} flex w-full justify-center px-6 py-3`}
+        className="flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-[#07090d]/88 px-5 py-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-md transition hover:bg-[#07090d]"
       >
-        See Your Revenue Opportunities
+        See Revenue Opportunities
         <TrendingUp className="w-4 h-4" />
       </a>
-      <p className="text-[10px] text-background/50 text-center mt-2 uppercase">
-        Free 30-min audit · Search and AI demand map
-      </p>
     </div>
   );
 }

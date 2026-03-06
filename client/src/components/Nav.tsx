@@ -104,12 +104,6 @@ export function Nav() {
             </div>
 
             <div className="relative z-50 flex items-center gap-2 md:hidden">
-              <a
-                href="https://cal.com/memetik/letstalk"
-                className="inline-flex items-center rounded-full border border-[#f4e4cd]/25 bg-[#f4e4cd] px-3 py-2 font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-[#090b0d]"
-              >
-                Strategy Call
-              </a>
               <button
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white transition hover:bg-white/[0.08]"
                 onClick={() => setIsOpen(!isOpen)}
@@ -144,6 +138,13 @@ export function Nav() {
                     </a>
                   ),
                 )}
+                <a
+                  href="https://cal.com/memetik/letstalk"
+                  className="block rounded-2xl border border-[#f4e4cd]/25 bg-[#f4e4cd] px-3 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#090b0d] transition hover:opacity-92"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Strategy Call
+                </a>
               </div>
             </div>
           )}
