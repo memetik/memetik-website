@@ -252,7 +252,7 @@ MARKET CONTEXT NON-NEGOTIABLES (must be reflected in the State of Search / Why T
 CRITICAL RULES:
 1. Output ONLY the complete TSX file content — no markdown fences, no explanation, no commentary.
 2. The file must be a valid React component with a default export.
-3. Import shared components from "@/components/strategy" — use SectionHeader, HighlightBox, BulletList, DataTable, StatsGrid, PhasedUpsideChart, TamRoiCalculator, WorkstreamTimeline, StrategySectionLead, and StrategyAppendixSection freely.
+3. Import shared components from "@/components/strategy" — use SectionHeader, HighlightBox, BulletList, DataTable, StatsGrid, PhasedUpsideChart, TamRoiCalculator, ExecutionInfographic, WorkstreamTimeline, StrategySectionLead, and StrategyAppendixSection freely.
 3b. Prefer the premium homepage-aligned primitives: StrategyPageFrame, StrategyHero, StrategySectionShell, StrategyCard, StrategyEyebrow, StrategyCTA, StrategyGlow.
 4. Import Nav from "@/components/Nav".
 5. Import icons from "lucide-react" as needed.
@@ -322,6 +322,7 @@ Mandatory output structure additions:
 - Add an appendix / supporting evidence section using StrategyAppendixSection.
 - Put detailed keyword universe, assumptions/confidence, detailed competitor evidence, prompt evidence, and optional calculator in the appendix rather than the primary flow.
 - Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
+- Keep executive-summary headline numbers compact enough that seven-figure values do not wrap awkwardly.
 - Keep hero metrics and primary visuals tied to validated topical subsets.
 - Display trajectory numbers as whole integers in visible UI labels.
 - If researchData.tamModel.totals.expectedTraffic12Months exists, use that terminology in the visible UI instead of "reachable visits".
@@ -329,6 +330,7 @@ Mandatory output structure additions:
 - Use researchData.topicalIntegrity to avoid headline claims from excluded or ambiguous keyword groups.
 - Include 2-3 real prompt examples inside the AI visibility section.
 - Include a concrete 90-day wedge: first entity/category wedge, first pages to ship, first prompts to win, first competitors to attack.
+- Prefer an infographic-style operating model visual that shows what Memetik is doing, what ships, and what BTS receives; avoid defaulting to a dense month-by-month grid unless it is clearly better.
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue planning requires client ACV/AOV and funnel inputs."
 - If researchData.tamModel.assumptions includes planning assumptions, keep them in the appendix and explain them in normal English rather than coefficient language.
 

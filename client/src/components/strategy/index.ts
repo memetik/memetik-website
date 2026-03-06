@@ -18,5 +18,11 @@ export { StrategyGlow } from "./StrategyGlow";
 export { StrategyCTA } from "./StrategyCTA";
 export { StrategySectionLead } from "./StrategySectionLead";
 export { StrategyAppendixSection } from "./StrategyAppendixSection";
+export { ExecutionInfographic } from "./ExecutionInfographic";
+export type {
+  ExecutionInfographicStep,
+  ExecutionInfographicTrack,
+  ExecutionInfographicOutput,
+} from "./ExecutionInfographic";
 export { WorkstreamTimeline } from "./WorkstreamTimeline";
 export type { WorkstreamTimelineTrack, WorkstreamTimelineCell } from "./WorkstreamTimeline";

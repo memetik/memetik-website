@@ -15,7 +15,7 @@ import {
   StrategyCTA,
   StrategySectionLead,
   StrategyAppendixSection,
-  WorkstreamTimeline,
+  ExecutionInfographic,
   StrategyEyebrow,
 } from "@/components/strategy";
 import {
@@ -283,24 +283,28 @@ export default function StrategyBts2() {
     {
       label: "Total search opportunity",
       value: formatWhole(researchData.tamModel.totals.totalSearchOpportunity),
+      valueClassName: "text-[clamp(1.55rem,2.35vw,2.25rem)]",
       icon: <Globe className="h-5 w-5" />,
       note: "Validated creator-platform demand across US + AU.",
     },
     {
       label: "Expected traffic in 12 months",
       value: formatWhole(researchData.tamModel.totals.expectedTraffic12Months.base),
+      valueClassName: "text-[clamp(1.55rem,2.35vw,2.25rem)]",
       icon: <LineChart className="h-5 w-5" />,
       note: "Base-case outcome from a focused 12-month search + AI program.",
     },
     {
       label: "Aggressive upside",
       value: formatWhole(researchData.tamModel.totals.aggressiveUpside),
+      valueClassName: "text-[clamp(1.55rem,2.35vw,2.25rem)]",
       icon: <Rocket className="h-5 w-5" />,
       note: "If BTS wins first wedge early and compounds authority faster.",
     },
     {
       label: "First 90-day target",
       value: formatWhole(researchData.tamModel.totals.first90DayTarget.base),
+      valueClassName: "text-[clamp(1.55rem,2.35vw,2.25rem)]",
       icon: <Target className="h-5 w-5" />,
       note: "Early traction target focused on high-intent category and comparison pages.",
     },
@@ -797,80 +801,79 @@ export default function StrategyBts2() {
               implication="Treat AEO + SEO as an operating system, not a campaign."
             />
 
-            <WorkstreamTimeline
-              months={["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10", "M11", "M12"]}
+            <ExecutionInfographic
+              steps={[
+                {
+                  label: "Map the wedge",
+                  detail: "Prioritize the creator-platform entities, prompts, and comparisons most likely to move shortlist behavior.",
+                },
+                {
+                  label: "Ship the assets",
+                  detail: "Publish the money pages, support pages, and answer-ready blocks that directly target those buying moments.",
+                },
+                {
+                  label: "Distribute proof",
+                  detail: "Reinforce the pages with supporting evidence, citations, and creator-specific credibility signals.",
+                },
+                {
+                  label: "Measure + refresh",
+                  detail: "Track rankings, AI mentions, and page performance every week, then refresh the winners instead of waiting quarters.",
+                },
+              ]}
               tracks={[
                 {
-                  name: "Money entity capture",
-                  description: "High-intent alternatives and comparison pages shipped continuously.",
-                  cells: [
-                    { label: "Prioritize", tone: "high" },
-                    { label: "Build", tone: "high" },
-                    { label: "Ship", tone: "high" },
-                    { label: "Ship", tone: "high" },
-                    { label: "Expand", tone: "base" },
-                    { label: "Expand", tone: "base" },
-                    { label: "Refresh", tone: "base" },
-                    { label: "Refresh", tone: "base" },
-                    { label: "Refresh", tone: "base" },
-                    { label: "Defend", tone: "base" },
-                    { label: "Defend", tone: "base" },
-                    { label: "Defend", tone: "base" },
+                  name: "Search demand capture",
+                  description: "This is the commercial layer: the pages buyers see when they compare platforms and build shortlists.",
+                  deliverables: [
+                    "Alternatives + comparison pages against Patreon, Kajabi, Skool, Circle, and Teachable.",
+                    "A flagship 'best creator monetization platform' page with direct-answer formatting.",
+                    "Schema, verdict blocks, and refreshes on every money page.",
                   ],
+                  outcome: "BTS starts showing up in the exact moments buyers choose who makes the list.",
                 },
                 {
-                  name: "Workflow + implementation layer",
-                  description: "How-to and selection framework assets that support conversion confidence.",
-                  cells: [
-                    { label: "Map", tone: "high" },
-                    { label: "Implement", tone: "high" },
-                    { label: "Instrument", tone: "base" },
-                    { label: "Ship", tone: "base" },
-                    { label: "Expand", tone: "base" },
-                    { label: "Expand", tone: "base" },
-                    { label: "Proof", tone: "base" },
-                    { label: "Proof", tone: "base" },
-                    { label: "Optimize", tone: "base" },
-                    { label: "Optimize", tone: "base" },
-                    { label: "Scale", tone: "base" },
-                    { label: "Scale", tone: "base" },
+                  name: "AI answer-engine visibility",
+                  description: "This layer trains answer engines to recognize BTS as a valid category recommendation, not just a branded result.",
+                  deliverables: [
+                    "A tracked prompt library across ChatGPT, Gemini, and Google AI Overviews.",
+                    "Entity and comparison copy designed to be cited cleanly by LLMs.",
+                    "Fixes on prompts where incumbents win and BTS is absent.",
                   ],
+                  outcome: "BTS earns more default mentions when buyers ask generic platform questions.",
                 },
                 {
-                  name: "Authority + distribution",
-                  description: "External proof surfaces that reinforce recommendations and trust.",
-                  cells: [
-                    { label: "Seed", tone: "high" },
-                    { label: "Seed", tone: "high" },
-                    { label: "Launch", tone: "base" },
-                    { label: "Distribute", tone: "base" },
-                    { label: "Distribute", tone: "base" },
-                    { label: "Expand", tone: "base" },
-                    { label: "Expand", tone: "base" },
-                    { label: "Refresh", tone: "base" },
-                    { label: "Refresh", tone: "base" },
-                    { label: "Scale", tone: "base" },
-                    { label: "Scale", tone: "base" },
-                    { label: "Defend", tone: "base" },
+                  name: "Authority + proof layer",
+                  description: "These assets make the commercial pages more believable and easier to trust across both search and AI surfaces.",
+                  deliverables: [
+                    "Supporting creator guides and use-case pages around monetization, membership, and community growth.",
+                    "Proof assets and evidence blocks that reinforce why BTS wins a specific wedge.",
+                    "Citation and link targets around creator-economy decision content.",
                   ],
+                  outcome: "The BTS narrative gets stronger, more defensible, and easier for Google and AI to recommend.",
                 },
                 {
-                  name: "Measurement + prompt ops",
-                  description: "Weekly answer-share checks and monthly recalibration on top entities.",
-                  cells: [
-                    { label: "Baseline", tone: "high" },
-                    { label: "Track", tone: "high" },
-                    { label: "Tune", tone: "base" },
-                    { label: "Tune", tone: "base" },
-                    { label: "Report", tone: "base" },
-                    { label: "Tune", tone: "base" },
-                    { label: "Report", tone: "base" },
-                    { label: "Tune", tone: "base" },
-                    { label: "Report", tone: "base" },
-                    { label: "Tune", tone: "base" },
-                    { label: "Report", tone: "base" },
-                    { label: "Systemize", tone: "base" },
+                  name: "Measurement + operating rhythm",
+                  description: "This is the part most teams skip: the cadence that turns shipping into compounding performance.",
+                  deliverables: [
+                    "A weekly scorecard covering rankings, AI visibility, and page-level movement.",
+                    "Monthly refreshes on top money pages and prompt failures.",
+                    "Wedge expansion decisions based on what is already winning.",
                   ],
+                  outcome: "BTS gets a visible execution system instead of a pile of disconnected content.",
+                },
+              ]}
+              outputs={[
+                {
+                  label: "Pages that attack shortlist intent",
+                  detail: "Every month ships visible commercial assets BTS can point to: money pages, comparisons, and supporting proof.",
+                },
+                {
+                  label: "An AI visibility system, not one-off tests",
+                  detail: "Prompt tracking, citation fixes, and answer-engine iteration become part of the operating cadence.",
+                },
+                {
+                  label: "A founder-readable growth machine",
+                  detail: "You can see what Memetik is doing, what shipped, what moved, and where the next wedge opens up.",
                 },
               ]}
             />

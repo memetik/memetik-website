@@ -6,14 +6,20 @@ export interface Stat {
   value: string;
   icon?: React.ReactNode;
   note?: string;
+  valueClassName?: string;
 }
 
-export const StatCard = ({ label, value, icon, note }: Stat) => (
+export const StatCard = ({ label, value, icon, note, valueClassName }: Stat) => (
   <div className={cn(strategyCardShell, "text-left")}> 
     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.015))]" />
     <div className="relative p-4 md:p-5">
       {icon && <div className="mb-3 flex text-[#f4e4cd]">{icon}</div>}
-      <div className="break-words text-[clamp(1.9rem,3.6vw,3rem)] font-display font-bold leading-[0.95] tracking-tight text-white">
+      <div
+        className={cn(
+          "break-words text-[clamp(1.9rem,3.6vw,3rem)] font-display font-bold leading-[0.95] tracking-tight text-white",
+          valueClassName
+        )}
+      >
         {value}
       </div>
       <div className="mt-2 text-[10px] font-mono uppercase tracking-[0.18em] leading-relaxed text-white/45">{label}</div>
