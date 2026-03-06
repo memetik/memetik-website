@@ -22,12 +22,14 @@ export function Nav() {
     { href: "/resources", label: "RESOURCES", isPage: true },
   ];
 
+  const isMarketingHome = location === "/" || location === "/test-two";
+
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
     
     // If not on homepage, navigate there with hash
-    if (location !== "/") {
+    if (!isMarketingHome) {
       window.location.href = "/" + href;
       return;
     }

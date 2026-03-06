@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "wouter";
 import { Nav } from "@/components/Nav";
 import {
@@ -10,7 +10,16 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { segments } from "@/data/segments";
-import { useState } from "react";
+import {
+  MarketingCard,
+  MarketingContainer,
+  MarketingFooter,
+  MarketingPage,
+  MarketingPill,
+  MarketingSectionGlow,
+  MarketingSectionShell,
+  marketingTheme,
+} from "@/components/marketing/MarketingTheme";
 
 const iconMap: Record<string, React.ReactNode> = {
   "eye-off": <EyeOff className="w-5 h-5" />,
@@ -35,195 +44,200 @@ export default function Segment() {
 
   if (!data) {
     return (
-      <div className="min-h-screen w-full bg-background text-foreground">
+      <MarketingPage>
         <Nav />
-        <div className="pt-32 pb-16 px-4 text-center">
-          <h1 className="text-3xl font-display font-extrabold uppercase mb-4">Page Not Found</h1>
-          <Link href="/">
-            <a className="font-mono text-sm underline">Back to home</a>
-          </Link>
+        <div className="px-4 pb-16 pt-32 sm:px-6 md:px-12">
+          <MarketingContainer>
+            <MarketingSectionShell className="px-8 py-16 text-center">
+              <h1 className="text-3xl font-display font-extrabold uppercase mb-4">Page Not Found</h1>
+              <Link href="/">
+                <a className={marketingTheme.secondaryButton}>Back to home</a>
+              </Link>
+            </MarketingSectionShell>
+          </MarketingContainer>
         </div>
-      </div>
+      </MarketingPage>
     );
   }
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground">
+    <MarketingPage>
       <Nav />
+      <main className="px-4 pb-8 pt-28 sm:px-6 md:px-12 md:pt-32">
+        <MarketingContainer className="space-y-6">
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-14">
+            <MarketingSectionGlow className="-left-12 top-0 h-44 w-44" />
+            <MarketingSectionGlow className="bottom-0 right-0 h-48 w-48" tone="amber" />
+            <div className="relative z-10">
+              <MarketingPill className="mb-8">
+                <span className="h-2 w-2 rounded-full bg-[#78f0c4] shadow-[0_0_12px_rgba(120,240,196,0.85)]" />
+                {data.badge}
+              </MarketingPill>
 
-      {/* Hero */}
-      <section className="pt-32 pb-16 md:pb-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
-        <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 border border-foreground/30 px-3 py-1.5 mb-8">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">
-              {data.badge}
-            </span>
-          </div>
+              <div className="grid gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(18rem,0.8fr)] lg:items-end">
+                <div>
+                  <h1 className="mb-6 max-w-5xl whitespace-pre-line font-display text-4xl font-extrabold uppercase leading-[0.9] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                    {data.headline}
+                  </h1>
+                  <p className="mb-4 max-w-3xl text-xl text-white/74 sm:text-2xl md:text-3xl">
+                    {data.subhead}
+                  </p>
+                  <p className="max-w-2xl font-mono text-sm leading-7 text-white/58">
+                    {data.description}
+                  </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[0.85] tracking-tight uppercase mb-6 whitespace-pre-line">
-            {data.headline}
-          </h1>
-          <p className="font-sans text-2xl sm:text-3xl text-foreground/70 mb-6">
-            {data.subhead}
-          </p>
-          <p className="font-mono text-sm text-foreground/60 max-w-2xl mb-8">
-            {data.description}
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
-            <Link href="/audit">
-              <a className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity">
-                {data.ctaText}
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </Link>
-            <span className="font-mono text-xs text-foreground/50 uppercase">
-              {data.ctaSubtext}
-            </span>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-4">
-            {data.stats.map((s, i) => (
-              <div key={i} className="border-2 border-foreground p-4">
-                <div className="text-2xl md:text-3xl font-display font-extrabold">{s.value}</div>
-                <div className="font-mono text-[10px] uppercase tracking-wider text-foreground/60 mt-1">
-                  {s.label}
+                  <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+                    <Link href="/audit">
+                      <a className={marketingTheme.primaryButton}>
+                        {data.ctaText}
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+                    </Link>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/40">
+                      {data.ctaSubtext}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Pain Points */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-12">
-            Sound familiar?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-2 border-foreground">
-            {data.painPoints.map((p, i) => (
-              <div
-                key={i}
-                className="p-6 md:p-8 border-b md:odd:border-r border-foreground/20 last:border-b-0 md:[&:nth-last-child(2)]:border-b-0"
-              >
-                <div className="w-10 h-10 border-2 border-foreground flex items-center justify-center mb-4">
-                  {iconMap[p.icon] || <AlertTriangle className="w-5 h-5" />}
-                </div>
-                <p className="font-mono text-sm text-foreground/80 leading-relaxed">{p.text}</p>
+                <MarketingCard className="p-6 sm:p-7">
+                  <div className={marketingTheme.eyebrow}>Executive snapshot</div>
+                  <div className="mt-6 space-y-4">
+                    {data.stats.map((s, i) => (
+                      <div key={i} className="border-b border-white/10 pb-4 last:border-b-0 last:pb-0">
+                        <div className="font-display text-3xl font-extrabold uppercase tracking-[-0.04em] text-white">
+                          {s.value}
+                        </div>
+                        <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-white/42">
+                          {s.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </MarketingCard>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
+          </MarketingSectionShell>
 
-      {/* How It Works */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-foreground text-background border-b-2 border-foreground">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-12 text-background">
-            How we fix it
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-background/30">
-            {data.steps.map((s, i) => (
-              <div
-                key={i}
-                className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-background/20 last:border-r-0 last:border-b-0"
-              >
-                <div className="font-mono text-xs text-background/40 mb-4">0{i + 1}</div>
-                <h3 className="font-display font-extrabold text-xl uppercase mb-3 text-background">
-                  {s.title}
-                </h3>
-                <p className="font-mono text-xs text-background/70 leading-relaxed">
-                  {s.description}
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-12">
+            <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <div className={marketingTheme.eyebrow}>Where teams lose momentum</div>
+                <h2 className="mt-3 font-display text-3xl font-extrabold uppercase tracking-[-0.04em] text-white sm:text-4xl">
+                  Sound familiar?
+                </h2>
+              </div>
+              <p className="max-w-xl font-mono text-sm leading-7 text-white/55">
+                The problem is rarely effort. It is that legacy SEO programs were not built for AI recommendation systems.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {data.painPoints.map((p, i) => (
+                <MarketingCard key={i} className="p-6">
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.03] text-white/72">
+                    {iconMap[p.icon] || <AlertTriangle className="w-5 h-5" />}
+                  </div>
+                  <p className="font-mono text-sm leading-7 text-white/68">{p.text}</p>
+                </MarketingCard>
+              ))}
+            </div>
+          </MarketingSectionShell>
+
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-12">
+            <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <div className={marketingTheme.eyebrow}>Execution system</div>
+                <h2 className="mt-3 font-display text-3xl font-extrabold uppercase tracking-[-0.04em] text-white sm:text-4xl">
+                  How we fix it
+                </h2>
+              </div>
+              <p className="max-w-xl font-mono text-sm leading-7 text-white/55">
+                We build category authority, instrument answer share, and close the gap between search visibility and qualified pipeline.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {data.steps.map((s, i) => (
+                <MarketingCard key={i} className="p-6">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">
+                    0{i + 1}
+                  </div>
+                  <h3 className="mt-4 font-display text-2xl font-extrabold uppercase tracking-[-0.04em] text-white">
+                    {s.title}
+                  </h3>
+                  <p className="mt-4 font-mono text-sm leading-7 text-white/60">
+                    {s.description}
+                  </p>
+                </MarketingCard>
+              ))}
+            </div>
+          </MarketingSectionShell>
+
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-12">
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] lg:items-center">
+              <div>
+                <div className={marketingTheme.eyebrow}>Custom engagement model</div>
+                <h2 className="mt-3 font-display text-3xl font-extrabold uppercase tracking-[-0.04em] text-white sm:text-4xl">
+                  Every engagement is custom
+                </h2>
+                <p className="mt-4 max-w-2xl font-mono text-sm leading-7 text-white/58">
+                  We scope strategy around your category dynamics, your sales motion, and the exact queries that influence revenue. 90-day performance guarantee included.
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Custom Engagement CTA */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-4">
-            Every Engagement Is Custom
-          </h2>
-          <p className="font-mono text-sm text-foreground/60 mb-8">
-            We scope your strategy based on your category, competitive landscape, and goals. 90-day performance guarantee included.
-          </p>
-          <a
-            href="https://cal.com/memetik/letstalk"
-            className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider rounded hover:opacity-90 transition-opacity"
-          >
-            GET YOUR CUSTOM PROPOSAL
-            <span>→</span>
-          </a>
-          <p className="font-mono text-xs text-foreground/40 mt-4 uppercase">
-            30-min strategy call · No obligation
-          </p>
-        </div>
-      </section>
+              <MarketingCard className="p-6 text-center sm:p-8">
+                <a href="https://cal.com/memetik/letstalk" className={marketingTheme.primaryButton}>
+                  Get your custom proposal
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">
+                  30-min strategy call · No obligation
+                </p>
+              </MarketingCard>
+            </div>
+          </MarketingSectionShell>
 
-      {/* FAQ */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-12">
-            Common Questions
-          </h2>
-          <div className="border-2 border-foreground divide-y-2 divide-foreground">
-            {data.faqs.map((faq, i) => (
-              <div key={i}>
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-foreground/5 transition-colors"
-                >
-                  <span className="font-mono text-sm font-bold pr-4">{faq.q}</span>
-                  <ChevronDown
-                    className={`w-4 h-4 flex-shrink-0 transition-transform ${
-                      openFaq === i ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-6">
-                    <p className="font-mono text-sm text-foreground/70 leading-relaxed">{faq.a}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-12">
+            <div className="mb-8">
+              <div className={marketingTheme.eyebrow}>Decision-maker FAQ</div>
+              <h2 className="mt-3 font-display text-3xl font-extrabold uppercase tracking-[-0.04em] text-white sm:text-4xl">
+                Common questions
+              </h2>
+            </div>
 
-      {/* Bottom CTA */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-foreground text-background">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold uppercase tracking-tight mb-4 text-background">
-            Ready to be the answer?
-          </h2>
-          <p className="font-mono text-sm text-background/60 mb-8 max-w-xl mx-auto">
-            {data.ctaSubtext}
-          </p>
-          <Link href="/audit">
-            <a className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity">
-              {data.ctaText}
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </Link>
-        </div>
-      </section>
+            <div className="space-y-4">
+              {data.faqs.map((faq, i) => (
+                <MarketingCard key={i} className="p-0">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                  >
+                    <span className="font-mono text-sm font-semibold leading-6 text-white/80">{faq.q}</span>
+                    <ChevronDown
+                      className={`h-4 w-4 flex-shrink-0 text-white/50 transition-transform ${
+                        openFaq === i ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {openFaq === i && (
+                    <div className="px-6 pb-6">
+                      <p className="font-mono text-sm leading-7 text-white/60">{faq.a}</p>
+                    </div>
+                  )}
+                </MarketingCard>
+              ))}
+            </div>
+          </MarketingSectionShell>
+        </MarketingContainer>
+      </main>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 sm:px-6 md:px-12 border-t border-foreground/20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link href="/">
-            <a className="font-display font-extrabold text-xl uppercase">MEMETIK</a>
-          </Link>
-          <div className="font-mono text-xs text-foreground/40 uppercase">&copy; 2026 MEMETIK</div>
-        </div>
-      </footer>
-    </div>
+      <MarketingFooter
+        title="Ready to become the category answer?"
+        description={data.ctaSubtext}
+        ctaHref="/audit"
+        ctaLabel={data.ctaText}
+        note="Revenue-first audit · executive review in 24 hours"
+      />
+    </MarketingPage>
   );
 }

@@ -2,6 +2,15 @@ import { useEffect, useState, useMemo } from "react";
 import { Nav } from "@/components/Nav";
 import { ResourceCard } from "@/components/ResourceCard";
 import type { ResourceArticle } from "@/lib/notion";
+import {
+  MarketingContainer,
+  MarketingFooter,
+  MarketingPage,
+  MarketingPill,
+  MarketingSectionGlow,
+  MarketingSectionShell,
+  marketingTheme,
+} from "@/components/marketing/MarketingTheme";
 
 export default function Resources() {
   const [articles, setArticles] = useState<ResourceArticle[]>([]);
@@ -46,141 +55,96 @@ export default function Resources() {
   const remainingArticles = filteredArticles.slice(1);
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground">
+    <MarketingPage>
       <Nav />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
-        <div className="max-w-7xl mx-auto">
-          {/* Chevron bar */}
-          <div className="font-mono text-xs tracking-tighter text-foreground/60 mb-8 overflow-hidden">
-            &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-          </div>
-
-          <div className="inline-flex items-center gap-2 border border-foreground/30 px-3 py-1.5 mb-6">
-            <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">
-              Knowledge Base
-            </span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold tracking-tight uppercase leading-[0.85] mb-4">
-            Resources
-          </h1>
-
-          <p className="font-mono text-sm sm:text-base text-foreground/60 max-w-2xl mb-8">
-            Deep dives into Answer Engine Optimization, LLM visibility strategies, and the future of search. 
-            Actionable insights for brands ready to dominate AI responses.
-          </p>
-
-          {/* Category Filter */}
-          {categories.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setSelectedCategory("all")}
-                className={`border-2 px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors ${
-                  selectedCategory === "all"
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-foreground/30 hover:border-foreground"
-                }`}
-              >
-                All
-              </button>
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`border-2 px-4 py-2 font-mono text-xs uppercase tracking-wider transition-colors ${
-                    selectedCategory === cat
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-foreground/30 hover:border-foreground"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Articles Section */}
-      <section className="py-16 px-4 sm:px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          {loading ? (
-            <div className="text-center py-24">
-              <div className="font-mono text-sm uppercase tracking-wider text-foreground/60">
-                Loading articles...
-              </div>
-            </div>
-          ) : articles.length === 0 ? (
-            <div className="text-center py-24 border-2 border-foreground/20">
-              <h2 className="text-2xl font-display font-extrabold uppercase mb-4">
-                Coming Soon
-              </h2>
-              <p className="font-mono text-sm text-foreground/60">
-                We're working on some killer content. Check back soon.
+      <main className="px-4 pb-8 pt-28 sm:px-6 md:px-12 md:pt-32">
+        <MarketingContainer className="space-y-6">
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-14">
+            <MarketingSectionGlow className="-left-12 top-0 h-44 w-44" />
+            <MarketingSectionGlow className="bottom-0 right-0 h-48 w-48" tone="amber" />
+            <div className="relative z-10">
+              <MarketingPill className="mb-6">Knowledge base</MarketingPill>
+              <h1 className="font-display text-4xl font-extrabold uppercase tracking-[-0.05em] leading-[0.9] text-white sm:text-5xl md:text-7xl">
+                Resources
+              </h1>
+              <p className="mt-4 max-w-2xl font-mono text-sm leading-7 text-white/58 sm:text-base">
+                Deep dives into Answer Engine Optimization, LLM visibility strategy, and the systems B2B brands need to become the credible answer.
               </p>
-            </div>
-          ) : (
-            <>
-              {/* Featured Article */}
-              {featuredArticle && (
-                <div className="mb-12">
-                  <div className="font-mono text-xs uppercase tracking-wider text-foreground/40 mb-4">
-                    Latest
-                  </div>
-                  <ResourceCard article={featuredArticle} featured />
+
+              {categories.length > 0 && (
+                <div className="mt-8 flex flex-wrap gap-2">
+                  <button
+                    onClick={() => setSelectedCategory("all")}
+                    className={`rounded-full border px-4 py-2 font-mono text-[10px] uppercase tracking-[0.22em] transition-colors ${
+                      selectedCategory === "all"
+                        ? "border-white/20 bg-white text-black"
+                        : "border-white/12 bg-white/[0.03] text-white/60 hover:border-white/24 hover:text-white"
+                    }`}
+                  >
+                    All
+                  </button>
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`rounded-full border px-4 py-2 font-mono text-[10px] uppercase tracking-[0.22em] transition-colors ${
+                        selectedCategory === cat
+                          ? "border-white/20 bg-white text-black"
+                          : "border-white/12 bg-white/[0.03] text-white/60 hover:border-white/24 hover:text-white"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
                 </div>
               )}
+            </div>
+          </MarketingSectionShell>
 
-              {/* Article Grid */}
-              {remainingArticles.length > 0 && (
-                <>
-                  <div className="font-mono text-xs uppercase tracking-wider text-foreground/40 mb-4">
-                    All Articles ({remainingArticles.length})
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-12">
+            {loading ? (
+              <div className="py-24 text-center">
+                <div className="font-mono text-sm uppercase tracking-[0.22em] text-white/45">Loading articles...</div>
+              </div>
+            ) : articles.length === 0 ? (
+              <div className="py-24 text-center">
+                <h2 className="font-display text-2xl font-extrabold uppercase tracking-[-0.04em] text-white">Coming soon</h2>
+                <p className="mt-4 font-mono text-sm leading-7 text-white/58">We’re working on new field notes and operator briefs. Check back soon.</p>
+              </div>
+            ) : (
+              <>
+                {featuredArticle && (
+                  <div className="mb-12">
+                    <div className={marketingTheme.eyebrow}>Latest brief</div>
+                    <div className="mt-4">
+                      <ResourceCard article={featuredArticle} featured />
+                    </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {remainingArticles.map((article) => (
-                      <ResourceCard key={article.id} article={article} />
-                    ))}
-                  </div>
-                </>
-              )}
-            </>
-          )}
-        </div>
-      </section>
+                )}
 
-      {/* Footer CTA */}
-      <section className="py-16 px-4 sm:px-6 md:px-12 border-t-2 border-foreground bg-foreground text-background">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold uppercase tracking-tight mb-4">
-            Want us to build your AI visibility?
-          </h2>
-          <p className="font-mono text-sm text-background/60 mb-8">
-            Stop reading about AEO. Start dominating it.
-          </p>
-          <a
-            href="https://cal.com/memetik/letstalk"
-            className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
-          >
-            GET YOUR FREE AI AUDIT
-            <span>→</span>
-          </a>
-        </div>
-      </section>
+                {remainingArticles.length > 0 && (
+                  <>
+                    <div className={marketingTheme.eyebrow}>All articles ({remainingArticles.length})</div>
+                    <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+                      {remainingArticles.map((article) => (
+                        <ResourceCard key={article.id} article={article} />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </>
+            )}
+          </MarketingSectionShell>
+        </MarketingContainer>
+      </main>
 
-      {/* Simple Footer */}
-      <footer className="py-8 px-4 sm:px-6 md:px-12 border-t border-foreground/20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <a href="/" className="font-display font-extrabold text-xl uppercase">
-            MEMETIK
-          </a>
-          <div className="font-mono text-xs text-foreground/40 uppercase">
-            © 2026 MEMETIK
-          </div>
-        </div>
-      </footer>
-    </div>
+      <MarketingFooter
+        title="Want us to build your AI visibility?"
+        description="Stop reading about AEO. Start installing the system that makes your brand the credible answer."
+        ctaHref="https://cal.com/memetik/letstalk"
+        ctaLabel="Get your free AI audit"
+        note="Strategy call · revenue-led answer-share plan"
+      />
+    </MarketingPage>
   );
 }

@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "wouter";
 import { Nav } from "@/components/Nav";
-import { ArrowRight, Check, X, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { comparisons } from "@/data/comparisons";
+import {
+  MarketingCard,
+  MarketingContainer,
+  MarketingFooter,
+  MarketingPage,
+  MarketingPill,
+  MarketingSectionGlow,
+  MarketingSectionShell,
+  marketingTheme,
+} from "@/components/marketing/MarketingTheme";
 
 export default function Comparison() {
   const { comparison } = useParams<{ comparison: string }>();
@@ -20,189 +30,147 @@ export default function Comparison() {
 
   if (!data) {
     return (
-      <div className="min-h-screen w-full bg-background text-foreground">
+      <MarketingPage>
         <Nav />
-        <div className="pt-32 pb-16 px-4 text-center">
-          <h1 className="text-3xl font-display font-extrabold uppercase mb-4">Page Not Found</h1>
-          <Link href="/">
-            <a className="font-mono text-sm underline">Back to home</a>
-          </Link>
+        <div className="px-4 pb-16 pt-32 sm:px-6 md:px-12">
+          <MarketingContainer>
+            <MarketingSectionShell className="px-8 py-16 text-center">
+              <h1 className="text-3xl font-display font-extrabold uppercase mb-4">Page Not Found</h1>
+              <Link href="/">
+                <a className={marketingTheme.secondaryButton}>Back to home</a>
+              </Link>
+            </MarketingSectionShell>
+          </MarketingContainer>
         </div>
-      </div>
+      </MarketingPage>
     );
   }
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground">
+    <MarketingPage>
       <Nav />
+      <main className="px-4 pb-8 pt-28 sm:px-6 md:px-12 md:pt-32">
+        <MarketingContainer className="space-y-6">
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-14">
+            <MarketingSectionGlow className="-left-12 top-0 h-44 w-44" />
+            <MarketingSectionGlow className="bottom-0 right-0 h-48 w-48" tone="amber" />
+            <div className="relative z-10 max-w-5xl">
+              <MarketingPill className="mb-8">{data.badge}</MarketingPill>
+              <h1 className="mb-6 whitespace-pre-line font-display text-4xl font-extrabold uppercase leading-[0.9] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                {data.headline}
+              </h1>
+              <p className="mb-4 max-w-3xl text-xl text-white/74 sm:text-2xl md:text-3xl">
+                {data.subhead}
+              </p>
+              <p className="max-w-2xl font-mono text-sm leading-7 text-white/58">
+                {data.description}
+              </p>
 
-      {/* Hero */}
-      <section className="pt-32 pb-16 md:pb-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
-        <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 border border-foreground/30 px-3 py-1.5 mb-8">
-            <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">
-              {data.badge}
-            </span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[0.85] tracking-tight uppercase mb-6 whitespace-pre-line">
-            {data.headline}
-          </h1>
-          <p className="font-sans text-2xl sm:text-3xl text-foreground/70 mb-6">
-            {data.subhead}
-          </p>
-          <p className="font-mono text-sm text-foreground/60 max-w-2xl mb-8">
-            {data.description}
-          </p>
-
-          <Link href="/audit">
-            <a className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity">
-              Get Your Free Audit
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </Link>
-        </div>
-      </section>
-
-      {/* Comparison Table */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-12">
-            The honest comparison
-          </h2>
-
-          {/* Desktop Table */}
-          <div className="hidden md:block border-2 border-foreground">
-            {/* Header */}
-            <div className="grid grid-cols-3 border-b-2 border-foreground">
-              <div className="p-4 bg-foreground/5">
-                <span className="font-mono text-xs uppercase tracking-wider text-foreground/50">
-                  Category
-                </span>
-              </div>
-              <div className="p-4 border-l border-foreground/20">
-                <span className="font-mono text-xs uppercase tracking-wider text-foreground/50">
-                  {data.themLabel}
-                </span>
-              </div>
-              <div className="p-4 border-l-2 border-foreground bg-foreground text-background">
-                <span className="font-mono text-xs uppercase tracking-wider">
-                  {data.usLabel}
+              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+                <Link href="/audit">
+                  <a className={marketingTheme.primaryButton}>
+                    Get your free audit
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </Link>
+                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/40">
+                  Executive comparison review in 24 hours
                 </span>
               </div>
             </div>
-            {/* Rows */}
-            {data.rows.map((row, i) => (
-              <div
-                key={i}
-                className="grid grid-cols-3 border-b border-foreground/20 last:border-b-0"
-              >
-                <div className="p-4 bg-foreground/5">
-                  <span className="font-mono text-xs font-bold uppercase">{row.category}</span>
-                </div>
-                <div className="p-4 border-l border-foreground/20">
-                  <span className="font-mono text-xs text-foreground/70">{row.them}</span>
-                </div>
-                <div className="p-4 border-l-2 border-foreground bg-foreground/5">
-                  <span className="font-mono text-xs font-bold">{row.us}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          </MarketingSectionShell>
 
-          {/* Mobile Cards */}
-          <div className="md:hidden space-y-4">
-            {data.rows.map((row, i) => (
-              <div key={i} className="border-2 border-foreground">
-                <div className="p-4 bg-foreground/5 border-b border-foreground/20">
-                  <span className="font-mono text-xs font-bold uppercase">{row.category}</span>
-                </div>
-                <div className="p-4 border-b border-foreground/20">
-                  <div className="font-mono text-[10px] uppercase tracking-wider text-foreground/40 mb-1">
-                    {data.themLabel}
-                  </div>
-                  <p className="font-mono text-xs text-foreground/70">{row.them}</p>
-                </div>
-                <div className="p-4 bg-foreground/5">
-                  <div className="font-mono text-[10px] uppercase tracking-wider text-foreground/40 mb-1">
-                    {data.usLabel}
-                  </div>
-                  <p className="font-mono text-xs font-bold">{row.us}</p>
-                </div>
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-12">
+            <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <div className={marketingTheme.eyebrow}>Side-by-side analysis</div>
+                <h2 className="mt-3 font-display text-3xl font-extrabold uppercase tracking-[-0.04em] text-white sm:text-4xl">
+                  The honest comparison
+                </h2>
               </div>
-            ))}
-          </div>
-
-          {/* Bottom Line */}
-          <div className="mt-8 border-2 border-foreground p-6 md:p-8 bg-foreground text-background">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-background/40 mb-3">
-              The Bottom Line
+              <p className="max-w-xl font-mono text-sm leading-7 text-white/55">
+                The goal is not more activity. It is understanding which operating model compounds durable answer share and pipeline.
+              </p>
             </div>
-            <p className="font-mono text-sm text-background/90 leading-relaxed">
-              {data.bottomLine}
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* FAQ */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 border-b-2 border-foreground">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight uppercase mb-12">
-            Common Questions
-          </h2>
-          <div className="border-2 border-foreground divide-y-2 divide-foreground">
-            {data.faqs.map((faq, i) => (
-              <div key={i}>
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-foreground/5 transition-colors"
-                >
-                  <span className="font-mono text-sm font-bold pr-4">{faq.q}</span>
-                  <ChevronDown
-                    className={`w-4 h-4 flex-shrink-0 transition-transform ${
-                      openFaq === i ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-6">
-                    <p className="font-mono text-sm text-foreground/70 leading-relaxed">{faq.a}</p>
-                  </div>
-                )}
+            <div className="hidden overflow-hidden rounded-[1.75rem] border border-white/10 md:block">
+              <div className="grid grid-cols-3 border-b border-white/10 bg-white/[0.03]">
+                <div className="p-4 font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">Category</div>
+                <div className="border-l border-white/10 p-4 font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">{data.themLabel}</div>
+                <div className="border-l border-white/10 bg-white/[0.06] p-4 font-mono text-[10px] uppercase tracking-[0.22em] text-white/60">{data.usLabel}</div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              {data.rows.map((row, i) => (
+                <div key={i} className="grid grid-cols-3 border-b border-white/10 last:border-b-0">
+                  <div className="p-4 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-white/76">{row.category}</div>
+                  <div className="border-l border-white/10 p-4 font-mono text-sm leading-7 text-white/56">{row.them}</div>
+                  <div className="border-l border-white/10 bg-white/[0.03] p-4 font-mono text-sm leading-7 text-white/78">{row.us}</div>
+                </div>
+              ))}
+            </div>
 
-      {/* Bottom CTA */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-foreground text-background">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold uppercase tracking-tight mb-4 text-background">
-            See the difference yourself.
-          </h2>
-          <p className="font-mono text-sm text-background/60 mb-8 max-w-xl mx-auto">
-            Get a free audit showing exactly where you stand in AI search.
-          </p>
-          <Link href="/audit">
-            <a className="inline-flex items-center gap-3 bg-background text-foreground px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity">
-              Get Your Free Audit
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </Link>
-        </div>
-      </section>
+            <div className="space-y-4 md:hidden">
+              {data.rows.map((row, i) => (
+                <MarketingCard key={i} className="p-5">
+                  <div className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-white/76">{row.category}</div>
+                  <div className="mt-4 border-t border-white/10 pt-4">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/36">{data.themLabel}</div>
+                    <p className="mt-2 font-mono text-sm leading-7 text-white/56">{row.them}</p>
+                  </div>
+                  <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/42">{data.usLabel}</div>
+                    <p className="mt-2 font-mono text-sm leading-7 text-white/76">{row.us}</p>
+                  </div>
+                </MarketingCard>
+              ))}
+            </div>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 sm:px-6 md:px-12 border-t border-foreground/20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link href="/">
-            <a className="font-display font-extrabold text-xl uppercase">MEMETIK</a>
-          </Link>
-          <div className="font-mono text-xs text-foreground/40 uppercase">&copy; 2026 MEMETIK</div>
-        </div>
-      </footer>
-    </div>
+            <MarketingCard className="mt-6 p-6 sm:p-8">
+              <div className={marketingTheme.eyebrow}>The bottom line</div>
+              <p className="mt-4 max-w-4xl font-mono text-sm leading-7 text-white/68">{data.bottomLine}</p>
+            </MarketingCard>
+          </MarketingSectionShell>
+
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-12">
+            <div className="mb-8">
+              <div className={marketingTheme.eyebrow}>Decision-maker FAQ</div>
+              <h2 className="mt-3 font-display text-3xl font-extrabold uppercase tracking-[-0.04em] text-white sm:text-4xl">
+                Common questions
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {data.faqs.map((faq, i) => (
+                <MarketingCard key={i} className="p-0">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                  >
+                    <span className="font-mono text-sm font-semibold leading-6 text-white/80">{faq.q}</span>
+                    <ChevronDown
+                      className={`h-4 w-4 flex-shrink-0 text-white/50 transition-transform ${
+                        openFaq === i ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {openFaq === i && (
+                    <div className="px-6 pb-6">
+                      <p className="font-mono text-sm leading-7 text-white/60">{faq.a}</p>
+                    </div>
+                  )}
+                </MarketingCard>
+              ))}
+            </div>
+          </MarketingSectionShell>
+        </MarketingContainer>
+      </main>
+
+      <MarketingFooter
+        title="See the difference with an operator-level audit."
+        description="We’ll show where your current model leaks visibility, where competitors are being surfaced first, and which moves create the biggest revenue advantage."
+        ctaHref="/audit"
+        ctaLabel="Get your free audit"
+        note="Comparison-led audit · answer-share snapshot included"
+      />
+    </MarketingPage>
   );
 }
