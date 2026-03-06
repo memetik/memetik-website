@@ -18,6 +18,12 @@ export { StrategyGlow } from "./StrategyGlow";
 export { StrategyCTA } from "./StrategyCTA";
 export { StrategySectionLead } from "./StrategySectionLead";
 export { StrategyAppendixSection } from "./StrategyAppendixSection";
+export { DeliveryScopeMatrix } from "./DeliveryScopeMatrix";
+export type {
+  DeliveryScopeCategory,
+  DeliveryScopeLane,
+  DeliveryScopeMilestone,
+} from "./DeliveryScopeMatrix";
 export { ExecutionInfographic } from "./ExecutionInfographic";
 export type {
   ExecutionInfographicStep,
