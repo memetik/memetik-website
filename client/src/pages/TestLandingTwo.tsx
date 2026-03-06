@@ -371,11 +371,7 @@ function TestTwoIntelligenceStrip() {
   return (
     <section className="px-4 sm:px-6 md:px-12 -mt-4 md:-mt-6 mb-16 md:mb-24 relative z-20">
       <div className={`max-w-7xl mx-auto px-6 md:px-10 py-5 md:py-6 ${sectionShell}`}>
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/42">
-            Intelligence layer
-          </div>
-          <div className="flex flex-wrap items-center gap-3 md:gap-4 text-white/72">
+        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-white/72">
             {items.map((item, index) => (
               <div key={item} className="flex items-center gap-3 md:gap-4">
                 <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.18em]">
@@ -384,7 +380,6 @@ function TestTwoIntelligenceStrip() {
                 {index < items.length - 1 && <span className="h-px w-6 bg-white/12" />}
               </div>
             ))}
-          </div>
         </div>
       </div>
     </section>
