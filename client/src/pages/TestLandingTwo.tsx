@@ -312,7 +312,7 @@ function TestTwoHero() {
           >
             Turn Search and AI Visibility<br />
             <em className="font-normal italic text-[#f4e4cd]" style={{ fontFamily: "'Newsreader', serif" }}>
-              Into Pipeline and Revenue.
+              Into Revenue.
             </em>
           </motion.h1>
           <motion.p
