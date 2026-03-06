@@ -135,7 +135,7 @@ const INTENT_PATTERNS = {
   BOFU:
     /\b(vs|versus|alternative|alternatives|compare|comparison|best|top|review|reviews|pricing|price|cost|software|tool|tools|platform|app|apps|inbox|competitor|competitors)\b/i,
   MOFU:
-    /\b(template|templates|calculator|generator|checklist|case study|case studies|workflow|workflows|integration|integrations|migration|implementation|playbook|playbooks|framework|frameworks|process|processes|automation|automations|setup|onboarding|rollout|prioritization|triage|taxonomy|governance|collaboration|management|productivity|routing|categorization|organization|organizer)\b/i,
+    /\b(template|templates|calculator|generator|checklist|case study|case studies|workflow|workflows|integration|integrations|migration|implementation|playbook|playbooks|framework|frameworks|process|processes|automation|automations|setup|onboarding|rollout|prioritization|triage|taxonomy|governance|collaboration|management|productivity|routing|categorization|organization|organizer|membership|memberships|subscription|subscriptions|community|communities|cohort|cohorts|course|courses|academy|creator monetization|monetization|paid community|digital products|fan club|fan community|coaching program)\b/i,
   TOFU: /\b(what is|how to|guide|tips|ideas|trends|news|definition)\b/i,
 };
 

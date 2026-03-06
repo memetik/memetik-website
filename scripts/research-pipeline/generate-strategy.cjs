@@ -25,7 +25,7 @@ const REQUIRED_SECTION_PATTERNS = [
   /why memetik vs alternatives|why memetik/i,
   /board-shareable summary|board summary/i,
   /estimate-only|modeled estimate|modeled/i,
-  /book a strategy call|let'?s talk/i,
+  /book a strategy call|let'?s talk|cal\.com\/memetik\/letstalk/i,
   /StrategyPageFrame/i,
   /StrategyHero/i,
   /StrategySectionShell/i,
