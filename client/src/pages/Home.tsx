@@ -28,6 +28,8 @@ const sectionShell =
   "relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm";
 const cardShell =
   "relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] shadow-[0_18px_60px_rgba(0,0,0,0.3)] backdrop-blur-md";
+const primaryCtaButton =
+  "inline-flex items-center gap-3 rounded border border-[#f4e4cd] bg-[#f4e4cd] px-8 py-4 font-mono text-sm font-bold uppercase tracking-[0.14em] text-[#090b0d] transition-opacity hover:opacity-90 shadow-[0_12px_40px_rgba(244,228,205,0.14)]";
 
 const services = [
   {
@@ -359,7 +361,7 @@ function TestTwoHero() {
           >
             <a
               href="https://cal.com/memetik/letstalk"
-              className="inline-flex items-center gap-3 rounded border border-[#f4e4cd] bg-[#f4e4cd] px-8 py-4 font-mono text-sm font-bold uppercase tracking-[0.14em] text-[#090b0d] hover:opacity-90 transition-opacity shadow-[0_12px_40px_rgba(244,228,205,0.14)]"
+              className={primaryCtaButton}
             >
               See Your Revenue Opportunities
               <ArrowRight className="w-4 h-4" />
@@ -446,7 +448,7 @@ function TestTwoServices() {
       <div className="relative max-w-7xl mx-auto mt-12 text-center">
         <a
           href="https://cal.com/memetik/letstalk"
-          className="inline-flex items-center gap-3 rounded border border-white/15 bg-white/[0.04] px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider text-white hover:bg-white/[0.07] transition-colors"
+          className={primaryCtaButton}
         >
           See Where Revenue Is Being Lost to AI Search
           <span>→</span>
@@ -771,7 +773,7 @@ function TestTwoQualification() {
             </p>
             <a
               href="https://cal.com/memetik/letstalk"
-              className="inline-flex items-center gap-3 rounded border border-[#f4e4cd] bg-[#f4e4cd] px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider text-[#090b0d] hover:opacity-90 transition-opacity"
+              className={primaryCtaButton}
             >
               See Your Visibility-to-Revenue Score
               <ArrowRight className="w-4 h-4" />
@@ -885,7 +887,7 @@ function TestTwoFAQ() {
           <p className="text-sm text-white/60 mb-4">Still have questions?</p>
           <a
             href="https://cal.com/memetik/letstalk"
-            className="inline-flex items-center gap-3 border border-white/15 bg-white/[0.03] px-6 py-3 rounded font-mono font-bold text-sm uppercase tracking-wider text-white hover:bg-white hover:text-[#090b0d] transition-colors"
+            className={`${primaryCtaButton} px-6 py-3`}
           >
             Book a Call — We'll Answer Everything
           </a>
@@ -962,7 +964,7 @@ function TestTwoEmailCapture() {
                 </label>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-3 rounded border border-[#f4e4cd] bg-[#f4e4cd] px-6 py-4 font-mono font-bold text-sm uppercase tracking-wider text-[#090b0d] hover:opacity-90 transition-opacity"
+                  className={`${primaryCtaButton} w-full justify-center px-6`}
                 >
                   Send Me the Playbook
                   <ArrowRight className="w-4 h-4" />
@@ -994,7 +996,7 @@ function TestTwoMobileStickyCTA() {
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-foreground text-background p-4 border-t border-background/10 shadow-lg">
       <a
         href="https://cal.com/memetik/letstalk"
-        className="flex items-center justify-center gap-3 w-full bg-background text-foreground py-3 px-6 font-mono font-bold text-sm uppercase tracking-wider rounded"
+        className={`${primaryCtaButton} flex w-full justify-center px-6 py-3`}
       >
         See Your Revenue Opportunities
         <TrendingUp className="w-4 h-4" />
@@ -1049,7 +1051,7 @@ export default function Home() {
               </p>
               <a
                 href="https://cal.com/memetik/letstalk"
-                className="inline-flex items-center gap-3 rounded border border-[#f4e4cd] bg-[#f4e4cd] px-8 py-4 font-mono font-bold text-sm uppercase tracking-wider text-[#090b0d] hover:opacity-90 transition-opacity"
+                className={primaryCtaButton}
               >
                 See What Search and AI Are Worth to Your Pipeline
                 <span>→</span>
