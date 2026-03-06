@@ -18,41 +18,10 @@ import {
 } from "lucide-react";
 
 const fadeUp = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
-const andurilEase: [number, number, number, number] = [0.19, 1, 0.22, 1];
 const fadeInView = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-100px" },
-};
-const heroRevealContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      delayChildren: 0.1,
-      staggerChildren: 0.12,
-    },
-  },
-};
-const heroLineReveal = {
-  hidden: { y: "112%" },
-  visible: {
-    y: "0%",
-    transition: {
-      duration: 1.02,
-      ease: andurilEase,
-    },
-  },
-};
-const heroContentReveal = {
-  hidden: { opacity: 0, y: 22 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: andurilEase,
-    },
-  },
 };
 
 const sectionShell =
@@ -321,55 +290,61 @@ function TestTwoIntelligenceStrip() {
 }
 
 function TestTwoHero() {
-  const heroLines = ["Turn Search and AI", "Into Pipeline."];
-
   return (
     <section className="relative min-h-[88vh] w-full flex flex-col justify-center overflow-hidden text-foreground pt-16 md:pt-20">
       <HeroSignalField />
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
-        <div className="max-w-[68rem]">
-          <motion.h1
-            variants={heroRevealContainer}
-            initial="hidden"
-            animate="visible"
-            className="max-w-[11ch] text-[3.4rem] sm:text-[5rem] md:text-[6.75rem] lg:text-[8.5rem] xl:text-[9.25rem] font-display font-extrabold leading-[0.88] tracking-[-0.06em] text-white mb-8"
-          >
-            {heroLines.map((line) => (
-              <span key={line} className="block overflow-hidden pb-[0.08em]">
-                <motion.span
-                  variants={heroLineReveal}
-                  className="block will-change-transform"
-                >
-                  {line}
-                </motion.span>
-              </span>
-            ))}
-          </motion.h1>
-
-          <motion.p
-            variants={heroContentReveal}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.46 }}
-            className="text-base md:text-lg lg:text-[1.2rem] text-white/68 max-w-[40rem] mb-10 leading-8"
-          >
-            We help growth-stage brands win high-intent discovery across Google and AI engines so more buyers find, trust, and shortlist you before sales ever gets the call.
-          </motion.p>
-
+        <div className="max-w-[52rem]">
           <motion.div
-            variants={heroContentReveal}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.58 }}
-            className="flex items-start"
+            {...fadeUp}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 border border-white/10 bg-white/[0.03] px-4 py-2 rounded-full mb-6"
+          >
+            <span className="h-2 w-2 rounded-full bg-[#efc38b] shadow-[0_0_16px_rgba(239,195,139,0.8)]" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/65">
+              Revenue-First Search + AI Demand Intelligence
+            </span>
+          </motion.div>
+          <motion.h1
+            {...fadeUp}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="max-w-[14ch] text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-display font-extrabold leading-[0.94] tracking-tight text-white mb-6"
+          >
+            Turn Search and AI Visibility<br />
+            <em className="font-normal italic text-[#f4e4cd]" style={{ fontFamily: "'Newsreader', serif" }}>
+              Into Pipeline and Revenue.
+            </em>
+          </motion.h1>
+          <motion.p
+            {...fadeUp}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
+            className="text-base md:text-lg text-white/68 max-w-2xl mb-12 leading-8"
+          >
+            Memetik helps growth-stage brands capture high-intent demand across Google, ChatGPT,
+            Perplexity, and Gemini — so more buyers discover, trust, and choose you before they ever
+            talk to sales.
+          </motion.p>
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }}
+            className="flex items-start mb-8"
           >
             <a
               href="https://cal.com/memetik/letstalk"
               className="inline-flex items-center gap-3 rounded border border-[#f4e4cd] bg-[#f4e4cd] px-8 py-4 font-mono text-sm font-bold uppercase tracking-[0.14em] text-[#090b0d] hover:opacity-90 transition-opacity shadow-[0_12px_40px_rgba(244,228,205,0.14)]"
             >
-              Book a Strategy Call
+              See Your Revenue Opportunities in AI Search
               <ArrowRight className="w-4 h-4" />
             </a>
+          </motion.div>
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.35 }}
+            className="text-white/44"
+          >
+            <p className="font-mono text-[10px] uppercase tracking-[0.22em]">
+              Built for Series A-B+ SaaS, professional services, e-commerce, and fund-backed operators.
+            </p>
           </motion.div>
         </div>
       </div>
