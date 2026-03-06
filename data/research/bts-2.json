@@ -17801,39 +17801,36 @@
     ],
     "methodology": {
       "version": "tam_v2",
-      "formula": "ReachableDemand = SearchVolume × ChannelSplit × ModeledReachableShare × VisibilityCaptureRate",
+      "formula": "ExpectedTraffic12Months = SearchDemand × IntentSpecificTrafficWinRate",
       "notes": [
         "Modeled estimate; not actual analytics traffic.",
         "US+AU only.",
-        "Google reachable-share defaults are intentionally conservative for founder planning.",
+        "Assumes serious SEO + AEO execution rather than passive publishing.",
+        "BOFU terms move first, MOFU compounds next, and TOFU authority layers in over time.",
         "Use first-party analytics to calibrate conversion assumptions.",
         "Displayed monthly trajectory values should be rounded to whole numbers for planning readability."
       ]
     },
     "assumptions": {
-      "channelSplit": {
+      "trafficChannels": {
         "google": 0.86,
         "ai": 0.14
       },
-      "modeledReachableShare": {
-        "google": 0.12,
-        "ai": 0.018
-      },
-      "captureRates": {
+      "trafficWinRates": {
         "BOFU": {
-          "low": 0.06,
-          "base": 0.1,
-          "high": 0.16
+          "low": 0.15,
+          "base": 0.25,
+          "high": 0.35
         },
         "MOFU": {
-          "low": 0.03,
-          "base": 0.06,
-          "high": 0.1
+          "low": 0.08,
+          "base": 0.15,
+          "high": 0.22
         },
         "TOFU": {
-          "low": 0.015,
-          "base": 0.03,
-          "high": 0.05
+          "low": 0.05,
+          "base": 0.08,
+          "high": 0.12
         }
       },
       "scenarios": [
@@ -17844,9 +17841,9 @@
       "selectedHorizonMonths": 12,
       "conversionRangePolicy": "low_base_high",
       "founderReadableSummary": [
-        "Google reachable-share assumptions are modeled conservatively rather than presented as raw CTR guarantees.",
-        "Capture rates vary by BOFU, MOFU, and TOFU intent because commercial intent converts into visibility at different speeds.",
-        "These numbers are planning coefficients, not a claim that the brand will capture the full market immediately."
+        "Total search opportunity is the full validated market demand across Google and AI discovery.",
+        "Expected traffic in 12 months assumes strong execution against the highest-value BOFU, MOFU, and TOFU wedges.",
+        "Aggressive upside reflects what happens if the company wins its initial wedge early and compounds faster across the year."
       ]
     },
     "keywordUniverse": {
@@ -18833,27 +18830,49 @@
       }
     },
     "totals": {
+      "totalSearchOpportunity": 2268640,
       "totalAddressableSearchDemand": 2268640,
+      "expectedTraffic12Months": {
+        "low": 118614.1,
+        "base": 191043.1,
+        "high": 285366.8
+      },
+      "aggressiveUpside": 285366.8,
+      "first90DayTarget": {
+        "low": 14233.69,
+        "base": 28656.46,
+        "high": 51366.03
+      },
       "estimatedReachableVisits": {
-        "low": 3850.34,
-        "base": 7615.89,
-        "high": 12664.89
+        "low": 118614.1,
+        "base": 191043.1,
+        "high": 285366.8
       },
       "byChannel": {
         "google": {
           "demand": 1951030.4,
+          "expectedTraffic12Months": {
+            "low": 102008.13,
+            "base": 164297.07,
+            "high": 245415.45
+          },
           "estimatedReachableVisits": {
-            "low": 3758.56,
-            "base": 7434.35,
-            "high": 12363
+            "low": 102008.13,
+            "base": 164297.07,
+            "high": 245415.45
           }
         },
         "ai": {
           "demand": 317609.6,
+          "expectedTraffic12Months": {
+            "low": 16605.97,
+            "base": 26746.03,
+            "high": 39951.35
+          },
           "estimatedReachableVisits": {
-            "low": 91.78,
-            "base": 181.54,
-            "high": 301.89
+            "low": 16605.97,
+            "base": 26746.03,
+            "high": 39951.35
           }
         }
       }
@@ -18864,10 +18883,15 @@
         "phase": "Phase 1 (Months 0-3)",
         "demand": 40100,
         "keywordCount": 220,
+        "expectedTraffic12Months": {
+          "low": 6015,
+          "base": 10025,
+          "high": 14035
+        },
         "estimatedReachableVisits": {
-          "low": 254.36,
-          "base": 423.94,
-          "high": 678.3
+          "low": 6015,
+          "base": 10025,
+          "high": 14035
         }
       },
       {
@@ -18875,10 +18899,15 @@
         "phase": "Phase 2 (Months 4-8)",
         "demand": 39070,
         "keywordCount": 276,
+        "expectedTraffic12Months": {
+          "low": 3125.6,
+          "base": 5860.5,
+          "high": 8595.4
+        },
         "estimatedReachableVisits": {
-          "low": 123.91,
-          "base": 247.83,
-          "high": 413.05
+          "low": 3125.6,
+          "base": 5860.5,
+          "high": 8595.4
         }
       },
       {
@@ -18886,10 +18915,15 @@
         "phase": "Phase 3 (Months 9-12)",
         "demand": 2189470,
         "keywordCount": 240,
+        "expectedTraffic12Months": {
+          "low": 109473.5,
+          "base": 175157.6,
+          "high": 262736.4
+        },
         "estimatedReachableVisits": {
-          "low": 3472.06,
-          "base": 6944.12,
-          "high": 11573.54
+          "low": 109473.5,
+          "base": 175157.6,
+          "high": 262736.4
         }
       }
     ],
@@ -18899,10 +18933,15 @@
         "intent": "BOFU",
         "demand": 40100,
         "keywordCount": 220,
+        "expectedTraffic12Months": {
+          "low": 6015,
+          "base": 10025,
+          "high": 14035
+        },
         "estimatedReachableVisits": {
-          "low": 254.36,
-          "base": 423.94,
-          "high": 678.3
+          "low": 6015,
+          "base": 10025,
+          "high": 14035
         }
       },
       {
@@ -18910,10 +18949,15 @@
         "intent": "MOFU",
         "demand": 39070,
         "keywordCount": 276,
+        "expectedTraffic12Months": {
+          "low": 3125.6,
+          "base": 5860.5,
+          "high": 8595.4
+        },
         "estimatedReachableVisits": {
-          "low": 123.91,
-          "base": 247.83,
-          "high": 413.05
+          "low": 3125.6,
+          "base": 5860.5,
+          "high": 8595.4
         }
       },
       {
@@ -18921,10 +18965,15 @@
         "intent": "TOFU",
         "demand": 2189470,
         "keywordCount": 240,
+        "expectedTraffic12Months": {
+          "low": 109473.5,
+          "base": 175157.6,
+          "high": 262736.4
+        },
         "estimatedReachableVisits": {
-          "low": 3472.06,
-          "base": 6944.12,
-          "high": 11573.54
+          "low": 109473.5,
+          "base": 175157.6,
+          "high": 262736.4
         }
       }
     ],
@@ -18932,86 +18981,86 @@
       {
         "month": 1,
         "label": "M1",
-        "low": 115.51,
-        "base": 304.64,
-        "high": 633.24
+        "low": 3558.42,
+        "base": 7641.72,
+        "high": 14268.34
       },
       {
         "month": 2,
         "label": "M2",
-        "low": 154.01,
-        "base": 380.79,
-        "high": 759.89
+        "low": 4744.56,
+        "base": 9552.15,
+        "high": 17122.01
       },
       {
         "month": 3,
         "label": "M3",
-        "low": 192.52,
-        "base": 456.95,
-        "high": 886.54
+        "low": 5930.71,
+        "base": 11462.59,
+        "high": 19975.68
       },
       {
         "month": 4,
         "label": "M4",
-        "low": 231.02,
-        "base": 533.11,
-        "high": 1013.19
+        "low": 7116.85,
+        "base": 13373.02,
+        "high": 22829.34
       },
       {
         "month": 5,
         "label": "M5",
-        "low": 269.52,
-        "base": 533.11,
-        "high": 1013.19
+        "low": 8302.99,
+        "base": 13373.02,
+        "high": 22829.34
       },
       {
         "month": 6,
         "label": "M6",
-        "low": 308.03,
-        "base": 609.27,
-        "high": 1139.84
+        "low": 9489.13,
+        "base": 15283.45,
+        "high": 25683.01
       },
       {
         "month": 7,
         "label": "M7",
-        "low": 308.03,
-        "base": 609.27,
-        "high": 1139.84
+        "low": 9489.13,
+        "base": 15283.45,
+        "high": 25683.01
       },
       {
         "month": 8,
         "label": "M8",
-        "low": 346.53,
-        "base": 685.43,
-        "high": 1139.84
+        "low": 10675.27,
+        "base": 17193.88,
+        "high": 25683.01
       },
       {
         "month": 9,
         "label": "M9",
-        "low": 385.03,
-        "base": 685.43,
-        "high": 1139.84
+        "low": 11861.41,
+        "base": 17193.88,
+        "high": 25683.01
       },
       {
         "month": 10,
         "label": "M10",
-        "low": 423.54,
-        "base": 761.59,
-        "high": 1266.49
+        "low": 13047.55,
+        "base": 19104.31,
+        "high": 28536.68
       },
       {
         "month": 11,
         "label": "M11",
-        "low": 539.05,
-        "base": 990.07,
-        "high": 1266.49
+        "low": 16605.97,
+        "base": 24835.6,
+        "high": 28536.68
       },
       {
         "month": 12,
         "label": "M12",
-        "low": 577.55,
-        "base": 1066.22,
-        "high": 1266.49
+        "low": 17792.12,
+        "base": 26746.03,
+        "high": 28536.68
       }
     ],
     "executionBlueprint": {
@@ -19255,10 +19304,15 @@
         "phase": "Phase 3 (Months 9-12)",
         "demand": 2228330,
         "keywordCount": 513,
+        "expectedTraffic12Months": {
+          "low": 112588,
+          "base": 180999.9,
+          "high": 271304.6
+        },
         "estimatedReachableVisits": {
-          "low": 3595.61,
-          "base": 7191.22,
-          "high": 11985.37
+          "low": 112588,
+          "base": 180999.9,
+          "high": 271304.6
         },
         "sampleKeywords": [
           "patreon",
@@ -19284,10 +19338,15 @@
         "phase": "Phase 1 (Months 0-3)",
         "demand": 26590,
         "keywordCount": 94,
+        "expectedTraffic12Months": {
+          "low": 3969.5,
+          "base": 6615.2,
+          "high": 9262.8
+        },
         "estimatedReachableVisits": {
-          "low": 167.76,
-          "base": 279.7,
-          "high": 447.57
+          "low": 3969.5,
+          "base": 6615.2,
+          "high": 9262.8
         },
         "sampleKeywords": [
           "circle app",
@@ -19312,10 +19371,15 @@
         "phase": "Phase 1 (Months 0-3)",
         "demand": 8470,
         "keywordCount": 117,
+        "expectedTraffic12Months": {
+          "low": 1270.5,
+          "base": 2117.5,
+          "high": 2964.5
+        },
         "estimatedReachableVisits": {
-          "low": 53.73,
-          "base": 89.54,
-          "high": 143.27
+          "low": 1270.5,
+          "base": 2117.5,
+          "high": 2964.5
         },
         "sampleKeywords": [
           "patreon alternative",
@@ -19340,10 +19404,15 @@
         "phase": "Phase 1 (Months 0-3)",
         "demand": 4910,
         "keywordCount": 3,
+        "expectedTraffic12Months": {
+          "low": 736.5,
+          "base": 1227.5,
+          "high": 1718.5
+        },
         "estimatedReachableVisits": {
-          "low": 31.15,
-          "base": 51.91,
-          "high": 83.05
+          "low": 736.5,
+          "base": 1227.5,
+          "high": 1718.5
         },
         "sampleKeywords": [
           "kajabi pricing",
@@ -19364,10 +19433,15 @@
         "phase": "Phase 1 (Months 0-3)",
         "demand": 320,
         "keywordCount": 8,
+        "expectedTraffic12Months": {
+          "low": 48,
+          "base": 80,
+          "high": 112
+        },
         "estimatedReachableVisits": {
-          "low": 2.03,
-          "base": 3.38,
-          "high": 5.41
+          "low": 48,
+          "base": 80,
+          "high": 112
         },
         "sampleKeywords": [
           "skool reviews",
@@ -19391,10 +19465,15 @@
         "phase": "Phase 2 (Months 4-8)",
         "demand": 20,
         "keywordCount": 1,
+        "expectedTraffic12Months": {
+          "low": 1.6,
+          "base": 3,
+          "high": 4.4
+        },
         "estimatedReachableVisits": {
-          "low": 0.06,
-          "base": 0.13,
-          "high": 0.21
+          "low": 1.6,
+          "base": 3,
+          "high": 4.4
         },
         "sampleKeywords": [
           "subscription ideas"
@@ -19587,9 +19666,9 @@
       "reason": "Revenue inputs missing (acv/aov). Showing TAM + pipeline potential only.",
       "pipelinePotential": {
         "leads": {
-          "low": 15.4,
-          "base": 68.54,
-          "high": 189.97
+          "low": 474.46,
+          "base": 1719.39,
+          "high": 4280.5
         }
       },
       "assumptions": {

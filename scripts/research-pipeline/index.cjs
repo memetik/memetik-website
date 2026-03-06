@@ -78,25 +78,21 @@ const TAM_CHANNEL_SPLIT = {
   google: Number(process.env.TAM_CHANNEL_SHARE_GOOGLE || 0.86),
   ai: Number(process.env.TAM_CHANNEL_SHARE_AI || 0.14),
 };
-const TAM_CHANNEL_REACHABILITY = {
-  google: Number(process.env.TAM_REACHABLE_SHARE_GOOGLE || 0.12),
-  ai: Number(process.env.TAM_REACHABLE_SHARE_AI || 0.018),
-};
-const TAM_CAPTURE_RATES = {
+const TRAFFIC_WIN_RATES = {
   BOFU: {
-    low: Number(process.env.TAM_CAPTURE_BOFU_LOW || 0.06),
-    base: Number(process.env.TAM_CAPTURE_BOFU_BASE || 0.1),
-    high: Number(process.env.TAM_CAPTURE_BOFU_HIGH || 0.16),
+    low: Number(process.env.TAM_CAPTURE_BOFU_LOW || 0.15),
+    base: Number(process.env.TAM_CAPTURE_BOFU_BASE || 0.25),
+    high: Number(process.env.TAM_CAPTURE_BOFU_HIGH || 0.35),
   },
   MOFU: {
-    low: Number(process.env.TAM_CAPTURE_MOFU_LOW || 0.03),
-    base: Number(process.env.TAM_CAPTURE_MOFU_BASE || 0.06),
-    high: Number(process.env.TAM_CAPTURE_MOFU_HIGH || 0.1),
+    low: Number(process.env.TAM_CAPTURE_MOFU_LOW || 0.08),
+    base: Number(process.env.TAM_CAPTURE_MOFU_BASE || 0.15),
+    high: Number(process.env.TAM_CAPTURE_MOFU_HIGH || 0.22),
   },
   TOFU: {
-    low: Number(process.env.TAM_CAPTURE_TOFU_LOW || 0.015),
-    base: Number(process.env.TAM_CAPTURE_TOFU_BASE || 0.03),
-    high: Number(process.env.TAM_CAPTURE_TOFU_HIGH || 0.05),
+    low: Number(process.env.TAM_CAPTURE_TOFU_LOW || 0.05),
+    base: Number(process.env.TAM_CAPTURE_TOFU_BASE || 0.08),
+    high: Number(process.env.TAM_CAPTURE_TOFU_HIGH || 0.12),
   },
 };
 
@@ -587,19 +583,18 @@ function safeRatio(numerator, denominator, fallback = 0) {
 }
 
 function applyCaptureToDemand(demand, intent) {
-  const rates = TAM_CAPTURE_RATES[intent] || TAM_CAPTURE_RATES.TOFU;
-  const searchReachable = demand * TAM_CHANNEL_SPLIT.google * TAM_CHANNEL_REACHABILITY.google;
-  const aiReachable = demand * TAM_CHANNEL_SPLIT.ai * TAM_CHANNEL_REACHABILITY.ai;
+  const rates = TRAFFIC_WIN_RATES[intent] || TRAFFIC_WIN_RATES.TOFU;
 
   const totalReachable = initializeScenarioObject();
   const searchByScenario = initializeScenarioObject();
   const aiByScenario = initializeScenarioObject();
 
   for (const scenario of TAM_SCENARIOS) {
-    const captureRate = rates[scenario] || 0;
-    searchByScenario[scenario] = searchReachable * captureRate;
-    aiByScenario[scenario] = aiReachable * captureRate;
-    totalReachable[scenario] = searchByScenario[scenario] + aiByScenario[scenario];
+    const trafficWinRate = rates[scenario] || 0;
+    const totalExpected = demand * trafficWinRate;
+    totalReachable[scenario] = totalExpected;
+    searchByScenario[scenario] = totalExpected * TAM_CHANNEL_SPLIT.google;
+    aiByScenario[scenario] = totalExpected * TAM_CHANNEL_SPLIT.ai;
   }
 
   return {
@@ -1224,6 +1219,11 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
     intent: row.intent,
     demand: roundNumber(row.demand),
     keywordCount: row.keywordCount,
+    expectedTraffic12Months: {
+      low: roundNumber(row.reachableVisits.low),
+      base: roundNumber(row.reachableVisits.base),
+      high: roundNumber(row.reachableVisits.high),
+    },
     estimatedReachableVisits: {
       low: roundNumber(row.reachableVisits.low),
       base: roundNumber(row.reachableVisits.base),
@@ -1240,6 +1240,11 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
       phase: cluster.phase,
       demand: roundNumber(cluster.demand),
       keywordCount: cluster.keywordCount,
+      expectedTraffic12Months: {
+        low: roundNumber(cluster.reachableVisits.low),
+        base: roundNumber(cluster.reachableVisits.base),
+        high: roundNumber(cluster.reachableVisits.high),
+      },
       estimatedReachableVisits: {
         low: roundNumber(cluster.reachableVisits.low),
         base: roundNumber(cluster.reachableVisits.base),
@@ -1252,6 +1257,16 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
 
   const monthlyTrajectory = buildMonthlyTrajectory(totalsReachable);
   const executionBlueprint = buildExecutionBlueprint(topOpportunityClusters);
+  const first90DayTarget = monthlyTrajectory.reduce(
+    (acc, row, index) => {
+      if (index > 2) return acc;
+      acc.low += Number(row.low || 0);
+      acc.base += Number(row.base || 0);
+      acc.high += Number(row.high || 0);
+      return acc;
+    },
+    initializeScenarioObject()
+  );
 
   const keywordUniverseSummary = {
     size: keywordUniverse.length,
@@ -1301,32 +1316,43 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
     markets: TARGET_MARKETS.map((m) => m.key),
     methodology: {
       version: "tam_v2",
-      formula:
-        "ReachableDemand = SearchVolume × ChannelSplit × ModeledReachableShare × VisibilityCaptureRate",
+      formula: "ExpectedTraffic12Months = SearchDemand × IntentSpecificTrafficWinRate",
       notes: [
         "Modeled estimate; not actual analytics traffic.",
         "US+AU only.",
-        "Google reachable-share defaults are intentionally conservative for founder planning.",
+        "Assumes serious SEO + AEO execution rather than passive publishing.",
+        "BOFU terms move first, MOFU compounds next, and TOFU authority layers in over time.",
         "Use first-party analytics to calibrate conversion assumptions.",
         "Displayed monthly trajectory values should be rounded to whole numbers for planning readability.",
       ],
     },
     assumptions: {
-      channelSplit: TAM_CHANNEL_SPLIT,
-      modeledReachableShare: TAM_CHANNEL_REACHABILITY,
-      captureRates: TAM_CAPTURE_RATES,
+      trafficChannels: TAM_CHANNEL_SPLIT,
+      trafficWinRates: TRAFFIC_WIN_RATES,
       scenarios: TAM_SCENARIOS,
       selectedHorizonMonths: 12,
       conversionRangePolicy: "low_base_high",
       founderReadableSummary: [
-        "Google reachable-share assumptions are modeled conservatively rather than presented as raw CTR guarantees.",
-        "Capture rates vary by BOFU, MOFU, and TOFU intent because commercial intent converts into visibility at different speeds.",
-        "These numbers are planning coefficients, not a claim that the brand will capture the full market immediately.",
+        "Total search opportunity is the full validated market demand across Google and AI discovery.",
+        "Expected traffic in 12 months assumes strong execution against the highest-value BOFU, MOFU, and TOFU wedges.",
+        "Aggressive upside reflects what happens if the company wins its initial wedge early and compounds faster across the year.",
       ],
     },
     keywordUniverse: keywordUniverseSummary,
     totals: {
+      totalSearchOpportunity: roundNumber(totalDemand),
       totalAddressableSearchDemand: roundNumber(totalDemand),
+      expectedTraffic12Months: {
+        low: roundNumber(totalsReachable.low),
+        base: roundNumber(totalsReachable.base),
+        high: roundNumber(totalsReachable.high),
+      },
+      aggressiveUpside: roundNumber(totalsReachable.high),
+      first90DayTarget: {
+        low: roundNumber(first90DayTarget.low),
+        base: roundNumber(first90DayTarget.base),
+        high: roundNumber(first90DayTarget.high),
+      },
       estimatedReachableVisits: {
         low: roundNumber(totalsReachable.low),
         base: roundNumber(totalsReachable.base),
@@ -1335,6 +1361,11 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
       byChannel: {
         google: {
           demand: roundNumber(byChannel.google.demand),
+          expectedTraffic12Months: {
+            low: roundNumber(byChannel.google.reachableVisits.low),
+            base: roundNumber(byChannel.google.reachableVisits.base),
+            high: roundNumber(byChannel.google.reachableVisits.high),
+          },
           estimatedReachableVisits: {
             low: roundNumber(byChannel.google.reachableVisits.low),
             base: roundNumber(byChannel.google.reachableVisits.base),
@@ -1343,6 +1374,11 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
         },
         ai: {
           demand: roundNumber(byChannel.ai.demand),
+          expectedTraffic12Months: {
+            low: roundNumber(byChannel.ai.reachableVisits.low),
+            base: roundNumber(byChannel.ai.reachableVisits.base),
+            high: roundNumber(byChannel.ai.reachableVisits.high),
+          },
           estimatedReachableVisits: {
             low: roundNumber(byChannel.ai.reachableVisits.low),
             base: roundNumber(byChannel.ai.reachableVisits.base),
@@ -1356,6 +1392,11 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
       phase: row.phase,
       demand: roundNumber(row.demand),
       keywordCount: row.keywordCount,
+      expectedTraffic12Months: {
+        low: roundNumber(row.reachableVisits.low),
+        base: roundNumber(row.reachableVisits.base),
+        high: roundNumber(row.reachableVisits.high),
+      },
       estimatedReachableVisits: {
         low: roundNumber(row.reachableVisits.low),
         base: roundNumber(row.reachableVisits.base),
@@ -3295,5 +3336,11 @@ async function main() {
   }
 }
 
-module.exports = { runResearch };
+module.exports = {
+  runResearch,
+  buildCompanySemanticProfile,
+  buildTamModel,
+  evaluateQualityGate,
+  computePayloadConfidence,
+};
 if (require.main === module) main();

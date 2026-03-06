@@ -8,39 +8,31 @@ import {
   StatsGrid,
   PhasedUpsideChart,
   TamRoiCalculator,
-  WorkstreamTimeline,
-  StrategySectionLead,
-  StrategyAppendixSection,
   StrategyPageFrame,
   StrategyHero,
   StrategySectionShell,
   StrategyCard,
-  StrategyEyebrow,
   StrategyCTA,
+  StrategySectionLead,
+  StrategyAppendixSection,
+  WorkstreamTimeline,
+  StrategyEyebrow,
 } from "@/components/strategy";
 import {
-  AlertTriangle,
-  BarChart3,
   Bot,
   Compass,
   Database,
   Globe,
-  Layers3,
   LineChart,
-  Link2,
+  Radar,
+  Rocket,
   Search,
   ShieldCheck,
   Sparkles,
   Swords,
   Target,
-  TrendingUp,
-  Users,
+  Workflow,
 } from "lucide-react";
-
-const formatWhole = (value: number) =>
-  new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(Math.round(value));
-
-const formatPercent = (value: number) => `${value.toFixed(1)}%`;
 
 const researchData = {
   company: {
@@ -54,177 +46,25 @@ const researchData = {
     organicKeywords: 19,
     backlinks: 27577,
     referringDomains: 880,
-    marketsIncluded: ["US", "AU"],
+    markets: {
+      US: { organicTraffic: 157.9689934104681, organicKeywords: 18 },
+      AU: { organicTraffic: 3.990000009536743, organicKeywords: 1 },
+    },
     backlinkMetrics: {
       backlinksSpamScore: 44,
       targetSpamScore: 9,
     },
   },
-  tamModel: {
-    keywordUniverse: {
-      size: 736,
-      validatedDemand: 2268640,
-      semanticContributionDemandSharePercent: 86.08,
-    },
-    totals: {
-      totalAddressableSearchDemand: 2268640,
-      estimatedReachableVisits: {
-        low: 3850.34,
-        base: 7615.89,
-        high: 12664.89,
-      },
-      byChannel: {
-        google: {
-          demand: 1951030.4,
-          estimatedReachableVisits: {
-            low: 3758.56,
-            base: 7434.35,
-            high: 12363,
-          },
-        },
-        ai: {
-          demand: 317609.6,
-          estimatedReachableVisits: {
-            low: 91.78,
-            base: 181.54,
-            high: 301.89,
-          },
-        },
-      },
-    },
-    monthlyTrajectory: [
-      { month: 1, label: "M1", low: 115.51, base: 304.64, high: 633.24 },
-      { month: 2, label: "M2", low: 154.01, base: 380.79, high: 759.89 },
-      { month: 3, label: "M3", low: 192.52, base: 456.95, high: 886.54 },
-      { month: 4, label: "M4", low: 231.02, base: 533.11, high: 1013.19 },
-      { month: 5, label: "M5", low: 269.52, base: 533.11, high: 1013.19 },
-      { month: 6, label: "M6", low: 308.03, base: 609.27, high: 1139.84 },
-      { month: 7, label: "M7", low: 308.03, base: 609.27, high: 1139.84 },
-      { month: 8, label: "M8", low: 346.53, base: 685.43, high: 1139.84 },
-      { month: 9, label: "M9", low: 385.03, base: 685.43, high: 1139.84 },
-      { month: 10, label: "M10", low: 423.54, base: 761.59, high: 1266.49 },
-      { month: 11, label: "M11", low: 539.05, base: 990.07, high: 1266.49 },
-      { month: 12, label: "M12", low: 577.55, base: 1066.22, high: 1266.49 },
-    ],
-    topOpportunityClusters: [
-      {
-        cluster: "Category & Brand Demand",
-        intent: "TOFU",
-        demand: 2228330,
-        keywordCount: 513,
-        estimatedReachableVisits: { low: 3595.61, base: 7191.22, high: 11985.37 },
-        sampleKeywords: ["patreon", "kajabi", "skool", "creator monetization", "creator business platform"],
-      },
-      {
-        cluster: "Buyer Guides",
-        intent: "BOFU",
-        demand: 26590,
-        keywordCount: 94,
-        estimatedReachableVisits: { low: 167.76, base: 279.7, high: 447.57 },
-        sampleKeywords: ["creator monetization platform", "video creator platform", "creator platform"],
-      },
-      {
-        cluster: "Alternatives & Comparisons",
-        intent: "BOFU",
-        demand: 8470,
-        keywordCount: 117,
-        estimatedReachableVisits: { low: 53.73, base: 89.54, high: 143.27 },
-        sampleKeywords: ["patreon alternative", "kajabi alternative", "skool alternative", "patreon vs skool"],
-      },
-    ],
-    assumptions: {
-      founderReadableSummary: [
-        "Google reachable-share assumptions are modeled conservatively rather than presented as raw CTR guarantees.",
-        "Capture rates vary by BOFU, MOFU, and TOFU intent because commercial intent converts into visibility at different speeds.",
-        "These numbers are planning coefficients, not a claim that the brand will capture the full market immediately.",
-      ],
-      channelSplit: { google: 0.86, ai: 0.14 },
-      modeledReachableShare: { google: 0.12, ai: 0.018 },
-      captureRates: {
-        BOFU: { low: 0.06, base: 0.1, high: 0.16 },
-        MOFU: { low: 0.03, base: 0.06, high: 0.1 },
-        TOFU: { low: 0.015, base: 0.03, high: 0.05 },
-      },
-    },
-    revenueModel: {
-      enabled: false,
-      reason: "Revenue inputs missing (acv/aov). Showing TAM + pipeline potential only.",
-      pipelinePotential: {
-        leads: {
-          low: 15.4,
-          base: 68.54,
-          high: 189.97,
-        },
-      },
-    },
-    confidence: {
-      score: 100,
-      level: "high",
-      reasons: [
-        "Sufficient TAM volume identified.",
-        "Strong full keyword universe coverage.",
-        "Semantic keyword expansion contributed meaningful TAM coverage.",
-        "Topical integrity checks passed for the keyword universe.",
-        "AI visibility prompts provide directional coverage.",
-        "AI visibility sampled across multiple platforms.",
-        "Revenue model is estimate-only and missing first-party monetary inputs.",
-      ],
-    },
-  },
-  aiVisibility: {
-    platformSummary: {
-      chatgpt: { mentionRate: 25, total: 16, mentioned: 4, validatedMentions: 4 },
-      gemini: { mentionRate: 37.5, total: 16, mentioned: 6, validatedMentions: 6 },
-      google_ai_overview: { mentionRate: 0, total: 16, mentioned: 0, validatedMentions: 0 },
-    },
-    platformAvailability: {
-      perplexity: { configured: true, status: "unavailable", reason: "Invalid Path from provider endpoint" },
-    },
-    competitorEvidence: [
-      { name: "Patreon", domain: "patreon.com", queryHits: 21, queryCount: 8 },
-      { name: "Kajabi", domain: "kajabi.com", queryHits: 7, queryCount: 4 },
-      { name: "Teachable", domain: "teachable.com", queryHits: 5, queryCount: 3 },
-      { name: "Circle", domain: "circle.so", queryHits: 2, queryCount: 2 },
-      { name: "Skool", domain: "skool.com", queryHits: 0, queryCount: 0 },
-    ],
-  },
-  topicalIntegrity: {
-    passed: true,
-    metrics: {
-      topKeywordCount: 20,
-      topicallyRelevantTopKeywordCount: 20,
-      lowQualitySemanticDemandSharePercent: 0.01,
-      semanticOnlyDemandSharePercent: 8.57,
-      ambiguousPromptMentions: 0,
-      validatedPromptMentions: 10,
-    },
-    sampleLowQualitySemanticKeywords: [
-      "voices of the void patreon",
-      "content creator vs digital creator",
-      "alternative sims 4 cc patreon",
-      "business profile vs creator profile",
-      "digital creator or content creator",
-      "alternative to vans old skool",
-    ],
-  },
   competitors: [
     {
-      name: "Behind the Scenes",
-      domain: "behindthescenes.com",
-      organicTraffic: 161.95899342000484,
-      organicKeywords: 19,
-      backlinks: 27577,
-      referringDomains: 880,
-      promptHits: 10,
-    },
-    {
-      name: "Patreon",
-      domain: "patreon.com",
-      organicTraffic: 4172095.4804578777,
-      organicKeywords: 598893,
-      backlinks: 454284402,
-      referringDomains: 372395,
-      promptHits: 21,
+      name: "Circle",
+      domain: "circle.so",
+      organicTraffic: 219982.5281981025,
+      organicKeywords: 13861,
+      backlinks: 1707296,
+      referringDomains: 21370,
+      promptQueryHits: 2,
+      promptQueryCount: 2,
     },
     {
       name: "Kajabi",
@@ -233,16 +73,18 @@ const researchData = {
       organicKeywords: 17679,
       backlinks: 1529242,
       referringDomains: 40224,
-      promptHits: 7,
+      promptQueryHits: 7,
+      promptQueryCount: 4,
     },
     {
-      name: "Circle",
-      domain: "circle.so",
-      organicTraffic: 219982.5281981025,
-      organicKeywords: 13861,
-      backlinks: 1707296,
-      referringDomains: 21370,
-      promptHits: 2,
+      name: "Patreon",
+      domain: "patreon.com",
+      organicTraffic: 4172095.4804578777,
+      organicKeywords: 598893,
+      backlinks: 454284402,
+      referringDomains: 372395,
+      promptQueryHits: 21,
+      promptQueryCount: 8,
     },
     {
       name: "Skool",
@@ -251,7 +93,8 @@ const researchData = {
       organicKeywords: 52170,
       backlinks: 6040046,
       referringDomains: 73244,
-      promptHits: 0,
+      promptQueryHits: 0,
+      promptQueryCount: 0,
     },
     {
       name: "Teachable",
@@ -260,31 +103,151 @@ const researchData = {
       organicKeywords: 81847,
       backlinks: 15841175,
       referringDomains: 88832,
-      promptHits: 5,
+      promptQueryHits: 5,
+      promptQueryCount: 3,
     },
   ],
-  promptExamples: [
-    {
-      query: "best creator monetization platform",
-      currentPattern: "Patreon repeatedly appears across ChatGPT + Gemini; BTS absent.",
-      btsStatus: "Not mentioned",
-      implication: "BTS is missing from the highest-value category entry query.",
+  tamModel: {
+    totals: {
+      totalSearchOpportunity: 2268640,
+      expectedTraffic12Months: { low: 118614.1, base: 191043.1, high: 285366.8 },
+      aggressiveUpside: 285366.8,
+      first90DayTarget: { low: 14233.69, base: 28656.46, high: 51366.03 },
+      byChannel: {
+        google: { demand: 1951030.4 },
+        ai: { demand: 317609.6 },
+      },
     },
-    {
-      query: "behind the scenes creator monetization platform alternatives",
-      currentPattern: "BTS is mentioned in ChatGPT + Gemini when query includes brand phrase.",
-      btsStatus: "Mentioned",
-      implication: "Brand-specific demand exists, but does not transfer to category-generic prompts.",
+    monthlyTrajectory: [
+      { month: 1, low: 3558.42, base: 7641.72, high: 14268.34 },
+      { month: 2, low: 4744.56, base: 9552.15, high: 17122.01 },
+      { month: 3, low: 5930.71, base: 11462.59, high: 19975.68 },
+      { month: 4, low: 7116.85, base: 13373.02, high: 22829.34 },
+      { month: 5, low: 8302.99, base: 13373.02, high: 22829.34 },
+      { month: 6, low: 9489.13, base: 15283.45, high: 25683.01 },
+      { month: 7, low: 9489.13, base: 15283.45, high: 25683.01 },
+      { month: 8, low: 10675.27, base: 17193.88, high: 25683.01 },
+      { month: 9, low: 11861.41, base: 17193.88, high: 25683.01 },
+      { month: 10, low: 13047.55, base: 19104.31, high: 28536.68 },
+      { month: 11, low: 16605.97, base: 24835.6, high: 28536.68 },
+      { month: 12, low: 17792.12, base: 26746.03, high: 28536.68 },
+    ],
+    topOpportunityClusters: [
+      {
+        cluster: "Category & Brand Demand",
+        intent: "TOFU",
+        demand: 2228330,
+        keywordCount: 513,
+        sampleKeywords: ["patreon", "kajabi", "skool", "behind the scenes"],
+      },
+      {
+        cluster: "Buyer Guides",
+        intent: "BOFU",
+        demand: 26590,
+        keywordCount: 94,
+        sampleKeywords: ["creator monetization platform", "creator platform", "circle app"],
+      },
+      {
+        cluster: "Alternatives & Comparisons",
+        intent: "BOFU",
+        demand: 8470,
+        keywordCount: 117,
+        sampleKeywords: ["patreon alternative", "kajabi alternative", "skool alternative"],
+      },
+      {
+        cluster: "Pricing & Cost",
+        intent: "BOFU",
+        demand: 4910,
+        keywordCount: 3,
+        sampleKeywords: ["kajabi pricing", "skool pricing", "patreon cost"],
+      },
+      {
+        cluster: "Reviews & Social Proof",
+        intent: "BOFU",
+        demand: 320,
+        keywordCount: 8,
+        sampleKeywords: ["skool reviews", "creator platform review"],
+      },
+    ],
+    assumptions: {
+      founderReadableSummary: [
+        "Total search opportunity is the full validated market demand across Google and AI discovery.",
+        "Expected traffic in 12 months assumes strong execution against the highest-value BOFU, MOFU, and TOFU wedges.",
+        "Aggressive upside reflects what happens if the company wins its initial wedge early and compounds faster across the year.",
+      ],
+      trafficChannels: { google: 0.86, ai: 0.14 },
     },
-    {
-      query: "behind the scenes creator monetization platform vs competitors",
-      currentPattern: "BTS appears in ChatGPT + Gemini; Google AI Overview still does not surface it.",
-      btsStatus: "Mixed by platform",
-      implication: "Visibility is platform-fragmented; Google AIO remains an open gap.",
+    revenueModel: {
+      enabled: false,
+      reason: "Revenue inputs missing (acv/aov). Showing TAM + pipeline potential only.",
+      pipelinePotential: {
+        leads: { low: 474.46, base: 1719.39, high: 4280.5 },
+      },
     },
+    confidence: {
+      score: 100,
+      level: "high",
+      reasons: [
+        "Sufficient TAM volume identified.",
+        "Strong full keyword universe coverage.",
+        "Topical integrity checks passed for the keyword universe.",
+        "AI visibility sampled across multiple platforms.",
+        "Revenue model is estimate-only and missing first-party monetary inputs.",
+      ],
+    },
+  },
+  aiVisibility: {
+    platformSummary: {
+      chatgpt: { total: 16, mentioned: 4, mentionRate: 25 },
+      gemini: { total: 16, mentioned: 6, mentionRate: 37.5 },
+      google_ai_overview: { total: 16, mentioned: 0, mentionRate: 0 },
+    },
+    promptExamples: [
+      {
+        query: "best creator monetization platform",
+        result: "Not mentioned in ChatGPT US/AU, Gemini US/AU, or Google AI Overview samples.",
+        implication: "High-intent category discovery is still largely captured by incumbents.",
+      },
+      {
+        query: "behind the scenes creator monetization platform alternatives",
+        result: "Mentioned in ChatGPT (US + AU) and Gemini (US + AU), absent in Google AI Overview samples.",
+        implication: "Brand recall exists when prompted directly, but broad SERP-layer presence is missing.",
+      },
+      {
+        query: "how to choose a creator monetization platform",
+        result: "Mentioned in Gemini US, absent in most other samples.",
+        implication: "Partial AI visibility exists but is inconsistent across answer engines.",
+      },
+    ],
+  },
+  topicalIntegrity: {
+    passed: true,
+    metrics: {
+      semanticOnlyDemandSharePercent: 8.57,
+      lowQualitySemanticDemandSharePercent: 0.01,
+      ambiguousPromptMentions: 0,
+      validatedPromptMentions: 10,
+      topicallyRelevantTopKeywordCount: 20,
+    },
+    sampleLowQualitySemanticKeywords: [
+      "voices of the void patreon",
+      "content creator vs digital creator",
+      "alternative sims 4 cc patreon",
+      "business profile vs creator profile",
+      "digital creator or content creator",
+    ],
+  },
+  rankedKeywords: [
+    { keyword: "behind the scenes", volume: 20000, position: 41, intent: "TOFU" },
+    { keyword: "behind scenes", volume: 18100, position: 39, intent: "TOFU" },
+    { keyword: "behind-the-scenes", volume: 18100, position: 62, intent: "TOFU" },
+    { keyword: "bts videographer", volume: 1600, position: 63, intent: "TOFU" },
+    { keyword: "skool vs patreon", volume: 70, position: 21, intent: "BOFU" },
+    { keyword: "behind the scenes content", volume: 70, position: 55, intent: "TOFU" },
   ],
   websiteAudit: {
-    title: "Best Creator Platform in 2026 | Earn From Your Content - Behind the Scenes",
+    title:
+      "Best Creator Platform in 2026 | Earn From Your Content - Behind the Scenes",
     wordCount: 1087,
     internalLinks: 6,
     externalLinks: 9,
@@ -294,854 +257,843 @@ const researchData = {
   },
 };
 
-const executiveActions = [
-  "Own one money wedge first: alternatives + comparisons for creators choosing Patreon, Kajabi, and Teachable alternatives.",
-  "Publish a compact apex set in 90 days: 12 decision pages, 1 methodology page, and 24 support pages tied to the same entity language.",
-  "Install answer-share operations weekly: prompt tracking across ChatGPT, Gemini, and Google AI Overview with explicit win/loss loops.",
-];
+const formatWhole = (value: number) =>
+  new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(Math.round(value));
 
-const wedgePages = [
-  "Patreon Alternative for Serious Creators (2026): Data-Backed Comparison",
-  "Kajabi Alternative for Membership-Led Creators: Behind the Scenes vs Kajabi",
-  "Teachable Alternative for Community + Monetization: Full Breakdown",
-  "Behind the Scenes vs Patreon: Fees, Ownership, and Conversion Tradeoffs",
-  "Behind the Scenes vs Kajabi: Creator Business Stack Comparison",
-  "Creator Monetization Platform Comparison: Which Model Fits Which Creator Stage",
-  "Creator Monetization Platform for Startups: What to Pick and Why",
-  "How to Choose a Creator Monetization Platform (Without Getting Trapped by Platform Fees)",
-  "Skool Alternative for Paid Creator Communities",
-  "Creator Membership Platform Checklist (Operator Edition)",
-  "Creator Business Platform ROI Framework",
-  "BTS Pricing and Monetization Logic Explained (for serious evaluators)",
-];
-
-const appendixKeywordRows = [
-  ["patreon alternative", "1,860", "Alternatives & Comparisons", "High-intent competitor switch term"],
-  ["kajabi alternative", "1,040", "Alternatives & Comparisons", "High commercial intent, high CPC"],
-  ["skool alternative", "340", "Alternatives & Comparisons", "Direct community-platform displacement query"],
-  ["creator monetization platform", "630", "Buyer Guides", "Core category buying phrase"],
-  ["creator subscription platform", "90", "Buyer Guides", "Strong fit with BTS model"],
-  ["creator economy platform", "80", "Buyer Guides", "Topical category fit"],
-  ["creator platform", "360", "Buyer Guides", "Foundational head term"],
-  ["patreon alternatives", "770", "Alternatives & Comparisons", "Plural intent variant with buyer behavior"],
-  ["best patreon alternative", "60", "Alternatives & Comparisons", "Evaluation-stage phrase"],
-  ["best kajabi alternative", "60", "Alternatives & Comparisons", "High buyer intent variant"],
-  ["alternative to patreon", "220", "Alternatives & Comparisons", "Strong switching-intent phrase"],
-  ["patreon vs skool", "10", "Alternatives & Comparisons", "Competitive framing opportunity"],
-];
-
-const promptEvidenceRows = [
-  ["best creator monetization platform", "ChatGPT", "US", "No", "Patreon-led answer pattern"],
-  ["best creator monetization platform", "Gemini", "US", "No", "Patreon-led answer pattern"],
-  ["best creator monetization platform", "Google AIO", "US", "No", "No BTS citation in AIO sample"],
-  ["behind the scenes creator monetization platform alternatives", "ChatGPT", "US", "Yes", "BTS appears on branded query"],
-  ["behind the scenes creator monetization platform alternatives", "Gemini", "AU", "Yes", "BTS appears on branded query"],
-  ["behind the scenes creator monetization platform alternatives", "Google AIO", "AU", "No", "Snippet sources favor incumbents"],
-  ["behind the scenes creator monetization platform vs competitors", "ChatGPT", "AU", "Yes", "BTS acknowledged in comparison framing"],
-  ["behind the scenes creator monetization platform vs competitors", "Gemini", "US", "Yes", "BTS appears with competitor mentions"],
-  ["behind the scenes creator monetization platform vs competitors", "Google AIO", "US", "No", "No direct BTS inclusion"],
-  ["how to choose a creator monetization platform", "Gemini", "US", "Yes", "BTS appears in one market/platform combination"],
-  ["creator monetization platform comparison", "ChatGPT", "US", "No", "Generic competitor list"],
-  ["creator monetization platform comparison", "Google AIO", "AU", "No", "No BTS in surfaced overview"],
-];
-
-const assumptionRows = [
-  [
-    "Channel split (planning input)",
-    "Google 86% / AI 14%",
-    "Represents where discovery currently happens across classic and answer-engine paths.",
-  ],
-  [
-    "Modeled reachable-share coefficient",
-    "Google 0.12 / AI 0.018",
-    "Conservative planning coefficient, not a click-through guarantee.",
-  ],
-  [
-    "Capture rates by intent",
-    "BOFU 6–16% / MOFU 3–10% / TOFU 1.5–5%",
-    "Commercial intent captured faster than broad informational intent.",
-  ],
-  [
-    "Geography modeled",
-    "US + AU",
-    "Current TAM and trajectory reflect these two markets only.",
-  ],
-  [
-    "Revenue model state",
-    "Disabled",
-    "No ACV/AOV + funnel data in payload, so revenue needs client-side calibration.",
-  ],
-];
+const formatCompact = (value: number) => {
+  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(2)}M`;
+  if (value >= 1_000) return `${(value / 1_000).toFixed(1)}K`;
+  return formatWhole(value);
+};
 
 export default function StrategyBts2() {
   useEffect(() => {
-    document.title = "Behind the Scenes Growth Strategy | Memetik";
+    document.title = "Behind the Scenes × Memetik | AEO Strategy 2026";
     window.scrollTo(0, 0);
   }, []);
 
-  const baseReachableVisits = Math.round(researchData.tamModel.totals.estimatedReachableVisits.base);
+  const monthlyPoints = researchData.tamModel.monthlyTrajectory.map((point) => ({
+    label: `M${point.month}`,
+    low: point.low,
+    base: point.base,
+    high: point.high,
+  }));
+
+  const execStats = [
+    {
+      label: "Total search opportunity",
+      value: formatWhole(researchData.tamModel.totals.totalSearchOpportunity),
+      icon: <Globe className="h-5 w-5" />,
+      note: "Validated creator-platform demand across US + AU.",
+    },
+    {
+      label: "Expected traffic in 12 months",
+      value: formatWhole(researchData.tamModel.totals.expectedTraffic12Months.base),
+      icon: <LineChart className="h-5 w-5" />,
+      note: "Base-case outcome from a focused 12-month search + AI program.",
+    },
+    {
+      label: "Aggressive upside",
+      value: formatWhole(researchData.tamModel.totals.aggressiveUpside),
+      icon: <Rocket className="h-5 w-5" />,
+      note: "If BTS wins first wedge early and compounds authority faster.",
+    },
+    {
+      label: "First 90-day target",
+      value: formatWhole(researchData.tamModel.totals.first90DayTarget.base),
+      icon: <Target className="h-5 w-5" />,
+      note: "Early traction target focused on high-intent category and comparison pages.",
+    },
+  ];
+
+  const competitorRows = researchData.competitors.map((competitor) => [
+    competitor.name,
+    competitor.domain,
+    formatCompact(competitor.organicTraffic),
+    formatWhole(competitor.organicKeywords),
+    formatCompact(competitor.referringDomains),
+    `${competitor.promptQueryHits}/${competitor.promptQueryCount}`,
+  ]);
+
+  const platformCards = [
+    {
+      name: "ChatGPT",
+      mentionRate: researchData.aiVisibility.platformSummary.chatgpt.mentionRate,
+      mentions: `${researchData.aiVisibility.platformSummary.chatgpt.mentioned}/${researchData.aiVisibility.platformSummary.chatgpt.total}`,
+      driver: "Strongly influenced by Bing-indexed entities and authoritative comparative pages.",
+    },
+    {
+      name: "Gemini",
+      mentionRate: researchData.aiVisibility.platformSummary.gemini.mentionRate,
+      mentions: `${researchData.aiVisibility.platformSummary.gemini.mentioned}/${researchData.aiVisibility.platformSummary.gemini.total}`,
+      driver: "Leans on Google surfaces and entity clarity, especially for market-level recommendations.",
+    },
+    {
+      name: "Google AI Overviews",
+      mentionRate: researchData.aiVisibility.platformSummary.google_ai_overview.mentionRate,
+      mentions: `${researchData.aiVisibility.platformSummary.google_ai_overview.mentioned}/${researchData.aiVisibility.platformSummary.google_ai_overview.total}`,
+      driver: "Depends on top-10 organic presence and extraction-ready comparison content.",
+    },
+  ];
 
   return (
     <StrategyPageFrame>
       <Nav />
-
-      <div className="mx-auto max-w-[1180px] space-y-8 md:space-y-10">
+      <div className="mx-auto w-full max-w-[1200px]">
         <StrategyHero
-          eyebrow="Memetik Growth Strategy Memo"
-          title="How Behind the Scenes can become a default answer in creator monetization"
-          accent="without trying to outspend incumbents"
-          subtitle="Founder-facing strategy to win shortlist visibility across Google + answer engines, starting with one wedge and compounding into category authority."
+          eyebrow={
+            <>
+              Strategy Memo • {researchData.company.name} • {researchData.company.industry}
+            </>
+          }
+          title="How Behind the Scenes can own creator monetization intent"
+          accent="across Google and AI answers"
+          subtitle={
+            <>
+              BTS already has a product and positioning that AI engines can understand. The gap is distribution and
+              structured demand capture. This plan focuses on owning high-intent creator-platform comparisons first, then
+              compounding into broader category authority.
+            </>
+          }
           tags={[
             researchData.company.domain,
-            researchData.company.industry,
             researchData.company.category,
-            "US + AU",
-            "Public strategy memo",
+            "US + AU market focus",
+            "Founder-facing strategy",
           ]}
         >
-          <div className="grid gap-4 md:grid-cols-3">
-            <StrategyCard glow="mixed">
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Database className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Validated demand</span>
+          <StrategySectionShell className="mt-4" glow="blue">
+            <div className="mb-6 flex items-center justify-between gap-4">
+              <StrategyEyebrow>Executive Summary</StrategyEyebrow>
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">
+                5-minute read
               </div>
-              <div className="text-3xl font-display font-bold text-white">
-                {formatWhole(researchData.tamModel.keywordUniverse.validatedDemand)}
-              </div>
-              <p className="mt-2 text-sm leading-6 text-white/62">Topically validated annual search demand across US + AU.</p>
-            </StrategyCard>
+            </div>
 
-            <StrategyCard glow="mixed">
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Search className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Current capture</span>
-              </div>
-              <div className="text-3xl font-display font-bold text-white">
-                {formatWhole(researchData.seoMetrics.organicTraffic)}
-              </div>
-              <p className="mt-2 text-sm leading-6 text-white/62">Approximate monthly organic traffic today.</p>
-            </StrategyCard>
+            <StatsGrid stats={execStats} columns={4} className="mb-6" />
 
-            <StrategyCard glow="mixed">
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Bot className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">AIO visibility</span>
+            <HighlightBox>
+              <div className="grid gap-6 md:grid-cols-[1.2fr_1fr]">
+                <div>
+                  <h3 className="text-xl font-display font-semibold text-white">
+                    Immediate actions for the next 30 days
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-white/68">
+                    The fastest path is to capture comparison-driven queries where buyers build shortlists, while making
+                    BTS easier for answer engines to cite with confidence.
+                  </p>
+                </div>
+                <BulletList
+                  items={[
+                    "Ship a focused comparison cluster: Patreon alternatives, Kajabi alternatives, Skool alternatives.",
+                    "Create one flagship ‘Best creator monetization platform’ page with clear verdict logic and schema.",
+                    "Launch weekly AI prompt tracking across ChatGPT, Gemini, and Google AI Overview trigger queries.",
+                  ]}
+                />
               </div>
-              <div className="text-3xl font-display font-bold text-white">
-                {formatPercent(researchData.aiVisibility.platformSummary.google_ai_overview.mentionRate)}
-              </div>
-              <p className="mt-2 text-sm leading-6 text-white/62">Google AI Overview mention rate across tested prompts.</p>
-            </StrategyCard>
-          </div>
+            </HighlightBox>
+          </StrategySectionShell>
         </StrategyHero>
 
-        <StrategySectionShell glow="blue">
-          <SectionHeader number="00" title="Executive Summary" />
-          <StrategySectionLead
-            takeaway="Behind the Scenes has enough authority and brand signal to win, but it is currently invisible on the highest-value non-branded decision prompts."
-            body="Right now, BTS appears when prompts explicitly include its brand phrase, but loses generic category prompts to Patreon, Kajabi, Teachable, and Circle. The path forward is to lock one narrow commercial wedge first, then expand with disciplined monthly execution."
-            implication="If you win the alternatives/comparison layer first, you can turn existing brand gravity into durable shortlist share instead of one-off mentions."
-          />
-
-          <StatsGrid
-            columns={3}
-            stats={[
-              {
-                label: "Validated annual demand (US + AU)",
-                value: formatWhole(researchData.tamModel.keywordUniverse.validatedDemand),
-                icon: <Target className="h-4 w-4" />,
-                note: "Topical integrity checks passed; low-quality semantic contamination is near-zero.",
-              },
-              {
-                label: "Current monthly organic traffic",
-                value: formatWhole(researchData.seoMetrics.organicTraffic),
-                icon: <TrendingUp className="h-4 w-4" />,
-                note: "Current capture is materially below reachable modeled potential.",
-              },
-              {
-                label: "Base modeled reachable visits (12-month run-rate)",
-                value: formatWhole(researchData.tamModel.totals.estimatedReachableVisits.base),
-                icon: <LineChart className="h-4 w-4" />,
-                note: "Conservative modeling across Google and AI surfaces.",
-              },
-            ]}
-          />
-
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <HighlightBox>
-              <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-[#f4e4cd]">Immediate actions (next 30 days)</div>
-              <BulletList items={executiveActions} />
-            </HighlightBox>
-
-            <StrategyCard glow="blue">
-              <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-[#f4e4cd]">What success looks like by day 90</div>
-              <BulletList
-                items={[
-                  "BTS appears consistently for branded + near-branded alternatives prompts across ChatGPT and Gemini.",
-                  "At least 12 high-intent pages shipped and internally linked into a clear decision architecture.",
-                  "Weekly answer-share scoreboard running with explicit win/loss and refresh protocol.",
-                ]}
-              />
-            </StrategyCard>
-          </div>
-        </StrategySectionShell>
-
-        <StrategySectionShell glow="mixed">
-          <SectionHeader number="01" title="State of Search 2026" />
-          <StrategySectionLead
-            takeaway="Google still drives most commercial discovery, but AI answer engines now shape the shortlist before buyers click."
-            body="The operating reality is hybrid: buyers move between classic search and answer engines. They ask broad category questions in AI, validate options in Google, and only click when trust is already formed."
-            implication="You do not win by choosing SEO or AEO. You win by making both layers reinforce the same recommendation pattern."
-          />
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <StrategyCard>
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Globe className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Search core remains</span>
-              </div>
-              <p className="text-sm leading-6 text-white/68">
-                Google remains a major path for demand capture, especially for commercial research and comparison behavior.
-              </p>
-            </StrategyCard>
-
-            <StrategyCard>
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Bot className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Answer layer influence</span>
-              </div>
-              <p className="text-sm leading-6 text-white/68">
-                ChatGPT and Gemini increasingly frame first recommendations. If BTS is not named there, shortlist share leaks before site visits.
-              </p>
-            </StrategyCard>
-
-            <StrategyCard>
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Layers3 className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Multi-surface requirement</span>
-              </div>
-              <p className="text-sm leading-6 text-white/68">
-                Winning requires synchronized assets across your site, review/distribution nodes, and structured entities that models can trust.
-              </p>
-            </StrategyCard>
-          </div>
-        </StrategySectionShell>
-
-        <StrategySectionShell glow="blue">
-          <SectionHeader number="02" title="Where Behind the Scenes Is Today" />
-          <StrategySectionLead
-            takeaway="BTS has trust signals and a meaningful domain footprint, but current discoverability is narrow and mostly brand-led."
-            body="The domain carries non-trivial authority, yet only a small keyword footprint is ranking today. Current content wins appear sporadic and not organized around money entities."
-            implication="This is not a credibility problem. It is a coverage and structure problem."
-          />
-
-          <StatsGrid
-            columns={4}
-            stats={[
-              {
-                label: "Organic keywords",
-                value: formatWhole(researchData.seoMetrics.organicKeywords),
-                icon: <Search className="h-4 w-4" />,
-                note: "Very low category coverage for a competitive market.",
-              },
-              {
-                label: "Backlinks",
-                value: formatWhole(researchData.seoMetrics.backlinks),
-                icon: <Link2 className="h-4 w-4" />,
-                note: "Domain already has significant external linkage signal.",
-              },
-              {
-                label: "Referring domains",
-                value: formatWhole(researchData.seoMetrics.referringDomains),
-                icon: <Compass className="h-4 w-4" />,
-                note: "Strong base to support category pages if architecture improves.",
-              },
-              {
-                label: "Schema types detected",
-                value: `${researchData.websiteAudit.schemaTypes.length}`,
-                icon: <Database className="h-4 w-4" />,
-                note: "No visible schema inventory on homepage snapshot.",
-              },
-            ]}
-          />
-
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <HighlightBox>
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">Strengths to leverage</div>
-              <BulletList
-                items={[
-                  "Brand phrase already has measurable demand and existing SERP footprint.",
-                  "Authority base exists (27,577 backlinks / 880 referring domains).",
-                  "Topical integrity checks passed on keyword universe (clean enough for scale play).",
-                ]}
-              />
-            </HighlightBox>
-
-            <StrategyCard>
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">Primary constraints</div>
-              <BulletList
-                items={[
-                  "Category-level generic prompts still default to incumbents.",
-                  "Commercial comparison architecture is too thin for sustained answer-share wins.",
-                  "Google AI Overview is currently at 0% mention rate in tested prompt set.",
-                ]}
-              />
-            </StrategyCard>
-          </div>
-        </StrategySectionShell>
-
-        <StrategySectionShell glow="mixed">
-          <SectionHeader number="03" title="The Opportunity" />
-          <StrategySectionLead
-            takeaway="The biggest upside sits in one place: commercial alternatives and comparison intent, then expansion into broader category capture."
-            body="Modeled TAM is large, but the practical path is phased. Start where intent is highest, then layer MOFU and TOFU for compounding retrieval density."
-            implication="This is a sequencing game. The wrong order burns months; the right order compounds quickly."
-          />
-
-          <div className="grid gap-4 md:grid-cols-3">
-            {researchData.tamModel.topOpportunityClusters.map((cluster) => (
-              <StrategyCard key={cluster.cluster} glow="blue">
-                <div className="mb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">{cluster.cluster}</div>
-                <div className="text-2xl font-display font-bold text-white">{formatWhole(cluster.demand)}</div>
-                <p className="mt-1 text-xs text-white/52">Demand</p>
-                <div className="mt-3 text-sm text-white/68">
-                  {formatWhole(cluster.estimatedReachableVisits.base)} base reachable visits
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="mixed">
+            <SectionHeader number="00" title="State of Search 2026" />
+            <StrategySectionLead
+              takeaway="Google still drives core commercial discovery, but AI answers now shape the shortlist before clicks."
+              body="Buyers now move across Google, ChatGPT, Gemini, and AI Overviews before they ever book a demo. This is not an SEO-or-AI decision. Winning brands are discoverable in both classic search results and AI recommendation layers."
+              implication="For BTS, that means publishing pages that rank in Google and are easy for answer engines to extract, cite, and trust."
+            />
+            <div className="grid gap-4 md:grid-cols-3">
+              <StrategyCard glow="blue">
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Search className="h-5 w-5" />
                 </div>
-                <div className="mt-3 text-xs text-white/48">
-                  Sample: {cluster.sampleKeywords.slice(0, 3).join(" · ")}
-                </div>
+                <h3 className="text-lg font-semibold text-white">Google remains the demand engine</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  Top-10 organic visibility is still the largest driver of category discovery and buying research.
+                </p>
               </StrategyCard>
-            ))}
-          </div>
-
-          <HighlightBox className="mt-5">
-            <p className="text-sm leading-7 text-white/74">
-              Topical integrity passed with <span className="text-white font-semibold">20/20 top keywords relevant</span>. Low-quality semantic demand is
-              only <span className="text-white font-semibold">0.01%</span>, so this opportunity can be pursued aggressively without polluting strategy with
-              off-category noise.
-            </p>
-          </HighlightBox>
-        </StrategySectionShell>
-
-        <StrategySectionShell glow="blue">
-          <SectionHeader number="04" title="Why Behind the Scenes Can Win" />
-          <StrategySectionLead
-            takeaway="BTS can win a defined slice by owning the ‘creator business control’ narrative where incumbents are weakest."
-            body="Patreon and Kajabi are large, but they are broad. BTS can position around ownership, monetization control, and creator-first economics in direct comparison moments."
-            implication="You do not need to beat incumbents everywhere. You need to beat them in one decision frame repeatedly."
-          />
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <StrategyCard>
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Target className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Narrative wedge</span>
-              </div>
-              <p className="text-sm leading-6 text-white/68">
-                Position BTS as the platform for creators who want to monetize without surrendering customer relationship ownership.
-              </p>
-            </StrategyCard>
-
-            <StrategyCard>
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <ShieldCheck className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Authority base</span>
-              </div>
-              <p className="text-sm leading-6 text-white/68">
-                Existing referring-domain depth supports faster trust transfer once comparison pages and structured proof assets are live.
-              </p>
-            </StrategyCard>
-
-            <StrategyCard>
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Sparkles className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Prompt evidence</span>
-              </div>
-              <p className="text-sm leading-6 text-white/68">
-                BTS already appears in branded comparison prompts. That signal can be expanded into non-branded recommendations with deliberate coverage.
-              </p>
-            </StrategyCard>
-          </div>
-        </StrategySectionShell>
-
-        <StrategySectionShell glow="amber">
-          <SectionHeader number="05" title="Competitive Gap" />
-          <StrategySectionLead
-            takeaway="The gap is not subtle: incumbents dominate category visibility while BTS is barely present in organic and answer-layer discovery."
-            body="The authority moat is currently held by platforms with larger content and citation footprints. BTS needs to build a focused money-entity layer to narrow that gap where purchase decisions happen."
-            implication="Competing at head terms now is inefficient. Attack decision pages first, then let authority compound upward."
-          />
-
-          <DataTable
-            headers={["Brand", "Organic Traffic", "Organic Keywords", "Backlinks / Ref Domains", "Prompt Hits (48 tests)"]}
-            rows={researchData.competitors.map((c) => [
-              (
-                <div>
-                  <div className="font-medium text-white">{c.name}</div>
-                  <div className="text-xs text-white/45">{c.domain}</div>
+              <StrategyCard glow="blue">
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Bot className="h-5 w-5" />
                 </div>
-              ),
-              formatWhole(c.organicTraffic),
-              formatWhole(c.organicKeywords),
-              `${formatWhole(c.backlinks)} / ${formatWhole(c.referringDomains)}`,
-              formatWhole(c.promptHits),
-            ])}
-            highlightRow={0}
-            className="mt-3"
-          />
-        </StrategySectionShell>
-
-        <StrategySectionShell glow="mixed">
-          <SectionHeader number="06" title="AI Visibility Gap" />
-          <StrategySectionLead
-            takeaway="BTS is partially visible in ChatGPT and Gemini, but absent in Google AI Overviews across the tested set."
-            body="Current pattern shows the brand can be recognized when queries explicitly reference BTS, but generic buying prompts still default to incumbents."
-            implication="The job is to convert branded mention pockets into category-level recommendation consistency."
-          />
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <StrategyCard>
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">ChatGPT</div>
-              <div className="text-3xl font-display font-bold text-white">
-                {formatPercent(researchData.aiVisibility.platformSummary.chatgpt.mentionRate)}
-              </div>
-              <p className="mt-2 text-sm text-white/62">
-                {researchData.aiVisibility.platformSummary.chatgpt.mentioned}/{researchData.aiVisibility.platformSummary.chatgpt.total} prompts mentioned BTS.
-              </p>
-            </StrategyCard>
-
-            <StrategyCard>
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">Gemini</div>
-              <div className="text-3xl font-display font-bold text-white">
-                {formatPercent(researchData.aiVisibility.platformSummary.gemini.mentionRate)}
-              </div>
-              <p className="mt-2 text-sm text-white/62">
-                {researchData.aiVisibility.platformSummary.gemini.mentioned}/{researchData.aiVisibility.platformSummary.gemini.total} prompts mentioned BTS.
-              </p>
-            </StrategyCard>
-
-            <StrategyCard>
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">Google AI Overview</div>
-              <div className="text-3xl font-display font-bold text-white">
-                {formatPercent(researchData.aiVisibility.platformSummary.google_ai_overview.mentionRate)}
-              </div>
-              <p className="mt-2 text-sm text-white/62">
-                0/{researchData.aiVisibility.platformSummary.google_ai_overview.total} tested prompts mentioned BTS.
-              </p>
-            </StrategyCard>
-          </div>
-
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {researchData.promptExamples.map((example) => (
-              <StrategyCard key={example.query}>
-                <div className="mb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Prompt evidence</div>
-                <div className="text-sm font-semibold text-white">{example.query}</div>
-                <p className="mt-2 text-sm leading-6 text-white/62">{example.currentPattern}</p>
-                <div className="mt-3 text-xs text-white/48">
-                  BTS status: <span className="text-white/72">{example.btsStatus}</span>
-                </div>
-                <div className="mt-1 text-xs text-white/48">{example.implication}</div>
+                <h3 className="text-lg font-semibold text-white">AI shapes who gets shortlisted</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  Answer engines compress comparison behavior into a single recommendation moment. If BTS is not named,
+                  intent leaks to incumbents.
+                </p>
               </StrategyCard>
-            ))}
-          </div>
-
-          <HighlightBox className="mt-5">
-            <div className="flex items-start gap-3">
-              <AlertTriangle className="h-4 w-4 mt-1 text-[#f4e4cd]" />
-              <p className="text-sm leading-7 text-white/72">
-                Perplexity endpoint was unavailable in this dataset snapshot, so we treat Perplexity as unmeasured rather than assumed. Operationally, this means
-                we should include Perplexity checks in ongoing prompt ops once endpoint coverage is stable.
-              </p>
+              <StrategyCard glow="blue">
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Globe className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Cross-surface coverage is now the moat</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  The winners align content, authority, and entity signals so they appear in both search results and
+                  answer citations.
+                </p>
+              </StrategyCard>
             </div>
-          </HighlightBox>
-        </StrategySectionShell>
+          </StrategySectionShell>
+        </section>
 
-        <StrategySectionShell glow="amber">
-          <SectionHeader number="07" title="Revenue / Commercial Impact" />
-          <StrategySectionLead
-            takeaway="There is clear pipeline leverage if BTS converts visibility gains into decision-page traffic and lead capture."
-            body="Base modeled reachable traffic is 7,616 visits on a 12-month run-rate view, with upside to 12,665 under high-case execution. The bigger story is shortlist share: if BTS becomes the recommended answer in more buying moments, paid dependence and CAC pressure can ease over time."
-            implication="This is not just traffic upside. It is shortlist control, which compounds into better pipeline efficiency."
-          />
-
-          <div className="mb-4 flex flex-wrap gap-3">
-            <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">
-              estimate-only commercial model
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="blue">
+            <SectionHeader number="01" title="Current State Snapshot" />
+            <StrategySectionLead
+              takeaway="BTS has a credible domain footprint and product story, but very limited demand capture in category intent."
+              body="Current organic presence is concentrated in branded and ambiguous terms, with minimal ownership of high-intent creator-platform pages. That keeps visibility low exactly where buyers compare options."
+              implication="The upside is substantial because BTS is not trying to fix a weak product—it's fixing market discoverability."
+            />
+            <div className="grid gap-4 md:grid-cols-3">
+              <StrategyCard>
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Current organic traffic</div>
+                <div className="mt-2 text-3xl font-display font-bold text-white">
+                  {formatWhole(researchData.seoMetrics.organicTraffic)}
+                </div>
+                <p className="mt-2 text-sm text-white/62">US-heavy traffic base with minimal non-US visibility.</p>
+              </StrategyCard>
+              <StrategyCard>
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Current ranking keywords</div>
+                <div className="mt-2 text-3xl font-display font-bold text-white">
+                  {formatWhole(researchData.seoMetrics.organicKeywords)}
+                </div>
+                <p className="mt-2 text-sm text-white/62">Too narrow for a platform operating in a competitive category.</p>
+              </StrategyCard>
+              <StrategyCard>
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Referring domains</div>
+                <div className="mt-2 text-3xl font-display font-bold text-white">
+                  {formatWhole(researchData.seoMetrics.referringDomains)}
+                </div>
+                <p className="mt-2 text-sm text-white/62">
+                  Useful authority base that can be converted into stronger category page performance.
+                </p>
+              </StrategyCard>
             </div>
-            <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">
-              conservative planning coefficients
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <HighlightBox>
+                <h3 className="text-lg font-semibold text-white">What is already working</h3>
+                <div className="mt-3">
+                  <BulletList
+                    items={[
+                      "A clear monetization value proposition and direct-response homepage messaging.",
+                      "Existing backlink footprint (27,577 backlinks, 880 referring domains) to build from.",
+                      "Early foothold on one commercial query (‘skool vs patreon’ at position 21).",
+                    ]}
+                  />
+                </div>
+              </HighlightBox>
+              <HighlightBox>
+                <h3 className="text-lg font-semibold text-white">What is currently limiting growth</h3>
+                <div className="mt-3">
+                  <BulletList
+                    items={[
+                      "Most ranking terms are not high-intent creator-platform buying queries.",
+                      "No broad category ownership for alternatives, comparisons, and pricing clusters.",
+                      "No schema inventory currently detected in page audit, reducing extractability for AI answers.",
+                    ]}
+                  />
+                </div>
+              </HighlightBox>
             </div>
-          </div>
+          </StrategySectionShell>
+        </section>
 
-          <PhasedUpsideChart
-            points={researchData.tamModel.monthlyTrajectory.map((point) => ({
-              label: point.label,
-              low: Math.round(point.low),
-              base: Math.round(point.base),
-              high: Math.round(point.high),
-            }))}
-          />
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="amber">
+            <SectionHeader number="02" title="The Opportunity" />
+            <StrategySectionLead
+              takeaway="The market is large enough to materially change BTS pipeline if it captures even a small share of the right queries."
+              body="Validated demand across the target set is 2,268,640 monthly searches. The opportunity is not to chase all of it—it is to control the most commercial slices and use them to expand outward."
+              implication="A focused wedge can shift BTS from occasional mention to consistent shortlist inclusion."
+            />
 
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            <StrategyCard>
-              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Modeled reachable visits (base)</div>
-              <div className="mt-2 text-3xl font-display font-bold text-white">
-                {formatWhole(researchData.tamModel.totals.estimatedReachableVisits.base)}
-              </div>
-              <p className="mt-2 text-sm text-white/62">12-month planning horizon.</p>
-            </StrategyCard>
+            <div className="grid gap-4 md:grid-cols-3">
+              <StrategyCard glow="mixed">
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Google-led demand</div>
+                <div className="mt-2 text-3xl font-display font-bold text-white">
+                  {formatWhole(researchData.tamModel.totals.byChannel.google.demand)}
+                </div>
+                <p className="mt-2 text-sm text-white/62">Still the largest capture opportunity for commercial research behavior.</p>
+              </StrategyCard>
+              <StrategyCard glow="mixed">
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">AI answer-layer demand</div>
+                <div className="mt-2 text-3xl font-display font-bold text-white">
+                  {formatWhole(researchData.tamModel.totals.byChannel.ai.demand)}
+                </div>
+                <p className="mt-2 text-sm text-white/62">Critical influence layer for recommendations and shortlist framing.</p>
+              </StrategyCard>
+              <StrategyCard glow="mixed">
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Validated topical guardrail</div>
+                <div className="mt-2 text-3xl font-display font-bold text-white">
+                  {formatWhole(researchData.topicalIntegrity.metrics.topicallyRelevantTopKeywordCount)}/20
+                </div>
+                <p className="mt-2 text-sm text-white/62">
+                  Top headline terms pass topical integrity checks for BTS category relevance.
+                </p>
+              </StrategyCard>
+            </div>
 
-            <StrategyCard>
-              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Pipeline potential (base leads)</div>
-              <div className="mt-2 text-3xl font-display font-bold text-white">
-                {formatWhole(researchData.tamModel.revenueModel.pipelinePotential.leads.base)}
-              </div>
-              <p className="mt-2 text-sm text-white/62">Estimate based on modeled visitor-to-lead assumptions.</p>
-            </StrategyCard>
+            <div className="mt-6">
+              <HighlightBox>
+                <p className="text-sm leading-7 text-white/74">
+                  Opportunity is strongest in <span className="text-white font-semibold">Alternatives & Comparisons</span> and
+                  <span className="text-white font-semibold"> Buyer Guide</span> intent. These are the moments where a user is
+                  actively deciding between Patreon, Kajabi, Skool, Teachable, Circle, and challengers like BTS.
+                </p>
+              </HighlightBox>
+            </div>
+          </StrategySectionShell>
+        </section>
 
-            <StrategyCard>
-              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Pipeline potential (high leads)</div>
-              <div className="mt-2 text-3xl font-display font-bold text-white">
-                {formatWhole(researchData.tamModel.revenueModel.pipelinePotential.leads.high)}
-              </div>
-              <p className="mt-2 text-sm text-white/62">Requires sustained execution + conversion alignment.</p>
-            </StrategyCard>
-          </div>
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="blue">
+            <SectionHeader number="03" title="Why Behind the Scenes Can Win" />
+            <StrategySectionLead
+              takeaway="BTS can win by owning the ‘creator business infrastructure’ narrative rather than copying marketplace incumbents."
+              body="Patreon and platform giants win by default awareness. BTS wins by becoming the best-cited answer for creators who care about ownership, margin, and direct audience relationships."
+              implication="This is a category-positioning fight first, then a distribution execution fight."
+            />
+            <div className="grid gap-4 md:grid-cols-3">
+              <StrategyCard>
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Compass className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Clear wedge positioning</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  BTS can frame itself as the operator-grade monetization stack for creators building durable businesses.
+                </p>
+              </StrategyCard>
+              <StrategyCard>
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <ShieldCheck className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Existing authority foundation</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  The current referring domain base is enough to support faster ranking velocity once money pages exist.
+                </p>
+              </StrategyCard>
+              <StrategyCard>
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Early AI brand recognition</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  BTS already appears when prompts include direct brand framing—proof that visibility can be scaled.
+                </p>
+              </StrategyCard>
+            </div>
+          </StrategySectionShell>
+        </section>
 
-          <HighlightBox className="mt-5">
-            <p className="text-sm leading-7 text-white/74">
-              Revenue planning requires client ACV/AOV and funnel inputs. This model is useful for directional planning and prioritization, not booked-revenue
-              forecasting.
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="mixed">
+            <SectionHeader number="04" title="Competitive Gap" />
+            <StrategySectionLead
+              takeaway="The gap is distribution intensity, not product legitimacy."
+              body="Competitors are massively ahead in search footprint and cross-surface citations. BTS does not need to beat every competitor everywhere—it needs to dominate selected decision queries where buyers are closest to purchase."
+              implication="Start by attacking comparison and alternatives intent where incumbents are visible but vulnerable to better framing."
+            />
+
+            <DataTable
+              headers={[
+                "Company",
+                "Domain",
+                "Organic traffic",
+                "Ranking keywords",
+                "Referring domains",
+                "Prompt wins",
+              ]}
+              rows={[
+                [
+                  "Behind the Scenes",
+                  researchData.company.domain,
+                  formatWhole(researchData.seoMetrics.organicTraffic),
+                  formatWhole(researchData.seoMetrics.organicKeywords),
+                  formatWhole(researchData.seoMetrics.referringDomains),
+                  "10 validated brand mentions",
+                ],
+                ...competitorRows,
+              ]}
+              highlightRow={0}
+              className="mt-2"
+            />
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <StrategyCard>
+                <h3 className="text-lg font-semibold text-white">Primary threat: category default bias</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  Patreon dominates mention frequency across 8/8 tested query groups in competitor evidence, making it
+                  the default answer in many AI and search contexts.
+                </p>
+              </StrategyCard>
+              <StrategyCard>
+                <h3 className="text-lg font-semibold text-white">Primary opening: focused query warfare</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  Kajabi, Teachable, and Circle show fragmented ownership patterns. BTS can win share with
+                  better-scoped comparison pages and sharper creator-business positioning.
+                </p>
+              </StrategyCard>
+            </div>
+          </StrategySectionShell>
+        </section>
+
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="blue">
+            <SectionHeader number="05" title="AI Visibility Gap" />
+            <StrategySectionLead
+              takeaway="BTS appears in AI only when the brand is explicitly in the prompt; it is rarely chosen in generic category prompts."
+              body="That pattern means the market already understands BTS as a brand, but not yet as a default category recommendation. The next move is to train answer engines with clearer comparative and category evidence."
+              implication="Own generic prompt intent, not just branded prompt intent."
+            />
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {platformCards.map((platform) => (
+                <StrategyCard key={platform.name}>
+                  <div className="mb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">
+                    {platform.name}
+                  </div>
+                  <div className="text-3xl font-display font-bold text-white">{platform.mentionRate}%</div>
+                  <div className="mt-1 text-sm text-white/62">Mention rate • {platform.mentions} prompts</div>
+                  <p className="mt-3 text-sm leading-7 text-white/62">{platform.driver}</p>
+                </StrategyCard>
+              ))}
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {researchData.aiVisibility.promptExamples.map((example) => (
+                <StrategyCard key={example.query}>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Real prompt evidence</div>
+                  <h3 className="mt-2 text-base font-semibold text-white">{example.query}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/68">{example.result}</p>
+                  <p className="mt-3 text-sm leading-6 text-white">{example.implication}</p>
+                </StrategyCard>
+              ))}
+            </div>
+          </StrategySectionShell>
+        </section>
+
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="amber">
+            <SectionHeader number="06" title="Revenue / Commercial Impact" />
+            <StrategySectionLead
+              takeaway="This is a pipeline leverage play: more shortlist presence lowers paid dependency and improves inbound quality."
+              body="If BTS reaches the base-case traffic path, it can materially increase high-intent discovery. The strategic value is not only sessions—it is category trust in buying moments before sales conversations begin."
+              implication="Revenue planning requires client ACV/AOV and funnel inputs."
+            />
+
+            <div className="mb-6 grid gap-4 md:grid-cols-3">
+              <StrategyCard glow="mixed">
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Expected traffic in 12 months</div>
+                <div className="mt-2 text-3xl font-display font-bold text-white">
+                  {formatWhole(researchData.tamModel.totals.expectedTraffic12Months.base)}
+                </div>
+                <p className="mt-2 text-sm text-white/62">Base case trajectory from focused execution.</p>
+              </StrategyCard>
+              <StrategyCard glow="mixed">
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Aggressive upside</div>
+                <div className="mt-2 text-3xl font-display font-bold text-white">
+                  {formatWhole(researchData.tamModel.totals.aggressiveUpside)}
+                </div>
+                <p className="mt-2 text-sm text-white/62">If authority and comparison coverage compounds faster.</p>
+              </StrategyCard>
+              <StrategyCard glow="mixed">
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Pipeline potential (lead range)</div>
+                <div className="mt-2 text-3xl font-display font-bold text-white">
+                  {formatWhole(researchData.tamModel.revenueModel.pipelinePotential.leads.base)}
+                </div>
+                <p className="mt-2 text-sm text-white/62">Directional until BTS conversion and ACV data are layered in.</p>
+              </StrategyCard>
+            </div>
+
+            <PhasedUpsideChart points={monthlyPoints} />
+
+            <p className="mt-4 text-xs text-white/45">
+              Estimate-only model. Revenue planning requires client ACV/AOV and funnel inputs.
             </p>
-          </HighlightBox>
-        </StrategySectionShell>
+          </StrategySectionShell>
+        </section>
 
-        <StrategySectionShell glow="blue">
-          <SectionHeader number="08" title="90-day Wedge" />
-          <StrategySectionLead
-            takeaway="First wedge: alternatives + comparison intent around Patreon, Kajabi, and Teachable."
-            body="The first 90 days should avoid broad thought-leadership sprawl. Focus on high-buying-intent entities where recommendation order matters, and ship enough depth for answer engines to trust recurring citations."
-            implication="One clear wedge won deeply beats ten shallow content themes."
-          />
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="blue">
+            <SectionHeader number="07" title="90-day Wedge" />
+            <StrategySectionLead
+              takeaway="Win one wedge deeply: creator-platform alternatives and comparisons against the incumbents buyers already name."
+              body="The first 90 days are about proving repeatable wins on commercial queries, then using those wins to expand into broader category capture."
+              implication="Scope discipline matters more than content volume in the first sprint."
+            />
 
-          <div className="grid gap-4 md:grid-cols-2">
-            <StrategyCard glow="mixed">
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">First category/entity wedge</div>
-              <p className="text-sm leading-6 text-white/68">
-                “Creator monetization platform alternatives” with explicit side-by-side comparisons focused on ownership, fees, community leverage, and creator
-                business control.
-              </p>
-            </StrategyCard>
+            <div className="grid gap-4 md:grid-cols-2">
+              <StrategyCard>
+                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
+                  <Target className="h-5 w-5" />
+                  <h3 className="text-lg font-semibold text-white">First wedge: alternatives + comparisons</h3>
+                </div>
+                <BulletList
+                  items={[
+                    "Patreon alternative pages segmented by creator type and monetization model.",
+                    "Kajabi alternative pages focused on creator-business use cases.",
+                    "Skool alternative pages for membership + community migration scenarios.",
+                    "Head-to-head pages: BTS vs Patreon, BTS vs Kajabi, BTS vs Skool, BTS vs Teachable, BTS vs Circle.",
+                  ]}
+                />
+              </StrategyCard>
 
-            <StrategyCard glow="mixed">
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">First competitors to attack</div>
-              <BulletList items={["Patreon (primary demand owner)", "Kajabi (high-CPC commercial comparisons)", "Teachable (education-commerce overlap)", "Circle (community-led creator infra)"]} />
-            </StrategyCard>
-          </div>
+              <StrategyCard>
+                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
+                  <Rocket className="h-5 w-5" />
+                  <h3 className="text-lg font-semibold text-white">First prompts to win</h3>
+                </div>
+                <BulletList
+                  items={[
+                    "“best creator monetization platform”",
+                    "“patreon alternative”",
+                    "“kajabi alternative”",
+                    "“skool alternative”",
+                    "“creator monetization platform comparison”",
+                  ]}
+                />
+              </StrategyCard>
 
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <StrategyCard>
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">First prompts to win</div>
-              <BulletList
-                items={[
-                  "best creator monetization platform",
-                  "creator monetization platform comparison",
-                  "best creator monetization platform for startups",
-                  "behind the scenes creator monetization platform alternatives",
-                  "behind the scenes creator monetization platform vs competitors",
-                ]}
-              />
-            </StrategyCard>
+              <StrategyCard>
+                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
+                  <Swords className="h-5 w-5" />
+                  <h3 className="text-lg font-semibold text-white">First competitors to attack</h3>
+                </div>
+                <BulletList
+                  items={[
+                    "Patreon: default recommendation leader; target by use-case specialization.",
+                    "Kajabi: strong enterprise framing; counter with creator monetization clarity.",
+                    "Teachable + Circle: fragmented positioning opportunities in comparison queries.",
+                  ]}
+                />
+              </StrategyCard>
 
-            <StrategyCard>
-              <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">First pages to ship (12)</div>
-              <BulletList items={wedgePages.slice(0, 6)} />
-            </StrategyCard>
-          </div>
-        </StrategySectionShell>
+              <StrategyCard>
+                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
+                  <Radar className="h-5 w-5" />
+                  <h3 className="text-lg font-semibold text-white">90-day outputs</h3>
+                </div>
+                <BulletList
+                  items={[
+                    "10 flagship commercial pages shipped with schema and direct-answer intros.",
+                    "30 supporting knowledge pages mapped to those money pages.",
+                    "Weekly prompt tracking dashboard across US + AU query set.",
+                    "Monthly refresh loop on top five money entities.",
+                  ]}
+                />
+              </StrategyCard>
+            </div>
+          </StrategySectionShell>
+        </section>
 
-        <StrategySectionShell glow="mixed">
-          <SectionHeader number="09" title="Operating Model" />
-          <StrategySectionLead
-            takeaway="Run this as a concurrent operating system, not a one-time content sprint."
-            body="All tracks should run from month one: money-page shipping, workflow proof, authority/distribution, and prompt operations. Waiting to sequence these linearly slows compounding."
-            implication="The moat comes from cadence and reinforcement, not single-asset quality alone."
-          />
+        <section className="mb-14 md:mb-20">
+          <StrategySectionShell glow="mixed">
+            <SectionHeader number="08" title="Operating Model" />
+            <StrategySectionLead
+              takeaway="Run concurrent workstreams from month one: demand capture, authority, and measurement."
+              body="This is not a linear SEO project. BTS needs a weekly publishing and feedback loop where pages, citations, and prompt testing reinforce each other continuously."
+              implication="Treat AEO + SEO as an operating system, not a campaign."
+            />
 
-          <WorkstreamTimeline
-            months={researchData.tamModel.monthlyTrajectory.map((month) => month.label)}
-            tracks={[
-              {
-                name: "Money entity capture",
-                description: "Build and refresh alternatives/comparison assets every month.",
-                cells: [
-                  { label: "Prioritize", tone: "high" },
-                  { label: "Build", tone: "high" },
-                  { label: "Ship", tone: "high" },
-                  { label: "Ship", tone: "high" },
-                  { label: "Expand", tone: "base" },
-                  { label: "Expand", tone: "base" },
-                  { label: "Refresh", tone: "base" },
-                  { label: "Refresh", tone: "base" },
-                  { label: "Refresh", tone: "base" },
-                  { label: "Defend", tone: "base" },
-                  { label: "Defend", tone: "base" },
-                  { label: "Defend", tone: "base" },
-                ],
-              },
-              {
-                name: "Workflow + implementation layer",
-                description: "How-to and adoption proof content for trust transfer.",
-                cells: [
-                  { label: "Map", tone: "high" },
-                  { label: "Implement", tone: "high" },
-                  { label: "Instrument", tone: "base" },
-                  { label: "Ship", tone: "base" },
-                  { label: "Expand", tone: "base" },
-                  { label: "Expand", tone: "base" },
-                  { label: "Proof", tone: "base" },
-                  { label: "Proof", tone: "base" },
-                  { label: "Optimize", tone: "base" },
-                  { label: "Optimize", tone: "base" },
-                  { label: "Scale", tone: "base" },
-                  { label: "Scale", tone: "base" },
-                ],
-              },
-              {
-                name: "Authority + distribution",
-                description: "External reinforcement for recommendation trust.",
-                cells: [
-                  { label: "Seed", tone: "high" },
-                  { label: "Seed", tone: "high" },
-                  { label: "Launch", tone: "base" },
-                  { label: "Distribute", tone: "base" },
-                  { label: "Distribute", tone: "base" },
-                  { label: "Expand", tone: "base" },
-                  { label: "Expand", tone: "base" },
-                  { label: "Refresh", tone: "base" },
-                  { label: "Refresh", tone: "base" },
-                  { label: "Scale", tone: "base" },
-                  { label: "Scale", tone: "base" },
-                  { label: "Defend", tone: "base" },
-                ],
-              },
-              {
-                name: "Measurement + prompt ops",
-                description: "Weekly answer-share testing and iteration loop.",
-                cells: [
-                  { label: "Baseline", tone: "high" },
-                  { label: "Track", tone: "high" },
-                  { label: "Tune", tone: "base" },
-                  { label: "Tune", tone: "base" },
-                  { label: "Report", tone: "base" },
-                  { label: "Tune", tone: "base" },
-                  { label: "Report", tone: "base" },
-                  { label: "Tune", tone: "base" },
-                  { label: "Report", tone: "base" },
-                  { label: "Tune", tone: "base" },
-                  { label: "Report", tone: "base" },
-                  { label: "Systemize", tone: "base" },
-                ],
-              },
-            ]}
-          />
-        </StrategySectionShell>
+            <WorkstreamTimeline
+              months={["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10", "M11", "M12"]}
+              tracks={[
+                {
+                  name: "Money entity capture",
+                  description: "High-intent alternatives and comparison pages shipped continuously.",
+                  cells: [
+                    { label: "Prioritize", tone: "high" },
+                    { label: "Build", tone: "high" },
+                    { label: "Ship", tone: "high" },
+                    { label: "Ship", tone: "high" },
+                    { label: "Expand", tone: "base" },
+                    { label: "Expand", tone: "base" },
+                    { label: "Refresh", tone: "base" },
+                    { label: "Refresh", tone: "base" },
+                    { label: "Refresh", tone: "base" },
+                    { label: "Defend", tone: "base" },
+                    { label: "Defend", tone: "base" },
+                    { label: "Defend", tone: "base" },
+                  ],
+                },
+                {
+                  name: "Workflow + implementation layer",
+                  description: "How-to and selection framework assets that support conversion confidence.",
+                  cells: [
+                    { label: "Map", tone: "high" },
+                    { label: "Implement", tone: "high" },
+                    { label: "Instrument", tone: "base" },
+                    { label: "Ship", tone: "base" },
+                    { label: "Expand", tone: "base" },
+                    { label: "Expand", tone: "base" },
+                    { label: "Proof", tone: "base" },
+                    { label: "Proof", tone: "base" },
+                    { label: "Optimize", tone: "base" },
+                    { label: "Optimize", tone: "base" },
+                    { label: "Scale", tone: "base" },
+                    { label: "Scale", tone: "base" },
+                  ],
+                },
+                {
+                  name: "Authority + distribution",
+                  description: "External proof surfaces that reinforce recommendations and trust.",
+                  cells: [
+                    { label: "Seed", tone: "high" },
+                    { label: "Seed", tone: "high" },
+                    { label: "Launch", tone: "base" },
+                    { label: "Distribute", tone: "base" },
+                    { label: "Distribute", tone: "base" },
+                    { label: "Expand", tone: "base" },
+                    { label: "Expand", tone: "base" },
+                    { label: "Refresh", tone: "base" },
+                    { label: "Refresh", tone: "base" },
+                    { label: "Scale", tone: "base" },
+                    { label: "Scale", tone: "base" },
+                    { label: "Defend", tone: "base" },
+                  ],
+                },
+                {
+                  name: "Measurement + prompt ops",
+                  description: "Weekly answer-share checks and monthly recalibration on top entities.",
+                  cells: [
+                    { label: "Baseline", tone: "high" },
+                    { label: "Track", tone: "high" },
+                    { label: "Tune", tone: "base" },
+                    { label: "Tune", tone: "base" },
+                    { label: "Report", tone: "base" },
+                    { label: "Tune", tone: "base" },
+                    { label: "Report", tone: "base" },
+                    { label: "Tune", tone: "base" },
+                    { label: "Report", tone: "base" },
+                    { label: "Tune", tone: "base" },
+                    { label: "Report", tone: "base" },
+                    { label: "Systemize", tone: "base" },
+                  ],
+                },
+              ]}
+            />
+          </StrategySectionShell>
+        </section>
 
-        <StrategySectionShell glow="amber">
-          <SectionHeader number="10" title="Why Memetik" />
-          <StrategySectionLead
-            takeaway="This is exactly the kind of market where Memetik is most useful: high-intent competition, fragmented answer visibility, and clear wedge potential."
-            body="Memetik runs AEO + SEO as one operating system. That means we do not just publish pages; we map money entities, ship winning structures, reinforce authority nodes, and monitor answer share weekly."
-            implication="You get a growth channel with compounding memory, not a content quota."
-          />
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <StrategyCard>
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Swords className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Competitive-first</span>
-              </div>
-              <p className="text-sm leading-6 text-white/68">
-                We prioritize entities where competitor recommendation patterns are strongest and most commercial.
-              </p>
-            </StrategyCard>
-
-            <StrategyCard>
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Workflow className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Operator cadence</span>
-              </div>
-              <p className="text-sm leading-6 text-white/68">
-                Weekly shipping + weekly prompt testing + monthly recalibration to keep momentum and defend gains.
-              </p>
-            </StrategyCard>
-
-            <StrategyCard>
-              <div className="mb-2 flex items-center gap-2 text-[#f4e4cd]">
-                <Users className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Founder reporting</span>
-              </div>
-              <p className="text-sm leading-6 text-white/68">
-                We translate answer visibility into pipeline language so leadership can make fast budget decisions.
-              </p>
-            </StrategyCard>
-          </div>
-        </StrategySectionShell>
+        <section className="mb-16 md:mb-20">
+          <StrategySectionShell glow="amber">
+            <SectionHeader number="09" title="Why Memetik" />
+            <StrategySectionLead
+              takeaway="Memetik runs AEO and SEO as one commercial system: demand capture, answer visibility, and revenue accountability."
+              body="Most teams either publish content without answer-engine strategy, or run AI experiments without durable search infrastructure. Memetik connects both so BTS can build compounding shortlist share."
+              implication="The goal is not more content. The goal is category influence that compounds."
+            />
+            <div className="grid gap-4 md:grid-cols-3">
+              <StrategyCard>
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Database className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Entity-first demand mapping</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  We prioritize pages by commercial leverage and prompt behavior, not vanity volume.
+                </p>
+              </StrategyCard>
+              <StrategyCard>
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Workflow className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Weekly operating cadence</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  Research, publishing, distribution, and answer-share measurement run in one loop.
+                </p>
+              </StrategyCard>
+              <StrategyCard>
+                <div className="mb-3 flex text-[#f4e4cd]">
+                  <Radar className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-white">Founder-level visibility</h3>
+                <p className="mt-2 text-sm leading-7 text-white/64">
+                  Every workstream maps back to pipeline pressure, shortlist share, and defensibility.
+                </p>
+              </StrategyCard>
+            </div>
+          </StrategySectionShell>
+        </section>
 
         <StrategyCTA
           eyebrow="Book Strategy Call"
-          title="If this wedge is directionally right, we can operationalize it fast."
-          body="We’ll validate the first entity map, lock the first 90-day ship list, and build a weekly answer-share operating cadence with your team."
+          title="Turn BTS into a default recommendation, not a hidden option."
+          body="If you want Memetik to build and run this execution system with your team, book a strategy call. We’ll align on wedge, operating cadence, and first 90-day outcomes."
           href="https://cal.com/memetik/letstalk"
           ctaLabel="Book Strategy Call"
         />
 
-        <StrategySectionShell className="mt-14 md:mt-16" glow="blue">
-          <SectionHeader number="11" title="Appendix / Supporting Evidence" />
-          <StrategySectionLead
-            takeaway="Detailed research evidence, assumptions, and modeling context."
-            body="Main memo stays founder-readable. The sections below provide supporting depth for growth and SEO operators."
-          />
+        <section className="mt-14 md:mt-20">
+          <StrategySectionShell>
+            <SectionHeader number="10" title="Appendix / Supporting Evidence" />
+            <StrategySectionLead
+              takeaway="Detailed evidence, assumptions, and model inputs."
+              body="Everything below supports the strategy narrative above and is included for team planning, internal reviews, and execution QA."
+            />
 
-          <div className="space-y-4">
-            <StrategyAppendixSection
-              defaultOpen
-              title="Keyword universe, topical integrity, and quality guardrails"
-              description="Only validated, category-relevant opportunities are emphasized. Excluded/low-quality semantic terms are intentionally de-prioritized."
-            >
-              <div className="mb-4 grid gap-4 md:grid-cols-3">
-                <StrategyCard>
-                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Keyword universe</div>
-                  <div className="mt-2 text-2xl font-display font-bold text-white">
-                    {formatWhole(researchData.tamModel.keywordUniverse.size)}
-                  </div>
-                  <p className="mt-1 text-xs text-white/52">Validated keywords in model.</p>
-                </StrategyCard>
-                <StrategyCard>
-                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Top keywords relevant</div>
-                  <div className="mt-2 text-2xl font-display font-bold text-white">
-                    {researchData.topicalIntegrity.metrics.topicallyRelevantTopKeywordCount}/
-                    {researchData.topicalIntegrity.metrics.topKeywordCount}
-                  </div>
-                  <p className="mt-1 text-xs text-white/52">Topical integrity passed.</p>
-                </StrategyCard>
-                <StrategyCard>
-                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Low-quality semantic share</div>
-                  <div className="mt-2 text-2xl font-display font-bold text-white">
-                    {researchData.topicalIntegrity.metrics.lowQualitySemanticDemandSharePercent}%
-                  </div>
-                  <p className="mt-1 text-xs text-white/52">Kept out of headline planning.</p>
-                </StrategyCard>
-              </div>
+            <div className="space-y-4">
+              <StrategyAppendixSection
+                defaultOpen
+                title="Detailed competitor metrics (US + AU scope)"
+                description="Backlink and referring-domain values are sourced from the research payload backlink summaries."
+              >
+                <DataTable
+                  headers={[
+                    "Competitor",
+                    "Domain",
+                    "Organic traffic",
+                    "Organic keywords",
+                    "Backlinks",
+                    "Referring domains",
+                    "Prompt evidence",
+                  ]}
+                  rows={researchData.competitors.map((competitor) => [
+                    competitor.name,
+                    competitor.domain,
+                    formatWhole(competitor.organicTraffic),
+                    formatWhole(competitor.organicKeywords),
+                    formatWhole(competitor.backlinks),
+                    formatWhole(competitor.referringDomains),
+                    `${competitor.promptQueryHits}/${competitor.promptQueryCount} prompt groups`,
+                  ])}
+                />
+              </StrategyAppendixSection>
 
-              <DataTable
-                headers={["Keyword", "Volume", "Cluster", "Why it matters"]}
-                rows={appendixKeywordRows}
-                tableClassName="[&_th:nth-child(1)]:w-[30%] [&_th:nth-child(2)]:w-[12%] [&_th:nth-child(3)]:w-[22%] [&_th:nth-child(4)]:w-[36%]"
-              />
+              <StrategyAppendixSection
+                title="Top opportunity clusters"
+                description="Validated cluster-level demand used for prioritization."
+              >
+                <DataTable
+                  headers={["Cluster", "Intent", "Demand", "Keyword count", "Example terms"]}
+                  rows={researchData.tamModel.topOpportunityClusters.map((cluster) => [
+                    cluster.cluster,
+                    cluster.intent,
+                    formatWhole(cluster.demand),
+                    formatWhole(cluster.keywordCount),
+                    cluster.sampleKeywords.join(", "),
+                  ])}
+                />
+              </StrategyAppendixSection>
 
-              <div className="mt-4">
-                <div className="mb-2 text-xs font-mono uppercase tracking-[0.18em] text-white/45">Sample low-quality semantic terms (de-prioritized)</div>
-                <BulletList items={researchData.topicalIntegrity.sampleLowQualitySemanticKeywords} />
-              </div>
-            </StrategyAppendixSection>
+              <StrategyAppendixSection
+                title="Prompt evidence samples used in AI visibility analysis"
+                description="Examples across ChatGPT, Gemini, and Google AI Overview test sets."
+              >
+                <DataTable
+                  headers={["Prompt", "Observed outcome", "What it means"]}
+                  rows={researchData.aiVisibility.promptExamples.map((example) => [
+                    example.query,
+                    example.result,
+                    example.implication,
+                  ])}
+                />
+              </StrategyAppendixSection>
 
-            <StrategyAppendixSection
-              title="Detailed competitor evidence (SEO + authority + prompt presence)"
-              description="Backlink/ref-domain values and organic footprint pulled directly from research payload."
-            >
-              <DataTable
-                headers={["Company", "Organic Traffic", "Organic Keywords", "Backlinks", "Ref Domains", "Prompt Hits"]}
-                rows={researchData.competitors.map((c) => [
-                  `${c.name} (${c.domain})`,
-                  formatWhole(c.organicTraffic),
-                  formatWhole(c.organicKeywords),
-                  formatWhole(c.backlinks),
-                  formatWhole(c.referringDomains),
-                  formatWhole(c.promptHits),
-                ])}
-                highlightRow={0}
-                tableClassName="[&_th:nth-child(1)]:w-[28%] [&_th:nth-child(2)]:w-[14%] [&_th:nth-child(3)]:w-[14%] [&_th:nth-child(4)]:w-[14%] [&_th:nth-child(5)]:w-[14%] [&_th:nth-child(6)]:w-[16%]"
-              />
-            </StrategyAppendixSection>
+              <StrategyAppendixSection
+                title="Keyword evidence from current ranking footprint"
+                description="Current ranking terms indicate limited ownership of commercial creator-platform intent."
+              >
+                <DataTable
+                  headers={["Keyword", "Monthly volume", "Current position", "Intent"]}
+                  rows={researchData.rankedKeywords.map((kw) => [
+                    kw.keyword,
+                    formatWhole(kw.volume),
+                    `#${kw.position}`,
+                    kw.intent,
+                  ])}
+                />
+              </StrategyAppendixSection>
 
-            <StrategyAppendixSection
-              title="Prompt evidence sample (cross-platform)"
-              description="Representative prompt outcomes from ChatGPT, Gemini, and Google AI Overview tests."
-            >
-              <DataTable
-                headers={["Prompt", "Platform", "Market", "BTS mentioned", "Observed pattern"]}
-                rows={promptEvidenceRows}
-                tableClassName="[&_th:nth-child(1)]:w-[30%] [&_th:nth-child(2)]:w-[14%] [&_th:nth-child(3)]:w-[10%] [&_th:nth-child(4)]:w-[12%] [&_th:nth-child(5)]:w-[34%]"
-              />
-              <div className="mt-4 rounded-[20px] border border-white/10 bg-white/[0.03] p-4 text-sm text-white/65">
-                Perplexity was unavailable in this snapshot due endpoint-level path error, so it is tracked as a data availability issue rather than a visibility conclusion.
-              </div>
-            </StrategyAppendixSection>
+              <StrategyAppendixSection
+                title="Assumptions, confidence, and guardrails"
+                description="Planning assumptions are translated into plain language and kept outside the main founder narrative."
+              >
+                <div className="grid gap-4 md:grid-cols-2">
+                  <StrategyCard>
+                    <h3 className="text-lg font-semibold text-white">Planning assumptions (plain English)</h3>
+                    <div className="mt-3">
+                      <BulletList items={researchData.tamModel.assumptions.founderReadableSummary} />
+                    </div>
+                  </StrategyCard>
+                  <StrategyCard>
+                    <h3 className="text-lg font-semibold text-white">Confidence and topical integrity</h3>
+                    <div className="mt-3">
+                      <BulletList
+                        items={[
+                          `Confidence: ${researchData.tamModel.confidence.level} (${researchData.tamModel.confidence.score}/100).`,
+                          `Topical integrity passed: ${researchData.topicalIntegrity.passed ? "yes" : "no"}.`,
+                          `Ambiguous prompt mentions: ${researchData.topicalIntegrity.metrics.ambiguousPromptMentions}.`,
+                          `Low-quality semantic demand share: ${researchData.topicalIntegrity.metrics.lowQualitySemanticDemandSharePercent}%.`,
+                        ]}
+                      />
+                    </div>
+                  </StrategyCard>
+                </div>
 
-            <StrategyAppendixSection
-              title="Model assumptions, confidence, and calibration constraints"
-              description="Conservative planning framework used for trajectory and reachable-demand estimates."
-            >
-              <DataTable
-                headers={["Assumption area", "Value", "Interpretation"]}
-                rows={assumptionRows}
-                tableClassName="[&_th:nth-child(1)]:w-[26%] [&_th:nth-child(2)]:w-[24%] [&_th:nth-child(3)]:w-[50%]"
-              />
+                <DataTable
+                  className="mt-4"
+                  headers={["Scenario", "Expected traffic in 12 months", "First 90-day target"]}
+                  rows={[
+                    [
+                      "Low",
+                      formatWhole(researchData.tamModel.totals.expectedTraffic12Months.low),
+                      formatWhole(researchData.tamModel.totals.first90DayTarget.low),
+                    ],
+                    [
+                      "Base",
+                      formatWhole(researchData.tamModel.totals.expectedTraffic12Months.base),
+                      formatWhole(researchData.tamModel.totals.first90DayTarget.base),
+                    ],
+                    [
+                      "High",
+                      formatWhole(researchData.tamModel.totals.expectedTraffic12Months.high),
+                      formatWhole(researchData.tamModel.totals.first90DayTarget.high),
+                    ],
+                  ]}
+                />
+              </StrategyAppendixSection>
 
-              <div className="mt-4 grid gap-4 md:grid-cols-2">
-                <StrategyCard>
-                  <div className="mb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Founder-readable assumptions</div>
-                  <BulletList items={researchData.tamModel.assumptions.founderReadableSummary} />
-                </StrategyCard>
+              <StrategyAppendixSection
+                title="Website audit notes"
+                description="On-page and technical context captured in the research run."
+              >
+                <DataTable
+                  headers={["Field", "Observation"]}
+                  rows={[
+                    ["Homepage title", researchData.websiteAudit.title],
+                    ["Word count", formatWhole(researchData.websiteAudit.wordCount)],
+                    ["Internal links", formatWhole(researchData.websiteAudit.internalLinks)],
+                    ["External links", formatWhole(researchData.websiteAudit.externalLinks)],
+                    ["Schema types detected", researchData.websiteAudit.schemaTypes.length ? researchData.websiteAudit.schemaTypes.join(", ") : "None detected"],
+                    ["Time to interactive", `${formatWhole(researchData.websiteAudit.timeToInteractiveMs)} ms`],
+                    ["DOM complete", `${formatWhole(researchData.websiteAudit.domCompleteMs)} ms`],
+                    [
+                      "Backlink spam score / target spam score",
+                      `${researchData.seoMetrics.backlinkMetrics.backlinksSpamScore} / ${researchData.seoMetrics.backlinkMetrics.targetSpamScore}`,
+                    ],
+                  ]}
+                />
+              </StrategyAppendixSection>
 
-                <StrategyCard>
-                  <div className="mb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">
-                    Confidence ({researchData.tamModel.confidence.level})
-                  </div>
-                  <BulletList items={researchData.tamModel.confidence.reasons} />
-                </StrategyCard>
-              </div>
-            </StrategyAppendixSection>
-
-            <StrategyAppendixSection
-              title="Technical snapshot and on-page readiness"
-              description="Current page state from audit payload. Useful for implementation planning."
-            >
-              <DataTable
-                headers={["Signal", "Current state"]}
-                rows={[
-                  ["Title", researchData.websiteAudit.title],
-                  ["Word count", formatWhole(researchData.websiteAudit.wordCount)],
-                  ["Internal links", formatWhole(researchData.websiteAudit.internalLinks)],
-                  ["External links", formatWhole(researchData.websiteAudit.externalLinks)],
-                  ["Schema types detected", researchData.websiteAudit.schemaTypes.length ? researchData.websiteAudit.schemaTypes.join(", ") : "None detected in snapshot"],
-                  ["Time to interactive", `${formatWhole(researchData.websiteAudit.timeToInteractiveMs)} ms`],
-                  ["DOM complete", `${formatWhole(researchData.websiteAudit.domCompleteMs)} ms`],
-                  ["Backlink spam score (domain-level)", `${researchData.seoMetrics.backlinkMetrics.backlinksSpamScore}`],
-                  ["Target spam score", `${researchData.seoMetrics.backlinkMetrics.targetSpamScore}`],
-                ]}
-                tableClassName="[&_th:nth-child(1)]:w-[30%] [&_th:nth-child(2)]:w-[70%]"
-              />
-            </StrategyAppendixSection>
-
-            <StrategyAppendixSection
-              title="TAM × LTV scenario calculator"
-              description="Use first-party economics to translate reachable demand into revenue scenarios."
-            >
-              <TamRoiCalculator
-                baseReachableVisits={baseReachableVisits}
-                defaultLtv={0}
-                defaultVisitToCustomerRate={0.01}
-              />
-            </StrategyAppendixSection>
-          </div>
-        </StrategySectionShell>
+              <StrategyAppendixSection
+                title="TAM × LTV calculator"
+                description="Use your own funnel conversion and ACV/AOV inputs before committing to revenue forecasts."
+              >
+                <TamRoiCalculator
+                  baseReachableVisits={Math.round(researchData.tamModel.totals.expectedTraffic12Months.base)}
+                  defaultLtv={0}
+                  defaultVisitToCustomerRate={0.01}
+                />
+                <p className="mt-3 text-xs text-white/45">
+                  Revenue planning requires client ACV/AOV and funnel inputs.
+                </p>
+              </StrategyAppendixSection>
+            </div>
+          </StrategySectionShell>
+        </section>
       </div>
     </StrategyPageFrame>
   );
-}
-
-function Workflow({ className = "" }: { className?: string }) {
-  return <BarChart3 className={className} />;
 }

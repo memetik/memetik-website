@@ -286,7 +286,7 @@ CRITICAL RULES:
 33. Keep estimate-only disclosure consolidated to section-level labels and appendix assumptions. Do NOT scatter repetitive estimate notes everywhere.
 34. If researchData.topicalIntegrity exists, treat it as a hard guardrail: only headline validated keyword/TAM insights, surface ambiguity risks honestly, and do not center excluded or low-quality semantic terms.
 35. If tamModel.revenueModel.enabled is false, explicitly note that revenue planning requires first-party ACV/AOV and funnel inputs.
-36. Never present a raw Google CTR assumption like 46% as a headline assumption. If the research payload contains legacy reach coefficients, relabel them as internal modeling inputs and present a conservative founder-readable explanation instead.
+36. Use plain founder language for traffic planning. In the visible UI, prefer "Total search opportunity", "Expected traffic in 12 months", "Aggressive upside", and "First 90-day target". Avoid jargon like reachable share, modeled capture rate, or execution capture rate.
 37. The page should look homepage-premium, not report-template-flat: use StrategyPageFrame for the page, StrategyHero for the hero, StrategySectionShell for major sections, StrategyCard for sub-blocks, and StrategyCTA for the close.
 38. Do not make the page feel like "look how much research we did." Make it feel like "we understand the market, your position, your wedge, and how to build the moat."`;
 }
@@ -315,7 +315,7 @@ The component should be named Strategy${pascalCase(company.slug)} and exported a
 The file will be saved at client/src/pages/strategy/${pascalCase(company.slug)}.tsx
 
 Mandatory output structure additions:
-- Add an "Executive Summary" strip with 3 headline numbers and 3 immediate actions.
+- Add an "Executive Summary" strip with 4 headline numbers: Total search opportunity, Expected traffic in 12 months, Aggressive upside, and First 90-day target, plus 3 immediate actions.
 - Use StrategyPageFrame, StrategyHero, StrategySectionShell, and StrategyCTA as the default page architecture.
 - Every primary section should use StrategySectionLead or an equivalent one-takeaway block.
 - Main narrative sections: "State of Search 2026", "Where ${company.name} Is Today" (or "Current State Snapshot"), "The Opportunity", "Why ${company.name} Can Win", "Competitive Gap", "AI Visibility Gap", "Revenue / Commercial Impact", "90-day Wedge", "Operating Model", "Why Memetik".
@@ -324,11 +324,13 @@ Mandatory output structure additions:
 - Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
 - Keep hero metrics and primary visuals tied to validated topical subsets.
 - Display trajectory numbers as whole integers in visible UI labels.
+- If researchData.tamModel.totals.expectedTraffic12Months exists, use that terminology in the visible UI instead of "reachable visits".
+- Keep all planning jargon out of the main page. Do not use labels like reachable share, capture rate, or modeled coefficient in user-facing copy.
 - Use researchData.topicalIntegrity to avoid headline claims from excluded or ambiguous keyword groups.
 - Include 2-3 real prompt examples inside the AI visibility section.
 - Include a concrete 90-day wedge: first entity/category wedge, first pages to ship, first prompts to win, first competitors to attack.
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue planning requires client ACV/AOV and funnel inputs."
-- If researchData.tamModel.assumptions includes legacy/high reach coefficients, do not expose them as plain CTR assumptions. Present a conservative founder-readable explanation instead.
+- If researchData.tamModel.assumptions includes planning assumptions, keep them in the appendix and explain them in normal English rather than coefficient language.
 
 Generate the complete TSX file now.`;
 
