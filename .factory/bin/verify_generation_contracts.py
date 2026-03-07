@@ -10,7 +10,7 @@ REPO_ROOT = Path("/Users/house/projects/agency/memetik-website")
 CONTRACT = ROOT / "MEMETIK-2026-Strategy-Generation-Contract.md"
 PAGE_CONTRACT = ROOT / "website-strategy-page-contract.md"
 BRIEF_SCHEMA = ROOT / "client-strategy-brief-schema.yaml"
-EXAMPLE_BRIEF = ROOT / "examples" / "BTS-Strategy-Brief.md"
+PORTABLE_BTS_BRIEF = REPO_ROOT / "content" / "strategy-briefs" / "BTS-Strategy-Brief.md"
 APP_FILE = REPO_ROOT / "client" / "src" / "App.tsx"
 BTS_PAGE = REPO_ROOT / "client" / "src" / "pages" / "strategy" / "Bts2.tsx"
 BTS_HTML = REPO_ROOT / "dist" / "public" / "strategy" / "bts-2" / "index.html"
@@ -62,6 +62,11 @@ def load_registry() -> dict:
     return json.loads(STRATEGY_REGISTRY.read_text())
 
 
+def resolve_registry_path(raw_path: str) -> Path:
+    path = Path(raw_path)
+    return path if path.is_absolute() else REPO_ROOT / path
+
+
 def verify_bts_route_and_parity() -> None:
     registry = load_registry()
     routes = registry.get("routes", [])
@@ -75,18 +80,19 @@ def verify_bts_route_and_parity() -> None:
         raise SystemExit("Strategy route registry is missing the bts-2 entry")
     if bts_route.get("route") != "/strategy/bts-2":
         raise SystemExit("Strategy route registry has an unexpected route for bts-2")
-    if Path(bts_route.get("briefPath", "")) != EXAMPLE_BRIEF:
-        raise SystemExit("Strategy route registry does not point bts-2 at the canonical BTS brief")
+    if resolve_registry_path(bts_route.get("briefPath", "")) != PORTABLE_BTS_BRIEF:
+        raise SystemExit("Strategy route registry does not point bts-2 at the portable BTS brief snapshot")
 
     must_exist(APP_FILE)
     must_exist(PRERENDER_SCRIPT)
     must_exist(BTS_PAGE)
     must_exist(BTS_HTML)
+    must_exist(PORTABLE_BTS_BRIEF)
 
     app_text = APP_FILE.read_text()
     prerender_text = PRERENDER_SCRIPT.read_text()
     contract_text = CONTRACT.read_text()
-    brief_text = EXAMPLE_BRIEF.read_text()
+    brief_text = PORTABLE_BTS_BRIEF.read_text()
     page_text = BTS_PAGE.read_text()
     html_text = BTS_HTML.read_text()
 
@@ -121,8 +127,8 @@ def main() -> None:
         must_look_like_yaml(BRIEF_SCHEMA)
 
     if args.mode == "full":
-        must_exist(EXAMPLE_BRIEF)
-        must_look_like_markdown(EXAMPLE_BRIEF)
+        must_exist(PORTABLE_BTS_BRIEF)
+        must_look_like_markdown(PORTABLE_BTS_BRIEF)
         verify_bts_route_and_parity()
 
     print(f"Generation artifacts verified for mode: {args.mode}")

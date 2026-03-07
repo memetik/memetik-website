@@ -4,8 +4,10 @@ const path = require("path");
 const OPENAI_BASE_URL = "http://127.0.0.1:8327/v1";
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "dummy";
 const STRATEGY_MODEL = process.env.STRATEGY_MODEL || "gpt-5.4";
+const REPO_ROOT = path.join(__dirname, "..", "..");
 const CANONICAL_MIND_ROOT = "/Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation";
 const CANONICAL_MASTER_REFERENCE_PATH = "/Users/house/Mind/Areas/Agency/Lead-Magnets/MEMETIK-2026-AEO-Master-Reference.md";
+const PORTABLE_BTS_BRIEF_SNAPSHOT_PATH = path.join(REPO_ROOT, "content", "strategy-briefs", "BTS-Strategy-Brief.md");
 
 const REQUIRED_BRIEF_SECTIONS = [
   "## Lineage",
@@ -521,6 +523,21 @@ function validateCanonicalBriefContent(content, briefPath) {
   }
 }
 
+function syncPortableBriefSnapshot(slug, briefContent) {
+  if (slug !== "bts-2") return null;
+
+  const snapshotDir = path.dirname(PORTABLE_BTS_BRIEF_SNAPSHOT_PATH);
+  if (!fs.existsSync(snapshotDir)) {
+    fs.mkdirSync(snapshotDir, { recursive: true });
+  }
+
+  fs.writeFileSync(PORTABLE_BTS_BRIEF_SNAPSHOT_PATH, briefContent);
+  validateCanonicalBriefContent(briefContent, PORTABLE_BTS_BRIEF_SNAPSHOT_PATH);
+  console.log(`  Portable BTS brief snapshot updated: ${PORTABLE_BTS_BRIEF_SNAPSHOT_PATH}`);
+
+  return PORTABLE_BTS_BRIEF_SNAPSHOT_PATH;
+}
+
 function createOrValidateCanonicalBrief(company, researchData, canonicalInputs) {
   const briefContent = buildCanonicalBrief(company, researchData, canonicalInputs);
   const briefDir = path.dirname(canonicalInputs.paths.briefPath);
@@ -530,12 +547,14 @@ function createOrValidateCanonicalBrief(company, researchData, canonicalInputs) 
 
   fs.writeFileSync(canonicalInputs.paths.briefPath, briefContent);
   validateCanonicalBriefContent(briefContent, canonicalInputs.paths.briefPath);
+  const portableSnapshotPath = syncPortableBriefSnapshot(company.slug, briefContent);
   console.log(`  Canonical brief created/updated: ${canonicalInputs.paths.briefPath}`);
   console.log("  Canonical brief validated against required sections and lineage.");
 
   return {
     filePath: canonicalInputs.paths.briefPath,
     content: briefContent,
+    portableSnapshotPath,
   };
 }
 

@@ -153,8 +153,13 @@ function summaryStrategyContent(entry) {
   return `<main><h1>${esc(entry.title.split("|")[0].trim())}</h1><p>${esc(entry.description)}</p></main>`;
 }
 
+function resolveRegistryFilePath(filePath) {
+  if (!filePath) return "";
+  return path.isAbsolute(filePath) ? filePath : path.join(__dirname, "..", filePath);
+}
+
 function briefStrategyContent(entry) {
-  const briefPath = entry.briefPath;
+  const briefPath = resolveRegistryFilePath(entry.briefPath);
 
   if (!briefPath || !fs.existsSync(briefPath)) {
     throw new Error(`Missing required approved brief for ${entry.route}: ${briefPath || "(not configured)"}`);
