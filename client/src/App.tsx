@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { lazy, Suspense } from "react";
+import strategyRouteRegistry from "@shared/strategyRouteRegistry.json";
 
 const Home = lazy(() => import("@/pages/Home"));
 const Strategy = lazy(() => import("@/pages/Strategy"));
@@ -25,16 +26,24 @@ const Solution = lazy(() => import("@/pages/Solution"));
 const TestLanding = lazy(() => import("@/pages/TestLanding"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
+const strategyPageComponents = {
+  bts: StrategyBTS,
+  "bts-2": StrategyBts2,
+  "signify-ip": StrategySignifyIP,
+  uleads: StrategyUleads,
+  kinso: StrategyKinso,
+} as const;
+
 function Router() {
   return (
     <Suspense fallback={null}>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/strategy/bts" component={StrategyBTS} />
-        <Route path="/strategy/bts-2" component={StrategyBts2} />
-        <Route path="/strategy/signify-ip" component={StrategySignifyIP} />
-        <Route path="/strategy/uleads" component={StrategyUleads} />
-        <Route path="/strategy/kinso" component={StrategyKinso} />
+        {strategyRouteRegistry.routes.map(({ route, componentKey }) => {
+          const component = strategyPageComponents[componentKey as keyof typeof strategyPageComponents];
+
+          return <Route key={route} path={route} component={component} />;
+        })}
         <Route path="/strategy" component={Strategy} />
         <Route path="/bts" component={BTSOffer} />
         <Route path="/resources" component={Resources} />

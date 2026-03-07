@@ -12,6 +12,9 @@ const path = require("path");
 const DIST = path.join(__dirname, "..", "dist", "public");
 const DOMAIN = "https://www.memetik.ai";
 const DATA_DIR = path.join(__dirname, "..", "client", "src", "data");
+const STRATEGY_REGISTRY = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "..", "shared", "strategyRouteRegistry.json"), "utf-8")
+);
 
 const TEMPLATE = fs.readFileSync(path.join(DIST, "index.html"), "utf-8");
 
@@ -20,6 +23,10 @@ const TEMPLATE = fs.readFileSync(path.join(DIST, "index.html"), "utf-8");
 function esc(str) {
   if (!str) return "";
   return str.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function parseTS(filePath, varName) {
@@ -64,6 +71,232 @@ function loadArticles() {
   const cacheFile = path.join(DIST, "cache", "resources-articles.json");
   if (!fs.existsSync(cacheFile)) return [];
   return JSON.parse(fs.readFileSync(cacheFile, "utf-8"));
+}
+
+function getMarkdownSection(text, sectionNumber, title) {
+  const pattern = new RegExp(
+    `## ${escapeRegex(String(sectionNumber))}\\. ${escapeRegex(title)}([\\s\\S]*?)(?=\\n## \\d+\\.|$)`
+  );
+  const match = text.match(pattern);
+  return match ? match[1].trim() : "";
+}
+
+function parseLabeledBullets(section) {
+  const fields = {};
+
+  for (const line of section.split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed.startsWith("- ")) continue;
+
+    const labelEnd = trimmed.indexOf(":");
+    if (labelEnd === -1) continue;
+
+    const label = trimmed.slice(2, labelEnd).trim();
+    const value = trimmed.slice(labelEnd + 1).trim();
+    fields[label] = value;
+  }
+
+  return fields;
+}
+
+function parseNumberedList(section) {
+  return Array.from(section.matchAll(/^\d+\.\s+(.+)$/gm), (match) => match[1].trim());
+}
+
+function parseMarkdownTable(section) {
+  const lines = section
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.startsWith("|"));
+
+  if (lines.length < 3) return null;
+
+  const splitRow = (line) => line.split("|").slice(1, -1).map((cell) => cell.trim());
+
+  return {
+    headers: splitRow(lines[0]),
+    rows: lines.slice(2).map(splitRow),
+  };
+}
+
+function renderTable(table) {
+  if (!table) return "";
+
+  return `
+    <table>
+      <thead>
+        <tr>${table.headers.map((header) => `<th>${esc(header)}</th>`).join("")}</tr>
+      </thead>
+      <tbody>
+        ${table.rows
+          .map((row) => `<tr>${row.map((cell) => `<td>${esc(cell)}</td>`).join("")}</tr>`)
+          .join("\n        ")}
+      </tbody>
+    </table>`;
+}
+
+function parseSubsections(section) {
+  return section
+    .split(/^### /m)
+    .slice(1)
+    .map((block) => {
+      const [titleLine, ...rest] = block.split("\n");
+      return {
+        title: titleLine.trim(),
+        body: rest.join("\n").trim(),
+        fields: parseLabeledBullets(rest.join("\n")),
+      };
+    });
+}
+
+function summaryStrategyContent(entry) {
+  return `<main><h1>${esc(entry.title.split("|")[0].trim())}</h1><p>${esc(entry.description)}</p></main>`;
+}
+
+function briefStrategyContent(entry) {
+  const briefPath = entry.briefPath;
+
+  if (!briefPath || !fs.existsSync(briefPath)) {
+    throw new Error(`Missing required approved brief for ${entry.route}: ${briefPath || "(not configured)"}`);
+  }
+
+  const brief = fs.readFileSync(briefPath, "utf-8");
+  const metadata = parseLabeledBullets(getMarkdownSection(brief, 1, "Brief Metadata"));
+  const companyContext = parseLabeledBullets(getMarkdownSection(brief, 2, "Company Context"));
+  const categoryFraming = parseLabeledBullets(getMarkdownSection(brief, 3, "Category Framing"));
+  const currentState = parseLabeledBullets(getMarkdownSection(brief, 4, "Current State and Visibility"));
+  const competitorTable = parseMarkdownTable(getMarkdownSection(brief, 5, "Competitor Landscape"));
+  const moneyEntities = parseNumberedList(getMarkdownSection(brief, 6, "Money Entities"));
+  const recommendations = parseSubsections(getMarkdownSection(brief, 7, "Prioritized Wedge and Ranked Sequence"));
+  const apexAssets = parseLabeledBullets(getMarkdownSection(brief, 8, "Apex Assets Plan"));
+  const knowledgeGraph = parseLabeledBullets(getMarkdownSection(brief, 9, "Knowledge Graph Plan"));
+  const trustRelay = parseLabeledBullets(getMarkdownSection(brief, 10, "Trust Relay Plan"));
+  const technicalFoundation = parseLabeledBullets(getMarkdownSection(brief, 11, "Technical and Entity Foundation"));
+  const measurement = parseLabeledBullets(getMarkdownSection(brief, 12, "Proof and Measurement Model"));
+  const cadence = parseLabeledBullets(getMarkdownSection(brief, 13, "Cadence and Next Actions"));
+  const gaps = parseSubsections(getMarkdownSection(brief, 15, "Unresolved Gaps and Blockers"));
+  const claims = parseSubsections(getMarkdownSection(brief, 16, "Claim Register"));
+
+  if (!companyContext.Company || !categoryFraming["Primary wedge"]) {
+    throw new Error(`Approved brief for ${entry.route} is missing core company or wedge fields.`);
+  }
+
+  const heroTitle = `${companyContext.Company} can win a defined recommendation-share wedge`;
+  const recommendationSummaries = recommendations
+    .map((item) => item.fields.page_summary || item.fields.recommendation)
+    .filter(Boolean);
+  const sourceTrace = [
+    metadata["Generated at"] ? `Approved brief dated ${metadata["Generated at"]}` : null,
+    metadata["Payload confidence"] ? `Payload confidence ${metadata["Payload confidence"]}` : null,
+    metadata["Quality gate"] ? `Quality gate ${metadata["Quality gate"]}` : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  return `
+    <main>
+      <section>
+        <p>00 · Founder strategy memo</p>
+        <h1>${esc(heroTitle)}</h1>
+        <p>${esc(categoryFraming["Primary wedge"] || "")}</p>
+        <p>${esc(categoryFraming["Why this company can win now"] || "")}</p>
+        <p>${esc(categoryFraming["Commercial objective"] || "")}</p>
+        <p><strong>Source trace:</strong> ${esc(sourceTrace)}</p>
+      </section>
+
+      <section>
+        <h2>Current state</h2>
+        <ul>
+          <li><strong>Search opportunity:</strong> ${esc(currentState["Search opportunity"] || "")}</li>
+          <li><strong>Expected traffic in 12 months:</strong> ${esc(currentState["Expected traffic in 12 months (base)"] || "")}</li>
+          <li><strong>Aggressive upside:</strong> ${esc(currentState["Aggressive upside"] || "")}</li>
+          <li><strong>First 90-day target:</strong> ${esc(currentState["First 90-day target (base)"] || "")}</li>
+          <li><strong>AI visibility baseline:</strong> ChatGPT ${esc(currentState.chatgpt || "")}; Gemini ${esc(currentState.gemini || "")}; Google AI Overview ${esc(currentState.google_ai_overview || "")}</li>
+          <li><strong>Topical integrity:</strong> ${esc(currentState["Topical integrity"] || "")}</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Opportunity / right to win</h2>
+        <p>${esc(categoryFraming["Why this company can win now"] || "")}</p>
+        <ol>
+          ${recommendationSummaries.map((summary) => `<li>${esc(summary)}</li>`).join("\n          ")}
+        </ol>
+      </section>
+
+      <section>
+        <h2>Competitive gap</h2>
+        <p>${esc(companyContext.Company)} needs to close the retrieval and shortlist gap against the platforms already dominating category demand.</p>
+        ${renderTable(competitorTable)}
+      </section>
+
+      <section>
+        <h2>AI visibility / answer-surface gap</h2>
+        <p>${esc(measurement["Measurement frame"] || "")}</p>
+        <ul>
+          <li>${esc(currentState.chatgpt || "")}</li>
+          <li>${esc(currentState.gemini || "")}</li>
+          <li>${esc(currentState.google_ai_overview || "")}</li>
+          ${gaps
+            .map((gap) => gap.fields.impact_on_wedge)
+            .filter(Boolean)
+            .map((gap) => `<li>${esc(gap)}</li>`)
+            .join("\n          ")}
+        </ul>
+      </section>
+
+      <section>
+        <h2>90-day wedge</h2>
+        <p>${esc(recommendations[0]?.fields.recommendation || categoryFraming["Primary wedge"] || "")}</p>
+        <h3>Money Entities</h3>
+        <ol>
+          ${moneyEntities.map((item) => `<li>${esc(item)}</li>`).join("\n          ")}
+        </ol>
+        <h3>Apex Assets</h3>
+        <p>${esc(apexAssets["First assets to ship"] || "")}</p>
+        <p>${esc(apexAssets["Founder-facing point"] || "")}</p>
+        <h3>Knowledge Graph</h3>
+        <p>${esc(knowledgeGraph["Supporting clusters"] || "")}</p>
+        <p>${esc(knowledgeGraph["Founder-facing point"] || "")}</p>
+      </section>
+
+      <section>
+        <h2>What Memetik builds and ships</h2>
+        <ul>
+          <li><strong>Money Entities:</strong> ${esc(recommendations[0]?.fields.page_summary || "")}</li>
+          <li><strong>Apex Assets:</strong> ${esc(apexAssets["Required Apex Asset types"] || "")}</li>
+          <li><strong>Knowledge Graph:</strong> ${esc(knowledgeGraph["Required output shape"] || "")}</li>
+          <li><strong>Trust Relay:</strong> ${esc(trustRelay["Required workstreams"] || "")}</li>
+          <li><strong>Technical/entity foundation:</strong> ${esc(technicalFoundation["Required systems"] || "")}</li>
+          <li><strong>Refresh and defense:</strong> ${esc(cadence["Immediate next actions"] || "")}</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Operating cadence</h2>
+        <p>${esc(cadence["Weekly rhythm"] || "")}</p>
+        <p>${esc(cadence["30/60/90 public commitments"] || "")}</p>
+        <p>${esc(cadence["Immediate next actions"] || "")}</p>
+      </section>
+
+      <section>
+        <h2>Strategy call</h2>
+        <p>If ${esc(companyContext.Company)} wants to own the creator monetization shortlist, the opening move is already defined in the approved brief.</p>
+        <p><a href="https://cal.com/memetik/letstalk">Book a strategy call</a></p>
+      </section>
+
+      <section>
+        <h2>Supporting evidence appendix</h2>
+        <p><strong>Proof model:</strong> ${esc(measurement["Measurement frame"] || "")}</p>
+        <p><strong>Revenue-model note:</strong> ${esc(measurement["Revenue-model note"] || "")}</p>
+        <ul>
+          ${claims
+            .slice(0, 4)
+            .map((claim) => `<li>${esc(claim.fields.statement || claim.title)} (${esc(claim.fields.certainty || "")}, checked ${esc(claim.fields.checked_at || "")})</li>`)
+            .join("\n          ")}
+        </ul>
+      </section>
+    </main>`;
 }
 
 // ── Content generators ──────────────────────────────────────────
@@ -488,15 +721,24 @@ function main() {
     bodyContent: strategyContent(),
   });
 
-  // Static strategy pages
-  for (const p of [
-    { route: "/strategy/bts", title: "BTS Counter-Offensive — Strategic Growth Plan | MEMETIK", description: "Strategic growth plan for BTS — content, SEO, and AI visibility counter-offensive." },
-    { route: "/strategy/signify-ip", title: "Signify IP — SEO & AEO Strategy | MEMETIK", description: "SEO and AEO strategy proposal for Signify IP trade mark services." },
-    { route: "/strategy/uleads", title: "Uleads — SEO & AEO Strategy | MEMETIK", description: "SEO and AEO strategy proposal for Uleads insurance comparison platform." },
-    { route: "/bts", title: "Behind the Scenes | MEMETIK", description: "Go behind the scenes of how MEMETIK engineers AI visibility for brands." },
-  ]) {
-    allPages.push({ ...p, bodyContent: `<main><h1>${esc(p.title.split("|")[0].trim())}</h1><p>${esc(p.description)}</p></main>` });
+  // Strategy routes derive from the shared canonical registry used by the app router.
+  for (const entry of STRATEGY_REGISTRY.routes) {
+    const bodyContent = entry.prerenderMode === "brief" ? briefStrategyContent(entry) : summaryStrategyContent(entry);
+
+    allPages.push({
+      route: entry.route,
+      title: entry.title,
+      description: entry.description,
+      bodyContent,
+    });
   }
+
+  allPages.push({
+    route: "/bts",
+    title: "Behind the Scenes | MEMETIK",
+    description: "Go behind the scenes of how MEMETIK engineers AI visibility for brands.",
+    bodyContent: `<main><h1>Behind the Scenes</h1><p>Go behind the scenes of how MEMETIK engineers AI visibility for brands.</p></main>`,
+  });
 
   // 404
   allPages.push({

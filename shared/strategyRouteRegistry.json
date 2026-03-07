@@ -1,0 +1,71 @@
+{
+  "routes": [
+    {
+      "slug": "bts",
+      "route": "/strategy/bts",
+      "componentKey": "bts",
+      "title": "BTS Counter-Offensive — Strategic Growth Plan | MEMETIK",
+      "description": "Strategic growth plan for BTS — content, SEO, and AI visibility counter-offensive.",
+      "prerenderMode": "summary"
+    },
+    {
+      "slug": "bts-2",
+      "route": "/strategy/bts-2",
+      "componentKey": "bts-2",
+      "title": "Behind the Scenes — Founder Strategy Memo | MEMETIK",
+      "description": "Founder-facing strategy memo for Behind the Scenes focused on creator monetization recommendation-share, commercial comparison wedges, and a 90-day execution plan.",
+      "prerenderMode": "brief",
+      "briefPath": "/Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation/examples/BTS-Strategy-Brief.md"
+    },
+    {
+      "slug": "signify-ip",
+      "route": "/strategy/signify-ip",
+      "componentKey": "signify-ip",
+      "title": "Signify IP — SEO & AEO Strategy | MEMETIK",
+      "description": "SEO and AEO strategy proposal for Signify IP trade mark services.",
+      "prerenderMode": "summary"
+    },
+    {
+      "slug": "uleads",
+      "route": "/strategy/uleads",
+      "componentKey": "uleads",
+      "title": "Uleads — SEO & AEO Strategy | MEMETIK",
+      "description": "SEO and AEO strategy proposal for Uleads insurance comparison platform.",
+      "prerenderMode": "summary"
+    },
+    {
+      "slug": "kinso",
+      "route": "/strategy/kinso",
+      "componentKey": "kinso",
+      "title": "Kinso — SEO & AEO Strategy | MEMETIK",
+      "description": "SEO and AEO strategy proposal for Kinso.",
+      "prerenderMode": "summary"
+    }
+  ],
+  "parity": {
+    "requiredCanonicalTerms": [
+      "Money Entities",
+      "Apex Assets",
+      "Knowledge Graph",
+      "Trust Relay",
+      "recommendation-share"
+    ],
+    "downstreamBannedTerms": [
+      "Foundation Assets",
+      "AI share of voice",
+      "pSEO",
+      "programmatic SEO"
+    ],
+    "requiredHtmlSections": [
+      "Current state",
+      "Opportunity / right to win",
+      "Competitive gap",
+      "AI visibility / answer-surface gap",
+      "90-day wedge",
+      "What Memetik builds and ships",
+      "Operating cadence",
+      "Strategy call",
+      "Supporting evidence appendix"
+    ]
+  }
+}

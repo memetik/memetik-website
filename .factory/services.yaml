@@ -1,0 +1,18 @@
+commands:
+  install: npm install
+  typecheck: npm run check
+  build: npm run build
+  test: npm run build:client
+  lint: npm run check
+  verify_contracts: python3 "/Users/house/projects/agency/memetik-website/.factory/bin/verify_generation_contracts.py" --mode contracts
+  verify_brief: python3 "/Users/house/projects/agency/memetik-website/.factory/bin/verify_generation_contracts.py" --mode brief
+  verify_full_generation: python3 "/Users/house/projects/agency/memetik-website/.factory/bin/verify_generation_contracts.py" --mode full
+  generate_bts: node scripts/research-pipeline/generate-strategy.cjs --slug bts-2
+
+services:
+  cliproxy:
+    start: echo "Using existing local ChatGPT 5.4 cli proxy on http://127.0.0.1:8327/v1"
+    stop: echo "Leaving external local ChatGPT 5.4 cli proxy on http://127.0.0.1:8327/v1 unchanged"
+    healthcheck: curl -sf http://127.0.0.1:8327/v1/models > /dev/null
+    port: 8327
+    depends_on: []
