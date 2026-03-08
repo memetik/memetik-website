@@ -44,6 +44,10 @@ function formatNumber(value: number) {
   return new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(value);
 }
 
+function formatPercent(value: number) {
+  return `${value.toFixed(1)}%`;
+}
+
 function MetricStackCard({
   label,
   value,
@@ -184,7 +188,7 @@ const executiveMetrics = [
   {
     label: "Expected traffic in 12 months",
     value: formatNumber(191043),
-    note: "Base-case cumulative traffic if BTS wins the Whop / Patreon comparison layer first, then compounds outward.",
+    note: "Base-case cumulative traffic if BTS wins the competitor-brand decision layer first, then compounds outward into broader creator-platform demand.",
     icon: <TrendingUp className="h-5 w-5" />,
   },
   {
@@ -195,16 +199,37 @@ const executiveMetrics = [
   },
   {
     label: "First 6-month target",
-    value: formatNumber(75000),
-    note: "The six-month goal is not broad category dominance. It is making BTS visible in the buying moments where serious creators decide what platform deserves trust.",
+    value: formatNumber(70686),
+    note: "The six-month goal is not broad category dominance. It is the current base-case milestone from the BTS model if BTS becomes visible in the buying moments where serious creators decide what platform deserves trust.",
+    icon: <Target className="h-5 w-5" />,
+  },
+];
+
+const trafficAttributionMetrics = [
+  {
+    label: "Competitor-brand traffic",
+    value: formatNumber(169225),
+    note: `${formatPercent(88.6)} of the 12-month base case is attributable to competitor-brand demand across Patreon, Kajabi, Skool, Circle / Circles, Teachable, and Thinkific.`,
+    icon: <Swords className="h-5 w-5" />,
+  },
+  {
+    label: "Unbranded traffic",
+    value: formatNumber(21818),
+    note: `${formatPercent(11.4)} comes from unbranded creator-platform demand such as creator monetization platform, creator platform, pricing, reviews, and adjacent category queries.`,
+    icon: <Search className="h-5 w-5" />,
+  },
+  {
+    label: "Patreon alone",
+    value: formatNumber(112080),
+    note: `${formatPercent(58.7)} of the full base-case model comes from Patreon-linked demand, which means the current traffic story is more concentrated than the page previously implied.`,
     icon: <Target className="h-5 w-5" />,
   },
 ];
 
 const immediateActions = [
   {
-    title: "Own the Whop and Patreon decision layer first",
-    body: "Start with Whop alternative, BTS vs Whop, Patreon alternative, creator monetization platform, and adjacent comparison pages where buying intent is already visible.",
+    title: "Own the competitor-brand decision layer first",
+    body: "Start with Patreon alternative, Kajabi alternative, creator monetization platform, Kajabi pricing, Skool pricing, and adjacent comparison pages where buying intent is already visible in the current model.",
   },
   {
     title: "Build visibility across Google and AI answers at the same time",
@@ -278,10 +303,10 @@ const rightToWinCards = [
   {
     eyebrow: "Opening wedge",
     title: "Comparison and monetization demand are the fastest commercial opening.",
-    body: "Validated demand clusters already point toward creator monetization alternatives, Whop comparisons, Patreon alternatives, pricing explainers, and adjacent creator-platform buying terms. That is where BTS can get into consideration first.",
+    body: "Validated demand clusters already point toward competitor-brand demand, creator monetization alternatives, Patreon alternatives, pricing explainers, and adjacent creator-platform buying terms. That is where BTS can get into consideration first.",
     bullets: [
-      "Whop alternative and BTS vs Whop are especially clean opening pages",
-      "Patreon alternative and pricing-intent pages widen the evaluation layer",
+      "Patreon alternative plus Kajabi / Skool / Circle decision pages are the clearest opening assets in the current model",
+      "Creator monetization platform and pricing-intent pages widen the evaluation layer",
       "Broader category coverage becomes more winnable after the decision layer moves",
     ],
     icon: <Target className="h-5 w-5" />,
@@ -371,7 +396,7 @@ const promptExamples = [
     prompt: "behind the scenes creator monetization platform alternatives",
     takeaway: "Even branded alternative prompts still redirect attention toward larger incumbents.",
     detail:
-      "This is why the first wave of BTS 3 should lead with alternative and comparison pages that make the Whop and Patreon contrast explicit and easy to trust.",
+      "This is why the first wave of BTS 3 should lead with alternative and comparison pages that make the Patreon / Kajabi / Skool contrast explicit and easy to trust, even while Whop remains a strategic competitor in the broader story.",
   },
   {
     platform: "Gemini · AU",
@@ -383,25 +408,25 @@ const promptExamples = [
 ];
 
 const upsidePoints = [
-  { month: 1, low: 700, base: 1200, high: 1800 },
-  { month: 2, low: 6500, base: 9500, high: 14000 },
-  { month: 3, low: 19000, base: 28656, high: 42000 },
-  { month: 4, low: 29000, base: 42000, high: 63000 },
-  { month: 5, low: 40000, base: 58000, high: 86000 },
-  { month: 6, low: 51500, base: 75000, high: 110000 },
-  { month: 7, low: 63000, base: 93000, high: 136000 },
-  { month: 8, low: 74500, base: 112000, high: 164000 },
-  { month: 9, low: 86000, base: 132000, high: 194000 },
-  { month: 10, low: 97000, base: 151000, high: 224000 },
-  { month: 11, low: 105000, base: 171500, high: 255000 },
+  { month: 1, low: 3558, base: 7642, high: 14268 },
+  { month: 2, low: 8303, base: 17194, high: 31390 },
+  { month: 3, low: 14234, base: 28656, high: 51366 },
+  { month: 4, low: 21351, base: 42029, high: 74195 },
+  { month: 5, low: 29654, base: 55402, high: 97025 },
+  { month: 6, low: 39143, base: 70686, high: 122708 },
+  { month: 7, low: 48632, base: 85969, high: 148391 },
+  { month: 8, low: 59307, base: 103163, high: 174074 },
+  { month: 9, low: 71168, base: 120357, high: 199757 },
+  { month: 10, low: 84216, base: 139461, high: 228293 },
+  { month: 11, low: 100822, base: 164297, high: 256830 },
   { month: 12, low: 112588, base: 191043, high: 285367 },
 ];
 
 const operatingTimelinePoints = [
-  { month: 1, low: 700, base: 1200, high: 1800 },
-  { month: 2, low: 6500, base: 9500, high: 14000 },
-  { month: 3, low: 19000, base: 28656, high: 42000 },
-  { month: 6, low: 51500, base: 75000, high: 110000 },
+  { month: 1, low: 3558, base: 7642, high: 14268 },
+  { month: 2, low: 8303, base: 17194, high: 31390 },
+  { month: 3, low: 14234, base: 28656, high: 51366 },
+  { month: 6, low: 39143, base: 70686, high: 122708 },
   { month: 12, low: 112588, base: 191043, high: 285367 },
 ];
 
@@ -411,9 +436,9 @@ const operatingMilestones = [
     month: 1,
     title: "Claim the first comparison pages",
     detail:
-      "Launch Whop alternative, BTS vs Whop, Patreon alternative, creator monetization platform, and the first pricing/comparison pages, then fix the technical/entity layer so those assets can actually move.",
+      "Launch Patreon alternative, Kajabi alternative, creator monetization platform, and the first pricing/comparison pages, then fix the technical/entity layer so those assets can actually move.",
     trafficLabel: "Base traffic",
-    trafficValue: 1200,
+    trafficValue: 7642,
   },
   {
     label: "Month 2",
@@ -422,7 +447,7 @@ const operatingMilestones = [
     detail:
       "Review profiles, listicles, Reddit/community placements, editorial mentions, and early backlinks reinforce the first decision pages so BTS is not telling the story alone.",
     trafficLabel: "Base traffic",
-    trafficValue: 9500,
+    trafficValue: 17194,
   },
   {
     label: "Month 3",
@@ -440,7 +465,7 @@ const operatingMilestones = [
     detail:
       "By month six, BTS should have a real comparison layer, real proof surfaces, stronger AI/search visibility, and enough repeated presence that displacing it becomes harder for incumbents.",
     trafficLabel: "Base traffic",
-    trafficValue: 75000,
+    trafficValue: 70686,
   },
   {
     label: "Month 12",
@@ -456,10 +481,10 @@ const operatingMilestones = [
 const monthPlan = [
   {
     label: "Month 1",
-    title: "Open with the pages that make the Whop contrast impossible to miss",
+    title: "Open with the pages that make the serious-business contrast impossible to miss",
     body: "This month is about concentration. Publish the first alternative and comparison pages, clean the technical/entity layer, and make BTS legible as the serious-business option before broader expansion begins.",
     bullets: [
-      "Ship Whop alternative, BTS vs Whop, Patreon alternative, creator monetization platform, and early pricing/comparison pages.",
+      "Ship Patreon alternative, Kajabi alternative, creator monetization platform, and early pricing/comparison pages.",
       "Lock schema, canonicals, sitemap hygiene, Bing Webmaster Tools, and IndexNow around the first page set.",
       "Start the first review-profile and creator-community visibility pushes immediately.",
     ],
@@ -615,12 +640,37 @@ const competitorSpendRows = [
 ];
 
 const targetQueryRows = [
-  ["best creator platform 2026", "Weak (Whop / Kajabi)", "Medium"],
-  ["best Whop alternative", "Nobody", "Easy"],
-  ["Whop vs BTS", "Nobody", "Easy"],
-  ["creator platform with lowest fees", "Scattered", "Medium"],
-  ["best platform for selling digital products", "Whop (weak)", "Medium"],
-  ["best platform to build a real business", "Nobody", "Easy"],
+  ["patreon", "Category & Brand Demand", "TOFU", formatNumber(112080)],
+  ["kajabi", "Category & Brand Demand", "TOFU", formatNumber(17424)],
+  ["skool", "Category & Brand Demand", "TOFU", formatNumber(11168)],
+  ["circle app", "Buyer Guides", "BOFU", formatNumber(2623)],
+  ["creator monetization platform", "Buyer Guides", "BOFU", formatNumber(158)],
+  ["patreon alternative", "Alternatives & Comparisons", "BOFU", formatNumber(465)],
+  ["kajabi pricing", "Pricing & Cost", "BOFU", formatNumber(823)],
+  ["skool reviews", "Reviews & Social Proof", "BOFU", formatNumber(53)],
+];
+
+const attributionBreakdownRows = [
+  ["Competitor-brand keywords", formatNumber(169225), formatPercent(88.6), "Patreon, Kajabi, Skool, Circle / Circles, Teachable, Thinkific"],
+  ["Unbranded keywords", formatNumber(21818), formatPercent(11.4), "Creator monetization platform, creator platform, pricing, reviews, and adjacent category demand"],
+  ["Patreon alone", formatNumber(112080), formatPercent(58.7), "The single largest traffic driver in the current model"],
+];
+
+const clusterAttributionRows = [
+  ["Category & Brand Demand", formatNumber(180999), formatPercent(94.7), "Mostly branded competitor and category demand; this is where the current model is concentrated"],
+  ["Buyer Guides", formatNumber(6615), formatPercent(3.5), "Creator monetization platform, creator platform, and adjacent buyer-guide queries"],
+  ["Alternatives & Comparisons", formatNumber(2118), formatPercent(1.1), "Patreon alternative, Kajabi alternative, and adjacent comparison terms"],
+  ["Pricing & Cost", formatNumber(1228), formatPercent(0.6), "Kajabi pricing, Skool pricing, Patreon cost"],
+  ["Reviews & Social Proof", formatNumber(80), "<0.1%", "Skool reviews and adjacent review-proof queries"],
+];
+
+const brandAttributionRows = [
+  ["Patreon", formatNumber(112080), formatPercent(58.7), "Primary model driver"],
+  ["Kajabi", formatNumber(17424), formatPercent(9.1), "Second-largest branded source"],
+  ["Circle / Circles", formatNumber(15261), formatPercent(8.0), "Includes Circle / Circles demand"],
+  ["Skool", formatNumber(12057), formatPercent(6.3), "Large branded demand bucket"],
+  ["Teachable + Thinkific", formatNumber(2997), formatPercent(1.6), "Smaller supporting branded demand"],
+  ["Unbranded total", formatNumber(21818), formatPercent(11.4), "All non-competitor demand combined"],
 ];
 
 const publishingPlatformRows = [
@@ -635,6 +685,8 @@ const publishingPlatformRows = [
 
 const appendixAssumptions = [
   "The visible traffic numbers are planning estimates derived from the approved BTS strategy brief and should be read as directional growth modeling rather than guaranteed outcomes.",
+  "The current BTS traffic model is heavily concentrated in competitor-brand demand rather than broad unbranded category demand.",
+  "Whop remains a strategic competitor in the narrative, but the current modeled traffic attribution does not include Whop-branded keywords.",
   "The old BTS page contained strategically useful tactical detail; BTS 3 keeps the relevant parts, but filters them through the cleaner founder-facing memo structure.",
   "Public AI visibility conclusions remain softened where platform probing was incomplete. The page does not upgrade unsupported probe gaps into precise public certainty.",
   "Revenue planning still requires client ACV/AOV and funnel inputs before commitments should be treated as financial forecasts.",
@@ -671,7 +723,7 @@ export default function StrategyBts3() {
                   BTS does not need to become the biggest creator marketplace. It needs to become the platform serious creators trust when they want to build a real business.
                 </p>
                 <p className="mt-4 max-w-3xl text-sm leading-7 text-white/66 md:text-base">
-                  The old BTS page was right about the strategic contrast. BTS 2 was right about the founder-facing wedge. BTS 3 combines both: own the Whop and Patreon comparison layer, build answer-surface and search visibility together, and surround the whole system with enough proof that the market stops treating BTS like a hidden product.
+                  The old BTS page was right about the strategic contrast. BTS 2 was right about the founder-facing wedge. BTS 3 combines both: own the competitor-brand and creator-monetization decision layer, build answer-surface and search visibility together, and surround the whole system with enough proof that the market stops treating BTS like a hidden product.
                 </p>
               </div>
             </HighlightBox>
@@ -695,7 +747,7 @@ export default function StrategyBts3() {
           <StrategySectionShell glow="mixed">
             <StrategySectionLead
               takeaway="Google still drives creator-platform discovery, but buyer consideration now spills across answer engines, review surfaces, founder communities, and editorial comparisons before a founder ever commits."
-              body="For BTS, the visibility problem is not just about rankings. It is about becoming a repeated answer when someone asks what platform they should trust to build a real business, what to use instead of Whop, or how creator monetization platforms actually compare."
+              body="For BTS, the visibility problem is not just about rankings. It is about becoming a repeated answer when someone asks what platform they should trust to build a real business, what to use instead of Patreon or Kajabi, or how creator monetization platforms actually compare."
               implication="The winner is not the brand with one good result. It is the brand buyers keep encountering across multiple trusted surfaces."
             />
 
@@ -862,9 +914,30 @@ export default function StrategyBts3() {
             <StrategyCard className="mt-6 w-full">
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/42">Commercial interpretation</div>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-white/66">
-                The base case points to {formatNumber(191043)} expected visits across 12 months, with {formatNumber(75000)} as the first 6-month milestone and {formatNumber(285367)} as the aggressive upside. More important than the raw number is the source of that traffic: creator-business comparison and evaluation demand that can influence platform selection much more directly than broad awareness content.
+                The base case points to {formatNumber(191043)} expected visits across 12 months, with {formatNumber(70686)} as the current first 6-month milestone and {formatNumber(285367)} as the aggressive upside. More important than the raw number is the source of that traffic: the current model is driven mostly by competitor-brand search rather than broad unbranded creator-platform demand.
               </p>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-white/66">Revenue planning requires client ACV/AOV and funnel inputs.</p>
+            </StrategyCard>
+
+            <div className="mt-6">
+              {trafficAttributionMetrics.map((metric) => (
+                <MetricStackCard key={metric.label} {...metric} />
+              ))}
+            </div>
+
+            <div className="mt-6">
+              <DataTable
+                headers={["Traffic source", "Modeled 12m traffic", "Share of base case", "Interpretation"]}
+                rows={attributionBreakdownRows}
+                highlightRow={0}
+              />
+            </div>
+
+            <StrategyCard className="mt-6 w-full" glow="amber">
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/42">What this means</div>
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-white/66">
+                BTS 3 should now be read with a more honest lens: the current upside is still mostly a Patreon / Kajabi / Skool / Circle demand-capture story. Whop remains strategically relevant to the positioning, but Whop-branded traffic is not what is driving the current model.
+              </p>
             </StrategyCard>
           </StrategySectionShell>
         </section>
@@ -1014,10 +1087,27 @@ export default function StrategyBts3() {
 
             <StrategyAppendixSection
               defaultOpen
-              title="Target queries worth attacking"
-              description="Priority query types from the original BTS page that still fit the BTS 3 thesis."
+              title="Keyword breakdown behind the current model"
+              description="Representative keywords actually present in the current BTS traffic model, with their cluster, intent, and modeled 12-month contribution."
             >
-              <DataTable headers={["Query", "Current winner", "Difficulty"]} rows={targetQueryRows} />
+              <DataTable headers={["Keyword", "Cluster", "Intent", "Modeled 12m traffic"]} rows={targetQueryRows} />
+            </StrategyAppendixSection>
+
+            <StrategyAppendixSection
+              defaultOpen
+              title="Traffic attribution breakdown"
+              description="How much of the current BTS traffic model is attributable to competitor-brand demand versus unbranded category demand."
+            >
+              <div className="space-y-4">
+                <DataTable
+                  headers={["Cluster", "Modeled 12m traffic", "Share of base case", "What is inside"]}
+                  rows={clusterAttributionRows}
+                />
+                <DataTable
+                  headers={["Brand or bucket", "Modeled 12m traffic", "Share of base case", "Notes"]}
+                  rows={brandAttributionRows}
+                />
+              </div>
             </StrategyAppendixSection>
 
             <StrategyAppendixSection
