@@ -41,7 +41,7 @@ export default function StrategySignifyIP() {
     <div className="min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground font-sans overflow-x-hidden">
       <Nav />
 
-      <main className="pt-24 pb-32 px-4 md:px-12 container mx-auto max-w-5xl">
+      <main className="container mx-auto max-w-5xl px-4 pt-20 pb-24 sm:px-6 sm:pt-24 lg:px-12 lg:pb-32 [&_table]:text-xs sm:[&_table]:text-sm [&_th]:p-3 [&_td]:p-3 sm:[&_th]:p-4 sm:[&_td]:p-4 md:[&_th]:p-6 md:[&_td]:p-6">
 
         {/* Hero */}
         <div className="mb-16 md:mb-24 text-center md:text-left">
@@ -50,7 +50,7 @@ export default function StrategySignifyIP() {
             Strategy Document /// February 2026
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-foreground tracking-tighter mb-6 leading-[0.95]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground tracking-tighter mb-6 leading-[0.95]">
             SIGNIFY IP <br />
             <span className="text-primary">SEO & AEO STRATEGY.</span>
           </h1>

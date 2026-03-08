@@ -124,7 +124,7 @@ export function GrowthTimelineChart({
         </div>
 
         <div className="overflow-hidden rounded-[24px] border border-white/8 bg-black/20 p-3 md:p-4">
-          <svg viewBox={`0 0 ${width} ${height}`} className="h-[300px] w-full">
+          <svg viewBox={`0 0 ${width} ${height}`} className="h-[240px] w-full sm:h-[280px] md:h-[300px]">
             <defs>
               <linearGradient id="growth-timeline-band" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="rgba(244,228,205,0.24)" />

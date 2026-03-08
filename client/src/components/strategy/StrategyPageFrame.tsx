@@ -39,7 +39,7 @@ export function StrategyPageFrame({
       )}
     >
       <StrategyAtmosphere />
-      <main className={cn("relative z-10 px-4 pt-28 pb-32 sm:px-6 md:px-12", mainClassName)}>{children}</main>
+      <main className={cn("relative z-10 px-4 pt-24 pb-24 sm:px-6 sm:pt-28 sm:pb-32 md:px-10 lg:px-12", mainClassName)}>{children}</main>
     </div>
   );
 }

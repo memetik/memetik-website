@@ -45,7 +45,35 @@ export function WorkstreamTimeline({
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="space-y-3 md:hidden">
+          {tracks.map((track) => (
+            <div key={`${track.name}-mobile`} className="rounded-[24px] border border-white/8 bg-black/20 p-4">
+              <div className="text-sm font-semibold text-white">{track.name}</div>
+              {track.description ? <p className="mt-2 text-sm leading-6 text-white/55">{track.description}</p> : null}
+
+              <div className="mt-4 space-y-2">
+                {months.map((month, index) => {
+                  const cell = track.cells[index] || { label: "Maintain", tone: "light" as WorkstreamTone };
+                  return (
+                    <div key={`${track.name}-${month}-mobile`} className="rounded-[18px] border border-white/8 bg-white/[0.03] p-3">
+                      <div className="mb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/38">{month}</div>
+                      <div
+                        className={cn(
+                          "rounded-[14px] border px-3 py-2 text-sm font-medium leading-5",
+                          toneClasses[cell.tone || "base"]
+                        )}
+                      >
+                        {cell.label}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="hidden overflow-x-auto md:block">
           <div
             className="grid min-w-[960px] gap-3"
             style={{ gridTemplateColumns: `minmax(220px, 1.35fr) repeat(${months.length}, minmax(0, 1fr))` }}

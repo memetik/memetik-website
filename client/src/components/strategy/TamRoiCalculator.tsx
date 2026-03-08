@@ -63,8 +63,8 @@ export function TamRoiCalculator({
   return (
     <div className={`${strategyCardShell} ${className}`}>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.015))]" />
-      <div className="relative p-6 md:p-8">
-      <div className="flex items-center justify-between gap-4 mb-6">
+      <div className="relative p-5 md:p-8">
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h3 className="text-white font-bold">TAM × LTV Calculator</h3>
         <span className="text-xs font-mono uppercase tracking-[0.18em] text-white/42">estimate-only</span>
       </div>

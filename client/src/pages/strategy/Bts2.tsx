@@ -535,7 +535,7 @@ export default function StrategyBts2() {
   }, []);
 
   return (
-    <StrategyPageFrame mainClassName="px-4 pt-24 pb-28 sm:px-6 md:px-10">
+    <StrategyPageFrame mainClassName="px-4 pt-24 pb-24 sm:px-6 sm:pb-28 md:px-8 lg:px-10">
       <Nav />
 
       <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-14 md:gap-18">
@@ -802,7 +802,7 @@ export default function StrategyBts2() {
               ]}
               rows={competitorRows}
               highlightRow={5}
-              tableClassName="min-w-[880px]"
+              tableClassName="min-w-[720px] lg:min-w-[880px]"
             />
           </div>
         </StrategySectionShell>

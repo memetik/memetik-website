@@ -89,7 +89,7 @@ export function PhasedUpsideChart({
         </div>
 
         <div className="overflow-hidden rounded-[24px] border border-white/8 bg-black/20 p-3 md:p-4">
-          <svg viewBox={`0 0 ${width} ${height}`} className="h-[280px] w-full">
+          <svg viewBox={`0 0 ${width} ${height}`} className="h-[220px] w-full sm:h-[250px] md:h-[280px]">
             <defs>
               <linearGradient id="opportunity-band" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="rgba(244,228,205,0.24)" />
