@@ -7,7 +7,7 @@ const STRATEGY_MODEL = process.env.STRATEGY_MODEL || "gpt-5.4";
 const REPO_ROOT = path.join(__dirname, "..", "..");
 const CANONICAL_MIND_ROOT = "/Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation";
 const CANONICAL_MASTER_REFERENCE_PATH = "/Users/house/Mind/Areas/Agency/Lead-Magnets/MEMETIK-2026-AEO-Master-Reference.md";
-const PORTABLE_BTS_BRIEF_SNAPSHOT_PATH = path.join(REPO_ROOT, "content", "strategy-briefs", "BTS-Strategy-Brief.md");
+const PORTABLE_BRIEF_SNAPSHOT_DIR = path.join(REPO_ROOT, "content", "strategy-briefs");
 
 const REQUIRED_BRIEF_SECTIONS = [
   "## Lineage",
@@ -216,6 +216,154 @@ function pickPromptEvidence(promptResults = [], limit = 3) {
     .slice(0, limit);
 }
 
+function formatTargetMarkets(targetMarkets, fallbackMarkets = []) {
+  const values = Array.isArray(targetMarkets) && targetMarkets.length ? targetMarkets : fallbackMarkets;
+  if (!Array.isArray(values) || !values.length) return "unknown";
+
+  return values
+    .map((entry) => {
+      if (typeof entry === "string") return entry;
+      if (entry?.key) return entry.key;
+      if (entry?.locationName) return entry.locationName;
+      if (entry?.locationCode) return String(entry.locationCode);
+      return null;
+    })
+    .filter(Boolean)
+    .join(", ");
+}
+
+function getCategoryLabel(company) {
+  return (
+    String(company?.brandDisambiguation || "").trim().toLowerCase() ||
+    String(company?.category || "")
+      .split("/")
+      .pop()
+      ?.trim()
+      .toLowerCase() ||
+    String(company?.industry || "").trim().toLowerCase() ||
+    "category"
+  );
+}
+
+function selectPrimaryWedgeCluster(topClusters = []) {
+  return (
+    topClusters.find((cluster) => cluster?.intent === "BOFU" && !/category & brand/i.test(cluster?.cluster || "")) ||
+    topClusters.find((cluster) => !/category & brand/i.test(cluster?.cluster || "")) ||
+    topClusters[0] ||
+    null
+  );
+}
+
+function describePrimaryWedge(cluster, company) {
+  const categoryLabel = getCategoryLabel(company);
+  if (!cluster) {
+    return `Own the highest-intent commercial queries in ${categoryLabel} before broader category demand.`;
+  }
+
+  if (/alternatives? & comparisons?/i.test(cluster.cluster || "")) {
+    return `Own ${categoryLabel} alternatives and comparison queries before broader category demand.`;
+  }
+  if (/buyer guides?/i.test(cluster.cluster || "")) {
+    return `Own best-in-category and decision-stage ${categoryLabel} queries before broader category demand.`;
+  }
+  if (/pricing/i.test(cluster.cluster || "")) {
+    return `Own ${categoryLabel} pricing and value-comparison queries before broader category demand.`;
+  }
+  if (/reviews?/i.test(cluster.cluster || "")) {
+    return `Own ${categoryLabel} review and proof queries before broader category demand.`;
+  }
+
+  return `Own the highest-intent ${categoryLabel} decision queries before broader category demand.`;
+}
+
+function describeWhyCanWin(company, researchData, cluster) {
+  const authorityBase = formatNumber(researchData?.seoMetrics?.backlinkMetrics?.referringDomains);
+  const categoryLabel = getCategoryLabel(company);
+  const clusterLabel = cluster?.cluster ? cluster.cluster.toLowerCase() : "decision-stage demand";
+  return `${company.name} already has real category relevance and a usable authority base (${authorityBase} referring domains), but it has not yet turned that into a concentrated set of owned pages around ${clusterLabel} in ${categoryLabel}.`;
+}
+
+function describeRecommendation(cluster, company) {
+  const categoryLabel = getCategoryLabel(company);
+  if (!cluster) {
+    return {
+      recommendation: `Lead with the highest-intent ${categoryLabel} Money Entities.`,
+      pageSummary: `Start with the decision-stage queries where buying consideration is clearest.`,
+      rationale: `${company.name} already shows category demand, and the fastest path is concentrating the first wave on the highest-intent commercial terms.`,
+    };
+  }
+
+  if (/alternatives? & comparisons?/i.test(cluster.cluster || "")) {
+    return {
+      recommendation: `Lead with ${categoryLabel} alternatives and comparison Money Entities.`,
+      pageSummary: `Start with the alternatives and comparison layer where brand switching and shortlist decisions are clearest.`,
+      rationale: `${company.name} already shows live comparison relevance, and the strongest BOFU wedge is the alternatives/comparison cluster.`,
+    };
+  }
+  if (/buyer guides?/i.test(cluster.cluster || "")) {
+    return {
+      recommendation: `Lead with best-in-category and decision-stage ${categoryLabel} Money Entities.`,
+      pageSummary: `Start with the buyer-guide layer where category selection and product evaluation are clearest.`,
+      rationale: `${company.name} already has category relevance, and the strongest BOFU wedge is the buyer-guide cluster around best, use-case, and selection queries.`,
+    };
+  }
+  if (/pricing/i.test(cluster.cluster || "")) {
+    return {
+      recommendation: `Lead with ${categoryLabel} pricing and value-comparison Money Entities.`,
+      pageSummary: `Start with pricing and value questions where purchase friction is highest.`,
+      rationale: `${company.name} can win by making value, format, and price clarity easier to understand than competing options.`,
+    };
+  }
+  if (/reviews?/i.test(cluster.cluster || "")) {
+    return {
+      recommendation: `Lead with ${categoryLabel} review and proof-driven Money Entities.`,
+      pageSummary: `Start with reviews and proof where trust and product confidence matter most.`,
+      rationale: `${company.name} can win early by turning product proof into owned pages that capture validation-stage demand.`,
+    };
+  }
+
+  return {
+    recommendation: `Lead with the highest-intent ${categoryLabel} Money Entities.`,
+    pageSummary: `Start with the decision-stage queries where buying consideration is clearest.`,
+    rationale: `${company.name} already shows category demand, and the fastest path is concentrating the first wave on the highest-intent commercial terms.`,
+  };
+}
+
+function getApexAssetTypes(cluster) {
+  if (/buyer guides?/i.test(cluster?.cluster || "")) {
+    return "best-for/use-case pages, buyer guide pages, head-to-head comparison pages, product-form explainer pages, and ingredient/benefit proof pages.";
+  }
+  if (/reviews?/i.test(cluster?.cluster || "")) {
+    return "review pages, product proof pages, head-to-head comparison pages, expert roundup pages, and objection-handling FAQ pages.";
+  }
+  if (/pricing/i.test(cluster?.cluster || "")) {
+    return "pricing/value explainer pages, comparison pages, cost-of-use explainers, format breakdown pages, and objection-handling FAQ pages.";
+  }
+  return "flagship alternatives pages, head-to-head competitor pages, best-for/use-case pages, pricing/value explainer pages, and comparison rubric pages.";
+}
+
+function getKnowledgeGraphShape(company) {
+  const categoryText = `${company?.category || ""} ${company?.industry || ""}`.toLowerCase();
+  if (/consumer health|electrolyte|hydration/i.test(categoryText)) {
+    return "supporting retrieval pages around hydration scenarios, ingredients, benefits, routines, use cases, and competitor-adjacent terms.";
+  }
+  if (/creator/i.test(categoryText)) {
+    return "supporting retrieval pages around use cases, creator personas, monetization models, and competitor-adjacent terms.";
+  }
+  return "supporting retrieval pages around adjacent use cases, buyer context, proof objects, and competitor-adjacent terms.";
+}
+
+function getInitialAttackSurfaces(company) {
+  const categoryText = `${company?.category || ""} ${company?.industry || ""}`.toLowerCase();
+  if (/consumer health|electrolyte|hydration/i.test(categoryText)) {
+    return "Reddit/community threads, hydration roundups and comparison listicles, review-profile reinforcement, athlete/influencer proof, and expert commentary placements.";
+  }
+  if (/creator/i.test(categoryText)) {
+    return "Reddit/community threads, creator-software listicles, review-profile reinforcement, and expert commentary placements.";
+  }
+  return "Reddit/community threads, review-profile reinforcement, comparison listicles, editorial mentions, and expert commentary placements.";
+}
+
 function buildCanonicalBrief(company, researchData, canonicalInputs) {
   const today = new Date().toISOString().slice(0, 10);
   const totals = researchData?.tamModel?.totals || {};
@@ -225,6 +373,11 @@ function buildCanonicalBrief(company, researchData, canonicalInputs) {
   const topClusters = Array.isArray(researchData?.tamModel?.topOpportunityClusters)
     ? researchData.tamModel.topOpportunityClusters.slice(0, 4)
     : [];
+  const primaryWedgeCluster = selectPrimaryWedgeCluster(topClusters);
+  const categoryLabel = getCategoryLabel(company);
+  const primaryWedge = describePrimaryWedge(primaryWedgeCluster, company);
+  const whyCanWin = describeWhyCanWin(company, researchData, primaryWedgeCluster);
+  const wedgeRecommendation = describeRecommendation(primaryWedgeCluster, company);
   const competitors = Array.isArray(researchData?.competitors) ? researchData.competitors.slice(0, 5) : [];
   const rankedCommercialKeywords = (researchData?.rankedKeywords || [])
     .filter((keyword) => /\b(vs|alternative|alternatives|pricing|compare|comparison|best)\b/i.test(keyword.keyword || ""))
@@ -305,7 +458,7 @@ function buildCanonicalBrief(company, researchData, canonicalInputs) {
     },
     {
       claimId: "CLAIM-003",
-      statement: `Alternatives/comparison intent is the fastest commercial wedge because BOFU clusters are present in the payload and align with existing category behavior.`,
+      statement: `${primaryWedgeCluster?.cluster || "Decision-stage"} intent is the fastest commercial wedge because the strongest BOFU clusters in the payload align with current category behavior.`,
       sourceClass: "field_research",
       sourcePointer: canonicalInputs.paths.briefPath,
       sourcePayloadPaths: ["tamModel.topOpportunityClusters", "rankedKeywords"],
@@ -367,15 +520,15 @@ function buildCanonicalBrief(company, researchData, canonicalInputs) {
 - Domain: ${company.domain}
 - Category: ${company.category}
 - Industry: ${company.industry}
-- Target markets: ${(researchData?.meta?.targetMarkets || researchData?.seoMetrics?.marketsIncluded || []).join(", ") || "unknown"}
+- Target markets: ${formatTargetMarkets(researchData?.meta?.targetMarkets, researchData?.seoMetrics?.marketsIncluded || [])}
 - Current organic traffic: ${formatNumber(researchData?.seoMetrics?.organicTraffic)}
 - Current organic keywords: ${formatNumber(researchData?.seoMetrics?.organicKeywords)}
 - Referring domains: ${formatNumber(researchData?.seoMetrics?.backlinkMetrics?.referringDomains)}
 - Backlinks: ${formatNumber(researchData?.seoMetrics?.backlinkMetrics?.backlinks)}
 
 ## 3. Category Framing
-- Primary wedge: Own creator monetization alternatives/comparison recommendation-share before broader category demand.
-- Why this company can win now: ${company.name} already has a monetization-first positioning and a usable authority base, but it has not yet translated that into systematic Money Entity coverage.
+- Primary wedge: ${primaryWedge}
+- Why this company can win now: ${whyCanWin}
 - Commercial objective: Move from brand-adjacent discoverability to shortlist inclusion across Google, ChatGPT, Gemini, and other answer surfaces.
 - Doctrine constraint: Preserve Apex Assets + Knowledge Graph + Trust Relay + technical/entity foundation as one execution system.
 
@@ -403,13 +556,13 @@ ${rankedCommercialKeywords.map((keyword) => `- ${keyword}`).join("\n") || "- No 
 
 ## 7. Prioritized Wedge and Ranked Sequence
 ### REC-001
-- recommendation: Lead with Patreon-alternative and creator monetization comparison Money Entities.
-- company_specific_rationale: ${company.name} already shows one live comparison ranking signal and the strongest BOFU sample keywords are alternatives/comparisons.
+- recommendation: ${wedgeRecommendation.recommendation}
+- company_specific_rationale: ${wedgeRecommendation.rationale}
 - priority_rank: 1
 - claim_ids: CLAIM-001, CLAIM-003, CLAIM-006
 - gap_ids: none
 - visibility: page_extractable
-- page_summary: Start with the alternatives/comparison wedge where shortlist behavior is clearest.
+- page_summary: ${wedgeRecommendation.pageSummary}
 
 ### REC-002
 - recommendation: Pair every core Apex Asset with Trust Relay distribution and review-platform reinforcement.
@@ -430,18 +583,18 @@ ${rankedCommercialKeywords.map((keyword) => `- ${keyword}`).join("\n") || "- No 
 - page_summary: Show the actual shipping model and output ranges, not a vague promise.
 
 ## 8. Apex Assets Plan
-- First assets to ship: ${wedgeKeywords.slice(0, 5).join(", ") || "Patreon alternative, creator monetization platform comparison"}
-- Required Apex Asset types: flagship alternatives page, head-to-head competitor pages, best-for/use-case pages, pricing/cost explainer, comparison rubric page.
+- First assets to ship: ${wedgeKeywords.slice(0, 5).join(", ") || `${categoryLabel} comparison, ${categoryLabel} review`}
+- Required Apex Asset types: ${getApexAssetTypes(primaryWedgeCluster)}
 - Founder-facing point: These are the owned answer assets that create shortlist share fastest.
 
 ## 9. Knowledge Graph Plan
 - Supporting clusters: ${(topClusters || []).map((cluster) => cluster.cluster).join(", ") || "No clusters available"}
-- Required output shape: supporting retrieval pages around use cases, creator personas, monetization models, and competitor-adjacent terms.
+- Required output shape: ${getKnowledgeGraphShape(company)}
 - Founder-facing point: Knowledge Graph density makes answer engines repeatedly find the same commercial narrative.
 
 ## 10. Trust Relay Plan
 - Required workstreams: review platforms, community/forum participation, professional-network/newsletter distribution, listicles/publication-style placements, digital PR/editorial placements, backlinks to Apex Assets.
-- Initial attack surfaces: Reddit/community threads, creator-software listicles, review-profile reinforcement, expert commentary placements.
+- Initial attack surfaces: ${getInitialAttackSurfaces(company)}
 - Founder-facing point: Recommendation-share requires third-party trust, not just indexed pages.
 
 ## 11. Technical and Entity Foundation
@@ -524,19 +677,23 @@ function validateCanonicalBriefContent(content, briefPath) {
   }
 }
 
-function syncPortableBriefSnapshot(slug, briefContent) {
-  if (slug !== "bts-2") return null;
+function getPortableBriefSnapshotPath(slug) {
+  const fileName = slug === "bts-2" ? "BTS-Strategy-Brief.md" : `${pascalCase(slug)}-Strategy-Brief.md`;
+  return path.join(PORTABLE_BRIEF_SNAPSHOT_DIR, fileName);
+}
 
-  const snapshotDir = path.dirname(PORTABLE_BTS_BRIEF_SNAPSHOT_PATH);
-  if (!fs.existsSync(snapshotDir)) {
-    fs.mkdirSync(snapshotDir, { recursive: true });
+function syncPortableBriefSnapshot(slug, briefContent) {
+  const snapshotPath = getPortableBriefSnapshotPath(slug);
+
+  if (!fs.existsSync(PORTABLE_BRIEF_SNAPSHOT_DIR)) {
+    fs.mkdirSync(PORTABLE_BRIEF_SNAPSHOT_DIR, { recursive: true });
   }
 
-  fs.writeFileSync(PORTABLE_BTS_BRIEF_SNAPSHOT_PATH, briefContent);
-  validateCanonicalBriefContent(briefContent, PORTABLE_BTS_BRIEF_SNAPSHOT_PATH);
-  console.log(`  Portable BTS brief snapshot updated: ${PORTABLE_BTS_BRIEF_SNAPSHOT_PATH}`);
+  fs.writeFileSync(snapshotPath, briefContent);
+  validateCanonicalBriefContent(briefContent, snapshotPath);
+  console.log(`  Portable brief snapshot updated: ${snapshotPath}`);
 
-  return PORTABLE_BTS_BRIEF_SNAPSHOT_PATH;
+  return snapshotPath;
 }
 
 function createOrValidateCanonicalBrief(company, researchData, canonicalInputs) {

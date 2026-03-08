@@ -131,7 +131,7 @@ const INTENT_PATTERNS = {
   BOFU:
     /\b(vs|versus|alternative|alternatives|compare|comparison|best|top|review|reviews|pricing|price|cost|software|tool|tools|platform|app|apps|inbox|competitor|competitors)\b/i,
   MOFU:
-    /\b(template|templates|calculator|generator|checklist|case study|case studies|workflow|workflows|integration|integrations|migration|implementation|playbook|playbooks|framework|frameworks|process|processes|automation|automations|setup|onboarding|rollout|prioritization|triage|taxonomy|governance|collaboration|management|productivity|routing|categorization|organization|organizer|membership|memberships|subscription|subscriptions|community|communities|cohort|cohorts|course|courses|academy|creator monetization|monetization|paid community|digital products|fan club|fan community|coaching program)\b/i,
+    /\b(template|templates|calculator|generator|checklist|case study|case studies|workflow|workflows|integration|integrations|migration|implementation|playbook|playbooks|framework|frameworks|process|processes|automation|automations|setup|onboarding|rollout|prioritization|triage|taxonomy|governance|collaboration|management|productivity|routing|categorization|organization|organizer|membership|memberships|subscription|subscriptions|community|communities|cohort|cohorts|course|courses|academy|creator monetization|monetization|paid community|digital products|fan club|fan community|coaching program|benefit|benefits|ingredient|ingredients|daily hydration|hydration for|for athletes|for runners|for running|for workout|for workouts|for training|electrolytes for)\b/i,
   TOFU: /\b(what is|how to|guide|tips|ideas|trends|news|definition)\b/i,
 };
 
@@ -447,6 +447,7 @@ function buildCompanySemanticProfile(company) {
 function pickSemanticSeeds(company, semanticProfile, rankedKeywords = [], keywordGaps = []) {
   const anchors = (semanticProfile?.coreAnchors || []).slice(0, 6);
   const priorityAnchors = anchors.slice(0, 3);
+  const explicitSeeds = (semanticProfile?.explicitSeeds || []).slice(0, 4);
   const rankedSeeds = rankedKeywords
     .slice(0, 30)
     .filter((row) => Number(row?.volume || 0) >= 40)
@@ -469,7 +470,7 @@ function pickSemanticSeeds(company, semanticProfile, rankedKeywords = [], keywor
   }
 
   const orderedSeeds = [
-    ...(semanticProfile?.explicitSeeds || []),
+    ...explicitSeeds,
     ...priorityAnchors,
     ...mofuSeeds.slice(0, 6),
     ...rankedSeeds,

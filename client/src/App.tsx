@@ -15,6 +15,7 @@ const StrategySignifyIP = lazy(() => import("@/pages/StrategySignifyIP"));
 const StrategyBTS = lazy(() => import("@/pages/StrategyBTS"));
 const StrategyKinso = lazy(() => import("@/pages/strategy/Kinso"));
 const StrategyBts2 = lazy(() => import("@/pages/strategy/Bts2"));
+const StrategyDrinkhyro = lazy(() => import("@/pages/strategy/Drinkhyro"));
 const BTSOffer = lazy(() => import("@/pages/BTSOffer"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const ResourcePost = lazy(() => import("@/pages/ResourcePost"));
@@ -32,6 +33,7 @@ const strategyPageComponents = {
   "signify-ip": StrategySignifyIP,
   uleads: StrategyUleads,
   kinso: StrategyKinso,
+  drinkhyro: StrategyDrinkhyro,
 } as const;
 
 function Router() {

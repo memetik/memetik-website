@@ -40,6 +40,15 @@
       "title": "Kinso — SEO & AEO Strategy | MEMETIK",
       "description": "SEO and AEO strategy proposal for Kinso.",
       "prerenderMode": "summary"
+    },
+    {
+      "slug": "drinkhyro",
+      "route": "/strategy/drinkhyro",
+      "componentKey": "drinkhyro",
+      "title": "Hyro — Founder Strategy Memo | MEMETIK",
+      "description": "Founder-facing strategy memo for Hyro focused on electrolyte drink mix buyer demand, commercial comparison terms, off-site authority, and a 90-day execution plan.",
+      "prerenderMode": "brief",
+      "briefPath": "content/strategy-briefs/Drinkhyro-Strategy-Brief.md"
     }
   ],
   "parity": {

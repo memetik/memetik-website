@@ -700,6 +700,63 @@
     "industry": "E-commerce Tech"
   },
   {
+    "slug": "drinkhyro",
+    "name": "Hyro",
+    "domain": "drinkhyro.com",
+    "category": "Consumer Health / Electrolyte Drink Mix",
+    "industry": "Consumer Health",
+    "brandDisambiguation": "electrolyte powder drink mix",
+    "semanticSeeds": [
+      "electrolyte powder drink mix",
+      "electrolyte drink mix",
+      "hydration powder",
+      "hydration drink mix",
+      "sugar free hydration drink",
+      "electrolyte sachets",
+      "sports hydration powder",
+      "daily electrolyte powder"
+    ],
+    "semanticExclusions": [
+      "chatbot",
+      "conversational ai",
+      "voice ai",
+      "call center ai",
+      "patient engagement",
+      "healthcare automation",
+      "enterprise ai",
+      "customer support ai"
+    ],
+    "promptModifiers": {
+      "categoryLabel": "electrolyte powder drink mix"
+    },
+    "competitorSeeds": [
+      {
+        "name": "LMNT",
+        "domain": "drinklmnt.com"
+      },
+      {
+        "name": "Liquid I.V.",
+        "domain": "liquid-iv.com"
+      },
+      {
+        "name": "Hydralyte",
+        "domain": "hydralyte.com"
+      },
+      {
+        "name": "Nuun",
+        "domain": "nuunlife.com"
+      },
+      {
+        "name": "DripDrop",
+        "domain": "dripdrop.com"
+      },
+      {
+        "name": "Sodii",
+        "domain": "sodii.com"
+      }
+    ]
+  },
+  {
     "slug": "kinso",
     "name": "Kinso",
     "domain": "kinso.ai",
