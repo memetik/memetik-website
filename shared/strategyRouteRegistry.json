@@ -13,7 +13,7 @@
       "route": "/strategy/bts-2",
       "componentKey": "bts-2",
       "title": "Behind the Scenes — Founder Strategy Memo | MEMETIK",
-      "description": "Founder-facing strategy memo for Behind the Scenes focused on creator monetization recommendation-share, commercial comparison wedges, and a 90-day execution plan.",
+      "description": "Founder-facing strategy memo for Behind the Scenes focused on creator monetization buyer demand, commercial comparisons, off-site authority, and a 90-day execution plan.",
       "prerenderMode": "brief",
       "briefPath": "content/strategy-briefs/BTS-Strategy-Brief.md"
     },
@@ -43,25 +43,44 @@
     }
   ],
   "parity": {
-    "requiredCanonicalTerms": [
+    "internalCanonicalTerms": [
       "Money Entities",
       "Apex Assets",
       "Knowledge Graph",
       "Trust Relay",
       "recommendation-share"
     ],
-    "downstreamBannedTerms": [
+    "publicRequiredTerms": [
+      "bottom-of-funnel",
+      "off-site authority",
+      "reddit",
+      "community",
+      "whop",
+      "serious creators",
+      "real businesses",
+      "as many bottom-of-funnel pages as needed"
+    ],
+    "publicBannedTerms": [
       "Foundation Assets",
       "AI share of voice",
       "pSEO",
-      "programmatic SEO"
+      "programmatic SEO",
+      "Apex Assets",
+      "Knowledge Graph",
+      "Trust Relay",
+      "recommendation-share",
+      "shortlist",
+      "wedge",
+      "8–12",
+      "8-12"
     ],
     "requiredHtmlSections": [
       "Current state",
       "Opportunity / right to win",
       "Competitive gap",
       "AI visibility / answer-surface gap",
-      "90-day wedge",
+      "90-day opening move",
+      "Off-site authority",
       "What Memetik builds and ships",
       "Operating cadence",
       "Strategy call",

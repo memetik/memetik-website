@@ -71,8 +71,9 @@ def verify_bts_route_and_parity() -> None:
     registry = load_registry()
     routes = registry.get("routes", [])
     parity = registry.get("parity", {})
-    required_terms = parity.get("requiredCanonicalTerms", [])
-    banned_terms = parity.get("downstreamBannedTerms", [])
+    internal_terms = parity.get("internalCanonicalTerms", [])
+    public_required_terms = parity.get("publicRequiredTerms", [])
+    banned_terms = parity.get("publicBannedTerms", [])
     required_html_sections = parity.get("requiredHtmlSections", [])
 
     bts_route = next((route for route in routes if route.get("slug") == "bts-2"), None)
@@ -101,12 +102,11 @@ def verify_bts_route_and_parity() -> None:
     if "strategyRouteRegistry.json" not in prerender_text or "STRATEGY_REGISTRY.routes" not in prerender_text:
         raise SystemExit("Prerender script is not wired to the canonical strategy route registry")
 
-    must_contain_all(contract_text, required_terms, label="Strategy generation contract")
-    must_contain_all(brief_text, required_terms, label="Canonical BTS brief")
-    must_contain_all(page_text, required_terms, label="BTS page TSX")
-    must_contain_all(html_text, required_terms, label="Prerendered BTS HTML")
+    must_contain_all(contract_text, internal_terms, label="Strategy generation contract")
+    must_contain_all(brief_text, internal_terms, label="Canonical BTS brief")
+    must_contain_all(page_text, public_required_terms, label="BTS page TSX")
+    must_contain_all(html_text, public_required_terms, label="Prerendered BTS HTML")
 
-    must_exclude_all(brief_text, banned_terms, label="Canonical BTS brief")
     must_exclude_all(page_text, banned_terms, label="BTS page TSX")
     must_exclude_all(html_text, banned_terms, label="Prerendered BTS HTML")
     must_contain_all(html_text, required_html_sections, label="Prerendered BTS HTML")

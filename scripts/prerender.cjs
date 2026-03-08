@@ -135,6 +135,25 @@ function renderTable(table) {
     </table>`;
 }
 
+function translateFounderCopy(text) {
+  if (!text) return "";
+
+  return text
+    .replace(/Money Entities/g, "priority buying queries")
+    .replace(/Money Entity/g, "priority buying query")
+    .replace(/Apex Assets/g, "bottom-of-funnel pages")
+    .replace(/Apex Asset/g, "bottom-of-funnel page")
+    .replace(/Knowledge Graph/g, "supporting content network")
+    .replace(/Trust Relay/g, "off-site authority")
+    .replace(/recommendation-share/g, "default recommendation")
+    .replace(/\bshortlist\b/gi, "buying consideration")
+    .replace(/\bwedge\b/gi, "opening move")
+    .replace(/buying consideration share/gi, "buyer preference")
+    .replace(/output ranges/gi, "shipping plan")
+    .replace(/supporting supporting content network coverage/gi, "supporting content coverage")
+    .replace(/keep the documented shipping plan visible on the page\.?/gi, "keep the first 90 days concrete and visible on the page.");
+}
+
 function parseSubsections(section) {
   return section
     .split(/^### /m)
@@ -186,10 +205,6 @@ function briefStrategyContent(entry) {
     throw new Error(`Approved brief for ${entry.route} is missing core company or wedge fields.`);
   }
 
-  const heroTitle = `${companyContext.Company} can win a defined recommendation-share wedge`;
-  const recommendationSummaries = recommendations
-    .map((item) => item.fields.page_summary || item.fields.recommendation)
-    .filter(Boolean);
   const sourceTrace = [
     metadata["Generated at"] ? `Approved brief dated ${metadata["Generated at"]}` : null,
     metadata["Payload confidence"] ? `Payload confidence ${metadata["Payload confidence"]}` : null,
@@ -198,14 +213,41 @@ function briefStrategyContent(entry) {
     .filter(Boolean)
     .join(" · ");
 
+  const isBts = entry.slug === "bts-2";
+  const heroTitle = isBts
+    ? "Behind the Scenes can become the platform serious creators choose to build real businesses"
+    : `${companyContext.Company} can win a defined commercial opening move`;
+  const heroSubtitle = isBts
+    ? "BTS should own the alternatives and comparison queries where founders choose between BTS, Whop, Patreon, Kajabi, Circle, and Skool."
+    : translateFounderCopy(categoryFraming["Primary wedge"] || "");
+  const rightToWin = translateFounderCopy(categoryFraming["Why this company can win now"] || "");
+  const commercialObjective = translateFounderCopy(categoryFraming["Commercial objective"] || "");
+  const recommendationSummaries = recommendations
+    .map((item) => translateFounderCopy(item.fields.page_summary || item.fields.recommendation))
+    .filter(Boolean);
+  const openingMoveSummary = translateFounderCopy(
+    recommendations[0]?.fields.recommendation || categoryFraming["Primary wedge"] || ""
+  );
+  const bottomOfFunnelSummary = `${translateFounderCopy(
+    apexAssets["First assets to ship"] || ""
+  )}. Memetik builds as many bottom-of-funnel pages as needed to cover demand, then expands supporting coverage behind the winners.`;
+  const supportingCoverageSummary = translateFounderCopy(knowledgeGraph["Supporting clusters"] || "");
+  const offsiteAuthoritySummary = translateFounderCopy(trustRelay["Required workstreams"] || "");
+  const offsiteAttackSurfaces = translateFounderCopy(trustRelay["Initial attack surfaces"] || "");
+
   return `
     <main>
       <section>
         <p>00 · Founder strategy memo</p>
         <h1>${esc(heroTitle)}</h1>
-        <p>${esc(categoryFraming["Primary wedge"] || "")}</p>
-        <p>${esc(categoryFraming["Why this company can win now"] || "")}</p>
-        <p>${esc(categoryFraming["Commercial objective"] || "")}</p>
+        <p>${esc(heroSubtitle)}</p>
+        <p>${esc(rightToWin)}</p>
+        <p>${esc(commercialObjective)}</p>
+        ${
+          isBts
+            ? `<p><strong>Commercial contrast:</strong> BTS should be the clear alternative to Whop for serious creators building real businesses.</p>`
+            : ""
+        }
         <p><strong>Source trace:</strong> ${esc(sourceTrace)}</p>
       </section>
 
@@ -223,7 +265,12 @@ function briefStrategyContent(entry) {
 
       <section>
         <h2>Opportunity / right to win</h2>
-        <p>${esc(categoryFraming["Why this company can win now"] || "")}</p>
+        <p>${esc(rightToWin)}</p>
+        ${
+          isBts
+            ? `<p>BTS can win the creator-business comparison layer by looking like the more serious platform choice when buyers compare it to Whop and other incumbents.</p>`
+            : ""
+        }
         <ol>
           ${recommendationSummaries.map((summary) => `<li>${esc(summary)}</li>`).join("\n          ")}
         </ol>
@@ -231,13 +278,18 @@ function briefStrategyContent(entry) {
 
       <section>
         <h2>Competitive gap</h2>
-        <p>${esc(companyContext.Company)} needs to close the retrieval and shortlist gap against the platforms already dominating category demand.</p>
+        <p>${esc(companyContext.Company)} needs to close the retrieval and buying-consideration gap against the platforms already dominating category demand.</p>
+        ${
+          isBts
+            ? `<p>That includes making the BTS vs Whop contrast visible anywhere founders compare creator-business platforms.</p>`
+            : ""
+        }
         ${renderTable(competitorTable)}
       </section>
 
       <section>
         <h2>AI visibility / answer-surface gap</h2>
-        <p>${esc(measurement["Measurement frame"] || "")}</p>
+        <p>${esc(translateFounderCopy(measurement["Measurement frame"] || ""))}</p>
         <ul>
           <li>${esc(currentState.chatgpt || "")}</li>
           <li>${esc(currentState.gemini || "")}</li>
@@ -251,53 +303,72 @@ function briefStrategyContent(entry) {
       </section>
 
       <section>
-        <h2>90-day wedge</h2>
-        <p>${esc(recommendations[0]?.fields.recommendation || categoryFraming["Primary wedge"] || "")}</p>
-        <h3>Money Entities</h3>
+        <h2>90-day opening move</h2>
+        <p>${esc(openingMoveSummary)}</p>
+        ${
+          isBts
+            ? `<p><strong>First move:</strong> publish Whop and Patreon comparison pages, then expand supporting coverage behind the pages that prove BTS is for serious creators building real businesses.</p>`
+            : ""
+        }
+        <h3>Priority buying queries</h3>
         <ol>
           ${moneyEntities.map((item) => `<li>${esc(item)}</li>`).join("\n          ")}
         </ol>
-        <h3>Apex Assets</h3>
-        <p>${esc(apexAssets["First assets to ship"] || "")}</p>
-        <p>${esc(apexAssets["Founder-facing point"] || "")}</p>
-        <h3>Knowledge Graph</h3>
-        <p>${esc(knowledgeGraph["Supporting clusters"] || "")}</p>
-        <p>${esc(knowledgeGraph["Founder-facing point"] || "")}</p>
+        <h3>Bottom-of-funnel pages</h3>
+        <p>${esc(bottomOfFunnelSummary)}</p>
+        <p>${esc(translateFounderCopy(apexAssets["Founder-facing point"] || ""))}</p>
+        <h3>Supporting content coverage</h3>
+        <p>${esc(supportingCoverageSummary)}</p>
+        <p>${esc(translateFounderCopy(knowledgeGraph["Founder-facing point"] || ""))}</p>
+      </section>
+
+      <section>
+        <h2>Off-site authority</h2>
+        <p>${esc(offsiteAuthoritySummary)}</p>
+        <p>${esc(offsiteAttackSurfaces)}</p>
+        ${
+          isBts
+            ? `<p><strong>Reddit/community priority:</strong> BTS needs proof in creator conversations, Reddit threads, reviews, and editorials where buyers ask what to use instead of Whop.</p>`
+            : ""
+        }
       </section>
 
       <section>
         <h2>What Memetik builds and ships</h2>
         <ul>
-          <li><strong>Money Entities:</strong> ${esc(recommendations[0]?.fields.page_summary || "")}</li>
-          <li><strong>Apex Assets:</strong> ${esc(apexAssets["Required Apex Asset types"] || "")}</li>
-          <li><strong>Knowledge Graph:</strong> ${esc(knowledgeGraph["Required output shape"] || "")}</li>
-          <li><strong>Trust Relay:</strong> ${esc(trustRelay["Required workstreams"] || "")}</li>
+          <li><strong>Priority buying queries:</strong> ${esc(translateFounderCopy(recommendations[0]?.fields.page_summary || ""))}</li>
+          <li><strong>Bottom-of-funnel pages:</strong> ${esc(translateFounderCopy(apexAssets["Required Apex Asset types"] || ""))}</li>
+          <li><strong>Supporting content coverage:</strong> ${esc(translateFounderCopy(knowledgeGraph["Required output shape"] || ""))}</li>
+          <li><strong>Off-site authority:</strong> ${esc(offsiteAuthoritySummary)}</li>
           <li><strong>Technical/entity foundation:</strong> ${esc(technicalFoundation["Required systems"] || "")}</li>
-          <li><strong>Refresh and defense:</strong> ${esc(cadence["Immediate next actions"] || "")}</li>
+          <li><strong>Refresh and defense:</strong> ${esc(translateFounderCopy(cadence["Immediate next actions"] || ""))}</li>
         </ul>
       </section>
 
       <section>
         <h2>Operating cadence</h2>
-        <p>${esc(cadence["Weekly rhythm"] || "")}</p>
-        <p>${esc(cadence["30/60/90 public commitments"] || "")}</p>
-        <p>${esc(cadence["Immediate next actions"] || "")}</p>
+        <p>${esc(translateFounderCopy(cadence["Weekly rhythm"] || ""))}</p>
+        <p>${esc(translateFounderCopy(cadence["30/60/90 public commitments"] || ""))}</p>
+        <p>${esc(translateFounderCopy(cadence["Immediate next actions"] || ""))}</p>
       </section>
 
       <section>
         <h2>Strategy call</h2>
-        <p>If ${esc(companyContext.Company)} wants to own the creator monetization shortlist, the opening move is already defined in the approved brief.</p>
+        <p>If ${esc(companyContext.Company)} wants to become the obvious platform for serious creators building real businesses, the opening move is already defined in the approved brief.</p>
         <p><a href="https://cal.com/memetik/letstalk">Book a strategy call</a></p>
       </section>
 
       <section>
         <h2>Supporting evidence appendix</h2>
-        <p><strong>Proof model:</strong> ${esc(measurement["Measurement frame"] || "")}</p>
+        <p><strong>Proof model:</strong> ${esc(translateFounderCopy(measurement["Measurement frame"] || ""))}</p>
         <p><strong>Revenue-model note:</strong> ${esc(measurement["Revenue-model note"] || "")}</p>
         <ul>
           ${claims
             .slice(0, 4)
-            .map((claim) => `<li>${esc(claim.fields.statement || claim.title)} (${esc(claim.fields.certainty || "")}, checked ${esc(claim.fields.checked_at || "")})</li>`)
+            .map(
+              (claim) =>
+                `<li>${esc(translateFounderCopy(claim.fields.statement || claim.title))} (${esc(claim.fields.certainty || "")}, checked ${esc(claim.fields.checked_at || "")})</li>`
+            )
             .join("\n          ")}
         </ul>
       </section>

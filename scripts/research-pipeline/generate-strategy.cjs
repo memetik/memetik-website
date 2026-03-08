@@ -36,7 +36,8 @@ const REQUIRED_SECTION_PATTERNS = [
   /why .* can win|right to win/i,
   /competitive gap|competitive landscape/i,
   /ai visibility by llm|ai visibility|answer-engine visibility/i,
-  /90-day wedge|90 day wedge|first 90 days/i,
+  /90-day opening move|90 day opening move|first 90 days/i,
+  /off-site authority/i,
   /what memetik will actually deliver|what memetik actually builds and ships|what we will actually deliver|what memetik will build|delivery engine/i,
   /operating model|monthly operating system|workstreams/i,
   /why memetik/i,
@@ -793,16 +794,18 @@ CRITICAL RULES:
 36. Use plain founder language for traffic planning. In the visible UI, prefer "Total search opportunity", "Expected traffic in 12 months", "Aggressive upside", and "First 90-day target". Avoid jargon like reachable share, modeled capture rate, or execution capture rate.
 37. The page should look homepage-premium, not report-template-flat: use StrategyPageFrame for the page, StrategyHero for the hero, StrategySectionShell for major sections, StrategyCard for sub-blocks, and StrategyCTA for the close.
 38. Do not make the page feel like "look how much research we did." Make it feel like "we understand the market, your position, your wedge, and how to build the moat."
-39. The delivery scope must reflect the documented Memetik program from the playbook: Money Entity mapping, BOFU Apex Assets, MOFU comparison/evaluation content, TOFU/Knowledge Graph coverage, authority/distribution placements, review-platform work, Bing/IndexNow/schema infrastructure, and weekly optimization.
-40. Surface concrete program scale in founder-readable language. When company-specific overrides are not available, use the documented program ranges: 8–12 flagship assets, 20–50 comparison/category-capture pages, 200–2,500 programmatic/Knowledge Graph pages, and 35–75+ authority/distribution placements.
-41. Include a visible 30/60/90 rollout view using the documented operating plan: 30 days = 10 Apex Assets / 100 Knowledge Graph pages / 10 placements; 60 days = 25 Apex Assets / 400 pages / 25 placements; 90 days = 40 Apex Assets / 800 pages / 40 placements.
-42. The operating model must show the real weekly cadence: Monday research/entity updates, Tuesday-Wednesday asset production, Thursday distribution/trust relay, Friday metrics/iteration.
-43. The page must make it obvious that Memetik delivers both on-site production and off-site authority building; do not reduce the strategy to only content publishing.
-44. Executive-summary metric cards must remain readable with large six- and seven-figure values. Prefer a vertical or otherwise non-cramped layout over a forced four-across row.
-45. The 12-month opportunity curve must use cumulative traffic progression so the final point matches the visible "Expected traffic in 12 months" number, not a month-12 run-rate or first-90-day value.
-46. Surface the TAM / ROI calculator in or immediately after the Revenue / Commercial Impact section; do not bury it only in the appendix.
-47. Canonical lineage is mandatory and must remain visible in your reasoning: master reference -> generation contract -> brief -> page.
-48. Do not bypass or reinterpret the approved brief. Raw research payload is not the canonical page input.`;
+39. The delivery scope must reflect the documented Memetik program from the playbook: priority buying queries, bottom-of-funnel pages, comparison/evaluation content, supporting content coverage, off-site authority, review-platform work, Bing/IndexNow/schema infrastructure, and weekly optimization.
+40. Public pages must translate operator-only doctrine into plain founder language. Do not expose labels such as Money Entities, Apex Assets, Knowledge Graph, Trust Relay, recommendation-share, wedge, or shortlist in founder-facing copy.
+41. Do not promise a fixed public count of bottom-of-funnel pages. Explain that Memetik builds as many bottom-of-funnel pages as needed to cover the relevant demand, then expands supporting coverage and authority around the winners.
+42. Include a dedicated Off-site Authority section that explicitly covers Reddit/community participation, reviews, editorials, listicles, backlinks, and other third-party trust surfaces.
+43. For creator-platform strategies where relevant, position the company for serious creators building real businesses and counter-position clearly against Whop without inventing unsupported facts.
+44. The operating model must show the real weekly cadence: Monday research/entity updates, Tuesday-Wednesday asset production, Thursday distribution/off-site authority, Friday metrics/iteration.
+45. The page must make it obvious that Memetik delivers both on-site production and off-site authority building; do not reduce the strategy to only content publishing.
+46. Executive-summary metric cards must remain readable with large six- and seven-figure values. Prefer a vertical or otherwise non-cramped layout over a forced four-across row.
+47. The 12-month opportunity curve must use cumulative traffic progression so the final point matches the visible "Expected traffic in 12 months" number, not a month-12 run-rate or first-90-day value.
+48. Surface the TAM / ROI calculator in or immediately after the Revenue / Commercial Impact section; do not bury it only in the appendix.
+49. Canonical lineage is mandatory and must remain visible in your reasoning: master reference -> generation contract -> brief -> page.
+50. Do not bypass or reinterpret the approved brief. Raw research payload is not the canonical page input.`;
 }
 
 async function generateStrategyPage(company, researchData) {
@@ -839,7 +842,7 @@ Mandatory output structure additions:
 - Add an "Executive Summary" strip with 4 headline numbers: Total search opportunity, Expected traffic in 12 months, Aggressive upside, and First 90-day target, plus 3 immediate actions.
 - Use StrategyPageFrame, StrategyHero, StrategySectionShell, and StrategyCTA as the default page architecture.
 - Every primary section should use StrategySectionLead or an equivalent one-takeaway block.
-- Main narrative sections: "State of Search 2026", "Where ${company.name} Is Today" (or "Current State Snapshot"), "The Opportunity", "Why ${company.name} Can Win", "Competitive Gap", "AI Visibility Gap", "Revenue / Commercial Impact", "90-day Wedge", "What Memetik Actually Builds and Ships", "Operating Model", "Why Memetik".
+- Main narrative sections: "State of Search 2026", "Where ${company.name} Is Today" (or "Current State Snapshot"), "The Opportunity", "Why ${company.name} Can Win", "Competitive Gap", "AI Visibility Gap", "Revenue / Commercial Impact", "90-day Opening Move", "Off-site Authority", "What Memetik Actually Builds and Ships", "Operating Model", "Why Memetik".
 - Add an appendix / supporting evidence section using StrategyAppendixSection.
 - Put detailed keyword universe, assumptions/confidence, detailed competitor evidence, prompt evidence, and optional calculator in the appendix rather than the primary flow.
 - Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
@@ -851,10 +854,10 @@ Mandatory output structure additions:
 - Use researchData.topicalIntegrity to avoid headline claims from excluded or ambiguous keyword groups.
 - Include 2-3 real prompt examples inside the AI visibility section.
 - Include a concrete 90-day wedge: first entity/category wedge, first pages to ship, first prompts to win, first competitors to attack.
-- Add a dedicated section that makes the scope of execution unmistakable. It should explicitly show: Money Entity mapping, BOFU keyword targeting and Apex Assets, MOFU comparison/evaluation content, TOFU/programmatic content, aggressive backlink acquisition, digital PR / press release / listicle pushes, review-platform work, Bing/IndexNow/schema infrastructure, and third-party/forum/community placements.
+- Add a dedicated section that makes the scope of execution unmistakable. It should explicitly show: priority buying query mapping, bottom-of-funnel page production, comparison/evaluation content, supporting content coverage, aggressive backlink acquisition, digital PR / press release / listicle pushes, review-platform work, Bing/IndexNow/schema infrastructure, and third-party/forum/community placements.
 - Make the delivery section feel substantial enough that a founder can immediately see why this is a serious execution program rather than a light content retainer.
-- Use documented volume ranges when presenting scope: 8–12 flagship assets, 20–50 comparison/category pages, 200–2,500 Knowledge Graph pages, and 35–75+ authority/distribution placements.
-- Include a visible 30/60/90 rollout summary with documented outputs.
+- Do not use fixed public page-count promises like 8–12 flagship assets. Say Memetik builds as many bottom-of-funnel pages as needed to cover demand, then expands supporting coverage and authority behind the winners.
+- Include a visible 30/60/90 rollout summary with concrete outputs, but keep the language founder-readable rather than doctrine-heavy.
 - Prefer an infographic-style operating model visual that shows what Memetik is doing, what ships, and what BTS receives; avoid defaulting to a dense month-by-month grid unless it is clearly better.
 - In the operating model section, show the actual weekly cadence and the distribution workflow: publish core asset, break it into 10–20 micro-assets, push to 3–5 authority nodes, and link back consistently.
 - Keep the executive-summary metric cards vertically stacked or otherwise roomy enough that large values never overflow their containers.
@@ -862,6 +865,7 @@ Mandatory output structure additions:
 - Place the TAM / ROI calculator in or directly below the Revenue / Commercial Impact section so it is easy to find.
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue planning requires client ACV/AOV and funnel inputs."
 - If researchData.tamModel.assumptions includes planning assumptions, keep them in the appendix and explain them in normal English rather than coefficient language.
+- For BTS specifically, make the hero more commercial and punchy, make the Whop contrast visible, and frame BTS for serious creators building real businesses.
 - Reject any attempt to generate directly from raw research. The approved brief is already the canonical downstream planning artifact.
 
 Generate the complete TSX file now.`;

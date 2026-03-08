@@ -58,21 +58,21 @@ const executiveStats = [
   {
     label: "Expected traffic in 12 months",
     value: formatNumber(191043),
-    note: "Base case if BTS owns the initial commercial wedge and expands coverage behind it.",
+    note: "Base case if BTS owns the first commercial lane and expands coverage behind it.",
     valueClassName: "text-[clamp(1.7rem,3vw,2.7rem)]",
     icon: <TrendingUp className="h-5 w-5" />,
   },
   {
     label: "Aggressive upside",
     value: formatNumber(285367),
-    note: "Higher-end scenario if the category wedge compounds into broader creator-platform demand.",
+    note: "Higher-end scenario if the first commercial win compounds into broader creator-platform demand.",
     valueClassName: "text-[clamp(1.7rem,3vw,2.7rem)]",
     icon: <Sparkles className="h-5 w-5" />,
   },
   {
     label: "First 90-day target",
     value: formatNumber(28656),
-    note: "The first proof window is shortlist capture, not broad awareness at once.",
+    note: "The first proof window is buyer consideration, not broad awareness all at once.",
     valueClassName: "text-[clamp(1.7rem,3vw,2.7rem)]",
     icon: <Target className="h-5 w-5" />,
   },
@@ -94,7 +94,7 @@ const currentStateStats = [
   {
     label: "Referring domains",
     value: formatNumber(880),
-    note: "There is already enough authority to support a focused wedge if execution becomes systematic.",
+    note: "There is already enough authority to support a focused commercial opening move if execution becomes systematic.",
     icon: <Link2 className="h-5 w-5" />,
   },
   {
@@ -122,7 +122,7 @@ const opportunityCards = [
     traffic: "2,118",
     phase: "Phase 1",
     description:
-      "This is where shortlist behavior is clearest. Buyers compare platforms before they ever talk to sales or sign up for a trial.",
+      "This is where buying consideration is clearest. Buyers compare platforms before they ever talk to sales or sign up for a trial.",
     examples: ["patreon alternative", "kajabi alternative", "kajabi vs teachable"],
   },
   {
@@ -140,7 +140,7 @@ const opportunityCards = [
     traffic: "181,000",
     phase: "Phase 3",
     description:
-      "This is the larger long-game category prize. It becomes more winnable once BTS first owns a defined monetization wedge and earns outside proof.",
+      "This is the larger long-game category prize. It becomes more winnable once BTS first owns a defined monetization lane and earns outside proof.",
     examples: ["patreon", "kajabi", "skool"],
   },
 ];
@@ -205,7 +205,7 @@ const promptExamples = [
     takeaway:
       "Even branded alternative prompts still redirect attention toward bigger incumbents like Patreon and adjacent options like Ko-fi.",
     detail:
-      "This is exactly why the first wedge should be alternative and comparison pages: buyers are already asking shortlist-forming questions and answer engines are already trying to fill them.",
+      "This is exactly why the first move should be comparison pages: buyers are already asking decision-stage questions, and BTS needs pages that make it the serious-business alternative to options like Whop.",
   },
   {
     prompt: "behind the scenes creator monetization platform alternatives",
@@ -218,6 +218,8 @@ const promptExamples = [
 ];
 
 const firstPages = [
+  "Whop alternative",
+  "BTS vs Whop",
   "Patreon alternative",
   "Creator monetization platform",
   "Circle app",
@@ -230,6 +232,7 @@ const firstPages = [
 
 const firstPrompts = [
   "best creator monetization platform",
+  "best Whop alternative",
   "patreon alternative",
   "creator monetization platform alternatives",
   "kajabi alternative",
@@ -237,40 +240,41 @@ const firstPrompts = [
   "best platform for behind-the-scenes content",
 ];
 
-const firstCompetitors = ["Patreon", "Kajabi", "Circle", "Skool"];
+const firstCompetitors = ["Whop", "Patreon", "Kajabi", "Circle", "Skool"];
 
 const deliveryCategories = [
   {
-    label: "Money Entity mapping",
+    label: "Priority buying query mapping",
     detail:
-      "Prioritize the commercial prompt families that actually shape shortlists, not a random keyword backlog.",
+      "Prioritize the commercial prompt families that actually shape buyer decisions, not a random keyword backlog.",
   },
   {
-    label: "Owned answer system",
+    label: "Bottom-of-funnel pages",
     detail:
-      "Build Apex Assets plus surrounding comparison and evaluation pages that turn BTS into a credible buying option.",
+      "Build the decision pages, comparisons, and evaluation content that turn BTS into a credible buying option.",
   },
   {
-    label: "Retrieval density",
+    label: "Supporting coverage",
     detail:
-      "Expand the Knowledge Graph so answer engines keep finding the same commercial story in more contexts.",
+      "Expand supporting content so answer engines keep finding the same commercial story in more contexts.",
   },
   {
-    label: "Authority reinforcement",
+    label: "Off-site authority",
     detail:
-      "Push Trust Relay across review, editorial, community, and link-based surfaces until the market sees the same answer everywhere.",
+      "Push review, editorial, Reddit, community, and link-based proof until the market sees the same answer everywhere.",
   },
 ];
 
 const deliveryLanes = [
   {
-    category: "Owned wedge",
-    title: "Apex Assets + comparison pages",
-    volume: "8–12 flagship assets",
+    category: "On-site conversion layer",
+    title: "Bottom-of-funnel decision pages",
+    volume: "As many bottom-of-funnel pages as needed to cover real demand",
     whyItMatters:
-      "These are the pages that create shortlist share fastest: alternatives, comparisons, use-case pages, pricing explainers, and buying-rubric assets.",
+      "These are the pages that create buying consideration fastest: alternatives, comparisons, use-case pages, pricing explainers, and decision-support assets.",
     deliverables: [
       "Patreon alternative flagship page",
+      "Whop comparison and alternative pages",
       "Head-to-head competitor pages",
       "Best-for / use-case guides",
       "Pricing and cost transparency pages",
@@ -279,9 +283,9 @@ const deliveryLanes = [
   {
     category: "Commercial coverage",
     title: "Category-capture and evaluation layer",
-    volume: "20–50 pages",
+    volume: "Expanded anywhere buyers compare options",
     whyItMatters:
-      "BTS needs more than one hero page. It needs enough middle-funnel and commercial coverage that buyers keep encountering the same recommendation logic.",
+      "BTS needs more than one hero page. It needs enough middle-funnel and commercial coverage that buyers keep encountering the same business case.",
     deliverables: [
       "Alternatives and versus pages",
       "Buyer guide clusters",
@@ -291,25 +295,25 @@ const deliveryLanes = [
   },
   {
     category: "Scale layer",
-    title: "Knowledge Graph expansion",
-    volume: "200–2,500 pages",
+    title: "Supporting content network",
+    volume: "Scaled around the winning pages and use cases",
     whyItMatters:
-      "Programmatic and structured supporting pages create retrieval density, reinforce the wedge, and route authority back into flagship assets.",
+      "Supporting pages create retrieval density, reinforce the opening move, and route authority back into the highest-converting pages.",
     deliverables: [
       "Competitor-adjacent supporting pages",
       "Creator persona coverage",
       "Use-case and monetization model pages",
-      "Internal-link architecture back to Apex Assets",
+      "Internal-link architecture back to the decision pages",
     ],
   },
   {
-    category: "Trust layer",
-    title: "Trust Relay + off-site proof",
-    volume: "35–75+ placements",
+    category: "Authority layer",
+    title: "Off-site authority and proof",
+    volume: "Built across the third-party surfaces that shape trust",
     whyItMatters:
-      "Recommendation-share does not move on owned pages alone. BTS needs third-party reinforcement across review, editorial, community, and link nodes.",
+      "Default recommendation status does not move on owned pages alone. BTS needs third-party reinforcement across reviews, editorials, Reddit threads, communities, and link nodes.",
     deliverables: [
-      "Aggressive backlink acquisition to Apex Assets",
+      "Aggressive backlink acquisition to the decision pages",
       "Digital PR, editorial, and listicle pushes",
       "Review-platform presence and reinforcement",
       "Forum, Reddit, creator-community, and newsletter placements",
@@ -321,30 +325,30 @@ const deliveryMilestones = [
   {
     window: "Day 0–30",
     output:
-      "Map Money Entities, ship the first 10 Apex Assets, launch the first 100 Knowledge Graph pages, begin review-platform setup, and push 10 early authority placements.",
+      "Map the highest-intent buying queries, launch the first decision pages, get review profiles live, and start early placements across Reddit, creator communities, and editorial surfaces.",
   },
   {
     window: "Day 31–60",
     output:
-      "Expand to 25 cumulative Apex Assets, 400 Knowledge Graph pages, 25 placements, first backlink velocity, and first repeatable comparison clusters.",
+      "Expand the comparison library, publish supporting coverage behind the winners, and grow review, editorial, and backlink proof around the pages already gaining traction.",
   },
   {
     window: "Day 61–90",
     output:
-      "Reach 40 cumulative Apex Assets, 800 Knowledge Graph pages, 40 placements, active review footprint, and a more durable recommendation-share signal.",
+      "Cover the highest-intent demand fully, reinforce the strongest pages with community proof and backlinks, and turn early wins into a durable business-building brand signal.",
   },
 ];
 
 const executionSteps = [
   {
-    label: "Map the wedge",
+    label: "Map the opening move",
     detail:
-      "Lock the first Money Entities, the first competitors to attack, the first prompts to win, and the proof needed to make each page believable.",
+      "Lock the first buying queries, the first competitors to attack, the first prompts to win, and the proof needed to make each page believable.",
   },
   {
-    label: "Ship the core assets",
+    label: "Ship the core pages",
     detail:
-      "Publish the initial Apex Assets and comparison pages that change shortlist behavior instead of waiting for broad category coverage first.",
+      "Publish the initial decision pages and comparison pages that change buyer consideration instead of waiting for broad category coverage first.",
   },
   {
     label: "Multiply distribution",
@@ -362,7 +366,7 @@ const executionTracks = [
   {
     name: "Publishing and owned visibility",
     description:
-      "Memetik runs the page production engine: commercial asset briefs, drafting, optimization, schema alignment, publishing support, and indexing readiness.",
+      "Memetik runs the page production engine: commercial page briefs, drafting, optimization, schema alignment, publishing support, and indexing readiness.",
     deliverables: [
       "Publish 1 core asset",
       "Expand into related comparison / evaluation pages",
@@ -373,7 +377,7 @@ const executionTracks = [
       "BTS gets a visible on-site body of work that answer engines and buyers can actually retrieve, compare, and trust.",
   },
   {
-    name: "Trust Relay distribution",
+    name: "Off-site authority distribution",
     description:
       "Every core asset gets broken into derivative content and pushed into authority nodes. This is where the market starts hearing the same story from more than BTS itself.",
     deliverables: [
@@ -383,7 +387,7 @@ const executionTracks = [
       "Link back to the owned destination consistently",
     ],
     outcome:
-      "BTS gains the third-party reinforcement needed to increase recommendation confidence across both classic search and AI answer layers.",
+      "BTS gains the third-party reinforcement needed to increase buyer trust across both classic search and AI answer layers.",
   },
 ];
 
@@ -401,13 +405,13 @@ const executionOutputs = [
   {
     label: "A more defensible growth channel",
     detail:
-      "As the wedge compounds, BTS depends less on isolated wins and more on a system competitors have to unpick surface by surface.",
+      "As the opening move compounds, BTS depends less on isolated wins and more on a system competitors have to unpick surface by surface.",
   },
 ];
 
 const cadenceTracks = [
   {
-    name: "Money Entity research and prioritization",
+    name: "Priority buying query research and prioritization",
     description: "Keep the prompt map current as buyer language and competitor pressure evolve.",
     cells: [
       { label: "Refresh priority prompts", tone: "high" as const },
@@ -417,7 +421,7 @@ const cadenceTracks = [
     ],
   },
   {
-    name: "Apex Asset publishing",
+    name: "Decision-page publishing",
     description: "Flagship pages and comparison assets keep shipping instead of pausing after the first batch.",
     cells: [
       { label: "First wave assets", tone: "high" as const },
@@ -427,8 +431,8 @@ const cadenceTracks = [
     ],
   },
   {
-    name: "Knowledge Graph expansion",
-    description: "Supporting retrieval pages extend the wedge into more use cases, personas, and competitor-adjacent contexts.",
+    name: "Supporting coverage expansion",
+    description: "Supporting retrieval pages extend the opening move into more use cases, personas, and competitor-adjacent contexts.",
     cells: [
       { label: "100 pages", tone: "base" as const },
       { label: "400 pages", tone: "high" as const },
@@ -437,7 +441,7 @@ const cadenceTracks = [
     ],
   },
   {
-    name: "Trust Relay and authority",
+    name: "Off-site authority",
     description: "Backlinks, review activity, listicles, community posts, and editorial mentions run continuously.",
     cells: [
       { label: "10 placements", tone: "base" as const },
@@ -449,10 +453,31 @@ const cadenceTracks = [
 ];
 
 const whyMemetikBullets = [
-  "Memetik is not selling generic SEO reporting. The system is built around recommendation-share and shortlist capture.",
-  "The execution model keeps owned assets, Knowledge Graph coverage, Trust Relay, and technical/entity work connected instead of split across agencies.",
-  "The program is designed for category ownership: first win a narrow commercial wedge, then widen that control into broader demand.",
+  "Memetik is not selling generic SEO reporting. The system is built to win high-intent buying decisions and default recommendations.",
+  "The execution model keeps decision pages, supporting coverage, off-site authority, and technical/entity work connected instead of split across agencies.",
+  "The program is designed for category ownership: first win a narrow commercial opening move, then widen that control into broader demand.",
   "Reporting stays tied to prompt coverage, answer visibility, authority proof, and business-facing progress rather than vanity ranking noise.",
+];
+
+const offsiteAuthorityCards = [
+  {
+    title: "Reddit and creator communities",
+    body:
+      "BTS needs visible proof in the places creators pressure-test platforms in public. That means Reddit threads, niche communities, founder groups, and creator conversations where real buyers compare Whop, Patreon, and the rest.",
+    icon: <MessageSquareQuote className="h-5 w-5" />,
+  },
+  {
+    title: "Reviews and editorial proof",
+    body:
+      "Review profiles, listicles, expert roundups, and editorial mentions help answer engines see BTS as a credible business platform instead of a niche brand with thin third-party proof.",
+    icon: <BadgeCheck className="h-5 w-5" />,
+  },
+  {
+    title: "Backlinks that reinforce the money pages",
+    body:
+      "Every strong comparison page should keep getting cited, linked, and discussed off-site so the on-site story is reinforced by the wider web, not left to stand alone.",
+    icon: <Link2 className="h-5 w-5" />,
+  },
 ];
 
 function PromptCard({
@@ -516,9 +541,9 @@ export default function StrategyBts2() {
       <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-14 md:gap-18">
         <StrategyHero
           eyebrow="00 · Founder strategy memo"
-          title="Behind the Scenes can win the creator monetization shortlist"
-          accent="before it tries to win the whole category."
-          subtitle="The approved wedge is clear: start with alternatives, comparisons, and monetization buying queries where shortlist behavior is already happening across Google, ChatGPT, Gemini, and adjacent answer layers. The goal is not more content. The goal is to make BTS the default recommendation for the commercial prompts that matter first."
+          title="Behind the Scenes can become the platform serious creators choose to build real businesses"
+          accent="and the clear alternative to Whop in the buying conversation."
+          subtitle="The commercial path is clear: own the alternatives, comparisons, and monetization queries where founders are actively choosing between BTS, Whop, Patreon, Kajabi, Circle, and Skool. The goal is not more content. The goal is to make BTS feel like the obvious platform for serious creators building real businesses."
           tags={[
             "behindthescenes.com",
             "Creator Economy",
@@ -542,9 +567,9 @@ export default function StrategyBts2() {
 
                 <div className="space-y-4">
                   {[
-                    "Lead with Patreon-alternative and creator monetization comparison Money Entities where shortlist intent is already clear.",
-                    "Pair every core Apex Asset with Trust Relay distribution, review proof, and backlinks so answer visibility compounds off-site as well as on-site.",
-                    "Keep the first 90 days output-heavy and visible: pages shipped, placements earned, coverage expanded, and recommendation-share checked weekly.",
+                    "Lead with Whop and Patreon comparison pages where buying intent is already visible and BTS can frame itself as the serious-business option.",
+                    "Pair every core bottom-of-funnel page with off-site authority, review proof, Reddit/community visibility, and backlinks so the message compounds off-site as well as on-site.",
+                    "Keep the first 90 days output-heavy and visible: pages shipped, placements earned, coverage expanded, and buyer trust checked weekly.",
                   ].map((item, index) => (
                     <div
                       key={item}
@@ -577,9 +602,9 @@ export default function StrategyBts2() {
         <StrategySectionShell>
           <SectionHeader number="01" title="State of Search 2026" />
           <StrategySectionLead
-            takeaway="Google still matters, but the shortlist now gets shaped across classic search and AI answer engines before a buyer ever converts."
+            takeaway="Google still matters, but buying consideration now gets shaped across classic search and AI answer engines before a buyer ever converts."
             body="The commercial reality is hybrid, not either/or. Google still drives a major share of discovery and commercial research. Traditional search remains core behavior. At the same time, buyers increasingly move across ChatGPT, Gemini, Perplexity, Google AI Overviews, and other answer layers to compare vendors, pressure-test alternatives, and decide who even deserves a click."
-            implication="Winning the category now means owning both demand capture and answer-surface recommendation-share. If BTS only shows up in one layer, competitors still control the shortlist."
+            implication="Winning the category now means owning both demand capture and answer-surface trust. If BTS only shows up in one layer, competitors still control buyer consideration."
           />
 
           <div className="grid gap-4 md:grid-cols-3">
@@ -590,7 +615,7 @@ export default function StrategyBts2() {
             />
             <KeyMoveCard
               icon={<Bot className="h-5 w-5" />}
-              title="AI changes who gets shortlisted"
+              title="AI changes who gets considered"
               body="More buying journeys now pass through answer engines before analytics can fully see them. That changes where brand preference gets formed and which companies become the default suggestion."
             />
             <KeyMoveCard
@@ -605,8 +630,8 @@ export default function StrategyBts2() {
           <SectionHeader number="02" title="Where Behind the Scenes Is Today" />
           <StrategySectionLead
             takeaway="BTS has enough authority to matter, but not enough commercial coverage to get chosen."
-            body="The current site is not starting from zero. It already has 880 referring domains and 27,577 backlinks, which is a usable base. What is missing is systematic coverage of the commercial prompts that shape shortlist behavior in the creator platform category."
-            implication="This is a positioning-and-execution gap more than an authority gap. BTS does not need a reinvention. It needs a wedge."
+            body="The current site is not starting from zero. It already has 880 referring domains and 27,577 backlinks, which is a usable base. What is missing is systematic coverage of the commercial prompts that shape buyer choice in the creator platform category."
+            implication="This is a positioning-and-execution gap more than an authority gap. BTS does not need a reinvention. It needs a sharper opening move."
           />
 
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -626,7 +651,7 @@ export default function StrategyBts2() {
                   items={[
                     "Current organic visibility is tiny relative to a 2,268,640-query validated search opportunity.",
                     "Topical integrity passed, so the market model is built on validated demand rather than noisy semantic expansion.",
-                    "One live commercial signal already exists: “skool vs patreon” is ranking, which supports a comparison-first wedge.",
+                    "One live commercial signal already exists: “skool vs patreon” is ranking, which supports a comparison-first opening move.",
                     "The current gap is a lack of owned answer assets, comparison coverage, pricing clarity, and retrieval repetition.",
                   ]}
                 />
@@ -638,7 +663,7 @@ export default function StrategyBts2() {
         <StrategySectionShell>
           <SectionHeader number="03" title="The Opportunity" />
           <StrategySectionLead
-            takeaway="The fastest path is not broad creator-category awareness. It is owning the monetization and alternative queries that create shortlists first."
+            takeaway="The fastest path is not broad creator-category awareness. It is owning the monetization and alternative queries that create buyer consideration first."
             body="The approved brief is explicit: Buyer Guides, Alternatives & Comparisons, and Pricing & Cost are the Phase 1 clusters. Broad category demand becomes much more winnable after BTS establishes itself as a credible answer for the commercial prompts buyers use when they are actively comparing options."
             implication="In plain English: win the buying questions first, then expand into the larger category."
           />
@@ -688,26 +713,26 @@ export default function StrategyBts2() {
         <StrategySectionShell>
           <SectionHeader number="04" title="Why Behind the Scenes Can Win" />
           <StrategySectionLead
-            takeaway="BTS does not need to beat every creator platform everywhere. It needs to win a defined slice of recommendation-share where its positioning is already credible."
-            body="The company-specific right to win is unusually clear. BTS already has a monetization-first positioning, a usable authority base, and early evidence that LLMs can understand its differentiated framing. What it lacks is repetition: the same wedge expressed through the right pages, comparisons, proof surfaces, and technical/entity signals."
+            takeaway="BTS does not need to beat every creator platform everywhere. It needs to own one clear commercial lane where its positioning already makes sense."
+            body="The company-specific right to win is unusually clear. BTS already has a monetization-first positioning, a usable authority base, and early evidence that LLMs can understand its differentiated framing. What it lacks is repetition: the same commercial story expressed through the right pages, comparisons, proof surfaces, and technical/entity signals."
             implication="That combination makes this a leverage problem, not a blank-sheet problem."
           />
 
           <div className="grid gap-4 md:grid-cols-3">
             <KeyMoveCard
               icon={<BadgeCheck className="h-5 w-5" />}
-              title="The positioning already fits the wedge"
+              title="The positioning already fits the opening move"
               body="Prompt evidence shows answer engines can describe BTS in a differentiated way around frictionless commerce and creator monetization. That is a useful starting advantage."
             />
             <KeyMoveCard
               icon={<Building2 className="h-5 w-5" />}
               title="There is enough authority to support lift"
-              body="880 referring domains is not category dominance, but it is enough to amplify a focused alternative-and-comparison wedge if the pages and proof get built correctly."
+              body="880 referring domains is not category dominance, but it is enough to amplify a focused alternative-and-comparison opening move if the pages and proof get built correctly."
             />
             <KeyMoveCard
               icon={<Telescope className="h-5 w-5" />}
-              title="The wedge aligns with real buyer behavior"
-              body="The strongest BOFU signals in the brief are alternatives, comparisons, and monetization buying language. BTS can meet buyers exactly where they are already evaluating tools."
+              title="The Whop contrast is easy to understand"
+              body="Whop can own the broader creator marketplace lane. BTS can own the buyer conversation for serious creators building real businesses who want a cleaner, more intentional platform story."
             />
           </div>
 
@@ -730,8 +755,8 @@ export default function StrategyBts2() {
           <SectionHeader number="05" title="Competitive Gap" />
           <StrategySectionLead
             takeaway="Incumbents are winning because they are easier to retrieve, easier to compare, and easier for machines to trust."
-            body="The competitive gap is not just size. It is surface area. Patreon, Teachable, Circle, Kajabi, and Skool all present more pages, more authority, and more repeated category cues than BTS does today. That makes them easier to recommend by default."
-            implication="BTS does not need to match incumbent scale immediately. It needs to become easier to choose in one high-intent wedge first."
+            body="The competitive gap is not just size. It is surface area. Patreon, Teachable, Circle, Kajabi, and Skool all present more pages, more authority, and more repeated category cues than BTS does today. Buyers also compare against Whop when they want a creator-business platform, which makes the contrast page even more important."
+            implication="BTS does not need to match incumbent scale immediately. It needs to become easier to choose in one high-intent lane first."
           />
 
           <div className="grid gap-4 md:grid-cols-3">
@@ -749,9 +774,9 @@ export default function StrategyBts2() {
               <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">
                 What BTS lacks
               </div>
-              <h3 className="mt-3 text-xl font-semibold text-white">Shortlist-defining assets</h3>
+              <h3 className="mt-3 text-xl font-semibold text-white">Decision pages that make the contrast obvious</h3>
               <p className="mt-3 text-sm leading-6 text-white/62">
-                BTS has not yet translated its positioning into a visible system of alternatives, versus pages, buyer guides, pricing explainers, and supporting entity signals.
+                BTS has not yet translated its positioning into a visible system of alternatives, versus pages, buyer guides, pricing explainers, and supporting proof that make the Whop contrast obvious.
               </p>
             </StrategyCard>
 
@@ -786,9 +811,9 @@ export default function StrategyBts2() {
         <StrategySectionShell>
           <SectionHeader number="06" title="AI Visibility Gap" />
           <StrategySectionLead
-            takeaway="BTS has early answer-engine momentum, but not durable default-answer status."
+            takeaway="BTS has early answer-engine momentum, but not durable business-platform default status."
             body="The sampled baseline is directionally useful: BTS appears in some ChatGPT and Gemini prompts, but sampled Google AI Overviews show no visibility. That means the brand is interpretable, but not yet reinforced enough across owned and third-party surfaces to become the obvious answer repeatedly."
-            implication="This is why the strategy cannot stop at content publishing. It needs answer-engine reinforcement."
+            implication="This is why the strategy cannot stop at content publishing. It needs off-site authority and repeated third-party proof."
           />
 
           <div className="grid gap-4 md:grid-cols-3">
@@ -822,9 +847,9 @@ export default function StrategyBts2() {
         <StrategySectionShell>
           <SectionHeader number="07" title="Revenue / Commercial Impact" />
           <StrategySectionLead
-            takeaway="The upside is not just more traffic. It is better shortlist share in a category where recommendation patterns shape revenue before a rep ever gets involved."
+            takeaway="The upside is not just more traffic. It is becoming the platform buyers trust earlier in the buying journey."
             body="For BTS, this strategy changes how buyers find, compare, and trust the platform. If the company becomes the repeated answer for creator monetization alternatives and commercial comparison prompts, that can reduce dependency on reactive acquisition and create a more defensible demand engine."
-            implication="Traffic is the visible signal. Shortlist inclusion is the business outcome."
+            implication="Traffic is the visible signal. Buyer choice is the business outcome."
           />
 
           <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
@@ -841,14 +866,14 @@ export default function StrategyBts2() {
                   {
                     label: "Expected traffic in 12 months",
                     value: formatNumber(191043),
-                    note: "Base case for the full traffic trajectory if the first wedge compounds.",
+                    note: "Base case for the full traffic trajectory if the first commercial win compounds.",
                     icon: <TrendingUp className="h-5 w-5" />,
                     valueClassName: "text-[clamp(1.75rem,3vw,2.9rem)]",
                   },
                   {
                     label: "Aggressive upside",
                     value: formatNumber(285367),
-                    note: "Higher-end scenario if BTS captures broader category demand after the initial wedge lands.",
+                    note: "Higher-end scenario if BTS captures broader category demand after the first commercial win lands.",
                     icon: <Sparkles className="h-5 w-5" />,
                     valueClassName: "text-[clamp(1.75rem,3vw,2.9rem)]",
                   },
@@ -891,18 +916,18 @@ export default function StrategyBts2() {
         </StrategySectionShell>
 
         <StrategySectionShell>
-          <SectionHeader number="08" title="90-day Wedge" />
+          <SectionHeader number="08" title="90-day Opening Move" />
           <StrategySectionLead
             takeaway="The first 90 days should look like a focused category capture sprint, not a slow content warm-up."
-            body="The opening move is specific: lead with Patreon-alternative and creator monetization comparison Money Entities, publish the first shortlist pages, push trust signals around each one, and expand supporting coverage behind the winners."
-            implication="The goal of the first quarter is to change market perception in one wedge, then widen from there."
+            body="The opening move is specific: lead with Whop and Patreon comparison pages, publish the first bottom-of-funnel pages, push trust signals around each one, and expand supporting coverage behind the winners."
+            implication="The goal of the first quarter is to change market perception in one commercial lane, then widen from there."
           />
 
           <div className="grid gap-4 lg:grid-cols-2">
             <StrategyCard className="h-full" glow="amber">
-              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">First wedge</div>
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">First opening move</div>
               <h3 className="mt-3 text-2xl font-semibold text-white">
-                Creator monetization alternatives and comparison intent
+                Creator monetization alternatives and comparison intent for serious creators building real businesses
               </h3>
               <p className="mt-3 text-sm leading-6 text-white/62">
                 This is the cleanest commercial opening because buyers are actively comparing platforms and the brief already shows relevant BOFU demand and one live comparison ranking signal.
@@ -910,8 +935,8 @@ export default function StrategyBts2() {
               <div className="mt-5">
                 <BulletList
                   items={[
-                    "Own shortlist behavior before chasing broad awareness",
-                    "Use comparison pages to reposition BTS against incumbents",
+                    "Own buyer consideration before chasing broad awareness",
+                    "Use comparison pages to reposition BTS against Whop and other incumbents",
                     "Build around the terms buyers already use when switching or evaluating",
                   ]}
                 />
@@ -931,7 +956,7 @@ export default function StrategyBts2() {
                 ))}
               </div>
               <p className="mt-5 text-sm leading-6 text-white/62">
-                Patreon leads the initial attack list because it dominates alternative and membership framing. Kajabi, Circle, and Skool matter because they overlap with creator monetization, courses, community, and creator-business tooling.
+                Whop matters because it is the cleanest contrast for founders who want to build a real business, not join a noisier marketplace. Patreon leads the next wave because it dominates membership framing, while Kajabi, Circle, and Skool overlap with creator monetization, courses, community, and creator-business tooling.
               </p>
             </StrategyCard>
           </div>
@@ -977,10 +1002,37 @@ export default function StrategyBts2() {
         </StrategySectionShell>
 
         <StrategySectionShell>
-          <SectionHeader number="09" title="What Memetik Actually Builds and Ships" />
+          <SectionHeader number="09" title="Off-site Authority" />
+          <StrategySectionLead
+            takeaway="BTS will not become the obvious answer on owned pages alone. The market needs to hear the same story about BTS off-site too."
+            body="This is the missing layer on most SEO retainers and the reason this strategy is more commercial than a publishing plan. Reddit threads, creator communities, reviews, listicles, editorial mentions, and backlinks help buyers — and answer engines — trust BTS as the serious-business alternative to Whop and the broader creator-platform field."
+            implication="If BTS wants the comparison pages to convert, it needs public proof around them, not just polished on-site copy."
+          />
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {offsiteAuthorityCards.map((card) => (
+              <KeyMoveCard key={card.title} {...card} />
+            ))}
+          </div>
+
+          <HighlightBox className="mt-6">
+            <div className="max-w-4xl">
+              <div className="text-sm font-mono uppercase tracking-[0.22em] text-[#f4e4cd]">Why Reddit matters</div>
+              <p className="mt-4 text-2xl font-display font-semibold tracking-tight text-white md:text-3xl">
+                When creators ask real people what to use instead of Whop, BTS needs to show up in the answer.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-white/68 md:text-base">
+                That means creator-community threads, Reddit conversations, review profiles, and editorial proof that link back to the bottom-of-funnel pages and repeat the same commercial story: BTS is for serious creators building real businesses.
+              </p>
+            </div>
+          </HighlightBox>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="10" title="What Memetik Actually Builds and Ships" />
           <StrategySectionLead
             takeaway="This is a category-capture program, not a light content retainer."
-            body="Memetik’s delivery model stays true to the approved doctrine: Money Entity mapping, Apex Assets, Knowledge Graph, Trust Relay, technical/entity foundation, and ongoing refresh/defense. BTS does not just get blog posts. It gets a full recommendation-share engine."
+            body="Memetik’s delivery model is simple in public language: map the buying queries, build the decision pages, expand supporting coverage, reinforce them with off-site authority, and keep the technical/entity foundation clean. BTS does not just get blog posts. It gets a real demand-capture engine."
             implication="If any one of these layers is missing, the system gets weaker. That is why the scope has to be substantial."
           />
 
@@ -997,7 +1049,7 @@ export default function StrategyBts2() {
               </div>
               <h3 className="text-xl font-semibold text-white">On-site production</h3>
               <p className="mt-3 text-sm leading-6 text-white/62">
-                Money Entity mapping, BOFU targeting, Apex Assets, MOFU comparison/evaluation content, TOFU and programmatic Knowledge Graph coverage, internal linking, and conversion-oriented asset structure.
+                Priority buying query mapping, bottom-of-funnel targeting, comparison/evaluation content, supporting coverage, internal linking, and conversion-oriented page structure.
               </p>
             </StrategyCard>
 
@@ -1007,7 +1059,7 @@ export default function StrategyBts2() {
               </div>
               <h3 className="text-xl font-semibold text-white">Off-site authority</h3>
               <p className="mt-3 text-sm leading-6 text-white/62">
-                Aggressive backlink acquisition, digital PR, press and editorial pushes, creator-software listicles, review-platform work, newsletter distribution, and community/forum placements that link back into the owned wedge.
+                Aggressive backlink acquisition, digital PR, press and editorial pushes, creator-software listicles, review-platform work, newsletter distribution, and community/forum placements that link back into the core decision pages.
               </p>
             </StrategyCard>
 
@@ -1024,10 +1076,10 @@ export default function StrategyBts2() {
         </StrategySectionShell>
 
         <StrategySectionShell>
-          <SectionHeader number="10" title="Operating Model" />
+          <SectionHeader number="11" title="Operating Model" />
           <StrategySectionLead
             takeaway="Execution works because research, publishing, distribution, and measurement run every week in parallel."
-            body="This is not a linear sequence where pages are written first and authority comes later. Memetik runs the wedge like an operating system: map, publish, distribute, re-test, and reinforce. Every week creates visible outputs and stronger recommendation signals."
+            body="This is not a linear sequence where pages are written first and authority comes later. Memetik runs the opening move like an operating system: map, publish, distribute, re-test, and reinforce. Every week creates visible outputs and stronger commercial signals."
             implication="That is how the program compounds instead of resetting every month."
           />
 
@@ -1048,15 +1100,15 @@ export default function StrategyBts2() {
                   },
                   {
                     day: "Tuesday–Wednesday",
-                    text: "Asset briefing, drafting, QA, comparison buildout, and Knowledge Graph production.",
+                    text: "Page briefing, drafting, QA, comparison buildout, and supporting coverage production.",
                   },
                   {
                     day: "Thursday",
-                    text: "Publishing, indexing pushes, Trust Relay distribution, review activity, and authority-node outreach.",
+                    text: "Publishing, indexing pushes, off-site authority distribution, review activity, Reddit/community outreach, and authority-node outreach.",
                   },
                   {
                     day: "Friday",
-                    text: "Metrics review, recommendation-share checks, prompt re-testing, and iteration planning.",
+                    text: "Metrics review, buyer-trust checks, prompt re-testing, and iteration planning.",
                   },
                 ].map((item) => (
                   <div
@@ -1117,10 +1169,10 @@ export default function StrategyBts2() {
         </StrategySectionShell>
 
         <StrategySectionShell>
-          <SectionHeader number="11" title="Why Memetik" />
+          <SectionHeader number="12" title="Why Memetik" />
           <StrategySectionLead
             takeaway="Memetik is built for category ownership in an answer-engine market, not just ranking maintenance."
-            body="The difference is strategic discipline. Memetik keeps the founder-facing story simple — own the right buying questions and make the market hear the same answer everywhere — while keeping the operating model deep enough to actually move recommendation-share."
+            body="The difference is strategic discipline. Memetik keeps the founder-facing story simple — own the right buying questions and make the market hear the same answer everywhere — while keeping the operating model deep enough to actually move demand."
             implication="That is why the program feels more like a growth engine than an SEO retainer."
           />
 
@@ -1150,7 +1202,7 @@ export default function StrategyBts2() {
                 <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-[#f4e4cd]">
                   <Radar className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">Measured by recommendation-share</h3>
+                <h3 className="text-xl font-semibold text-white">Measured by default recommendation momentum</h3>
                 <p className="mt-3 text-sm leading-6 text-white/62">
                   The scorecard is whether BTS gets recommended, cited, and found for the right buying prompts — not just whether a keyword moved a few positions.
                 </p>
@@ -1161,14 +1213,14 @@ export default function StrategyBts2() {
 
         <StrategyCTA
           eyebrow="Book a Strategy Call"
-          title="If BTS wants to own the creator monetization shortlist, the opening move is ready."
-          body="Memetik can turn this wedge into a visible 90-day execution program: the first Money Entities, the first Apex Assets, the first Trust Relay surfaces, and the operating cadence that makes the gains stick."
+          title="If BTS wants to become the obvious platform for serious creators building real businesses, the opening move is ready."
+          body="Memetik can turn this plan into a visible 90-day execution program: the first buying queries, the first bottom-of-funnel pages, the first off-site authority surfaces, and the operating cadence that makes the gains stick."
           href="https://cal.com/memetik/letstalk"
           ctaLabel="Book a Strategy Call"
         />
 
         <div className="pt-2">
-          <SectionHeader number="12" title="Supporting Evidence Appendix" />
+          <SectionHeader number="13" title="Supporting Evidence Appendix" />
           <StrategySectionLead
             takeaway="The main story above is intentionally concise. The detail below is here for diligence, not to clutter the decision."
             body="These appendix sections keep the source-safe evidence visible: cluster shape, competitor benchmarks, sampled prompt evidence, execution assumptions, and planning tools. The approved brief remains the canonical planning artifact behind this page."
@@ -1178,7 +1230,7 @@ export default function StrategyBts2() {
             <StrategyAppendixSection
               defaultOpen
               title="Keyword and demand clusters"
-              description="The wedge is grounded in validated topical demand, with Phase 1 focused on BOFU clusters and Phase 3 reserved for broader category capture."
+              description="The opening move is grounded in validated topical demand, with Phase 1 focused on BOFU clusters and Phase 3 reserved for broader category capture."
             >
               <DataTable
                 headers={[
