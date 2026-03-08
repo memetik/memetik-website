@@ -215,10 +215,10 @@ function briefStrategyContent(entry) {
 
   const isBts = entry.slug === "bts-2";
   const heroTitle = isBts
-    ? "Behind the Scenes can become the platform serious creators choose to build real businesses"
+    ? "BTS for serious creators building real businesses"
     : `${companyContext.Company} can win a defined commercial opening move`;
   const heroSubtitle = isBts
-    ? "BTS should own the alternatives and comparison queries where founders choose between BTS, Whop, Patreon, Kajabi, Circle, and Skool."
+    ? "Own the commercial comparisons and monetization queries where founders choose the platform they can build on long term."
     : translateFounderCopy(categoryFraming["Primary wedge"] || "");
   const rightToWin = translateFounderCopy(categoryFraming["Why this company can win now"] || "");
   const commercialObjective = translateFounderCopy(categoryFraming["Commercial objective"] || "");
@@ -243,11 +243,6 @@ function briefStrategyContent(entry) {
         <p>${esc(heroSubtitle)}</p>
         <p>${esc(rightToWin)}</p>
         <p>${esc(commercialObjective)}</p>
-        ${
-          isBts
-            ? `<p><strong>Commercial contrast:</strong> BTS should be the clear alternative to Whop for serious creators building real businesses.</p>`
-            : ""
-        }
         <p><strong>Source trace:</strong> ${esc(sourceTrace)}</p>
       </section>
 

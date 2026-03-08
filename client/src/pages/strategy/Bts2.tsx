@@ -541,9 +541,8 @@ export default function StrategyBts2() {
       <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-14 md:gap-18">
         <StrategyHero
           eyebrow="00 · Founder strategy memo"
-          title="Behind the Scenes can become the platform serious creators choose to build real businesses"
-          accent="and the clear alternative to Whop in the buying conversation."
-          subtitle="The commercial path is clear: own the alternatives, comparisons, and monetization queries where founders are actively choosing between BTS, Whop, Patreon, Kajabi, Circle, and Skool. The goal is not more content. The goal is to make BTS feel like the obvious platform for serious creators building real businesses."
+          title="BTS for serious creators building real businesses"
+          subtitle="Own the commercial comparisons and monetization queries where founders choose the platform they can build on long term."
           tags={[
             "behindthescenes.com",
             "Creator Economy",
