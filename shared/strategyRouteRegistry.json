@@ -46,7 +46,7 @@
       "route": "/strategy/drinkhyro",
       "componentKey": "drinkhyro",
       "title": "Hyro — Founder Strategy Memo | MEMETIK",
-      "description": "Founder-facing strategy memo for Hyro focused on electrolyte drink mix buyer demand, commercial comparison terms, off-site authority, and a 90-day execution plan.",
+      "description": "Founder-facing strategy memo for Hyro focused on electrolyte drink mix buyer demand, commercial comparison terms, off-site authority, and a 6-month execution plan.",
       "prerenderMode": "brief",
       "briefPath": "content/strategy-briefs/Drinkhyro-Strategy-Brief.md"
     }

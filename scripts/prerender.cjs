@@ -214,6 +214,9 @@ function briefStrategyContent(entry) {
     .join(" · ");
 
   const isBts = entry.slug === "bts-2";
+  const hasSixMonthFraming = Boolean(
+    currentState["First 6-month target (base)"] || cadence["6-month execution framing"]
+  );
   const heroTitle = isBts
     ? "BTS for serious creators building real businesses"
     : `${companyContext.Company} can win a defined commercial opening move`;
@@ -234,6 +237,18 @@ function briefStrategyContent(entry) {
   const supportingCoverageSummary = translateFounderCopy(knowledgeGraph["Supporting clusters"] || "");
   const offsiteAuthoritySummary = translateFounderCopy(trustRelay["Required workstreams"] || "");
   const offsiteAttackSurfaces = translateFounderCopy(trustRelay["Initial attack surfaces"] || "");
+  const targetLabel = hasSixMonthFraming ? "First 6-month target" : "First 90-day target";
+  const targetValue = hasSixMonthFraming
+    ? currentState["First 6-month target (base)"] || ""
+    : currentState["First 90-day target (base)"] || "";
+  const growthPlanTitle = hasSixMonthFraming ? "6-month growth plan" : "90-day opening move";
+  const cadencePrimary = hasSixMonthFraming
+    ? cadence["6-month execution framing"] || ""
+    : cadence["30/60/90 public commitments"] || "";
+  const cadenceSecondary = hasSixMonthFraming ? cadence["Monthly execution model"] || "" : cadence["Weekly rhythm"] || "";
+  const strategyCallCopy = isBts
+    ? `If ${esc(companyContext.Company)} wants to become the obvious platform for serious creators building real businesses, the opening move is already defined in the approved brief.`
+    : `If ${esc(companyContext.Company)} wants to win the first commercial buying territory in this category, the execution plan is already defined in the approved brief.`;
 
   return `
     <main>
@@ -252,7 +267,7 @@ function briefStrategyContent(entry) {
           <li><strong>Search opportunity:</strong> ${esc(currentState["Search opportunity"] || "")}</li>
           <li><strong>Expected traffic in 12 months:</strong> ${esc(currentState["Expected traffic in 12 months (base)"] || "")}</li>
           <li><strong>Aggressive upside:</strong> ${esc(currentState["Aggressive upside"] || "")}</li>
-          <li><strong>First 90-day target:</strong> ${esc(currentState["First 90-day target (base)"] || "")}</li>
+          <li><strong>${esc(targetLabel)}:</strong> ${esc(targetValue)}</li>
           <li><strong>AI visibility baseline:</strong> ChatGPT ${esc(currentState.chatgpt || "")}; Gemini ${esc(currentState.gemini || "")}; Google AI Overview ${esc(currentState.google_ai_overview || "")}</li>
           <li><strong>Topical integrity:</strong> ${esc(currentState["Topical integrity"] || "")}</li>
         </ul>
@@ -298,7 +313,7 @@ function briefStrategyContent(entry) {
       </section>
 
       <section>
-        <h2>90-day opening move</h2>
+        <h2>${esc(growthPlanTitle)}</h2>
         <p>${esc(openingMoveSummary)}</p>
         ${
           isBts
@@ -342,14 +357,14 @@ function briefStrategyContent(entry) {
 
       <section>
         <h2>Operating cadence</h2>
-        <p>${esc(translateFounderCopy(cadence["Weekly rhythm"] || ""))}</p>
-        <p>${esc(translateFounderCopy(cadence["30/60/90 public commitments"] || ""))}</p>
+        <p>${esc(translateFounderCopy(cadencePrimary))}</p>
+        <p>${esc(translateFounderCopy(cadenceSecondary))}</p>
         <p>${esc(translateFounderCopy(cadence["Immediate next actions"] || ""))}</p>
       </section>
 
       <section>
         <h2>Strategy call</h2>
-        <p>If ${esc(companyContext.Company)} wants to become the obvious platform for serious creators building real businesses, the opening move is already defined in the approved brief.</p>
+        <p>${strategyCallCopy}</p>
         <p><a href="https://cal.com/memetik/letstalk">Book a strategy call</a></p>
       </section>
 
