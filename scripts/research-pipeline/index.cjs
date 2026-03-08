@@ -80,19 +80,19 @@ const TAM_CHANNEL_SPLIT = {
 };
 const TRAFFIC_WIN_RATES = {
   BOFU: {
-    low: Number(process.env.TAM_CAPTURE_BOFU_LOW || 0.15),
-    base: Number(process.env.TAM_CAPTURE_BOFU_BASE || 0.25),
-    high: Number(process.env.TAM_CAPTURE_BOFU_HIGH || 0.35),
+    low: Number(process.env.TAM_CAPTURE_BOFU_LOW || 0.07),
+    base: Number(process.env.TAM_CAPTURE_BOFU_BASE || 0.11),
+    high: Number(process.env.TAM_CAPTURE_BOFU_HIGH || 0.16),
   },
   MOFU: {
-    low: Number(process.env.TAM_CAPTURE_MOFU_LOW || 0.08),
-    base: Number(process.env.TAM_CAPTURE_MOFU_BASE || 0.15),
-    high: Number(process.env.TAM_CAPTURE_MOFU_HIGH || 0.22),
+    low: Number(process.env.TAM_CAPTURE_MOFU_LOW || 0.025),
+    base: Number(process.env.TAM_CAPTURE_MOFU_BASE || 0.045),
+    high: Number(process.env.TAM_CAPTURE_MOFU_HIGH || 0.07),
   },
   TOFU: {
-    low: Number(process.env.TAM_CAPTURE_TOFU_LOW || 0.05),
-    base: Number(process.env.TAM_CAPTURE_TOFU_BASE || 0.08),
-    high: Number(process.env.TAM_CAPTURE_TOFU_HIGH || 0.12),
+    low: Number(process.env.TAM_CAPTURE_TOFU_LOW || 0.01),
+    base: Number(process.env.TAM_CAPTURE_TOFU_BASE || 0.02),
+    high: Number(process.env.TAM_CAPTURE_TOFU_HIGH || 0.035),
   },
 };
 
@@ -1268,6 +1268,16 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
     },
     initializeScenarioObject()
   );
+  const first6MonthTarget = monthlyTrajectory.reduce(
+    (acc, row, index) => {
+      if (index > 5) return acc;
+      acc.low += Number(row.low || 0);
+      acc.base += Number(row.base || 0);
+      acc.high += Number(row.high || 0);
+      return acc;
+    },
+    initializeScenarioObject()
+  );
 
   const keywordUniverseSummary = {
     size: keywordUniverse.length,
@@ -1322,6 +1332,7 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
         "Modeled estimate; not actual analytics traffic.",
         "US+AU only.",
         "Assumes serious SEO + AEO execution rather than passive publishing.",
+        "Capture assumptions are intentionally conservative so the base case stays founder-believable.",
         "BOFU terms move first, MOFU compounds next, and TOFU authority layers in over time.",
         "Use first-party analytics to calibrate conversion assumptions.",
         "Displayed monthly trajectory values should be rounded to whole numbers for planning readability.",
@@ -1335,8 +1346,8 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
       conversionRangePolicy: "low_base_high",
       founderReadableSummary: [
         "Total search opportunity is the full validated market demand across Google and AI discovery.",
-        "Expected traffic in 12 months assumes strong execution against the highest-value BOFU, MOFU, and TOFU wedges.",
-        "Aggressive upside reflects what happens if the company wins its initial wedge early and compounds faster across the year.",
+        "Expected traffic in 12 months is a conservative modeled case anchored to the highest-value validated wedges, not an optimistic ceiling.",
+        "Aggressive upside reflects faster compounding after the initial wedge starts winning; it should be read as upside, not the default expectation.",
       ],
     },
     keywordUniverse: keywordUniverseSummary,
@@ -1353,6 +1364,11 @@ function buildTamModel(company, semanticProfile, keywordUniverse, keywordGaps, a
         low: roundNumber(first90DayTarget.low),
         base: roundNumber(first90DayTarget.base),
         high: roundNumber(first90DayTarget.high),
+      },
+      first6MonthTarget: {
+        low: roundNumber(first6MonthTarget.low),
+        base: roundNumber(first6MonthTarget.base),
+        high: roundNumber(first6MonthTarget.high),
       },
       estimatedReachableVisits: {
         low: roundNumber(totalsReachable.low),
@@ -2540,21 +2556,36 @@ function summarizePlatformVisibility(promptResults) {
 function buildPromptSet(company, semanticProfile) {
   const categoryBase = semanticProfile?.promptCategoryLabel || company.category.split("/").pop().trim().toLowerCase();
   const categoryStem = categoryBase.replace(/software|platform|solution/g, "").trim() || categoryBase;
-  const brandPromptLabel = semanticProfile?.promptBrandLabel || normalizePhrase(company.name);
-  return uniqueValues([
-    `best ${categoryBase}`,
-    `best ${categoryBase} tools`,
-    `${brandPromptLabel} alternatives`,
-    `${brandPromptLabel} vs competitors`,
-    `best ${categoryBase} for startups`,
-    `best ${categoryBase} for enterprise`,
-    `how to choose a ${categoryBase}`,
-    `${categoryBase} comparison`,
-    `${categoryStem} pricing`,
-    `${categoryStem} workflow template`,
-    `${categoryStem} migration guide`,
-    `${categoryStem} implementation playbook`,
-  ]).slice(0, Math.max(4, AI_PROMPT_LIMIT));
+  const categoryText = `${company?.category || ""} ${company?.industry || ""} ${categoryBase}`.toLowerCase();
+  const isConsumerHealthCategory = /consumer health|electrolyte|hydration|drink|supplement/i.test(categoryText);
+
+  const promptCandidates = isConsumerHealthCategory
+    ? [
+        `best ${categoryBase}`,
+        `${categoryBase} comparison`,
+        `best sugar free ${categoryStem}`,
+        `${categoryStem} for daily hydration`,
+        `${categoryStem} for athletes`,
+        `${categoryStem} ingredients`,
+        `${categoryStem} benefits`,
+        `how to choose a ${categoryBase}`,
+        `${categoryStem} reviews`,
+        `${categoryStem} vs sports drinks`,
+      ]
+    : [
+        `best ${categoryBase}`,
+        `best ${categoryBase} tools`,
+        `best ${categoryBase} for startups`,
+        `best ${categoryBase} for enterprise`,
+        `how to choose a ${categoryBase}`,
+        `${categoryBase} comparison`,
+        `${categoryStem} pricing`,
+        `${categoryStem} workflow template`,
+        `${categoryStem} migration guide`,
+        `${categoryStem} implementation playbook`,
+      ];
+
+  return uniqueValues(promptCandidates).slice(0, Math.max(4, AI_PROMPT_LIMIT));
 }
 
 async function probeLlmPlatformAvailability(company, semanticProfile, platform, endpoint, debug, issues) {

@@ -36,7 +36,7 @@ const REQUIRED_SECTION_PATTERNS = [
   /why .* can win|right to win/i,
   /competitive gap|competitive landscape/i,
   /ai visibility by llm|ai visibility|answer-engine visibility/i,
-  /90-day opening move|90 day opening move|first 90 days/i,
+  /6-month growth plan|6 month growth plan|month 1|months 4.?6|90-day opening move|90 day opening move|first 90 days/i,
   /off-site authority/i,
   /what memetik will actually deliver|what memetik actually builds and ships|what we will actually deliver|what memetik will build|delivery engine/i,
   /operating model|monthly operating system|workstreams/i,
@@ -209,9 +209,24 @@ function toJsonBlock(value) {
   return `\`\`\`json\n${JSON.stringify(value, null, 2)}\n\`\`\``;
 }
 
-function pickPromptEvidence(promptResults = [], limit = 3) {
+function isBrandedPromptQuery(query, company) {
+  const normalizedQuery = String(query || "").toLowerCase();
+  const brandTerms = Array.from(
+    new Set([
+      String(company?.name || "").toLowerCase(),
+      String(company?.domain || "")
+        .toLowerCase()
+        .replace(/^www\./, "")
+        .replace(/\.[a-z]+$/, ""),
+    ])
+  ).filter(Boolean);
+
+  return brandTerms.some((term) => term && normalizedQuery.includes(term));
+}
+
+function pickPromptEvidence(promptResults = [], company, limit = 3) {
   return promptResults
-    .filter((result) => result?.query && result?.platform)
+    .filter((result) => result?.query && result?.platform && !isBrandedPromptQuery(result.query, company))
     .sort((a, b) => Number(Boolean(b.clientMentioned)) - Number(Boolean(a.clientMentioned)))
     .slice(0, limit);
 }
@@ -383,7 +398,7 @@ function buildCanonicalBrief(company, researchData, canonicalInputs) {
     .filter((keyword) => /\b(vs|alternative|alternatives|pricing|compare|comparison|best)\b/i.test(keyword.keyword || ""))
     .slice(0, 8)
     .map((keyword) => `${keyword.keyword} (position ${keyword.position}, volume ${formatNumber(keyword.volume)})`);
-  const promptEvidence = pickPromptEvidence(researchData?.aiVisibility?.promptResults, 5);
+  const promptEvidence = pickPromptEvidence(researchData?.aiVisibility?.promptResults, company, 5);
 
   const platformSummaryLines = Object.entries(researchData?.aiVisibility?.platformSummary || {}).map(([platform, summary]) => {
     return `- ${platform}: ${formatPercent(summary?.mentionRate)} mention rate (${summary?.mentioned || 0}/${summary?.total || 0})`;
@@ -536,7 +551,7 @@ function buildCanonicalBrief(company, researchData, canonicalInputs) {
 - Search opportunity: ${formatNumber(totals.totalSearchOpportunity)} total validated demand
 - Expected traffic in 12 months (base): ${formatNumber(totals.expectedTraffic12Months?.base)}
 - Aggressive upside: ${formatNumber(totals.aggressiveUpside)}
-- First 90-day target (base): ${formatNumber(totals.first90DayTarget?.base)}
+- First 6-month target (base): ${formatNumber(totals.first6MonthTarget?.base)}
 - AI visibility baseline:
 ${platformSummaryLines.join("\n") || "- No AI visibility summary available."}
 - Topical integrity: ${topicalIntegrity.passed ? "passed" : "failed"} (low-quality semantic demand share ${formatPercent(
@@ -574,13 +589,13 @@ ${rankedCommercialKeywords.map((keyword) => `- ${keyword}`).join("\n") || "- No 
 - page_summary: Do not ship on-site pages without matching off-site authority and review proof.
 
 ### REC-003
-- recommendation: Keep the public page founder-readable, but preserve the real 30/60/90 output volume and weekly cadence.
+- recommendation: Keep the public page founder-readable, but preserve the real Month 1 / Month 2 / Month 3 / Months 4-6 execution plan and concurrent monthly workstreams.
 - company_specific_rationale: The doctrine requires the execution engine to remain visible so the strategy reads like a serious category-capture program, not a light content retainer.
 - priority_rank: 3
 - claim_ids: CLAIM-005
 - gap_ids: none
 - visibility: page_extractable
-- page_summary: Show the actual shipping model and output ranges, not a vague promise.
+- page_summary: Show the actual 6-month shipping model and concurrent workstreams, not a vague promise.
 
 ## 8. Apex Assets Plan
 - First assets to ship: ${wedgeKeywords.slice(0, 5).join(", ") || `${categoryLabel} comparison, ${categoryLabel} review`}
@@ -605,13 +620,13 @@ ${rankedCommercialKeywords.map((keyword) => `- ${keyword}`).join("\n") || "- No 
 - Total search opportunity: ${formatNumber(totals.totalSearchOpportunity)}
 - Expected traffic in 12 months (base): ${formatNumber(totals.expectedTraffic12Months?.base)}
 - Aggressive upside: ${formatNumber(totals.aggressiveUpside)}
-- First 90-day target: ${formatNumber(totals.first90DayTarget?.base)}
+- First 6-month target: ${formatNumber(totals.first6MonthTarget?.base)}
 - Revenue-model note: ${researchData?.tamModel?.revenueModel?.enabled === false ? "Revenue planning requires client ACV/AOV and funnel inputs." : "Revenue model present in payload; keep caveat discipline."}
 - Measurement frame: recommendation-share, prompt coverage, authority proof, workstream completion, and downstream search indicators.
 
 ## 13. Cadence and Next Actions
-- Weekly rhythm: Monday priority review, Tuesday-Wednesday asset production, Thursday publishing/indexing + Trust Relay, Friday metrics and iteration.
-- 30/60/90 public commitments: keep the documented output ranges visible on the page.
+- 6-month execution framing: Month 1 sets the wedge and first money pages, Month 2 expands comparison/review coverage and authority reinforcement, Month 3 deepens supporting coverage and entity reinforcement, Months 4-6 compound distribution, refresh, and market-share expansion.
+- Monthly execution model: each month runs research and prioritization, page production, publishing/indexing, off-site authority, and measurement concurrently.
 - Immediate next actions: publish first wedge pages, attach Trust Relay distribution to each, then expand supporting Knowledge Graph coverage.
 
 ## 14. Page Extraction Map
@@ -620,7 +635,7 @@ ${rankedCommercialKeywords.map((keyword) => `- ${keyword}`).join("\n") || "- No 
 - Opportunity / right to win <- sections 3, 6, 7
 - Competitive gap <- section 5
 - AI visibility gap <- sections 4, 15
-- 90-day wedge <- sections 7, 8, 9
+- 6-month growth plan <- sections 7, 8, 9, 13
 - What Memetik builds and ships <- sections 8, 9, 10, 11, 13
 - Operating cadence <- section 13
 - Supporting evidence appendix <- sections 5, 6, 12, 15, 16
@@ -932,7 +947,7 @@ CRITICAL RULES:
 17. Every primary section MUST include one obvious takeaway, ideally using StrategySectionLead.
 18. A founder should be able to skim the main narrative in under 5 minutes.
 19. Put heavy detail into an Appendix / Supporting Evidence area using StrategyAppendixSection. The appendix can include keyword tables, detailed competitor data, assumptions, prompt evidence, and calculators.
-20. Keep the main narrative order tight and founder-first: Hero, State of Search, Current State, Opportunity, Why This Company Can Win, Competitive Gap, AI Visibility Gap, Revenue / Commercial Impact, 90-day Wedge, What Memetik Actually Builds and Ships, Operating Model, Why Memetik, CTA, then Appendix.
+20. Keep the main narrative order tight and founder-first: Hero, State of Search, Current State, Opportunity, Why This Company Can Win, Competitive Gap, AI Visibility Gap, Revenue / Commercial Impact, 6-month Growth Plan, What Memetik Actually Builds and Ships, Operating Model, Why Memetik, CTA, then Appendix.
 21. Do not fabricate competitors or metrics. Use researchData.seoMetrics.backlinkMetrics and competitor metrics for backlink/ref-domain values wherever present, and never promote contaminated or low-topicality keyword clusters into hero statistics.
 22. Use the market truths above in the State of Search section, but keep that section compact and highly legible.
 23. Translate every major finding into commercial language: pipeline, shortlist share, CAC pressure, revenue leverage, moat, defensibility, and risk of waiting.
@@ -940,26 +955,26 @@ CRITICAL RULES:
 25. Use no more than one table in any primary section. Prefer cards, charts, and compact comparison visuals. Detailed tables belong in the appendix.
 26. The main flow should NOT contain the full keyword universe table dump. Put detailed keyword evidence in the appendix.
 27. The main competitive section should NOT lead with a giant table. Lead with a clear gap narrative and only a compact supporting visual/table if it materially improves clarity.
-28. The AI visibility section should use platform cards plus 2-3 real prompt examples that show who wins today, where the company stands, and what must change.
+28. The AI visibility section should use platform cards plus 2-3 real unbranded prompt examples that show who wins today, where the company stands, and what must change.
 29. Include a dedicated "Why This Company Can Win" or equivalent right-to-win section. It must explain the company-specific wedge and why this company can beat incumbents in a defined slice of the market.
-30. Include a dedicated "90-day Wedge" section with the first category/entity wedge, first pages to ship, first prompts to win, and first competitors to attack.
+30. Include a dedicated "6-month Growth Plan" section with Month 1, Month 2, Month 3, and Months 4-6 framing. It should show the first category/entity wedge, first pages to ship, first prompts to win, first competitors to attack, and how the system compounds across the full engagement.
 31. Include a dedicated revenue/commercial impact section. Keep methodology secondary; explain what the opportunity means in plain English.
 32. Use PhasedUpsideChart as a 12-month trajectory component, but keep explanation concise and commercial.
 33. Keep estimate-only disclosure consolidated to section-level labels and appendix assumptions. Do NOT scatter repetitive estimate notes everywhere.
 34. If researchData.topicalIntegrity exists, treat it as a hard guardrail: only headline validated keyword/TAM insights, surface ambiguity risks honestly, and do not center excluded or low-quality semantic terms.
 35. If tamModel.revenueModel.enabled is false, explicitly note that revenue planning requires first-party ACV/AOV and funnel inputs.
-36. Use plain founder language for traffic planning. In the visible UI, prefer "Total search opportunity", "Expected traffic in 12 months", "Aggressive upside", and "First 90-day target". Avoid jargon like reachable share, modeled capture rate, or execution capture rate.
+36. Use plain founder language for traffic planning. In the visible UI, prefer "Total search opportunity", "Expected traffic in 12 months", "Aggressive upside", and "First 6-month target". Avoid jargon like reachable share, modeled capture rate, or execution capture rate.
 37. The page should look homepage-premium, not report-template-flat: use StrategyPageFrame for the page, StrategyHero for the hero, StrategySectionShell for major sections, StrategyCard for sub-blocks, and StrategyCTA for the close.
 38. Do not make the page feel like "look how much research we did." Make it feel like "we understand the market, your position, your wedge, and how to build the moat."
-39. The delivery scope must reflect the documented Memetik program from the playbook: priority buying queries, bottom-of-funnel pages, comparison/evaluation content, supporting content coverage, off-site authority, review-platform work, Bing/IndexNow/schema infrastructure, and weekly optimization.
+39. The delivery scope must reflect the documented Memetik program from the playbook: priority buying queries, bottom-of-funnel pages, comparison/evaluation content, supporting content coverage, off-site authority, review-platform work, Bing/IndexNow/schema infrastructure, and monthly optimization loops.
 40. Public pages must translate operator-only doctrine into plain founder language. Do not expose labels such as Money Entities, Apex Assets, Knowledge Graph, Trust Relay, recommendation-share, wedge, or shortlist in founder-facing copy.
 41. Do not promise a fixed public count of bottom-of-funnel pages. Explain that Memetik builds as many bottom-of-funnel pages as needed to cover the relevant demand, then expands supporting coverage and authority around the winners.
 42. Include a dedicated Off-site Authority section that explicitly covers Reddit/community participation, reviews, editorials, listicles, backlinks, and other third-party trust surfaces.
 43. For creator-platform strategies where relevant, position the company for serious creators building real businesses and counter-position clearly against Whop without inventing unsupported facts.
-44. The operating model must show the real weekly cadence: Monday research/entity updates, Tuesday-Wednesday asset production, Thursday distribution/off-site authority, Friday metrics/iteration.
+44. The operating model must show the real concurrent monthly execution model: each month includes research/entity updates, asset production, distribution/off-site authority, and metrics/iteration running in parallel.
 45. The page must make it obvious that Memetik delivers both on-site production and off-site authority building; do not reduce the strategy to only content publishing.
-46. Executive-summary metric cards must remain readable with large six- and seven-figure values. Prefer a vertical or otherwise non-cramped layout over a forced four-across row.
-47. The 12-month opportunity curve must use cumulative traffic progression so the final point matches the visible "Expected traffic in 12 months" number, not a month-12 run-rate or first-90-day value.
+46. Executive-summary metric cards must stay at the top of the page. Keep the layout generally intact, but make the number typography smaller so large six- and seven-figure values fit cleanly without wrapping or overflow.
+47. The 12-month opportunity curve must use cumulative traffic progression so the final point matches the visible "Expected traffic in 12 months" number, not a month-12 run-rate or first-6-month value.
 48. Surface the TAM / ROI calculator in or immediately after the Revenue / Commercial Impact section; do not bury it only in the appendix.
 49. Canonical lineage is mandatory and must remain visible in your reasoning: master reference -> generation contract -> brief -> page.
 50. Do not bypass or reinterpret the approved brief. Raw research payload is not the canonical page input.`;
@@ -996,28 +1011,28 @@ The component should be named Strategy${pascalCase(company.slug)} and exported a
 The file will be saved at client/src/pages/strategy/${pascalCase(company.slug)}.tsx
 
 Mandatory output structure additions:
-- Add an "Executive Summary" strip with 4 headline numbers: Total search opportunity, Expected traffic in 12 months, Aggressive upside, and First 90-day target, plus 3 immediate actions.
+- Add an "Executive Summary" strip with 4 headline numbers: Total search opportunity, Expected traffic in 12 months, Aggressive upside, and First 6-month target, plus 3 immediate actions.
 - Use StrategyPageFrame, StrategyHero, StrategySectionShell, and StrategyCTA as the default page architecture.
 - Every primary section should use StrategySectionLead or an equivalent one-takeaway block.
-- Main narrative sections: "State of Search 2026", "Where ${company.name} Is Today" (or "Current State Snapshot"), "The Opportunity", "Why ${company.name} Can Win", "Competitive Gap", "AI Visibility Gap", "Revenue / Commercial Impact", "90-day Opening Move", "Off-site Authority", "What Memetik Actually Builds and Ships", "Operating Model", "Why Memetik".
+- Main narrative sections: "State of Search 2026", "Where ${company.name} Is Today" (or "Current State Snapshot"), "The Opportunity", "Why ${company.name} Can Win", "Competitive Gap", "AI Visibility Gap", "Revenue / Commercial Impact", "6-month Growth Plan", "Off-site Authority", "What Memetik Actually Builds and Ships", "Operating Model", "Why Memetik".
 - Add an appendix / supporting evidence section using StrategyAppendixSection.
 - Put detailed keyword universe, assumptions/confidence, detailed competitor evidence, prompt evidence, and optional calculator in the appendix rather than the primary flow.
 - Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
-- Keep executive-summary headline numbers compact enough that seven-figure values do not wrap awkwardly.
+- Keep executive-summary headline numbers compact enough that seven-figure values do not wrap awkwardly, primarily by reducing the number font size rather than moving the strip away from the top.
 - Keep hero metrics and primary visuals tied to validated topical subsets.
 - Display trajectory numbers as whole integers in visible UI labels.
 - If researchData.tamModel.totals.expectedTraffic12Months exists, use that terminology in the visible UI instead of "reachable visits".
 - Keep all planning jargon out of the main page. Do not use labels like reachable share, capture rate, or modeled coefficient in user-facing copy.
 - Use researchData.topicalIntegrity to avoid headline claims from excluded or ambiguous keyword groups.
-- Include 2-3 real prompt examples inside the AI visibility section.
-- Include a concrete 90-day wedge: first entity/category wedge, first pages to ship, first prompts to win, first competitors to attack.
+- Include 2-3 real unbranded prompt examples inside the AI visibility section.
+- Include a concrete 6-month growth plan: Month 1, Month 2, Month 3, and Months 4-6, covering the first entity/category wedge, first pages to ship, first prompts to win, first competitors to attack, and how work compounds across the engagement.
 - Add a dedicated section that makes the scope of execution unmistakable. It should explicitly show: priority buying query mapping, bottom-of-funnel page production, comparison/evaluation content, supporting content coverage, aggressive backlink acquisition, digital PR / press release / listicle pushes, review-platform work, Bing/IndexNow/schema infrastructure, and third-party/forum/community placements.
 - Make the delivery section feel substantial enough that a founder can immediately see why this is a serious execution program rather than a light content retainer.
 - Do not use fixed public page-count promises like 8–12 flagship assets. Say Memetik builds as many bottom-of-funnel pages as needed to cover demand, then expands supporting coverage and authority behind the winners.
-- Include a visible 30/60/90 rollout summary with concrete outputs, but keep the language founder-readable rather than doctrine-heavy.
-- Prefer an infographic-style operating model visual that shows what Memetik is doing, what ships, and what BTS receives; avoid defaulting to a dense month-by-month grid unless it is clearly better.
-- In the operating model section, show the actual weekly cadence and the distribution workflow: publish core asset, break it into 10–20 micro-assets, push to 3–5 authority nodes, and link back consistently.
-- Keep the executive-summary metric cards vertically stacked or otherwise roomy enough that large values never overflow their containers.
+- Include a visible Month 1 / Month 2 / Month 3 / Months 4-6 rollout summary with concrete outputs, but keep the language founder-readable rather than doctrine-heavy.
+- Prefer an infographic-style operating model visual that shows concurrent monthly workstreams rather than literal weekday choreography.
+- In the operating model section, show the monthly execution system: research and prioritization, production, publishing/indexing, off-site authority, and measurement running concurrently, with distribution reinforcing every shipped asset.
+- Keep the executive-summary metric cards at the top and make the number font size small enough that large values never overflow their containers.
 - Make the 12-month opportunity curve cumulative so its final point equals the visible expected-traffic-in-12-months figure.
 - Place the TAM / ROI calculator in or directly below the Revenue / Commercial Impact section so it is easy to find.
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue planning requires client ACV/AOV and funnel inputs."
