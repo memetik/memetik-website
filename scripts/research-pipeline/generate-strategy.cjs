@@ -808,6 +808,18 @@ function validateGeneratedTsx(tsxContent) {
         .join(", ")}`
     );
   }
+
+  if (!/GrowthTimelineChart/.test(tsxContent)) {
+    throw new Error("Generated page must use GrowthTimelineChart for the Operating Model section.");
+  }
+
+  if (/WorkstreamTimeline/.test(tsxContent)) {
+    throw new Error("Generated page must not use WorkstreamTimeline; use GrowthTimelineChart instead.");
+  }
+
+  if (/DeliveryScopeMatrix/.test(tsxContent)) {
+    throw new Error("Generated page must not use DeliveryScopeMatrix in the main narrative; use stacked scope blocks instead.");
+  }
 }
 
 async function codexRequest(systemPrompt, userPrompt) {
@@ -929,7 +941,7 @@ MARKET CONTEXT NON-NEGOTIABLES (must be reflected in the State of Search / Why T
 CRITICAL RULES:
 1. Output ONLY the complete TSX file content — no markdown fences, no explanation, no commentary.
 2. The file must be a valid React component with a default export.
-3. Import shared components from "@/components/strategy" — use SectionHeader, HighlightBox, BulletList, DataTable, StatsGrid, PhasedUpsideChart, TamRoiCalculator, DeliveryScopeMatrix, ExecutionInfographic, WorkstreamTimeline, StrategySectionLead, and StrategyAppendixSection freely.
+3. Import shared components from "@/components/strategy" — use SectionHeader, HighlightBox, BulletList, DataTable, StatsGrid, PhasedUpsideChart, GrowthTimelineChart, TamRoiCalculator, ExecutionInfographic, StrategySectionLead, and StrategyAppendixSection freely.
 3b. Prefer the premium homepage-aligned primitives: StrategyPageFrame, StrategyHero, StrategySectionShell, StrategyCard, StrategyEyebrow, StrategyCTA, StrategyGlow.
 4. Import Nav from "@/components/Nav".
 5. Import icons from "lucide-react" as needed.
@@ -943,7 +955,7 @@ CRITICAL RULES:
 13. The strategy must feel like a premium founder memo, not a research dump.
 14. The page is PUBLIC. Do not include passwords or gates.
 15. Add the company's hero tags (domain, industry, location if known, key descriptor).
-16. Use a deck-like structure: every primary section should feel like one slide with one clear point.
+16. Use a premium vertical narrative structure: every primary section should feel like one clear block in a clean top-to-bottom scroll.
 17. Every primary section MUST include one obvious takeaway, ideally using StrategySectionLead.
 18. A founder should be able to skim the main narrative in under 5 minutes.
 19. Put heavy detail into an Appendix / Supporting Evidence area using StrategyAppendixSection. The appendix can include keyword tables, detailed competitor data, assumptions, prompt evidence, and calculators.
@@ -951,7 +963,7 @@ CRITICAL RULES:
 21. Do not fabricate competitors or metrics. Use researchData.seoMetrics.backlinkMetrics and competitor metrics for backlink/ref-domain values wherever present, and never promote contaminated or low-topicality keyword clusters into hero statistics.
 22. Use the market truths above in the State of Search section, but keep that section compact and highly legible.
 23. Translate every major finding into commercial language: pipeline, shortlist share, CAC pressure, revenue leverage, moat, defensibility, and risk of waiting.
-24. Use no more than 3-4 cards in a main section unless absolutely necessary.
+24. Use no more than 3-4 cards in a main section unless absolutely necessary, and stack them vertically by default.
 25. Use no more than one table in any primary section. Prefer cards, charts, and compact comparison visuals. Detailed tables belong in the appendix.
 26. The main flow should NOT contain the full keyword universe table dump. Put detailed keyword evidence in the appendix.
 27. The main competitive section should NOT lead with a giant table. Lead with a clear gap narrative and only a compact supporting visual/table if it materially improves clarity.
@@ -959,8 +971,8 @@ CRITICAL RULES:
 29. Include a dedicated "Why This Company Can Win" or equivalent right-to-win section. It must explain the company-specific wedge and why this company can beat incumbents in a defined slice of the market.
 30. Include a dedicated "6-month Growth Plan" section with Month 1, Month 2, Month 3, and Months 4-6 framing. It should show the first category/entity wedge, first pages to ship, first prompts to win, first competitors to attack, and how the system compounds across the full engagement.
 31. Include a dedicated revenue/commercial impact section. Keep methodology secondary; explain what the opportunity means in plain English.
-32. Use PhasedUpsideChart as a 12-month trajectory component, but keep explanation concise and commercial.
-33. Keep estimate-only disclosure consolidated to section-level labels and appendix assumptions. Do NOT scatter repetitive estimate notes everywhere.
+32. Use PhasedUpsideChart as a 12-month trajectory component in the Revenue / Commercial Impact section, but keep explanation concise and commercial.
+33. Keep estimate-only disclosure consolidated to section-level labels and appendix assumptions. Do NOT scatter repetitive estimate notes everywhere, but include the literal phrase "Estimate-only" at least once in the visible page.
 34. If researchData.topicalIntegrity exists, treat it as a hard guardrail: only headline validated keyword/TAM insights, surface ambiguity risks honestly, and do not center excluded or low-quality semantic terms.
 35. If tamModel.revenueModel.enabled is false, explicitly note that revenue planning requires first-party ACV/AOV and funnel inputs.
 36. Use plain founder language for traffic planning. In the visible UI, prefer "Total search opportunity", "Expected traffic in 12 months", "Aggressive upside", and "First 6-month target". Avoid jargon like reachable share, modeled capture rate, or execution capture rate.
@@ -971,9 +983,9 @@ CRITICAL RULES:
 41. Do not promise a fixed public count of bottom-of-funnel pages. Explain that Memetik builds as many bottom-of-funnel pages as needed to cover the relevant demand, then expands supporting coverage and authority around the winners.
 42. Include a dedicated Off-site Authority section that explicitly covers Reddit/community participation, reviews, editorials, listicles, backlinks, and other third-party trust surfaces.
 43. For creator-platform strategies where relevant, position the company for serious creators building real businesses and counter-position clearly against Whop without inventing unsupported facts.
-44. The operating model must show the real concurrent monthly execution model: each month includes research/entity updates, asset production, distribution/off-site authority, and metrics/iteration running in parallel.
+44. The main narrative must have one reading axis: vertical. Avoid side-by-side storytelling layouts in primary sections.
 45. The page must make it obvious that Memetik delivers both on-site production and off-site authority building; do not reduce the strategy to only content publishing.
-46. Executive-summary metric cards must stay at the top of the page. Keep the layout generally intact, but make the number typography smaller so large six- and seven-figure values fit cleanly without wrapping or overflow.
+46. Executive-summary metric cards must stay at the top of the page in a vertical stack, and immediate actions must stack underneath them. Do not place them side-by-side.
 47. The 12-month opportunity curve must use cumulative traffic progression so the final point matches the visible "Expected traffic in 12 months" number, not a month-12 run-rate or first-6-month value.
 48. Surface the TAM / ROI calculator in or immediately after the Revenue / Commercial Impact section; do not bury it only in the appendix.
 49. Canonical lineage is mandatory and must remain visible in your reasoning: master reference -> generation contract -> brief -> page.
@@ -1011,14 +1023,14 @@ The component should be named Strategy${pascalCase(company.slug)} and exported a
 The file will be saved at client/src/pages/strategy/${pascalCase(company.slug)}.tsx
 
 Mandatory output structure additions:
-- Add an "Executive Summary" strip with 4 headline numbers: Total search opportunity, Expected traffic in 12 months, Aggressive upside, and First 6-month target, plus 3 immediate actions.
+- Add an "Executive Summary" block with 4 stacked headline cards: Total search opportunity, Expected traffic in 12 months, Aggressive upside, and First 6-month target, followed by 3 stacked immediate actions.
 - Use StrategyPageFrame, StrategyHero, StrategySectionShell, and StrategyCTA as the default page architecture.
 - Every primary section should use StrategySectionLead or an equivalent one-takeaway block.
 - Main narrative sections: "State of Search 2026", "Where ${company.name} Is Today" (or "Current State Snapshot"), "The Opportunity", "Why ${company.name} Can Win", "Competitive Gap", "AI Visibility Gap", "Revenue / Commercial Impact", "6-month Growth Plan", "Off-site Authority", "What Memetik Actually Builds and Ships", "Operating Model", "Why Memetik".
 - Add an appendix / supporting evidence section using StrategyAppendixSection.
 - Put detailed keyword universe, assumptions/confidence, detailed competitor evidence, prompt evidence, and optional calculator in the appendix rather than the primary flow.
 - Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
-- Keep executive-summary headline numbers compact enough that seven-figure values do not wrap awkwardly, primarily by reducing the number font size rather than moving the strip away from the top.
+- Keep executive-summary headline numbers compact enough that seven-figure values do not wrap awkwardly, but let the cards grow naturally; do not cram them into a horizontal row.
 - Keep hero metrics and primary visuals tied to validated topical subsets.
 - Display trajectory numbers as whole integers in visible UI labels.
 - If researchData.tamModel.totals.expectedTraffic12Months exists, use that terminology in the visible UI instead of "reachable visits".
@@ -1028,11 +1040,15 @@ Mandatory output structure additions:
 - Include a concrete 6-month growth plan: Month 1, Month 2, Month 3, and Months 4-6, covering the first entity/category wedge, first pages to ship, first prompts to win, first competitors to attack, and how work compounds across the engagement.
 - Add a dedicated section that makes the scope of execution unmistakable. It should explicitly show: priority buying query mapping, bottom-of-funnel page production, comparison/evaluation content, supporting content coverage, aggressive backlink acquisition, digital PR / press release / listicle pushes, review-platform work, Bing/IndexNow/schema infrastructure, and third-party/forum/community placements.
 - Make the delivery section feel substantial enough that a founder can immediately see why this is a serious execution program rather than a light content retainer.
+- The "What Memetik Actually Builds and Ships" section must use vertically stacked scope blocks. Do not use DeliveryScopeMatrix or any dashboard-style matrix there.
 - Do not use fixed public page-count promises like 8–12 flagship assets. Say Memetik builds as many bottom-of-funnel pages as needed to cover demand, then expands supporting coverage and authority behind the winners.
-- Include a visible Month 1 / Month 2 / Month 3 / Months 4-6 rollout summary with concrete outputs, but keep the language founder-readable rather than doctrine-heavy.
-- Prefer an infographic-style operating model visual that shows concurrent monthly workstreams rather than literal weekday choreography.
-- In the operating model section, show the monthly execution system: research and prioritization, production, publishing/indexing, off-site authority, and measurement running concurrently, with distribution reinforcing every shipped asset.
-- Keep the executive-summary metric cards at the top and make the number font size small enough that large values never overflow their containers.
+- The main story must read vertically. Do not use side-by-side layouts as the default pattern in the hero or primary sections.
+- Include a visible Month 1 / Month 2 / Month 3 / Months 4-6 rollout summary with concrete outputs, but stack those blocks vertically.
+- The Revenue / Commercial Impact section should stack vertically in this order: lead, explanation, PhasedUpsideChart, calculator, then assumptions/caveat note.
+- The Operating Model section must use GrowthTimelineChart, not WorkstreamTimeline. It should show deployment milestones tied to growth progression along one visual timeline.
+- Keep the executive-summary metric cards at the top in a single vertical stack, then place the immediate actions underneath in a second vertical stack.
+- In the main narrative, avoid multi-column grids unless the content is a chart or appendix table.
+- Include the exact visible label "Estimate-only" at least once in the Revenue / Commercial Impact or Operating Model area.
 - Make the 12-month opportunity curve cumulative so its final point equals the visible expected-traffic-in-12-months figure.
 - Place the TAM / ROI calculator in or directly below the Revenue / Commercial Impact section so it is easy to find.
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue planning requires client ACV/AOV and funnel inputs."

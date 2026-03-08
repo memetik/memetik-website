@@ -15,6 +15,7 @@ const StrategySignifyIP = lazy(() => import("@/pages/StrategySignifyIP"));
 const StrategyBTS = lazy(() => import("@/pages/StrategyBTS"));
 const StrategyKinso = lazy(() => import("@/pages/strategy/Kinso"));
 const StrategyBts2 = lazy(() => import("@/pages/strategy/Bts2"));
+const StrategyBts3 = lazy(() => import("@/pages/strategy/Bts3"));
 const StrategyDrinkhyro = lazy(() => import("@/pages/strategy/Drinkhyro"));
 const BTSOffer = lazy(() => import("@/pages/BTSOffer"));
 const Resources = lazy(() => import("@/pages/Resources"));
@@ -30,6 +31,7 @@ const NotFound = lazy(() => import("@/pages/not-found"));
 const strategyPageComponents = {
   bts: StrategyBTS,
   "bts-2": StrategyBts2,
+  "bts-3": StrategyBts3,
   "signify-ip": StrategySignifyIP,
   uleads: StrategyUleads,
   kinso: StrategyKinso,

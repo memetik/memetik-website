@@ -18,6 +18,14 @@
       "briefPath": "content/strategy-briefs/BTS-Strategy-Brief.md"
     },
     {
+      "slug": "bts-3",
+      "route": "/strategy/bts-3",
+      "componentKey": "bts-3",
+      "title": "BTS 3 — Founder Strategy Memo | MEMETIK",
+      "description": "Combined BTS founder strategy memo that merges the original BTS counter-offensive with the newer founder-facing memo in the new vertical layout.",
+      "prerenderMode": "summary"
+    },
+    {
       "slug": "signify-ip",
       "route": "/strategy/signify-ip",
       "componentKey": "signify-ip",

@@ -8,6 +8,8 @@ export { DataTable } from "./DataTable";
 export type { DataTableProps } from "./DataTable";
 export { PhasedUpsideChart } from "./PhasedUpsideChart";
 export type { PhasedUpsidePoint } from "./PhasedUpsideChart";
+export { GrowthTimelineChart } from "./GrowthTimelineChart";
+export type { GrowthTimelinePoint, GrowthTimelineMilestone } from "./GrowthTimelineChart";
 export { TamRoiCalculator } from "./TamRoiCalculator";
 export { StrategyPageFrame } from "./StrategyPageFrame";
 export { StrategyHero } from "./StrategyHero";
