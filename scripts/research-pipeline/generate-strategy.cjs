@@ -4,6 +4,7 @@ const https = require("https");
 const os = require("os");
 const path = require("path");
 const { URL } = require("url");
+const { generateStrategyOutboundPack } = require("./generate-outbound-pack.cjs");
 
 const DEFAULT_OPENAI_BASE_URL = "http://127.0.0.1:8317/v1";
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "dummy";
@@ -1478,10 +1479,10 @@ Additional requirements:
   console.log(`  Strategy content drafts saved to ${repoOutPath}`);
   console.log(`  Strategy content drafts mirrored to ${obsidianOutPath}`);
 
-  return { filePath: obsidianOutPath, repoFilePath: repoOutPath };
+  return { filePath: obsidianOutPath, repoFilePath: repoOutPath, content: cleaned };
 }
 
-async function generateStrategyPage(company, researchData) {
+async function generateStrategyPage(company, researchData, options = {}) {
   console.log(`\nGenerating strategy page for ${company.name}...`);
   console.log(`  Using model: ${STRATEGY_MODEL} via ${OPENAI_BASE_URL}`);
 
@@ -1587,12 +1588,24 @@ Generate the complete TSX file now.`;
     keywordAttributionSummary
   );
 
+  let outboundPack = null;
+  if (options.outboundPack) {
+    outboundPack = await generateStrategyOutboundPack({
+      company,
+      researchData,
+      brief,
+      pageTsxContent: cleaned,
+      legacyContentDraftContent: contentDraft.content,
+    });
+  }
+
   return {
     fileName,
     componentName: `Strategy${pascalCase(company.slug)}`,
     outPath,
     contentDraftPath: contentDraft.filePath,
     repoContentDraftPath: contentDraft.repoFilePath,
+    outboundPack,
   };
 }
 
@@ -1608,10 +1621,11 @@ module.exports = { generateStrategyPage, pascalCase };
 if (require.main === module) {
   const args = process.argv.slice(2);
   if (!args.includes("--slug")) {
-    console.log("Usage: node scripts/research-pipeline/generate-strategy.cjs --slug linear");
+    console.log("Usage: node scripts/research-pipeline/generate-strategy.cjs --slug linear [--outbound-pack]");
     process.exit(0);
   }
   const slug = args[args.indexOf("--slug") + 1];
+  const outboundPack = args.includes("--outbound-pack");
   const researchPath = path.join(__dirname, "..", "..", "data", "research", `${slug}.json`);
   if (!fs.existsSync(researchPath)) {
     console.error(`Research file not found: ${researchPath}`);
@@ -1626,7 +1640,7 @@ if (require.main === module) {
     console.error(`Company "${slug}" not found in dream-clients.json`);
     process.exit(1);
   }
-  generateStrategyPage(company, research).catch((error) => {
+  generateStrategyPage(company, research, { outboundPack }).catch((error) => {
     console.error(error);
     process.exit(1);
   });

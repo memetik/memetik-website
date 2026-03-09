@@ -24,7 +24,7 @@ async function runOne(company, opts) {
 
   let generated = null;
   if (opts.generate) {
-    generated = await generateStrategyPage(company, research);
+    generated = await generateStrategyPage(company, research, { outboundPack: opts.outboundPack });
   }
 
   const totalMs = Date.now() - startedAt;
@@ -35,6 +35,7 @@ async function main() {
   const args = process.argv.slice(2);
   const mode = parseArg(args, "--mode", "strict");
   const generate = args.includes("--generate");
+  const outboundPack = args.includes("--outbound-pack");
 
   process.env.RESEARCH_MODE = mode;
 
@@ -51,7 +52,7 @@ async function main() {
       process.exit(1);
     }
 
-    const result = await runOne(company, { generate });
+    const result = await runOne(company, { generate, outboundPack });
     console.log(`\n${"=".repeat(60)}`);
     console.log(`COMPLETE: ${company.slug}`);
     console.log(`Mode: ${mode}`);
@@ -64,6 +65,14 @@ async function main() {
       if (result.generated.repoContentDraftPath) {
         console.log(
           `Content drafts (repo): ${path.relative(path.join(__dirname, "..", ".."), result.generated.repoContentDraftPath)}`
+        );
+      }
+      if (result.generated.outboundPack?.obsidianDir) {
+        console.log(`Outbound pack (Obsidian): ${result.generated.outboundPack.obsidianDir}`);
+      }
+      if (result.generated.outboundPack?.repoDir) {
+        console.log(
+          `Outbound pack (repo): ${path.relative(path.join(__dirname, "..", ".."), result.generated.outboundPack.repoDir)}`
         );
       }
       console.log(`Route reminder: /strategy/${company.slug}`);
@@ -82,10 +91,10 @@ async function main() {
     const results = { success: [], failed: [] };
     for (const company of batch) {
       try {
-        const result = await runOne(company, { generate });
+        const result = await runOne(company, { generate, outboundPack });
         console.log(
           `  OK ${company.slug} (${(result.totalMs / 1000).toFixed(1)}s)${
-            result.generated ? " + strategy" : ""
+            result.generated ? ` + strategy${outboundPack ? " + outbound-pack" : ""}` : ""
           }`
         );
         results.success.push(company.name);
@@ -113,6 +122,11 @@ async function main() {
       '  node scripts/research-pipeline/orchestrate.cjs --company "Kinso" --mode strict --generate'
     );
     console.log("");
+    console.log("Research + generation + outbound pack:");
+    console.log(
+      '  node scripts/research-pipeline/orchestrate.cjs --company "Kinso" --mode strict --generate --outbound-pack'
+    );
+    console.log("");
     console.log("Batch:");
     console.log(
       "  node scripts/research-pipeline/orchestrate.cjs --batch --start 0 --limit 5 --mode strict --generate"
@@ -124,6 +138,8 @@ async function main() {
     console.log("  OPENAI_BASE_URL       — optional Vibe proxy base URL override (default: Factory/Vibe config or http://127.0.0.1:8317/v1)");
     console.log("  OPENAI_API_KEY        — optional Vibe proxy key placeholder (default: dummy)");
     console.log("  STRATEGY_MODEL        — optional model name override (default: gpt-5.4(high))");
+    console.log("  OUTBOUND_PACK_MODEL   — optional model name override for outbound-pack generation (default: STRATEGY_MODEL)");
+    console.log("  OBSIDIAN_STRATEGY_OUTBOUND_PACK_DIR — optional Obsidian path override for outbound packs");
     console.log("");
     console.log(`Companies loaded: ${clients.length}`);
   }
