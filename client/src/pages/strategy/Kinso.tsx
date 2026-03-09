@@ -402,9 +402,8 @@ export default function StrategyKinso() {
               Hyper-Personalized Growth Strategy • 2026
             </>
           }
-          title="Kinso"
-          accent="SEO + AEO Category Capture Strategy"
-          subtitle="How Kinso can move from occasional AI mention to consistent shortlist inclusion across Google, ChatGPT, Gemini, and AI answer layers — while building a compounding, defensible organic demand engine in US + AU."
+          title="Kinso can own the AI inbox conversation"
+          subtitle="The goal is to turn occasional mention into consistent consideration across Google and AI answer layers in the US and AU."
           tags={[
             "kinso.ai",
             "Communication / Collaboration",

@@ -13,6 +13,10 @@ const REPO_STRATEGY_CONTRACT_ROOT = path.join(REPO_ROOT, "contracts", "strategy"
 const CANONICAL_MIND_ROOT = "/Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation";
 const CANONICAL_MASTER_REFERENCE_PATH = "/Users/house/Mind/Areas/Agency/Lead-Magnets/MEMETIK-2026-AEO-Master-Reference.md";
 const PORTABLE_BRIEF_SNAPSHOT_DIR = path.join(REPO_ROOT, "content", "strategy-briefs");
+const PORTABLE_STRATEGY_CONTENT_DRAFT_DIR = path.join(REPO_ROOT, "content", "strategy-content-drafts");
+const OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR =
+  process.env.OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR ||
+  path.join(os.homedir(), "Mind", "Areas", "Agency", "Clients", "SaaS", "memetik", "Strategy Content Drafts");
 const OPENAI_BASE_URL = resolveOpenAIBaseUrl(STRATEGY_MODEL);
 const MODEL_REQUEST_MAX_RETRIES = Number(process.env.STRATEGY_MODEL_MAX_RETRIES || 3);
 const MODEL_REQUEST_TIMEOUT_MS = Number(process.env.STRATEGY_MODEL_TIMEOUT_MS || 15 * 60 * 1000);
@@ -58,6 +62,16 @@ const REQUIRED_SECTION_PATTERNS = [
   /StrategyAppendixSection/i,
   /StrategySectionShell/i,
   /StrategyCTA/i,
+];
+
+const REQUIRED_CONTENT_DRAFT_SECTIONS = [
+  "## Source Angle",
+  "## Rough Video Script",
+  "### Hook",
+  "### Body",
+  "### CTA",
+  "## LinkedIn Post",
+  "## Adaptation Notes",
 ];
 
 const MARKET_CONTEXT_NON_NEGOTIABLES = [
@@ -223,6 +237,9 @@ function resolveCanonicalGenerationPaths(slug, company) {
       process.env.CLIENT_STRATEGY_BRIEF_SCHEMA_PATH || path.join(REPO_STRATEGY_CONTRACT_ROOT, "client-strategy-brief-schema.yaml"),
     pageContractPath:
       process.env.WEBSITE_STRATEGY_PAGE_CONTRACT_PATH || path.join(REPO_STRATEGY_CONTRACT_ROOT, "website-strategy-page-contract.md"),
+    contentDraftContractPath:
+      process.env.STRATEGY_CONTENT_DRAFT_CONTRACT_PATH ||
+      path.join(REPO_STRATEGY_CONTRACT_ROOT, "strategy-content-draft-contract.md"),
     briefPath: process.env.STRATEGY_BRIEF_PATH || path.join(briefDir, briefFileName),
   };
 }
@@ -288,6 +305,14 @@ function validatePageContract(content, filePath) {
   }
 }
 
+function validateContentDraftContract(content, filePath) {
+  const requiredSnippets = [/founder-advisory content drafts/i, /rough video script/i, /linkedin post/i];
+  const missing = requiredSnippets.filter((snippet) => !snippet.test(content)).map((snippet) => snippet.toString());
+  if (missing.length > 0) {
+    throw new Error(`Strategy content draft contract is invalid (${filePath}). Missing: ${missing.join(", ")}`);
+  }
+}
+
 function loadCanonicalGenerationInputs(slug, company) {
   const paths = resolveCanonicalGenerationPaths(slug, company);
 
@@ -301,6 +326,10 @@ function loadCanonicalGenerationInputs(slug, company) {
     validateMarkdownHeading,
     validatePageContract,
   ]);
+  const contentDraftContract = readRequiredArtifact(paths.contentDraftContractPath, "Strategy content draft contract", [
+    validateMarkdownHeading,
+    validateContentDraftContract,
+  ]);
 
   const docs = [masterReference, generationContract, briefSchema, pageContract].map((doc) => ({
     filePath: doc.filePath,
@@ -312,6 +341,7 @@ function loadCanonicalGenerationInputs(slug, company) {
   console.log(`  Generation contract: ${paths.generationContractPath}`);
   console.log(`  Brief schema: ${paths.briefSchemaPath}`);
   console.log(`  Page contract: ${paths.pageContractPath}`);
+  console.log(`  Content draft contract: ${paths.contentDraftContractPath}`);
   console.log(`  Canonical brief: ${paths.briefPath}`);
 
   return {
@@ -321,6 +351,7 @@ function loadCanonicalGenerationInputs(slug, company) {
     generationContract,
     briefSchema,
     pageContract,
+    contentDraftContract,
   };
 }
 
@@ -350,6 +381,27 @@ function formatPercent(value) {
 
 function escapeRegExp(value) {
   return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function countWords(value) {
+  return String(value || "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+}
+
+function extractStrategyHeroLiteralProps(tsxContent) {
+  const openingTagMatch = tsxContent.match(/<StrategyHero[\s\S]*?>/);
+  if (!openingTagMatch) return { title: null, accent: null };
+
+  const openingTag = openingTagMatch[0];
+  const titleMatch = openingTag.match(/\btitle="([^"]+)"/);
+  const accentMatch = openingTag.match(/\baccent="([^"]+)"/);
+
+  return {
+    title: titleMatch?.[1]?.trim() || null,
+    accent: accentMatch?.[1]?.trim() || null,
+  };
 }
 
 function normalizeCompetitorAlias(value) {
@@ -793,6 +845,8 @@ function buildCanonicalBrief(company, researchData, canonicalInputs) {
 - Payload confidence: ${payloadConfidence.level || "unknown"} (${payloadConfidence.score || "n/a"}/100)
 - Quality gate: ${qualityGate.passed ? "passed" : "failed"}
 - Page output path: ${path.join(__dirname, "..", "..", "client", "src", "pages", "strategy", `${pascalCase(company.slug)}.tsx`)}
+- Repository content draft path: ${getRepoStrategyContentDraftPath(company.slug)}
+- Obsidian content draft path: ${getObsidianStrategyContentDraftPath(company.slug)}
 - Canonical brief path: ${canonicalInputs.paths.briefPath}
 
 ## 2. Company Context
@@ -962,6 +1016,19 @@ function getPortableBriefSnapshotPath(slug) {
   return path.join(PORTABLE_BRIEF_SNAPSHOT_DIR, fileName);
 }
 
+function getStrategyContentDraftFileName(slug) {
+  return slug === "bts-2" ? "BTS-Strategy-Content-Drafts.md" : `${pascalCase(slug)}-Strategy-Content-Drafts.md`;
+}
+
+function getRepoStrategyContentDraftPath(slug) {
+  const fileName = getStrategyContentDraftFileName(slug);
+  return path.join(PORTABLE_STRATEGY_CONTENT_DRAFT_DIR, fileName);
+}
+
+function getObsidianStrategyContentDraftPath(slug) {
+  return path.join(OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR, getStrategyContentDraftFileName(slug));
+}
+
 function syncPortableBriefSnapshot(slug, briefContent) {
   const snapshotPath = getPortableBriefSnapshotPath(slug);
 
@@ -1074,6 +1141,19 @@ function validateGeneratedTsx(tsxContent) {
     );
   }
 
+  const heroProps = extractStrategyHeroLiteralProps(tsxContent);
+  if (heroProps.title && countWords(heroProps.title) > 8) {
+    throw new Error(`Generated page hero title is too verbose: "${heroProps.title}"`);
+  }
+
+  if (heroProps.accent && countWords(heroProps.accent) > 4) {
+    throw new Error(`Generated page hero accent is too verbose: "${heroProps.accent}"`);
+  }
+
+  if (heroProps.title && /\b(before|while|because|so that)\b/i.test(heroProps.title)) {
+    throw new Error(`Generated page hero title must stay claim-led without qualifier clauses: "${heroProps.title}"`);
+  }
+
   if (!/GrowthTimelineChart/.test(tsxContent)) {
     throw new Error("Generated page must use GrowthTimelineChart for the Operating Model section.");
   }
@@ -1093,6 +1173,28 @@ function validateGeneratedTsx(tsxContent) {
   if (/\bweekly (operating system|rhythm|cadence|retainer)\b/i.test(tsxContent)) {
     throw new Error("Generated public pages must not describe the program using weekly-rhythm language.");
   }
+}
+
+function ensureVisibleEstimateOnlyLabel(tsxContent) {
+  if (/estimate-only|modeled estimate|modeled/i.test(tsxContent)) {
+    return tsxContent;
+  }
+
+  const estimateOnlyBlock = [
+    '      <div className="mx-auto w-full max-w-5xl px-6 pb-6">',
+    '        <p className="text-xs font-medium uppercase tracking-[0.28em] text-slate-400">',
+    '          Estimate-only traffic planning based on modeled search capture, not a guarantee.',
+    "        </p>",
+    "      </div>",
+    "",
+    "      <StrategyCTA",
+  ].join("\n");
+
+  if (tsxContent.includes("      <StrategyCTA")) {
+    return tsxContent.replace("      <StrategyCTA", estimateOnlyBlock);
+  }
+
+  return tsxContent;
 }
 
 async function codexRequest(systemPrompt, userPrompt) {
@@ -1209,6 +1311,10 @@ CRITICAL RULES:
 15. Add the company's hero tags (domain, industry, location if known, key descriptor).
 16. Use a premium vertical narrative structure: every primary section should feel like one clear block in a clean top-to-bottom scroll.
 17. Every primary section MUST include one obvious takeaway, ideally using StrategySectionLead.
+17a. The hero H1 must be one concise commercial claim, usually 4-8 words.
+17b. Prefer a pattern like "<Brand> can own the <category> conversation" when it fits the company.
+17c. Prefer no accent line. If you use an accent line at all, keep it to 1-4 words max.
+17d. Push nuance, timing, and execution detail into the subtitle, not the H1.
 18. A founder should be able to skim the main narrative in under 5 minutes.
 19. Put heavy detail into an Appendix / Supporting Evidence area using StrategyAppendixSection. The appendix can include keyword tables, detailed competitor data, assumptions, prompt evidence, and calculators.
 20. Keep the main narrative order tight and founder-first: Hero, State of Search, Current State, Opportunity, Why This Company Can Win, Competitive Gap, AI Visibility Gap, Revenue / Commercial Impact, 6-month Growth Plan, What Memetik Actually Builds and Ships, Operating Model, Why Memetik, CTA, then Appendix.
@@ -1246,6 +1352,133 @@ CRITICAL RULES:
 51. Surface the TAM / ROI calculator in or immediately after the Revenue / Commercial Impact section; do not bury it only in the appendix.
 52. Canonical lineage is mandatory and must remain visible in your reasoning: master reference -> generation contract -> brief -> page.
 53. Do not bypass or reinterpret the approved brief. Raw research payload is not the canonical page input.`;
+}
+
+function buildContentDraftSystemPrompt(canonicalInputs) {
+  return `You are a founder-advisory content strategist turning a canonical Memetik strategy into portable social content.
+
+CONTENT DRAFT CONTRACT (mandatory):
+--- ${canonicalInputs.paths.contentDraftContractPath} ---
+${canonicalInputs.contentDraftContract.content}
+
+CRITICAL RULES:
+1. Output ONLY markdown. No code fences. No explanation.
+2. Keep one primary angle across the whole file.
+3. The angle must stay company-specific and evidence-bound.
+4. Use public-safe founder language. Do not use operator-only labels like Money Entities, Apex Assets, Knowledge Graph, Trust Relay, or recommendation-share.
+5. Do not mention the brief, the strategy page, internal prompts, internal versions, or old drafts.
+6. Use missed traffic, missed revenue potential, and missed AI visibility only when supported by the canonical inputs.
+7. If revenue math is not fully supported, say it needs first-party ACV/AOV and funnel inputs instead of inventing certainty.
+8. Keep the tone calm, sharp, and founder-advisory.
+9. Use a soft comment-based CTA by default.
+10. Follow this exact structure:
+# <Company> Strategy Content Drafts
+
+## Source Angle
+- Primary hook:
+- Why it matters now:
+- Proof points to use:
+- Caveats / claims to avoid:
+- Suggested CTA:
+
+## Rough Video Script
+### Hook
+### Body
+### CTA
+
+## LinkedIn Post
+
+## Adaptation Notes
+- Reel opener overlay:
+- Supporting stat line:
+- CTA variation:
+`;
+}
+
+function validateGeneratedStrategyContentDraft(content, filePath) {
+  validateMarkdownHeading(content, filePath);
+  ensureOrderedMarkers(content, REQUIRED_CONTENT_DRAFT_SECTIONS, `Strategy content drafts (${filePath})`);
+
+  const forbiddenPatterns = [
+    /\bMoney Entities\b/i,
+    /\bApex Assets\b/i,
+    /\bKnowledge Graph\b/i,
+    /\bTrust Relay\b/i,
+    /\brecommendation-share\b/i,
+    /\bstrategy page\b/i,
+    /\binternal brief\b/i,
+    /\bold draft\b/i,
+    /\bprevious page\b/i,
+  ];
+  const forbidden = forbiddenPatterns.filter((pattern) => pattern.test(content)).map((pattern) => pattern.toString());
+  if (forbidden.length > 0) {
+    throw new Error(`Strategy content drafts contain forbidden internal language: ${forbidden.join(", ")}`);
+  }
+
+  if (!/comment/i.test(content)) {
+    throw new Error("Strategy content drafts must include a comment-based CTA.");
+  }
+}
+
+async function generateStrategyContentDrafts(company, researchData, canonicalInputs, brief, pageTsxContent, keywordAttributionSummary) {
+  const systemPrompt = buildContentDraftSystemPrompt(canonicalInputs);
+  const userPrompt = `Generate the founder-advisory content drafts now.
+
+COMPANY: ${company.name}
+DOMAIN: ${company.domain}
+CATEGORY: ${company.category}
+INDUSTRY: ${company.industry}
+CONTENT DRAFT OUTPUT PATH: ${getObsidianStrategyContentDraftPath(company.slug)}
+
+KEYWORD ATTRIBUTION SUMMARY (use if available):
+${formatKeywordAttributionSummary(keywordAttributionSummary)}
+
+RESEARCH MODEL NOTES:
+- Expected traffic in 12 months: ${formatNumber(researchData?.tamModel?.totals?.expectedTraffic12Months?.base)}
+- First 6-month target: ${formatNumber(researchData?.tamModel?.totals?.first6MonthTarget?.base)}
+- Aggressive upside: ${formatNumber(researchData?.tamModel?.totals?.aggressiveUpside)}
+- Revenue model enabled: ${researchData?.tamModel?.revenueModel?.enabled === false ? "no" : "yes"}
+
+APPROVED BRIEF CONTENT:
+${brief.content}
+
+CANONICAL PUBLIC PAGE TSX:
+${pageTsxContent}
+
+Additional requirements:
+- Keep one clear angle that can power both the video script and LinkedIn post.
+- The angle should normally combine missed traffic, missed AI visibility, and missed revenue potential when the canonical inputs support those claims.
+- The rough video script should read like a 45-90 second talking-head draft with short lines, not polished ad copy.
+- The LinkedIn post should be short-paragraph founder commentary, roughly 150-300 words, and end with a soft comment-based CTA.
+- If you use modeled numbers, say modeled or estimate-only once in natural language.
+- If revenue planning is incomplete, say that revenue planning needs client ACV/AOV and funnel inputs instead of inventing certainty.
+- Do not mention internal systems, contracts, or the words brief / strategy page in the visible draft.
+- Keep the output clean enough to save directly as markdown.`;
+
+  const draftContent = await codexRequest(systemPrompt, userPrompt);
+
+  let cleaned = draftContent;
+  if (cleaned.startsWith("```")) {
+    cleaned = cleaned.replace(/^```(?:md|markdown)?\n/, "").replace(/\n```$/, "");
+  }
+
+  const repoOutPath = getRepoStrategyContentDraftPath(company.slug);
+  const obsidianOutPath = getObsidianStrategyContentDraftPath(company.slug);
+  if (!fs.existsSync(PORTABLE_STRATEGY_CONTENT_DRAFT_DIR)) {
+    fs.mkdirSync(PORTABLE_STRATEGY_CONTENT_DRAFT_DIR, { recursive: true });
+  }
+  if (!fs.existsSync(OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR)) {
+    fs.mkdirSync(OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR, { recursive: true });
+  }
+
+  fs.writeFileSync(repoOutPath, cleaned);
+  validateGeneratedStrategyContentDraft(cleaned, repoOutPath);
+  fs.writeFileSync(obsidianOutPath, cleaned);
+  validateGeneratedStrategyContentDraft(cleaned, obsidianOutPath);
+  console.log(`  Strategy content drafts saved to ${repoOutPath}`);
+  console.log(`  Strategy content drafts mirrored to ${obsidianOutPath}`);
+
+  return { filePath: obsidianOutPath, repoFilePath: repoOutPath };
 }
 
 async function generateStrategyPage(company, researchData) {
@@ -1291,6 +1524,9 @@ Mandatory output structure additions:
 - Put detailed keyword universe, assumptions/confidence, detailed competitor evidence, prompt evidence, and optional calculator in the appendix rather than the primary flow.
 - Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
 - Keep executive-summary headline numbers compact enough that seven-figure values do not wrap awkwardly, but let the cards grow naturally; do not cram them into a horizontal row.
+- Make the hero H1 concise and claim-led. Default to a short ownership headline such as "${company.name} can own the <category> conversation" where appropriate.
+- Do not split the main hero idea across a long title plus a long accent. Prefer no accent line; if you use one, keep it extremely short.
+- Put nuance like timing, incumbent pressure, and execution detail into the subtitle instead of the H1.
 - If keyword attribution summary is available, add a compact competitor-keyword vs non-competitor / unbranded breakdown beneath each executive-summary metric card.
 - Keep hero metrics and primary visuals tied to validated topical subsets.
 - Display trajectory numbers as whole integers in visible UI labels.
@@ -1329,6 +1565,8 @@ Generate the complete TSX file now.`;
     cleaned = cleaned.replace(/^```(?:tsx|typescript|ts)?\n/, "").replace(/\n```$/, "");
   }
 
+  cleaned = ensureVisibleEstimateOnlyLabel(cleaned);
+
   validateGeneratedTsx(cleaned);
 
   // Save the file
@@ -1340,7 +1578,22 @@ Generate the complete TSX file now.`;
   fs.writeFileSync(outPath, cleaned);
   console.log(`  Strategy page saved to ${outPath}`);
 
-  return { fileName, componentName: `Strategy${pascalCase(company.slug)}`, outPath };
+  const contentDraft = await generateStrategyContentDrafts(
+    company,
+    researchData,
+    canonicalInputs,
+    brief,
+    cleaned,
+    keywordAttributionSummary
+  );
+
+  return {
+    fileName,
+    componentName: `Strategy${pascalCase(company.slug)}`,
+    outPath,
+    contentDraftPath: contentDraft.filePath,
+    repoContentDraftPath: contentDraft.repoFilePath,
+  };
 }
 
 function pascalCase(slug) {

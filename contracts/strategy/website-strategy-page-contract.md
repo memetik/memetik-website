@@ -28,6 +28,8 @@ Canonical public-output contract for founder-facing strategy pages derived from 
 12. Public pages must avoid operator-only labels such as `Apex Assets`, `Knowledge Graph`, `Trust Relay`, `wedge`, `shortlist`, and `recommendation-share`; keep those canonical upstream in doctrine and briefs, then translate them for founders.
 13. Public pages must not promise a fixed count of bottom-of-funnel pages; they should explain that Memetik builds as many commercial decision pages as needed to cover the relevant demand.
 14. The page must not include pricing, staffing minutiae, hidden assumptions presented as facts, or internal QA labels.
+15. The hero H1 must be concise and claim-led. Default to one short commercial statement, usually 4-8 words, such as `<Brand> can own the <category> conversation` or an equally tight ownership claim.
+16. Do not split the core hero claim across a long `title` plus a long `accent`. If an accent line is used at all, it should be very short; the real nuance should live in the subtitle.
 
 ## 2b. Layout doctrine
 
@@ -37,13 +39,14 @@ Canonical public-output contract for founder-facing strategy pages derived from 
 4. In the main narrative, avoid 2-column, 3-column, or 4-column content grids as the default storytelling pattern.
 5. If a section contains multiple ideas, stack them vertically in sequence.
 6. The hero must stack: eyebrow -> H1 -> subhead -> executive summary note -> stacked metric cards -> stacked immediate actions.
-7. The Revenue / Commercial Impact section should stack: section lead -> explanation -> curve -> calculator -> assumptions/caveat note.
-8. The 6-month Growth Plan should stack Month 1, Month 2, Month 3, and Months 4–6 vertically.
-9. The Operating Model should use a timeline / curve visual with deployment milestones, not a dense workstream matrix.
-10. The Operating Model should show the full 12-month progression where the page exposes 12-month traffic planning, not only a compressed subset of months.
-11. If the timeline component supports interaction, hovering on desktop and tapping on mobile should reveal what is being deployed in the active month.
-12. The "What Memetik Builds and Ships" section should use vertically stacked scope blocks, not a matrix or dashboard-like execution table.
-13. Detailed comparison tables belong in the appendix, not the main narrative.
+7. The hero H1 should land one sharp idea fast. Avoid qualifying clauses like `before...`, `while...`, or `so that...` inside the headline itself.
+8. The Revenue / Commercial Impact section should stack: section lead -> explanation -> curve -> calculator -> assumptions/caveat note.
+9. The 6-month Growth Plan should stack Month 1, Month 2, Month 3, and Months 4–6 vertically.
+10. The Operating Model should use a timeline / curve visual with deployment milestones, not a dense workstream matrix.
+11. The Operating Model should show the full 12-month progression where the page exposes 12-month traffic planning, not only a compressed subset of months.
+12. If the timeline component supports interaction, hovering on desktop and tapping on mobile should reveal what is being deployed in the active month.
+13. The "What Memetik Builds and Ships" section should use vertically stacked scope blocks, not a matrix or dashboard-like execution table.
+14. Detailed comparison tables belong in the appendix, not the main narrative.
 
 ## 3. Required section order
 

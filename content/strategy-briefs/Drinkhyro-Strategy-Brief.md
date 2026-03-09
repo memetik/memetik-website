@@ -17,6 +17,8 @@
 - Payload confidence: high (100/100)
 - Quality gate: passed
 - Page output path: /Users/house/projects/agency/memetik-website/client/src/pages/strategy/Drinkhyro.tsx
+- Repository content draft path: /Users/house/projects/agency/memetik-website/content/strategy-content-drafts/Drinkhyro-Strategy-Content-Drafts.md
+- Obsidian content draft path: /Users/house/Mind/Areas/Agency/Clients/SaaS/memetik/Strategy Content Drafts/Drinkhyro-Strategy-Content-Drafts.md
 - Canonical brief path: /Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation/briefs/Drinkhyro-Strategy-Brief.md
 
 ## 2. Company Context

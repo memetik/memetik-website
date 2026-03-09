@@ -10,6 +10,7 @@ brief_schema:
       - research_payload
       - internal_strategy_brief
       - website_strategy_page
+      - strategy_content_drafts
   operating_rules:
     deterministic_section_order:
       - brief_metadata

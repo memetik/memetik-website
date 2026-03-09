@@ -541,8 +541,8 @@ export default function StrategyBts2() {
       <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-14 md:gap-18">
         <StrategyHero
           eyebrow="00 · Founder strategy memo"
-          title="BTS for serious creators building real businesses"
-          subtitle="Own the commercial comparisons and monetization queries where founders choose the platform they can build on long term."
+          title="BTS can own the serious creator conversation"
+          subtitle="Own the comparison and monetization queries where founders decide which platform can support a real business long term."
           tags={[
             "behindthescenes.com",
             "Creator Economy",

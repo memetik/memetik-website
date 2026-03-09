@@ -908,9 +908,8 @@ export default function StrategyBts3() {
       <div className="mx-auto max-w-6xl">
         <StrategyHero
           eyebrow="BTS × Memetik Strategy Memo"
-          title="BTS for serious creators building real businesses"
-          accent="with the Whop contrast made visible"
-          subtitle="This strategy turns BTS into the visible choice for serious creators building real businesses: comparison pages first, multi-surface visibility second, and trust infrastructure built hard enough that the market starts repeating the same serious-business story back to buyers."
+          title="BTS can own the serious creator conversation"
+          subtitle="The path is comparison pages first, Whop contrast second, and trust infrastructure strong enough that the market starts repeating the same serious-business story back to founders."
           tags={["behindthescenes.com", "creator economy", "6-month plan", "serious builders"]}
         >
           <div className="rounded-[28px] border border-[#f4e4cd]/15 bg-[#f4e4cd]/8 px-5 py-4 text-sm leading-7 text-white/78">

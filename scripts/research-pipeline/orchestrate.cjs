@@ -58,6 +58,14 @@ async function main() {
     console.log(`Research output: data/research/${company.slug}.json`);
     if (result.generated) {
       console.log(`Strategy page: client/src/pages/strategy/${result.generated.fileName}`);
+      if (result.generated.contentDraftPath) {
+        console.log(`Content drafts (Obsidian): ${result.generated.contentDraftPath}`);
+      }
+      if (result.generated.repoContentDraftPath) {
+        console.log(
+          `Content drafts (repo): ${path.relative(path.join(__dirname, "..", ".."), result.generated.repoContentDraftPath)}`
+        );
+      }
       console.log(`Route reminder: /strategy/${company.slug}`);
     }
     console.log(`Total runtime: ${(result.totalMs / 1000).toFixed(1)}s`);

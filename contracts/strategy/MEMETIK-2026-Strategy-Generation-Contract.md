@@ -8,8 +8,9 @@ Thin operational distillation of `/Users/house/Mind/Areas/Agency/Lead-Magnets/ME
 | --- | --- |
 | Canonical upstream doctrine | `MEMETIK-2026-AEO-Master-Reference.md` |
 | Purpose | Lock source precedence, terminology, handoffs, blocking rules, traceability, and delivery doctrine for downstream strategy generation. |
-| Canonical chain | `research payload -> internal strategy brief -> founder-facing website strategy page` |
+| Canonical chain | `research payload -> internal strategy brief -> founder-facing website strategy page -> founder-advisory content drafts` |
 | Canonical public-output contract | `website-strategy-page-contract.md` |
+| Canonical derivative-output contract | `strategy-content-draft-contract.md` |
 | Output rule | Lower layers may transform, compress, and sequence. They may not invent doctrine, rename core systems, or erase required delivery/cadence substance. |
 
 ## 2. Source precedence
@@ -30,10 +31,12 @@ Use sources in this order. Higher layers win on conflict.
 | Research payload | Company data, category framing, current-state evidence, competitor evidence, prompt/query evidence, source dates | Evidence pack for the brief | Supply company-specific facts and traceable evidence | Skip evidence, hide freshness, or fabricate certainty |
 | Internal strategy brief | Payload + this contract + fresh platform rechecks when needed | Canonical planning artifact | Decide wedge, priorities, delivery scope, gaps, caveats, and page-ready storyline | Publish directly, hide blockers, or invent unsupported claims |
 | Website strategy page | Approved brief + page contract | Founder-facing page | Transform the brief into concise public narrative and preserve doctrine that must survive publicly | Read raw payload as canonical input, expose operator-only detail, or reinterpret doctrine |
+| Founder-advisory content drafts | Approved brief + canonical page + derivative-output contract | Portable script/post drafts | Transform the canonical page into reusable founder-advisory content without inventing claims or leaking operator-only doctrine | Ignore the approved page, switch angles mid-draft, or overstate unsupported certainty |
 
 ### Handoff rules
 
 - The **brief is canonical downstream planning state**. The page is a rendering of the brief, not a parallel strategy.
+- The **page is the canonical public narrative state** for downstream founder-advisory content drafts.
 - If a later layer needs a new claim, it must be added to the brief first with traceability.
 - Later layers may simplify wording for founders, but they must preserve the chosen wedge, the core delivery system, and the cadence doctrine.
 
