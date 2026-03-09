@@ -1,28 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Nav } from "@/components/Nav";
-import {
-  ArrowRight,
-  BarChart3,
-  Bot,
-  CheckCircle2,
-  Compass,
-  FileText,
-  Gauge,
-  Globe,
-  LineChart,
-  Link2,
-  MessageSquare,
-  Newspaper,
-  Radar,
-  Search,
-  ShieldCheck,
-  Sparkles,
-  Star,
-  Target,
-  Trophy,
-  Waves,
-  Wrench,
-} from "lucide-react";
 import {
   BulletList,
   DataTable,
@@ -38,431 +15,153 @@ import {
   StrategyPageFrame,
   StrategySectionLead,
   StrategySectionShell,
-  TamRoiCalculator,
 } from "@/components/strategy";
+import {
+  Activity,
+  BadgeCheck,
+  BarChart3,
+  Bot,
+  Compass,
+  FileText,
+  Globe,
+  Link2,
+  MessageSquare,
+  Radar,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Trophy,
+  Users,
+} from "lucide-react";
 
 function formatNumber(value: number) {
-  return new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(value);
+  return new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(
+    Number.isFinite(value) ? Math.round(value) : 0
+  );
 }
 
-const executiveMetrics = [
-  {
-    label: "Total search opportunity",
-    value: "8,464,050",
-    note: "Validated topical demand in the US electrolyte drink mix category. Topical integrity passed, so the headline opportunity is not inflated by low-quality semantic noise.",
-    icon: <Search className="h-5 w-5" />,
-  },
-  {
-    label: "Expected traffic in 12 months",
-    value: "191,505",
-    note: "Base-case cumulative traffic if Hyro wins the right decision-stage queries first, then expands into broader category coverage behind them.",
-    icon: <LineChart className="h-5 w-5" />,
-  },
-  {
-    label: "Aggressive upside",
-    value: "327,134",
-    note: "Upside case if Hyro compounds faster across buyer guides, comparison pages, supporting coverage, and third-party authority.",
-    icon: <Sparkles className="h-5 w-5" />,
-  },
-  {
-    label: "First 6-month target",
-    value: "70,857",
-    note: "The first visible milestone is not full category ownership. It is establishing Hyro inside decision-stage buying moments and building repeatable momentum.",
-    icon: <Target className="h-5 w-5" />,
-  },
-];
+function formatCurrency(value: number) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(Number.isFinite(value) ? value : 0);
+}
 
-const immediateActions = [
-  {
-    title: "Lead with buyer-guide demand, not broad category awareness",
-    body: "Start where buying intent is highest: best electrolyte drink, best electrolyte powder, best hydration powder, best electrolyte mix, and best electrolyte drink mix.",
-  },
-  {
-    title: "Attach third-party trust to every important page",
-    body: "Hyro should not publish decision pages in isolation. Each important page needs review proof, community visibility, listicle/editorial support, and backlinks pointed at it.",
-  },
-  {
-    title: "Build the market narrative across Google and AI surfaces at the same time",
-    body: "Google still drives major discovery, but buyers now move across Google, ChatGPT, Gemini, and other answer layers before they decide what to buy. Hyro needs visibility across both.",
-  },
-];
+function sanitizeDecimalInput(raw: string, maxDecimals = 2) {
+  const cleaned = raw.replace(/[^\d.]/g, "");
+  const [intPart = "", decimalPart = ""] = cleaned.split(".");
+  if (cleaned.includes(".")) return `${intPart}.${decimalPart.slice(0, maxDecimals)}`;
+  return intPart;
+}
 
-const opportunityCurve = [
-  { month: 1, low: 1800, base: 3000, high: 5200 },
-  { month: 2, low: 5200, base: 8500, high: 14500 },
-  { month: 3, low: 9800, base: 16000, high: 27000 },
-  { month: 4, low: 16500, base: 27000, high: 45000 },
-  { month: 5, low: 25000, base: 43000, high: 71000 },
-  { month: 6, low: 37000, base: 70857, high: 113000 },
-  { month: 7, low: 50000, base: 93000, high: 148000 },
-  { month: 8, low: 63000, base: 112000, high: 180000 },
-  { month: 9, low: 76000, base: 132000, high: 215000 },
-  { month: 10, low: 90000, base: 153000, high: 252000 },
-  { month: 11, low: 103000, base: 173000, high: 289000 },
-  { month: 12, low: 118000, base: 191505, high: 327134 },
-];
+type BreakdownItem = {
+  label: string;
+  value: string;
+};
 
-const operatingTimelinePoints = [
-  { month: 1, low: 1800, base: 3000, high: 5200 },
-  { month: 2, low: 5200, base: 8500, high: 14500 },
-  { month: 3, low: 9800, base: 16000, high: 27000 },
-  { month: 4, low: 16500, base: 27000, high: 45000 },
-  { month: 5, low: 25000, base: 43000, high: 71000 },
-  { month: 6, low: 37000, base: 70857, high: 113000 },
-];
-
-const operatingMilestones = [
-  {
-    label: "Month 1",
-    month: 1,
-    title: "Own the first decision-stage pages",
-    detail:
-      "Lock the buyer-guide opening move, publish the first decision pages, fix the technical/entity layer, and establish the first review and community footprints.",
-    trafficLabel: "Base traffic",
-    trafficValue: 3000,
-  },
-  {
-    label: "Month 2",
-    month: 2,
-    title: "Expand comparison and review proof",
-    detail:
-      "Add head-to-head comparisons, review-led content, listicle/editorial reinforcement, and the first focused backlink pushes to pages already in market.",
-    trafficLabel: "Base traffic",
-    trafficValue: 8500,
-  },
-  {
-    label: "Month 3",
-    month: 3,
-    title: "Deepen supporting coverage around the winners",
-    detail:
-      "Surround early winners with use-case pages, ingredient/benefit explainers, competitor-adjacent support content, and stronger entity consistency across surfaces.",
-    trafficLabel: "Base traffic",
-    trafficValue: 16000,
-  },
-  {
-    label: "Month 6",
-    month: 6,
-    title: "Turn the system into compounding category pressure",
-    detail:
-      "Months 4-6 expand the coverage network, refresh pages that are moving, widen third-party trust, and push Hyro into more recommendation moments across the category.",
-    trafficLabel: "Base traffic",
-    trafficValue: 70857,
-  },
-];
-
-const competitorRows = [
-  ["LMNT", "429,600", "34,009", "4,642", "150,912", "7"],
-  ["Liquid I.V.", "456,449", "14,724", "2,789", "44,257", "7"],
-  ["Hydralyte", "4,169", "1,276", "586", "1,842", "0"],
-  ["Nuun", "105,219", "19,880", "4,218", "77,141", "6"],
-  ["DripDrop", "161,926", "14,368", "1,846", "9,454", "2"],
-  ["Hyro", "1,004", "362", "74", "366", "0"],
-];
-
-const keywordSignalRows = [
-  ["best electrolyte powder for pregnancy", "390", "89", "High-intent use case Hyro can answer credibly"],
-  ["best natural electrolytes drink", "390", "102", "Natural ingredient framing is commercially useful"],
-  ["best sugar free electrolyte drink", "390", "69", "Decision-stage buyer language with clear commercial intent"],
-  ["best sugar-free electrolyte drink", "390", "58", "Variant worth consolidating into one strong page cluster"],
-  ["best low-sugar electrolyte drink", "210", "80", "Useful for selection-based comparison content"],
-  ["best no sugar electrolyte powder", "210", "60", "Clear opportunity for buyer-guide and use-case expansion"],
-  ["best cheap electrolyte powder", "140", "38", "Price-sensitive evaluation content opportunity"],
-  ["best electrolyte drink without potassium", "140", "62", "Niche health need that can create trust and relevance"],
-];
-
-const promptRows = [
-  [
-    "best electrolyte powder drink mix",
-    "ChatGPT",
-    "LMNT, Hydrant, Nuun-style alternatives",
-    "Absent",
-    "Hyro needs a page that deserves to be cited, then third-party proof that reinforces it.",
-  ],
-  [
-    "best electrolyte powder drink mix",
-    "Google AI Overview",
-    "LMNT, Liquid I.V., Ultima, Nuun, DripDrop",
-    "Absent",
-    "Google is surfacing strong editorial and brand proof; Hyro needs both owned pages and stronger trust signals.",
-  ],
-  [
-    "electrolyte powder drink mix comparison",
-    "Gemini / ChatGPT sample prompts",
-    "Liquid I.V., LMNT, Nuun, DripDrop, other incumbents",
-    "Absent",
-    "Comparison moments are still being claimed by incumbents with broader authority and clearer evaluation content.",
-  ],
-];
-
-const primaryPromptExamples = [
-  {
-    prompt: "best electrolyte powder drink mix",
-    today:
-      "Sample responses elevate brands like LMNT and other established incumbents. Hyro is absent.",
-    whyItMatters:
-      "This is a buying-intent query. If Hyro is missing here, it is missing from one of the clearest product-selection moments in the category.",
-  },
-  {
-    prompt: "electrolyte powder drink mix comparison",
-    today:
-      "The answer layer currently defaults to familiar incumbents with clearer comparison narratives and broader authority.",
-    whyItMatters:
-      "Comparison prompts influence which brands get serious consideration. Hyro needs sharper evaluation pages and third-party reinforcement.",
-  },
-  {
-    prompt: "best sugar free electrolyte drink",
-    today:
-      "Hyro has visible room to compete because this is a use-case-driven selection query and the current ranking footprint is still weak.",
-    whyItMatters:
-      "Use-case queries are where a challenger brand can win faster than trying to own the whole category on day one.",
-  },
-];
-
-const monthPlan = [
-  {
-    label: "Month 1",
-    title: "Claim the first buying moments",
-    body:
-      "Start with buyer-guide demand in electrolyte powder drink mix. Publish the first decision pages, align the site structure around them, and tighten the crawl/index/entity layer so the market can actually find and interpret what Hyro stands for.",
-    bullets: [
-      "Ship the first buyer-guide and decision pages around best electrolyte drink, best electrolyte powder, best hydration powder, best electrolyte mix, and best electrolyte drink mix",
-      "Establish the first comparison direction against incumbent frames buyers already recognize",
-      "Repair the technical/entity foundation: schema matched to visible content, sitemap hygiene, canonicals, Bing Webmaster Tools, and IndexNow",
-      "Launch the first review-profile and community visibility pushes so pages do not sit alone",
-    ],
-  },
-  {
-    label: "Month 2",
-    title: "Expand evaluation content and trust proof",
-    body:
-      "Now Hyro needs to look credible in evaluation mode, not just present. This is the month where comparison content, review proof, backlinks, and listicle/editorial placements begin to change how the market sees the brand.",
-    bullets: [
-      "Publish comparison and alternative pages tied to real selection behavior",
-      "Build ingredient, benefit, and product-form explainers that help answer engines understand the product story",
-      "Push hydration roundups, editorial mentions, and listicle placements that echo the same buying narrative",
-      "Drive the first focused backlink acquisition toward the pages closest to revenue intent",
-    ],
-  },
-  {
-    label: "Month 3",
-    title: "Deepen supporting coverage around early winners",
-    body:
-      "Once the first pages are in market, the job is to surround them with supporting coverage that keeps repeating the same commercial story in more contexts: routines, ingredients, use cases, health needs, and competitor-adjacent searches.",
-    bullets: [
-      "Expand supporting coverage around hydration scenarios, routines, ingredients, benefits, and use cases",
-      "Strengthen internal linking so authority flows back to decision pages",
-      "Add review-led proof and expert commentary where buyer skepticism is highest",
-      "Retest the market, identify what is moving, and redirect effort toward the pages and prompts showing traction",
-    ],
-  },
-  {
-    label: "Months 4-6",
-    title: "Compound the system into category pressure",
-    body:
-      "From here, Hyro shifts from first-wave visibility to compounding share. Memetik keeps building around winners, refreshing what is aging, widening third-party trust, and pushing into broader category demand without losing commercial focus.",
-    bullets: [
-      "Expand into broader category coverage behind the pages already earning traction",
-      "Refresh pages, pricing/evaluation narratives, and proof blocks as the market shifts",
-      "Increase Reddit/community participation, editorial placements, review velocity, and backlink pressure",
-      "Consolidate what is winning and keep widening Hyro's presence across Google and AI discovery layers",
-    ],
-  },
-];
-
-const offsiteLanes = [
-  {
-    title: "Community and forum participation",
-    icon: <MessageSquare className="h-5 w-5" />,
-    body:
-      "Hyro needs visible presence where real hydration questions and product comparisons happen. Reddit and similar communities matter because they influence how brands are perceived long before a checkout click appears in analytics.",
-    bullets: [
-      "Participate in hydration and fitness discussions around real buyer questions",
-      "Support pages with natural references and proof points from community conversations",
-      "Use recurring community themes to decide what comparison and use-case content to publish next",
-    ],
-  },
-  {
-    title: "Reviews and reputation surfaces",
-    icon: <Star className="h-5 w-5" />,
-    body:
-      "Review platforms are part of modern buying research. If Hyro looks thin or inconsistent there, answer engines and buyers both have less reason to trust the brand.",
-    bullets: [
-      "Strengthen review-platform presence and profile completeness",
-      "Create a review acquisition and response rhythm that keeps proof fresh",
-      "Feed review proof back into decision pages and comparison content",
-    ],
-  },
-  {
-    title: "Editorials, listicles, and expert proof",
-    icon: <Newspaper className="h-5 w-5" />,
-    body:
-      "Buyers and AI systems both rely on third-party validation. Hydration roundups, editorial mentions, athlete/influencer proof, and expert commentary all help make Hyro easier to recommend.",
-    bullets: [
-      "Pitch hydration roundups and comparison listicles aligned to buyer-guide demand",
-      "Place expert commentary and product evidence into category-relevant editorial surfaces",
-      "Use those placements to support both referral trust and backlink strength",
-    ],
-  },
-];
-
-const buildShipBlocks = [
-  {
-    number: "01",
-    title: "Map the buying queries that actually shape purchase decisions",
-    icon: <Compass className="h-5 w-5" />,
-    description:
-      "Memetik starts by identifying the commercial searches and answer-engine prompts that matter most first. For Hyro, that means decision-stage electrolyte powder drink mix queries before broader category demand.",
-    bullets: [
-      "Prioritize buyer-guide, comparison, review, and use-case demand",
-      "Tie each query cluster to a clear page and a clear commercial story",
-      "Sequence the market attack so Hyro enters high-intent research moments first",
-    ],
-  },
-  {
-    number: "02",
-    title: "Build as many bottom-of-funnel pages as needed to cover the demand",
-    icon: <FileText className="h-5 w-5" />,
-    description:
-      "This is not a light publishing retainer. Memetik builds the decision pages Hyro needs to be taken seriously in market: buyer guides, best-for pages, comparisons, alternatives, product-form explainers, and ingredient/benefit proof pages.",
-    bullets: [
-      "Best-in-category pages for the main product-selection terms",
-      "Head-to-head and alternative pages where incumbent brands dominate buyer evaluation",
-      "Use-case and proof pages that make the product story more believable",
-    ],
-  },
-  {
-    number: "03",
-    title: "Expand supporting coverage behind the winners",
-    icon: <Globe className="h-5 w-5" />,
-    description:
-      "Once the first decision pages are live, Memetik builds supporting content coverage around hydration scenarios, ingredients, benefits, routines, use cases, and adjacent comparisons so Hyro keeps appearing in more buying contexts.",
-    bullets: [
-      "Create supporting content that reinforces the same commercial narrative",
-      "Increase retrieval density across the category without drifting into noise",
-      "Use internal links and topic clustering to push authority back toward decision pages",
-    ],
-  },
-  {
-    number: "04",
-    title: "Build third-party trust, not just owned content",
-    icon: <Link2 className="h-5 w-5" />,
-    description:
-      "Memetik runs aggressive backlink acquisition, listicle placements, digital PR, review-platform work, and community/forum participation alongside publishing. That is how Hyro becomes easier to trust and harder to ignore.",
-    bullets: [
-      "Aggressive backlink acquisition pointed at the pages closest to revenue intent",
-      "Digital PR, press-release angles, listicles, and editorial placements",
-      "Review-profile reinforcement plus Reddit/forum/community presence",
-    ],
-  },
-  {
-    number: "05",
-    title: "Make the infrastructure machine-readable and indexable",
-    icon: <Wrench className="h-5 w-5" />,
-    description:
-      "Memetik also handles the infrastructure required for modern visibility: schema matched to visible content, crawl/index eligibility, canonicals, sitemap hygiene, Bing Webmaster Tools, IndexNow, and entity consistency across owned and third-party surfaces.",
-    bullets: [
-      "Fix the technical conditions required for pages to be discovered and interpreted correctly",
-      "Strengthen entity consistency so Hyro looks like the same brand everywhere",
-      "Remove structural friction that slows discovery or weakens page eligibility",
-    ],
-  },
-  {
-    number: "06",
-    title: "Refresh, defend, and reallocate every month",
-    icon: <Radar className="h-5 w-5" />,
-    description:
-      "Memetik does not publish and walk away. Each month the system retests prompts, measures movement, reinforces winners, patches weak spots, and expands the next layer of category coverage.",
-    bullets: [
-      "Track visibility movement across search and answer surfaces",
-      "Refresh proof, comparisons, and product narratives as the market changes",
-      "Keep investing behind the pages and trust signals that are actually moving the category",
-    ],
-  },
-];
-
-const whyMemetikBullets = [
-  "Memetik is built around modern discovery behavior: Google still matters, but buyers now move across AI answer layers before they choose.",
-  "The program is designed to change buying consideration, not just publish blog content and hope rankings follow.",
-  "On-site pages, off-site authority, reviews, backlinks, and technical/entity work are run as one coordinated growth system.",
-  "The work is commercial by default: decision pages first, proof second, compounding coverage third, and monthly reinforcement throughout.",
-];
-
-const appendixAssumptions = [
-  "The visible traffic numbers are planning estimates derived from the approved brief and should be treated as directional growth modeling rather than guaranteed outcomes.",
-  "Topical integrity passed with low-quality semantic demand share at 0.1%, which supports using the headline category opportunity without promoting noisy or irrelevant demand.",
-  "Public AI visibility statements are intentionally softened where platform probing was incomplete. Missing probes for some surfaces were flagged in the brief and are not being upgraded into precise public claims.",
-  "Revenue planning requires client ACV/AOV and funnel inputs.",
-];
-
-function MetricStackCard({
+function ExecutiveMetricCard({
   label,
   value,
-  note,
-  icon,
+  summary,
+  breakdownLabel,
+  breakdown,
+  breakdownNote,
 }: {
   label: string;
   value: string;
-  note: string;
-  icon: React.ReactNode;
+  summary: string;
+  breakdownLabel: string;
+  breakdown: BreakdownItem[];
+  breakdownNote?: string;
 }) {
   return (
-    <StrategyCard className="mb-4 last:mb-0" glow="mixed">
-      <div className="mb-4 flex items-center gap-3 text-[#f4e4cd]">
-        {icon}
-        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/48">{label}</div>
-      </div>
-      <div className="text-[clamp(2rem,7vw,4.25rem)] font-display font-bold leading-[0.92] tracking-tight text-white">
+    <StrategyCard glow="mixed">
+      <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f4e4cd]">{label}</div>
+      <div className="mt-3 break-words text-[clamp(2.2rem,4.6vw,4rem)] font-display font-extrabold leading-[0.92] tracking-tight text-white">
         {value}
       </div>
-      <p className="mt-4 max-w-3xl text-sm leading-6 text-white/62">{note}</p>
-    </StrategyCard>
-  );
-}
+      <p className="mt-3 max-w-3xl text-sm leading-7 text-white/66">{summary}</p>
 
-function ActionStackCard({ index, title, body }: { index: number; title: string; body: string }) {
-  return (
-    <StrategyCard className="mb-4 last:mb-0">
-      <div className="mb-3 flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] font-mono text-sm font-bold tracking-[0.18em] text-[#f4e4cd]">
-          0{index + 1}
+      <div className="mt-5 rounded-[22px] border border-white/10 bg-black/20 p-4">
+        <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">{breakdownLabel}</div>
+        <div className="mt-3 space-y-2">
+          {breakdown.map((item) => (
+            <div key={`${label}-${item.label}`} className="flex flex-col gap-1 rounded-[16px] border border-white/8 bg-white/[0.03] px-3 py-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="text-sm text-white/58">{item.label}</div>
+              <div className="text-sm font-semibold text-white">{item.value}</div>
+            </div>
+          ))}
         </div>
-        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/48">Immediate action</div>
+        {breakdownNote ? <p className="mt-3 text-sm leading-6 text-white/56">{breakdownNote}</p> : null}
       </div>
-      <h3 className="text-xl font-semibold tracking-tight text-white">{title}</h3>
-      <p className="mt-3 max-w-3xl text-sm leading-7 text-white/64">{body}</p>
     </StrategyCard>
   );
 }
 
-function VerticalInsightCard({
+function ImmediateActionCard({
+  index,
+  title,
+  body,
+}: {
+  index: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <StrategyCard glow="blue">
+      <div className="mb-4 flex items-center justify-between gap-4">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-white/55">
+          Immediate action
+        </div>
+        <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] font-mono text-sm font-bold tracking-[0.18em] text-[#f4e4cd]">
+          {index}
+        </div>
+      </div>
+      <h3 className="text-xl font-semibold tracking-tight text-white md:text-2xl">{title}</h3>
+      <p className="mt-3 text-sm leading-7 text-white/66">{body}</p>
+    </StrategyCard>
+  );
+}
+
+function StackCard({
   eyebrow,
+  icon,
   title,
   body,
   bullets,
-  icon,
+  footer,
 }: {
   eyebrow: string;
+  icon?: ReactNode;
   title: string;
   body: string;
   bullets?: string[];
-  icon?: React.ReactNode;
+  footer?: string;
 }) {
   return (
-    <StrategyCard className="mb-4 last:mb-0" glow="blue">
-      <div className="flex items-start gap-3">
-        {icon ? <div className="mt-1 text-[#f4e4cd]">{icon}</div> : null}
-        <div className="min-w-0">
-          <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">{eyebrow}</div>
-          <h3 className="mt-2 text-2xl font-display font-bold tracking-tight text-white">{title}</h3>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-white/64">{body}</p>
-          {bullets?.length ? <div className="mt-5 max-w-3xl"><BulletList items={bullets} /></div> : null}
+    <StrategyCard>
+      <div className="flex items-start gap-4">
+        {icon ? (
+          <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] text-[#f4e4cd]">
+            {icon}
+          </div>
+        ) : null}
+        <div className="min-w-0 flex-1">
+          <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">{eyebrow}</div>
+          <h3 className="mt-2 text-xl font-semibold tracking-tight text-white">{title}</h3>
+          <p className="mt-3 text-sm leading-7 text-white/66">{body}</p>
+          {bullets?.length ? <div className="mt-4"><BulletList items={bullets} /></div> : null}
+          {footer ? <div className="mt-4 rounded-[18px] border border-white/8 bg-black/20 px-4 py-3 text-sm leading-6 text-white/62">{footer}</div> : null}
         </div>
       </div>
     </StrategyCard>
   );
 }
 
-function MonthBlock({
+function MonthPlanCard({
   label,
   title,
   body,
@@ -474,41 +173,933 @@ function MonthBlock({
   bullets: string[];
 }) {
   return (
-    <StrategyCard className="mb-4 last:mb-0" glow="mixed">
-      <div className="mb-3 inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#f4e4cd]">
-        {label}
-      </div>
-      <h3 className="text-2xl font-display font-bold tracking-tight text-white">{title}</h3>
-      <p className="mt-3 max-w-3xl text-sm leading-7 text-white/64">{body}</p>
-      <div className="mt-5 max-w-3xl">
+    <StrategyCard glow="mixed">
+      <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f4e4cd]">{label}</div>
+      <h3 className="mt-2 text-2xl font-display font-bold tracking-tight text-white">{title}</h3>
+      <p className="mt-3 text-sm leading-7 text-white/66">{body}</p>
+      <div className="mt-4">
         <BulletList items={bullets} />
       </div>
     </StrategyCard>
   );
 }
 
-function PromptExampleCard({
-  prompt,
-  today,
-  whyItMatters,
+function PlatformStatusCard({
+  platform,
+  rate,
+  title,
+  body,
+  icon,
 }: {
-  prompt: string;
-  today: string;
-  whyItMatters: string;
+  platform: string;
+  rate: string;
+  title: string;
+  body: string;
+  icon: ReactNode;
 }) {
   return (
-    <StrategyCard className="mb-4 last:mb-0">
-      <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">Real market prompt</div>
-      <div className="mt-2 text-lg font-semibold text-white">{prompt}</div>
-      <p className="mt-3 text-sm leading-7 text-white/64">
-        <span className="text-white">What shows up today:</span> {today}
-      </p>
-      <p className="mt-3 text-sm leading-7 text-white/64">
-        <span className="text-white">Why it matters:</span> {whyItMatters}
+    <StrategyCard>
+      <div className="flex items-start gap-4">
+        <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] text-[#f4e4cd]">
+          {icon}
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">{platform}</div>
+            <div className="inline-flex w-fit rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] font-mono uppercase tracking-[0.18em] text-white/55">
+              {rate}
+            </div>
+          </div>
+          <h3 className="mt-2 text-xl font-semibold tracking-tight text-white">{title}</h3>
+          <p className="mt-3 text-sm leading-7 text-white/66">{body}</p>
+        </div>
+      </div>
+    </StrategyCard>
+  );
+}
+
+function PromptEvidenceCard({
+  platform,
+  query,
+  winners,
+  implication,
+}: {
+  platform: string;
+  query: string;
+  winners: string;
+  implication: string;
+}) {
+  return (
+    <StrategyCard>
+      <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">{platform}</div>
+      <h3 className="mt-2 text-lg font-semibold text-white">{query}</h3>
+      <div className="mt-4 rounded-[18px] border border-white/10 bg-black/20 p-4">
+        <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Current visible winners</div>
+        <p className="mt-2 text-sm leading-7 text-white">{winners}</p>
+      </div>
+      <p className="mt-4 text-sm leading-7 text-white/66">{implication}</p>
+    </StrategyCard>
+  );
+}
+
+function CommercialImpactCalculator({
+  baseTraffic,
+}: {
+  baseTraffic: number;
+}) {
+  const [aovInput, setAovInput] = useState("");
+  const [conversionInput, setConversionInput] = useState("");
+
+  const result = useMemo(() => {
+    const aov = Number(aovInput || 0);
+    const conversionRate = Number(conversionInput || 0) / 100;
+    const estimatedCustomers = baseTraffic * conversionRate;
+    const revenuePotential = estimatedCustomers * aov;
+
+    return {
+      aov,
+      conversionRate,
+      estimatedCustomers,
+      revenuePotential,
+    };
+  }, [aovInput, baseTraffic, conversionInput]);
+
+  return (
+    <StrategyCard className="mt-6">
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Commercial impact calculator</div>
+          <h3 className="mt-2 text-2xl font-display font-bold tracking-tight text-white">Turn the traffic plan into a revenue planning range</h3>
+        </div>
+        <div className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.18em] text-white/55">
+          founder planning tool
+        </div>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        <label className="space-y-2">
+          <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Average order value / customer value</span>
+          <div className="relative">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white/35">$</span>
+            <input
+              type="text"
+              inputMode="decimal"
+              value={aovInput}
+              onChange={(e) => setAovInput(sanitizeDecimalInput(e.target.value, 0))}
+              placeholder="150"
+              className="w-full rounded-2xl border border-white/10 bg-black/20 py-3 pl-8 pr-4 text-white outline-none transition focus:border-white/20 focus:bg-white/[0.05] placeholder:text-white/28"
+            />
+          </div>
+        </label>
+
+        <label className="space-y-2">
+          <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">Visit to customer rate</span>
+          <div className="relative">
+            <input
+              type="text"
+              inputMode="decimal"
+              value={conversionInput}
+              onChange={(e) => setConversionInput(sanitizeDecimalInput(e.target.value, 2))}
+              placeholder="1.5"
+              className="w-full rounded-2xl border border-white/10 bg-black/20 py-3 pl-4 pr-8 text-white outline-none transition focus:border-white/20 focus:bg-white/[0.05] placeholder:text-white/28"
+            />
+            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-white/35">%</span>
+          </div>
+        </label>
+      </div>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <div className="rounded-[22px] border border-white/10 bg-black/20 p-4">
+          <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Expected traffic in 12 months</div>
+          <div className="mt-2 text-2xl font-display font-bold tracking-tight text-white">{formatNumber(baseTraffic)}</div>
+        </div>
+        <div className="rounded-[22px] border border-white/10 bg-black/20 p-4">
+          <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Estimated customers</div>
+          <div className="mt-2 text-2xl font-display font-bold tracking-tight text-white">{formatNumber(result.estimatedCustomers)}</div>
+        </div>
+        <div className="rounded-[22px] border border-[#f4e4cd]/20 bg-[#f4e4cd]/8 p-4">
+          <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Revenue potential</div>
+          <div className="mt-2 text-2xl font-display font-bold tracking-tight text-white">{formatCurrency(result.revenuePotential)}</div>
+        </div>
+      </div>
+
+      <p className="mt-4 text-sm leading-7 text-white/58">
+        This calculator is intentionally simple: expected traffic × visit-to-customer rate × order value.
+        It helps a founder pressure-test upside quickly before plugging in first-party store, repeat-purchase, and retention data.
       </p>
     </StrategyCard>
   );
 }
+
+const totalSearchOpportunity = 8_464_050;
+const expectedTraffic12Months = 191_505;
+const aggressiveUpside = 327_134;
+const firstSixMonthTarget = 70_857;
+const currentOrganicTraffic = 1_004;
+const currentOrganicKeywords = 362;
+const currentReferringDomains = 74;
+const currentBacklinks = 366;
+const lowTwelveMonthCase = 99_308;
+
+const executiveMetrics = [
+  {
+    label: "Total search opportunity",
+    value: formatNumber(totalSearchOpportunity),
+    summary:
+      "Validated electrolyte category demand in the US. The underlying research passed topical integrity, so Hyro is not being pointed at noisy or low-quality keyword expansion.",
+    breakdownLabel: "Demand split",
+    breakdown: [
+      { label: "Competitor-keyword demand", value: "629,440 (7.4%)" },
+      { label: "Non-competitor / unbranded demand", value: "7,834,610 (92.6%)" },
+    ],
+  },
+  {
+    label: "Expected traffic in 12 months",
+    value: formatNumber(expectedTraffic12Months),
+    summary:
+      "Base-case upside if Hyro owns the first decision-stage buying pages, reinforces them off-site, and expands broader category coverage behind the initial wins.",
+    breakdownLabel: "12-month traffic mix",
+    breakdown: [
+      { label: "Competitor-keyword traffic", value: "13,798" },
+      { label: "Non-competitor / unbranded traffic", value: "177,707" },
+    ],
+  },
+  {
+    label: "Aggressive upside",
+    value: formatNumber(aggressiveUpside),
+    summary:
+      "Upper-range outcome if Hyro gains traction early, compounds authority faster, and converts first-wave decision pages into wider category ownership.",
+    breakdownLabel: "Where the upside lives",
+    breakdown: [
+      { label: "Competitor-keyword demand", value: "629,440 (7.4%)" },
+      { label: "Non-competitor / unbranded demand", value: "7,834,610 (92.6%)" },
+    ],
+    breakdownNote:
+      "The bigger prize is not stealing a small slice of rival brand demand. It is showing up when buyers ask broad, unbranded questions about what electrolyte product to choose.",
+  },
+  {
+    label: "First 6-month target",
+    value: formatNumber(firstSixMonthTarget),
+    summary:
+      "A realistic first-half outcome if the opening move is executed cleanly and paired with authority building instead of standalone publishing.",
+    breakdownLabel: "6-month traffic mix",
+    breakdown: [
+      { label: "Competitor-keyword traffic", value: "5,105" },
+      { label: "Non-competitor / unbranded traffic", value: "65,752" },
+    ],
+  },
+];
+
+const immediateActions = [
+  {
+    index: "01",
+    title: "Own the first buying questions",
+    body:
+      "Start with the highest-intent pages around best electrolyte drink, best electrolyte powder, best hydration powder, best electrolyte mix, and best electrolyte drink mix.",
+  },
+  {
+    index: "02",
+    title: "Attach off-site proof to every important page",
+    body:
+      "Every serious page should be reinforced through reviews, community placements, roundups, editorial mentions, and backlinks so Hyro becomes more believable across search and AI surfaces.",
+  },
+  {
+    index: "03",
+    title: "Expand beyond the first winners",
+    body:
+      "Once the first decision pages gain traction, widen into use-case pages, comparisons, ingredient proof, and broader category coverage so the market keeps retrieving the same Hyro story.",
+  },
+];
+
+const marketShiftCards = [
+  {
+    eyebrow: "Search still matters",
+    icon: <Search className="h-5 w-5" />,
+    title: "Google is still the center of product discovery",
+    body:
+      "For consumer health categories like electrolyte drink mix, Google remains a major source of product research, comparison behavior, and purchase-intent traffic. That is still where a large share of the market starts looking.",
+  },
+  {
+    eyebrow: "AI now shapes selection",
+    icon: <Bot className="h-5 w-5" />,
+    title: "Buyers are deciding earlier inside answer engines",
+    body:
+      "More buyers now ask ChatGPT, Gemini, and Google AI Overviews what to choose before they ever click through to a site. The buying decision is moving upstream into the answer itself.",
+  },
+  {
+    eyebrow: "The new standard",
+    icon: <Globe className="h-5 w-5" />,
+    title: "Winning brands need visibility across both layers",
+    body:
+      "The brand that earns trust across classic search, AI answers, reviews, editorials, and communities becomes easier to recommend and harder to displace. That matters directly to CAC efficiency and long-term defensibility.",
+  },
+];
+
+const currentStateCards = [
+  {
+    eyebrow: "Current visibility",
+    icon: <BarChart3 className="h-5 w-5" />,
+    title: "Hyro has room to grow fast",
+    body: `Hyro is operating with ${formatNumber(currentOrganicTraffic)} current organic visits and ${formatNumber(
+      currentOrganicKeywords
+    )} ranking keywords against ${formatNumber(totalSearchOpportunity)} validated category demand.`,
+    bullets: [
+      "The market is large enough to matter commercially.",
+      "Hyro's current visibility is still small relative to the category.",
+      "That gap creates upside if the opening move is focused.",
+    ],
+  },
+  {
+    eyebrow: "Existing foundation",
+    icon: <Link2 className="h-5 w-5" />,
+    title: "The authority base is usable",
+    body: `Hyro already has ${formatNumber(currentReferringDomains)} referring domains and ${formatNumber(
+      currentBacklinks
+    )} backlinks. That is not category leadership, but it is enough to support a concentrated push around high-intent pages.`,
+    bullets: [
+      "Hyro is not starting from zero.",
+      "A focused content and authority program has something to build on.",
+      "That makes the first 6 months more about concentration than about basic setup alone.",
+    ],
+  },
+  {
+    eyebrow: "The gap",
+    icon: <Compass className="h-5 w-5" />,
+    title: "The site is not yet organized around buying consideration",
+    body:
+      "Hyro has category relevance, but it has not yet turned that into a clear layer of decision pages, comparison assets, proof pages, and third-party reinforcement around electrolyte selection queries.",
+    bullets: [
+      "No sampled visibility in ChatGPT, Gemini, or Google AI Overviews for the tested prompts.",
+      "No concentrated decision-page layer around the strongest buyer-guide terms.",
+      "Limited third-party proof and retrieval repetition compared with category leaders.",
+    ],
+  },
+];
+
+const opportunityBlocks = [
+  {
+    eyebrow: "Phase 1 / immediate",
+    title: "Buyer guides",
+    body: `The fastest commercial opening sits in the buyer-guide cluster: ${formatNumber(
+      211_170
+    )} validated demand and ${formatNumber(23_229)} expected traffic in 12 months.`,
+    footer: "This is where buyers ask what is best, what fits their use case, and what to choose now.",
+    bullets: [
+      "best electrolyte drink",
+      "best electrolyte powder",
+      "best hydration powder",
+      "best electrolyte mix",
+      "best electrolyte drink mix",
+    ],
+  },
+  {
+    eyebrow: "Phase 1 / immediate",
+    title: "Comparisons and alternatives",
+    body: `Comparison behavior adds another ${formatNumber(
+      7_210
+    )} validated demand and helps Hyro enter direct evaluation moments where buyers compare forms, brands, and use cases.`,
+    footer: "These pages capture buyers who are already narrowing options.",
+    bullets: [
+      "electrolyte powder drink mix comparison",
+      "electrolyte powder vs tablets",
+      "pedialyte vs electrolyte powder",
+      "liquid iv vs gatorade",
+    ],
+  },
+  {
+    eyebrow: "Phase 1 / immediate",
+    title: "Reviews and proof",
+    body: `Review-style demand is smaller at ${formatNumber(
+      3_720
+    )}, but it plays an outsized role in making claims believable inside both search and answer surfaces.`,
+    footer: "Proof pages and review reinforcement help Hyro look credible, not just present.",
+    bullets: [
+      "review profiles and responses",
+      "expert and athlete proof",
+      "ingredient and benefit substantiation",
+      "third-party roundups and review placements",
+    ],
+  },
+  {
+    eyebrow: "Phase 3 / expansion",
+    title: "Broader category capture",
+    body: `Once the first buying pages are working, Hyro can expand into the wider category layer worth ${formatNumber(
+      8_241_950
+    )} in validated demand and ${formatNumber(167_074)} expected traffic in 12 months.`,
+    footer: "The broad market gets much easier to win after the decision layer starts working.",
+    bullets: [
+      "electrolyte drinks",
+      "electrolyte drink mix",
+      "electrolyte powder",
+      "electrolyte drink",
+      "electrolyte drink for dehydration",
+    ],
+  },
+];
+
+const commercialSignals = [
+  "best electrolyte powder for pregnancy",
+  "best natural electrolytes drink",
+  "best sugar free electrolyte drink",
+  "best sugar-free electrolyte drink",
+  "best low-sugar electrolyte drink",
+  "best no sugar electrolyte powder",
+  "best cheap electrolyte powder",
+  "best electrolyte drink without potassium",
+];
+
+const competitiveTableRows = [
+  ["LMNT", "429,600", "34,009", "4,642", "150,912", "7"],
+  ["Liquid I.V.", "456,449", "14,724", "2,789", "44,257", "7"],
+  ["Nuun", "105,219", "19,880", "4,218", "77,141", "6"],
+  ["DripDrop", "161,926", "14,368", "1,846", "9,454", "2"],
+  ["Hydralyte", "4,169", "1,276", "586", "1,842", "0"],
+  ["Hyro", "1,004", "362", "74", "366", "0"],
+];
+
+const platformStatus = [
+  {
+    platform: "ChatGPT sample",
+    rate: "0 / 8 prompts",
+    title: "Hyro is not yet part of the answer set",
+    body:
+      "Across the sampled prompts, ChatGPT did not mention Hyro. That means the current on-site and off-site signal set is not yet strong enough to place Hyro in commercial answer moments.",
+    icon: <Bot className="h-5 w-5" />,
+  },
+  {
+    platform: "Gemini sample",
+    rate: "0 / 8 prompts",
+    title: "No visible foothold yet",
+    body:
+      "The Gemini sample also showed no Hyro mentions for the tested prompts. Hyro needs stronger retrieval support, clearer evidence pages, and broader third-party trust to compete here.",
+    icon: <Radar className="h-5 w-5" />,
+  },
+  {
+    platform: "Google AI Overview sample",
+    rate: "0 / 8 prompts",
+    title: "Google is surfacing competitors and publishers instead",
+    body:
+      "In the sampled Google AI Overview results, Hyro did not appear. That is especially important because Google still sits at the center of category discovery for this market.",
+    icon: <Search className="h-5 w-5" />,
+  },
+];
+
+const promptEvidence = [
+  {
+    platform: "ChatGPT prompt sample",
+    query: "best electrolyte powder drink mix",
+    winners: "LMNT, Hydrant, and Liquid I.V. were surfaced as popular choices. Hyro was absent.",
+    implication:
+      "Hyro needs a better on-site answer for this exact question and matching third-party proof that supports claims like sugar-free, ingredient clarity, and best-fit use cases.",
+  },
+  {
+    platform: "Google AI Overview sample",
+    query: "best electrolyte powder drink mix",
+    winners: "LMNT, Liquid I.V., Ultima, Nuun, DripDrop, and Skratch Labs were named through cited roundup-style sources. Hyro was absent.",
+    implication:
+      "This is a signal that Hyro needs both stronger decision pages and more presence in the editorial and roundup surfaces Google already trusts in this category.",
+  },
+  {
+    platform: "Gemini / comparison prompt sample",
+    query: "electrolyte powder drink mix comparison",
+    winners: "LMNT, Liquid I.V., Nuun, DripDrop, and Ultima were visible in comparison-style reasoning. Hyro was absent.",
+    implication:
+      "Comparison content cannot be treated as a nice-to-have. It is part of how answer engines decide which brands look recommendation-ready.",
+  },
+];
+
+const sixMonthPlan = [
+  {
+    label: "Month 1",
+    title: "Publish the first decision pages and lock the opening move",
+    body:
+      "The first month is about making Hyro legible for buying consideration. That means shipping the first pages around what buyers most clearly want to know when they are choosing an electrolyte drink mix.",
+    bullets: [
+      "Launch the first decision pages around best electrolyte drink, best electrolyte powder, best hydration powder, best electrolyte mix, and best electrolyte drink mix.",
+      "Tighten schema, canonicals, sitemap coverage, crawl/index handling, Bing Webmaster Tools, and IndexNow so new pages are easy to discover and interpret.",
+      "Start authority reinforcement around the same pages through review profiles, community participation, roundups, and first backlink pushes.",
+      "Attack the most visible incumbents first: LMNT, Liquid I.V., and Nuun.",
+    ],
+  },
+  {
+    label: "Month 2",
+    title: "Expand comparison, review, and use-case coverage",
+    body:
+      "Once the first decision pages are live, Hyro should widen the buying layer into direct comparisons, trust-building proof, and use-case pages that match real purchase questions.",
+    bullets: [
+      "Add comparison content around forms, brand alternatives, and category tradeoffs.",
+      "Build proof pages around ingredient clarity, benefits, routines, and why Hyro fits specific use cases.",
+      "Push listicle placements, review-platform reinforcement, community/forum visibility, and editorial outreach tied to the same themes.",
+      "Prioritize commercial openings like sugar-free, low-sugar, natural, and use-case selection questions.",
+    ],
+  },
+  {
+    label: "Month 3",
+    title: "Deepen supporting coverage and entity reinforcement",
+    body:
+      "The third month turns the first pages into a network. Hyro needs supporting coverage that keeps surfacing the same story across hydration scenarios, ingredient themes, and adjacent selection questions.",
+    bullets: [
+      "Expand supporting content coverage around hydration scenarios, benefits, routines, ingredients, and product-form questions.",
+      "Strengthen author, about, profile, review, and third-party consistency so machines see one coherent brand story.",
+      "Refresh early winners based on what search results and answer surfaces are already rewarding.",
+      "Broaden backlinks and editorial proof toward the pages that start showing early movement.",
+    ],
+  },
+  {
+    label: "Months 4–6",
+    title: "Compound the first wins into broader market share",
+    body:
+      "The second quarter of the engagement is where Hyro starts converting first-wave traction into durable market presence. The work becomes less about launch and more about compounding.",
+    bullets: [
+      `Push toward the first 6-month traffic target of ${formatNumber(firstSixMonthTarget)} through continued page expansion, authority reinforcement, and refresh cycles.`,
+      "Broaden into more unbranded category demand once the first buying pages and comparisons have proof behind them.",
+      "Defend what starts working with updated pricing, product detail, comparison maintenance, and additional third-party proof.",
+      "Keep widening community, editorial, review, and backlink coverage so Hyro appears repeatedly across the market's trust surfaces.",
+    ],
+  },
+];
+
+const authorityBlocks = [
+  {
+    eyebrow: "Community and forum visibility",
+    title: "Make Hyro show up where people compare hydration products in public",
+    body:
+      "Reddit, niche forums, and real-world discussion threads often shape buyer trust before the click. Hyro needs credible participation and cited presence in those conversations, especially around use cases and product tradeoffs.",
+    bullets: [
+      "Reddit and forum participation around hydration, training, travel, recovery, and daily wellness contexts",
+      "Replies and placements tied to the same decision pages Hyro is trying to rank",
+      "Proof-driven participation rather than spammy mention tactics",
+    ],
+  },
+  {
+    eyebrow: "Review-layer reinforcement",
+    title: "Treat reviews as part of discovery, not as a cleanup task",
+    body:
+      "Third-party review surfaces influence both buyer trust and machine trust. Hyro should strengthen review profiles, acquisition workflows, and response coverage so claims travel beyond the site.",
+    bullets: [
+      "Review-profile setup or repair",
+      "Review acquisition and response workflow",
+      "Review proof integrated back into decision pages and comparison content",
+    ],
+  },
+  {
+    eyebrow: "Roundups, listicles, and digital PR",
+    title: "Win the third-party pages answer engines already lean on",
+    body:
+      "Many AI and Google answer layers cite roundups, publication-style comparisons, and editorial sources before they cite smaller brands directly. Hyro needs presence in those surfaces to become recommendation-ready.",
+    bullets: [
+      "Hydration roundups and best-of listicle pushes",
+      "Editorial placements and expert commentary",
+      "Digital PR or press-release-style proof pushes when Hyro has a credible evidence hook to distribute",
+    ],
+  },
+  {
+    eyebrow: "Backlinks and proof distribution",
+    title: "Point authority at the pages that actually move buying decisions",
+    body:
+      "Backlinks should reinforce commercial decision pages, not just broad home-page awareness. The goal is to make Hyro's most important pages harder to ignore in both Google and AI retrieval patterns.",
+    bullets: [
+      "Aggressive backlink acquisition to decision pages and comparison pages",
+      "Third-party proof objects that echo Hyro's commercial story",
+      "Authority distribution tied to early winners, not sprayed evenly across the site",
+    ],
+  },
+];
+
+const buildShipBlocks = [
+  {
+    eyebrow: "Priority buying query mapping",
+    title: "Hyro gets a clear list of the buying questions that matter first",
+    body:
+      "Memetik starts by mapping the exact questions buyers ask when they are deciding what electrolyte product to buy, compare, switch to, or trust. That creates the commercial priority order for the whole program.",
+    bullets: [
+      "Buyer-guide queries",
+      "Use-case selection queries",
+      "Comparison and alternative queries",
+      "Review and proof-led queries",
+    ],
+  },
+  {
+    eyebrow: "Bottom-of-funnel page production",
+    title: "Memetik builds as many decision pages as the market requires",
+    body:
+      "This is not a fixed-content quota. Memetik builds the decision pages Hyro actually needs to cover demand, then expands the ones that prove they can win.",
+    bullets: [
+      "Best-in-category and best-for pages",
+      "Buyer guides and selection pages",
+      "Ingredient and benefit proof pages",
+      "Commercial pages designed for both human buyers and machine retrieval",
+    ],
+  },
+  {
+    eyebrow: "Comparison and evaluation content",
+    title: "Memetik builds the pages buyers read when they are narrowing options",
+    body:
+      "Comparison content is where buying consideration sharpens. Hyro needs direct brand comparisons, form-factor comparisons, and tradeoff pages that make evaluation easier.",
+    bullets: [
+      "Head-to-head comparisons",
+      "Alternative pages",
+      "Product-form explainers",
+      "Evaluation pages tied to competitor and category tradeoffs",
+    ],
+  },
+  {
+    eyebrow: "Supporting content coverage",
+    title: "Memetik surrounds every important page with supporting coverage",
+    body:
+      "Decision pages work better when they sit inside a wider supporting content network. That supporting layer helps Google and answer engines keep finding the same commercial narrative in more contexts.",
+    bullets: [
+      "Hydration scenarios",
+      "Ingredient and benefit themes",
+      "Routines and use cases",
+      "Adjacent category questions and supporting explainers",
+    ],
+  },
+  {
+    eyebrow: "Aggressive authority building",
+    title: "Memetik pushes backlinks, listicles, editorial mentions, and distribution in parallel",
+    body:
+      "Hyro does not just need more pages. It needs those pages to look backed by the market. That means aggressive backlink acquisition, digital PR, listicle pushes, and expert or creator proof routed toward the pages that matter most.",
+    bullets: [
+      "Backlinks to decision pages",
+      "Listicle and roundup placements",
+      "Editorial and expert commentary placements",
+      "Distribution around credible proof objects",
+    ],
+  },
+  {
+    eyebrow: "Reviews and third-party surfaces",
+    title: "Memetik makes off-site trust explicit",
+    body:
+      "Review platforms, community placements, newsletters, and third-party profiles all feed the credibility layer behind Hyro's discovery strategy. These surfaces are part of the core scope, not a side project.",
+    bullets: [
+      "Review-platform presence and maintenance",
+      "Community and forum participation",
+      "Professional-network or newsletter distribution",
+      "Third-party proof surfaced back into owned pages",
+    ],
+  },
+  {
+    eyebrow: "Technical and entity infrastructure",
+    title: "Memetik handles the infrastructure that makes the content eligible to win",
+    body:
+      "The program also includes the machine-readable layer that helps Hyro's content get crawled, indexed, interpreted, and connected across surfaces.",
+    bullets: [
+      "Schema matched to visible content",
+      "Sitemap hygiene and crawl/index handling",
+      "Canonicals and internal-link structure",
+      "Bing Webmaster Tools and IndexNow support",
+      "Entity consistency across owned and third-party surfaces",
+    ],
+  },
+  {
+    eyebrow: "Refresh and defense",
+    title: "Memetik keeps improving what works instead of publishing and walking away",
+    body:
+      "Once Hyro starts getting traction, the work shifts toward refresh cycles, competitive response, proof expansion, and defending the pages that matter most commercially.",
+    bullets: [
+      "Page refreshes and claim updates",
+      "Comparison maintenance as the market shifts",
+      "Authority reinforcement around early winners",
+      "Monthly performance review and reallocation",
+    ],
+  },
+];
+
+const whyMemetikBlocks = [
+  {
+    eyebrow: "Commercial strategy first",
+    title: "Memetik starts where buyer intent is already close to purchase",
+    body:
+      "The plan is not to chase generic awareness first. It starts with the queries that shape what product a buyer chooses, then broadens once those commercial pages begin to work.",
+  },
+  {
+    eyebrow: "On-site and off-site together",
+    title: "Memetik does not separate publishing from proof",
+    body:
+      "Many teams publish pages and hope authority follows. Memetik treats off-site authority, reviews, editorials, backlinks, and community presence as part of the same system from the start.",
+  },
+  {
+    eyebrow: "Built for the new search reality",
+    title: "Memetik plans for Google and answer engines at the same time",
+    body:
+      "The objective is to make Hyro easier to discover in classic search while also making it easier for AI answer surfaces to retrieve and recommend. That is how the moat compounds.",
+  },
+];
+
+const clusterTableRows = [
+  [
+    "Buyer Guides",
+    "Immediate",
+    "211,170",
+    "23,229",
+    "best electrolyte drink, best electrolyte powder, best hydration powder",
+  ],
+  [
+    "Alternatives & Comparisons",
+    "Immediate",
+    "7,210",
+    "793",
+    "liquid iv vs gatorade, electrolyte powder vs tablets, electrolyte powder drink mix comparison",
+  ],
+  [
+    "Reviews & Social Proof",
+    "Immediate",
+    "3,720",
+    "409",
+    "lmnt electrolyte powder review, just ingredients electrolyte review, review-led terms",
+  ],
+  [
+    "Category & Brand Demand",
+    "Expansion",
+    "8,241,950",
+    "167,074",
+    "electrolyte drinks, electrolyte drink mix, electrolyte powder, electrolyte drink",
+  ],
+];
+
+const appendixAssumptions = [
+  "Traffic planning is Estimate-only and should be treated as directional planning rather than a guaranteed outcome.",
+  "Topical integrity passed, with low-quality semantic demand share measured at 0.1%, so the visible opportunity numbers are grounded in validated topical subsets.",
+  "Public AI visibility evidence here uses validated prompt samples across ChatGPT, Gemini, and Google AI Overview only.",
+  "Perplexity-specific probe output and a separate AI mention endpoint were not stable enough to cite publicly, so they were intentionally omitted rather than guessed.",
+  "Revenue planning requires client ACV/AOV and funnel inputs.",
+  "Source trace: rendered from the approved Hyro strategy brief checked 2026-03-09, following Memetik's canonical doctrine and public-page contract.",
+];
+
+const appendixPromptRows = [
+  [
+    "best electrolyte powder drink mix",
+    "ChatGPT",
+    "Hyro absent",
+    "LMNT, Hydrant, Liquid I.V.",
+    "Hyro needs a stronger owned page plus third-party proof around this exact commercial question.",
+  ],
+  [
+    "best electrolyte powder drink mix",
+    "Google AI Overview",
+    "Hyro absent",
+    "LMNT, Liquid I.V., Ultima, Nuun, DripDrop, Skratch Labs",
+    "Google is leaning on roundup and editorial-style authority surfaces Hyro does not yet occupy.",
+  ],
+  [
+    "electrolyte powder drink mix comparison",
+    "ChatGPT / Gemini sample",
+    "Hyro absent",
+    "Liquid I.V., LMNT, Nuun, DripDrop, Ultima",
+    "Comparison pages and evaluation proof need to become part of the first-wave content push.",
+  ],
+];
+
+const baseCurve = [4_200, 11_000, 21_500, 34_000, 52_000, 70_857, 92_000, 116_000, 139_500, 161_000, 177_500, 191_505];
+const lowRatio = lowTwelveMonthCase / expectedTraffic12Months;
+const highRatio = aggressiveUpside / expectedTraffic12Months;
+
+const phasedUpsidePoints = baseCurve.map((base, index) => ({
+  month: index + 1,
+  low: Math.round(base * lowRatio),
+  base,
+  high: Math.round(base * highRatio),
+}));
+
+const operatingTimelinePoints = [
+  {
+    month: 1,
+    title: "Opening move goes live",
+    detail:
+      "Hyro publishes the first decision pages, tightens crawl and entity setup, and starts the first review, community, roundup, and backlink pushes around the same themes.",
+    bullets: [
+      "First pages for best electrolyte drink, powder, mix, and hydration powder",
+      "Schema, canonicals, sitemap, Bing Webmaster Tools, and IndexNow setup",
+      "First authority actions against LMNT, Liquid I.V., and Nuun",
+    ],
+  },
+  {
+    month: 2,
+    title: "Comparison layer expands",
+    detail:
+      "The second month pushes Hyro deeper into evaluation behavior through comparisons, proof pages, and review reinforcement.",
+    bullets: [
+      "Comparison and use-case pages expand",
+      "Review and listicle reinforcement begins compounding",
+      "Early backlink routes point toward commercial pages",
+    ],
+  },
+  {
+    month: 3,
+    title: "Supporting coverage deepens",
+    detail:
+      "Hyro broadens the supporting content network around ingredients, benefits, hydration scenarios, and routines so the market keeps seeing the same commercial story.",
+    bullets: [
+      "More use-case and proof content",
+      "Entity consistency strengthened across surfaces",
+      "Refresh loop starts on early winners",
+    ],
+  },
+  {
+    month: 4,
+    title: "First winners get reinforced",
+    detail:
+      "Commercial pages showing traction receive more internal support, fresh proof, and stronger off-site distribution.",
+    bullets: [
+      "Refresh winning pages",
+      "Redirect authority toward emerging winners",
+      "Expand community and editorial coverage",
+    ],
+  },
+  {
+    month: 5,
+    title: "Distribution widens",
+    detail:
+      "By month five, Hyro should have enough coverage to widen editorial, listicle, and backlink distribution more aggressively.",
+    bullets: [
+      "Broader third-party placements",
+      "More review-surface activity",
+      "Comparison pages kept current as market narratives shift",
+    ],
+  },
+  {
+    month: 6,
+    title: "First-half market share checkpoint",
+    detail:
+      "Hyro reaches the first meaningful checkpoint where the early program can be judged against traffic, answer-surface movement, and authority proof.",
+    bullets: [
+      `Base case target: ${formatNumber(firstSixMonthTarget)} cumulative traffic`,
+      "Defend what is working and patch weak pages",
+      "Prepare broader unbranded category expansion",
+    ],
+  },
+  {
+    month: 7,
+    title: "Adjacent query expansion",
+    detail:
+      "The program starts reaching further into adjacent unbranded demand once the first buying pages have proof and traction behind them.",
+    bullets: [
+      "Broaden supporting coverage",
+      "Add more use-case and routine pages",
+      "Keep authority pressure on core winners",
+    ],
+  },
+  {
+    month: 8,
+    title: "Authority density increases",
+    detail:
+      "Off-site proof becomes thicker across editorials, communities, reviews, and backlinks, giving Hyro more durability across both search and answer surfaces.",
+    bullets: [
+      "More trust surfaces echo the same Hyro story",
+      "Commercial pages gain stronger external support",
+      "Refresh cadence keeps claims current",
+    ],
+  },
+  {
+    month: 9,
+    title: "Broader category capture begins",
+    detail:
+      "With the decision layer stronger, Hyro pushes further into large category demand around broader electrolyte searches.",
+    bullets: [
+      "Broader category terms become more reachable",
+      "Topical authority is now reinforced by depth and proof",
+      "Expansion stays anchored to the pages that already convert attention into buying consideration",
+    ],
+  },
+  {
+    month: 10,
+    title: "Defensibility improves",
+    detail:
+      "The program shifts from proving the opening move to making it harder for competitors to retake ground.",
+    bullets: [
+      "Refresh comparisons and proof objects",
+      "Improve weak prompts where Hyro still underperforms",
+      "Keep widening high-value third-party coverage",
+    ],
+  },
+  {
+    month: 11,
+    title: "Market repetition compounds",
+    detail:
+      "Hyro increasingly benefits from being seen repeatedly in more contexts, which improves trust and raises the odds of becoming a default choice.",
+    bullets: [
+      "More consistent retrieval across buying scenarios",
+      "More external proof reinforcing owned pages",
+      "More stable brand interpretation across machines and buyers",
+    ],
+  },
+  {
+    month: 12,
+    title: "Category position becomes durable",
+    detail:
+      "At the 12-month mark, the goal is a compounding market position built on decision pages, supporting coverage, off-site proof, and a maintained technical foundation.",
+    bullets: [
+      `Base case: ${formatNumber(expectedTraffic12Months)} cumulative traffic`,
+      `Upper-range case: ${formatNumber(aggressiveUpside)} cumulative traffic`,
+      "A stronger claim on default recommendation status across high-intent buying prompts",
+    ],
+  },
+].map((point, index) => ({
+  ...point,
+  low: Math.round(baseCurve[index] * lowRatio),
+  base: baseCurve[index],
+  high: Math.round(baseCurve[index] * highRatio),
+  trafficLabel: "Cumulative traffic",
+  trafficValue: baseCurve[index],
+}));
+
+const operatingMilestones = [
+  {
+    label: "Month 1",
+    month: 1,
+    title: "Opening move live",
+    detail:
+      "First decision pages, indexing setup, and first authority pushes launch together so Hyro is not relying on publishing alone.",
+    trafficLabel: "Cumulative traffic",
+    trafficValue: baseCurve[0],
+  },
+  {
+    label: "Month 2",
+    month: 2,
+    title: "Comparison and proof layer expands",
+    detail:
+      "Hyro widens into comparisons, proof content, and stronger third-party reinforcement around the same buying questions.",
+    trafficLabel: "Cumulative traffic",
+    trafficValue: baseCurve[1],
+  },
+  {
+    label: "Month 3",
+    month: 3,
+    title: "Supporting coverage deepens",
+    detail:
+      "The content network broadens, entity consistency improves, and refresh loops begin on early winners.",
+    trafficLabel: "Cumulative traffic",
+    trafficValue: baseCurve[2],
+  },
+  {
+    label: "Month 6",
+    month: 6,
+    title: "First-half checkpoint",
+    detail:
+      "Hyro should have enough live coverage, authority proof, and answer-surface feedback to judge the opening move and reallocate toward winners.",
+    trafficLabel: "Cumulative traffic",
+    trafficValue: baseCurve[5],
+  },
+  {
+    label: "Month 9",
+    month: 9,
+    title: "Broader category capture",
+    detail:
+      "The program can start pressing more confidently into large unbranded category demand because the decision layer now has more support beneath it.",
+    trafficLabel: "Cumulative traffic",
+    trafficValue: baseCurve[8],
+  },
+  {
+    label: "Month 12",
+    month: 12,
+    title: "Compounding market position",
+    detail:
+      "By the end of the first year, Hyro should look materially more visible, more cited, and more trustworthy across both classic search and answer surfaces.",
+    trafficLabel: "Cumulative traffic",
+    trafficValue: baseCurve[11],
+  },
+];
 
 export default function StrategyDrinkhyro() {
   useEffect(() => {
@@ -520,316 +1111,294 @@ export default function StrategyDrinkhyro() {
     <StrategyPageFrame>
       <Nav />
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-6xl space-y-16 md:space-y-20">
         <StrategyHero
-          eyebrow="Hyro × Memetik Strategy Memo"
-          title="Win the electrolyte buying moments"
-          accent="before incumbents own them by default"
-          subtitle="Hyro already has the beginnings of category authority. The opportunity is to turn that base into real buying consideration across Google and AI answer surfaces by owning decision-stage electrolyte powder drink mix queries first, then expanding the surrounding trust and coverage behind them."
-          tags={[
-            "drinkhyro.com",
-            "consumer health",
-            "electrolyte drink mix",
-            "US market",
-          ]}
+          eyebrow="Hyro Growth Strategy / Founder Memo"
+          title="Hyro can win the decision stage in electrolyte drink mix"
+          accent="before incumbents harden the market"
+          subtitle="Hyro already has real category relevance, but buyers asking Google, ChatGPT, Gemini, and Google AI Overviews what electrolyte product to choose are still being shown incumbents and publisher roundups first. The opening move is to own the buying questions that shape consideration, then reinforce those pages with third-party proof until Hyro becomes easier to recommend across the market."
+          tags={["drinkhyro.com", "Consumer Health", "US market", "Electrolyte drink mix"]}
         >
-          <div className="rounded-[28px] border border-[#f4e4cd]/15 bg-[#f4e4cd]/8 px-5 py-4 text-sm leading-7 text-white/78">
-            <span className="mr-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">Canonical lineage</span>
-            master reference → generation contract → brief → page
-          </div>
-
-          <div className="mt-8">
+          <div className="max-w-4xl space-y-6">
             <HighlightBox>
-              <div className="max-w-4xl">
-                <StrategyEyebrow className="mb-5">Executive Summary</StrategyEyebrow>
-                <p className="text-2xl font-display font-semibold tracking-tight text-white md:text-3xl">
-                  Hyro does not need to win the entire hydration category first. It needs to win the part of the market where buyers are actively deciding what to buy.
-                </p>
-                <p className="mt-4 max-w-3xl text-sm leading-7 text-white/66 md:text-base">
-                  The fastest path is to own buyer-guide and comparison demand in electrolyte powder drink mix, then surround those pages with stronger supporting coverage and third-party trust until Hyro starts appearing as a credible default choice.
-                </p>
-              </div>
+              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f4e4cd]">Founder takeaway</div>
+              <p className="mt-3 text-2xl font-display font-semibold tracking-tight text-white md:text-3xl">
+                Hyro does not need to outpublish the whole category first. It needs to win the buying questions that decide what product people choose.
+              </p>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-white/68 md:text-base">
+                The cleanest opening move is the best-in-category and evaluation layer around electrolyte powder drink mix. That is where the category is already making decisions, where Hyro has the clearest commercial path, and where off-site proof can change market perception fastest.
+              </p>
             </HighlightBox>
 
-            <div className="mt-6">
-              {executiveMetrics.map((metric) => (
-                <MetricStackCard key={metric.label} {...metric} />
-              ))}
-            </div>
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+              <div className="border-b border-white/10 p-6 md:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] font-mono text-sm font-bold tracking-[0.18em] text-[#f4e4cd]">
+                    00
+                  </div>
+                  <div>
+                    <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.22em] text-white/45">Executive summary</div>
+                    <h2 className="text-2xl font-display font-extrabold tracking-tight text-white md:text-4xl">
+                      The market is large, the current gap is real, and the opening move is clear
+                    </h2>
+                  </div>
+                </div>
+              </div>
 
-            <div className="mt-6">
-              <StrategyEyebrow className="mb-4">Immediate actions</StrategyEyebrow>
-              {immediateActions.map((action, index) => (
-                <ActionStackCard key={action.title} index={index} title={action.title} body={action.body} />
-              ))}
+              <div className="space-y-4 p-6 md:p-8">
+                {executiveMetrics.map((metric) => (
+                  <ExecutiveMetricCard
+                    key={metric.label}
+                    label={metric.label}
+                    value={metric.value}
+                    summary={metric.summary}
+                    breakdownLabel={metric.breakdownLabel}
+                    breakdown={metric.breakdown}
+                    breakdownNote={metric.breakdownNote}
+                  />
+                ))}
+
+                <div className="pt-2">
+                  <div className="mb-4 text-[10px] font-mono uppercase tracking-[0.2em] text-[#f4e4cd]">Immediate actions</div>
+                  <div className="space-y-4">
+                    {immediateActions.map((action) => (
+                      <ImmediateActionCard
+                        key={action.index}
+                        index={action.index}
+                        title={action.title}
+                        body={action.body}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </StrategyHero>
 
-        <section className="mb-14 md:mb-20">
+        <StrategySectionShell>
           <SectionHeader number="01" title="State of Search 2026" />
-          <StrategySectionShell glow="blue">
-            <StrategySectionLead
-              takeaway="Google still drives a major share of discovery, but buyers now move across answer engines before they decide what belongs on the shortlist."
-              body="Traditional search remains core buying behavior in categories like hydration, supplements, and consumer health. The change is not that Google disappeared. The change is that decision-making now happens across Google, ChatGPT, Gemini, and other answer layers before a brand ever sees the session in analytics."
-              implication="For Hyro, the job is not just ranking pages. It is becoming easy to discover, easy to compare, and easy to trust wherever serious product research happens."
-            />
+          <StrategySectionLead
+            takeaway="Google still drives discovery, but AI is now shaping what buyers think is worth choosing."
+            body="Traditional search remains core behavior in consumer health. At the same time, buyers increasingly ask answer engines what to buy, compare, trust, or switch to before they ever click through. That means Hyro has to win across both classic search demand capture and AI answer surfaces."
+            implication="The brand that becomes easier to retrieve, cite, and trust across both layers gets the edge in buying consideration before price and promotion do the heavy lifting."
+          />
 
-            <VerticalInsightCard
-              eyebrow="What changed"
-              title="The battleground moved closer to the decision"
-              body="In consumer health, buyers increasingly use search and AI answers to compare options, evaluate ingredients, sanity-check claims, and narrow which products deserve attention. That means brands that appear credible inside those moments gain leverage before paid media, social retargeting, or brand recall can even do their job."
-              bullets={[
-                "Google remains a major source of category discovery and commercial research traffic",
-                "AI answer layers are influencing which brands get considered in the first place",
-                "Brands now need both search demand capture and answer-surface visibility to keep pace",
-              ]}
-              icon={<Globe className="h-5 w-5" />}
-            />
+          <div className="space-y-4">
+            {marketShiftCards.map((card) => (
+              <StackCard
+                key={card.title}
+                eyebrow={card.eyebrow}
+                icon={card.icon}
+                title={card.title}
+                body={card.body}
+              />
+            ))}
+          </div>
+        </StrategySectionShell>
 
-            <VerticalInsightCard
-              eyebrow="Why it matters now"
-              title="Visibility gaps now create buying-consideration gaps"
-              body="If Hyro is absent from buyer-guide and comparison moments, the brand is not just losing traffic. It is losing the chance to be evaluated at all. In categories with entrenched incumbents, that directly affects customer acquisition efficiency, brand recall, and long-term defensibility."
-              bullets={[
-                "Missing decision-stage visibility means losing buying consideration before checkout",
-                "Incumbents benefit from both stronger pages and stronger third-party proof",
-                "Waiting makes the authority gap harder and more expensive to close later",
-              ]}
-              icon={<Gauge className="h-5 w-5" />}
-            />
-          </StrategySectionShell>
-        </section>
-
-        <section className="mb-14 md:mb-20">
+        <StrategySectionShell>
           <SectionHeader number="02" title="Where Hyro Is Today" />
-          <StrategySectionShell glow="mixed">
-            <StrategySectionLead
-              takeaway="Hyro is not starting from zero. The brand has enough authority and topical relevance to support a focused market attack, but not enough visible decision-stage coverage to win the category yet."
-              body="The current footprint is small relative to the size of the market: 1,004 organic visits, 362 ranking keywords, 74 referring domains, and 366 backlinks against a validated category opportunity of 8,464,050 searches."
-              implication="This is exactly the kind of position where a focused opening move can outperform a broad content plan."
-            />
+          <StrategySectionLead
+            takeaway="Hyro is relevant enough to move, but not yet concentrated enough to win the market's most important buying moments."
+            body="This is not a zero-to-one situation. Hyro already has enough site presence and authority to justify an aggressive opening move. The problem is that the current footprint is still too thin where buyers make real product decisions."
+            implication="The next step is not generic content expansion. It is concentration around the pages, proof, and authority surfaces that shape what product buyers choose."
+          />
 
-            <VerticalInsightCard
-              eyebrow="What is working"
-              title="There is a usable foundation"
-              body="Hyro already has a real authority base and enough category alignment to justify a serious growth program. This matters because challenger brands often fail here: they either lack authority entirely or have no credible product story to build around. Hyro has both."
-              bullets={[
-                "74 referring domains provide a workable authority base for a challenger brand",
-                "Topical integrity passed, which reduces the risk of building around noisy or irrelevant demand",
-                "The category already contains clear buying-intent clusters Hyro can target first",
-              ]}
-              icon={<ShieldCheck className="h-5 w-5" />}
-            />
+          <div className="space-y-4">
+            {currentStateCards.map((card) => (
+              <StackCard
+                key={card.title}
+                eyebrow={card.eyebrow}
+                icon={card.icon}
+                title={card.title}
+                body={card.body}
+                bullets={card.bullets}
+              />
+            ))}
+          </div>
+        </StrategySectionShell>
 
-            <VerticalInsightCard
-              eyebrow="What is missing"
-              title="The market cannot yet find a strong Hyro answer in the moments that matter most"
-              body="Hyro has not yet turned its relevance into a concentrated set of decision pages around buyer guides, comparisons, use cases, and review proof. That means incumbents are still controlling the commercial narrative when buyers ask which electrolyte product they should choose."
-              bullets={[
-                "Current decision-stage page coverage is too thin relative to the category",
-                "Comparison and evaluation content is not yet strong enough to challenge incumbents",
-                "Third-party trust signals are not yet reinforcing Hyro consistently across the market",
-              ]}
-              icon={<Waves className="h-5 w-5" />}
-            />
-          </StrategySectionShell>
-        </section>
-
-        <section className="mb-14 md:mb-20">
+        <StrategySectionShell>
           <SectionHeader number="03" title="The Opportunity" />
-          <StrategySectionShell glow="amber">
-            <StrategySectionLead
-              takeaway="The fastest path is not broad awareness. It is owning the buyer-guide layer in electrolyte powder drink mix, then expanding from there."
-              body="The approved brief is clear: the first opening move is best-in-category and decision-stage demand. That is where buying intent is strongest, where product differentiation matters, and where Hyro can start earning consideration faster than it could by attacking the full category head-on."
-              implication="Start where buyers are choosing. Then widen the moat behind the pages that win."
-            />
+          <StrategySectionLead
+            takeaway="The fastest path is not the whole electrolyte market. It is the decision-stage slice where buyers ask what to choose."
+            body="The approved opening move is the best-in-category and decision-stage layer around electrolyte powder drink mix. That is where purchase intent is clearest, where pages can win buying consideration quickly, and where Hyro can expand outward after the first wins."
+            implication="Win the selection questions first. Then use those wins to enter broader category demand with more authority and lower execution risk."
+          />
 
-            <VerticalInsightCard
-              eyebrow="Priority demand"
-              title="Buyer-guide queries are the commercial opening move"
-              body="The buyer-guide cluster contains 211,170 validated searches and an expected 12-month traffic contribution of 23,229 on its own. More importantly, these are the moments where people are actively choosing: best electrolyte drink, best electrolyte powder, best hydration powder, best electrolyte mix, and best electrolyte drink mix."
-              bullets={[
-                "These are product-selection moments, not casual awareness searches",
-                "They create direct entry points into buying consideration",
-                "They give Hyro a defined slice of the category to win before broader expansion",
-              ]}
-              icon={<Target className="h-5 w-5" />}
-            />
+          <div className="space-y-4">
+            {opportunityBlocks.map((block) => (
+              <StackCard
+                key={block.title}
+                eyebrow={block.eyebrow}
+                icon={<Target className="h-5 w-5" />}
+                title={block.title}
+                body={block.body}
+                bullets={block.bullets}
+                footer={block.footer}
+              />
+            ))}
+          </div>
+        </StrategySectionShell>
 
-            <VerticalInsightCard
-              eyebrow="Second layer"
-              title="Comparisons, reviews, and use-case demand are force multipliers"
-              body="Once Hyro is present in the first buyer-guide pages, the next layer is comparison content, review-led proof, and use-case coverage. These pages help answer engines and buyers keep finding the same Hyro story in more specific situations."
-              bullets={[
-                "Comparison demand helps Hyro enter direct evaluation moments",
-                "Review and social proof content makes the claims feel believable",
-                "Use-case and ingredient coverage reinforces the narrative across more prompts",
-              ]}
-              icon={<BarChart3 className="h-5 w-5" />}
-            />
-
-            <VerticalInsightCard
-              eyebrow="Longer horizon"
-              title="Broad category coverage comes after Hyro earns the right to compete"
-              body="The broad category cluster is large, but it belongs later in the sequence. Hyro should first prove itself in the decision-stage layer, then expand into wider category demand with stronger authority, clearer pages, and better third-party reinforcement already in place."
-              bullets={[
-                "Broad category demand is valuable, but slower and more authority-dependent",
-                "Winning smaller high-intent pockets first improves the odds of broader expansion",
-                "This sequencing reduces wasted effort and increases commercial leverage",
-              ]}
-              icon={<Compass className="h-5 w-5" />}
-            />
-          </StrategySectionShell>
-        </section>
-
-        <section className="mb-14 md:mb-20">
+        <StrategySectionShell>
           <SectionHeader number="04" title="Why Hyro Can Win" />
-          <StrategySectionShell glow="blue">
-            <StrategySectionLead
-              takeaway="Hyro can win because this category still has decision-stage gaps, and Hyro already has enough brand foundation to attack them with credibility."
-              body="Incumbents are stronger overall, but the approved brief does not require Hyro to outrank everyone everywhere. It requires Hyro to become more visible in a defined slice of the category where buyers are selecting, comparing, and validating products."
-              implication="The win condition is not immediate category dominance. It is becoming the credible alternative in the exact queries that shape buying decisions."
-            />
+          <StrategySectionLead
+            takeaway="Hyro has a real opening because the category's biggest upside is still unbranded, use-case driven, and commercially sharp."
+            body="Hyro does not need to beat LMNT or Liquid I.V. on every surface at once. It needs to become the clearest answer in the parts of the market where buyers are actively choosing between options and where the incumbents are broad rather than precise."
+            implication="A focused position with stronger proof can beat bigger brands in narrower, high-intent slices long before it beats them everywhere."
+          />
 
-            <VerticalInsightCard
-              eyebrow="Right to win"
-              title="Hyro has a better starting position than a typical challenger"
-              body="Many challenger brands fail because they have to build everything at once: authority, relevance, proof, and technical foundation. Hyro already has enough of a base to focus on the market narrative instead of trying to invent one from scratch."
-              bullets={[
-                "A usable backlink and referring-domain base already exists",
-                "Research quality and topical integrity were strong enough to support a public strategy",
-                "The category has clear use-case and comparison angles Hyro can address with specificity",
-              ]}
-              icon={<Trophy className="h-5 w-5" />}
-            />
+          <HighlightBox className="mb-4">
+            <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Right to win</div>
+            <p className="mt-3 text-2xl font-display font-semibold tracking-tight text-white md:text-3xl">
+              92.6% of validated demand is non-competitor and unbranded.
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-white/68 md:text-base">
+              That means Hyro's real upside is not mainly about stealing people already looking for a rival brand.
+              It is about becoming discoverable when buyers ask broad market questions about sugar-free options, natural options,
+              hydration fit, product form, and what is best for their specific situation.
+            </p>
+          </HighlightBox>
 
-            <VerticalInsightCard
-              eyebrow="Strategic fit"
-              title="The opening move matches how buyers actually research hydration products"
-              body="Buyers do not begin by asking for every electrolyte brand in existence. They begin with intent-rich questions: what is best, what is sugar-free, what is natural, what is better for a certain need, and how one option compares with another. That behavior fits Hyro's opportunity perfectly."
-              bullets={[
-                "Decision-stage search behavior creates a realistic entry point for Hyro",
-                "Use-case and ingredient-specific framing can make Hyro more memorable and more relevant",
-                "Focused decision pages give Hyro a chance to outperform its current size",
-              ]}
-              icon={<Radar className="h-5 w-5" />}
+          <div className="space-y-4">
+            <StackCard
+              eyebrow="Existing authority base"
+              icon={<BadgeCheck className="h-5 w-5" />}
+              title="Hyro has enough authority to support a focused move"
+              body="With 74 referring domains already in place, Hyro can support a concentrated commercial push. That is a very different starting point from a brand with no discoverability and no backlink foundation."
             />
-          </StrategySectionShell>
-        </section>
+            <StackCard
+              eyebrow="Commercial opening"
+              icon={<TrendingUp className="h-5 w-5" />}
+              title="The market is already signaling where Hyro can be sharper"
+              body="The strongest commercial signals point toward decision-stage pages tied to sugar-free, low-sugar, natural, price-sensitive, and use-case selection questions."
+              bullets={commercialSignals}
+            />
+            <StackCard
+              eyebrow="Why now"
+              icon={<Sparkles className="h-5 w-5" />}
+              title="Hyro can still shape the category story before it hardens further"
+              body="Once answer engines and roundups keep retrieving the same brands repeatedly, it becomes much harder to break in. That makes speed valuable now: Hyro still has a window to become part of the answer set before those patterns get more durable."
+            />
+          </div>
+        </StrategySectionShell>
 
-        <section className="mb-14 md:mb-20">
+        <StrategySectionShell>
           <SectionHeader number="05" title="Competitive Gap" />
-          <StrategySectionShell glow="mixed">
-            <StrategySectionLead
-              takeaway="The category is currently controlled by brands with far deeper page coverage and far stronger authority. Hyro does not need to beat them everywhere, but it does need to stop leaving decision-stage demand uncontested."
-              body="LMNT, Liquid I.V., Nuun, and DripDrop are not just bigger brands. They have stronger search footprints, stronger authority, and stronger presence in the prompts buyers ask when they are comparing products."
-              implication="Hyro's best move is to fight where incumbents are visible but not unbeatable: decision pages, comparisons, proof-led use cases, and sharper product framing."
-            />
+          <StrategySectionLead
+            takeaway="Hyro is not losing because the category is too big. It is losing because incumbents own the visible pages, citations, and trust layers first."
+            body="LMNT, Liquid I.V., Nuun, and other leaders already have stronger traffic, broader content coverage, deeper backlink profiles, and more sampled answer-surface presence. Hyro's job is not to copy all of that immediately. It is to enter the market where decision intent is clearest and where proof can shift perception fastest."
+            implication="Concentrated commercial coverage plus authority reinforcement is the path to closing the gap, not broad unfocused publishing."
+          />
 
-            <VerticalInsightCard
-              eyebrow="The real gap"
-              title="Incumbents are winning through coverage plus authority"
-              body="The competitive gap is not one thing. It is the combination of stronger buyer-guide content, more comparison coverage, broader backlinks, and more external proof. That is why a pure on-site content plan would be too weak."
+          <div className="space-y-4">
+            <StackCard
+              eyebrow="What leaders own today"
+              icon={<Trophy className="h-5 w-5" />}
+              title="Competitors are winning both discoverability and trust repetition"
+              body="The market leaders are not just bigger in search. They also benefit from stronger editorial presence, more review signals, more backlinks, and more consistent retrieval across buying questions."
               bullets={[
-                "LMNT and Liquid I.V. dominate both search footprint and prompt presence",
-                "Nuun and DripDrop still carry more authority and evaluation visibility than Hyro",
-                "Hyro needs an execution system that closes page, proof, and authority gaps together",
+                "LMNT and Liquid I.V. dominate traffic and backlink depth.",
+                "Nuun and DripDrop stay present in comparison and round-up behavior.",
+                "Publishers and editorial roundups are helping answer engines decide who looks credible.",
               ]}
-              icon={<Bot className="h-5 w-5" />}
             />
 
             <DataTable
-              className="mt-6"
-              headers={["Brand", "Organic traffic", "Organic keywords", "Referring domains", "Backlinks", "Prompt hits"]}
-              rows={competitorRows}
+              headers={["Brand", "Organic traffic", "Organic keywords", "Referring domains", "Backlinks", "Sampled prompt hits"]}
+              rows={competitiveTableRows}
               highlightRow={5}
+              tableClassName="min-w-[860px]"
             />
-          </StrategySectionShell>
-        </section>
+          </div>
+        </StrategySectionShell>
 
-        <section className="mb-14 md:mb-20">
+        <StrategySectionShell>
           <SectionHeader number="06" title="AI Visibility Gap" />
-          <StrategySectionShell glow="amber">
-            <StrategySectionLead
-              takeaway="Hyro is largely absent from the sampled answer-layer prompts that shape product evaluation today."
-              body="The approved brief shows 0.0% sampled mention rate across ChatGPT, Gemini, and Google AI Overview for the tested prompt set. Public caveat discipline matters here: some platform probing was incomplete, so the right conclusion is not fake certainty. The right conclusion is that Hyro is not yet showing up often enough in the visible commercial prompts that matter."
-              implication="This is fixable, but only if on-site pages, review proof, and third-party authority are shipped together."
-            />
+          <StrategySectionLead
+            takeaway="Hyro is still absent from the tested answer-surface moments where buyers ask what electrolyte product to choose."
+            body="That absence matters because answer engines are increasingly involved in what buyers trust, compare, and remember. The immediate goal is not just to appear once. It is to become more recommendation-ready across the same commercial questions Hyro is targeting in search."
+            implication="Pages alone are not enough. Hyro needs answer-ready content, stronger external proof, and more retrieval repetition across the market."
+          />
 
-            <VerticalInsightCard
-              eyebrow="Platform snapshot"
-              title="The market is already answering these questions without Hyro"
-              body="When buyers ask who offers the best electrolyte powder drink mix or how options compare, the answer layers are defaulting to established names. That leaves Hyro outside the recommendation set unless the brand builds pages and proof specifically designed to change that pattern."
-              bullets={[
-                "ChatGPT sample prompts did not mention Hyro in the tested set",
-                "Google AI Overview sample prompts surfaced incumbent brands and editorial sources instead",
-                "Gemini sampling did not produce evidence of Hyro visibility in the tested prompts",
-              ]}
-              icon={<MessageSquare className="h-5 w-5" />}
-            />
+          <div className="space-y-4">
+            {platformStatus.map((card) => (
+              <PlatformStatusCard
+                key={card.platform}
+                platform={card.platform}
+                rate={card.rate}
+                title={card.title}
+                body={card.body}
+                icon={card.icon}
+              />
+            ))}
 
-            <div className="mt-6">
-              {primaryPromptExamples.map((example) => (
-                <PromptExampleCard key={example.prompt} {...example} />
-              ))}
-            </div>
-
-            <div className="mt-6 rounded-[28px] border border-white/10 bg-white/[0.04] p-5 md:p-6">
-              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">Public caveat</div>
-              <p className="mt-3 max-w-3xl text-sm leading-7 text-white/64">
-                Some answer-surface probing in the research payload was incomplete, so this page avoids inventing unsupported platform precision. The visible conclusion is still clear: Hyro is not yet consistently present in the sampled commercial prompts where incumbents are being recommended.
+            <div className="rounded-[24px] border border-[#f4e4cd]/18 bg-[#f4e4cd]/8 p-5">
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Real prompt examples</div>
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-white/68">
+                These are unbranded prompt samples from the approved brief. Unsupported platform probes were intentionally left out rather than guessed.
               </p>
             </div>
-          </StrategySectionShell>
-        </section>
 
-        <section className="mb-14 md:mb-20">
+            {promptEvidence.map((prompt) => (
+              <PromptEvidenceCard
+                key={`${prompt.platform}-${prompt.query}`}
+                platform={prompt.platform}
+                query={prompt.query}
+                winners={prompt.winners}
+                implication={prompt.implication}
+              />
+            ))}
+          </div>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
           <SectionHeader number="07" title="Revenue / Commercial Impact" />
-          <StrategySectionShell glow="mixed">
-            <StrategySectionLead
-              takeaway="If Hyro becomes visible in the right buying moments, search becomes more than a traffic channel. It becomes a lower-friction route into consideration, conversion, and brand defensibility."
-              body="The opportunity here is not generic top-of-funnel reach. It is better placement in the moments where buyers compare products, ask for best-in-category recommendations, and validate what to trust before they buy."
-              implication="This is why the opening move matters so much: the right decision pages can change both traffic and the quality of the traffic Hyro attracts."
-            />
+          <StrategySectionLead
+            takeaway="This is not just a traffic plan. It is a plan to capture more buying consideration before the market defaults to bigger brands."
+            body="If Hyro becomes more visible for the decision-stage questions that shape choice, it can turn search and answer-surface visibility into a more efficient demand engine. The commercial value compounds because the same pages and proof objects can influence DTC sales, branded search, repeat discovery, and retailer demand over time."
+            implication="The market is big enough that even a narrow first win can become meaningful. What matters is entering the right buying moments first and compounding from there."
+          />
 
-            <div className="mb-6 rounded-[28px] border border-[#f4e4cd]/15 bg-[#f4e4cd]/8 px-5 py-4 text-sm leading-7 text-white/78">
-              <span className="mr-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">Estimate-only</span>
-              The curve below is a planning model based on the approved brief. It shows cumulative 12-month traffic progression if Hyro wins decision-stage demand first and compounds outward from there.
-            </div>
+          <StrategyEyebrow className="mb-4">Estimate-only</StrategyEyebrow>
 
-            <PhasedUpsideChart points={opportunityCurve} />
+          <HighlightBox className="mb-6">
+            <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Commercial read-through</div>
+            <p className="mt-3 text-2xl font-display font-semibold tracking-tight text-white md:text-3xl">
+              The core upside sits in broad, unbranded category demand.
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-white/68 md:text-base">
+              That matters because broad demand is usually cheaper to defend over time than purely competitor-dependent traffic.
+              If Hyro can become easier to discover on the questions buyers ask before they know which brand they want,
+              the brand gains leverage that is harder for incumbents to erase with paid spend alone.
+            </p>
+          </HighlightBox>
 
-            <TamRoiCalculator
-              className="mt-6"
-              baseReachableVisits={191505}
-              defaultLtv={0}
-              defaultVisitToCustomerRate={1}
-            />
+          <PhasedUpsideChart points={phasedUpsidePoints} />
 
-            <div className="mt-6 rounded-[28px] border border-white/10 bg-black/20 p-5 md:p-6">
-              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/42">Commercial interpretation</div>
-              <p className="mt-3 max-w-3xl text-sm leading-7 text-white/66">
-                The base case points to {formatNumber(191505)} expected visits across 12 months, with {formatNumber(70857)} as the first 6-month milestone and {formatNumber(327134)} as the aggressive upside. More important than the raw number is the source of that traffic: product-selection and evaluation demand that can influence purchase behavior more directly than broad awareness content.
-              </p>
-              <p className="mt-3 max-w-3xl text-sm leading-7 text-white/66">
-                Revenue planning requires client ACV/AOV and funnel inputs.
-              </p>
-            </div>
-          </StrategySectionShell>
-        </section>
+          <CommercialImpactCalculator baseTraffic={expectedTraffic12Months} />
 
-        <section className="mb-14 md:mb-20">
+          <StrategyCard className="mt-6">
+            <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Planning note</div>
+            <p className="mt-3 text-sm leading-7 text-white/68">
+              Revenue planning requires client ACV/AOV and funnel inputs. The visible numbers on this page are traffic planning numbers grounded in the approved brief, not a closed-form revenue forecast.
+            </p>
+          </StrategyCard>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
           <SectionHeader number="08" title="6-month Growth Plan" />
-          <StrategySectionShell glow="blue">
-            <StrategySectionLead
-              takeaway="The first six months are not a content calendar. They are a concentrated market-entry sequence."
-              body="Hyro should move in a specific order: first the decision pages, then the comparisons and proof layers, then the supporting coverage and compounding authority behind the winners."
-              implication="The goal is to create momentum early, then widen the moat around what starts working."
-            />
+          <StrategySectionLead
+            takeaway="The first 6 months are about entering the market where choice happens, then compounding those wins into wider category presence."
+            body="This is a staged commercial build: the first month establishes the opening move, the second deepens evaluation content and proof, the third expands supporting coverage and entity reinforcement, and months 4–6 compound the first wins into broader share."
+            implication="The fastest growth comes from sequencing the work correctly, not from trying to publish everything at once."
+          />
 
-            {monthPlan.map((month) => (
-              <MonthBlock
+          <div className="space-y-4">
+            {sixMonthPlan.map((month) => (
+              <MonthPlanCard
                 key={month.label}
                 label={month.label}
                 title={month.title}
@@ -837,261 +1406,201 @@ export default function StrategyDrinkhyro() {
                 bullets={month.bullets}
               />
             ))}
-          </StrategySectionShell>
-        </section>
+          </div>
+        </StrategySectionShell>
 
-        <section className="mb-14 md:mb-20">
+        <StrategySectionShell>
           <SectionHeader number="09" title="Off-site Authority" />
-          <StrategySectionShell glow="amber">
-            <StrategySectionLead
-              takeaway="Hyro will not become easier to recommend from owned pages alone. The market also needs third-party reasons to trust the brand."
-              body="In this category, authority is built across reviews, communities, editorials, listicles, backlinks, and expert proof. Those surfaces matter because buyers read them, search engines value them, and answer engines use them as supporting evidence."
-              implication="Off-site authority is not amplification after the fact. It is part of the core growth system."
-            />
+          <StrategySectionLead
+            takeaway="Hyro will not become easier to recommend on the strength of on-site pages alone."
+            body="Answer engines and buyers both rely on third-party signals to decide what looks credible. That means Hyro needs presence in communities, reviews, roundups, editorials, and backlink sources that echo the same commercial story the site is publishing."
+            implication="Off-site authority is core scope, not optional amplification."
+          />
 
-            {offsiteLanes.map((lane) => (
-              <VerticalInsightCard
-                key={lane.title}
-                eyebrow="Authority layer"
-                title={lane.title}
-                body={lane.body}
-                bullets={lane.bullets}
-                icon={lane.icon}
+          <div className="space-y-4">
+            {authorityBlocks.map((block) => (
+              <StackCard
+                key={block.title}
+                eyebrow={block.eyebrow}
+                icon={<Users className="h-5 w-5" />}
+                title={block.title}
+                body={block.body}
+                bullets={block.bullets}
               />
             ))}
+          </div>
+        </StrategySectionShell>
 
-            <HighlightBox className="mt-6">
-              <div className="max-w-3xl">
-                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">What this changes</div>
-                <p className="mt-3 text-2xl font-display font-semibold tracking-tight text-white">
-                  Hyro starts to look less like an isolated product page and more like a brand the market keeps encountering in credible contexts.
-                </p>
-              </div>
-            </HighlightBox>
-          </StrategySectionShell>
-        </section>
-
-        <section className="mb-14 md:mb-20">
+        <StrategySectionShell>
           <SectionHeader number="10" title="What Memetik Actually Builds and Ships" />
-          <StrategySectionShell glow="mixed">
-            <StrategySectionLead
-              takeaway="This is a substantial execution program, not a light content retainer."
-              body="Memetik runs research, page production, comparison content, supporting coverage, aggressive backlinks, digital PR, review work, technical infrastructure, and market reinforcement as one coordinated system. That is what it takes to change how a category sees a challenger brand."
-              implication="A founder should read this section and immediately understand why the work is hard to replicate casually."
-            />
+          <StrategySectionLead
+            takeaway="This is a serious category-capture program, not a light publishing retainer."
+            body="Memetik delivers the full operating engine required to move Hyro from background relevance to stronger buying consideration. That includes query prioritization, commercial page production, supporting coverage, off-site authority, review systems, technical infrastructure, and ongoing refresh loops."
+            implication="The scope is substantial because category position only improves when all of those layers reinforce the same commercial story."
+          />
 
+          <div className="space-y-4">
             {buildShipBlocks.map((block) => (
-              <StrategyCard key={block.number} className="mb-4 last:mb-0" glow="blue">
-                <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] font-mono text-sm font-bold tracking-[0.18em] text-[#f4e4cd]">
-                    {block.number}
-                  </div>
-                  <div className="text-[#f4e4cd]">{block.icon}</div>
-                </div>
-                <h3 className="text-2xl font-display font-bold tracking-tight text-white">{block.title}</h3>
-                <p className="mt-3 max-w-3xl text-sm leading-7 text-white/64">{block.description}</p>
-                <div className="mt-5 max-w-3xl">
-                  <BulletList items={block.bullets} />
-                </div>
-              </StrategyCard>
-            ))}
-          </StrategySectionShell>
-        </section>
-
-        <section className="mb-14 md:mb-20">
-          <SectionHeader number="11" title="Operating Model" />
-          <StrategySectionShell glow="amber">
-            <StrategySectionLead
-              takeaway="The program compounds because the workstreams run concurrently every month, not one after another."
-              body="Each month includes research and prioritization, production, publishing/indexing, off-site authority, and measurement. The mix evolves, but the operating system stays active from day one."
-              implication="That is how Hyro moves from isolated wins to sustained category pressure."
-            />
-
-            <GrowthTimelineChart points={operatingTimelinePoints} milestones={operatingMilestones} />
-
-            <div className="mt-6">
-              <VerticalInsightCard
-                eyebrow="Monthly rhythm"
-                title="A founder-readable operating system"
-                body="Every month Memetik reviews what moved, what failed to gain traction, what the competitive surfaces are doing, and which pages or proof assets deserve the next push. That keeps the program focused on market movement, not just output volume."
-                bullets={[
-                  "Weekly priority review and research refresh",
-                  "Continuous drafting, publishing, indexing, and reinforcement",
-                  "Monthly reporting on visibility, authority proof, and shipped work",
-                  "Quarterly strategy review to refresh, consolidate, and reallocate effort",
-                ]}
-                icon={<CheckCircle2 className="h-5 w-5" />}
+              <StackCard
+                key={block.title}
+                eyebrow={block.eyebrow}
+                icon={<FileText className="h-5 w-5" />}
+                title={block.title}
+                body={block.body}
+                bullets={block.bullets}
               />
-            </div>
-          </StrategySectionShell>
-        </section>
+            ))}
+          </div>
+        </StrategySectionShell>
 
-        <section className="mb-14 md:mb-20">
-          <SectionHeader number="12" title="Why Memetik" />
-          <StrategySectionShell glow="blue">
-            <StrategySectionLead
-              takeaway="Memetik is built for the new shape of discovery: classic search demand plus answer-engine influence plus the trust layer that feeds both."
-              body="Most agencies still treat these as separate jobs. Memetik treats them as one commercial system. That matters because Hyro does not need more disconnected activity. It needs a market position that gets stronger every month."
-              implication="The value is not just output. It is building a category position competitors have to work hard to reverse."
+        <StrategySectionShell>
+          <SectionHeader number="11" title="Operating Model" />
+          <StrategySectionLead
+            takeaway="The program compounds through monthly deployments that keep production, publishing, authority, and measurement moving together."
+            body="Hyro should not experience this as one launch followed by idle time. Each month has live deployment work, performance review, proof reinforcement, and refresh decisions layered onto the same trajectory."
+            implication="The market shift happens because pages, proof, indexing, and authority all keep moving forward on the same timeline."
+          />
+
+          <GrowthTimelineChart points={operatingTimelinePoints} milestones={operatingMilestones} />
+
+          <div className="mt-6 space-y-4">
+            <StackCard
+              eyebrow="Monthly deployment model"
+              icon={<Activity className="h-5 w-5" />}
+              title="Every month runs the same core motions in parallel"
+              body="Research and prioritization, page production, publishing and indexing, off-site authority, review actions, and measurement all continue every month. The mix changes over time, but the system does not stop after the first launch."
             />
+            <StackCard
+              eyebrow="Reporting and decision points"
+              icon={<ShieldCheck className="h-5 w-5" />}
+              title="Hyro gets visible proof, not vague channel reporting"
+              body="Each month should show movement across default recommendation visibility, prompt coverage, authority proof, work completed, and downstream search indicators. Each quarter should reset priorities based on what is defended, what is soft, and where the next growth leverage sits."
+            />
+          </div>
+        </StrategySectionShell>
 
-            <HighlightBox>
-              <div className="max-w-3xl">
-                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">Memetik difference</div>
-                <p className="mt-3 text-2xl font-display font-semibold tracking-tight text-white md:text-3xl">
-                  We do not optimize Hyro for isolated rankings. We build the conditions for the brand to become the answer buyers keep encountering when they research what to buy.
-                </p>
-                <div className="mt-6">
-                  <BulletList items={whyMemetikBullets} />
-                </div>
-              </div>
-            </HighlightBox>
-          </StrategySectionShell>
-        </section>
+        <StrategySectionShell>
+          <SectionHeader number="12" title="Why Memetik" />
+          <StrategySectionLead
+            takeaway="Memetik is built for the moment where search and AI are merging into one commercial discovery system."
+            body="Hyro needs a partner that understands how decision pages, supporting coverage, authority building, technical eligibility, and answer-surface visibility work together. Memetik is designed around that full system."
+            implication="The advantage is not just more output. It is a better operating model for how brands become easier to discover and trust now."
+          />
+
+          <HighlightBox className="mb-4">
+            <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Memetik fit</div>
+            <p className="mt-3 text-2xl font-display font-semibold tracking-tight text-white md:text-3xl">
+              Memetik helps brands become the answer buyers keep seeing, not just another page in the results.
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-white/68 md:text-base">
+              For Hyro, that means pairing a commercial content plan with the trust layer, entity layer, and refresh layer that make visibility durable instead of temporary.
+            </p>
+          </HighlightBox>
+
+          <div className="space-y-4">
+            {whyMemetikBlocks.map((block) => (
+              <StackCard
+                key={block.title}
+                eyebrow={block.eyebrow}
+                icon={<Sparkles className="h-5 w-5" />}
+                title={block.title}
+                body={block.body}
+              />
+            ))}
+          </div>
+        </StrategySectionShell>
 
         <StrategyCTA
-          eyebrow="Book a Strategy Call"
-          title="If Hyro wants to own the decision layer, the build should start now."
-          body="The market is already teaching buyers which electrolyte brands to trust. Memetik helps Hyro change that pattern with the pages, authority, infrastructure, and operating rhythm required to win serious buying consideration."
+          eyebrow="Book Strategy Call"
+          title="If Hyro wants to win the buying moments that shape category choice, this is the opening move."
+          body="Memetik can help turn this plan into a live market-capture program across search, answer engines, and the third-party trust surfaces that influence both."
           href="https://cal.com/memetik/letstalk"
           ctaLabel="Book a Strategy Call"
         />
 
-        <section className="mt-16 md:mt-20">
-          <SectionHeader number="13" title="Supporting Evidence Appendix" />
+        <div className="space-y-6">
+          <StrategySectionShell>
+            <SectionHeader number="13" title="Supporting Evidence" />
+            <StrategySectionLead
+              takeaway="Below the fold is the proof layer behind the strategy."
+              body="The main memo is designed for a founder to skim quickly. This appendix keeps the supporting evidence visible without turning the primary flow into a research dump."
+            />
+          </StrategySectionShell>
 
-          <div className="space-y-4">
-            <StrategyAppendixSection
-              defaultOpen
-              title="Keyword and demand evidence"
-              description="A compact view of the validated demand clusters and the commercial keyword signals shaping the first opening move."
-            >
-              <div className="space-y-6">
-                <DataTable
-                  headers={["Demand cluster", "Intent / phase", "Validated demand", "Expected traffic in 12 months", "Sample queries"]}
-                  rows={[
-                    [
-                      "Category & Brand Demand",
-                      "Broader category / later expansion",
-                      "8,241,950",
-                      "167,074",
-                      "electrolyte drinks, electrolyte drink mix, electrolyte powder",
-                    ],
-                    [
-                      "Buyer Guides",
-                      "Decision-stage / first 90 days",
-                      "211,170",
-                      "23,229",
-                      "best electrolyte drink, best electrolyte powder, best hydration powder",
-                    ],
-                    [
-                      "Alternatives & Comparisons",
-                      "Decision-stage / first 90 days",
-                      "7,210",
-                      "793",
-                      "electrolyte powder vs tablets, pedialyte vs electrolyte powder",
-                    ],
-                    [
-                      "Reviews & Social Proof",
-                      "Decision-stage / first 90 days",
-                      "3,720",
-                      "409",
-                      "electrolyte powder review and product-review variants",
-                    ],
-                  ]}
-                  highlightRow={1}
-                />
+          <StrategyAppendixSection
+            defaultOpen
+            title="Competitor evidence snapshot"
+            description="Compact view of the category leaders Hyro is up against today, using the validated metrics from the approved brief."
+          >
+            <DataTable
+              headers={["Brand", "Organic traffic", "Organic keywords", "Referring domains", "Backlinks", "Sampled prompt hits"]}
+              rows={competitiveTableRows}
+              highlightRow={5}
+            />
+          </StrategyAppendixSection>
 
-                <DataTable
-                  headers={["Commercial query", "Volume", "Current position", "Why it matters"]}
-                  rows={keywordSignalRows}
-                />
-              </div>
-            </StrategyAppendixSection>
-
-            <StrategyAppendixSection
-              title="Detailed competitor evidence"
-              description="The competitive read supporting the decision to lead with buyer guides and evaluation content."
-            >
-              <div className="space-y-6">
-                <DataTable
-                  headers={["Brand", "Organic traffic", "Organic keywords", "Referring domains", "Backlinks", "Prompt hits"]}
-                  rows={competitorRows}
-                  highlightRow={5}
-                />
-
-                <div className="grid gap-4 md:grid-cols-1">
-                  <StrategyCard>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">Competitive interpretation</div>
-                    <p className="mt-3 max-w-3xl text-sm leading-7 text-white/64">
-                      LMNT and Liquid I.V. currently set the pace across both search scale and prompt visibility. Nuun and DripDrop also operate with much stronger authority bases than Hyro. That is why the recommended opening move is narrow and commercial: win the selection layer first instead of trying to out-scale incumbents everywhere from day one.
-                    </p>
-                  </StrategyCard>
-                </div>
-              </div>
-            </StrategyAppendixSection>
-
-            <StrategyAppendixSection
-              title="Prompt evidence and AI visibility samples"
-              description="Public-safe prompt snapshots showing the current answer-layer pattern without inventing unsupported platform certainty."
-            >
-              <div className="space-y-6">
-                <DataTable
-                  headers={["Prompt", "Surface", "Who shows up", "Hyro status", "Takeaway"]}
-                  rows={promptRows}
-                />
-
-                <div className="space-y-4">
-                  <StrategyCard>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">Sample prompt excerpt</div>
-                    <p className="mt-3 text-sm leading-7 text-white/64">
-                      For <span className="text-white">“best electrolyte powder drink mix”</span>, sampled results referenced brands like LMNT and other established incumbents, while Hyro was absent. In the Google AI Overview sample, the surface referenced brands such as LMNT, Liquid I.V., Ultima, Nuun, and DripDrop, alongside editorial sources.
-                    </p>
-                  </StrategyCard>
-
-                  <StrategyCard>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">Caveat discipline</div>
-                    <p className="mt-3 text-sm leading-7 text-white/64">
-                      Two AI data probes in the approved brief were incomplete. The strategy therefore avoids precise public claims for unsupported surfaces and keeps the visible conclusion narrow: Hyro is not yet consistently present in the sampled commercial prompts where the category leaders are being surfaced.
-                    </p>
-                  </StrategyCard>
-                </div>
-              </div>
-            </StrategyAppendixSection>
-
-            <StrategyAppendixSection
-              title="Planning assumptions, confidence, and source trace"
-              description="What supports this page, what was softened publicly, and how to interpret the opportunity numbers honestly."
-            >
-              <div className="space-y-6">
-                <StrategyCard>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">Source trace</div>
-                  <p className="mt-3 text-sm leading-7 text-white/64">
-                    Canonical lineage for this page: master reference → generation contract → approved brief → page. This page is rendered from the approved Hyro strategy brief dated 2026-03-08 and does not bypass the brief with raw research as the planning source of truth.
-                  </p>
-                </StrategyCard>
-
-                <StrategyCard>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">Confidence and caveats</div>
-                  <div className="mt-4">
-                    <BulletList items={appendixAssumptions} />
-                  </div>
-                </StrategyCard>
-              </div>
-            </StrategyAppendixSection>
-
-            <StrategyAppendixSection
-              title="Optional commercial model"
-              description="Use first-party conversion and customer value inputs to translate the traffic model into revenue potential."
-            >
-              <TamRoiCalculator
-                baseReachableVisits={191505}
-                defaultLtv={0}
-                defaultVisitToCustomerRate={1}
+          <StrategyAppendixSection
+            title="Priority buying query evidence"
+            description="The opportunity is not one undifferentiated market. The plan is sequenced around the decision-stage demand that matters first."
+          >
+            <div className="space-y-6">
+              <DataTable
+                headers={["Cluster", "Priority window", "Validated demand", "Expected traffic in 12 months", "Sample query examples"]}
+                rows={clusterTableRows}
+                highlightRow={0}
               />
-            </StrategyAppendixSection>
-          </div>
-        </section>
+
+              <StrategyCard>
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Commercial query signals already visible in the research</div>
+                <div className="mt-4">
+                  <BulletList items={commercialSignals} />
+                </div>
+              </StrategyCard>
+            </div>
+          </StrategyAppendixSection>
+
+          <StrategyAppendixSection
+            title="Prompt evidence snapshot"
+            description="Public-safe prompt evidence used on the page. Only validated sampled prompts are shown here."
+          >
+            <DataTable
+              headers={["Query", "Platform", "Hyro status", "Who shows up now", "What this means"]}
+              rows={appendixPromptRows}
+            />
+          </StrategyAppendixSection>
+
+          <StrategyAppendixSection
+            title="Attribution split and confidence notes"
+            description="Why the page emphasizes unbranded opportunity, and where the visible caveats sit."
+          >
+            <div className="space-y-4">
+              <StrategyCard>
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Keyword attribution summary</div>
+                <div className="mt-4 space-y-3">
+                  <div className="rounded-[18px] border border-white/8 bg-black/20 px-4 py-3 text-sm leading-7 text-white/68">
+                    Competitor-keyword demand: <span className="font-semibold text-white">629,440</span> (7.4%)
+                  </div>
+                  <div className="rounded-[18px] border border-white/8 bg-black/20 px-4 py-3 text-sm leading-7 text-white/68">
+                    Non-competitor / unbranded demand: <span className="font-semibold text-white">7,834,610</span> (92.6%)
+                  </div>
+                  <div className="rounded-[18px] border border-white/8 bg-black/20 px-4 py-3 text-sm leading-7 text-white/68">
+                    Competitor-keyword expected traffic in 12 months: <span className="font-semibold text-white">13,798</span>
+                  </div>
+                  <div className="rounded-[18px] border border-white/8 bg-black/20 px-4 py-3 text-sm leading-7 text-white/68">
+                    Non-competitor / unbranded expected traffic in 12 months: <span className="font-semibold text-white">177,707</span>
+                  </div>
+                </div>
+              </StrategyCard>
+
+              <StrategyCard>
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Assumptions and caveats</div>
+                <div className="mt-4">
+                  <BulletList items={appendixAssumptions} />
+                </div>
+              </StrategyCard>
+            </div>
+          </StrategyAppendixSection>
+        </div>
       </div>
     </StrategyPageFrame>
   );

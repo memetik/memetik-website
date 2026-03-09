@@ -1,14 +1,21 @@
 const fs = require("fs");
+const http = require("http");
+const https = require("https");
+const os = require("os");
 const path = require("path");
+const { URL } = require("url");
 
-const OPENAI_BASE_URL = "http://127.0.0.1:8327/v1";
+const DEFAULT_OPENAI_BASE_URL = "http://127.0.0.1:8317/v1";
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "dummy";
-const STRATEGY_MODEL = process.env.STRATEGY_MODEL || "gpt-5.4";
+const STRATEGY_MODEL = process.env.STRATEGY_MODEL || "gpt-5.4(high)";
 const REPO_ROOT = path.join(__dirname, "..", "..");
 const REPO_STRATEGY_CONTRACT_ROOT = path.join(REPO_ROOT, "contracts", "strategy");
 const CANONICAL_MIND_ROOT = "/Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation";
 const CANONICAL_MASTER_REFERENCE_PATH = "/Users/house/Mind/Areas/Agency/Lead-Magnets/MEMETIK-2026-AEO-Master-Reference.md";
 const PORTABLE_BRIEF_SNAPSHOT_DIR = path.join(REPO_ROOT, "content", "strategy-briefs");
+const OPENAI_BASE_URL = resolveOpenAIBaseUrl(STRATEGY_MODEL);
+const MODEL_REQUEST_MAX_RETRIES = Number(process.env.STRATEGY_MODEL_MAX_RETRIES || 3);
+const MODEL_REQUEST_TIMEOUT_MS = Number(process.env.STRATEGY_MODEL_TIMEOUT_MS || 15 * 60 * 1000);
 
 const REQUIRED_BRIEF_SECTIONS = [
   "## Lineage",
@@ -60,6 +67,141 @@ const MARKET_CONTEXT_NON_NEGOTIABLES = [
   "Buyers now move across Google, ChatGPT, Perplexity, Gemini, and other answer layers before they ever talk to sales.",
   "Winning brands need visibility across both classic search demand capture and AI answer surfaces.",
 ].join("\n- ");
+
+function readJsonIfPresent(filePath) {
+  try {
+    if (!fs.existsSync(filePath)) return null;
+    return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  } catch {
+    return null;
+  }
+}
+
+function normalizeBaseUrl(value) {
+  if (!value) return null;
+  const trimmed = String(value).trim().replace(/\/$/, "");
+  if (!trimmed) return null;
+  return /\/v1$/i.test(trimmed) ? trimmed : `${trimmed}/v1`;
+}
+
+function getFactoryCustomModels() {
+  const factoryRoot = path.join(os.homedir(), ".factory");
+  const settings = readJsonIfPresent(path.join(factoryRoot, "settings.json"));
+  const config = readJsonIfPresent(path.join(factoryRoot, "config.json"));
+  const settingsModels = Array.isArray(settings?.customModels)
+    ? settings.customModels.map((model) => ({
+        model: model?.model,
+        provider: model?.provider,
+        baseUrl: model?.baseUrl,
+      }))
+    : [];
+  const configModels = Array.isArray(config?.custom_models)
+    ? config.custom_models.map((model) => ({
+        model: model?.model,
+        provider: model?.provider,
+        baseUrl: model?.base_url,
+      }))
+    : [];
+
+  return [...settingsModels, ...configModels];
+}
+
+function resolveOpenAIBaseUrl(modelName) {
+  if (process.env.OPENAI_BASE_URL) {
+    return normalizeBaseUrl(process.env.OPENAI_BASE_URL) || DEFAULT_OPENAI_BASE_URL;
+  }
+
+  const customModels = getFactoryCustomModels();
+  const exactMatch = customModels.find((entry) => entry?.provider === "openai" && entry?.model === modelName && entry?.baseUrl);
+  if (exactMatch?.baseUrl) {
+    return normalizeBaseUrl(exactMatch.baseUrl) || DEFAULT_OPENAI_BASE_URL;
+  }
+
+  const familyMatch = customModels.find(
+    (entry) => entry?.provider === "openai" && /^gpt-5\.4(?:\(|$)/i.test(entry?.model || "") && entry?.baseUrl
+  );
+  if (familyMatch?.baseUrl) {
+    return normalizeBaseUrl(familyMatch.baseUrl) || DEFAULT_OPENAI_BASE_URL;
+  }
+
+  return DEFAULT_OPENAI_BASE_URL;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isRetriableModelError(message) {
+  return /(internal_error|headers timeout|timed out|timeout|econnreset|socket hang up|stream error|502|503|504|rate limit)/i.test(
+    String(message || "")
+  );
+}
+
+async function requestModelCompletion(payload) {
+  const endpoint = `${OPENAI_BASE_URL.replace(/\/$/, "")}/chat/completions`;
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= MODEL_REQUEST_MAX_RETRIES; attempt += 1) {
+    try {
+      const parsed = await new Promise((resolve, reject) => {
+        const requestBody = JSON.stringify(payload);
+        const url = new URL(endpoint);
+        const transport = url.protocol === "https:" ? https : http;
+        const req = transport.request(
+          url,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${OPENAI_API_KEY}`,
+              "Content-Length": Buffer.byteLength(requestBody),
+            },
+          },
+          (response) => {
+            let data = "";
+            response.setEncoding("utf8");
+            response.on("data", (chunk) => {
+              data += chunk;
+            });
+            response.on("end", () => {
+              let parsedResponse;
+              try {
+                parsedResponse = JSON.parse(data);
+              } catch {
+                reject(new Error(`Failed to parse model response: ${data.slice(0, 500)}`));
+                return;
+              }
+
+              if (response.statusCode >= 400 || parsedResponse?.error) {
+                const msg = parsedResponse?.error?.message || `${response.statusCode || 500}`;
+                reject(new Error(`Model API error: ${msg}`));
+                return;
+              }
+
+              resolve(parsedResponse);
+            });
+          }
+        );
+
+        req.setTimeout(MODEL_REQUEST_TIMEOUT_MS, () => {
+          req.destroy(new Error(`Model request timed out after ${MODEL_REQUEST_TIMEOUT_MS}ms`));
+        });
+
+        req.on("error", reject);
+        req.write(requestBody);
+        req.end();
+      });
+
+      return parsed;
+    } catch (error) {
+      lastError = error;
+      if (attempt >= MODEL_REQUEST_MAX_RETRIES || !isRetriableModelError(error?.message)) break;
+      await sleep(1500 * attempt);
+    }
+  }
+
+  throw lastError;
+}
 
 function loadStrategicContextDocs() {
   throw new Error("loadStrategicContextDocs now requires canonical inputs via loadCanonicalGenerationInputs().");
@@ -947,38 +1089,21 @@ function validateGeneratedTsx(tsxContent) {
   if (/\b(BTS 2|BTS 3|old page|original page|previous page|counter-offensive page)\b/i.test(tsxContent)) {
     throw new Error("Generated public pages must not reference prior page versions or old page drafts.");
   }
+
+  if (/\bweekly (operating system|rhythm|cadence|retainer)\b/i.test(tsxContent)) {
+    throw new Error("Generated public pages must not describe the program using weekly-rhythm language.");
+  }
 }
 
 async function codexRequest(systemPrompt, userPrompt) {
-  const endpoint = `${OPENAI_BASE_URL.replace(/\/$/, "")}/chat/completions`;
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${OPENAI_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: STRATEGY_MODEL,
-      max_tokens: 16000,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userPrompt },
-      ],
-    }),
+  const parsed = await requestModelCompletion({
+    model: STRATEGY_MODEL,
+    max_tokens: 16000,
+    messages: [
+      { role: "system", content: systemPrompt },
+      { role: "user", content: userPrompt },
+    ],
   });
-
-  const data = await response.text();
-  let parsed;
-  try {
-    parsed = JSON.parse(data);
-  } catch (e) {
-    throw new Error(`Failed to parse model response: ${data.slice(0, 500)}`);
-  }
-
-  if (!response.ok || parsed.error) {
-    const msg = parsed?.error?.message || `${response.status} ${response.statusText}`;
-    throw new Error(`Model API error: ${msg}`);
-  }
 
   const content = parsed?.choices?.[0]?.message?.content;
   if (typeof content === "string") return content;
@@ -1106,6 +1231,7 @@ CRITICAL RULES:
 37. The page should look homepage-premium, not report-template-flat: use StrategyPageFrame for the page, StrategyHero for the hero, StrategySectionShell for major sections, StrategyCard for sub-blocks, and StrategyCTA for the close.
 38. Do not make the page feel like "look how much research we did." Make it feel like "we understand the market, your position, your wedge, and how to build the moat."
 39. The delivery scope must reflect the documented Memetik program from the playbook: priority buying queries, bottom-of-funnel pages, comparison/evaluation content, supporting content coverage, off-site authority, review-platform work, Bing/IndexNow/schema infrastructure, and monthly optimization loops.
+39b. Do not describe the engagement as a weekly rhythm, weekly operating system, or weekly cadence. Frame it as monthly deployments with concurrent monthly workstreams.
 40. Public pages must translate operator-only doctrine into plain founder language. Do not expose labels such as Money Entities, Apex Assets, Knowledge Graph, Trust Relay, recommendation-share, wedge, or shortlist in founder-facing copy.
 41. Do not promise a fixed public count of bottom-of-funnel pages. Explain that Memetik builds as many bottom-of-funnel pages as needed to cover the relevant demand, then expands supporting coverage and authority around the winners.
 42. Public pages must not mention prior internal page versions, old drafts, or origin-story commentary. The output should read like the canonical page, not a page about previous pages.

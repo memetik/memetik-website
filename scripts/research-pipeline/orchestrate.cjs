@@ -110,12 +110,12 @@ async function main() {
       "  node scripts/research-pipeline/orchestrate.cjs --batch --start 0 --limit 5 --mode strict --generate"
     );
     console.log("");
-    console.log("Environment variables (required):");
+    console.log("Environment variables:");
     console.log("  DATAFORSEO_LOGIN      — DataForSEO API login");
     console.log("  DATAFORSEO_PASSWORD   — DataForSEO API password");
-    console.log("  OPENAI_BASE_URL       — VibeProxy base URL (for --generate)");
-    console.log("  OPENAI_API_KEY        — VibeProxy key placeholder (for --generate)");
-    console.log("  STRATEGY_MODEL        — model name (default: gpt-5.3-codex)");
+    console.log("  OPENAI_BASE_URL       — optional Vibe proxy base URL override (default: Factory/Vibe config or http://127.0.0.1:8317/v1)");
+    console.log("  OPENAI_API_KEY        — optional Vibe proxy key placeholder (default: dummy)");
+    console.log("  STRATEGY_MODEL        — optional model name override (default: gpt-5.4(high))");
     console.log("");
     console.log(`Companies loaded: ${clients.length}`);
   }
