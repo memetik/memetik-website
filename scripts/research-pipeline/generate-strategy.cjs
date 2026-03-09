@@ -205,6 +205,128 @@ function formatPercent(value) {
   return `${Number(value).toFixed(1)}%`;
 }
 
+function escapeRegExp(value) {
+  return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function normalizeCompetitorAlias(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/.*/, "")
+    .trim();
+}
+
+function getCompetitorAliases(researchData = {}) {
+  const ignoredTokens = new Set(["www", "com", "co", "io", "ai", "app", "hq", "inc", "llc", "the"]);
+  const aliases = new Set();
+
+  for (const competitor of Array.isArray(researchData?.competitors) ? researchData.competitors : []) {
+    const candidates = [competitor?.name, competitor?.domain];
+    for (const candidate of candidates) {
+      const normalized = normalizeCompetitorAlias(candidate);
+      if (!normalized) continue;
+
+      aliases.add(normalized);
+      const domainRoot = normalized.split(".")[0];
+      if (domainRoot && !ignoredTokens.has(domainRoot) && domainRoot.length >= 3) {
+        aliases.add(domainRoot);
+      }
+
+      for (const token of normalized.split(/[^a-z0-9]+/i).filter(Boolean)) {
+        if (token.length >= 4 && !ignoredTokens.has(token)) aliases.add(token);
+      }
+    }
+  }
+
+  return Array.from(aliases).sort((a, b) => b.length - a.length);
+}
+
+function buildKeywordAttributionSummary(researchData = {}) {
+  const rows = Array.isArray(researchData?.keywordUniverse) ? researchData.keywordUniverse : [];
+  const winRates = researchData?.tamModel?.assumptions?.trafficWinRates;
+  const totals = researchData?.tamModel?.totals || {};
+  const monthlyTrajectory = Array.isArray(researchData?.tamModel?.monthlyTrajectory) ? researchData.tamModel.monthlyTrajectory : [];
+  const competitorAliases = getCompetitorAliases(researchData);
+
+  if (!rows.length || !winRates || !competitorAliases.length) return null;
+
+  const matchesCompetitor = (keyword) => {
+    const normalized = String(keyword || "").toLowerCase();
+    return competitorAliases.some((alias) => alias && new RegExp(`\\b${escapeRegExp(alias)}\\b`, "i").test(normalized));
+  };
+
+  const summarizeRows = (subset) => {
+    const demand = subset.reduce((sum, row) => sum + Number(row?.volume || 0), 0);
+    const expectedTraffic12Months = { low: 0, base: 0, high: 0 };
+
+    for (const row of subset) {
+      const intent = row?.intent;
+      const volume = Number(row?.volume || 0);
+      if (!intent || !winRates[intent] || volume <= 0) continue;
+      for (const scenario of ["low", "base", "high"]) {
+        expectedTraffic12Months[scenario] += volume * Number(winRates[intent]?.[scenario] || 0);
+      }
+    }
+
+    const first6MonthTarget = { low: 0, base: 0, high: 0 };
+    for (const scenario of ["low", "base", "high"]) {
+      const totalScenario = Number(totals?.expectedTraffic12Months?.[scenario] || 0);
+      const first6Weight = totalScenario > 0
+        ? monthlyTrajectory.slice(0, 6).reduce((sum, row) => sum + Number(row?.[scenario] || 0), 0) / totalScenario
+        : 0;
+      first6MonthTarget[scenario] = expectedTraffic12Months[scenario] * first6Weight;
+    }
+
+    return {
+      keywordCount: subset.length,
+      demand,
+      expectedTraffic12Months,
+      first6MonthTarget,
+    };
+  };
+
+  const competitorRows = rows.filter((row) => matchesCompetitor(row?.keyword));
+  if (!competitorRows.length) return null;
+
+  const nonCompetitorRows = rows.filter((row) => !matchesCompetitor(row?.keyword));
+  const competitor = summarizeRows(competitorRows);
+  const nonCompetitor = summarizeRows(nonCompetitorRows);
+  const totalDemand = competitor.demand + nonCompetitor.demand;
+  const totalBaseTraffic = competitor.expectedTraffic12Months.base + nonCompetitor.expectedTraffic12Months.base;
+
+  return {
+    competitorAliases: competitorAliases.slice(0, 12),
+    competitor,
+    nonCompetitor,
+    shares: {
+      demand: {
+        competitor: totalDemand > 0 ? (competitor.demand / totalDemand) * 100 : 0,
+        nonCompetitor: totalDemand > 0 ? (nonCompetitor.demand / totalDemand) * 100 : 0,
+      },
+      expectedTraffic12MonthsBase: {
+        competitor: totalBaseTraffic > 0 ? (competitor.expectedTraffic12Months.base / totalBaseTraffic) * 100 : 0,
+        nonCompetitor: totalBaseTraffic > 0 ? (nonCompetitor.expectedTraffic12Months.base / totalBaseTraffic) * 100 : 0,
+      },
+    },
+  };
+}
+
+function formatKeywordAttributionSummary(summary) {
+  if (!summary) return "- No competitor-keyword attribution summary available for this payload.";
+
+  return [
+    `- Competitor-keyword demand: ${formatNumber(summary.competitor.demand)} (${formatPercent(summary.shares.demand.competitor)})`,
+    `- Non-competitor / unbranded demand: ${formatNumber(summary.nonCompetitor.demand)} (${formatPercent(summary.shares.demand.nonCompetitor)})`,
+    `- Competitor-keyword expected traffic in 12 months (base): ${formatNumber(summary.competitor.expectedTraffic12Months.base)}`,
+    `- Non-competitor / unbranded expected traffic in 12 months (base): ${formatNumber(summary.nonCompetitor.expectedTraffic12Months.base)}`,
+    `- Competitor-keyword first 6-month target (base): ${formatNumber(summary.competitor.first6MonthTarget.base)}`,
+    `- Non-competitor / unbranded first 6-month target (base): ${formatNumber(summary.nonCompetitor.first6MonthTarget.base)}`,
+    `- Alias set used for competitor matching: ${summary.competitorAliases.join(", ")}`,
+  ].join("\n");
+}
+
 function toJsonBlock(value) {
   return `\`\`\`json\n${JSON.stringify(value, null, 2)}\n\`\`\``;
 }
@@ -820,6 +942,10 @@ function validateGeneratedTsx(tsxContent) {
   if (/DeliveryScopeMatrix/.test(tsxContent)) {
     throw new Error("Generated page must not use DeliveryScopeMatrix in the main narrative; use stacked scope blocks instead.");
   }
+
+  if (/\b(BTS 2|BTS 3|old page|original page|previous page|counter-offensive page)\b/i.test(tsxContent)) {
+    throw new Error("Generated public pages must not reference prior page versions or old page drafts.");
+  }
 }
 
 async function codexRequest(systemPrompt, userPrompt) {
@@ -981,15 +1107,18 @@ CRITICAL RULES:
 39. The delivery scope must reflect the documented Memetik program from the playbook: priority buying queries, bottom-of-funnel pages, comparison/evaluation content, supporting content coverage, off-site authority, review-platform work, Bing/IndexNow/schema infrastructure, and monthly optimization loops.
 40. Public pages must translate operator-only doctrine into plain founder language. Do not expose labels such as Money Entities, Apex Assets, Knowledge Graph, Trust Relay, recommendation-share, wedge, or shortlist in founder-facing copy.
 41. Do not promise a fixed public count of bottom-of-funnel pages. Explain that Memetik builds as many bottom-of-funnel pages as needed to cover the relevant demand, then expands supporting coverage and authority around the winners.
-42. Include a dedicated Off-site Authority section that explicitly covers Reddit/community participation, reviews, editorials, listicles, backlinks, and other third-party trust surfaces.
-43. For creator-platform strategies where relevant, position the company for serious creators building real businesses and counter-position clearly against Whop without inventing unsupported facts.
-44. The main narrative must have one reading axis: vertical. Avoid side-by-side storytelling layouts in primary sections.
-45. The page must make it obvious that Memetik delivers both on-site production and off-site authority building; do not reduce the strategy to only content publishing.
-46. Executive-summary metric cards must stay at the top of the page in a vertical stack, and immediate actions must stack underneath them. Do not place them side-by-side.
-47. The 12-month opportunity curve must use cumulative traffic progression so the final point matches the visible "Expected traffic in 12 months" number, not a month-12 run-rate or first-6-month value.
-48. Surface the TAM / ROI calculator in or immediately after the Revenue / Commercial Impact section; do not bury it only in the appendix.
-49. Canonical lineage is mandatory and must remain visible in your reasoning: master reference -> generation contract -> brief -> page.
-50. Do not bypass or reinterpret the approved brief. Raw research payload is not the canonical page input.`;
+42. Public pages must not mention prior internal page versions, old drafts, or origin-story commentary. The output should read like the canonical page, not a page about previous pages.
+43. If keyword attribution data is provided, surface competitor-keyword vs non-competitor / unbranded breakdowns directly beneath each executive-summary metric card and reinforce that split in the appendix.
+44. The Operating Model should show the full 12-month view when the page uses 12-month traffic planning, and the timeline should reveal what ships in the active month.
+45. Include a dedicated Off-site Authority section that explicitly covers Reddit/community participation, reviews, editorials, listicles, backlinks, and other third-party trust surfaces.
+46. For creator-platform strategies where relevant, position the company for serious creators building real businesses and counter-position clearly against Whop without inventing unsupported facts.
+47. The main narrative must have one reading axis: vertical. Avoid side-by-side storytelling layouts in primary sections.
+48. The page must make it obvious that Memetik delivers both on-site production and off-site authority building; do not reduce the strategy to only content publishing.
+49. Executive-summary metric cards must stay at the top of the page in a vertical stack, and immediate actions must stack underneath them. Do not place them side-by-side.
+50. The 12-month opportunity curve must use cumulative traffic progression so the final point matches the visible "Expected traffic in 12 months" number, not a month-12 run-rate or first-6-month value.
+51. Surface the TAM / ROI calculator in or immediately after the Revenue / Commercial Impact section; do not bury it only in the appendix.
+52. Canonical lineage is mandatory and must remain visible in your reasoning: master reference -> generation contract -> brief -> page.
+53. Do not bypass or reinterpret the approved brief. Raw research payload is not the canonical page input.`;
 }
 
 async function generateStrategyPage(company, researchData) {
@@ -1004,6 +1133,7 @@ async function generateStrategyPage(company, researchData) {
   const examples = loadExamplePages();
   const components = loadComponentLibrary();
   const systemPrompt = buildSystemPrompt(examples, components, canonicalInputs.docs, brief);
+  const keywordAttributionSummary = buildKeywordAttributionSummary(researchData);
 
   const userPrompt = `Generate a complete strategy page TSX file for this company.
 
@@ -1015,6 +1145,9 @@ COMPANY: ${company.name}
 DOMAIN: ${company.domain}
 CATEGORY: ${company.category}
 INDUSTRY: ${company.industry}
+
+KEYWORD ATTRIBUTION SUMMARY (use if available):
+${formatKeywordAttributionSummary(keywordAttributionSummary)}
 
 APPROVED BRIEF CONTENT:
 ${brief.content}
@@ -1031,6 +1164,7 @@ Mandatory output structure additions:
 - Put detailed keyword universe, assumptions/confidence, detailed competitor evidence, prompt evidence, and optional calculator in the appendix rather than the primary flow.
 - Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
 - Keep executive-summary headline numbers compact enough that seven-figure values do not wrap awkwardly, but let the cards grow naturally; do not cram them into a horizontal row.
+- If keyword attribution summary is available, add a compact competitor-keyword vs non-competitor / unbranded breakdown beneath each executive-summary metric card.
 - Keep hero metrics and primary visuals tied to validated topical subsets.
 - Display trajectory numbers as whole integers in visible UI labels.
 - If researchData.tamModel.totals.expectedTraffic12Months exists, use that terminology in the visible UI instead of "reachable visits".
@@ -1045,7 +1179,8 @@ Mandatory output structure additions:
 - The main story must read vertically. Do not use side-by-side layouts as the default pattern in the hero or primary sections.
 - Include a visible Month 1 / Month 2 / Month 3 / Months 4-6 rollout summary with concrete outputs, but stack those blocks vertically.
 - The Revenue / Commercial Impact section should stack vertically in this order: lead, explanation, PhasedUpsideChart, calculator, then assumptions/caveat note.
-- The Operating Model section must use GrowthTimelineChart, not WorkstreamTimeline. It should show deployment milestones tied to growth progression along one visual timeline.
+- The Operating Model section must use GrowthTimelineChart, not WorkstreamTimeline. It should show deployment milestones tied to growth progression along one visual timeline and expose the full 12-month progression when 12-month planning numbers are shown.
+- The Operating Model timeline should support month-level deployment detail for hover on desktop and tap on mobile where the shared component allows it.
 - Keep the executive-summary metric cards at the top in a single vertical stack, then place the immediate actions underneath in a second vertical stack.
 - In the main narrative, avoid multi-column grids unless the content is a chart or appendix table.
 - Include the exact visible label "Estimate-only" at least once in the Revenue / Commercial Impact or Operating Model area.
@@ -1053,6 +1188,7 @@ Mandatory output structure additions:
 - Place the TAM / ROI calculator in or directly below the Revenue / Commercial Impact section so it is easy to find.
 - If tamModel.revenueModel.enabled is false, include a clear note: "Revenue planning requires client ACV/AOV and funnel inputs."
 - If researchData.tamModel.assumptions includes planning assumptions, keep them in the appendix and explain them in normal English rather than coefficient language.
+- Do not mention prior internal page versions, prior page names, or old draft history anywhere in the visible copy.
 - For BTS specifically, make the hero more commercial and punchy, make the Whop contrast visible, and frame BTS for serious creators building real businesses.
 - Reject any attempt to generate directly from raw research. The approved brief is already the canonical downstream planning artifact.
 

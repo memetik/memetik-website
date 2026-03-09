@@ -53,11 +53,13 @@ function MetricStackCard({
   value,
   note,
   icon,
+  breakdown,
 }: {
   label: string;
   value: string;
   note: string;
   icon: React.ReactNode;
+  breakdown?: Array<{ label: string; value: string }>;
 }) {
   return (
     <StrategyCard className="mb-4 last:mb-0" glow="mixed">
@@ -69,6 +71,16 @@ function MetricStackCard({
         {value}
       </div>
       <p className="mt-4 max-w-3xl text-sm leading-6 text-white/62">{note}</p>
+      {breakdown?.length ? (
+        <div className="mt-4 grid gap-2 sm:grid-cols-2">
+          {breakdown.map((item) => (
+            <div key={item.label} className="rounded-[18px] border border-white/10 bg-white/[0.03] px-3 py-3">
+              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/42">{item.label}</div>
+              <div className="mt-2 text-base font-semibold text-white">{item.value}</div>
+            </div>
+          ))}
+        </div>
+      ) : null}
     </StrategyCard>
   );
 }
@@ -183,24 +195,40 @@ const executiveMetrics = [
     label: "Total search opportunity",
     value: formatNumber(2268640),
     note: "Validated creator-platform demand across search and answer-engine discovery, with topical integrity already passed.",
+    breakdown: [
+      { label: "Competitor keywords", value: formatNumber(2033950) },
+      { label: "Non-competitor keywords", value: formatNumber(234690) },
+    ],
     icon: <Search className="h-5 w-5" />,
   },
   {
     label: "Expected traffic in 12 months",
     value: formatNumber(191043),
     note: "Base-case cumulative traffic if BTS wins the competitor-brand decision layer first, then compounds outward into broader creator-platform demand.",
+    breakdown: [
+      { label: "Competitor-keyword traffic", value: formatNumber(169225) },
+      { label: "Non-competitor traffic", value: formatNumber(21818) },
+    ],
     icon: <TrendingUp className="h-5 w-5" />,
   },
   {
     label: "Aggressive upside",
     value: formatNumber(285367),
     note: "Upside case if the first commercial wedge compounds faster across comparison pages, supporting coverage, and off-site authority.",
+    breakdown: [
+      { label: "Competitor-keyword traffic", value: formatNumber(252954) },
+      { label: "Non-competitor traffic", value: formatNumber(32413) },
+    ],
     icon: <Sparkles className="h-5 w-5" />,
   },
   {
     label: "First 6-month target",
     value: formatNumber(70686),
     note: "The six-month goal is not broad category dominance. It is the current base-case milestone from the BTS model if BTS becomes visible in the buying moments where serious creators decide what platform deserves trust.",
+    breakdown: [
+      { label: "Competitor-keyword traffic", value: formatNumber(62613) },
+      { label: "Non-competitor traffic", value: formatNumber(8073) },
+    ],
     icon: <Target className="h-5 w-5" />,
   },
 ];
@@ -267,7 +295,7 @@ const tractionStats = [
   {
     eyebrow: "Strategic filter",
     title: "BTS is playing a density game, not a volume game.",
-    body: "The old BTS page got this exactly right: the goal is not millions of low-quality accounts. It is a much denser business base of serious creators building real businesses. That is why the whole page should filter toward the right 10,000 builders rather than chase everybody.",
+    body: "The goal is not millions of low-quality accounts. It is a much denser business base of serious creators building real businesses. That is why the whole strategy should filter toward the right 10,000 builders rather than chase everybody.",
     bullets: [
       "A denser business base creates better GMV economics than noisy marketplace volume",
       "The right comparison pages attract builders, not browsers",
@@ -292,7 +320,7 @@ const rightToWinCards = [
   {
     eyebrow: "GMV thesis",
     title: "The page should optimize for builder quality, not marketplace noise.",
-    body: "The $1B GMV thesis from the original BTS page matters because it creates a sharp strategic lens. Everything in the content system should attract the builders who treat their work seriously, not the broadest possible pool of low-intent accounts.",
+    body: "The $1B GMV thesis matters because it creates a sharp strategic lens. Everything in the content system should attract the builders who treat their work seriously, not the broadest possible pool of low-intent accounts.",
     bullets: [
       "10,000 builders × $100K average annual revenue is a stronger north star than vanity signup volume",
       "This changes the content voice, the channels, and the comparisons worth attacking",
@@ -327,7 +355,7 @@ const whopWeaknesses = [
   {
     eyebrow: "Structural weakness",
     title: "Whop depends on volume that weakens the brand.",
-    body: "The original BTS page was right to call this out: Whop's marketplace breadth helps top-line metrics, but it also dilutes the brand. BTS does not need to copy that strategy. It needs to weaponize the contrast.",
+    body: "Whop's marketplace breadth helps top-line metrics, but it also dilutes the brand. BTS does not need to copy that strategy. It needs to weaponize the contrast.",
     bullets: [
       "Most marketplace volume does not equal high-value builder density",
       "Hustle-culture breadth creates a trust vulnerability BTS can exploit",
@@ -353,7 +381,7 @@ const whopWeaknesses = [
     bullets: [
       "Comparison pages let BTS compete without out-scaling Whop everywhere",
       "Search ownership is about repeated presence across surfaces, not one ranking alone",
-      "That is why the old multi-surface strategy still belongs inside BTS 3",
+      "That is why the multi-surface strategy still belongs inside this program",
     ],
     icon: <Search className="h-5 w-5" />,
   },
@@ -396,7 +424,7 @@ const promptExamples = [
     prompt: "behind the scenes creator monetization platform alternatives",
     takeaway: "Even branded alternative prompts still redirect attention toward larger incumbents.",
     detail:
-      "This is why the first wave of BTS 3 should lead with alternative and comparison pages that make the Patreon / Kajabi / Skool contrast explicit and easy to trust, even while Whop remains a strategic competitor in the broader story.",
+      "This is why the first wave should lead with alternative and comparison pages that make the Patreon / Kajabi / Skool contrast explicit and easy to trust, even while Whop remains a strategic competitor in the broader story.",
   },
   {
     platform: "Gemini · AU",
@@ -423,11 +451,186 @@ const upsidePoints = [
 ];
 
 const operatingTimelinePoints = [
-  { month: 1, low: 3558, base: 7642, high: 14268 },
-  { month: 2, low: 8303, base: 17194, high: 31390 },
-  { month: 3, low: 14234, base: 28656, high: 51366 },
-  { month: 6, low: 39143, base: 70686, high: 122708 },
-  { month: 12, low: 112588, base: 191043, high: 285367 },
+  {
+    month: 1,
+    title: "Open the first decision pages",
+    detail: "Month 1 is about concentration. BTS opens with the clearest commercial pages and fixes the technical/entity layer so those assets can actually move.",
+    bullets: [
+      "Ship Patreon alternative, Kajabi alternative, creator monetization platform, and the first pricing/comparison pages.",
+      "Lock schema, canonicals, sitemap hygiene, Bing Webmaster Tools, and IndexNow around the first wedge.",
+      "Start the first review-profile and creator-community visibility pushes immediately.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 7642,
+    low: 3558,
+    base: 7642,
+    high: 14268,
+  },
+  {
+    month: 2,
+    title: "Attach proof to the opening wedge",
+    detail: "Month 2 widens the evaluation layer so BTS is not relying on owned pages alone to tell the story.",
+    bullets: [
+      "Expand comparison coverage around Patreon, Kajabi, Circle, and Skool where the demand is visible.",
+      "Push reviews, backlinks, Reddit / Quora / founder-community placements, and editorial proof in parallel.",
+      "Refresh early winners with stronger proof and clearer differentiation.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 17194,
+    low: 8303,
+    base: 17194,
+    high: 31390,
+  },
+  {
+    month: 3,
+    title: "Build the supporting network behind the winners",
+    detail: "Month 3 deepens the system so buyers and answer engines keep encountering the same BTS story in more contexts.",
+    bullets: [
+      "Publish supporting coverage around creator monetization models, use cases, pricing, and product proof.",
+      "Refresh the first decision pages with rebuttals, proof, and clearer comparisons.",
+      "Retest prompts and reallocate effort toward the surfaces already showing traction.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 28656,
+    low: 14234,
+    base: 28656,
+    high: 51366,
+  },
+  {
+    month: 4,
+    title: "Double down on the pages already pulling demand",
+    detail: "Month 4 turns early signals into a repeatable system instead of a first-wave launch burst.",
+    bullets: [
+      "Reinforce the comparisons and pricing pages that are starting to win clicks or citations.",
+      "Expand adjacent creator-business pages that support the same trust narrative.",
+      "Increase listicles, mentions, and backlinks around the strongest assets.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 42029,
+    low: 21351,
+    base: 42029,
+    high: 74195,
+  },
+  {
+    month: 5,
+    title: "Broaden buying consideration without losing focus",
+    detail: "Month 5 adds more surface area, but only around the commercial story that is already working.",
+    bullets: [
+      "Add deeper creator-segment, objection-handling, and proof pages behind the decision layer.",
+      "Keep off-site proof velocity up across communities, reviews, and editorial mentions.",
+      "Use measurement to prune weak angles and reinforce strong ones.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 55402,
+    low: 29654,
+    base: 55402,
+    high: 97025,
+  },
+  {
+    month: 6,
+    title: "Turn the first wins into category pressure",
+    detail: "By month 6, BTS should have a real comparison layer, real proof surfaces, and enough repeated presence that incumbents feel more pressure.",
+    bullets: [
+      "Push deeper supporting coverage behind winning comparisons and monetization pages.",
+      "Increase backlinks, listicles, review velocity, and press-style placements.",
+      "Make the BTS = serious creators building real businesses story easier to encounter everywhere buyers research what to trust.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 70686,
+    low: 39143,
+    base: 70686,
+    high: 122708,
+  },
+  {
+    month: 7,
+    title: "Refresh winners and defend the opening lane",
+    detail: "Month 7 is where the program starts behaving like an operating system rather than a launch sequence.",
+    bullets: [
+      "Refresh winning comparison pages with newer proof, screenshots, and rebuttal coverage.",
+      "Strengthen internal linking and entity consistency across the growing content network.",
+      "Keep community and review activity aligned with the same commercial narrative.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 85969,
+    low: 48632,
+    base: 85969,
+    high: 148391,
+  },
+  {
+    month: 8,
+    title: "Expand creator segments and objections",
+    detail: "Month 8 widens coverage into the next layer of creator-business demand without diluting the positioning.",
+    bullets: [
+      "Add use-case, pricing, and migration-style pages that answer harder buying objections.",
+      "Keep the proof layer fresh so answer engines have more trustworthy context to retrieve.",
+      "Reallocate effort toward clusters and surfaces with the strongest compounding signals.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 103163,
+    low: 59307,
+    base: 103163,
+    high: 174074,
+  },
+  {
+    month: 9,
+    title: "Build repeated presence across the web",
+    detail: "Month 9 is about retrieval density: more places repeating the same serious-business story back to buyers.",
+    bullets: [
+      "Push more editorial placements, roundup inclusion, and citation-worthy proof assets.",
+      "Keep strengthening communities and reviews where buyers sanity-check platform choices.",
+      "Expand supporting content only where it clearly reinforces the money pages.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 120357,
+    low: 71168,
+    base: 120357,
+    high: 199757,
+  },
+  {
+    month: 10,
+    title: "Consolidate category authority",
+    detail: "Month 10 is where BTS should start to feel harder to ignore in the creator-platform consideration set.",
+    bullets: [
+      "Refresh high-performing assets again and defend rankings/citations against incumbent moves.",
+      "Tighten the entity layer so the site and off-site proof keep reinforcing each other.",
+      "Push the next tier of comparison and proof pages where coverage is still thin.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 139461,
+    low: 84216,
+    base: 139461,
+    high: 228293,
+  },
+  {
+    month: 11,
+    title: "Scale what is clearly compounding",
+    detail: "Month 11 should look disciplined: reinforce the proven lanes, cut dead weight, and compound the assets that keep winning consideration.",
+    bullets: [
+      "Prioritize the pages, prompts, and proof surfaces that are already driving the strongest movement.",
+      "Keep publishing support coverage only where it strengthens commercial pages and trust signals.",
+      "Use reporting to show which workstreams are actually creating leverage.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 164297,
+    low: 100822,
+    base: 164297,
+    high: 256830,
+  },
+  {
+    month: 12,
+    title: "Compound the moat",
+    detail: "The year-end target is not a one-off ranking win. It is a stronger demand engine across comparisons, buyer guides, supporting coverage, reviews, communities, editorials, and answer-engine retrieval.",
+    bullets: [
+      "Defend the strongest comparison and pricing lanes.",
+      "Keep refreshing proof so off-site and on-site signals stay aligned.",
+      "Enter the next year with a denser, harder-to-displace market position.",
+    ],
+    trafficLabel: "Base traffic",
+    trafficValue: 191043,
+    low: 112588,
+    base: 191043,
+    high: 285367,
+  },
 ];
 
 const operatingMilestones = [
@@ -496,7 +699,7 @@ const monthPlan = [
     bullets: [
       "Expand comparison and alternative pages around Patreon, Kajabi, Circle, and Skool where relevant.",
       "Push review infrastructure, backlinks, Reddit / Quora / founder-community placements, and editorial proof.",
-      "Use the old BTS AI Dominance / Search Ownership / Reputation Warfare logic as one coordinated system instead of separate campaigns.",
+      "Run the answer-surface, search, and reputation layers as one coordinated system instead of separate campaigns.",
     ],
   },
   {
@@ -525,7 +728,7 @@ const offsiteAuthorityCards = [
   {
     title: "Reddit, Quora, and creator communities",
     body:
-      "This was one of the strongest ideas in the original BTS page and it still belongs here. The buying conversation happens in public creator forums long before a founder fills out a form. BTS needs visible proof in those threads.",
+      "The buying conversation happens in public creator forums long before a founder fills out a form. BTS needs visible proof in those threads.",
     bullets: [
       "Show up in creator-business conversations where people ask what to use instead of Whop",
       "Use community proof to reinforce the same comparisons the decision pages are making",
@@ -560,7 +763,7 @@ const offsiteAuthorityCards = [
 const buildShipBlocks = [
   {
     number: "01",
-    title: "AI Dominance",
+    title: "AI answer-surface visibility",
     description:
       "Make BTS easier to cite when buyers ask AI models about creator platforms, serious-business alternatives, monetization tools, and where founders should actually build. The goal is repeated answer-surface presence, not a single lucky mention.",
     bullets: [
@@ -572,7 +775,7 @@ const buildShipBlocks = [
   },
   {
     number: "02",
-    title: "Search Ownership",
+    title: "Search presence across the buying journey",
     description:
       "Maximize BTS visibility for the queries that matter most by owning more than one surface: the BTS site, review platforms, editorial placements, communities, and supporting properties that reinforce the same narrative.",
     bullets: [
@@ -584,9 +787,9 @@ const buildShipBlocks = [
   },
   {
     number: "03",
-    title: "Reputation Warfare",
+    title: "Trust and reputation infrastructure",
     description:
-      "The original BTS page was right: Whop's trust problems and marketplace noise are strategic openings. BTS should make that contrast visible while building its own review, proof, and editorial infrastructure aggressively.",
+      "Whop's trust problems and marketplace noise are strategic openings. BTS should make that contrast visible while building its own review, proof, and editorial infrastructure aggressively.",
     bullets: [
       "Use documented trust gaps to sharpen the Whop comparison without inventing claims",
       "Build BTS review velocity and profile completeness across multiple platforms",
@@ -598,7 +801,7 @@ const buildShipBlocks = [
     number: "04",
     title: "What gets built in practice",
     description:
-      "The old BTS page had the right instinct: this only works if the build is substantial. BTS needs a visible body of work, not a vague promise of content and reporting.",
+      "This only works if the build is substantial. BTS needs a visible body of work, not a vague promise of content and reporting.",
     bullets: [
       "500+ optimized content pages over time across comparisons, buyer guides, use cases, and supporting coverage",
       "55 third-party placements across LinkedIn, Medium, HackerNoon, Forbes-style outlets, Reddit, Quora, and Substack-style surfaces",
@@ -687,14 +890,14 @@ const appendixAssumptions = [
   "The visible traffic numbers are planning estimates derived from the approved BTS strategy brief and should be read as directional growth modeling rather than guaranteed outcomes.",
   "The current BTS traffic model is heavily concentrated in competitor-brand demand rather than broad unbranded category demand.",
   "Whop remains a strategic competitor in the narrative, but the current modeled traffic attribution does not include Whop-branded keywords.",
-  "The old BTS page contained strategically useful tactical detail; BTS 3 keeps the relevant parts, but filters them through the cleaner founder-facing memo structure.",
+  "The page is intentionally founder-readable while still preserving the real tactical depth behind the program.",
   "Public AI visibility conclusions remain softened where platform probing was incomplete. The page does not upgrade unsupported probe gaps into precise public certainty.",
   "Revenue planning still requires client ACV/AOV and funnel inputs before commitments should be treated as financial forecasts.",
 ];
 
 export default function StrategyBts3() {
   useEffect(() => {
-    document.title = "BTS 3 Strategy | Memetik";
+    document.title = "BTS Strategy | Memetik";
     window.scrollTo(0, 0);
   }, []);
 
@@ -704,10 +907,10 @@ export default function StrategyBts3() {
 
       <div className="mx-auto max-w-6xl">
         <StrategyHero
-          eyebrow="BTS 3 × Memetik Strategy Memo"
+          eyebrow="BTS × Memetik Strategy Memo"
           title="BTS for serious creators building real businesses"
           accent="with the Whop contrast made visible"
-          subtitle="BTS 3 combines the sharper founder memo structure from BTS 2 with the tactical conviction of the original BTS counter-offensive: comparison pages first, multi-surface visibility second, and trust infrastructure built hard enough that the market starts repeating the same serious-business story back to buyers."
+          subtitle="This strategy turns BTS into the visible choice for serious creators building real businesses: comparison pages first, multi-surface visibility second, and trust infrastructure built hard enough that the market starts repeating the same serious-business story back to buyers."
           tags={["behindthescenes.com", "creator economy", "6-month plan", "serious builders"]}
         >
           <div className="rounded-[28px] border border-[#f4e4cd]/15 bg-[#f4e4cd]/8 px-5 py-4 text-sm leading-7 text-white/78">
@@ -723,7 +926,7 @@ export default function StrategyBts3() {
                   BTS does not need to become the biggest creator marketplace. It needs to become the platform serious creators trust when they want to build a real business.
                 </p>
                 <p className="mt-4 max-w-3xl text-sm leading-7 text-white/66 md:text-base">
-                  The old BTS page was right about the strategic contrast. BTS 2 was right about the founder-facing wedge. BTS 3 combines both: own the competitor-brand and creator-monetization decision layer, build answer-surface and search visibility together, and surround the whole system with enough proof that the market stops treating BTS like a hidden product.
+                  BTS can own the competitor-brand and creator-monetization decision layer, build answer-surface and search visibility together, and surround the whole system with enough proof that the market stops treating BTS like a hidden product.
                 </p>
               </div>
             </HighlightBox>
@@ -767,7 +970,7 @@ export default function StrategyBts3() {
               <VerticalInsightCard
                 eyebrow="AI visibility window"
                 title="The next six months still matter more than the following twenty-four."
-                body="The old BTS page was right to frame this as an open AI visibility window. Category positions are not fully hardened yet, which means a challenger with strong pages and stronger proof can still move into the answer set faster than a mature category would usually allow."
+                body="Category positions are not fully hardened yet, which means a challenger with strong pages and stronger proof can still move into the answer set faster than a mature category would usually allow."
                 bullets={[
                   "ChatGPT leans heavily on Bing-aligned retrieval and strong web evidence",
                   "Perplexity heavily cites Reddit and other discussion-driven surfaces",
@@ -936,7 +1139,7 @@ export default function StrategyBts3() {
             <StrategyCard className="mt-6 w-full" glow="amber">
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/42">What this means</div>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-white/66">
-                BTS 3 should now be read with a more honest lens: the current upside is still mostly a Patreon / Kajabi / Skool / Circle demand-capture story. Whop remains strategically relevant to the positioning, but Whop-branded traffic is not what is driving the current model.
+                The current upside is still mostly a Patreon / Kajabi / Skool / Circle demand-capture story. Whop remains strategically relevant to the positioning, but Whop-branded traffic is not what is driving the current model.
               </p>
             </StrategyCard>
           </StrategySectionShell>
@@ -947,7 +1150,7 @@ export default function StrategyBts3() {
           <StrategySectionShell glow="blue">
             <StrategySectionLead
               takeaway="The first six months should feel like a deliberate market-entry sequence, not a vague publishing calendar."
-              body="BTS 3 should preserve the tactical clarity of the original counter-offensive while presenting it in a cleaner founder memo. The order stays the same: first claim the comparison layer, then reinforce it, then widen the coverage network behind what is already working."
+              body="The order stays the same: first claim the comparison layer, then reinforce it, then widen the coverage network behind what is already working."
               implication="Each month block has a distinct job, and the compounding logic should be visible."
             />
 
@@ -989,7 +1192,7 @@ export default function StrategyBts3() {
           <StrategySectionShell glow="mixed">
             <StrategySectionLead
               takeaway="This is a full execution system: pages, proof, reviews, communities, backlinks, technical infrastructure, and competitive response loops working together."
-              body="This section is where BTS 3 deliberately pulls in the tactical conviction from the original counter-offensive page. The founder should feel the weight of the build, not a watered-down content-retainer story."
+              body="The founder should feel the weight of the build, not a watered-down content-retainer story."
               implication="The work needs to look serious because the category fight is serious."
             />
 
@@ -1018,7 +1221,7 @@ export default function StrategyBts3() {
           <StrategySectionShell glow="amber">
             <StrategySectionLead
               takeaway="The system compounds because BTS keeps shipping and reinforcing the same business-building story every month."
-              body="This is where the new layout matters. The old matrix was harder to read than it needed to be. BTS 3 uses one growth line with milestones layered into it so a founder can immediately see what ships, when it ships, and why the visibility curve bends upward."
+              body="This timeline uses one growth line with milestones layered into it so a founder can immediately see what ships, when it ships, and why the visibility curve bends upward."
               implication="The visual should make the operating logic feel obvious instead of buried in a grid."
             />
 
@@ -1047,7 +1250,7 @@ export default function StrategyBts3() {
           <StrategySectionShell glow="blue">
             <StrategySectionLead
               takeaway="Memetik is built for the hybrid discovery stack that BTS actually has to win: search demand, answer-engine influence, and the trust layer that feeds both."
-              body="That is why BTS 3 works as a combination page. It keeps the sharper founder-facing memo from BTS 2, but also restores the original page's conviction that the build needs to be broad enough, tactical enough, and aggressive enough to actually move the market."
+              body="That is why this strategy works: the build is broad enough, tactical enough, and aggressive enough to actually move the market."
               implication="The value is not just more content. It is a system competitors have to unwind surface by surface."
             />
 
@@ -1067,7 +1270,7 @@ export default function StrategyBts3() {
 
         <StrategyCTA
           eyebrow="Book a Strategy Call"
-          title="If BTS wants the serious-business lane, BTS 3 is the execution map."
+          title="If BTS wants the serious-business lane, this is the execution map."
           body="The market already has louder brands. BTS does not need to be louder everywhere. It needs to be easier to trust in the exact moments that shape creator-platform decisions."
           href="https://cal.com/memetik/letstalk"
           ctaLabel="Book a Strategy Call"
@@ -1080,7 +1283,7 @@ export default function StrategyBts3() {
             <StrategyAppendixSection
               defaultOpen
               title="Competitor spend and market pressure"
-              description="Relevant tactical context carried forward from the original BTS counter-offensive page."
+              description="Relevant tactical context for understanding the size and seriousness of the category fight."
             >
               <DataTable headers={["Platform", "Funding", "Employees", "Estimated SEO / content spend"]} rows={competitorSpendRows} />
             </StrategyAppendixSection>

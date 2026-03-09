@@ -1,9 +1,15 @@
+import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import { strategyCardShell, strategyPillClass } from "./theme";
 
 export interface GrowthTimelinePoint {
   label?: string;
   month?: number | string;
+  title?: string;
+  detail?: string;
+  bullets?: string[];
+  trafficLabel?: string;
+  trafficValue?: number;
   low: number;
   base: number;
   high: number;
@@ -14,6 +20,7 @@ export interface GrowthTimelineMilestone {
   title: string;
   detail: string;
   month?: number | string;
+  bullets?: string[];
   trafficLabel?: string;
   trafficValue?: number;
 }
@@ -81,29 +88,41 @@ export function GrowthTimelineChart({
     "Z",
   ].join(" ");
 
-  const milestoneLookup = new Map(
-    milestones.map((milestone, index) => [normalizeMonth(milestone.month || milestone.label), { milestone, index }])
+  const milestoneLookup = useMemo(
+    () => new Map(milestones.map((milestone, index) => [normalizeMonth(milestone.month || milestone.label), { milestone, index }])),
+    [milestones]
   );
 
-  const chartMilestones = safePoints
-    .map((point, index) => {
-      const lookupKey = normalizeMonth(point.month ?? point.label ?? `${index + 1}`);
-      const found = lookupKey ? milestoneLookup.get(lookupKey) : null;
-      return found
-        ? {
-            index: found.index,
-            milestone: found.milestone,
-            point,
-            position: basePoints[index],
-          }
-        : null;
-    })
-    .filter(Boolean) as Array<{
-    index: number;
-    milestone: GrowthTimelineMilestone;
-    point: GrowthTimelinePoint;
-    position: { x: number; y: number };
-  }>;
+  const pointDetails = useMemo(
+    () =>
+      safePoints.map((point, index) => {
+        const lookupKey = normalizeMonth(point.month ?? point.label ?? `${index + 1}`);
+        const found = lookupKey ? milestoneLookup.get(lookupKey) : null;
+        const milestone = found?.milestone;
+
+        return {
+          index,
+          label: labelForPoint(point, index),
+          month: point.month,
+          title: point.title || milestone?.title || `Month ${point.month ?? index + 1}`,
+          detail: point.detail || milestone?.detail || "No deployment detail available for this month yet.",
+          bullets: point.bullets || milestone?.bullets || [],
+          trafficLabel: point.trafficLabel || milestone?.trafficLabel || "Base traffic",
+          trafficValue: point.trafficValue ?? point.base ?? milestone?.trafficValue,
+          position: basePoints[index],
+          milestoneNumber: found ? found.index + 1 : null,
+        };
+      }),
+    [basePoints, milestoneLookup, safePoints]
+  );
+
+  const chartMilestones = pointDetails.filter((detail) => detail.milestoneNumber !== null);
+  const [activeIndex, setActiveIndex] = useState(() => chartMilestones[0]?.index ?? 0);
+  const activeDetail = pointDetails[activeIndex] || pointDetails[0];
+
+  const activatePoint = (index: number) => {
+    setActiveIndex(index);
+  };
 
   return (
     <div className={cn(strategyCardShell, className)}>
@@ -114,7 +133,7 @@ export function GrowthTimelineChart({
             <div className="text-sm font-mono uppercase tracking-[0.22em] text-[#f4e4cd]">Operating timeline</div>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-white/58">
               A single growth curve with deployment milestones layered onto it, so the founder can see what ships,
-              when it ships, and how the program compounds over time.
+              when it ships, and how the program compounds over time. Hover on desktop or tap on mobile to inspect each month.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">
@@ -156,30 +175,120 @@ export function GrowthTimelineChart({
             <path d={buildPath(highPoints)} fill="none" stroke="rgba(244,228,205,0.38)" strokeWidth="2" strokeDasharray="8 8" />
             <path d={buildPath(basePoints)} fill="none" stroke="#f4e4cd" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-            {basePoints.map((point, index) => (
-              <g key={labelForPoint(safePoints[index], index)}>
+            {basePoints.map((point, index) => {
+              const isActive = activeDetail?.index === index;
+              return (
+              <g
+                key={labelForPoint(safePoints[index], index)}
+                className="cursor-pointer"
+                onMouseEnter={() => activatePoint(index)}
+                onFocus={() => activatePoint(index)}
+                onClick={() => activatePoint(index)}
+                role="button"
+                tabIndex={0}
+              >
                 <circle cx={point.x} cy={point.y} r="5" fill="#f4e4cd" />
-                <circle cx={point.x} cy={point.y} r="10" fill="rgba(244,228,205,0.12)" />
+                <circle cx={point.x} cy={point.y} r={isActive ? "14" : "10"} fill={isActive ? "rgba(244,228,205,0.22)" : "rgba(244,228,205,0.12)"} />
                 <text x={point.x} y={height - 18} textAnchor="middle" fill="rgba(255,255,255,0.48)" fontSize="12">
                   {labelForPoint(safePoints[index], index)}
                 </text>
               </g>
-            ))}
+            );})}
 
-            {chartMilestones.map(({ index, position }) => (
-              <g key={`milestone-${index}`}>
-                <circle cx={position.x} cy={position.y} r="16" fill="rgba(8,8,8,0.92)" stroke="rgba(244,228,205,0.6)" strokeWidth="2" />
+            {chartMilestones.map(({ index, position, milestoneNumber }) => {
+              const isActive = activeDetail?.index === index;
+              return (
+              <g
+                key={`milestone-${index}`}
+                className="cursor-pointer"
+                onMouseEnter={() => activatePoint(index)}
+                onFocus={() => activatePoint(index)}
+                onClick={() => activatePoint(index)}
+                role="button"
+                tabIndex={0}
+              >
+                <circle
+                  cx={position.x}
+                  cy={position.y}
+                  r={isActive ? "18" : "16"}
+                  fill="rgba(8,8,8,0.92)"
+                  stroke={isActive ? "rgba(244,228,205,0.92)" : "rgba(244,228,205,0.6)"}
+                  strokeWidth="2"
+                />
                 <text x={position.x} y={position.y + 4} textAnchor="middle" fill="#f4e4cd" fontSize="12" fontWeight="700">
-                  {index + 1}
+                  {milestoneNumber}
                 </text>
               </g>
-            ))}
+            );})}
           </svg>
         </div>
 
+        {pointDetails.length > 0 ? (
+          <>
+            <div className="mt-5 overflow-x-auto pb-2">
+              <div className="flex min-w-max gap-2">
+                {pointDetails.map((detail) => {
+                  const isActive = activeDetail?.index === detail.index;
+                  return (
+                    <button
+                      key={detail.label}
+                      type="button"
+                      onMouseEnter={() => activatePoint(detail.index)}
+                      onFocus={() => activatePoint(detail.index)}
+                      onClick={() => activatePoint(detail.index)}
+                      className={cn(
+                        "rounded-[18px] border px-3 py-2 text-left transition-colors",
+                        isActive ? "border-[#f4e4cd]/40 bg-[#f4e4cd]/12" : "border-white/10 bg-white/[0.03] hover:bg-white/[0.05]"
+                      )}
+                    >
+                      <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">{detail.label}</div>
+                      <div className="mt-1 text-sm font-semibold text-white">{formatWhole(detail.trafficValue || 0)}</div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {activeDetail ? (
+              <div className="mt-4 rounded-[24px] border border-[#f4e4cd]/18 bg-[#f4e4cd]/8 p-4 md:p-5">
+                <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">{activeDetail.label}</div>
+                    <div className="mt-2 text-lg font-semibold text-white">{activeDetail.title}</div>
+                  </div>
+                  <div className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/60">
+                    {activeDetail.trafficLabel}: {formatWhole(activeDetail.trafficValue || 0)}
+                  </div>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-white/66">{activeDetail.detail}</p>
+                {activeDetail.bullets?.length ? (
+                  <ul className="mt-4 space-y-2 text-sm leading-6 text-white/62">
+                    {activeDetail.bullets.map((bullet) => (
+                      <li key={bullet} className="flex gap-2">
+                        <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[#f4e4cd]" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            ) : null}
+          </>
+        ) : null}
+
         <div className="mt-6 space-y-3">
           {milestones.map((milestone, index) => (
-            <div key={`${milestone.label}-${index}`} className="rounded-[24px] border border-white/10 bg-black/20 p-4 md:p-5">
+            <div
+              key={`${milestone.label}-${index}`}
+              className={cn(
+                "rounded-[24px] border bg-black/20 p-4 transition-colors md:p-5",
+                activeDetail?.milestoneNumber === index + 1 ? "border-[#f4e4cd]/28 bg-[#f4e4cd]/8" : "border-white/10"
+              )}
+              onMouseEnter={() => {
+                const matchedIndex = pointDetails.find((detail) => detail.milestoneNumber === index + 1)?.index;
+                if (matchedIndex !== undefined) activatePoint(matchedIndex);
+              }}
+            >
               <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                 <div>
                   <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">{milestone.label}</div>
