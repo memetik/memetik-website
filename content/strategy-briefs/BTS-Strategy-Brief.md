@@ -2,9 +2,9 @@
 
 ## Lineage
 - Master reference: /Users/house/Mind/Areas/Agency/Lead-Magnets/MEMETIK-2026-AEO-Master-Reference.md
-- Generation contract: /Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation/MEMETIK-2026-Strategy-Generation-Contract.md
-- Brief schema: /Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation/client-strategy-brief-schema.yaml
-- Public output contract: /Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation/website-strategy-page-contract.md
+- Generation contract: /Users/house/projects/agency/memetik-website/contracts/strategy/MEMETIK-2026-Strategy-Generation-Contract.md
+- Brief schema: /Users/house/projects/agency/memetik-website/contracts/strategy/client-strategy-brief-schema.yaml
+- Public output contract: /Users/house/projects/agency/memetik-website/contracts/strategy/website-strategy-page-contract.md
 - Canonical chain: master reference -> generation contract -> brief -> page
 
 ## 1. Brief Metadata
@@ -203,7 +203,7 @@ Commercial keyword signals:
 ### CLAIM-005
 - statement: Downstream strategy must preserve the full Memetik system: Money Entities, Apex Assets, Knowledge Graph, Trust Relay, and technical/entity foundation.
 - source_class: canonical_internal
-- source_pointer: /Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation/MEMETIK-2026-Strategy-Generation-Contract.md
+- source_pointer: /Users/house/projects/agency/memetik-website/contracts/strategy/MEMETIK-2026-Strategy-Generation-Contract.md
 - source_payload_paths: contract.5, contract.9
 - checked_at: 2026-03-07
 - freshness_tier: tier_3_stable

@@ -5,11 +5,11 @@ import json
 from pathlib import Path
 
 
-ROOT = Path("/Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation")
 REPO_ROOT = Path("/Users/house/projects/agency/memetik-website")
-CONTRACT = ROOT / "MEMETIK-2026-Strategy-Generation-Contract.md"
-PAGE_CONTRACT = ROOT / "website-strategy-page-contract.md"
-BRIEF_SCHEMA = ROOT / "client-strategy-brief-schema.yaml"
+CONTRACT_ROOT = REPO_ROOT / "contracts" / "strategy"
+CONTRACT = CONTRACT_ROOT / "MEMETIK-2026-Strategy-Generation-Contract.md"
+PAGE_CONTRACT = CONTRACT_ROOT / "website-strategy-page-contract.md"
+BRIEF_SCHEMA = CONTRACT_ROOT / "client-strategy-brief-schema.yaml"
 PORTABLE_BTS_BRIEF = REPO_ROOT / "content" / "strategy-briefs" / "BTS-Strategy-Brief.md"
 APP_FILE = REPO_ROOT / "client" / "src" / "App.tsx"
 BTS_PAGE = REPO_ROOT / "client" / "src" / "pages" / "strategy" / "Bts2.tsx"

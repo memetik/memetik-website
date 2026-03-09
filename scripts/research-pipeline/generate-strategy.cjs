@@ -5,6 +5,7 @@ const OPENAI_BASE_URL = "http://127.0.0.1:8327/v1";
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "dummy";
 const STRATEGY_MODEL = process.env.STRATEGY_MODEL || "gpt-5.4";
 const REPO_ROOT = path.join(__dirname, "..", "..");
+const REPO_STRATEGY_CONTRACT_ROOT = path.join(REPO_ROOT, "contracts", "strategy");
 const CANONICAL_MIND_ROOT = "/Users/house/Mind/Areas/Agency/Lead-Magnets/Strategy-Generation";
 const CANONICAL_MASTER_REFERENCE_PATH = "/Users/house/Mind/Areas/Agency/Lead-Magnets/MEMETIK-2026-AEO-Master-Reference.md";
 const PORTABLE_BRIEF_SNAPSHOT_DIR = path.join(REPO_ROOT, "content", "strategy-briefs");
@@ -75,11 +76,11 @@ function resolveCanonicalGenerationPaths(slug, company) {
     masterReferencePath: process.env.MEMETIK_MASTER_REFERENCE_PATH || CANONICAL_MASTER_REFERENCE_PATH,
     generationContractPath:
       process.env.STRATEGY_GENERATION_CONTRACT_PATH ||
-      path.join(mindRoot, "MEMETIK-2026-Strategy-Generation-Contract.md"),
+      path.join(REPO_STRATEGY_CONTRACT_ROOT, "MEMETIK-2026-Strategy-Generation-Contract.md"),
     briefSchemaPath:
-      process.env.CLIENT_STRATEGY_BRIEF_SCHEMA_PATH || path.join(mindRoot, "client-strategy-brief-schema.yaml"),
+      process.env.CLIENT_STRATEGY_BRIEF_SCHEMA_PATH || path.join(REPO_STRATEGY_CONTRACT_ROOT, "client-strategy-brief-schema.yaml"),
     pageContractPath:
-      process.env.WEBSITE_STRATEGY_PAGE_CONTRACT_PATH || path.join(mindRoot, "website-strategy-page-contract.md"),
+      process.env.WEBSITE_STRATEGY_PAGE_CONTRACT_PATH || path.join(REPO_STRATEGY_CONTRACT_ROOT, "website-strategy-page-contract.md"),
     briefPath: process.env.STRATEGY_BRIEF_PATH || path.join(briefDir, briefFileName),
   };
 }

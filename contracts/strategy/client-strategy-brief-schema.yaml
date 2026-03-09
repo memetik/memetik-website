@@ -1,0 +1,703 @@
+brief_schema:
+  schema_version: "2026-03-07"
+  title: Client Strategy Brief Schema
+  purpose: Canonical internal strategy brief schema/template used after research payload review and before website strategy page generation.
+  canonical_lineage:
+    upstream_doctrine: /Users/house/Mind/Areas/Agency/Lead-Magnets/MEMETIK-2026-AEO-Master-Reference.md
+    generation_contract: /Users/house/projects/agency/memetik-website/contracts/strategy/MEMETIK-2026-Strategy-Generation-Contract.md
+    public_output_contract: /Users/house/projects/agency/memetik-website/contracts/strategy/website-strategy-page-contract.md
+    canonical_chain:
+      - research_payload
+      - internal_strategy_brief
+      - website_strategy_page
+  operating_rules:
+    deterministic_section_order:
+      - brief_metadata
+      - company_context
+      - category_framing
+      - current_state_and_visibility
+      - competitor_landscape
+      - money_entities
+      - prioritized_wedge_and_ranked_sequence
+      - apex_assets_plan
+      - knowledge_graph_plan
+      - trust_relay_plan
+      - technical_entity_foundation
+      - proof_and_measurement_model
+      - cadence_and_next_actions
+      - page_extraction_map
+      - unresolved_gaps_and_blockers
+      - claim_register
+    canonical_terms_required:
+      - Money Entities
+      - Apex Assets
+      - Knowledge Graph
+      - Trust Relay
+      - recommendation-share
+    visibility_markers:
+      - internal_only
+      - page_extractable
+      - page_extractable_with_caveat
+    required_behavior:
+      - The brief is the canonical downstream planning artifact and page generation must not bypass it.
+      - Every major recommendation must reference evidence-bearing claim records or explicit gap records.
+      - Every execution plan must be company-specific and cite why this company can win this wedge now.
+      - Ranked execution sequence is mandatory; unordered laundry lists do not satisfy the schema.
+      - Weak, stale, or missing inputs must stay visible through explicit unresolved gap handling.
+    reject_if:
+      - Chosen wedge cannot be justified by payload evidence.
+      - Delivery scope omits Apex Assets, Knowledge Graph, Trust Relay, or technical and entity foundation.
+      - Major recommendation lacks claim_ids or gap_ids.
+      - Brief uses generic recommendations without company_specific_rationale.
+      - Page-extractable sections are populated from unsupported assumptions.
+  enums:
+    certainty:
+      - high
+      - medium
+      - low
+    freshness_tier:
+      - tier_1_volatile
+      - tier_2_semi_stable
+      - tier_3_stable
+    freshness_status:
+      - current
+      - caution
+      - stale
+    recommendation_status:
+      - approved
+      - caveated
+      - blocked
+      - deferred
+    gap_severity:
+      - note
+      - caution
+      - blocker
+    page_handling:
+      - use
+      - soften
+      - omit
+      - block
+  reusable_records:
+    claim_record:
+      required_fields:
+        - claim_id
+        - statement
+        - source_class
+        - source_pointer
+        - source_payload_paths
+        - checked_at
+        - freshness_tier
+        - freshness_status
+        - certainty
+        - page_handling
+      fields:
+        claim_id: unique identifier referenced by recommendations and page-extraction notes.
+        statement: concise evidence-bearing statement; never write generic filler.
+        source_class: canonical_internal | first_party_platform | field_research
+        source_pointer: file, URL, report section, or payload location proving the claim.
+        source_payload_paths: exact research payload keys that contributed to the claim.
+        checked_at: YYYY-MM-DD
+        freshness_tier: tier_1_volatile | tier_2_semi_stable | tier_3_stable
+        freshness_status: current | caution | stale
+        certainty: high | medium | low
+        page_handling: use | soften | omit | block
+        notes: optional operator context explaining limits or interpretation.
+    gap_record:
+      required_fields:
+        - gap_id
+        - summary
+        - severity
+        - affected_sections
+        - impact_on_wedge
+        - required_resolution
+        - brief_status
+        - page_status
+      fields:
+        gap_id: unique identifier referenced by sections and page caveats.
+        summary: unresolved gap, weak input, stale claim, or deferred validation.
+        severity: note | caution | blocker
+        affected_sections: ordered list of section ids impacted by the gap.
+        impact_on_wedge: how the gap changes sequencing, confidence, or scope.
+        required_resolution: concrete evidence or decision needed to close the gap.
+        owner: optional person or function expected to resolve the gap.
+        brief_status: proceed_with_caveat | blocked
+        page_status: page_safe_if_softened | omit_from_page | block_page_generation
+    recommendation_block:
+      required_fields:
+        - recommendation_id
+        - recommendation
+        - company_specific_rationale
+        - priority_rank
+        - claim_ids
+        - gap_ids
+        - visibility
+      fields:
+        recommendation_id: stable identifier.
+        recommendation: action, decision, or strategy statement.
+        company_specific_rationale: must name this company, its category context, current-state condition, or named competitor gap.
+        priority_rank: integer starting at 1.
+        claim_ids: one or more claim ids supporting the recommendation; empty only if blocked and justified by gap_ids.
+        gap_ids: unresolved gaps or caveats linked to the recommendation.
+        visibility: internal_only | page_extractable | page_extractable_with_caveat
+        page_summary: founder-readable summary allowed for extraction when visibility permits.
+    ranked_execution_step:
+      required_fields:
+        - step_rank
+        - motion
+        - why_now
+        - owned_outputs
+        - supporting_systems
+        - success_signal
+        - claim_ids
+      fields:
+        step_rank: integer rank in execution order.
+        motion: short name for the step.
+        why_now: company-specific rationale for sequence placement.
+        owned_outputs: specific Apex Assets, Knowledge Graph clusters, Trust Relay actions, or technical/entity fixes.
+        supporting_systems: explicit mention of which Memetik systems this step activates.
+        success_signal: measurable evidence that the step is working.
+        claim_ids: supporting claim ids.
+        gap_ids: related unresolved gaps or dependencies.
+  payload_mapping:
+    brief_metadata:
+      slug:
+        source_payload_paths:
+          - slug
+      generated_at:
+        source_payload_paths:
+          - meta.generatedAt
+      research_mode:
+        source_payload_paths:
+          - meta.researchMode
+      payload_confidence:
+        source_payload_paths:
+          - meta.payloadConfidence
+          - tamModel.confidence
+          - qualityGate.passed
+    company_context:
+      company_name:
+        source_payload_paths:
+          - company.name
+      domain:
+        source_payload_paths:
+          - company.domain
+      category:
+        source_payload_paths:
+          - company.category
+      industry:
+        source_payload_paths:
+          - company.industry
+      target_markets:
+        source_payload_paths:
+          - meta.targetMarkets
+          - seoMetrics.marketsIncluded
+    current_state_and_visibility:
+      seo_baseline:
+        source_payload_paths:
+          - seoMetrics
+      ai_visibility_baseline:
+        source_payload_paths:
+          - aiVisibility.platformSummary
+          - aiVisibility.promptResults
+      website_audit:
+        source_payload_paths:
+          - websiteAudit.onPage
+          - websiteAudit.pageSpeed
+      quality_gate:
+        source_payload_paths:
+          - qualityGate
+          - topicalIntegrity
+    competitor_landscape:
+      competitors:
+        source_payload_paths:
+          - competitors
+      keyword_gaps:
+        source_payload_paths:
+          - keywordGaps
+    money_entities:
+      demand_inputs:
+        source_payload_paths:
+          - keywordUniverse
+          - rankedKeywords
+          - tamModel.topOpportunityClusters
+          - tamModel.byIntent
+    proof_and_measurement_model:
+      tam_model:
+        source_payload_paths:
+          - tamModel
+      revenue_model:
+        source_payload_paths:
+          - tamModel.revenueModel
+      confidence_inputs:
+        source_payload_paths:
+          - tamModel.confidence
+          - qualityGate.metrics
+    unresolved_gaps_and_blockers:
+      missing_or_weak_inputs:
+        source_payload_paths:
+          - meta.issues
+          - qualityGate.failures
+          - topicalIntegrity.failures
+          - aiVisibility.platformAvailability
+  sections:
+    - id: brief_metadata
+      title: Brief Metadata
+      visibility: internal_only
+      required: true
+      purpose: Lock identity, lineage, approval state, and whether the brief is page-ready.
+      fields:
+        - key: brief_title
+          type: string
+          required: true
+          visibility: internal_only
+          template_prompt: "Format as: <Company> Strategy Brief - <YYYY-MM-DD>."
+        - key: slug
+          type: string
+          required: true
+          visibility: internal_only
+          source_payload_paths:
+            - slug
+        - key: company_name
+          type: string
+          required: true
+          visibility: internal_only
+          source_payload_paths:
+            - company.name
+        - key: doctrine_lineage
+          type: object
+          required: true
+          visibility: internal_only
+          template_prompt: Always include master reference, generation contract, and page contract paths.
+        - key: brief_status
+          type: string
+          required: true
+          visibility: internal_only
+          template_prompt: draft | approved | blocked_for_page_generation
+        - key: page_generation_readiness
+          type: string
+          required: true
+          visibility: internal_only
+          template_prompt: ready | ready_with_caveats | blocked
+    - id: company_context
+      title: Company Context
+      visibility: page_extractable
+      required: true
+      purpose: Capture the company-specific facts that make later recommendations specific rather than boilerplate.
+      fields:
+        - key: company_snapshot
+          type: object
+          required: true
+          visibility: page_extractable
+          source_payload_paths:
+            - company
+          template_prompt: Include company name, domain, category, industry, target markets, and a one-line business model summary.
+        - key: ideal_customer_profile
+          type: string
+          required: true
+          visibility: page_extractable
+          template_prompt: Define the ICP in company-specific language; do not use generic "brands and creators" phrasing without narrowing.
+        - key: monetization_model_or_offer_focus
+          type: string
+          required: true
+          visibility: page_extractable
+          template_prompt: State the current commercial motion the strategy is meant to amplify.
+        - key: planning_constraints
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Note market, product, proof, staffing, or data constraints that shape the brief.
+    - id: category_framing
+      title: Category Framing
+      visibility: page_extractable
+      required: true
+      purpose: Define the exact category wedge and right-to-win context the company should pursue.
+      fields:
+        - key: category_positioning
+          type: string
+          required: true
+          visibility: page_extractable
+          template_prompt: Name the category and subcategory the company should try to own in recommendation-share.
+        - key: category_disambiguation
+          type: string
+          required: true
+          visibility: page_extractable
+          source_payload_paths:
+            - topicalIntegrity.metrics.brandDisambiguation
+            - meta.semanticProfile.promptModifiers.categoryLabel
+        - key: why_this_category_frame_fits
+          type: string
+          required: true
+          visibility: page_extractable
+          template_prompt: Explain why this frame matches the company's product and demand signals better than adjacent categories.
+        - key: retired_or_conflicting_labels_to_avoid
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: List terms that would blur doctrine or category positioning.
+    - id: current_state_and_visibility
+      title: Current State and Visibility
+      visibility: page_extractable_with_caveat
+      required: true
+      purpose: Record current search, answer-surface, and website conditions driving the strategy.
+      fields:
+        - key: search_baseline
+          type: object
+          required: true
+          visibility: page_extractable_with_caveat
+          source_payload_paths:
+            - seoMetrics
+          template_prompt: Summarize organic traffic, keyword count, backlinks, referring domains, and market distribution.
+        - key: ai_visibility_baseline
+          type: object
+          required: true
+          visibility: page_extractable_with_caveat
+          source_payload_paths:
+            - aiVisibility.platformSummary
+            - aiVisibility.promptResults
+          template_prompt: Summarize validated mentions, absent surfaces, and notable answer-engine gaps without overclaiming certainty.
+        - key: website_strengths
+          type: array
+          required: true
+          visibility: page_extractable
+          source_payload_paths:
+            - websiteAudit.onPage
+        - key: website_gaps
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Name what the site lacks today in terms of commercial pages, proof, extraction-readiness, or technical/entity support.
+        - key: confidence_summary
+          type: string
+          required: true
+          visibility: internal_only
+          source_payload_paths:
+            - tamModel.confidence
+            - qualityGate
+    - id: competitor_landscape
+      title: Competitor Landscape
+      visibility: page_extractable
+      required: true
+      purpose: Force explicit competitor naming and evidence instead of generic market references.
+      fields:
+        - key: priority_competitors
+          type: array
+          required: true
+          visibility: page_extractable
+          source_payload_paths:
+            - competitors
+          template_prompt: Rank the competitors most relevant to the chosen wedge and include why each matters.
+        - key: competitor_advantage_map
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: For each named competitor, note where they currently win in recommendation-share, content, authority, or proof.
+        - key: competitor_weakness_map
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Note where the company has a credible right-to-win if execution is focused.
+        - key: competitor_claim_ids
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Reference the claim register entries supporting the competitor read.
+    - id: money_entities
+      title: Money Entities
+      visibility: page_extractable
+      required: true
+      purpose: Convert keyword and prompt demand into prioritized commercial prompt targets.
+      fields:
+        - key: money_entity_summary
+          type: string
+          required: true
+          visibility: page_extractable
+          template_prompt: Explain what the Money Entity set represents for this company.
+        - key: primary_money_entities
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Provide ranked primary Money Entities with intent, cluster, market, and why each matters commercially.
+        - key: secondary_money_entities
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: List the secondary set that compounds the initial wedge.
+        - key: money_entity_selection_rationale
+          type: string
+          required: true
+          visibility: internal_only
+          template_prompt: Explain why these entities beat alternative prompt targets for this company now.
+        - key: money_entity_claim_ids
+          type: array
+          required: true
+          visibility: internal_only
+    - id: prioritized_wedge_and_ranked_sequence
+      title: Prioritized Wedge and Ranked Execution Sequence
+      visibility: page_extractable
+      required: true
+      purpose: Lock the one prioritized wedge and the ordered execution sequence that downstream page generation must preserve.
+      fields:
+        - key: chosen_wedge
+          type: string
+          required: true
+          visibility: page_extractable
+          template_prompt: State the initial wedge in one sentence, naming company, category slice, and commercial prompt family.
+        - key: why_this_wedge_now
+          type: string
+          required: true
+          visibility: page_extractable
+          template_prompt: Explain why this wedge is the highest-leverage opening based on current evidence.
+        - key: company_specific_rationale
+          type: string
+          required: true
+          visibility: internal_only
+          template_prompt: Must reference at least one current-state constraint, one named competitor, and one proof or demand signal.
+        - key: ranked_execution_sequence
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Use reusable_records.ranked_execution_step for every rank; minimum three ranks.
+        - key: explicit_non_priorities
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: List attractive but deferred motions and why they are not first.
+        - key: wedge_claim_ids
+          type: array
+          required: true
+          visibility: internal_only
+    - id: apex_assets_plan
+      title: Apex Assets Plan
+      visibility: page_extractable
+      required: true
+      purpose: Define the flagship owned assets required to win the wedge.
+      fields:
+        - key: apex_asset_recommendations
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Each item must use reusable_records.recommendation_block and name the exact page or asset type.
+        - key: comparison_and_evaluation_priority
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Name shortlist-forming pages that should ship early.
+        - key: proof_requirements_per_asset
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: List screenshots, testimonials, pricing clarity, benchmarks, or source objects needed per flagship asset.
+    - id: knowledge_graph_plan
+      title: Knowledge Graph Plan
+      visibility: page_extractable
+      required: true
+      purpose: Define the supporting retrieval layer that expands coverage around the wedge.
+      fields:
+        - key: supporting_clusters
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Name the first Knowledge Graph clusters, related prompts, and the Apex Assets they reinforce.
+        - key: template_or_batch_logic
+          type: string
+          required: true
+          visibility: internal_only
+          template_prompt: Explain how repeatable supporting pages will stay distinct and useful.
+        - key: cluster_claim_ids
+          type: array
+          required: true
+          visibility: internal_only
+    - id: trust_relay_plan
+      title: Trust Relay Plan
+      visibility: page_extractable
+      required: true
+      purpose: Keep off-site authority and distribution explicit rather than implied.
+      fields:
+        - key: trust_relay_recommendations
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Each recommendation must name authority nodes, proof object, distribution angle, and related Money Entities.
+        - key: review_platform_actions
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Include review-platform presence or repair actions when relevant.
+        - key: backlinks_pr_and_community_mix
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Make backlinks, editorial/listicle, and community/forum work explicit.
+        - key: trust_relay_claim_ids
+          type: array
+          required: true
+          visibility: internal_only
+    - id: technical_entity_foundation
+      title: Technical and Entity Foundation
+      visibility: page_extractable
+      required: true
+      purpose: Preserve crawl, index, entity, and structured-data requirements that enable recommendation visibility.
+      fields:
+        - key: technical_priorities
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Name the first crawl, canonical, sitemap, structured-data, and extraction-readiness fixes.
+        - key: entity_consistency_actions
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Include author/about/profile/review-platform consistency requirements where relevant.
+        - key: platform_specific_notes
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Only include rechecked platform-specific claims; cite claim ids.
+        - key: technical_claim_ids
+          type: array
+          required: true
+          visibility: internal_only
+    - id: proof_and_measurement_model
+      title: Proof and Measurement Model
+      visibility: page_extractable_with_caveat
+      required: true
+      purpose: Show what proof exists, what proof is missing, and how strategy success will be measured.
+      fields:
+        - key: proof_model
+          type: string
+          required: true
+          visibility: page_extractable
+          template_prompt: Explain what proof objects will make claims believable for this company.
+        - key: baseline_metrics
+          type: array
+          required: true
+          visibility: page_extractable_with_caveat
+          source_payload_paths:
+            - seoMetrics
+            - aiVisibility
+            - tamModel
+        - key: measurement_plan
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: Include recommendation-share checks, citation checks, prompt coverage, workstream completion, and business-facing reporting.
+        - key: deferred_validations
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Name any proof the team still needs before upgrading claims.
+    - id: cadence_and_next_actions
+      title: Cadence and Next Actions
+      visibility: page_extractable
+      required: true
+      purpose: Preserve the delivery rhythm and immediate next moves.
+      fields:
+        - key: ninety_day_plan
+          type: object
+          required: true
+          visibility: page_extractable
+          template_prompt: Provide 30/60/90 actions aligned to the chosen wedge and ranked sequence.
+        - key: ongoing_operating_cadence
+          type: object
+          required: true
+          visibility: page_extractable
+          template_prompt: Preserve weekly, monthly, and quarterly cadence in founder-readable form.
+        - key: next_actions
+          type: array
+          required: true
+          visibility: page_extractable
+          template_prompt: List the immediate operator actions needed to start execution.
+        - key: dependencies_and_handoffs
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Identify approvals, data needs, or production dependencies.
+    - id: page_extraction_map
+      title: Page Extraction Map
+      visibility: internal_only
+      required: true
+      purpose: Make the brief directly usable as the canonical source for website strategy page generation.
+      fields:
+        - key: page_section_mappings
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Map brief sections to page contract sections using section id, extractable summary, and caveat rules.
+        - key: internal_only_sections
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: List brief sections or fields that must never render publicly.
+        - key: page_extractable_sections
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: List sections safe for founder-facing transformation.
+        - key: page_extractable_with_caveat_sections
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: List sections that require softened language, explicit caveats, or omission logic.
+    - id: unresolved_gaps_and_blockers
+      title: Unresolved Gaps and Blockers
+      visibility: internal_only
+      required: true
+      purpose: Force explicit surfacing of unresolved inputs, assumptions, low-confidence claims, and page blockers.
+      fields:
+        - key: open_gap_records
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Use reusable_records.gap_record for every unresolved issue.
+        - key: assumption_ledger
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Each assumption must link to claim ids or gap ids and state whether page use is allowed.
+        - key: blocked_sections
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Name any sections that cannot be completed yet and why.
+        - key: page_generation_blockers
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Empty only if page_generation_readiness is ready or ready_with_caveats.
+    - id: claim_register
+      title: Claim Register
+      visibility: internal_only
+      required: true
+      purpose: Central evidence ledger for all major recommendations and page-safe claims.
+      fields:
+        - key: claim_records
+          type: array
+          required: true
+          visibility: internal_only
+          template_prompt: Use reusable_records.claim_record; include every material recommendation claim referenced elsewhere in the brief.
+  completion_rules:
+    brief_complete_when:
+      - Every required section exists in deterministic order.
+      - Every major recommendation and ranked execution step references claim_ids or gap_ids.
+      - Chosen wedge, Money Entities, and ranked execution sequence are populated and company-specific.
+      - Page extraction map is filled and visibility markers are explicit.
+      - Unresolved gaps are either closed or surfaced with page-handling outcomes.
+    page_ready_when:
+      - brief_status is approved.
+      - page_generation_readiness is ready or ready_with_caveats.
+      - page_generation_blockers is empty.
+      - All page_extractable_with_caveat items have page-safe summaries or omission instructions.
+    block_brief_when:
+      - company_name, domain, category, or target_markets are missing.
+      - No primary Money Entities are selected.
+      - chosen_wedge is empty.
+      - ranked_execution_sequence has fewer than three steps.
+      - No competitor evidence or current-state evidence is available.
+      - Claim register is missing or major recommendations are unreferenced.
+    no_generic_fill_rule:
+      description: Completed briefs must not read like generic strategy language with superficial substitution.
+      minimum_specificity_requirements:
+        - At least one named competitor appears in competitor_landscape and in company_specific_rationale for the wedge.
+        - At least one current-state evidence point appears in why_this_wedge_now.
+        - At least one company product, ICP, or monetization detail appears in company_context and recommended asset rationale.
+        - At least one unresolved gap or caveat is surfaced when confidence is not uniformly high.
