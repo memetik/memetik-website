@@ -57,6 +57,14 @@
       "description": "Founder-facing strategy memo for Hyro focused on electrolyte drink mix buyer demand, commercial comparison terms, off-site authority, and a 6-month execution plan.",
       "prerenderMode": "brief",
       "briefPath": "content/strategy-briefs/Drinkhyro-Strategy-Brief.md"
+    },
+    {
+      "slug": "hot-water-funnel",
+      "route": "/strategy/hot-water-funnel",
+      "componentKey": "hot-water-funnel",
+      "title": "Hot Water Funnel — Sales-Led Strategy | MEMETIK",
+      "description": "Sales-led strategy page for a Gold Coast heat pump hot water funnel built around fixed-price installs, local demand capture, eligibility filtering, and booking conversion.",
+      "prerenderMode": "summary"
     }
   ],
   "parity": {
