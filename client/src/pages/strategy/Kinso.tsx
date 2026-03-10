@@ -1,1363 +1,1339 @@
 import { useEffect } from "react";
+import { Nav } from "@/components/Nav";
 import {
-  AlertTriangle,
   ArrowRight,
-  BarChart3,
   Bot,
-  Brain,
-  Building2,
   CheckCircle2,
   Compass,
   Database,
-  Gauge,
+  FileSearch,
   Globe,
+  Layers3,
+  LineChart,
   Link2,
-  Lock,
-  MessagesSquare,
+  MessageSquare,
+  Newspaper,
   Radar,
   Search,
   ShieldCheck,
   Sparkles,
+  Star,
   Target,
   TrendingUp,
   Workflow,
-  Wrench,
 } from "lucide-react";
-import { Nav } from "@/components/Nav";
 import {
+  SectionHeader,
+  HighlightBox,
   BulletList,
   DataTable,
-  HighlightBox,
   PhasedUpsideChart,
-  SectionHeader,
-  StatsGrid,
-  StrategyCTA,
-  StrategyCard,
-  StrategyEyebrow,
-  StrategyHero,
-  StrategyPageFrame,
-  StrategySectionShell,
+  GrowthTimelineChart,
   TamRoiCalculator,
-  WorkstreamTimeline,
+  StrategyPageFrame,
+  StrategyHero,
+  StrategySectionShell,
+  StrategyCard,
+  StrategyCTA,
+  StrategySectionLead,
+  StrategyAppendixSection,
+  StrategyEyebrow,
 } from "@/components/strategy";
 
 const formatWhole = (value: number) =>
-  new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(Math.round(value));
+  new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(
+    Number.isFinite(value) ? Math.round(value) : 0
+  );
 
-const formatOne = (value: number) =>
-  new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(value);
+function ExecutiveMetricCard({
+  label,
+  value,
+  note,
+  breakdown,
+}: {
+  label: string;
+  value: string;
+  note: string;
+  breakdown: { label: string; value: string }[];
+}) {
+  return (
+    <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.05] shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-md">
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.015))]" />
+      <div className="relative p-5 md:p-6">
+        <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/48">{label}</div>
+        <div className="mt-3 break-words text-[clamp(2.15rem,5vw,4rem)] font-display font-extrabold leading-[0.94] tracking-tight text-white">
+          {value}
+        </div>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-white/64">{note}</p>
 
-const formatPercent = (value: number) => `${value.toFixed(2)}%`;
+        <div className="mt-4 rounded-[22px] border border-white/8 bg-black/20 p-4">
+          <div className="mb-3 text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">
+            demand composition
+          </div>
+          <div className="space-y-2">
+            {breakdown.map((item) => (
+              <div
+                key={`${label}-${item.label}`}
+                className="flex flex-col gap-1 rounded-[16px] border border-white/8 bg-white/[0.03] px-3 py-2 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div className="text-xs font-mono uppercase tracking-[0.14em] text-white/40">{item.label}</div>
+                <div className="text-sm font-medium text-white/78">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-const researchData = {
-  company: {
-    name: "Kinso",
-    domain: "kinso.ai",
-    category: "Communication / Unified AI Inbox",
-    industry: "Communication / Collaboration",
-  },
-  seoMetrics: {
-    organicTraffic: 556.7749864012003,
-    organicKeywords: 24,
-    backlinks: 426,
-    referringDomains: 63,
-    paidTraffic: 0,
-    paidKeywords: 0,
-    markets: {
-      US: { organicTraffic: 95.4660008624196, organicKeywords: 16 },
-      AU: { organicTraffic: 461.3089855387807, organicKeywords: 8 },
-    },
-    backlinkMetrics: {
-      backlinks: 426,
-      referringDomains: 63,
-      referringMainDomains: 60,
-      backlinksSpamScore: 21,
-      targetSpamScore: 0,
-    },
-  },
-  qualityGate: {
-    passed: true,
-    mode: "strict",
-    metrics: {
-      competitors: 5,
-      keywords: 22,
-      keywordUniverse: 559,
-      prompts: 36,
-      aiPlatformsWithSamples: 3,
-      hasOnPage: true,
-      hasTam: true,
-    },
-  },
-  meta: {
-    payloadConfidence: { score: 96, level: "high" as const },
-    issues: [
-      {
-        step: "ai_platform_probe_perplexity",
-        error: "[/v3/ai_optimization/perplexity/llm_scraper/live/advanced] Task status 40402: Invalid Path.",
-      },
-      {
-        step: "ai_mentions",
-        error: "[/v3/ai_optimization/llm_mentions/live] DataForSEO status 40400: Not Found.",
-      },
+function ImmediateActionCard({
+  index,
+  title,
+  body,
+}: {
+  index: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <StrategyCard className="rounded-[28px]">
+      <div className="mb-4 flex items-center gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] font-mono text-sm font-bold tracking-[0.18em] text-[#f4e4cd]">
+          {index}
+        </div>
+        <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Immediate action</div>
+      </div>
+      <h3 className="text-xl font-semibold tracking-tight text-white">{title}</h3>
+      <p className="mt-3 text-sm leading-7 text-white/66">{body}</p>
+    </StrategyCard>
+  );
+}
+
+function NarrativeCard({
+  icon,
+  eyebrow,
+  title,
+  body,
+  bullets,
+}: {
+  icon: React.ReactNode;
+  eyebrow: string;
+  title: string;
+  body: string;
+  bullets?: string[];
+}) {
+  return (
+    <StrategyCard className="rounded-[28px]">
+      <div className="mb-4 flex items-center gap-3">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#f4e4cd]/15 bg-[#f4e4cd]/8 text-[#f4e4cd]">
+          {icon}
+        </div>
+        <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">{eyebrow}</div>
+      </div>
+      <h3 className="text-xl font-semibold tracking-tight text-white">{title}</h3>
+      <p className="mt-3 text-sm leading-7 text-white/66">{body}</p>
+      {bullets?.length ? <div className="mt-4"><BulletList items={bullets} /></div> : null}
+    </StrategyCard>
+  );
+}
+
+function PromptCard({
+  prompt,
+  status,
+  today,
+  nextMove,
+}: {
+  prompt: string;
+  status: string;
+  today: string;
+  nextMove: string;
+}) {
+  return (
+    <StrategyCard className="rounded-[28px]">
+      <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Unbranded buying prompt</div>
+      <h3 className="mt-3 text-lg font-semibold text-white">{prompt}</h3>
+      <div className="mt-4 space-y-3">
+        <div className="rounded-[18px] border border-white/8 bg-black/20 p-4">
+          <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/40">Current status</div>
+          <p className="mt-2 text-sm leading-6 text-white/72">{status}</p>
+        </div>
+        <div className="rounded-[18px] border border-white/8 bg-black/20 p-4">
+          <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/40">What buyers see today</div>
+          <p className="mt-2 text-sm leading-6 text-white/72">{today}</p>
+        </div>
+        <div className="rounded-[18px] border border-[#f4e4cd]/15 bg-[#f4e4cd]/8 p-4">
+          <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">What must change</div>
+          <p className="mt-2 text-sm leading-6 text-white">{nextMove}</p>
+        </div>
+      </div>
+    </StrategyCard>
+  );
+}
+
+function RolloutCard({
+  label,
+  title,
+  body,
+  bullets,
+}: {
+  label: string;
+  title: string;
+  body: string;
+  bullets: string[];
+}) {
+  return (
+    <StrategyCard className="rounded-[30px]">
+      <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">{label}</div>
+      <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white">{title}</h3>
+      <p className="mt-4 text-sm leading-7 text-white/66">{body}</p>
+      <div className="mt-5">
+        <BulletList items={bullets} />
+      </div>
+    </StrategyCard>
+  );
+}
+
+function ScopeBlock({
+  label,
+  title,
+  body,
+  items,
+}: {
+  label: string;
+  title: string;
+  body: string;
+  items: string[];
+}) {
+  return (
+    <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.04] shadow-[0_18px_60px_rgba(0,0,0,0.3)] backdrop-blur-md">
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.015))]" />
+      <div className="relative p-5 md:p-6">
+        <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">{label}</div>
+        <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">{title}</h3>
+        <p className="mt-3 text-sm leading-7 text-white/66">{body}</p>
+        <div className="mt-5">
+          <BulletList items={items} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const executiveMetrics = [
+  {
+    label: "Total search opportunity",
+    value: formatWhole(8250150),
+    note: "Validated demand across the US and AU inside Kinso's relevant category frame, filtered through the approved brief's topical-integrity guardrails.",
+    breakdown: [
+      { label: "Competitor-keyword demand", value: `${formatWhole(471610)} (5.7%)` },
+      { label: "Non-competitor / unbranded", value: `${formatWhole(7778540)} (94.3%)` },
     ],
   },
-  aiVisibility: {
-    promptsAnalyzed: 36,
-    clientMentionedPrompts: 8,
-    platformSummary: {
-      chatgpt: { total: 12, mentioned: 4, mentionRate: 33.33 },
-      gemini: { total: 12, mentioned: 4, mentionRate: 33.33 },
-      google_ai_overview: { total: 12, mentioned: 0, mentionRate: 0 },
-    },
-    platformAvailability: {
-      chatgpt: { status: "available", endpoint: "/v3/ai_optimization/chat_gpt/llm_scraper/live/advanced" },
-      gemini: { status: "available", endpoint: "/v3/ai_optimization/gemini/llm_scraper/live/advanced" },
-      perplexity: {
-        status: "unavailable",
-        endpoint: "/v3/ai_optimization/perplexity/llm_scraper/live/advanced",
-        reason: "[/v3/ai_optimization/perplexity/llm_scraper/live/advanced] Task status 40402: Invalid Path.",
-      },
-      google_ai_overview: { status: "available_via_serp", endpoint: "/v3/serp/google/organic/live/advanced" },
-    },
-  },
-  keywordUniverse: {
-    size: 559,
-    anchorMatchedCount: 222,
-    countsByIntent: { TOFU: 93, BOFU: 387, MOFU: 79 },
-    countsBySource: {
-      semantic_expansion: 518,
-      competitor_keywords: 24,
-      target_ranked_keywords: 22,
-      keyword_gaps: 8,
-    },
-    semanticContribution: {
-      keywordCount: 518,
-      demand: 14587910,
-      demandSharePercent: 97.51,
-    },
-  },
-  tamModel: {
-    estimateOnly: true,
-    totals: {
-      totalAddressableSearchDemand: 14959680,
-      estimatedReachableVisits: {
-        low: 134463.13,
-        base: 249622.87,
-        high: 409603.65,
-      },
-      byChannel: {
-        google: {
-          demand: 12865324.8,
-          estimatedReachableVisits: {
-            low: 133619.3,
-            base: 248056.35,
-            high: 407033.17,
-          },
-        },
-        ai: {
-          demand: 2094355.2,
-          estimatedReachableVisits: {
-            low: 843.83,
-            base: 1566.51,
-            high: 2570.48,
-          },
-        },
-      },
-    },
-    byIntent: [
-      {
-        intent: "BOFU",
-        demand: 2403550,
-        keywordCount: 387,
-        estimatedReachableVisits: { low: 57910.17, base: 96516.95, high: 154427.13 },
-      },
-      {
-        intent: "MOFU",
-        demand: 153130,
-        keywordCount: 79,
-        estimatedReachableVisits: { low: 1844.73, base: 3689.45, high: 6149.09 },
-      },
-      {
-        intent: "TOFU",
-        demand: 12403000,
-        keywordCount: 93,
-        estimatedReachableVisits: { low: 74708.23, base: 149416.46, high: 249027.43 },
-      },
+  {
+    label: "Expected traffic in 12 months",
+    value: formatWhole(575954),
+    note: "Base-case planning view if Kinso starts with decision-stage shared inbox and email triage demand, then compounds authority and broader category coverage.",
+    breakdown: [
+      { label: "Competitor-keyword traffic", value: formatWhole(10052) },
+      { label: "Non-competitor / unbranded", value: formatWhole(565902) },
     ],
-    topOpportunityClusters: [
-      {
-        cluster: "Category & Brand Demand",
-        intent: "TOFU",
-        demand: 12437710,
-        keywordCount: 168,
-        estimatedReachableVisits: { low: 75126.37, base: 150252.75, high: 250421.25 },
-        sampleKeywords: ["outlook email", "free email services", "outlook email login", "godaddy email login", "hotmail email"],
-      },
-      {
-        cluster: "Buyer Guides",
-        intent: "BOFU",
-        demand: 2403290,
-        keywordCount: 381,
-        estimatedReachableVisits: { low: 57903.91, base: 96506.51, high: 154410.42 },
-        sampleKeywords: ["gmail inbox", "inbox", "shared inbox", "unified inbox", "team inbox", "ai inbox"],
-      },
-      {
-        cluster: "Tools & Templates",
-        intent: "MOFU",
-        demand: 118400,
-        keywordCount: 2,
-        estimatedReachableVisits: { low: 1426.34, base: 2852.68, high: 4754.47 },
-        sampleKeywords: ["email generator", "email signature generator"],
-      },
+  },
+  {
+    label: "Aggressive upside",
+    value: formatWhole(859549),
+    note: "Upper-range planning case if the first buyer-guide pages win early, off-site authority reinforces them quickly, and broader category coverage opens on schedule.",
+    breakdown: [
+      { label: "Demand mix in model", value: "5.7% competitor-led / 94.3% non-competitor" },
+      { label: "Primary upside driver", value: "Unbranded buyer-guide demand, not competitor spillover" },
     ],
-    confidence: {
-      score: 90,
-      level: "high",
-      reasons: [
-        "Sufficient TAM volume identified.",
-        "Strong full keyword universe coverage.",
-        "Semantic keyword expansion contributed meaningful TAM coverage.",
-        "AI visibility prompts provide directional coverage.",
-        "AI visibility sampled across multiple platforms.",
-        "Revenue model is estimate-only and missing first-party monetary inputs.",
-      ],
-    },
-    revenueModel: {
-      enabled: false,
-      reason: "Revenue inputs missing (acv/aov). Showing TAM + pipeline potential only.",
-      pipelinePotential: {
-        leads: { low: 537.85, base: 2246.61, high: 6144.05 },
-      },
-    },
-  },
-  competitors: [
-    {
-      domain: "kinso.ai",
-      role: "Target",
-      organicTraffic: 556.7749864012003,
-      organicKeywords: 24,
-      paidTraffic: 0,
-      backlinks: 426,
-      referringDomains: 63,
-      note: "Early footprint; mostly branded rankings.",
-    },
-    {
-      domain: "missiveapp.com",
-      role: "Direct",
-      organicTraffic: 166300.31167035736,
-      organicKeywords: 10931,
-      paidTraffic: 0,
-      backlinks: 23611,
-      referringDomains: 2709,
-      note: "Dominates inbox-adjacent informational + BOFU terms.",
-    },
-    {
-      domain: "front.com",
-      role: "Direct",
-      organicTraffic: 86294.75961692631,
-      organicKeywords: 12224,
-      paidTraffic: 1354.5920000374317,
-      backlinks: 50566,
-      referringDomains: 6049,
-      note: "Strong enterprise/commercial architecture + paid assist.",
-    },
-    {
-      domain: "intercom.com",
-      role: "Adjacent incumbent",
-      organicTraffic: 91288.66046237387,
-      organicKeywords: 26720,
-      paidTraffic: 4417.890003025532,
-      backlinks: 1024186,
-      referringDomains: 42379,
-      note: "Massive authority moat; owns broader messaging narratives.",
-    },
-    {
-      domain: "hiverhq.com",
-      role: "Direct",
-      organicTraffic: 282533.58254896477,
-      organicKeywords: 26665,
-      paidTraffic: 69.49499875307083,
-      backlinks: 24240,
-      referringDomains: 6001,
-      note: "Content engine across workflow/how-to + shared inbox guides.",
-    },
-    {
-      domain: "gmelius.com",
-      role: "Direct",
-      organicTraffic: 80442.91756520234,
-      organicKeywords: 10478,
-      paidTraffic: 0,
-      backlinks: 8830,
-      referringDomains: 2337,
-      note: "Shows direct AI evidence in Gemini + Google AIO for category prompts.",
-    },
-  ],
-};
-
-const executiveActions = [
-  "Ship 12 decision-intent pages in the next 45 days (best, alternatives, vs, implementation).",
-  "Stand up Bing + AI citation infrastructure now (IndexNow, schema, distribution, prompt tracking).",
-  "Reallocate content effort from generic email-adjacent terms into unified inbox and team-workflow buyer queries.",
-];
-
-const visibilityPrompts = [
-  {
-    query: "best unified ai inbox tools",
-    currentState: "Not mentioned in ChatGPT/Gemini responses sampled",
-    implication: "Losing shortlist share at first-touch discovery.",
-    difficulty: "Hard",
   },
   {
-    query: "best unified ai inbox software",
-    currentState: "Not consistently mentioned; competitor list dominates",
-    implication: "Commercial intent captured by incumbent lists.",
-    difficulty: "Hard",
-  },
-  {
-    query: "best unified ai inbox for startups",
-    currentState: "Not surfaced in sampled answers",
-    implication: "Startup ICP framing owned by competitors.",
-    difficulty: "Medium",
-  },
-  {
-    query: "Kinso alternatives",
-    currentState: "Mentioned, but context quality inconsistent",
-    implication: "Entity understanding is unstable and fragile.",
-    difficulty: "Medium",
-  },
-  {
-    query: "Kinso vs competitors",
-    currentState: "Mentioned in ChatGPT/Gemini, absent in Google AIO sample",
-    implication: "Brand-aware queries partially captured, non-brand still weak.",
-    difficulty: "Easy",
+    label: "First 6-month target",
+    value: formatWhole(213103),
+    note: "The first half of the program is about building enough decision-page coverage and authority to turn Kinso into a visible option during live buying research.",
+    breakdown: [
+      { label: "Competitor-keyword target", value: formatWhole(3719) },
+      { label: "Non-competitor / unbranded", value: formatWhole(209384) },
+    ],
   },
 ];
 
-const tofuKeywords = [
-  ["outlook email", "4,480,000", "Category & Brand Demand", "Broad navigational demand; not decision-intent by default."],
-  ["free email services", "3,660,000", "Category & Brand Demand", "Very broad; avoid headline TAM claims from this alone."],
-  ["outlook email login", "763,100", "Category & Brand Demand", "High volume but low commercial fit for Kinso offer."],
-  ["hotmail email", "220,000", "Category & Brand Demand", "Topical adjacency, weak product fit unless converted via education hub."],
-  ["email gmail", "182,900", "Category & Brand Demand", "Awareness traffic source; requires strict internal linking discipline."],
-  ["email account", "153,400", "Category & Brand Demand", "Broad educational intent, likely low direct conversion."],
-  ["recall email outlook", "140,800", "Category & Brand Demand", "Competitor content currently wins this workflow problem."],
-  ["messaging company", "27,100", "Category & Brand Demand", "Category framing term where incumbents already sit."],
-  ["email thread", "25,740", "Category & Brand Demand", "Strong for thought leadership if tied to triage use cases."],
-  ["ai email", "7,900", "Category & Brand Demand", "High relevance if tied to unified inbox + drafting workflows."],
+const phasedUpsidePoints = [
+  { month: 1, low: 12000, base: 18000, high: 26000 },
+  { month: 2, low: 35000, base: 52000, high: 76000 },
+  { month: 3, low: 70000, base: 98000, high: 145000 },
+  { month: 4, low: 100000, base: 138000, high: 210000 },
+  { month: 5, low: 125000, base: 174000, high: 260000 },
+  { month: 6, low: 150000, base: 213103, high: 320000 },
+  { month: 7, low: 178000, base: 260000, high: 390000 },
+  { month: 8, low: 210000, base: 315000, high: 470000 },
+  { month: 9, low: 245000, base: 380000, high: 565000 },
+  { month: 10, low: 282000, base: 445000, high: 660000 },
+  { month: 11, low: 320000, base: 510000, high: 760000 },
+  { month: 12, low: 356299, base: 575954, high: 859549 },
 ];
 
-const mofuKeywords = [
-  ["email generator", "74,000", "Tools & Templates", "Template/tool demand can feed BOFU pages and capture links."],
-  ["email signature generator", "44,400", "Tools & Templates", "Good utility gateway to inbox workflow education."],
-  ["workflow", "22,200", "Category & Brand Demand", "Very broad; only useful with qualifier pages."],
-  ["workflow diagram", "6,600", "Category & Brand Demand", "Potential visual asset + template content angle."],
-  ["email migration", "530", "Category & Brand Demand", "Relevant to switching from legacy inbox stacks."],
-  ["email automation workflow", "210", "Category & Brand Demand", "Bridges AI assistant narrative to operations buyers."],
-  ["unified workflow", "20", "Category & Brand Demand", "Low volume but high topical relevance for product messaging."],
-  ["email triage workflow", "10", "Category & Brand Demand", "High-intent, high-fit educational keyword despite low volume."],
+const timelinePoints = [
+  {
+    month: 1,
+    low: 12000,
+    base: 18000,
+    high: 26000,
+    title: "Opening move set",
+    detail:
+      "Month 1 defines the category opening: Kinso publishes the first buyer-guide and decision-stage pages around AI shared inbox and email triage software, while the site infrastructure is aligned for indexing and machine readability.",
+    bullets: [
+      "Map the highest-priority buying queries and competitor angles",
+      "Ship first decision pages around shared inbox, Gmail workflow, and email triage use cases",
+      "Tighten schema, canonicals, sitemap hygiene, Bing Webmaster Tools, and IndexNow",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 18000,
+  },
+  {
+    month: 2,
+    low: 35000,
+    base: 52000,
+    high: 76000,
+    title: "Authority attached to the first pages",
+    detail:
+      "Month 2 turns owned pages into market signals. Comparison pages, reviews, listicles, community placements, and early backlinks start reinforcing the same commercial story around the first topics.",
+    bullets: [
+      "Expand comparison and evaluation content against Front, Help Scout, and Missive",
+      "Push review-profile reinforcement and first community participation",
+      "Start backlink and placement pushes into the pages that matter most",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 52000,
+  },
+  {
+    month: 3,
+    low: 70000,
+    base: 98000,
+    high: 145000,
+    title: "Coverage deepens around the winners",
+    detail:
+      "Month 3 builds supporting content around the first decision pages so search engines and answer engines keep finding the same narrative across use cases, proof objects, and adjacent query patterns.",
+    bullets: [
+      "Publish supporting content around buyer context, product form, and benefit proof",
+      "Reinforce entity consistency across owned and third-party surfaces",
+      "Use performance signals to decide which first-wave pages deserve heavier reinforcement",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 98000,
+  },
+  {
+    month: 4,
+    low: 100000,
+    base: 138000,
+    high: 210000,
+    title: "First clusters start to compound",
+    detail:
+      "Month 4 expands the supporting network and widens distribution. Kinso is no longer just publishing pages; it is building category memory across search results, answer surfaces, and external references.",
+    bullets: [
+      "Widen coverage around collaboration, triage, and shared inbox workflows",
+      "Refresh first pages using live search and answer-surface feedback",
+      "Push more editorial-style placements and expert commentary mentions",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 138000,
+  },
+  {
+    month: 5,
+    low: 125000,
+    base: 174000,
+    high: 260000,
+    title: "Proof layer expands",
+    detail:
+      "Month 5 adds more evidence-heavy pages and stronger off-site trust signals, making Kinso's commercial story easier to believe when buyers compare options.",
+    bullets: [
+      "Add product-form explainers and ingredient-style proof pages",
+      "Increase review momentum and third-party list inclusion",
+      "Route new backlinks to the pages already earning traction",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 174000,
+  },
+  {
+    month: 6,
+    low: 150000,
+    base: 213103,
+    high: 320000,
+    title: "First six-month threshold reached",
+    detail:
+      "By Month 6 the goal is a repeatable deployment engine: decision pages, supporting coverage, reviews, backlinks, editorial mentions, and technical reinforcement all moving in sync.",
+    bullets: [
+      "Reach the first major visibility threshold in Kinso's target category slice",
+      "Double down on pages and prompts showing strongest traction",
+      "Prepare expansion into adjacent template and workflow demand",
+    ],
+    trafficLabel: "First 6-month target",
+    trafficValue: 213103,
+  },
+  {
+    month: 7,
+    low: 178000,
+    base: 260000,
+    high: 390000,
+    title: "Expansion beyond the first decision pages",
+    detail:
+      "After the initial buyer-guide layer proves out, Month 7 widens Kinso's footprint into adjacent workflows and use cases without losing commercial focus.",
+    bullets: [
+      "Expand beyond first-wave category pages into adjacent workflow pages",
+      "Patch weak prompts where incumbents still hold the frame",
+      "Keep authority pushes tied to live winners rather than vanity topics",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 260000,
+  },
+  {
+    month: 8,
+    low: 210000,
+    base: 315000,
+    high: 470000,
+    title: "Broader supporting coverage takes hold",
+    detail:
+      "Month 8 builds out more of the surrounding content network so Kinso can show up in more contexts while keeping the main decision pages at the center of authority flow.",
+    bullets: [
+      "Expand supporting content coverage around templates and operational use cases",
+      "Refresh pages that need stronger proof, structure, or internal linking",
+      "Broaden newsletter, editorial, and professional-network distribution",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 315000,
+  },
+  {
+    month: 9,
+    low: 245000,
+    base: 380000,
+    high: 565000,
+    title: "Category reach broadens",
+    detail:
+      "Month 9 is where the first controlled expansion into broader category demand becomes viable, because Kinso now has a stronger base of owned pages and third-party proof.",
+    bullets: [
+      "Move into broader category demand once first decision pages are established",
+      "Use refreshed proof and authority to support higher-volume topics",
+      "Defend terms where competitors react to Kinso's growing presence",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 380000,
+  },
+  {
+    month: 10,
+    low: 282000,
+    base: 445000,
+    high: 660000,
+    title: "Defense and reinforcement",
+    detail:
+      "Month 10 focuses on consolidating gains: stronger refresh cycles, more external citations, and sharper internal authority routing into the pages that have become most commercially important.",
+    bullets: [
+      "Refresh aging pages before competitors can reclaim narrative control",
+      "Route new authority into the highest-converting decision pages",
+      "Keep review and community signals active instead of letting them decay",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 445000,
+  },
+  {
+    month: 11,
+    low: 320000,
+    base: 510000,
+    high: 760000,
+    title: "Category consistency across surfaces",
+    detail:
+      "Month 11 is about making Kinso's story feel consistent wherever a buyer checks: traditional search, AI answers, review sites, listicles, and community discussions.",
+    bullets: [
+      "Close message gaps across owned, earned, and referenced surfaces",
+      "Strengthen comparisons and proof pages that influence vendor consideration",
+      "Use monthly reporting to reallocate effort toward the strongest clusters",
+    ],
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 510000,
+  },
+  {
+    month: 12,
+    low: 356299,
+    base: 575954,
+    high: 859549,
+    title: "Year-one category position defended",
+    detail:
+      "Month 12 is not an endpoint. It is the point where Kinso should have a defendable market position across the most important buying queries, with enough off-site proof and infrastructure to keep compounding.",
+    bullets: [
+      "Defend owned category pages with refreshes and new authority signals",
+      "Expand into adjacent opportunities without diluting the first wins",
+      "Treat search and answer-surface visibility as a durable growth asset, not a one-time launch",
+    ],
+    trafficLabel: "Expected traffic in 12 months",
+    trafficValue: 575954,
+  },
 ];
 
-const bofuKeywords = [
-  ["gmail inbox", "1,643,000", "Buyer Guides", "Huge demand bucket; must be narrowed to shared/team use cases."],
-  ["inbox", "489,700", "Buyer Guides", "Extremely broad; use only in long-tail qualified combinations."],
-  ["shared inbox gmail", "1,320", "Buyer Guides", "Direct money query with clear buyer intent."],
-  ["gmail shared inbox", "1,010", "Buyer Guides", "Core conversion keyword family."],
-  ["shared inbox", "620", "Buyer Guides", "Head BOFU term; category anchor."],
-  ["team inbox", "500", "Buyer Guides", "Core buying term for collaborative workflows."],
-  ["unified inbox", "340", "Buyer Guides", "Primary category-defining query for Kinso positioning."],
-  ["unified inbox email", "120", "Buyer Guides", "Kinso currently ~position 40; reclaimable fast win."],
-  ["unified inbox app", "120", "Buyer Guides", "Kinso currently ~position 29; practical near-term lift target."],
-  ["ai inbox", "80", "Buyer Guides", "Kinso currently ~position 105; clear content gap."],
-  ["best shared inbox", "60", "Buyer Guides", "Commercial shortlist keyword; needs apex comparison page."],
-  ["best shared inbox software", "50", "Buyer Guides", "High-CPC decision query with strong CAC leverage potential."],
+const timelineMilestones = [
+  {
+    label: "Month 1",
+    month: 1,
+    title: "Opening move",
+    detail:
+      "Set the first commercial angle around AI shared inbox and email triage queries, ship first decision pages, and align infrastructure so the market can actually find and index them.",
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 18000,
+  },
+  {
+    label: "Month 2",
+    month: 2,
+    title: "Authority reinforcement",
+    detail:
+      "Attach reviews, comparisons, community proof, backlinks, and listicle/editorial placements to the first live pages rather than waiting until later.",
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 52000,
+  },
+  {
+    label: "Month 3",
+    month: 3,
+    title: "Coverage depth",
+    detail:
+      "Expand supporting content and proof so answer engines and classic search surfaces keep seeing Kinso's narrative repeated in more contexts.",
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 98000,
+  },
+  {
+    label: "Month 6",
+    month: 6,
+    title: "First compounding threshold",
+    detail:
+      "Decision pages, supporting coverage, off-site authority, and technical reinforcement are all running together, pushing Kinso into real buying consideration.",
+    trafficLabel: "First 6-month target",
+    trafficValue: 213103,
+  },
+  {
+    label: "Month 9",
+    month: 9,
+    title: "Broader category reach",
+    detail:
+      "Kinso can start widening into adjacent category demand because the first decision-stage pages and authority surfaces are already established.",
+    trafficLabel: "Cumulative traffic plan",
+    trafficValue: 380000,
+  },
+  {
+    label: "Month 12",
+    month: 12,
+    title: "Year-one position",
+    detail:
+      "The goal is a defendable presence across the right category questions, not a one-time publishing burst.",
+    trafficLabel: "Expected traffic in 12 months",
+    trafficValue: 575954,
+  },
 ];
-
-const monthlyCurveBase = [6500, 9000, 12000, 15000, 17500, 19500, 21500, 23000, 24500, 26000, 27500, 29200];
-
-const monthlyCurvePoints = monthlyCurveBase.map((base, index) => ({
-  month: index + 1,
-  label: `M${index + 1}`,
-  low: Math.round(base * 0.54),
-  base: Math.round(base),
-  high: Math.round(base * 1.64),
-}));
-
-const workstreamMonths = ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10", "M11", "M12"];
 
 export default function StrategyKinso() {
   useEffect(() => {
+    document.title = "Kinso Strategy | Memetik";
     window.scrollTo(0, 0);
-    document.title = "Kinso — AEO & SEO Growth Strategy | Memetik";
   }, []);
 
   return (
-    <StrategyPageFrame>
+    <StrategyPageFrame mainClassName="mx-auto max-w-6xl">
       <Nav />
 
-      <div className="mx-auto w-full max-w-[1200px]">
-        <StrategyHero
-          eyebrow={
-            <>
-              <Brain className="h-3.5 w-3.5" />
-              Hyper-Personalized Growth Strategy • 2026
-            </>
-          }
-          title="Kinso can own the AI inbox conversation"
-          subtitle="The goal is to turn occasional mention into consistent consideration across Google and AI answer layers in the US and AU."
-          tags={[
-            "kinso.ai",
-            "Communication / Collaboration",
-            "Unified AI Inbox",
-            "US + AU focus",
-            "Founder-ready operating model",
-          ]}
-        >
-          <StrategySectionShell className="mt-8" glow="blue">
-            <div className="mb-7 flex flex-wrap items-center justify-between gap-4">
-              <StrategyEyebrow>
-                <Sparkles className="h-3.5 w-3.5" />
-                Executive Summary
-              </StrategyEyebrow>
-              <div className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-mono uppercase tracking-[0.18em] text-white/45">
-                Snapshot from validated US + AU research payload
+      <StrategyHero
+        eyebrow="Founder strategy memo"
+        title="Kinso can own shared inbox demand"
+        subtitle="The opening move is not broad awareness. It is to win the buyer-guide and decision-stage conversation around AI shared inbox and email triage software, then reinforce that position across Google, ChatGPT, Gemini, and other answer layers before incumbents keep defining the category for you."
+        tags={["kinso.ai", "Communication / Collaboration", "Unified AI Inbox", "US + AU"]}
+      >
+        <div className="max-w-4xl space-y-4">
+          <div className="mb-2">
+            <StrategyEyebrow>Executive Summary</StrategyEyebrow>
+          </div>
+
+          {executiveMetrics.map((metric) => (
+            <ExecutiveMetricCard key={metric.label} {...metric} />
+          ))}
+
+          <div className="pt-3">
+            <div className="mb-4 text-[10px] font-mono uppercase tracking-[0.2em] text-white/46">
+              Immediate actions
+            </div>
+            <div className="space-y-4">
+              <ImmediateActionCard
+                index="01"
+                title="Own the first buyer-guide category pages"
+                body="Start with the commercial queries where buyers are already comparing options: AI shared inbox software, email triage software, collaboration-heavy inbox workflows, and adjacent Gmail-oriented decision pages."
+              />
+              <ImmediateActionCard
+                index="02"
+                title="Attach authority to every important page"
+                body="Do not publish pages in isolation. Every core page should be reinforced with review profiles, community participation, third-party mentions, backlinks, and listicle or editorial coverage so buyers and answer engines see the same story repeatedly."
+              />
+              <ImmediateActionCard
+                index="03"
+                title="Build depth around the first winners"
+                body="Once the first decision pages are live, expand supporting coverage, entity consistency, and refresh loops around the winners until Kinso becomes a believable default option rather than a hidden alternative."
+              />
+            </div>
+          </div>
+        </div>
+      </StrategyHero>
+
+      <div className="space-y-10 md:space-y-12">
+        <StrategySectionShell>
+          <SectionHeader number="01" title="State of Search 2026" />
+          <StrategySectionLead
+            takeaway="Google still drives major commercial discovery, but buying consideration now forms across both classic search and AI answers before sales ever enters the room."
+            body="Traditional search remains core behavior. Buyers still research categories, comparisons, pricing logic, and use cases in Google. But they also move through ChatGPT, Gemini, Perplexity, and other answer layers to compress research, compare vendors, and decide who looks credible enough to evaluate further."
+            implication="For Kinso, the job is not choosing between SEO and AI visibility. The job is making the same commercial story easy to find across both."
+          />
+
+          <div className="space-y-4">
+            <NarrativeCard
+              icon={<Search className="h-5 w-5" />}
+              eyebrow="Market reality"
+              title="Google remains the main discovery rail"
+              body="A large share of category research still starts in classic search. That matters because Kinso is currently small in organic visibility, and the market already has incumbents with far deeper page coverage and authority."
+            />
+            <NarrativeCard
+              icon={<Bot className="h-5 w-5" />}
+              eyebrow="Buying behavior"
+              title="AI changes how vendors get evaluated"
+              body="Buyers increasingly use AI interfaces to ask which tools are best, which option fits a workflow, or which vendor is most credible. Those answer layers influence vendor consideration even when analytics never record a visit."
+            />
+            <NarrativeCard
+              icon={<Globe className="h-5 w-5" />}
+              eyebrow="What winning now requires"
+              title="Category visibility has to be consistent across surfaces"
+              body="If Kinso only invests in traditional rankings, incumbents keep owning the answer layer. If it only thinks about AI mentions, it misses the Google demand that still drives category research at scale. The moat comes from owning both."
+            />
+          </div>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="02" title="Where Kinso Is Today" />
+          <StrategySectionLead
+            takeaway="Kinso is not starting from zero, but it is still nearly invisible relative to the size of the category it could win."
+            body="The approved brief shows a meaningful category opportunity and a real, usable authority base. What is missing is the concentrated commercial page layer and off-site reinforcement needed to turn that base into visible buying consideration."
+            implication="This is a positioning and execution gap, not a demand gap."
+          />
+
+          <div className="space-y-4">
+            <NarrativeCard
+              icon={<LineChart className="h-5 w-5" />}
+              eyebrow="Current search footprint"
+              title="599 monthly organic visits against an 8.25M opportunity"
+              body="Kinso currently captures a tiny share of the validated market: 599 organic visits and 22 ranking keywords against a total search opportunity of 8,250,150."
+              bullets={[
+                "Current organic traffic: 599",
+                "Current organic keywords: 22",
+                "No ranked commercial keywords were found in the approved brief",
+              ]}
+            />
+            <NarrativeCard
+              icon={<Link2 className="h-5 w-5" />}
+              eyebrow="Existing authority"
+              title="There is enough authority to support a focused opening move"
+              body="Kinso already has 64 referring domains and 435 backlinks. That is far below the category leaders, but it is enough to support a concentrated effort around the right decision pages if authority work accelerates with publishing."
+              bullets={[
+                "Referring domains: 64",
+                "Backlinks: 435",
+                "Authority exists, but not yet at category-defining scale",
+              ]}
+            />
+            <NarrativeCard
+              icon={<Radar className="h-5 w-5" />}
+              eyebrow="Commercial visibility gap"
+              title="The missing layer is commercial page depth and off-site reinforcement"
+              body="Kinso has not yet translated product relevance into a decisive set of buyer-guide pages, comparisons, proof assets, review coverage, and third-party mentions. That is why the company remains easy to overlook during live evaluation."
+            />
+            <NarrativeCard
+              icon={<Bot className="h-5 w-5" />}
+              eyebrow="Answer-surface snapshot"
+              title="Sampled AI visibility is effectively absent"
+              body="In the approved brief, Kinso recorded 0.0% sampled mention rate across ChatGPT, Gemini, and Google AI Overviews for the tested prompts. That is exactly the gap this program is built to close."
+              bullets={[
+                "ChatGPT: 0 / 16 sampled mentions",
+                "Gemini: 0 / 16 sampled mentions",
+                "Google AI Overview: 0 / 16 sampled mentions",
+              ]}
+            />
+          </div>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="03" title="The Opportunity" />
+          <StrategySectionLead
+            takeaway="The highest-leverage opening is narrow, commercial, and immediate: own decision-stage shared inbox and email triage demand before expanding into broader category reach."
+            body="The strongest first layer is not generic brand awareness. It is the buyer-guide cluster where buyers are actively trying to choose software, compare workflows, and understand what kind of inbox product fits them."
+            implication="Kinso should win the decision moment first, then use that position to grow into adjacent category demand."
+          />
+
+          <HighlightBox className="mb-4">
+            <div className="max-w-4xl">
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Core commercial read</div>
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                Most of the opportunity is unbranded.
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-white/68 md:text-base">
+                Only 5.7% of validated demand is tied to competitor-keyword patterns. The other 94.3% is non-competitor or unbranded demand. That means Kinso does not need to steal an already-closed market; it needs to become visible where buyers are still asking category and workflow questions without a fixed vendor in mind.
+              </p>
+            </div>
+          </HighlightBox>
+
+          <div className="space-y-4">
+            <NarrativeCard
+              icon={<Target className="h-5 w-5" />}
+              eyebrow="Phase 1"
+              title="Buyer-guide demand is the first attack surface"
+              body="The biggest commercial cluster is the buyer-guide layer. That is where Kinso can earn buying consideration fastest because the searcher is already looking for tools, evaluating options, or framing a workflow problem in software terms."
+              bullets={[
+                `Demand: ${formatWhole(4537700)}`,
+                `Expected traffic in 12 months: ${formatWhole(499147)}`,
+                "Sample keywords: inbox and gmail, gmail inbox, team collaboration tools, inbox, inbox by gmail",
+              ]}
+            />
+            <NarrativeCard
+              icon={<Compass className="h-5 w-5" />}
+              eyebrow="Phase 1"
+              title="Comparisons matter even when they are not the largest cluster"
+              body="Alternatives and head-to-head comparisons may be smaller in raw volume, but they are disproportionately important in real buying consideration. They help Kinso intercept buyers who already know some incumbents and are trying to choose."
+              bullets={[
+                "High leverage despite smaller volume",
+                "Useful against Front, Help Scout, and Missive evaluation patterns",
+                "Best shipped early, not postponed",
+              ]}
+            />
+            <NarrativeCard
+              icon={<Layers3 className="h-5 w-5" />}
+              eyebrow="Phase 2"
+              title="Templates and workflow pages widen coverage after the first wins"
+              body="Once the first commercial pages are established, Kinso can widen into templates and operational workflow demand. Those pages deepen relevance, create more retrieval coverage, and support the main decision pages."
+              bullets={[
+                `Demand: ${formatWhole(18880)}`,
+                "Sample keywords: gmail email template, gmail templates",
+                "Useful as supporting coverage once the core story is established",
+              ]}
+            />
+            <NarrativeCard
+              icon={<Globe className="h-5 w-5" />}
+              eyebrow="Phase 3"
+              title="Broader category demand becomes realistic later"
+              body="Generic category and brand-adjacent demand is large, but it should come after Kinso has already built authority around decision-stage shared inbox and triage queries. Broad expansion works better when the company already looks credible in the core slice."
+              bullets={[
+                `Demand: ${formatWhole(3693430)}`,
+                `Expected traffic in 12 months: ${formatWhole(75942)}`,
+                "This is later expansion, not the opening move",
+              ]}
+            />
+          </div>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="04" title="Why Kinso Can Win" />
+          <StrategySectionLead
+            takeaway="Kinso can win because the market is large, mostly unbranded, and not yet matched by a concentrated Kinso-owned answer layer."
+            body="The approved brief does not support a claim that Kinso already owns the conversation. It does support a much more useful claim: Kinso has product relevance, enough authority to start, and a market where most demand is still open to whoever builds the clearest commercial narrative first."
+            implication="This is a company that can earn market position through focused execution, not one that needs a miracle."
+          />
+
+          <div className="space-y-4">
+            <NarrativeCard
+              icon={<Sparkles className="h-5 w-5" />}
+              eyebrow="Reason 1"
+              title="The product fits the first commercial story"
+              body="Kinso sits naturally inside the shared inbox and email triage conversation. That gives the company a credible right to publish category-defining pages instead of stretching into a market it does not actually serve."
+            />
+            <NarrativeCard
+              icon={<ShieldCheck className="h-5 w-5" />}
+              eyebrow="Reason 2"
+              title="The site already has enough authority to support a focused push"
+              body="Sixty-four referring domains is not category leadership, but it is a real base. With stronger page architecture and much more aggressive external reinforcement, Kinso can move faster than a site that has no authority foundation at all."
+            />
+            <NarrativeCard
+              icon={<TrendingUp className="h-5 w-5" />}
+              eyebrow="Reason 3"
+              title="Most of the upside is outside competitor-branded demand"
+              body="The opportunity is driven mainly by non-competitor and unbranded queries. That matters because Kinso does not have to rely on poaching trademark-style demand. It can win by owning the category questions buyers ask before they decide who to trust."
+            />
+            <NarrativeCard
+              icon={<CheckCircle2 className="h-5 w-5" />}
+              eyebrow="Reason 4"
+              title="The research quality gate passed cleanly"
+              body="Topical integrity passed in the approved brief, with low-quality semantic demand share at 0.0%. That gives Kinso a clean planning base: the page can lean into the opportunity without inflating ambiguous or low-relevance terms."
+            />
+          </div>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="05" title="Competitive Gap" />
+          <StrategySectionLead
+            takeaway="Kinso is competing against incumbents that already invested in category surface area, authority depth, and answer-engine familiarity."
+            body="Front, Help Scout, Missive, Gmelius, and Drag have much larger search footprints and much deeper authority than Kinso today. The gap is not that they have better words on a homepage. The gap is that they already built the pages and proof layers buyers and answer engines keep finding."
+            implication="Kinso does not need to out-publish the whole category at once. It needs to out-focus the market on the right commercial slice first."
+          />
+
+          <div className="space-y-4 mb-4">
+            <NarrativeCard
+              icon={<FileSearch className="h-5 w-5" />}
+              eyebrow="Where incumbents win"
+              title="They have more pages, more authority, and more market memory"
+              body="Each major incumbent has thousands more keywords and dramatically deeper authority. That means the market already sees them more often in search results, third-party references, and AI summaries."
+            />
+            <NarrativeCard
+              icon={<Bot className="h-5 w-5" />}
+              eyebrow="Who shapes the current answer layer"
+              title="Front shows the strongest sampled answer-surface momentum"
+              body="In the approved brief's competitor view, Front recorded the highest prompt-hit count. That matters because it suggests the brand already has stronger answer-surface familiarity than Kinso in the exact category Kinso wants to enter."
+            />
+            <NarrativeCard
+              icon={<Target className="h-5 w-5" />}
+              eyebrow="What Kinso should do about it"
+              title="Attack the buying-decision layer instead of copying generic category breadth"
+              body="The fastest path is to build the decision pages incumbents use to frame the market, then reinforce them aggressively off-site. Kinso wins by becoming clearer and more visible in the right slice, not by trying to imitate everything bigger players publish."
+            />
+          </div>
+
+          <DataTable
+            headers={["Competitor", "Organic traffic", "Organic keywords", "Referring domains", "Backlinks", "Prompt hits"]}
+            rows={[
+              ["Missive", formatWhole(160380), formatWhole(10650), formatWhole(2736), formatWhole(23821), formatWhole(10)],
+              ["Gmelius", formatWhole(91438), formatWhole(10372), formatWhole(2346), formatWhole(9031), formatWhole(1)],
+              ["Front", formatWhole(88656), formatWhole(11993), formatWhole(6083), formatWhole(51273), formatWhole(28)],
+              ["Help Scout", formatWhole(150333), formatWhole(24153), formatWhole(26329), formatWhole(681859), formatWhole(13)],
+              ["Drag", formatWhole(70833), formatWhole(10334), formatWhole(1970), formatWhole(9230), formatWhole(1)],
+            ]}
+            highlightRow={2}
+          />
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="06" title="AI Visibility Gap" />
+          <StrategySectionLead
+            takeaway="In sampled answer-engine checks, Kinso is absent exactly where buyers ask who to choose."
+            body="The approved brief shows 0.0% sampled mention rate across ChatGPT, Gemini, and Google AI Overviews for the tested prompt set. That does not mean the category is unwinnable. It means Kinso has not yet built enough owned and external proof for answer engines to treat it as a confident recommendation."
+            implication="The fix is not one more blog post. The fix is a coordinated answer-layer program: decision pages, proof, reviews, comparisons, and third-party reinforcement."
+          />
+
+          <div className="space-y-4 mb-4">
+            <NarrativeCard
+              icon={<Bot className="h-5 w-5" />}
+              eyebrow="Platform snapshot"
+              title="ChatGPT: absent in sampled checks"
+              body="Kinso was not mentioned in the sampled ChatGPT prompts in the approved brief. The visible category framing currently leans toward established incumbents and existing review or comparison narratives."
+            />
+            <NarrativeCard
+              icon={<Bot className="h-5 w-5" />}
+              eyebrow="Platform snapshot"
+              title="Gemini: absent in sampled checks"
+              body="Kinso was also absent in the sampled Gemini checks. That reinforces the same diagnosis: the company has not yet built enough externally validated category presence to be surfaced confidently."
+            />
+            <NarrativeCard
+              icon={<Search className="h-5 w-5" />}
+              eyebrow="Platform snapshot"
+              title="Google AI Overviews: detected, but Kinso not surfaced"
+              body="Google AI Overview appeared in sampled results for the key unbranded category prompt, but Kinso was not part of the surfaced answer layer. That is a direct commercial visibility gap inside Google's own evolving results."
+            />
+          </div>
+
+          <div className="space-y-4">
+            <PromptCard
+              prompt="best shared inbox and email triage software"
+              status="Sampled live across ChatGPT US/AU, Gemini US/AU, and Google AI Overview US. Kinso was absent."
+              today="The prompt evidence in the approved brief shows incumbents like Front and Help Scout framing the answer. Kinso is not yet treated as a default option."
+              nextMove="Publish the definitive buyer-guide page, pair it with proof and comparison pages, and reinforce it through reviews, listicles, community references, and backlinks so Kinso becomes a believable answer instead of an omitted one."
+            />
+            <PromptCard
+              prompt="team collaboration tools"
+              status="Validated as part of the top buyer-guide cluster, but not yet converted into a Kinso-owned commercial destination."
+              today="Without a precise Kinso page, the market is more likely to route buyers toward broader incumbent pages, generic collaboration roundups, or non-specialist listicles."
+              nextMove="Create a decision page that ties collaboration directly to shared inbox and email triage workflows, then support it with third-party proof so the category frame favors Kinso's use case."
+            />
+            <PromptCard
+              prompt="collaborative inbox vs shared mailbox"
+              status="Validated comparison intent in the approved brief, but not yet owned by a Kinso evaluation page."
+              today="This kind of query shapes buying consideration because it defines the category language itself. If Kinso does not answer it, incumbents get to set the terms."
+              nextMove="Ship comparison-led evaluation content that explains the difference, names the right use cases, and makes Kinso visible inside the decision logic buyers are already using."
+            />
+          </div>
+
+          <div className="mt-5 rounded-[24px] border border-white/10 bg-white/[0.03] p-4">
+            <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Caveat discipline</div>
+            <p className="mt-2 text-sm leading-6 text-white/62">
+              Publicly visible AI-gap claims here are limited to the sampled ChatGPT, Gemini, and Google AI Overview checks in the approved brief. Specific Perplexity probe detail was not used on-page because the brief flagged a caution on that data path.
+            </p>
+          </div>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="07" title="Revenue / Commercial Impact" />
+          <StrategySectionLead
+            takeaway="If Kinso turns even a modest share of validated category demand into visibility, search can become a meaningful pipeline engine instead of a minor brand side-channel."
+            body="This is a commercial growth program, not a vanity traffic plan. The base case in the approved brief models 575,954 visits in 12 months and 213,103 in the first 6 months if Kinso wins the right decision-stage slice first and compounds from there."
+            implication="What matters is not traffic for its own sake. What matters is creating more high-intent moments where Kinso enters vendor consideration before incumbents lock the decision."
+          />
+
+          <StrategyCard className="mb-4">
+            <div className="flex flex-wrap items-center gap-3">
+              <StrategyEyebrow>Estimate-only</StrategyEyebrow>
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">
+                Cumulative traffic progression
               </div>
             </div>
+            <p className="mt-4 text-sm leading-7 text-white/66">
+              The curve below is a planning model based on the approved brief's validated demand, priority sequence, and compounding rollout logic. It is useful because it translates category ownership work into a clear founder view: how the first decision pages create the base, and how supporting coverage plus authority increase the upside over time.
+            </p>
+          </StrategyCard>
 
-            <StatsGrid
-              columns={3}
-              stats={[
-                {
-                  label: "Current organic footprint",
-                  value: formatWhole(researchData.seoMetrics.organicTraffic),
-                  icon: <Search className="h-5 w-5" />,
-                  note: "Kinso currently sits at ~557 monthly organic visits across US + AU.",
-                },
-                {
-                  label: "AI mention coverage (sampled prompts)",
-                  value: `${researchData.aiVisibility.clientMentionedPrompts}/${researchData.aiVisibility.promptsAnalyzed}`,
-                  icon: <Bot className="h-5 w-5" />,
-                  note: "Mentioned in some brand-aware prompts, weak on non-brand category prompts.",
-                },
-                {
-                  label: "12-month reachable visits (base scenario)",
-                  value: formatWhole(researchData.tamModel.totals.estimatedReachableVisits.base),
-                  icon: <TrendingUp className="h-5 w-5" />,
-                  note: "Modeled TAM opportunity if Kinso builds category + decision-intent coverage.",
-                },
+          <PhasedUpsideChart points={phasedUpsidePoints} className="mb-4" />
+
+          <TamRoiCalculator baseReachableVisits={575954} className="mb-4" />
+
+          <StrategyCard>
+            <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Revenue planning note</div>
+            <p className="mt-3 text-sm leading-7 text-white/66">
+              Revenue planning requires client ACV/AOV and funnel inputs. The traffic model is page-safe and useful for scenario planning, but actual pipeline and revenue projections should be calibrated with Kinso's first-party CRM, conversion, and sales data before they are treated as commitments.
+            </p>
+          </StrategyCard>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="08" title="6-month Growth Plan" />
+          <StrategySectionLead
+            takeaway="The first six months are about turning Kinso from a relevant product into a visible category option in the moments that shape buying decisions."
+            body="The program starts with the buyer-guide and decision-page layer, then expands through comparisons, proof pages, supporting coverage, off-site authority, and ongoing refresh. The goal is to build a compounding system, not a one-time publication burst."
+            implication="Month 1 sets the opening move. Month 2 attaches authority. Month 3 deepens coverage. Months 4–6 turn that into a repeatable visibility engine."
+          />
+
+          <div className="space-y-4">
+            <RolloutCard
+              label="Month 1"
+              title="Define the category opening and ship the first decision pages"
+              body="Month 1 is where Kinso claims the first commercial territory around AI shared inbox and email triage software. The priority is not broad content volume. The priority is a sharp first set of bottom-of-funnel pages tied to the clearest buying queries."
+              bullets={[
+                "Publish first decision pages around inbox and Gmail, Gmail inbox, team collaboration tools, inbox, and inbox by Gmail",
+                "Frame Kinso directly against the market language buyers already use",
+                "Set technical foundations: schema, canonicals, sitemap hygiene, crawl/index eligibility, Bing Webmaster Tools, and IndexNow",
+                "Start with the incumbents most likely to shape the conversation: Front, Help Scout, and Missive",
               ]}
             />
-
-            <div className="mt-7 grid gap-4 md:grid-cols-3">
-              {executiveActions.map((action, index) => (
-                <StrategyCard key={action} className="h-full" glow={index === 1 ? "amber" : "blue"}>
-                  <div className="mb-3 text-[10px] font-mono uppercase tracking-[0.2em] text-[#f4e4cd]">
-                    Immediate action {index + 1}
-                  </div>
-                  <p className="text-sm leading-6 text-white/72">{action}</p>
-                </StrategyCard>
-              ))}
-            </div>
-          </StrategySectionShell>
-        </StrategyHero>
-
-        <section className="space-y-20">
-          <StrategySectionShell glow="mixed">
-            <SectionHeader number="00" title="State of Search 2026" />
-            <div className="grid gap-6 md:grid-cols-2">
-              <StrategyCard glow="blue">
-                <h3 className="mb-4 text-xl font-display font-bold text-white">What changed</h3>
-                <BulletList
-                  items={[
-                    "Google still drives a major share of discovery and commercial research traffic.",
-                    "Traditional search remains core buying behavior — especially for evaluative and implementation queries.",
-                    "AI answer engines are changing shortlisting behavior before sales conversations happen.",
-                    "Buyers now move across Google, ChatGPT, Gemini, Perplexity, and AI layers in one journey.",
-                    "Winning brands now need dual visibility: classic SEO demand capture + AI answer inclusion.",
-                  ]}
-                />
-              </StrategyCard>
-
-              <StrategyCard glow="amber">
-                <h3 className="mb-4 text-xl font-display font-bold text-white">Founder frame</h3>
-                <p className="mb-4 text-sm leading-6 text-white/70">
-                  This is no longer a rankings-only problem. It is a <span className="text-white">shortlist share problem</span>. If
-                  Kinso is not named when buyers ask “best unified AI inbox” style prompts, those prospects often never reach a click, let alone a demo.
-                </p>
-                <p className="text-sm leading-6 text-white/70">
-                  The channel to build is not just SEO content. It is a retrieval system: decision pages, structured entities,
-                  trusted citations, and answer-ready architecture across both Google and LLM ecosystems.
-                </p>
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="blue">
-            <SectionHeader number="01" title="Why This Matters Now" />
-            <div className="grid gap-5 md:grid-cols-3">
-              <StrategyCard>
-                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
-                  <Radar className="h-4 w-4" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Visibility timing</span>
-                </div>
-                <p className="text-sm leading-6 text-white/68">
-                  Kinso has a strong product narrative, but current discovery signals are still shallow: low non-brand rankings,
-                  limited decision-page footprint, inconsistent AI mentions.
-                </p>
-              </StrategyCard>
-              <StrategyCard>
-                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
-                  <Target className="h-4 w-4" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Category landgrab</span>
-                </div>
-                <p className="text-sm leading-6 text-white/68">
-                  Competitors like Missive, Hiver, Front, and Gmelius already occupy high-intent search surfaces. Delay compounds
-                  their authority moat while Kinso remains interpreted as “new” by models.
-                </p>
-              </StrategyCard>
-              <StrategyCard>
-                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
-                  <Gauge className="h-4 w-4" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">CAC pressure</span>
-                </div>
-                <p className="text-sm leading-6 text-white/68">
-                  Without an owned inbound layer, growth stays over-exposed to paid and outbound volatility. This strategy is a
-                  CAC-pressure release valve with compounding shelf life.
-                </p>
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="mixed">
-            <SectionHeader number="02" title="Current State Snapshot" />
-            <StatsGrid
-              columns={5}
-              stats={[
-                {
-                  label: "Organic traffic (US + AU)",
-                  value: formatWhole(researchData.seoMetrics.organicTraffic),
-                  icon: <BarChart3 className="h-5 w-5" />,
-                },
-                {
-                  label: "Ranking keywords",
-                  value: formatWhole(researchData.seoMetrics.organicKeywords),
-                  icon: <Search className="h-5 w-5" />,
-                },
-                {
-                  label: "Backlinks",
-                  value: formatWhole(researchData.seoMetrics.backlinks),
-                  icon: <Link2 className="h-5 w-5" />,
-                },
-                {
-                  label: "Referring domains",
-                  value: formatWhole(researchData.seoMetrics.referringDomains),
-                  icon: <Globe className="h-5 w-5" />,
-                },
-                {
-                  label: "Payload confidence",
-                  value: `${researchData.meta.payloadConfidence.score}/100`,
-                  icon: <ShieldCheck className="h-5 w-5" />,
-                  note: `Level: ${researchData.meta.payloadConfidence.level.toUpperCase()}`,
-                },
+            <RolloutCard
+              label="Month 2"
+              title="Expand comparisons, reviews, and authority reinforcement"
+              body="Month 2 makes the first pages harder to ignore. Kinso should not wait for later quarters to add third-party proof. The market needs to see evidence across owned and external surfaces at the same time."
+              bullets={[
+                "Ship head-to-head comparisons and evaluation pages around shared mailbox, collaborative inbox, and alternative-style terms",
+                "Strengthen review profiles and integrate clearer review proof into commercial pages",
+                "Push listicles, expert commentary, community/forum mentions, and first serious backlink acquisition into the pages that matter most",
+                "Use early search and answer-surface feedback to sharpen messaging on the first winners",
               ]}
-              className="mb-6"
             />
+            <RolloutCard
+              label="Month 3"
+              title="Deepen supporting coverage and reinforce category signals"
+              body="Month 3 expands the supporting layer around the pages already defining Kinso's commercial story. This is where the market starts seeing the same narrative repeated across more use cases and supporting contexts."
+              bullets={[
+                "Build supporting pages around use cases, product form, benefit proof, and buyer context",
+                "Publish proof-heavy assets that make Kinso's positioning easier to trust",
+                "Strengthen entity consistency across owned pages, profile pages, reviews, and third-party mentions",
+                "Keep authority work tied directly to the pages influencing buying consideration",
+              ]}
+            />
+            <RolloutCard
+              label="Months 4–6"
+              title="Compound visibility, refresh winners, and widen market share"
+              body="By this point Kinso should be moving from isolated launches into a real deployment engine. Publishing, authority, refresh, and infrastructure now work together to turn the first pages into durable market assets."
+              bullets={[
+                "Expand supporting coverage around templates, adjacent workflows, and broader context pages",
+                "Refresh decision pages using live performance and answer-surface feedback",
+                "Continue aggressive backlink acquisition, editorials, listicle pushes, and community placements around the winners",
+                "Use monthly reporting to reallocate effort toward the strongest pages, prompts, and external authority nodes",
+              ]}
+            />
+          </div>
+        </StrategySectionShell>
 
-            <div className="grid gap-5 md:grid-cols-2">
-              <HighlightBox>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">What matters</h3>
-                <BulletList
-                  items={[
-                    `Kinso ranks mainly for branded or typo variants; non-brand commercial coverage is thin.`,
-                    `AI visibility exists in some brand-aware prompts, but category prompts are mostly lost to competitors.`,
-                    `Link profile is clean enough to build on (target spam score ${researchData.seoMetrics.backlinkMetrics.targetSpamScore}).`,
-                    `Current indexed footprint is too small to train strong category authority signals across engines.`,
-                  ]}
-                />
-              </HighlightBox>
+        <StrategySectionShell>
+          <SectionHeader number="09" title="Off-site Authority" />
+          <StrategySectionLead
+            takeaway="Kinso will not become a default recommendation through owned pages alone."
+            body="Third-party trust is part of the core system, not an optional amplifier. Answer engines, classic search, and human buyers all look for external evidence that the company is credible, cited, reviewed, and discussed beyond its own website."
+            implication="This is why Memetik pairs every important page with review, community, editorial, and backlink work instead of treating distribution as a later add-on."
+          />
 
-              <StrategyCard>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">What to do next</h3>
-                <BulletList
-                  items={[
-                    "Prioritize decision-intent content architecture before broad educational expansion.",
-                    "Pair every BOFU page with structured schema + distribution loops for citation probability.",
-                    "Build explicit entity consistency across site, profiles, and third-party mentions.",
-                    "Operationalize weekly answer-share testing as a core growth metric alongside pipeline.",
-                  ]}
-                />
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
+          <div className="space-y-4">
+            <NarrativeCard
+              icon={<Star className="h-5 w-5" />}
+              eyebrow="Reviews"
+              title="Review platforms help validate the category claim"
+              body="Review-profile presence and reinforcement help Kinso look like a credible option when buyers check external proof. They also create the kind of machine-readable trust signals that answer surfaces tend to rely on."
+              bullets={[
+                "Repair or strengthen review profiles where needed",
+                "Build a repeatable review acquisition and response workflow",
+                "Route review proof back into decision pages and comparison pages",
+              ]}
+            />
+            <NarrativeCard
+              icon={<MessageSquare className="h-5 w-5" />}
+              eyebrow="Communities"
+              title="Reddit and forum participation shape real-world credibility"
+              body="Community threads, forum participation, and practitioner discussion are where many buyers pressure-test vendor claims. Kinso needs to be present where category language is actually debated, not just where polished marketing copy lives."
+              bullets={[
+                "Participate in Reddit and relevant community threads",
+                "Place Kinso into real workflow conversations, not just promotions",
+                "Use community insights to refine page language and proof",
+              ]}
+            />
+            <NarrativeCard
+              icon={<Newspaper className="h-5 w-5" />}
+              eyebrow="Editorial and listicles"
+              title="Listicles, expert commentary, and editorials create broader trust"
+              body="Third-party roundups and editorial-style placements help the market keep encountering Kinso in buying contexts it does not control directly. That matters for both human trust and retrieval visibility."
+              bullets={[
+                "Push expert commentary and publication-style placements",
+                "Target comparison listicles and category roundups",
+                "Use editorial mentions to reinforce decision pages already live on-site",
+              ]}
+            />
+            <NarrativeCard
+              icon={<Link2 className="h-5 w-5" />}
+              eyebrow="Backlinks"
+              title="Authority needs to flow into the pages that matter commercially"
+              body="Backlinks are not a vanity count here. The point is to direct authority into the buyer-guide, comparison, and proof pages that shape buying consideration, then refresh and defend those pages as they start to win."
+              bullets={[
+                "Aggressive backlink acquisition into live commercial pages",
+                "Authority routing toward the pages with strongest traction",
+                "Refresh and defense once pages start carrying category visibility",
+              ]}
+            />
+          </div>
+        </StrategySectionShell>
 
-          <StrategySectionShell glow="amber">
-            <SectionHeader number="03" title="Cost of Inaction" />
-            <div className="grid gap-5 md:grid-cols-3">
-              <StrategyCard className="h-full">
-                <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#f4e4cd]">Shortlist risk</div>
-                <p className="text-sm leading-6 text-white/70">
-                  Buyers asking “best unified AI inbox” will continue seeing competitors first, anchoring preference before Kinso is even evaluated.
-                </p>
-              </StrategyCard>
-              <StrategyCard className="h-full">
-                <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#f4e4cd]">CAC risk</div>
-                <p className="text-sm leading-6 text-white/70">
-                  Without compounding non-paid discovery, go-to-market remains reliant on paid/outbound pressure and higher marginal acquisition costs.
-                </p>
-              </StrategyCard>
-              <StrategyCard className="h-full">
-                <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#f4e4cd]">Authority risk</div>
-                <p className="text-sm leading-6 text-white/70">
-                  Competitor authority compounds monthly through content freshness, citations, and links. Waiting makes recovery slower and more expensive.
-                </p>
-              </StrategyCard>
-            </div>
+        <StrategySectionShell>
+          <SectionHeader number="10" title="What Memetik Actually Builds and Ships" />
+          <StrategySectionLead
+            takeaway="This is a serious market-capture program, not a light content retainer."
+            body="Memetik builds the whole visibility system required for Kinso to win: priority query mapping, commercial pages, supporting coverage, review and authority layers, technical/entity infrastructure, and ongoing refresh once the first wins appear."
+            implication="A founder should read this as category infrastructure: what gets mapped, what gets built, what gets distributed, and what keeps getting reinforced after launch."
+          />
 
-            <HighlightBox className="mt-6">
-              <p className="text-lg leading-8 text-white/80">
-                At Kinso’s current visibility level, the biggest cost is not “lost clicks.” It’s <span className="text-white">lost consideration</span> —
-                high-intent buyers forming preferences in answer engines before they ever hit your pipeline.
+          <div className="space-y-4">
+            <ScopeBlock
+              label="Scope lane 01"
+              title="Priority buying-query mapping"
+              body="Before production scales, Memetik maps the exact buying queries and prompt patterns that matter most to Kinso's category entry. This prevents generic publishing and keeps execution tied to commercial demand."
+              items={[
+                "Map the first high-intent category, comparison, and workflow queries to attack",
+                "Prioritize the opening move around AI shared inbox and email triage software",
+                "Align each priority query to one clear owned destination and one clear commercial angle",
+              ]}
+            />
+            <ScopeBlock
+              label="Scope lane 02"
+              title="Bottom-of-funnel page production"
+              body="Memetik builds as many bottom-of-funnel pages as needed to cover the relevant demand, starting with the buyer-guide and decision pages that shape vendor consideration fastest."
+              items={[
+                "Buyer guides that answer who the tool is for, what it does best, and how to evaluate it",
+                "Use-case pages tied to collaboration, triage, Gmail workflow, and team inbox behavior",
+                "Product-form explainers and proof-led pages that make Kinso's story easier to trust",
+              ]}
+            />
+            <ScopeBlock
+              label="Scope lane 03"
+              title="Comparison and evaluation content"
+              body="Kinso needs pages that intercept buyers who already know some incumbents and are actively comparing options. This layer is where much of the category framing actually happens."
+              items={[
+                "Head-to-head comparisons against incumbent decision patterns",
+                "Alternative-style pages and category distinction pages",
+                "Evaluation pages that explain shared mailbox, collaborative inbox, and related category language clearly",
+              ]}
+            />
+            <ScopeBlock
+              label="Scope lane 04"
+              title="Supporting content coverage"
+              body="Once the first decision pages exist, Memetik expands supporting coverage around use cases, proof objects, buyer context, and adjacent workflow patterns so search and answer engines keep finding the same narrative in more places."
+              items={[
+                "Supporting pages around adjacent workflows and buying contexts",
+                "Template and operational coverage once the first commercial pages are live",
+                "Internal linking and authority routing back into the pages that matter most",
+              ]}
+            />
+            <ScopeBlock
+              label="Scope lane 05"
+              title="Off-site authority and distribution"
+              body="Memetik does not leave authority to chance. The program explicitly includes aggressive backlink acquisition, digital PR and editorial pushes, listicles, reviews, and community placements that reinforce Kinso's owned pages."
+              items={[
+                "Backlinks routed into decision pages and proof pages",
+                "Digital PR, editorial mentions, press-style angles, and listicle inclusion",
+                "Review-platform work, Reddit/community participation, and professional-network distribution",
+              ]}
+            />
+            <ScopeBlock
+              label="Scope lane 06"
+              title="Infrastructure, entity consistency, and defense"
+              body="Kinso also needs the technical and entity layer that makes the entire system easier to crawl, index, and trust. Memetik keeps this visible because without it, good pages and placements underperform."
+              items={[
+                "Schema matched to visible content, clean canonicals, sitemap hygiene, and crawl/index readiness",
+                "Bing Webmaster Tools, IndexNow, and machine-readable consistency across owned and third-party surfaces",
+                "Monthly refresh, measurement, and defense loops so winning pages do not decay after launch",
+              ]}
+            />
+          </div>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="11" title="Operating Model" />
+          <StrategySectionLead
+            takeaway="Kinso needs monthly deployments with concurrent workstreams, not isolated publishing sprints."
+            body="Each month runs the same core motions together: research and prioritization, page production, publishing and indexing, off-site authority, and measurement. The mix changes as the program matures, but those motions do not stop after launch."
+            implication="That is how the first decision pages turn into category position instead of sitting as isolated assets."
+          />
+
+          <GrowthTimelineChart points={timelinePoints} milestones={timelineMilestones} className="mb-4" />
+
+          <div className="space-y-4">
+            <NarrativeCard
+              icon={<Workflow className="h-5 w-5" />}
+              eyebrow="Monthly deployment rhythm"
+              title="Every month ships research, pages, authority, and infrastructure together"
+              body="The program does not move in a simple line from content to distribution to reporting. Every month includes prioritization, production, publishing, indexing, authority building, and measurement running concurrently."
+            />
+            <NarrativeCard
+              icon={<Database className="h-5 w-5" />}
+              eyebrow="Monthly reporting"
+              title="Reporting shows what moved, what shipped, and what deserves more force"
+              body="Memetik reviews visibility movement, prompt coverage, authority proof, and workstream completion each month so Kinso can see whether the program is actually increasing buying-surface presence rather than just producing output."
+            />
+            <NarrativeCard
+              icon={<Compass className="h-5 w-5" />}
+              eyebrow="Quarterly strategy review"
+              title="The program refreshes and reallocates instead of running on autopilot"
+              body="Every quarter, the strategy should decide which pages deserve reinforcement, which prompts still look weak, which external surfaces matter most, and where Kinso can widen the category footprint without losing focus."
+            />
+          </div>
+        </StrategySectionShell>
+
+        <StrategySectionShell>
+          <SectionHeader number="12" title="Why Memetik" />
+          <StrategySectionLead
+            takeaway="Memetik is built for category ownership, not content volume for its own sake."
+            body="Most agencies either stay too narrow on on-site SEO or talk about AI visibility without building the underlying page, authority, and infrastructure system required to earn it. Memetik's model is different because it keeps the whole growth engine visible and operational."
+            implication="For Kinso, that means one partner responsible for the commercial pages, the supporting coverage, the off-site authority, the technical foundation, and the ongoing defense."
+          />
+
+          <HighlightBox className="mb-4">
+            <div className="max-w-4xl">
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">The Memetik difference</div>
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                One system for Google, answer engines, and market trust.
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-white/68 md:text-base">
+                Kinso does not need disconnected tactics. It needs a commercial visibility engine that makes the same story easier to find, easier to trust, and harder for incumbents to crowd out.
               </p>
-            </HighlightBox>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="blue">
-            <SectionHeader number="04" title="Data-backed Competitive Landscape" />
-            <DataTable
-              headers={[
-                "Competitor",
-                "Organic footprint",
-                "Authority",
-                "AI/search readout",
-                "Strategic Read",
-              ]}
-              rows={researchData.competitors.map((c) => [
-                `${c.domain} • ${c.role}`,
-                `${formatWhole(c.organicTraffic)} visits • ${formatWhole(c.organicKeywords)} keywords`,
-                `${formatWhole(c.backlinks)} backlinks • ${formatWhole(c.referringDomains)} ref domains`,
-                c.note.includes("AI") ? c.note : "Dominates category-search real estate and influences shortlist expectations.",
-                c.note,
-              ])}
-              highlightRow={0}
-            />
-
-            <div className="mt-6 grid gap-5 md:grid-cols-2">
-              <StrategyCard>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">What matters</h3>
-                <BulletList
-                  items={[
-                    "Kinso’s current organic footprint is materially smaller than each primary direct competitor.",
-                    "Competitors are not just winning head terms — they’re winning long-tail workflow and implementation problems.",
-                    "Authority gap is both content depth and link equity (e.g., Missive 2,709 referring domains vs Kinso 63).",
-                  ]}
-                />
-              </StrategyCard>
-              <StrategyCard>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">What to do next</h3>
-                <BulletList
-                  items={[
-                    "Use a focused wedge: unified inbox + shared/team inbox buyer intent, not generic email ecosystem terms.",
-                    "Build comparative and alternatives pages where incumbents currently hold default recommendations.",
-                    "Launch monthly authority sprints (citations + integrations + trusted mentions) in parallel with content.",
-                  ]}
-                />
-              </StrategyCard>
             </div>
-          </StrategySectionShell>
+          </HighlightBox>
 
-          <StrategySectionShell glow="mixed">
-            <SectionHeader number="05" title="AI Visibility by LLM" />
-            <div className="grid gap-4">
-              {[
-                {
-                  key: "chatgpt",
-                  label: "ChatGPT",
-                  summary: researchData.aiVisibility.platformSummary.chatgpt,
-                  status: researchData.aiVisibility.platformAvailability.chatgpt.status,
-                  endpoint: researchData.aiVisibility.platformAvailability.chatgpt.endpoint,
-                  note: "Mentioned primarily in brand-aware prompts; weak in non-brand shortlist prompts.",
-                },
-                {
-                  key: "gemini",
-                  label: "Gemini",
-                  summary: researchData.aiVisibility.platformSummary.gemini,
-                  status: researchData.aiVisibility.platformAvailability.gemini.status,
-                  endpoint: researchData.aiVisibility.platformAvailability.gemini.endpoint,
-                  note: "Some positive brand recognition, but category recommendation coverage remains limited.",
-                },
-                {
-                  key: "google_ai_overview",
-                  label: "Google AI Overviews",
-                  summary: researchData.aiVisibility.platformSummary.google_ai_overview,
-                  status: researchData.aiVisibility.platformAvailability.google_ai_overview.status,
-                  endpoint: researchData.aiVisibility.platformAvailability.google_ai_overview.endpoint,
-                  note: "0/12 mentions in sampled prompts; currently absent where Google answer summaries influence shortlist behavior.",
-                },
-                {
-                  key: "perplexity",
-                  label: "Perplexity",
-                  summary: { total: 0, mentioned: 0, mentionRate: 0 },
-                  status: researchData.aiVisibility.platformAvailability.perplexity.status,
-                  endpoint: researchData.aiVisibility.platformAvailability.perplexity.endpoint,
-                  note: researchData.aiVisibility.platformAvailability.perplexity.reason,
-                },
-              ].map((platform) => (
-                <StrategyCard key={platform.key} className="h-full">
-                  <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                    <div className="flex items-center gap-2">
-                      <Bot className="h-4 w-4 text-[#f4e4cd]" />
-                      <div className="text-lg font-display font-bold text-white">{platform.label}</div>
-                    </div>
-                    <div className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.18em] text-white/50">
-                      status: {platform.status}
-                    </div>
+          <div className="space-y-4">
+            <NarrativeCard
+              icon={<Target className="h-5 w-5" />}
+              eyebrow="Commercial focus"
+              title="The work starts from buying moments, not generic traffic goals"
+              body="Memetik begins with the category questions and prompts that shape vendor consideration, then builds the page and authority system around those moments."
+            />
+            <NarrativeCard
+              icon={<Layers3 className="h-5 w-5" />}
+              eyebrow="Integrated execution"
+              title="On-site production, off-site authority, and technical foundations stay under one roof"
+              body="That matters because Kinso needs all three at once. Publishing without distribution is weak. Distribution without owned destinations leaks value. Infrastructure without message clarity does not change the market."
+            />
+            <NarrativeCard
+              icon={<Radar className="h-5 w-5" />}
+              eyebrow="Visibility that can be defended"
+              title="Memetik treats refresh and defense as core scope"
+              body="Once Kinso starts winning the right pages and prompts, the job is not done. Pages need refreshes, authority needs reinforcement, and the market needs a steady signal that Kinso deserves to stay visible."
+            />
+          </div>
+        </StrategySectionShell>
+
+        <StrategyCTA
+          eyebrow="Book a Strategy Call"
+          title="Turn Kinso into a visible category choice."
+          body="If you want a category-capture program built around real buying queries, decision pages, off-site authority, and a compounding search plus answer-engine moat, let's map the next move together."
+          href="https://cal.com/memetik/letstalk"
+          ctaLabel="Book a Strategy Call"
+        />
+
+        <div className="mt-16 md:mt-20">
+          <SectionHeader number="13" title="Supporting Evidence Appendix" />
+          <StrategySectionLead
+            takeaway="The main narrative is designed to be skimmable. The evidence below supports the thesis without turning the page into a research dump."
+            body="Source trace: this page is derived from an approved Kinso strategy brief checked on 2026-03-09 and grounded in Memetik's canonical 2026 master reference and public page contract."
+          />
+
+          <div className="space-y-4">
+            <StrategyAppendixSection
+              title="Validated opportunity clusters"
+              description="The approved brief's priority demand clusters. These are the public-safe opportunity slices supporting the opening move and rollout sequence."
+              defaultOpen
+            >
+              <DataTable
+                headers={["Cluster", "Intent", "Phase", "Demand", "Expected traffic in 12 months", "Sample keywords"]}
+                rows={[
+                  [
+                    "Buyer Guides",
+                    "BOFU",
+                    "Months 0–3",
+                    formatWhole(4537700),
+                    formatWhole(499147),
+                    "inbox and gmail, gmail inbox, team collaboration tools, inbox, inbox by gmail",
+                  ],
+                  [
+                    "Category & Brand Demand",
+                    "TOFU",
+                    "Months 9–12",
+                    formatWhole(3693430),
+                    formatWhole(75942),
+                    "gmail mail, aol email, email gmail, com mail login, email account",
+                  ],
+                  [
+                    "Tools & Templates",
+                    "MOFU",
+                    "Months 4–8",
+                    formatWhole(18880),
+                    formatWhole(850),
+                    "gmail email template, gmail email templates, gmail template, gmail templates",
+                  ],
+                  [
+                    "Alternatives & Comparisons",
+                    "BOFU",
+                    "Months 0–3",
+                    formatWhole(140),
+                    formatWhole(15),
+                    "inbox vs gmail, inbox alternative, collaborative inbox vs shared mailbox",
+                  ],
+                ]}
+                highlightRow={0}
+              />
+            </StrategyAppendixSection>
+
+            <StrategyAppendixSection
+              title="Demand composition and headline metric support"
+              description="Keyword attribution summary provided with the brief. This is why the main page emphasizes unbranded category demand rather than a competitor-only strategy."
+            >
+              <DataTable
+                headers={["Metric", "Competitor-keyword", "Non-competitor / unbranded", "What it means"]}
+                rows={[
+                  [
+                    "Total search opportunity",
+                    `${formatWhole(471610)} (5.7%)`,
+                    `${formatWhole(7778540)} (94.3%)`,
+                    "Most of the market is still open to whoever earns visibility in unbranded buying research.",
+                  ],
+                  [
+                    "Expected traffic in 12 months",
+                    formatWhole(10052),
+                    formatWhole(565902),
+                    "The base case is driven mainly by non-competitor category demand.",
+                  ],
+                  [
+                    "First 6-month target",
+                    formatWhole(3719),
+                    formatWhole(209384),
+                    "The early program should be judged by unbranded demand capture, not only competitor interception.",
+                  ],
+                  [
+                    "Aggressive upside",
+                    "No separate split provided",
+                    "No separate split provided",
+                    "Public page treatment stays qualitative here to avoid inventing unsupported attribution.",
+                  ],
+                ]}
+              />
+            </StrategyAppendixSection>
+
+            <StrategyAppendixSection
+              title="Detailed competitor evidence"
+              description="Named competitors from the approved brief. These numbers explain why Kinso needs a focused attack surface rather than a broad generic SEO plan."
+            >
+              <DataTable
+                headers={["Competitor", "Organic traffic", "Organic keywords", "Referring domains", "Backlinks", "Prompt hits"]}
+                rows={[
+                  ["Missive", formatWhole(160380), formatWhole(10650), formatWhole(2736), formatWhole(23821), formatWhole(10)],
+                  ["Gmelius", formatWhole(91438), formatWhole(10372), formatWhole(2346), formatWhole(9031), formatWhole(1)],
+                  ["Front", formatWhole(88656), formatWhole(11993), formatWhole(6083), formatWhole(51273), formatWhole(28)],
+                  ["Help Scout", formatWhole(150333), formatWhole(24153), formatWhole(26329), formatWhole(681859), formatWhole(13)],
+                  ["Drag", formatWhole(70833), formatWhole(10334), formatWhole(1970), formatWhole(9230), formatWhole(1)],
+                ]}
+                highlightRow={2}
+              />
+            </StrategyAppendixSection>
+
+            <StrategyAppendixSection
+              title="Prompt evidence excerpts"
+              description="Public-safe excerpts from the approved brief's prompt evidence. These are included to show how the answer-surface gap appears in live category prompts without overstating platform certainty."
+            >
+              <div className="space-y-4">
+                <StrategyCard>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">
+                    Prompt example 01
                   </div>
-
-                  <div className="mb-4 grid gap-3 sm:grid-cols-3">
-                    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                      <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/40">Prompts tested</div>
-                      <div className="mt-1 text-xl font-display font-bold text-white">{formatWhole(platform.summary.total)}</div>
-                    </div>
-                    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                      <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/40">Prompts mentioned</div>
-                      <div className="mt-1 text-xl font-display font-bold text-white">{formatWhole(platform.summary.mentioned)}</div>
-                    </div>
-                    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                      <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/40">Mention rate</div>
-                      <div className="mt-1 text-xl font-display font-bold text-[#f4e4cd]">{formatPercent(platform.summary.mentionRate)}</div>
-                    </div>
-                  </div>
-
-                  <p className="mb-3 text-sm leading-6 text-white/68">{platform.note}</p>
-                  <p className="text-xs leading-6 text-white/45">
-                    Endpoint used: <span className="text-white/65">{platform.endpoint}</span>
+                  <h3 className="mt-3 text-lg font-semibold text-white">
+                    best shared inbox and email triage software
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-white/66">
+                    In sampled ChatGPT results, Kinso was not mentioned. The surfaced answer leaned toward established incumbents, with Front and Help Scout appearing prominently in the response preview.
                   </p>
                 </StrategyCard>
-              ))}
-            </div>
 
-            <DataTable
-              className="mt-6"
-              headers={["Prompt", "Observed state", "Commercial implication", "Difficulty (inferred)"]}
-              rows={visibilityPrompts.map((p) => [p.query, p.currentState, p.implication, p.difficulty])}
-            />
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="blue">
-            <SectionHeader number="06" title="Full Keyword Universe" />
-            <StatsGrid
-              columns={4}
-              stats={[
-                {
-                  label: "Total keyword universe",
-                  value: formatWhole(researchData.keywordUniverse.size),
-                  icon: <Database className="h-5 w-5" />,
-                },
-                {
-                  label: "Anchor-matched terms",
-                  value: formatWhole(researchData.keywordUniverse.anchorMatchedCount),
-                  icon: <Target className="h-5 w-5" />,
-                  note: "222/559 terms are closely aligned with core solution anchors.",
-                },
-                {
-                  label: "Semantic expansion share",
-                  value: `${formatOne(researchData.keywordUniverse.semanticContribution.demandSharePercent)}%`,
-                  icon: <Compass className="h-5 w-5" />,
-                },
-                {
-                  label: "Keyword gaps surfaced",
-                  value: formatWhole(researchData.keywordUniverse.countsBySource.keyword_gaps),
-                  icon: <AlertTriangle className="h-5 w-5" />,
-                },
-              ]}
-              className="mb-6"
-            />
-
-            <HighlightBox className="mb-6">
-              <h3 className="mb-3 text-lg font-display font-bold text-white">Topical guardrail (hard constraint)</h3>
-              <p className="text-sm leading-7 text-white/72">
-                This universe includes very large generic email-login and provider navigational demand. Those terms inflate raw demand but
-                do not represent direct purchase intent for Kinso’s core offer. Strategy headlines and targets below are therefore weighted
-                toward <span className="text-white">anchor-matched unified/shared/team inbox and workflow queries</span>, not broad login traffic.
-              </p>
-            </HighlightBox>
-
-            <div className="space-y-6">
-              <StrategyCard glow="blue">
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">
-                    TOFU • 93 keywords
+                <StrategyCard>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">
+                    Prompt example 02
                   </div>
-                </div>
-                <DataTable
-                  headers={["Keyword", "Volume", "Cluster", "Why it matters"]}
-                  rows={tofuKeywords}
-                />
-              </StrategyCard>
+                  <h3 className="mt-3 text-lg font-semibold text-white">
+                    best shared inbox and email triage software
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-white/66">
+                    In sampled Gemini results, Kinso was also absent. The response preview again centered the market around incumbent tools, with Front taking the strongest framing position in the provided excerpt.
+                  </p>
+                </StrategyCard>
 
-              <StrategyCard glow="blue">
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">
-                    MOFU • 79 keywords
+                <StrategyCard>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">
+                    Prompt example 03
                   </div>
-                </div>
-                <DataTable
-                  headers={["Keyword", "Volume", "Cluster", "Why it matters"]}
-                  rows={mofuKeywords}
-                />
-              </StrategyCard>
-
-              <StrategyCard glow="blue">
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#f4e4cd]">
-                    BOFU • 387 keywords
-                  </div>
-                </div>
-                <DataTable
-                  headers={["Keyword", "Volume", "Cluster", "Why it matters"]}
-                  rows={bofuKeywords}
-                />
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="mixed">
-            <SectionHeader number="07" title="Total Addressable Search Market (12 months)" />
-            <StatsGrid
-              columns={4}
-              stats={[
-                {
-                  label: "Total addressable demand",
-                  value: formatWhole(researchData.tamModel.totals.totalAddressableSearchDemand),
-                  icon: <Globe className="h-5 w-5" />,
-                },
-                {
-                  label: "Reachable visits (low)",
-                  value: formatWhole(researchData.tamModel.totals.estimatedReachableVisits.low),
-                  icon: <TrendingUp className="h-5 w-5" />,
-                },
-                {
-                  label: "Reachable visits (base)",
-                  value: formatWhole(researchData.tamModel.totals.estimatedReachableVisits.base),
-                  icon: <TrendingUp className="h-5 w-5" />,
-                },
-                {
-                  label: "Reachable visits (high)",
-                  value: formatWhole(researchData.tamModel.totals.estimatedReachableVisits.high),
-                  icon: <TrendingUp className="h-5 w-5" />,
-                },
-              ]}
-              className="mb-6"
-            />
-
-            <DataTable
-              headers={[
-                "Intent",
-                "Keyword count",
-                "12-mo demand",
-                "Reachable visits (Low)",
-                "Reachable visits (Base)",
-                "Reachable visits (High)",
-              ]}
-              rows={researchData.tamModel.byIntent.map((row) => [
-                row.intent,
-                formatWhole(row.keywordCount),
-                formatWhole(row.demand),
-                formatWhole(row.estimatedReachableVisits.low),
-                formatWhole(row.estimatedReachableVisits.base),
-                formatWhole(row.estimatedReachableVisits.high),
-              ])}
-            />
-
-            <DataTable
-              className="mt-6"
-              headers={[
-                "Channel",
-                "Modeled demand share",
-                "Reachable visits (Low)",
-                "Reachable visits (Base)",
-                "Reachable visits (High)",
-              ]}
-              rows={[
-                [
-                  "Google Search",
-                  formatWhole(researchData.tamModel.totals.byChannel.google.demand),
-                  formatWhole(researchData.tamModel.totals.byChannel.google.estimatedReachableVisits.low),
-                  formatWhole(researchData.tamModel.totals.byChannel.google.estimatedReachableVisits.base),
-                  formatWhole(researchData.tamModel.totals.byChannel.google.estimatedReachableVisits.high),
-                ],
-                [
-                  "AI Answer Layers",
-                  formatWhole(researchData.tamModel.totals.byChannel.ai.demand),
-                  formatWhole(researchData.tamModel.totals.byChannel.ai.estimatedReachableVisits.low),
-                  formatWhole(researchData.tamModel.totals.byChannel.ai.estimatedReachableVisits.base),
-                  formatWhole(researchData.tamModel.totals.byChannel.ai.estimatedReachableVisits.high),
-                ],
-              ]}
-            />
-
-            <HighlightBox className="mt-6">
-              <p className="text-sm leading-7 text-white/72">
-                TAM is modeled with conservative reachable-share logic, not guaranteed CTR outcomes. We deliberately avoid presenting
-                aggressive legacy click assumptions as direct forecasts. Use this as a planning envelope; calibrate with first-party
-                funnel and cohort performance once execution starts.
-              </p>
-            </HighlightBox>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="blue">
-            <SectionHeader number="08" title="12-month Opportunity Curve" />
-            <PhasedUpsideChart points={monthlyCurvePoints} />
-
-            <div className="mt-6 grid gap-5 md:grid-cols-2">
-              <StrategyCard>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">What matters</h3>
-                <BulletList
-                  items={[
-                    "The curve is front-loaded by BOFU capture, then deepened by MOFU enablement, then widened by TOFU authority.",
-                    "Month 1–3 gains come from decision pages + indexation + technical trust fixes.",
-                    "Month 4–8 adds supporting workflow content and comparison coverage.",
-                    "Month 9–12 compounds through topical depth and authority flywheel effects.",
-                  ]}
-                />
-              </StrategyCard>
-              <StrategyCard>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">Commercial implication</h3>
-                <p className="text-sm leading-7 text-white/70">
-                  This is a compounding channel build, not a one-time campaign. The objective is to increase qualified inbound flow and
-                  AI shortlist share together, reducing paid dependency while improving category authority.
-                </p>
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="amber">
-            <SectionHeader number="09" title="Top 3 Executive Decisions" />
-            <div className="grid gap-5 md:grid-cols-3">
-              <StrategyCard glow="amber">
-                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
-                  <Target className="h-4 w-4" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Decision 1</span>
-                </div>
-                <h3 className="mb-2 text-lg font-display font-bold text-white">Own decision-intent first</h3>
-                <p className="text-sm leading-6 text-white/70">
-                  Approve a BOFU-first roadmap (best, alternatives, vs, implementation, pricing-adjacent pages) before broad awareness content.
-                </p>
-              </StrategyCard>
-
-              <StrategyCard glow="amber">
-                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
-                  <Workflow className="h-4 w-4" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Decision 2</span>
-                </div>
-                <h3 className="mb-2 text-lg font-display font-bold text-white">Run monthly operating system</h3>
-                <p className="text-sm leading-6 text-white/70">
-                  Commit to concurrent workstreams from month 1: content, technical/entity, authority distribution, and answer-share testing.
-                </p>
-              </StrategyCard>
-
-              <StrategyCard glow="amber">
-                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
-                  <ShieldCheck className="h-4 w-4" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Decision 3</span>
-                </div>
-                <h3 className="mb-2 text-lg font-display font-bold text-white">Measure mentions + pipeline</h3>
-                <p className="text-sm leading-6 text-white/70">
-                  Replace rank-only reporting with answer-share and qualified pipeline contribution metrics tied to high-intent query sets.
-                </p>
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="mixed">
-            <SectionHeader number="10" title="30/60/90-Day View" />
-            <div className="grid gap-5 md:grid-cols-3">
-              <StrategyCard>
-                <div className="mb-3 text-[10px] font-mono uppercase tracking-[0.2em] text-[#f4e4cd]">Day 1-30</div>
-                <BulletList
-                  items={[
-                    "Finalize money-query map (US + AU) with query-to-page ownership.",
-                    "Fix entity + schema baseline (Organization, FAQ, Product/Application, Review where valid).",
-                    "Launch first wave of BOFU pages (shared inbox, unified inbox, team inbox variants).",
-                    "Set up Bing Webmaster + IndexNow + answer-monitoring stack.",
-                  ]}
-                />
-              </StrategyCard>
-              <StrategyCard>
-                <div className="mb-3 text-[10px] font-mono uppercase tracking-[0.2em] text-[#f4e4cd]">Day 31-60</div>
-                <BulletList
-                  items={[
-                    "Publish alternatives/comparison cluster and implementation playbooks.",
-                    "Begin authority placements and third-party citation relay.",
-                    "Run weekly LLM prompt sweeps; tune pages based on answer extraction behavior.",
-                    "Expand internal link graph from BOFU pages into workflow support content.",
-                  ]}
-                />
-              </StrategyCard>
-              <StrategyCard>
-                <div className="mb-3 text-[10px] font-mono uppercase tracking-[0.2em] text-[#f4e4cd]">Day 61-90</div>
-                <BulletList
-                  items={[
-                    "Ship second wave: category landing hubs + buying criteria pages.",
-                    "Refresh underperforming pages with proof blocks, FAQs, and clearer verdicts.",
-                    "Scale distribution cadence: LinkedIn, community surfaces, guest mentions, review nodes.",
-                    "Deliver executive dashboard: answer share, citation trend, and pipeline-attributed movement.",
-                  ]}
-                />
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="blue">
-            <SectionHeader number="11" title="What Memetik Will Actually Do" />
-            <div className="grid gap-5 md:grid-cols-2">
-              <StrategyCard glow="blue">
-                <h3 className="mb-3 text-xl font-display font-bold text-white">1) Demand capture architecture</h3>
-                <BulletList
-                  items={[
-                    "Build and prioritize Kinso Money Entity Map (best, alternatives, comparisons, implementation, pricing-adjacent).",
-                    "Create apex pages engineered for extractability: direct answers, tables, verdict blocks, FAQs, schema.",
-                    "Design internal linking from support content into BOFU conversion surfaces.",
-                    "Refactor title/H1/section architecture for clear intent alignment and retrieval density.",
-                  ]}
-                />
-              </StrategyCard>
-
-              <StrategyCard glow="blue">
-                <h3 className="mb-3 text-xl font-display font-bold text-white">2) AI visibility system</h3>
-                <BulletList
-                  items={[
-                    "Weekly prompt testing across ChatGPT, Gemini, and Google AI layers.",
-                    "Citable answer optimization: concise definitions, comparison schemas, proof snippets.",
-                    "Entity consistency reinforcement across owned and third-party profiles.",
-                    "Answer-share tracking with competitor movement alerts and recapture protocol.",
-                  ]}
-                />
-              </StrategyCard>
-
-              <StrategyCard glow="blue">
-                <h3 className="mb-3 text-xl font-display font-bold text-white">3) Authority + distribution</h3>
-                <BulletList
-                  items={[
-                    "Convert each key page into multi-surface distribution assets.",
-                    "Build citation velocity through editorial mentions and trusted platform nodes.",
-                    "Support review-surface strengthening where relevant to category trust (B2B tools directories, communities).",
-                    "Coordinate anchor consistency so external signals reinforce category positioning.",
-                  ]}
-                />
-              </StrategyCard>
-
-              <StrategyCard glow="blue">
-                <h3 className="mb-3 text-xl font-display font-bold text-white">4) Executive operating cadence</h3>
-                <BulletList
-                  items={[
-                    "Bi-weekly sprint planning tied to highest commercial upside queries.",
-                    "Monthly board-level snapshot: what moved, what didn’t, what changes next.",
-                    "Quarterly recalibration against competitor answer share and demand shifts.",
-                    "No vanity reporting — pipeline leverage and shortlist share only.",
-                  ]}
-                />
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="mixed">
-            <SectionHeader number="12" title="What We Need From Your Team" />
-            <div className="grid gap-5 md:grid-cols-2">
-              <StrategyCard>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">Access + data</h3>
-                <BulletList
-                  items={[
-                    "Analytics + Search Console + product usage context access.",
-                    "Conversion event definitions and current funnel baseline.",
-                    "Clear ICP and segment priorities (startup vs enterprise, primary use cases).",
-                    "Product proof inputs: outcomes, screenshots, capability deltas.",
-                  ]}
-                />
-              </StrategyCard>
-              <StrategyCard>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">Operating partnership</h3>
-                <BulletList
-                  items={[
-                    "One accountable marketing or growth owner on weekly check-ins.",
-                    "Fast review loop for factual accuracy and product claims.",
-                    "Support for integration/content validation with product or support leads.",
-                    "Commitment to ship consistently each month, not campaign bursts.",
-                  ]}
-                />
-              </StrategyCard>
-            </div>
-
-            <WorkstreamTimeline
-              className="mt-6"
-              months={workstreamMonths}
-              tracks={[
-                {
-                  name: "Money pages (BOFU)",
-                  description: "Best/alternatives/vs/implementation pages that capture decision intent.",
-                  cells: [
-                    { label: "Sprint 1 pages", tone: "high" },
-                    { label: "Sprint 2 pages", tone: "high" },
-                    { label: "Refresh + add FAQs", tone: "base" },
-                    { label: "New comparisons", tone: "high" },
-                    { label: "Conversion tune", tone: "base" },
-                    { label: "Update + expand", tone: "base" },
-                    { label: "New use-case pages", tone: "base" },
-                    { label: "Refresh cycle", tone: "base" },
-                    { label: "Winner reinforcement", tone: "high" },
-                    { label: "Coverage expansion", tone: "base" },
-                    { label: "Defense updates", tone: "base" },
-                    { label: "Year-end refresh", tone: "high" },
-                  ],
-                },
-                {
-                  name: "Knowledge support layer",
-                  description: "Workflow, setup, migration, and adoption content that feeds BOFU pages.",
-                  cells: [
-                    { label: "Cluster map", tone: "base" },
-                    { label: "Publish support set", tone: "base" },
-                    { label: "Interlink pass", tone: "base" },
-                    { label: "How-to expansion", tone: "base" },
-                    { label: "Template/tool pages", tone: "base" },
-                    { label: "Consolidate hubs", tone: "base" },
-                    { label: "New vertical variants", tone: "base" },
-                    { label: "Refresh + prune", tone: "base" },
-                    { label: "Depth pass", tone: "base" },
-                    { label: "Authority tie-in", tone: "base" },
-                    { label: "Intent rebalance", tone: "base" },
-                    { label: "Evergreen updates", tone: "base" },
-                  ],
-                },
-                {
-                  name: "AI answer optimization",
-                  description: "Prompt testing, snippet tuning, and structured answer improvements.",
-                  cells: [
-                    { label: "Baseline tests", tone: "high" },
-                    { label: "Snippet tuning", tone: "high" },
-                    { label: "Prompt loop", tone: "base" },
-                    { label: "Entity tune", tone: "base" },
-                    { label: "Prompt loop", tone: "base" },
-                    { label: "Answer format update", tone: "base" },
-                    { label: "Prompt loop", tone: "base" },
-                    { label: "Citation fixes", tone: "base" },
-                    { label: "Prompt loop", tone: "base" },
-                    { label: "Competitor recapture", tone: "high" },
-                    { label: "Prompt loop", tone: "base" },
-                    { label: "Annual benchmark", tone: "high" },
-                  ],
-                },
-                {
-                  name: "Authority + distribution",
-                  description: "Third-party placements and entity reinforcement for trust transfer.",
-                  cells: [
-                    { label: "Node setup", tone: "base" },
-                    { label: "Placement sprint", tone: "high" },
-                    { label: "Placement sprint", tone: "high" },
-                    { label: "Review profile push", tone: "base" },
-                    { label: "Mentions expansion", tone: "base" },
-                    { label: "Placement sprint", tone: "high" },
-                    { label: "Mentions expansion", tone: "base" },
-                    { label: "Placement sprint", tone: "high" },
-                    { label: "Authority refresh", tone: "base" },
-                    { label: "Placement sprint", tone: "high" },
-                    { label: "Mentions expansion", tone: "base" },
-                    { label: "Year-end authority audit", tone: "high" },
-                  ],
-                },
-                {
-                  name: "Measurement + exec reporting",
-                  description: "Answer share, pipeline signals, and monthly executive decisions.",
-                  cells: [
-                    { label: "Dashboard baseline", tone: "high" },
-                    { label: "Monthly report", tone: "base" },
-                    { label: "Monthly report", tone: "base" },
-                    { label: "Quarterly recalibration", tone: "high" },
-                    { label: "Monthly report", tone: "base" },
-                    { label: "Monthly report", tone: "base" },
-                    { label: "Quarterly recalibration", tone: "high" },
-                    { label: "Monthly report", tone: "base" },
-                    { label: "Monthly report", tone: "base" },
-                    { label: "Quarterly recalibration", tone: "high" },
-                    { label: "Monthly report", tone: "base" },
-                    { label: "Board summary", tone: "high" },
-                  ],
-                },
-              ]}
-            />
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="amber">
-            <SectionHeader number="13" title="Why Memetik vs Alternatives" />
-            <div className="grid gap-5 md:grid-cols-3">
-              <StrategyCard>
-                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
-                  <Bot className="h-4 w-4" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Answer-engine native</span>
-                </div>
-                <p className="text-sm leading-6 text-white/70">
-                  We optimize for mention frequency, citation quality, and shortlist share — not just ranking movement.
-                </p>
-              </StrategyCard>
-              <StrategyCard>
-                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
-                  <Database className="h-4 w-4" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Operator depth</span>
-                </div>
-                <p className="text-sm leading-6 text-white/70">
-                  Strategy includes content architecture, technical entity fixes, and distribution execution as one operating system.
-                </p>
-              </StrategyCard>
-              <StrategyCard>
-                <div className="mb-3 flex items-center gap-2 text-[#f4e4cd]">
-                  <TrendingUp className="h-4 w-4" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Commercial accountability</span>
-                </div>
-                <p className="text-sm leading-6 text-white/70">
-                  We tie work to pipeline leverage, CAC pressure relief, and category authority — the metrics founders and boards care about.
-                </p>
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="blue">
-            <SectionHeader number="14" title="TAM × LTV Calculator" />
-            <TamRoiCalculator
-              baseReachableVisits={Math.round(researchData.tamModel.totals.estimatedReachableVisits.base)}
-              defaultVisitToCustomerRate={0.01}
-              defaultLtv={0}
-            />
-            <div className="mt-5 rounded-[24px] border border-amber-300/20 bg-amber-200/[0.05] p-4">
-              <div className="mb-1 flex items-center gap-2 text-[#f4e4cd]">
-                <Lock className="h-4 w-4" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em]">Revenue model status</span>
+                  <h3 className="mt-3 text-lg font-semibold text-white">
+                    Google AI Overview on the same commercial query
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-white/66">
+                    Google AI Overview was detected in the sampled US result, but Kinso was absent from the surfaced answer layer. That matters because it shows the problem is not limited to chat interfaces; it also affects Google's blended results.
+                  </p>
+                </StrategyCard>
               </div>
-              <p className="text-sm leading-6 text-white/75">
-                Revenue modeling requires client ACV/AOV and funnel inputs.
-              </p>
-            </div>
-          </StrategySectionShell>
+            </StrategyAppendixSection>
 
-          <StrategySectionShell glow="mixed">
-            <SectionHeader number="15" title="Assumptions & Confidence" />
-            <div className="grid gap-5 md:grid-cols-2">
-              <StrategyCard>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">Methodology assumptions (founder-readable)</h3>
-                <BulletList
-                  items={[
-                    "Modeled on a 12-month horizon across US + AU demand surfaces.",
-                    "Reachable-share estimates are conservative planning envelopes, not guaranteed click outcomes.",
-                    "Opportunity model uses intent-weighted capture logic (BOFU > MOFU > TOFU in near-term efficiency).",
-                    "AI visibility scores are directional from sampled prompts and platform availability constraints.",
-                    "Displayed trajectory values are rounded for planning clarity.",
-                  ]}
-                />
-              </StrategyCard>
-              <StrategyCard>
-                <h3 className="mb-3 text-lg font-display font-bold text-white">Confidence notes</h3>
-                <BulletList items={researchData.tamModel.confidence.reasons} />
-              </StrategyCard>
-            </div>
-
-            <StatsGrid
-              className="mt-6"
-              columns={3}
-              stats={[
-                {
-                  label: "TAM confidence",
-                  value: `${researchData.tamModel.confidence.score}/100`,
-                  icon: <ShieldCheck className="h-5 w-5" />,
-                  note: `Level: ${researchData.tamModel.confidence.level.toUpperCase()}`,
-                },
-                {
-                  label: "Research payload confidence",
-                  value: `${researchData.meta.payloadConfidence.score}/100`,
-                  icon: <Gauge className="h-5 w-5" />,
-                  note: `Level: ${researchData.meta.payloadConfidence.level.toUpperCase()}`,
-                },
-                {
-                  label: "Quality gate status",
-                  value: researchData.qualityGate.passed ? "PASS" : "FAIL",
-                  icon: <CheckCircle2 className="h-5 w-5" />,
-                  note: `Mode: ${researchData.qualityGate.mode.toUpperCase()}`,
-                },
-              ]}
-            />
-
-            <DataTable
-              className="mt-6"
-              headers={["Issue", "Impact", "Handling plan"]}
-              rows={researchData.meta.issues.map((issue) => [
-                issue.step,
-                issue.error,
-                "No blocking impact on strategy direction; continue with available platform data and expand coverage once endpoint access is restored.",
-              ])}
-            />
-          </StrategySectionShell>
-
-          <StrategySectionShell glow="amber">
-            <SectionHeader number="16" title="Board-shareable Summary" />
-            <div className="grid gap-5 md:grid-cols-2">
-              <HighlightBox>
-                <h3 className="mb-3 text-xl font-display font-bold text-white">One-slide thesis</h3>
-                <p className="text-sm leading-7 text-white/75">
-                  Kinso has a product-positioning advantage in unified AI inbox workflows but currently lacks enough search/answer-engine
-                  surface area to win category shortlists consistently. The opportunity is substantial (modeled base reachable demand of{" "}
-                  <span className="text-white">{formatWhole(researchData.tamModel.totals.estimatedReachableVisits.base)} annual visits</span>)
-                  if Kinso executes a BOFU-first, answer-engine-native operating system over 12 months.
-                </p>
-              </HighlightBox>
-
-              <StrategyCard glow="amber">
-                <h3 className="mb-3 text-xl font-display font-bold text-white">Board decisions to support</h3>
-                <BulletList
-                  items={[
-                    "Treat SEO + AEO as one strategic growth program, not ad-hoc content output.",
-                    "Fund consistency over bursts: monthly shipping cadence is the compounding driver.",
-                    "Adopt answer-share and pipeline impact as core success metrics.",
-                    "Use quarterly recalibration to keep pace with AI and competitor shifts.",
-                  ]}
-                />
-              </StrategyCard>
-            </div>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-4">
-              <StrategyCard>
-                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Now</div>
-                <div className="mt-2 text-2xl font-display font-bold text-white">{formatWhole(researchData.seoMetrics.organicKeywords)}</div>
-                <p className="mt-2 text-sm text-white/60">Ranking keywords in US + AU.</p>
-              </StrategyCard>
-              <StrategyCard>
-                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Risk</div>
-                <div className="mt-2 text-2xl font-display font-bold text-white">0%</div>
-                <p className="mt-2 text-sm text-white/60">Google AIO mention rate in sampled prompts.</p>
-              </StrategyCard>
-              <StrategyCard>
-                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Opportunity</div>
-                <div className="mt-2 text-2xl font-display font-bold text-white">
-                  {formatWhole(researchData.tamModel.totals.totalAddressableSearchDemand)}
-                </div>
-                <p className="mt-2 text-sm text-white/60">12-month addressable demand model.</p>
-              </StrategyCard>
-              <StrategyCard>
-                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/42">Execution</div>
-                <div className="mt-2 text-2xl font-display font-bold text-white">12 mo</div>
-                <p className="mt-2 text-sm text-white/60">Concurrent operating system required.</p>
-              </StrategyCard>
-            </div>
-          </StrategySectionShell>
-
-          <StrategyCTA
-            eyebrow="Book Strategy Call"
-            title="Want Memetik to build this with your team?"
-            body="If you want us to turn this plan into execution — category pages, AI visibility system, authority distribution, and founder-grade measurement — book a strategy call."
-            href="https://cal.com/memetik/letstalk"
-            ctaLabel={
-              <>
-                Book Strategy Call
-                <ArrowRight className="h-4 w-4" />
-              </>
-            }
-          />
-        </section>
+            <StrategyAppendixSection
+              title="Assumptions, confidence, and page-safe caveats"
+              description="The approved brief passed the quality gate with high confidence, but public claims still need honest caveat discipline."
+            >
+              <div className="space-y-4">
+                <StrategyCard>
+                  <BulletList
+                    items={[
+                      "Quality gate: passed",
+                      "Payload confidence: high (100/100)",
+                      "Topical integrity: passed, with low-quality semantic demand share at 0.0%",
+                      "Traffic planning on the page is a scenario model, not a promise",
+                      "Revenue planning requires Kinso's first-party ACV/AOV and funnel inputs",
+                    ]}
+                  />
+                </StrategyCard>
+                <StrategyCard>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#f4e4cd]">Caution items carried from the brief</div>
+                  <p className="mt-3 text-sm leading-7 text-white/66">
+                    The approved brief flagged missing or incomplete probe paths for certain AI-surface checks. That is why this page keeps its public AI-evidence narrative limited to the sampled ChatGPT, Gemini, and Google AI Overview data that were supported in the brief, and avoids overstating unsupported platform specifics.
+                  </p>
+                </StrategyCard>
+              </div>
+            </StrategyAppendixSection>
+          </div>
+        </div>
       </div>
     </StrategyPageFrame>
   );

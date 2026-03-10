@@ -762,32 +762,37 @@
     "domain": "kinso.ai",
     "category": "Communication / Unified AI Inbox",
     "industry": "Communication / Collaboration",
-    "brandDisambiguation": "unified ai inbox platform",
+    "brandDisambiguation": "ai shared inbox and email triage software",
     "semanticSeeds": [
-      "unified ai inbox",
       "shared inbox software",
-      "team inbox platform",
-      "ai inbox for teams",
+      "shared inbox for teams",
+      "shared email inbox",
+      "gmail shared inbox",
+      "team email management software",
+      "email collaboration software",
       "email triage software",
-      "multi channel inbox",
-      "unified messaging platform"
+      "ai email triage",
+      "unified inbox software",
+      "customer support shared inbox"
     ],
+    "semanticExclusions": [
+      "email generator",
+      "email signature generator",
+      "workflow diagram",
+      "alfred workflow",
+      "apache workflow",
+      "knime workflow",
+      "kinso furniture",
+      "ai kin",
+      "so ai"
+    ],
+    "promptModifiers": {
+      "categoryLabel": "shared inbox and email triage software"
+    },
     "competitorSeeds": [
       {
         "name": "Front",
         "domain": "front.com"
-      },
-      {
-        "name": "Intercom",
-        "domain": "intercom.com"
-      },
-      {
-        "name": "Zendesk",
-        "domain": "zendesk.com"
-      },
-      {
-        "name": "Help Scout",
-        "domain": "helpscout.com"
       },
       {
         "name": "Missive",
@@ -796,6 +801,18 @@
       {
         "name": "Hiver",
         "domain": "hiverhq.com"
+      },
+      {
+        "name": "Help Scout",
+        "domain": "helpscout.com"
+      },
+      {
+        "name": "Gmelius",
+        "domain": "gmelius.com"
+      },
+      {
+        "name": "Drag",
+        "domain": "dragapp.com"
       }
     ]
   },
