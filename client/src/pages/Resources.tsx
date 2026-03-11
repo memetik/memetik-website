@@ -1,7 +1,9 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "wouter";
 import { Nav } from "@/components/Nav";
 import { ResourceCard } from "@/components/ResourceCard";
 import type { ResourceArticle } from "@/lib/notion";
+import { buildResourceTopicHref, getResourceTopicOptions } from "@/lib/resourceTopics";
 import {
   MarketingContainer,
   MarketingFooter,
@@ -15,7 +17,6 @@ import {
 export default function Resources() {
   const [articles, setArticles] = useState<ResourceArticle[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   useEffect(() => {
     document.title = "Resources | MEMETIK - AEO & SEO Insights";
@@ -35,24 +36,9 @@ export default function Resources() {
       });
   }, []);
 
-  // Get unique categories
-  const categories = useMemo(() => {
-    const cats = new Set<string>();
-    articles.forEach((a) => {
-      if (a.articleType) cats.add(a.articleType);
-    });
-    return Array.from(cats).sort();
-  }, [articles]);
-
-  // Filter articles by category
-  const filteredArticles = useMemo(() => {
-    if (selectedCategory === "all") return articles;
-    return articles.filter((a) => a.articleType === selectedCategory);
-  }, [articles, selectedCategory]);
-
-  // Featured article (first one)
-  const featuredArticle = filteredArticles[0];
-  const remainingArticles = filteredArticles.slice(1);
+  const topicOptions = useMemo(() => getResourceTopicOptions(articles), [articles]);
+  const featuredArticle = articles[0];
+  const remainingArticles = articles.slice(1);
 
   return (
     <MarketingPage>
@@ -70,35 +56,34 @@ export default function Resources() {
               <p className="mt-4 max-w-2xl font-mono text-sm leading-7 text-white/58 sm:text-base">
                 Deep dives into Answer Engine Optimization, LLM visibility strategy, and the systems B2B brands need to become the credible answer.
               </p>
-
-              {categories.length > 0 && (
-                <div className="mt-8 flex flex-wrap gap-2">
-                  <button
-                    onClick={() => setSelectedCategory("all")}
-                    className={`rounded-full border px-4 py-2 font-mono text-[10px] uppercase tracking-[0.22em] transition-colors ${
-                      selectedCategory === "all"
-                        ? "border-white/20 bg-white text-black"
-                        : "border-white/12 bg-white/[0.03] text-white/60 hover:border-white/24 hover:text-white"
-                    }`}
-                  >
-                    All
-                  </button>
-                  {categories.map((cat) => (
-                    <button
-                      key={cat}
-                      onClick={() => setSelectedCategory(cat)}
-                      className={`rounded-full border px-4 py-2 font-mono text-[10px] uppercase tracking-[0.22em] transition-colors ${
-                        selectedCategory === cat
-                          ? "border-white/20 bg-white text-black"
-                          : "border-white/12 bg-white/[0.03] text-white/60 hover:border-white/24 hover:text-white"
-                      }`}
-                    >
-                      {cat}
-                    </button>
-                  ))}
-                </div>
-              )}
+              <p className="mt-6 max-w-3xl font-mono text-xs uppercase tracking-[0.22em] text-white/42">
+                Browse crawlable topic hubs, then jump into the individual resources that support each commercial search surface.
+              </p>
             </div>
+          </MarketingSectionShell>
+
+          <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-12">
+            <div className={marketingTheme.eyebrow}>Topic hubs</div>
+            {loading ? (
+              <div className="py-12 font-mono text-sm uppercase tracking-[0.22em] text-white/45">Loading hubs...</div>
+            ) : topicOptions.length === 0 ? (
+              <div className="py-12 font-mono text-sm uppercase tracking-[0.22em] text-white/45">No hubs published yet.</div>
+            ) : (
+              <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+                {topicOptions.map((topic) => (
+                  <Link key={topic.slug} href={buildResourceTopicHref(topic.slug)}>
+                    <div className="group h-full cursor-pointer rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]">
+                      <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/42">{topic.count} articles</div>
+                      <h2 className="mt-3 font-display text-2xl font-extrabold uppercase tracking-[-0.04em] text-white">
+                        {topic.label}
+                      </h2>
+                      <p className="mt-3 font-mono text-xs leading-6 text-white/58">{topic.description}</p>
+                      <div className="mt-5 font-mono text-[10px] uppercase tracking-[0.22em] text-white/70">Open topic hub</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </MarketingSectionShell>
 
           <MarketingSectionShell className="px-6 py-10 sm:px-10 sm:py-12">

@@ -20,12 +20,16 @@ const StrategyDrinkhyro = lazy(() => import("@/pages/strategy/Drinkhyro"));
 const StrategyHotWaterFunnel = lazy(() => import("@/pages/strategy/HotWaterFunnel"));
 const BTSOffer = lazy(() => import("@/pages/BTSOffer"));
 const Resources = lazy(() => import("@/pages/Resources"));
+const ResourceHub = lazy(() => import("@/pages/ResourceHub"));
 const ResourcePost = lazy(() => import("@/pages/ResourcePost"));
 const Audit = lazy(() => import("@/pages/Audit"));
 const AuditReport = lazy(() => import("@/pages/AuditReport"));
 const Segment = lazy(() => import("@/pages/Segment"));
 const Comparison = lazy(() => import("@/pages/Comparison"));
 const Solution = lazy(() => import("@/pages/Solution"));
+const AEOAgency = lazy(() => import("@/pages/AEOAgency"));
+const Pricing = lazy(() => import("@/pages/Pricing"));
+const CaseStudiesPage = lazy(() => import("@/pages/CaseStudiesPage"));
 const TestLanding = lazy(() => import("@/pages/TestLanding"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
@@ -52,7 +56,11 @@ function Router() {
         })}
         <Route path="/strategy" component={Strategy} />
         <Route path="/bts" component={BTSOffer} />
+        <Route path="/aeo-agency" component={AEOAgency} />
+        <Route path="/pricing" component={Pricing} />
+        <Route path="/case-studies" component={CaseStudiesPage} />
         <Route path="/resources" component={Resources} />
+        <Route path="/resources/topics/:topic" component={ResourceHub} />
         <Route path="/resources/:slug" component={ResourcePost} />
         <Route path="/audit" component={Audit} />
         <Route path="/audit/:slug" component={AuditReport} />

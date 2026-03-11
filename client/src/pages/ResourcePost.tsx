@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams, Link } from "wouter";
 import { Nav } from "@/components/Nav";
 import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
 import type { ResourceArticle } from "@/lib/notion";
+import { buildResourceTopicHref, getRelatedArticles, getResourceTopicConfig } from "@/lib/resourceTopics";
 import {
   MarketingCard,
   MarketingContainer,
@@ -26,6 +27,7 @@ const legacyArticleRedirects: Record<string, string> = {
 export default function ResourcePost() {
   const { slug } = useParams<{ slug: string }>();
   const [article, setArticle] = useState<ArticleWithContent | null>(null);
+  const [articles, setArticles] = useState<ResourceArticle[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -42,6 +44,7 @@ export default function ResourcePost() {
     fetch("/cache/resources-articles.json")
       .then((res) => res.json())
       .then((articles: ResourceArticle[]) => {
+        setArticles(articles);
         const found = articles.find((a) => a.slug === slug);
         if (!found) {
           setError("Article not found");
@@ -61,7 +64,7 @@ export default function ResourcePost() {
             if (metaDesc) {
               metaDesc.setAttribute("content", found.metaDescription || "");
             }
-            
+
             setLoading(false);
           })
           .catch(() => {
@@ -74,6 +77,12 @@ export default function ResourcePost() {
         setLoading(false);
       });
   }, [slug]);
+
+  const topicConfig = getResourceTopicConfig(article?.topicCluster);
+  const relatedArticles = useMemo(
+    () => (article ? getRelatedArticles(article, articles) : []),
+    [article, articles],
+  );
 
   const formattedDate = article?.publicationDate
     ? new Date(article.publicationDate).toLocaleDateString("en-AU", {
@@ -177,6 +186,11 @@ export default function ResourcePost() {
                     <span>{article.readTime}</span>
                   </div>
                 )}
+                {article.topicClusterLabel && (
+                  <Link href={buildResourceTopicHref(article.topicCluster)} className="transition hover:text-white/72">
+                    {article.topicClusterLabel}
+                  </Link>
+                )}
               </div>
             </div>
           </MarketingSectionShell>
@@ -200,6 +214,63 @@ export default function ResourcePost() {
                   Last updated: {formattedUpdated}
                 </div>
               )}
+
+              <MarketingCard className="mt-12 p-6">
+                <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">Topic hub</div>
+                <h2 className="mt-4 font-display text-2xl font-extrabold uppercase tracking-[-0.04em] text-white">
+                  {topicConfig.label}
+                </h2>
+                <p className="mt-3 font-mono text-sm leading-7 text-white/60">{topicConfig.description}</p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href={buildResourceTopicHref(topicConfig.slug)} className={marketingTheme.secondaryButton}>
+                    Visit topic hub
+                  </Link>
+                  <a href={topicConfig.moneyPagePath} className={marketingTheme.primaryButton}>
+                    {topicConfig.moneyPageLabel}
+                  </a>
+                </div>
+              </MarketingCard>
+
+              {relatedArticles.length > 0 && (
+                <div className="mt-12">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">Related resources</div>
+                  <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+                    {relatedArticles.map((relatedArticle) => (
+                      <Link key={relatedArticle.slug} href={`/resources/${relatedArticle.slug}`}>
+                        <MarketingCard className="h-full cursor-pointer p-5 transition hover:-translate-y-1">
+                          <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">
+                            {relatedArticle.topicClusterLabel}
+                          </div>
+                          <h3 className="mt-3 font-display text-xl font-extrabold uppercase tracking-[-0.03em] text-white">
+                            {relatedArticle.title}
+                          </h3>
+                          <p className="mt-3 font-mono text-xs leading-6 text-white/58">{relatedArticle.metaDescription}</p>
+                        </MarketingCard>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div id="article-cta">
+                <MarketingCard className="mt-12 p-6 sm:p-8">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">Ready to apply this?</div>
+                  <h2 className="mt-4 font-display text-2xl font-extrabold uppercase tracking-[-0.04em] text-white sm:text-3xl">
+                    Turn this topic into pipeline, not just pageviews.
+                  </h2>
+                  <p className="mt-4 max-w-2xl font-mono text-sm leading-7 text-white/60">
+                    We build the answer-share systems, buying-journey pages, and authority reinforcement that make AI engines recommend your brand when it matters.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a href="/audit" className={marketingTheme.primaryButton}>
+                      Get your free AI visibility audit
+                    </a>
+                    <a href={topicConfig.moneyPagePath} className={marketingTheme.secondaryButton}>
+                      {topicConfig.moneyPageLabel}
+                    </a>
+                  </div>
+                </MarketingCard>
+              </div>
             </div>
           </MarketingSectionShell>
         </MarketingContainer>
@@ -212,38 +283,6 @@ export default function ResourcePost() {
         ctaLabel="Get your free AI audit"
         note="Executive audit · answer-share review included"
       />
-
-      {/* Schema.org JSON-LD */}
-      {article.hasArticleSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              headline: article.title,
-              description: article.metaDescription,
-              author: {
-                "@type": "Person",
-                name: article.author,
-                jobTitle: article.authorTitle,
-              },
-              datePublished: article.publicationDate,
-              dateModified: article.lastUpdated || article.publicationDate,
-              publisher: {
-                "@type": "Organization",
-                name: "MEMETIK",
-                url: "https://www.memetik.ai",
-              },
-              mainEntityOfPage: {
-                "@type": "WebPage",
-                "@id": `https://www.memetik.ai/resources/${article.slug}`,
-              },
-              wordCount: article.wordCount,
-            }),
-          }}
-        />
-      )}
     </MarketingPage>
   );
 }

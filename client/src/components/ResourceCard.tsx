@@ -21,12 +21,22 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
     return (
       <Link href={`/resources/${article.slug}`}>
         <MarketingCard className="group cursor-pointer p-8 md:p-12 transition-transform duration-300 hover:-translate-y-1">
-          {/* Category tag */}
-          {article.articleType && (
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-3 py-1.5 mb-6">
-              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/64">
-                {article.articleType}
-              </span>
+          {(article.topicClusterLabel || article.articleType) && (
+            <div className="mb-6 flex flex-wrap gap-2">
+              {article.topicClusterLabel && (
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-3 py-1.5">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/64">
+                    {article.topicClusterLabel}
+                  </span>
+                </div>
+              )}
+              {article.articleType && (
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-3 py-1.5">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/64">
+                    {article.articleType}
+                  </span>
+                </div>
+              )}
             </div>
           )}
 
@@ -72,12 +82,22 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
   return (
     <Link href={`/resources/${article.slug}`}>
       <MarketingCard className="group h-full cursor-pointer p-6 transition-transform duration-300 hover:-translate-y-1">
-        {/* Category tag */}
-        {article.articleType && (
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-2.5 py-1 mb-4 self-start">
-            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/64">
-              {article.articleType}
-            </span>
+        {(article.topicClusterLabel || article.articleType) && (
+          <div className="mb-4 flex flex-wrap gap-2 self-start">
+            {article.topicClusterLabel && (
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-2.5 py-1">
+                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/64">
+                  {article.topicClusterLabel}
+                </span>
+              </div>
+            )}
+            {article.articleType && (
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-2.5 py-1">
+                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/64">
+                  {article.articleType}
+                </span>
+              </div>
+            )}
           </div>
         )}
 

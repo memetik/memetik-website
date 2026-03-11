@@ -1,4 +1,9 @@
 // Types for Resource Articles (fetched from Notion via cache script)
+export interface ResourceFaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface ResourceArticle {
   id: string;
   slug: string;
@@ -20,6 +25,9 @@ export interface ResourceArticle {
   relatedArticles: string;
   sources: string;
   status: string;
+  topicCluster: string;
+  topicClusterLabel: string;
+  faqItems: ResourceFaqItem[];
 }
 
 // Cache file paths (relative to client/public for Vite)

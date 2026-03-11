@@ -12,6 +12,9 @@ const path = require("path");
 const DIST = path.join(__dirname, "..", "dist", "public");
 const DOMAIN = "https://www.memetik.ai";
 const DATA_DIR = path.join(__dirname, "..", "client", "src", "data");
+const RESOURCE_TOPIC_REGISTRY = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "..", "shared", "resourceTopicRegistry.json"), "utf-8")
+);
 const STRATEGY_REGISTRY = JSON.parse(
   fs.readFileSync(path.join(__dirname, "..", "shared", "strategyRouteRegistry.json"), "utf-8")
 );
@@ -71,6 +74,40 @@ function loadArticles() {
   const cacheFile = path.join(DIST, "cache", "resources-articles.json");
   if (!fs.existsSync(cacheFile)) return [];
   return JSON.parse(fs.readFileSync(cacheFile, "utf-8"));
+}
+
+function getTopicConfig(slug) {
+  return RESOURCE_TOPIC_REGISTRY.topics.find((topic) => topic.slug === slug) || RESOURCE_TOPIC_REGISTRY.topics[0];
+}
+
+function getActiveTopics(articles) {
+  const activeSlugs = new Set(articles.map((article) => article.topicCluster).filter(Boolean));
+  return RESOURCE_TOPIC_REGISTRY.topics.filter((topic) => activeSlugs.has(topic.slug));
+}
+
+function getTopicPath(slug) {
+  return `/resources/topics/${slug}`;
+}
+
+function getRelatedArticles(article, articles, limit = 3) {
+  const manualSlugs = String(article.relatedArticles || "")
+    .split(",")
+    .map((slug) => slug.trim())
+    .filter(Boolean);
+
+  const manualArticles = manualSlugs
+    .map((slug) => articles.find((candidate) => candidate.slug === slug))
+    .filter((candidate) => candidate && candidate.slug !== article.slug);
+
+  const seen = new Set(manualArticles.map((candidate) => candidate.slug));
+  const topicArticles = articles.filter(
+    (candidate) =>
+      candidate.slug !== article.slug &&
+      candidate.topicCluster === article.topicCluster &&
+      !seen.has(candidate.slug),
+  );
+
+  return [...manualArticles, ...topicArticles].slice(0, limit);
 }
 
 function getMarkdownSection(text, sectionNumber, title) {
@@ -534,10 +571,13 @@ function comparisonContent(data) {
     </main>`;
 }
 
-function articleContent(article) {
+function articleContent(article, articles) {
   const contentFile = path.join(DIST, "cache", "resources-content", `${article.id}.html`);
   const bodyHtml = fs.existsSync(contentFile) ? fs.readFileSync(contentFile, "utf-8") : "";
   const date = article.publicationDate ? new Date(article.publicationDate).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" }) : "";
+  const updated = article.lastUpdated ? new Date(article.lastUpdated).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" }) : "";
+  const topic = getTopicConfig(article.topicCluster);
+  const relatedArticles = getRelatedArticles(article, articles);
 
   return `
     <main>
@@ -547,24 +587,139 @@ function articleContent(article) {
           <h1>${esc(article.title)}</h1>
           ${article.metaDescription ? `<p>${esc(article.metaDescription)}</p>` : ""}
           <p>By ${esc(article.author || "MEMETIK")}${article.authorTitle ? `, ${esc(article.authorTitle)}` : ""}${date ? ` · ${date}` : ""}${article.readTime ? ` · ${esc(article.readTime)}` : ""}</p>
+          ${article.topicClusterLabel ? `<p><a href="${getTopicPath(article.topicCluster)}">Topic: ${esc(article.topicClusterLabel)}</a></p>` : ""}
         </header>
         <div>${bodyHtml}</div>
+        ${article.sources ? `<section><h2>Sources</h2><p>${esc(article.sources)}</p></section>` : ""}
+        ${updated && updated !== date ? `<p>Last updated: ${esc(updated)}</p>` : ""}
+        <section>
+          <h2>Explore this topic cluster</h2>
+          <p>${esc(topic.description)}</p>
+          <p><a href="${getTopicPath(topic.slug)}">Visit the ${esc(topic.label)} hub</a></p>
+        </section>
+        ${relatedArticles.length > 0 ? `<section><h2>Related resources</h2><ul>${relatedArticles.map((relatedArticle) => `<li><a href="/resources/${esc(relatedArticle.slug)}">${esc(relatedArticle.title)}</a></li>`).join("")}</ul></section>` : ""}
+        <section id="article-cta">
+          <h2>Need this implemented, not just diagnosed?</h2>
+          <p>MEMETIK helps brands turn answer-engine visibility into category authority, shortlist inclusion, and pipeline.</p>
+          <p><a href="${topic.moneyPagePath}">${esc(topic.moneyPageLabel)}</a> · <a href="/audit">Get a free AI visibility audit</a></p>
+        </section>
       </article>
     </main>`;
 }
 
 function resourcesListContent(articles) {
+  const topics = getActiveTopics(articles);
   return `
     <main>
       <section>
         <h1>Resources — AEO &amp; SEO Insights</h1>
         <p>Expert articles on Answer Engine Optimization, AI search visibility, ChatGPT citations, and LLM SEO strategies for B2B brands.</p>
       </section>
+      ${topics.length > 0 ? `<section><h2>Browse by topic</h2><ul>${topics.map((topic) => `<li><a href="${getTopicPath(topic.slug)}">${esc(topic.label)}</a> — ${esc(topic.description)}</li>`).join("")}</ul></section>` : ""}
       <section>
         <h2>All Articles</h2>
         <ul>
           ${articles.map((a) => `<li><a href="/resources/${esc(a.slug)}">${esc(a.title)}</a>${a.metaDescription ? ` — ${esc(a.metaDescription)}` : ""}</li>`).join("\n          ")}
         </ul>
+      </section>
+    </main>`;
+}
+
+function resourceTopicContent(topic, articles) {
+  return `
+    <main>
+      <section>
+        <p>${esc(topic.label)}</p>
+        <h1>${esc(topic.title)}</h1>
+        <p>${esc(topic.hubIntro)}</p>
+        <p><a href="${topic.moneyPagePath}">${esc(topic.moneyPageLabel)}</a> · <a href="${topic.secondaryPath}">${esc(topic.secondaryLabel)}</a></p>
+      </section>
+      <section>
+        <h2>${esc(topic.label)} articles</h2>
+        <ul>
+          ${articles.map((article) => `<li><a href="/resources/${esc(article.slug)}">${esc(article.title)}</a>${article.metaDescription ? ` — ${esc(article.metaDescription)}` : ""}</li>`).join("\n          ")}
+        </ul>
+      </section>
+    </main>`;
+}
+
+function aeoAgencyContent() {
+  return `
+    <main>
+      <section>
+        <h1>Answer Engine Optimization Agency</h1>
+        <p>MEMETIK is the AEO agency for brands that need pipeline, category authority, and measurable visibility across Google, ChatGPT, Perplexity, Gemini, and the wider answer layer.</p>
+        <p><a href="/audit">Get a free AI visibility audit</a> · <a href="/pricing">Review pricing and engagement structure</a></p>
+      </section>
+      <section>
+        <h2>What we build</h2>
+        <ul>
+          <li>Answer-share audits that show where buyers discover your category and who AI recommends instead.</li>
+          <li>Bottom-of-funnel and programmatic content systems built for citation, recommendation, and shortlist influence.</li>
+          <li>Authority reinforcement across the sources answer engines trust when they synthesize recommendations.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Who this is for</h2>
+        <ul>
+          <li>Growth-stage SaaS teams with real pipeline pressure and a clear buying journey.</li>
+          <li>E-commerce brands losing discovery to zero-click search and AI product recommendations.</li>
+          <li>B2B service firms that need to become the default recommendation before the sales call happens.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Why MEMETIK</h2>
+        <p>We do not treat AEO like a content retainer. We treat search and AI visibility as a revenue system: measure the category, build the missing demand-capture infrastructure, reinforce authority, and monitor answer share over time.</p>
+      </section>
+    </main>`;
+}
+
+function pricingContent() {
+  return `
+    <main>
+      <section>
+        <h1>MEMETIK Pricing</h1>
+        <p>Engagements start at $15K per month with a six-month minimum. The scope is built around category pressure, answer-share opportunity, and the amount of content and authority infrastructure needed to move the market.</p>
+        <p><a href="/audit">Request a free AI visibility audit</a> · <a href="https://cal.com/memetik/letstalk">Book a strategy call</a></p>
+      </section>
+      <section>
+        <h2>What is included</h2>
+        <ul>
+          <li>Category and competitor audit across Google, ChatGPT, Perplexity, Gemini, and answer-engine prompts that actually influence buyers.</li>
+          <li>Bottom-of-funnel and programmatic content systems built for citations, recommendation frequency, and revenue-critical queries.</li>
+          <li>Authority, distribution, and measurement loops that reinforce recommendation share over time.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Best fit</h2>
+        <ul>
+          <li>Teams with meaningful ACV, a real buying journey, and leadership pressure to create efficient growth.</li>
+          <li>Operators who want executive visibility into answer share, category trust, and pipeline contribution.</li>
+          <li>Companies that want a strategic partner, not outsourced blog production.</li>
+        </ul>
+      </section>
+    </main>`;
+}
+
+function caseStudiesContent() {
+  return `
+    <main>
+      <section>
+        <h1>MEMETIK Case Studies</h1>
+        <p>Representative outcomes from brands that needed to become the credible answer in AI-assisted buying journeys.</p>
+        <p><a href="/audit">Get a free AI visibility audit</a> · <a href="/pricing">Review pricing and engagement structure</a></p>
+      </section>
+      <section>
+        <h2>Representative outcomes</h2>
+        <ul>
+          <li><strong>B2B SaaS:</strong> moved from invisible to the default AI recommendation for core category prompts and tied that shift to qualified pipeline.</li>
+          <li><strong>E-commerce:</strong> increased AI citations across product and comparison queries while reducing dependence on traditional click-through behavior.</li>
+          <li><strong>B2B services:</strong> built recommendation-share coverage across problem-aware and shortlist-stage searches before buyer conversations began.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>What changed</h2>
+        <p>Each engagement combined answer-share measurement, bottom-of-funnel content infrastructure, authority reinforcement, and ongoing monitoring so visibility gains compounded instead of fading after a single publishing sprint.</p>
       </section>
     </main>`;
 }
@@ -657,8 +812,19 @@ function articleSchema(article, canonicalUrl) {
       { "@type": "ListItem", position: 3, name: article.title, item: canonicalUrl },
     ],
   });
-  if (article.hasFaqSchema) {
-    // Extract FAQ from article content if available
+  if (article.hasFaqSchema && Array.isArray(article.faqItems) && article.faqItems.length > 0) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: article.faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    });
   }
   return schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join("\n");
 }
@@ -789,7 +955,21 @@ function main() {
     title: "Resources | MEMETIK - AEO & SEO Insights",
     description: "Expert articles on Answer Engine Optimization, AI search visibility, ChatGPT citations, and LLM SEO strategies for B2B brands.",
     bodyContent: resourcesListContent(articles),
+    extraSchemas: webPageSchema("Resources | MEMETIK - AEO & SEO Insights", "Expert articles on Answer Engine Optimization, AI search visibility, ChatGPT citations, and LLM SEO strategies for B2B brands.", `${DOMAIN}/resources`),
   });
+
+  for (const topic of getActiveTopics(articles)) {
+    const topicArticles = articles.filter((article) => article.topicCluster === topic.slug);
+    const canonicalUrl = `${DOMAIN}${getTopicPath(topic.slug)}`;
+
+    allPages.push({
+      route: getTopicPath(topic.slug),
+      title: `${topic.title} | MEMETIK`,
+      description: topic.description,
+      bodyContent: resourceTopicContent(topic, topicArticles),
+      extraSchemas: webPageSchema(`${topic.title} | MEMETIK`, topic.description, canonicalUrl),
+    });
+  }
 
   // Audit
   allPages.push({
@@ -797,6 +977,30 @@ function main() {
     title: "Free AEO Audit | MEMETIK",
     description: "Get a free AI visibility audit. See exactly where your brand ranks in ChatGPT, Perplexity, and Gemini vs competitors. Results in 48 hours.",
     bodyContent: auditContent(),
+  });
+
+  allPages.push({
+    route: "/aeo-agency",
+    title: "Answer Engine Optimization Agency | MEMETIK",
+    description: "MEMETIK is the AEO agency for brands that need measurable AI visibility, category authority, and pipeline from search and answer engines.",
+    bodyContent: aeoAgencyContent(),
+    extraSchemas: webPageSchema("Answer Engine Optimization Agency | MEMETIK", "MEMETIK is the AEO agency for brands that need measurable AI visibility, category authority, and pipeline from search and answer engines.", `${DOMAIN}/aeo-agency`),
+  });
+
+  allPages.push({
+    route: "/pricing",
+    title: "Pricing | MEMETIK",
+    description: "Review MEMETIK pricing, engagement structure, deliverables, and who our AEO retainer is designed for.",
+    bodyContent: pricingContent(),
+    extraSchemas: webPageSchema("Pricing | MEMETIK", "Review MEMETIK pricing, engagement structure, deliverables, and who our AEO retainer is designed for.", `${DOMAIN}/pricing`),
+  });
+
+  allPages.push({
+    route: "/case-studies",
+    title: "Case Studies | MEMETIK",
+    description: "See representative MEMETIK outcomes across B2B SaaS, e-commerce, and service businesses competing for AI-driven discovery.",
+    bodyContent: caseStudiesContent(),
+    extraSchemas: webPageSchema("Case Studies | MEMETIK", "See representative MEMETIK outcomes across B2B SaaS, e-commerce, and service businesses competing for AI-driven discovery.", `${DOMAIN}/case-studies`),
   });
 
   // Strategy
@@ -887,7 +1091,7 @@ function main() {
       route: `/resources/${a.slug}`,
       title: `${a.metaTitle || a.title} | MEMETIK`,
       description: a.metaDescription || "",
-      bodyContent: articleContent(a),
+      bodyContent: articleContent(a, articles),
       extraSchemas: articleSchema(a, canonicalUrl),
       isArticle: true,
     });

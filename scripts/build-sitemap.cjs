@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const resourceTopicRegistry = require("../shared/resourceTopicRegistry.json");
 
 const DOMAIN = "https://www.memetik.ai";
 const ARTICLES_CACHE = path.join(__dirname, "..", "client", "public", "cache", "resources-articles.json");
@@ -10,6 +11,9 @@ const OUTPUT = path.join(__dirname, "..", "client", "public", "sitemap.xml");
 const STATIC_PAGES = [
   { loc: "/", priority: "1.0", changefreq: "weekly" },
   { loc: "/audit", priority: "0.9", changefreq: "monthly" },
+  { loc: "/aeo-agency", priority: "0.9", changefreq: "monthly" },
+  { loc: "/pricing", priority: "0.8", changefreq: "monthly" },
+  { loc: "/case-studies", priority: "0.7", changefreq: "monthly" },
 
   { loc: "/resources", priority: "0.8", changefreq: "daily" },
   { loc: "/bts", priority: "0.6", changefreq: "monthly" },
@@ -44,6 +48,18 @@ function main() {
   // Add articles from the cache (build-articles.cjs must run first)
   if (fs.existsSync(ARTICLES_CACHE)) {
     const articles = JSON.parse(fs.readFileSync(ARTICLES_CACHE, "utf-8"));
+    const activeTopics = new Set(articles.map((article) => article.topicCluster).filter(Boolean));
+
+    for (const topic of resourceTopicRegistry.topics) {
+      if (!activeTopics.has(topic.slug)) continue;
+      urls.push({
+        loc: `${DOMAIN}/resources/topics/${topic.slug}`,
+        lastmod: today,
+        changefreq: "weekly",
+        priority: "0.7",
+      });
+    }
+
     for (const article of articles) {
       const raw = article.lastUpdated || article.publicationDate || today;
       const lastmod = String(raw).split("T")[0]; // normalize to YYYY-MM-DD

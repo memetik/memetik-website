@@ -1,0 +1,100 @@
+{
+  "topics": [
+    {
+      "slug": "chatgpt",
+      "label": "ChatGPT Visibility",
+      "title": "ChatGPT visibility resources",
+      "description": "Guides, benchmarks, and playbooks for earning citations and recommendations inside ChatGPT.",
+      "hubIntro": "Everything MEMETIK has published on getting cited in ChatGPT, improving answer share, and shaping AI-assisted buying journeys.",
+      "moneyPagePath": "/solutions/chatgpt-visibility",
+      "moneyPageLabel": "Explore ChatGPT visibility services",
+      "secondaryPath": "/aeo-agency",
+      "secondaryLabel": "See how our AEO agency engagements work",
+      "keywords": ["chatgpt"]
+    },
+    {
+      "slug": "perplexity",
+      "label": "Perplexity Citations",
+      "title": "Perplexity citation resources",
+      "description": "Tactics and research for becoming a cited source in Perplexity and other answer engines.",
+      "hubIntro": "Use these resources to understand how Perplexity cites sources, what content formats it prefers, and how to build citation-worthy authority.",
+      "moneyPagePath": "/solutions/perplexity-citations",
+      "moneyPageLabel": "Explore Perplexity citation services",
+      "secondaryPath": "/aeo-agency",
+      "secondaryLabel": "See how our AEO agency engagements work",
+      "keywords": ["perplexity"]
+    },
+    {
+      "slug": "ai-overviews",
+      "label": "AI Overviews",
+      "title": "Google AI Overviews resources",
+      "description": "Practical guidance for winning visibility in Google AI Overviews and answer-first SERP features.",
+      "hubIntro": "From AI Overviews strategy to Google answer-layer measurement, these resources focus on the search surfaces replacing traditional clicks.",
+      "moneyPagePath": "/solutions/ai-overview-ranking",
+      "moneyPageLabel": "Explore AI Overview ranking services",
+      "secondaryPath": "/pricing",
+      "secondaryLabel": "See engagement structure and pricing",
+      "keywords": ["ai overview", "ai overviews", "google ai", "sge"]
+    },
+    {
+      "slug": "zero-click-search",
+      "label": "Zero-Click Search",
+      "title": "Zero-click search resources",
+      "description": "Research and playbooks for protecting demand capture as zero-click and answer-engine behavior grows.",
+      "hubIntro": "Use these resources to understand why clicks disappear, how AI changes the search journey, and what to build instead of a traffic-only strategy.",
+      "moneyPagePath": "/aeo-agency",
+      "moneyPageLabel": "See our zero-click recovery approach",
+      "secondaryPath": "/audit",
+      "secondaryLabel": "Get a free AI visibility audit",
+      "keywords": ["zero-click", "zero click"]
+    },
+    {
+      "slug": "traffic-recovery",
+      "label": "Traffic Recovery",
+      "title": "Traffic recovery resources",
+      "description": "Frameworks for diagnosing traffic loss, recovering answer-layer visibility, and rebuilding pipeline from search.",
+      "hubIntro": "These guides focus on traffic decline, attribution gaps, and the recovery systems brands need when search behavior shifts into AI answers.",
+      "moneyPagePath": "/audit",
+      "moneyPageLabel": "Get a traffic recovery audit",
+      "secondaryPath": "/pricing",
+      "secondaryLabel": "See our engagement structure",
+      "keywords": ["traffic recovery", "declining organic traffic", "traffic decline", "traffic is down", "recover traffic", "recovering traffic", "lost traffic", "organic traffic"]
+    },
+    {
+      "slug": "agency-comparisons",
+      "label": "Agency Comparisons",
+      "title": "AEO agency comparison resources",
+      "description": "Comparisons, alternative roundups, and buyer guides for choosing an AEO or AI search optimization partner.",
+      "hubIntro": "Everything MEMETIK has published to help buyers compare agencies, alternatives, and in-house versus partner approaches in the AI answer era.",
+      "moneyPagePath": "/case-studies",
+      "moneyPageLabel": "Review proof and case studies",
+      "secondaryPath": "/pricing",
+      "secondaryLabel": "See pricing and engagement structure",
+      "keywords": [" vs ", " versus ", "alternative", "alternatives", "competitor", "competitors", "comparison", "compare"]
+    },
+    {
+      "slug": "aeo-agency",
+      "label": "AEO Agency",
+      "title": "AEO agency resources",
+      "description": "Buyer education on AEO services, engagement models, pricing expectations, and how to evaluate providers.",
+      "hubIntro": "These resources help operators evaluate Answer Engine Optimization agencies, understand pricing, and pick the right implementation model.",
+      "moneyPagePath": "/aeo-agency",
+      "moneyPageLabel": "Explore our AEO agency offering",
+      "secondaryPath": "/pricing",
+      "secondaryLabel": "Review pricing and engagement structure",
+      "keywords": ["aeo agency", "answer engine optimization agency", "ai search optimization agency", "aeo services", "answer engine optimization services", "pricing", "price", "cost"]
+    },
+    {
+      "slug": "ai-visibility",
+      "label": "AI Visibility",
+      "title": "AI visibility resources",
+      "description": "Core MEMETIK thinking on answer engine optimization, AI citations, LLM visibility, and category authority.",
+      "hubIntro": "This is the broadest resource hub for AEO fundamentals, AI visibility measurement, citation tracking, and answer-engine strategy.",
+      "moneyPagePath": "/aeo-agency",
+      "moneyPageLabel": "See how our AEO agency engagements work",
+      "secondaryPath": "/audit",
+      "secondaryLabel": "Get a free AI visibility audit",
+      "keywords": ["ai visibility", "ai citation", "ai citations", "llm", "answer engine optimization", "aeo", "answer engine", "ai search", "ai search optimization", "citation tracking", "gemini", "claude"]
+    }
+  ]
+}

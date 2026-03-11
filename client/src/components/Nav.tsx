@@ -1,11 +1,10 @@
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,34 +14,12 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links: { href: string; label: string; isPage?: boolean }[] = [
-    { href: "#work", label: "CASE STUDIES" },
-    { href: "#methodology", label: "PROCESS" },
-    { href: "#faq", label: "FAQ" },
-    { href: "/resources", label: "RESOURCES", isPage: true },
+  const links = [
+    { href: "/aeo-agency", label: "AEO AGENCY" },
+    { href: "/resources", label: "RESOURCES" },
+    { href: "/pricing", label: "PRICING" },
+    { href: "/case-studies", label: "CASE STUDIES" },
   ];
-
-  const isMarketingHome = location === "/";
-
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setIsOpen(false);
-    
-    // If not on homepage, navigate there with hash
-    if (!isMarketingHome) {
-      window.location.href = "/" + href;
-      return;
-    }
-    
-    // On homepage, smooth scroll
-    const element = document.querySelector(href);
-    if (element) {
-      const navHeight = 120;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    }
-  };
 
   const shellClass = scrolled
     ? "border-white/12 bg-[#07090d]/88 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
@@ -77,22 +54,11 @@ export function Nav() {
 
             <div className="hidden items-center gap-8 md:flex">
               <div className="flex items-center gap-6 lg:gap-8">
-                {links.map((link) =>
-                  link.isPage ? (
-                    <Link key={link.label} href={link.href} className={linkClass}>
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      onClick={(e) => scrollToSection(e, link.href)}
-                      className={linkClass}
-                    >
-                      {link.label}
-                    </a>
-                  ),
-                )}
+                {links.map((link) => (
+                  <Link key={link.label} href={link.href} className={linkClass}>
+                    {link.label}
+                  </Link>
+                ))}
               </div>
 
               <a
@@ -118,25 +84,14 @@ export function Nav() {
             <div className="relative z-40 border-t border-white/10 px-5 pb-5 pt-4 md:hidden">
               <div className="space-y-2 rounded-[1.5rem] border border-white/10 bg-black/20 p-4">
                 {links.map((link) =>
-                  link.isPage ? (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="block rounded-2xl px-3 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-white/72 transition hover:bg-white/[0.04] hover:text-white"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      onClick={(e) => scrollToSection(e, link.href)}
-                      className="block rounded-2xl px-3 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-white/72 transition hover:bg-white/[0.04] hover:text-white"
-                    >
-                      {link.label}
-                    </a>
-                  ),
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="block rounded-2xl px-3 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-white/72 transition hover:bg-white/[0.04] hover:text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
                 )}
                 <a
                   href="https://cal.com/memetik/letstalk"

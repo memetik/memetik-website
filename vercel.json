@@ -7,6 +7,31 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/contact",
+      "destination": "/audit",
+      "permanent": true
+    },
+    {
+      "source": "/demo",
+      "destination": "/audit",
+      "permanent": true
+    },
+    {
+      "source": "/get-started",
+      "destination": "/audit",
+      "permanent": true
+    },
+    {
+      "source": "/answer-engine-optimization-services",
+      "destination": "/aeo-agency",
+      "permanent": true
+    },
+    {
+      "source": "/ai-search-optimization-agency",
+      "destination": "/aeo-agency",
+      "permanent": true
+    },
+    {
       "source": "/resources/questions-before-hiring-aeo-agency",
       "destination": "/resources/questions-to-ask-before-hiring-aeo-agency",
       "permanent": true

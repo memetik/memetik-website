@@ -161,8 +161,10 @@ export function MarketingFooter({
       title: "Resources",
       links: [
         ["Articles", "/resources"],
+        ["AEO Agency", "/aeo-agency"],
+        ["Pricing", "/pricing"],
+        ["Case Studies", "/case-studies"],
         ["Free Audit", "/audit"],
-        ["Behind the Scenes", "/bts"],
       ],
     },
   ] as const;

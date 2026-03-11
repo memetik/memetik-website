@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const resourceTopicRegistry = require("../shared/resourceTopicRegistry.json");
 
 const ARTICLES_CACHE = path.join(__dirname, "..", "client", "public", "cache", "resources-articles.json");
 const OUTPUT = path.join(__dirname, "..", "client", "public", "llms.txt");
@@ -15,10 +16,10 @@ function buildLlmsTxt() {
     ? JSON.parse(fs.readFileSync(ARTICLES_CACHE, "utf-8"))
     : [];
 
-  // Group articles by type for organized sections
+  const topicLabels = new Map(resourceTopicRegistry.topics.map((topic) => [topic.slug, topic.label]));
   const byType = {};
   for (const a of articles) {
-    const type = a.articleType || "General";
+    const type = topicLabels.get(a.topicCluster) || a.articleType || "General";
     if (!byType[type]) byType[type] = [];
     byType[type].push(a);
   }
@@ -34,7 +35,10 @@ Key topics: Answer Engine Optimization (AEO), AI search visibility and citations
 ## Core Pages
 
 - [Home](${DOMAIN}/): AEO agency for B2B brands -- become the brand AI recommends
+- [AEO Agency](${DOMAIN}/aeo-agency): Answer Engine Optimization agency for brands that need pipeline, category authority, and measurable AI visibility
 - [Free AEO Audit](${DOMAIN}/audit): Free AI visibility audit -- enter your domain to see where you rank vs competitors in ChatGPT, Perplexity, and Gemini
+- [Pricing](${DOMAIN}/pricing): Engagement structure, what is included, and who MEMETIK is the right fit for
+- [Case Studies](${DOMAIN}/case-studies): Proof of work, representative outcomes, and how MEMETIK creates measurable answer-share gains
 - [Resources](${DOMAIN}/resources): ${articles.length} articles on AEO, AI search optimization, and AI visibility
 
 ## For Specific Industries
