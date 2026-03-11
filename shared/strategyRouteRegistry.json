@@ -65,6 +65,14 @@
       "title": "Hot Water Funnel — Sales-Led Strategy | MEMETIK",
       "description": "Sales-led strategy page for a Gold Coast heat pump hot water funnel built around fixed-price installs, local demand capture, eligibility filtering, and booking conversion.",
       "prerenderMode": "summary"
+    },
+    {
+      "slug": "creator-army",
+      "route": "/strategy/creator-army",
+      "componentKey": "creator-army",
+      "title": "Creator Army — Founder Strategy Memo | MEMETIK",
+      "description": "Founder-facing strategy memo for Creator Army focused on enterprise buyer-intent capture, creator-side conversion architecture, and a six-month search plus answer-surface positioning plan.",
+      "prerenderMode": "summary"
     }
   ],
   "parity": {
