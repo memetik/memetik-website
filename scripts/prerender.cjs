@@ -724,6 +724,55 @@ function caseStudiesContent() {
     </main>`;
 }
 
+function agentsContent() {
+  return `
+    <main>
+      <section>
+        <h1>AI Agents & Workflow Automation</h1>
+        <p>MEMETIK builds custom AI agents and automated workflows that replace manual ops, eliminate bottlenecks, and run your business processes 24/7 — so your team can focus on work that actually moves the needle.</p>
+        <p><a href="https://cal.com/memetik/letstalk">Book an automation audit</a></p>
+      </section>
+      <section>
+        <h2>What we build</h2>
+        <ul>
+          <li><strong>AI Agents:</strong> Custom AI agents that handle repetitive knowledge work — support triage, data extraction, content ops, lead qualification.</li>
+          <li><strong>Workflow Automation:</strong> End-to-end process automation connecting your CRM, email, Slack, databases, and tools into zero-touch flows.</li>
+          <li><strong>Integration & Orchestration:</strong> We wire AI into your existing stack — no rip-and-replace. n8n, Make, custom code, API glue.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>How it works</h2>
+        <ol>
+          <li><strong>Operations Audit (Week 1):</strong> We map your manual processes, bottlenecks, and time-sinks. Deliverables include a process map, ROI model, and prioritised automation roadmap.</li>
+          <li><strong>Build & Ship (Week 2-4):</strong> We design and deploy AI agents and automated workflows. Working systems, not slide decks.</li>
+          <li><strong>Integrate & Harden (Week 3-6):</strong> Production deployment with monitoring, error handling, and team documentation.</li>
+          <li><strong>Evolve & Expand (Month 2+):</strong> Monthly optimisation, new workflow builds, and usage analytics.</li>
+        </ol>
+      </section>
+      <section>
+        <h2>What we automate</h2>
+        <ul>
+          <li>Lead qualification and CRM routing</li>
+          <li>Proposal and SOW generation from intake forms</li>
+          <li>Customer onboarding sequences</li>
+          <li>Invoice and payment follow-up</li>
+          <li>Support ticket triage and auto-response</li>
+          <li>Weekly reporting and KPI dashboards</li>
+          <li>Document extraction and data entry</li>
+          <li>Internal knowledge base Q&A agent</li>
+        </ul>
+      </section>
+      <section>
+        <h2>FAQ</h2>
+        <details><summary>What tools and platforms do you use?</summary><p>We work with whatever fits the job — n8n, Make, custom Node.js, Python, OpenAI, Anthropic, and direct API integrations.</p></details>
+        <details><summary>How long does a typical engagement take?</summary><p>The operations audit takes about a week. First working automations ship within 2-4 weeks. A full engagement typically runs 6-12 weeks.</p></details>
+        <details><summary>Do we need to change our existing tools?</summary><p>No. We integrate with your current stack. The goal is to make your existing tools work together, not replace them.</p></details>
+        <details><summary>What does it cost?</summary><p>Engagements start at $8K for a focused automation build. Larger scopes typically run $12-25K/month.</p></details>
+        <details><summary>Can you maintain the automations long-term?</summary><p>Yes. Most clients stay on a monthly retainer for monitoring, maintenance, and expansion.</p></details>
+      </section>
+    </main>`;
+}
+
 function auditContent() {
   return `
     <main>
@@ -1022,6 +1071,14 @@ function main() {
       bodyContent,
     });
   }
+
+  allPages.push({
+    route: "/agents",
+    title: "AI Agents & Workflow Automation | MEMETIK",
+    description: "MEMETIK builds custom AI agents and automated workflows that replace manual ops, eliminate bottlenecks, and run your business processes 24/7. Automation audit included.",
+    bodyContent: agentsContent(),
+    extraSchemas: webPageSchema("AI Agents & Workflow Automation | MEMETIK", "MEMETIK builds custom AI agents and automated workflows that replace manual ops, eliminate bottlenecks, and run your business processes 24/7.", `${DOMAIN}/agents`),
+  });
 
   allPages.push({
     route: "/bts",

@@ -31,6 +31,7 @@ const Solution = lazy(() => import("@/pages/Solution"));
 const AEOAgency = lazy(() => import("@/pages/AEOAgency"));
 const Pricing = lazy(() => import("@/pages/Pricing"));
 const CaseStudiesPage = lazy(() => import("@/pages/CaseStudiesPage"));
+const Agents = lazy(() => import("@/pages/Agents"));
 const TestLanding = lazy(() => import("@/pages/TestLanding"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
@@ -69,6 +70,7 @@ function Router() {
         <Route path="/for/:segment" component={Segment} />
         <Route path="/vs/:comparison" component={Comparison} />
         <Route path="/solutions/:solution" component={Solution} />
+        <Route path="/agents" component={Agents} />
         <Route path="/test" component={TestLanding} />
         <Route component={NotFound} />
       </Switch>
