@@ -546,7 +546,6 @@ export default function StrategySignifyIP() {
                 <div>
                   <h4 className="text-foreground font-bold text-sm mb-3">Content Placements</h4>
                   <BulletList items={[
-                    "LinkedIn Articles (Hollie Ford): 4-6 thought leadership pieces on TM topics",
                     "Medium / business publications: 'How I Helped [Client] Protect Their Brand' — 3-4 articles",
                     "Industry blogs / guest posts: trade mark tips for specific audiences — 3-4 articles",
                     "Startup publications (Startup Daily, etc.): 'Why Every Australian Startup Needs a Trade Mark'",
@@ -554,7 +553,7 @@ export default function StrategySignifyIP() {
                 </div>
 
                 <div>
-                  <h4 className="text-foreground font-bold text-sm mb-3">Backlink Strategy</h4>
+                  <h4 className="text-foreground font-bold text-sm mb-3">Backlink Acquisition</h4>
                   <div className="overflow-x-auto border border-border rounded-lg">
                     <table className="w-full text-left text-sm min-w-[400px]">
                       <thead className="bg-secondary/20 text-foreground">
@@ -565,11 +564,11 @@ export default function StrategySignifyIP() {
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-border/20 bg-secondary/5">
-                        <tr><td className="p-4 text-muted-foreground">Legal directories</td><td className="p-4 text-right text-primary font-bold">DR60-80+</td><td className="p-4 text-right">8-10</td></tr>
-                        <tr><td className="p-4 text-muted-foreground">Business directories</td><td className="p-4 text-right text-primary font-bold">DR50-70+</td><td className="p-4 text-right">5-6</td></tr>
-                        <tr><td className="p-4 text-muted-foreground">Industry publications</td><td className="p-4 text-right text-primary font-bold">DR40-60+</td><td className="p-4 text-right">3-4</td></tr>
-                        <tr><td className="p-4 text-muted-foreground">University/gov resource pages</td><td className="p-4 text-right text-primary font-bold">DR70-90+</td><td className="p-4 text-right">2-3</td></tr>
-                        <tr><td className="p-4 text-muted-foreground">Guest posts</td><td className="p-4 text-right text-primary font-bold">DR40-60+</td><td className="p-4 text-right">3-4</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">Legal directories</td><td className="p-4 text-right text-primary font-bold">DR40-60+</td><td className="p-4 text-right">8-10</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">Business directories</td><td className="p-4 text-right text-primary font-bold">DR30-50+</td><td className="p-4 text-right">5-6</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">Industry publications</td><td className="p-4 text-right text-primary font-bold">DR30-50+</td><td className="p-4 text-right">3-4</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">University/gov resource pages</td><td className="p-4 text-right text-primary font-bold">DR50-70+</td><td className="p-4 text-right">2-3</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">Guest posts</td><td className="p-4 text-right text-primary font-bold">DR30-50+</td><td className="p-4 text-right">3-4</td></tr>
                         <tr className="bg-secondary/10"><td className="p-4 text-foreground font-bold">Total</td><td className="p-4"></td><td className="p-4 text-right text-primary font-bold">20+ links</td></tr>
                       </tbody>
                     </table>
@@ -594,16 +593,6 @@ export default function StrategySignifyIP() {
                 </div>
 
                 <div>
-                  <h4 className="text-foreground font-bold text-sm mb-3">Review Generation</h4>
-                  <BulletList items={[
-                    "Post-service email requesting Google review",
-                    "Review link in email signatures",
-                    "Target: 2-3 new reviews per month (reach 30+ reviews within 6 months)",
-                    "Respond to every review within 24 hours",
-                  ]} />
-                </div>
-
-                <div>
                   <h4 className="text-foreground font-bold text-sm mb-3">Local Citations (10+ directories)</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Yellow Pages AU", "TrueLocal", "Hotfrog", "StartLocal", "Yelp AU", "White Pages", "Adelaide Now", "SA.gov.au"].map((dir) => (
@@ -617,14 +606,17 @@ export default function StrategySignifyIP() {
             {/* Phase 7: Measurement */}
             <PhaseBlock number="07" icon={<BarChart3 className="w-4 h-4" />} label="Ongoing" title="Measurement & KPIs">
               <div className="space-y-6">
+                <p className="text-xs text-muted-foreground italic border-l-2 border-primary/30 pl-4 mb-2">
+                  All projections below are modeled estimates based on category benchmarks and are not guaranteed outcomes. Actual results depend on market conditions, content velocity, and competitive dynamics.
+                </p>
                 <div className="overflow-x-auto border border-border rounded-lg">
                   <table className="w-full text-left text-sm min-w-[600px]">
                     <thead className="bg-secondary/20 text-foreground">
                       <tr>
                         <th className="p-4 md:p-6 font-bold">Metric</th>
                         <th className="p-4 md:p-6 font-bold text-right">Now</th>
-                        <th className="p-4 md:p-6 font-bold text-right">6-Month</th>
-                        <th className="p-4 md:p-6 font-bold text-right text-primary">12-Month</th>
+                        <th className="p-4 md:p-6 font-bold text-right">6-Month (est.)</th>
+                        <th className="p-4 md:p-6 font-bold text-right text-primary">12-Month (est.)</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-border/20 bg-secondary/5">
@@ -670,17 +662,17 @@ export default function StrategySignifyIP() {
                 {[
                   {
                     time: "Month 1",
-                    doing: "Technical foundation. Schema markup. Sitemap + GSC. Flagship guides #1-3 published. Pricing page. FAQ page. GBP optimization. Local citations. AEO baseline audit. Reddit + Quora seeding begins. First LinkedIn article published.",
+                    doing: "Technical foundation. Schema markup. Sitemap + GSC. Flagship guides #1-3 published. Pricing page. FAQ page. GBP optimization. Local citations. AEO baseline audit. Reddit + Quora seeding begins.",
                     seeing: "Site indexed properly in Google. First AI citations appearing in ChatGPT and Perplexity within weeks. Content calendar delivered.",
                   },
                   {
                     time: "Month 2-3",
-                    doing: "Flagship guides #4-10. Comparison pages. All 8 location pages. Industry landing pages. First 50 pSEO pages deployed. Press releases. LinkedIn articles. Reddit/Medium placements. Dedicated backlink outreach begins.",
+                    doing: "Flagship guides #4-10. Comparison pages. All 8 location pages. Industry landing pages. First 50 pSEO pages deployed. Press releases. Reddit/Medium placements. Backlink acquisition begins.",
                     seeing: "100+ pages live. AI platforms citing Signify IP for core trade mark queries. Long-tail rankings appearing. First organic leads hitting forms.",
                   },
                   {
                     time: "Month 4-6",
-                    doing: "Full pSEO scale: 150+ programmatic pages deployed. Guest post placements. Second wave of backlink outreach. Monthly AEO optimization. Case studies expanded.",
+                    doing: "Full pSEO scale: 150+ programmatic pages deployed. Guest post placements. Ongoing backlink acquisition. Monthly AEO optimization. Case studies expanded.",
                     seeing: "250+ pages live. Rankings climbing across all target keywords. Organic leads growing month over month. Signify IP consistently cited across ChatGPT, Perplexity, Gemini.",
                   },
                   {
@@ -777,7 +769,6 @@ export default function StrategySignifyIP() {
                 "Press releases (2/month)",
                 "Blog content (2 posts/month)",
                 "AEO baseline audit + quarterly monitoring",
-                "Review generation strategy + templates",
                 "Legal directory submissions (IPTA, Law Society SA, Doyle's Guide)",
                 "Monthly reporting with SEO + AEO + conversion tracking",
               ]} />
@@ -793,8 +784,7 @@ export default function StrategySignifyIP() {
               <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$5,500<span className="text-muted-foreground text-lg">/mo</span></p>
               <BulletList items={[
                 "Everything in Authority",
-                "Dedicated backlink outreach (5+ DR50+ links/month)",
-                "LinkedIn ghostwriting for Hollie Ford (2/month)",
+                "Backlink acquisition (5+ DR30+ links/month)",
                 "Guest post placements (1-2/month)",
                 "Reddit + Quora seeding (ongoing brand mentions)",
                 "Medium articles + content placements",
@@ -804,7 +794,7 @@ export default function StrategySignifyIP() {
                 "Priority Slack/email support",
               ]} />
               <div className="mt-6 pt-4 border-t border-border/50">
-                <p className="text-xs font-mono text-primary font-bold">350+ PAGES, 20+ BACKLINKS, 30+ PLACEMENTS</p>
+                <p className="text-xs font-mono text-primary font-bold">350+ PAGES, 20+ BACKLINKS</p>
               </div>
             </div>
           </div>
@@ -850,7 +840,7 @@ export default function StrategySignifyIP() {
                     <td className="p-4 md:p-6 text-foreground font-medium text-xs">Backlink building</td>
                     <td className="p-4 md:p-6 text-muted-foreground text-center">Organic only</td>
                     <td className="p-4 md:p-6 text-primary font-bold text-center">PR + directories</td>
-                    <td className="p-4 md:p-6 text-muted-foreground text-center">Dedicated outreach</td>
+                    <td className="p-4 md:p-6 text-muted-foreground text-center">Backlink acquisition</td>
                   </tr>
                 </tbody>
               </table>
