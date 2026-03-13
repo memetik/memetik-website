@@ -559,17 +559,16 @@ export default function StrategySignifyIP() {
                       <thead className="bg-secondary/20 text-foreground">
                         <tr>
                           <th className="p-4 font-bold">Source Type</th>
-                          <th className="p-4 font-bold text-right">Target DR</th>
                           <th className="p-4 font-bold text-right">Quantity</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-border/20 bg-secondary/5">
-                        <tr><td className="p-4 text-muted-foreground">Legal directories</td><td className="p-4 text-right text-primary font-bold">DR40-60+</td><td className="p-4 text-right">8-10</td></tr>
-                        <tr><td className="p-4 text-muted-foreground">Business directories</td><td className="p-4 text-right text-primary font-bold">DR30-50+</td><td className="p-4 text-right">5-6</td></tr>
-                        <tr><td className="p-4 text-muted-foreground">Industry publications</td><td className="p-4 text-right text-primary font-bold">DR30-50+</td><td className="p-4 text-right">3-4</td></tr>
-                        <tr><td className="p-4 text-muted-foreground">University/gov resource pages</td><td className="p-4 text-right text-primary font-bold">DR50-70+</td><td className="p-4 text-right">2-3</td></tr>
-                        <tr><td className="p-4 text-muted-foreground">Guest posts</td><td className="p-4 text-right text-primary font-bold">DR30-50+</td><td className="p-4 text-right">3-4</td></tr>
-                        <tr className="bg-secondary/10"><td className="p-4 text-foreground font-bold">Total</td><td className="p-4"></td><td className="p-4 text-right text-primary font-bold">20+ links</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">Legal directories</td><td className="p-4 text-right">8-10</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">Business directories</td><td className="p-4 text-right">5-6</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">Industry publications</td><td className="p-4 text-right">3-4</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">University/gov resource pages</td><td className="p-4 text-right">2-3</td></tr>
+                        <tr><td className="p-4 text-muted-foreground">Guest posts</td><td className="p-4 text-right">3-4</td></tr>
+                        <tr className="bg-secondary/10"><td className="p-4 text-foreground font-bold">Total</td><td className="p-4 text-right text-primary font-bold">20+ links</td></tr>
                       </tbody>
                     </table>
                   </div>
@@ -784,7 +783,7 @@ export default function StrategySignifyIP() {
               <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">$5,500<span className="text-muted-foreground text-lg">/mo</span></p>
               <BulletList items={[
                 "Everything in Authority",
-                "Backlink acquisition (5+ DR30+ links/month)",
+                "Backlink acquisition (5+ links/month)",
                 "Guest post placements (1-2/month)",
                 "Reddit + Quora seeding (ongoing brand mentions)",
                 "Medium articles + content placements",
