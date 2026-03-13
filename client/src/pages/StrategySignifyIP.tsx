@@ -522,7 +522,6 @@ export default function StrategySignifyIP() {
                   <BulletList items={[
                     "Google Knowledge Panel — claim and optimize business listing",
                     "Crunchbase, LinkedIn Company Page — optimized with full description and services",
-                    "Legal directories: IPTA, INTA, Law Society SA, Doyle's Guide, Best Lawyers",
                     "Business directories: TrueLocal, Yellow Pages, Yelp, Hotfrog, StartLocal",
                     "Consistent NAP across all platforms: Signify IP, 213 Greenhill Rd, Eastwood SA 5063",
                   ]} />
@@ -563,10 +562,8 @@ export default function StrategySignifyIP() {
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-border/20 bg-secondary/5">
-                        <tr><td className="p-4 text-muted-foreground">Legal directories</td><td className="p-4 text-right">8-10</td></tr>
                         <tr><td className="p-4 text-muted-foreground">Business directories</td><td className="p-4 text-right">5-6</td></tr>
                         <tr><td className="p-4 text-muted-foreground">Industry publications</td><td className="p-4 text-right">3-4</td></tr>
-                        <tr><td className="p-4 text-muted-foreground">University/gov resource pages</td><td className="p-4 text-right">2-3</td></tr>
                         <tr><td className="p-4 text-muted-foreground">Guest posts</td><td className="p-4 text-right">3-4</td></tr>
                         <tr className="bg-secondary/10"><td className="p-4 text-foreground font-bold">Total</td><td className="p-4 text-right text-primary font-bold">20+ links</td></tr>
                       </tbody>
@@ -768,7 +765,6 @@ export default function StrategySignifyIP() {
                 "Press releases (2/month)",
                 "Blog content (2 posts/month)",
                 "AEO baseline audit + quarterly monitoring",
-                "Legal directory submissions (IPTA, Law Society SA, Doyle's Guide)",
                 "Monthly reporting with SEO + AEO + conversion tracking",
               ]} />
               <div className="mt-6 pt-4 border-t border-primary/30">
