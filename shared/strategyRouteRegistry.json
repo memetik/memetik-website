@@ -73,6 +73,14 @@
       "title": "Creator Army — Founder Strategy Memo | MEMETIK",
       "description": "Founder-facing strategy memo for Creator Army focused on enterprise buyer-intent capture, creator-side conversion architecture, and a six-month search plus answer-surface positioning plan.",
       "prerenderMode": "summary"
+    },
+    {
+      "slug": "xoomai",
+      "route": "/strategy/xoomai",
+      "componentKey": "xoomai",
+      "title": "XoomAI — Dream 100 Pipeline Audit | MEMETIK",
+      "description": "Dream 100 pipeline audit and revenue-led search strategy for XoomAI focused on XoomAgent™, vertical account selection, outbound-page alignment, and commercial demand capture.",
+      "prerenderMode": "summary"
     }
   ],
   "parity": {

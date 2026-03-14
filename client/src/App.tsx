@@ -19,6 +19,7 @@ const StrategyBts3 = lazy(() => import("@/pages/strategy/Bts3"));
 const StrategyDrinkhyro = lazy(() => import("@/pages/strategy/Drinkhyro"));
 const StrategyHotWaterFunnel = lazy(() => import("@/pages/strategy/HotWaterFunnel"));
 const StrategyCreatorArmy = lazy(() => import("@/pages/strategy/CreatorArmy"));
+const StrategyXoomai = lazy(() => import("@/pages/strategy/Xoomai"));
 const BTSOffer = lazy(() => import("@/pages/BTSOffer"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const ResourceHub = lazy(() => import("@/pages/ResourceHub"));
@@ -45,6 +46,7 @@ const strategyPageComponents = {
   drinkhyro: StrategyDrinkhyro,
   "hot-water-funnel": StrategyHotWaterFunnel,
   "creator-army": StrategyCreatorArmy,
+  xoomai: StrategyXoomai,
 } as const;
 
 function Router() {
