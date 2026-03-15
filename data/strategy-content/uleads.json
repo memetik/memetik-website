@@ -1,0 +1,449 @@
+{
+  "slug": "uleads",
+  "company": "ULEADS",
+  "title": "ULEADS — SEO & AEO Strategy",
+  "description": "Strategy document for boostursuper.com, righthealthinsurance.com, and rightlifeinsure.com focused on building organic lead generation and AI visibility across superannuation, health insurance, and life insurance.",
+  "generatedAt": "2025-02-14",
+  "tldr": [
+    "ULEADS currently has no indexable content beyond landing pages, no schema, no sitemap or robots.txt setup, no backlink profile, and no visibility in AI assistants.",
+    "The opportunity is large because superannuation, health insurance, and life insurance are high-intent Australian search categories where major publishers convert organic traffic into leads at scale.",
+    "The plan is to turn each single-page funnel into a content-rich authority site that ranks for long-tail buying queries and feeds every visitor back into lead capture forms.",
+    "Month 1-2 focuses on technical setup, competitor reverse-engineering, full keyword mapping, content architecture, analytics setup, and a baseline audit of how AI platforms cite brands.",
+    "From month 2 onward, the content engine targets 1,475+ total pages across the three sites, covering reviews, comparisons, segment pages, calculators, guides, and other high-intent queries.",
+    "Off-site authority work includes guest posts, niche edits, digital PR, press releases, Medium and LinkedIn placements, and seeding brand mentions on Reddit and Quora.",
+    "Expected outcomes are first indexing and impressions in months 2-3, first organic leads by months 4-6, and compounding traffic, leads, and AI citations by months 10-12."
+  ],
+  "hero": {
+    "eyebrow": "Strategy Document /// February 2026",
+    "headline": "ULEADS",
+    "accent": "SEO & AEO STRATEGY.",
+    "tags": [
+      "boostursuper.com",
+      "righthealthinsurance.com",
+      "rightlifeinsure.com"
+    ]
+  },
+  "sections": [
+    {
+      "id": "current-state",
+      "number": "00",
+      "heading": "CURRENT STATE",
+      "highlightBoxes": [
+        {
+          "title": "What's Missing",
+          "tone": "warning",
+          "bullets": [
+            "No indexable content beyond the landing page — Google has nothing to rank",
+            "No blog, no resource pages, no comparison content",
+            "No schema markup",
+            "No sitemap or robots.txt configuration",
+            "No backlink profile",
+            "Zero presence in AI platforms (ChatGPT, Perplexity, Google AI Overviews)"
+          ]
+        },
+        {
+          "heading": "The organic opportunity is massive — and completely untapped.",
+          "body": "Superannuation, health insurance, and life insurance are three of the highest-volume, highest-intent search verticals in Australian finance. Millions of Australians search for help with these decisions every year. The sites that capture that traffic — Canstar, Finder, Compare the Market, Money.com.au — built eight and nine-figure businesses on the back of organic content that converts searchers into leads.\n\nRight now, Uleads has three sites in three of those exact verticals with proven funnels and proven demand (paid ads confirm it). But every lead costs ad spend, and the moment you stop spending, the leads stop. There is zero organic presence — no content, no rankings, no AI visibility. That's not a problem, it's a gap. And it's the kind of gap where closing it changes the economics of the entire business.\n\nOrganic leads compound. A page published in month 2 is still generating leads in month 12 and beyond. The three verticals share the same audience — Australians making financial decisions — which means content, links, and authority built on one site reinforces the others. This isn't three separate SEO projects. It's one ecosystem."
+        }
+      ]
+    },
+    {
+      "id": "competitive-landscape",
+      "number": "01",
+      "heading": "COMPETITIVE LANDSCAPE",
+      "subtitle": "Who Owns These Verticals",
+      "sectionLead": {
+        "body": "Site | Organic Traffic | What They Do Well",
+        "implication": "Data sourced from Semrush, February 2026."
+      },
+      "stackCards": [
+        {
+          "title": "Superannuation",
+          "content": "Dominated by AustralianSuper (27.3% share of search), ATO (23.1%), and Moneysmart (13.9%). Top 5 control 73% of search. Long-tail queries like \"should I switch super funds\" and \"best super fund for under 30s\" are less contested and high-intent."
+        },
+        {
+          "title": "Health Insurance",
+          "content": "Bupa (24.3%), Compare the Market (15.5%), and Medibank (14.4%) own head terms. Comparison-intent queries are where smaller players win. Finder, Canstar, and Money.com.au prove the model works."
+        },
+        {
+          "title": "Life Insurance",
+          "content": "Allianz (22.7%), Moneysmart (13.7%), Compare the Market (8.7%). Less consolidated than health insurance — more room for a content-rich comparison site to rank."
+        }
+      ],
+      "scopeBlocks": [
+        {
+          "label": "1.4M/month",
+          "title": "canstar.com.au",
+          "bullets": [
+            "Star ratings system, trust signals, 1000+ indexed pages per vertical"
+          ]
+        },
+        {
+          "label": "1.3M/month",
+          "title": "moneysmart.gov.au",
+          "bullets": [
+            "Government authority, E-E-A-T maxed out, cited by every AI platform"
+          ]
+        },
+        {
+          "label": "901.6K/month",
+          "title": "comparethemarket.com.au",
+          "bullets": [
+            "Brand recognition, massive content library, every insurer × product type covered"
+          ]
+        },
+        {
+          "label": "663.7K/month",
+          "title": "choice.com.au",
+          "bullets": [
+            "Independent reviews, \"we don't take commission\" positioning"
+          ]
+        },
+        {
+          "label": "448.7K/month",
+          "title": "finder.com.au",
+          "bullets": [
+            "Widest keyword coverage, comparison tools, policy breakdowns"
+          ]
+        },
+        {
+          "label": "52.1K/month",
+          "title": "stockspot.com.au",
+          "bullets": [
+            "Original research (\"Fat Cat Funds Report\"), digital PR machine"
+          ]
+        },
+        {
+          "label": "14.6K/month",
+          "title": "superratings.com.au",
+          "bullets": [
+            "Industry authority, awards, data-driven content, media citations"
+          ]
+        }
+      ],
+      "highlightBoxes": [
+        {
+          "title": "Where Uleads Sits Today",
+          "body": "0 organic traffic. 0 indexed content pages. 0 referring domains. 0 AI citations.",
+          "bullets": [
+            "The strategy below is designed to close that gap."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "strategy-content-led-lead-gen-aeo",
+      "number": "02",
+      "heading": "STRATEGY: CONTENT-LED LEAD GEN + AEO",
+      "highlightBoxes": [
+        {
+          "body": "Turn each single-page funnel into a content-rich authority site that ranks for hundreds of long-tail, high-intent queries and gets cited by AI platforms. Every piece of content funnels back to the lead capture form."
+        }
+      ]
+    },
+    {
+      "id": "execution-protocol",
+      "number": "03",
+      "heading": "EXECUTION PROTOCOL",
+      "stackCards": [
+        {
+          "label": "Phase 1 — Month 1-2",
+          "title": "Foundation",
+          "icon": "Target",
+          "bullets": [
+            "Technical Setup (All 3 Sites)",
+            "Competitor Reverse-Engineering",
+            "Keyword Research & Content Architecture",
+            "Baseline AEO Audit"
+          ]
+        },
+        {
+          "label": "Phase 2 — Month 2 Onwards",
+          "title": "Content Engine",
+          "icon": "Database",
+          "bullets": [
+            "boostursuper.com",
+            "righthealthinsurance.com",
+            "rightlifeinsure.com",
+            "Site | Editorial | Programmatic | Total",
+            "Content Principles"
+          ]
+        },
+        {
+          "label": "Phase 3 — Month 2 Onwards",
+          "title": "Authority Building",
+          "icon": "Share2",
+          "bullets": [
+            "Link Building",
+            "Press Releases",
+            "Parasite SEO"
+          ]
+        },
+        {
+          "label": "Phase 4 — Ongoing from Month 1",
+          "title": "AEO & AI Visibility",
+          "icon": "RotateCw",
+          "bullets": [
+            "Reddit & Quora Seeding",
+            "Entity Building",
+            "Content Structure for AI",
+            "AI Monitoring"
+          ]
+        }
+      ],
+      "highlightBoxes": [
+        {
+          "body": "We don't do selective content. We build every single page that could rank and convert — every comparison, every review, every segment page, every BOFU query, every programmatic variation. If there's a search query with intent, we build a page for it. The goal is total coverage across all three verticals."
+        },
+        {
+          "title": "Content Principles",
+          "body": "Every page targets a real search query. Every page has a clear CTA to the lead capture form. FAQ schema on every page. Content structured for AI extraction — clear, quotable answers in the first 100 words. E-E-A-T signals throughout. No filler. Every page exists because someone searches for it."
+        }
+      ],
+      "scopeBlocks": [
+        {
+          "label": "Phase 1 — Month 1-2",
+          "title": "Technical Setup (All 3 Sites)",
+          "icon": "Globe",
+          "bullets": [
+            "Determine CMS capability — can GoHighLevel support a blog/content section, or do we need a subdomain or subdirectory on a separate platform?",
+            "Sitemap generation and submission to Google Search Console",
+            "robots.txt configuration",
+            "Schema markup: Organization, FAQPage, BreadcrumbList, WebSite on all pages",
+            "Google Search Console and Google Analytics setup for all 3 domains",
+            "Core Web Vitals audit and fixes"
+          ]
+        },
+        {
+          "label": "Phase 1 — Month 1-2",
+          "title": "Competitor Reverse-Engineering",
+          "icon": "Search",
+          "bullets": [
+            "Pull the complete keyword profile of every top-performing site in each vertical (Canstar, Finder, Compare the Market, Money.com.au, SuperRatings, Mozo, Lifebroker, etc.)",
+            "Identify every page that ranks, what it ranks for, estimated traffic, and backlink profile",
+            "Map their site architecture — how they structure categories, internal links, content hubs, and conversion funnels",
+            "Analyse their schema markup, page templates, CTA placement, and content formats",
+            "Identify exactly which content types drive their organic leads (comparison pages, \"best of\" lists, insurer reviews, calculators, guides)",
+            "Document everything that works and strip out what doesn't — this becomes the blueprint for all three Uleads sites",
+            "The goal is not to copy — it's to reverse-engineer the content model, improve on it, and deploy it faster across three sites simultaneously"
+          ]
+        },
+        {
+          "label": "Phase 1 — Month 1-2",
+          "title": "Keyword Research & Content Architecture",
+          "icon": "Database",
+          "bullets": [
+            "Full keyword map for each vertical built from competitor reverse-engineering + fresh research",
+            "Content calendar: 12-month publishing schedule per site, prioritised by traffic potential and conversion intent",
+            "Internal linking architecture designed to funnel authority to lead capture pages",
+            "Content gap analysis — every high-traffic page competitors rank for that these sites don't becomes a content brief"
+          ]
+        },
+        {
+          "label": "Phase 1 — Month 1-2",
+          "title": "Baseline AEO Audit",
+          "icon": "Bot",
+          "bullets": [
+            "Query each AI platform (ChatGPT, Perplexity, Gemini, Google AI Overviews) for core queries in each vertical",
+            "Document which brands get cited and why",
+            "Identify the content patterns AI models prefer to cite (structure, data, authority signals)"
+          ]
+        },
+        {
+          "label": "Phase 2 — Month 2 Onwards",
+          "title": "boostursuper.com",
+          "bullets": [
+            "Individual Fund Reviews (100+ pages): A dedicated review page for every super fund in Australia — AustralianSuper, REST, Aware, HESTA, UniSuper, Hostplus, QSuper, CBUS, Media Super, Vision Super, and every other fund. Each page covers fees, performance, insurance, investment options, and a clear CTA.",
+            "Fund vs Fund Comparisons (500+ pages): Every meaningful head-to-head: \"AustralianSuper vs REST,\" \"Hostplus vs UniSuper,\" \"QSuper vs Aware,\" etc. Programmatically generated across every fund × fund combination with real comparison data.",
+            "Best Super Fund For [Segment] (30+ pages): Under 30s, over 50s, self-employed, high balance, low fees, ethical investing, high growth, conservative, women, apprentices, government employees, teachers, nurses, construction workers, retail workers, etc.",
+            "How-To Guides + Calculators + FAQ (60+ pages): Consolidate super, switch funds, find lost super, salary sacrifice, SMSF guides, super projection calculators, fee comparison calculators, every foundational \"what is superannuation\" query with schema markup."
+          ]
+        },
+        {
+          "label": "Phase 2 — Month 2 Onwards",
+          "title": "righthealthinsurance.com",
+          "bullets": [
+            "Insurer Reviews (40+ pages): Every major health insurer: Bupa, Medibank, nib, HCF, ahm, GMHBA, Teachers Health, Defence Health, Police Health, Australian Unity, CBHS, GU Health, Latrobe Health, Peoplecare, RT Health, Westfund, etc.",
+            "Insurer vs Insurer Comparisons (300+ pages): Every meaningful head-to-head programmatically generated: \"Bupa vs Medibank,\" \"nib vs HCF,\" \"ahm vs GMHBA,\" etc. Each page compares premiums, coverage, waiting periods, and extras.",
+            "Best Health Insurance For [Segment] (30+ pages): Singles, couples, families, young adults, seniors, pregnancy, dental, optical, physiotherapy, mental health, singles under 30, families with kids, self-employed, expats, people with pre-existing conditions.",
+            "Policy Types + Insurer × Policy Programmatic (220+ pages): Hospital vs extras, gold vs silver vs bronze, gap cover, ambulance cover, pregnancy cover. Plus every insurer × cover type combination: \"Bupa gold hospital cover,\" \"nib extras cover,\" \"Medibank pregnancy cover,\" etc.",
+            "Decision & Seasonal Content (20+ pages): \"Is health insurance worth it in 2026,\" MLS explainer, LHC loading, how to switch, waiting periods, April premium increase roundup, EOFY tax guide."
+          ]
+        },
+        {
+          "label": "Phase 2 — Month 2 Onwards",
+          "title": "rightlifeinsure.com",
+          "bullets": [
+            "Insurer Reviews (15+ pages): TAL, AIA, Zurich, OnePath, MLC, NobleOak, ClearView, MetLife, Integrity Life, BT, Resolution Life, Acenda/Encompass — every active life insurer in the Australian market.",
+            "Insurer vs Insurer Comparisons (100+ pages): Every meaningful head-to-head: \"TAL vs AIA,\" \"NobleOak vs Zurich,\" \"MLC vs OnePath,\" etc. Programmatic generation across all insurer × insurer combinations.",
+            "Best Life Insurance For [Segment] (25+ pages): Young families, mortgage holders, self-employed, over 50s, single parents, high-income earners, business owners, stay-at-home parents, smokers vs non-smokers, people with pre-existing conditions.",
+            "Cover Types + Insurer × Cover Programmatic (115+ pages): Term life vs whole life, TPD, trauma cover, income protection, funeral insurance, key person insurance. Plus every insurer × cover type: \"TAL term life,\" \"AIA income protection,\" \"NobleOak TPD cover,\" etc.",
+            "Life Insurance Through Super vs Direct (dedicated hub): The single highest-intent comparison in this vertical — a full content hub covering cost differences, coverage differences, claims process, tax implications, and when each option makes sense.",
+            "Calculators + Trust Content (20+ pages): \"How much life insurance do I need,\" cost calculators, income protection calculators, claims process guides, claim statistics Australia, \"is life insurance worth it.\""
+          ]
+        },
+        {
+          "label": "Phase 2 — Month 2 Onwards",
+          "title": "Site | Editorial | Programmatic | Total",
+          "bullets": [
+            "boostursuper.com | 90+ | 500+ | 590+",
+            "righthealthinsurance.com | 110+ | 500+ | 610+",
+            "rightlifeinsure.com | 75+ | 200+ | 275+",
+            "Total | 275+ | 1,200+ | 1,475+"
+          ]
+        },
+        {
+          "label": "Phase 3 — Month 2 Onwards",
+          "title": "Link Building",
+          "bullets": [
+            "Guest posts on personal finance blogs and insurance comparison sites",
+            "Niche edits on existing finance/insurance content",
+            "HARO/Connectively/SourceBottle journalist queries — position as expert sources",
+            "Finance directory submissions",
+            "Digital PR — original data pieces (e.g. \"We compared 50 super funds for Australians under 30 — here's what we found\") pitched to finance publications"
+          ]
+        },
+        {
+          "label": "Phase 3 — Month 2 Onwards",
+          "title": "Press Releases",
+          "bullets": [
+            "Distributed across finance and insurance publications",
+            "Each release generates syndicated placements, backlinks, and brand entity signals for AI training data"
+          ]
+        },
+        {
+          "label": "Phase 3 — Month 2 Onwards",
+          "title": "Parasite SEO",
+          "bullets": [
+            "Publish optimized articles on Medium, LinkedIn, and finance editorial platforms",
+            "Target high-intent comparison and review queries",
+            "Each placement links back to the relevant Uleads site and builds domain authority by association"
+          ]
+        },
+        {
+          "label": "Phase 4 — Ongoing from Month 1",
+          "title": "Reddit & Quora Seeding",
+          "bullets": [
+            "Seed brand mentions in relevant threads: r/AusFinance, r/AusHENRY, r/fiaustralia for super and life insurance",
+            "r/australia, personal finance forums for health insurance",
+            "Quora answers for \"best super fund,\" \"how to compare health insurance Australia,\" \"do I need life insurance\"",
+            "AI models scrape both platforms heavily — every mention strengthens citation likelihood"
+          ]
+        },
+        {
+          "label": "Phase 4 — Ongoing from Month 1",
+          "title": "Entity Building",
+          "bullets": [
+            "Consistent NAP (name, address, phone) and brand signals across all web properties",
+            "Ensure all 3 brands appear in directory listings, review platforms, and social profiles",
+            "Press release distribution builds entity signals that feed Google's Knowledge Panel and AI training data"
+          ]
+        },
+        {
+          "label": "Phase 4 — Ongoing from Month 1",
+          "title": "Content Structure for AI",
+          "bullets": [
+            "Every key article opens with a clear, direct answer to the query (the \"AI-citable statement\")",
+            "FAQ sections with structured data",
+            "Data tables and comparison charts that AI models prefer to reference",
+            "\"According to [Brand]\" phrasing baked into parasite and PR content to train citation patterns"
+          ]
+        },
+        {
+          "label": "Phase 4 — Ongoing from Month 1",
+          "title": "AI Monitoring",
+          "bullets": [
+            "Monthly tracking of all 3 brands across ChatGPT, Perplexity, Gemini, Google AI Overviews",
+            "Track which queries trigger citations and which don't",
+            "Iterate content and entity signals based on what's working"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-expect",
+      "number": "04",
+      "heading": "WHAT TO EXPECT",
+      "sectionLead": {
+        "body": "Timeline | What We're Doing | What You'll See"
+      },
+      "monthBlocks": [
+        {
+          "label": "Month 1",
+          "title": "Technical foundation across all 3 sites. Competitor reverse-engineering. Full keyword maps and content architecture. Baseline AEO audit.",
+          "bullets": [
+            "Sites indexed in Google. Content calendars for 1,475+ pages delivered. Clear blueprint for every page we're building."
+          ]
+        },
+        {
+          "label": "Month 2-3",
+          "title": "First 100+ pages published across all 3 sites. Programmatic templates deployed. Link building and PR campaigns launched. Reddit/Quora seeding begins.",
+          "bullets": [
+            "Pages appearing in Google index. Long-tail rankings starting to show. First organic impressions in Search Console."
+          ]
+        },
+        {
+          "label": "Month 4-6",
+          "title": "300+ pages live. Comparison and BOFU content scaling. Authority signals compounding. AEO entity building in progress.",
+          "bullets": [
+            "Rankings climbing across all 3 verticals. First organic leads hitting forms. AI platforms starting to reference your content."
+          ]
+        },
+        {
+          "label": "Month 7-9",
+          "title": "600+ pages live. Programmatic content at scale. Second wave of link building. PR placements generating brand signals.",
+          "bullets": [
+            "Organic becoming a consistent lead channel alongside paid. Hundreds of ranking keywords per site. Monthly lead volume growing."
+          ]
+        },
+        {
+          "label": "Month 10-12",
+          "title": "1,000+ pages live. Full content coverage approaching. AEO citations tracked and optimised.",
+          "bullets": [
+            "Organic traffic compounding month over month. Multiple AI platforms citing your brands. Lead cost from organic approaching zero marginal cost."
+          ]
+        }
+      ],
+      "highlightBoxes": [
+        {
+          "body": "Paid ads stop the moment you stop paying. Content compounds. By month 12, every page we've built is working for you — permanently."
+        }
+      ]
+    },
+    {
+      "id": "next-steps",
+      "number": "05",
+      "heading": "NEXT STEPS",
+      "scopeBlocks": [
+        {
+          "label": "1",
+          "title": "Confirm CMS capabilities",
+          "bullets": [
+            "can we add content to the existing sites, or do we need subdomains/separate platforms?"
+          ]
+        },
+        {
+          "label": "2",
+          "title": "Technical setup and content calendars delivered",
+          "bullets": [
+            "week 1-2"
+          ]
+        },
+        {
+          "label": "3",
+          "title": "Content publishing begins",
+          "bullets": [
+            "week 3"
+          ]
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "eyebrow": "/// End of Strategy",
+    "headline": "LET'S TALK",
+    "body": "Confirm CMS capabilities, deliver technical setup and content calendars in week 1-2, and begin content publishing in week 3.",
+    "href": "https://cal.com/memetik/letstalk",
+    "ctaLabel": "LET'S TALK"
+  }
+}

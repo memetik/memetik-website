@@ -6,7 +6,8 @@
       "componentKey": "bts",
       "title": "BTS Counter-Offensive — Strategic Growth Plan | MEMETIK",
       "description": "Strategic growth plan for BTS — content, SEO, and AI visibility counter-offensive.",
-      "prerenderMode": "summary"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/bts.json"
     },
     {
       "slug": "bts-2",
@@ -14,8 +15,8 @@
       "componentKey": "bts-2",
       "title": "Behind the Scenes — Founder Strategy Memo | MEMETIK",
       "description": "Founder-facing strategy memo for Behind the Scenes focused on creator monetization buyer demand, commercial comparisons, off-site authority, and a 90-day execution plan.",
-      "prerenderMode": "brief",
-      "briefPath": "content/strategy-briefs/BTS-Strategy-Brief.md"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/bts-2.json"
     },
     {
       "slug": "bts-3",
@@ -23,7 +24,8 @@
       "componentKey": "bts-3",
       "title": "BTS 3 — Founder Strategy Memo | MEMETIK",
       "description": "Combined BTS founder strategy memo that merges the original BTS counter-offensive with the newer founder-facing memo in the new vertical layout.",
-      "prerenderMode": "summary"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/bts-3.json"
     },
     {
       "slug": "signify-ip",
@@ -31,7 +33,8 @@
       "componentKey": "signify-ip",
       "title": "Signify IP — SEO & AEO Strategy | MEMETIK",
       "description": "SEO and AEO strategy proposal for Signify IP trade mark services.",
-      "prerenderMode": "summary"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/signify-ip.json"
     },
     {
       "slug": "uleads",
@@ -39,7 +42,8 @@
       "componentKey": "uleads",
       "title": "Uleads — SEO & AEO Strategy | MEMETIK",
       "description": "SEO and AEO strategy proposal for Uleads insurance comparison platform.",
-      "prerenderMode": "summary"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/uleads.json"
     },
     {
       "slug": "kinso",
@@ -47,7 +51,8 @@
       "componentKey": "kinso",
       "title": "Kinso — SEO & AEO Strategy | MEMETIK",
       "description": "SEO and AEO strategy proposal for Kinso.",
-      "prerenderMode": "summary"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/kinso.json"
     },
     {
       "slug": "drinkhyro",
@@ -55,8 +60,8 @@
       "componentKey": "drinkhyro",
       "title": "Hyro — Founder Strategy Memo | MEMETIK",
       "description": "Founder-facing strategy memo for Hyro focused on electrolyte drink mix buyer demand, commercial comparison terms, off-site authority, and a 6-month execution plan.",
-      "prerenderMode": "brief",
-      "briefPath": "content/strategy-briefs/Drinkhyro-Strategy-Brief.md"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/drinkhyro.json"
     },
     {
       "slug": "hot-water-funnel",
@@ -64,7 +69,8 @@
       "componentKey": "hot-water-funnel",
       "title": "Hot Water Funnel — Sales-Led Strategy | MEMETIK",
       "description": "Sales-led strategy page for a Gold Coast heat pump hot water funnel built around fixed-price installs, local demand capture, eligibility filtering, and booking conversion.",
-      "prerenderMode": "summary"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/hot-water-funnel.json"
     },
     {
       "slug": "creator-army",
@@ -72,7 +78,8 @@
       "componentKey": "creator-army",
       "title": "Creator Army — Founder Strategy Memo | MEMETIK",
       "description": "Founder-facing strategy memo for Creator Army focused on enterprise buyer-intent capture, creator-side conversion architecture, and a six-month search plus answer-surface positioning plan.",
-      "prerenderMode": "summary"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/creator-army.json"
     },
     {
       "slug": "xoomai",
@@ -80,7 +87,8 @@
       "componentKey": "xoomai",
       "title": "XoomAI — Founder Strategy Memo | MEMETIK",
       "description": "Founder-facing strategy memo for XoomAI focused on XoomAgent™, vertical account selection, outbound-page alignment, and commercial demand capture.",
-      "prerenderMode": "summary"
+      "prerenderMode": "data",
+      "contentDataPath": "data/strategy-content/xoomai.json"
     }
   ],
   "parity": {

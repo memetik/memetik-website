@@ -1482,6 +1482,88 @@ Additional requirements:
   return { filePath: obsidianOutPath, repoFilePath: repoOutPath, content: cleaned };
 }
 
+async function generateContentJson(company, researchData, canonicalInputs, brief, pageTsxContent, keywordAttributionSummary) {
+  console.log(`  Generating content JSON for ${company.name}...`);
+
+  const contentJsonDir = path.join(REPO_ROOT, "data", "strategy-content");
+  if (!fs.existsSync(contentJsonDir)) fs.mkdirSync(contentJsonDir, { recursive: true });
+
+  const schemaPath = path.join(REPO_ROOT, "shared", "strategyContentSchema.ts");
+  const schemaContent = fs.existsSync(schemaPath) ? fs.readFileSync(schemaPath, "utf-8") : "";
+
+  const systemPrompt = `You are a data extraction engine. You will receive a complete strategy page TSX file and its approved brief. Extract ALL content into a structured JSON object matching the StrategyContentData schema.
+
+SCHEMA:
+${schemaContent}
+
+RULES:
+1. Output ONLY valid JSON. No markdown fences, no explanation, no commentary.
+2. Extract every piece of visible text content from the TSX.
+3. Map icons to their string names (e.g., "Search", "TrendingUp", "Target").
+4. Include the TLDR field with 6-8 bullet points summarising the key findings and recommended actions.
+5. Do NOT include any publicBannedTerms: ${JSON.stringify(["Foundation Assets", "AI share of voice", "pSEO", "programmatic SEO", "Apex Assets", "Knowledge Graph", "Trust Relay", "recommendation-share", "shortlist", "wedge", "Dream 100"])}.
+6. Translate any internal terms to public equivalents (e.g., "Apex Assets" -> "bottom-of-funnel pages", "Knowledge Graph" -> "supporting content network", "Trust Relay" -> "off-site authority", "Money Entities" -> "priority buying queries").
+7. Preserve all data: metrics, breakdowns, chart points, timeline milestones, appendix tables, prompt observations.
+8. The JSON must be complete enough to render the full page from data alone.`;
+
+  const userPrompt = `Extract the content from this strategy page TSX into the StrategyContentData JSON format.
+
+COMPANY: ${company.name}
+SLUG: ${company.slug}
+DOMAIN: ${company.domain}
+
+KEYWORD ATTRIBUTION SUMMARY:
+${formatKeywordAttributionSummary(keywordAttributionSummary)}
+
+TSX CONTENT:
+${pageTsxContent}
+
+APPROVED BRIEF:
+${brief.content.slice(0, 8000)}
+
+Generate the complete JSON now.`;
+
+  try {
+    let jsonContent = await codexRequest(systemPrompt, userPrompt);
+
+    if (jsonContent.startsWith("```")) {
+      jsonContent = jsonContent.replace(/^```(?:json)?\n/, "").replace(/\n```$/, "");
+    }
+
+    const parsed = JSON.parse(jsonContent);
+
+    if (!parsed.slug) parsed.slug = company.slug;
+    if (!parsed.company) parsed.company = company.name;
+    if (!parsed.title) parsed.title = `${company.name} — Founder Strategy Memo | MEMETIK`;
+
+    const outPath = path.join(contentJsonDir, `${company.slug}.json`);
+    fs.writeFileSync(outPath, JSON.stringify(parsed, null, 2));
+    console.log(`  Content JSON saved to ${outPath}`);
+
+    updateStrategyRouteRegistry(company.slug, outPath);
+
+    return { outPath, data: parsed };
+  } catch (error) {
+    console.warn(`  Warning: Content JSON generation failed for ${company.slug}: ${error.message}`);
+    console.warn(`  The TSX page was generated successfully. Content JSON can be created manually.`);
+    return null;
+  }
+}
+
+function updateStrategyRouteRegistry(slug, contentDataPath) {
+  const registryPath = path.join(REPO_ROOT, "shared", "strategyRouteRegistry.json");
+  const registry = JSON.parse(fs.readFileSync(registryPath, "utf-8"));
+
+  const entry = registry.routes.find((r) => r.slug === slug);
+  if (entry) {
+    const relativePath = path.relative(REPO_ROOT, contentDataPath);
+    entry.prerenderMode = "data";
+    entry.contentDataPath = relativePath;
+    fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2) + "\n");
+    console.log(`  Route registry updated: ${slug} -> prerenderMode: "data"`);
+  }
+}
+
 async function generateStrategyPage(company, researchData, options = {}) {
   console.log(`\nGenerating strategy page for ${company.name}...`);
   console.log(`  Using model: ${STRATEGY_MODEL} via ${OPENAI_BASE_URL}`);
@@ -1570,7 +1652,7 @@ Generate the complete TSX file now.`;
 
   validateGeneratedTsx(cleaned);
 
-  // Save the file
+  // Save the TSX file
   const outDir = path.join(__dirname, "..", "..", "client", "src", "pages", "strategy");
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
@@ -1578,6 +1660,9 @@ Generate the complete TSX file now.`;
   const outPath = path.join(outDir, fileName);
   fs.writeFileSync(outPath, cleaned);
   console.log(`  Strategy page saved to ${outPath}`);
+
+  // Generate content JSON for data-driven rendering
+  const contentJsonResult = await generateContentJson(company, researchData, canonicalInputs, brief, cleaned, keywordAttributionSummary);
 
   const contentDraft = await generateStrategyContentDrafts(
     company,
@@ -1603,6 +1688,7 @@ Generate the complete TSX file now.`;
     fileName,
     componentName: `Strategy${pascalCase(company.slug)}`,
     outPath,
+    contentJsonPath: contentJsonResult?.outPath || null,
     contentDraftPath: contentDraft.filePath,
     repoContentDraftPath: contentDraft.repoFilePath,
     outboundPack,

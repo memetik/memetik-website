@@ -10,9 +10,9 @@ import strategyRouteRegistry from "@shared/strategyRouteRegistry.json";
 
 const Home = lazy(() => import("@/pages/Home"));
 const Strategy = lazy(() => import("@/pages/Strategy"));
-const StrategyUleads = lazy(() => import("@/pages/StrategyUleads"));
-const StrategySignifyIP = lazy(() => import("@/pages/StrategySignifyIP"));
-const StrategyBTS = lazy(() => import("@/pages/StrategyBTS"));
+const StrategyUleads = lazy(() => import("@/pages/strategy/Uleads"));
+const StrategySignifyIP = lazy(() => import("@/pages/strategy/SignifyIp"));
+const StrategyBTS = lazy(() => import("@/pages/strategy/Bts"));
 const StrategyKinso = lazy(() => import("@/pages/strategy/Kinso"));
 const StrategyBts2 = lazy(() => import("@/pages/strategy/Bts2"));
 const StrategyBts3 = lazy(() => import("@/pages/strategy/Bts3"));

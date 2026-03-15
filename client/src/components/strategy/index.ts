@@ -34,3 +34,6 @@ export type {
 } from "./ExecutionInfographic";
 export { WorkstreamTimeline } from "./WorkstreamTimeline";
 export type { WorkstreamTimelineTrack, WorkstreamTimelineCell } from "./WorkstreamTimeline";
+export { TldrSection } from "./TldrSection";
+export { SummariseButton } from "./SummariseButton";
+export { default as StrategyPageTemplate } from "./StrategyPageTemplate";

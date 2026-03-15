@@ -1,0 +1,650 @@
+{
+  "slug": "bts",
+  "company": "BTS",
+  "domain": "behindthescenes.com",
+  "title": "BTS Counter-Offensive — Strategic Growth Plan",
+  "description": "6-month strategic growth plan to make BTS visible everywhere that matters — AI answers, search results, review platforms, and the trust signals that feed all three.",
+  "generatedAt": "2025-02-14",
+  "tldr": [
+    "BTS isn't chasing volume. It's building the platform for 10,000 densely concentrated builders doing $100K+/year — a $1B GMV target that changes the entire competitive equation.",
+    "This is a 6-month campaign to make BTS visible everywhere that matters — AI answers, search results, review platforms, and the trust signals that feed all three.",
+    "Line 1 — AI Dominance: Get BTS into ChatGPT, Perplexity, Gemini, and Google AI Overviews by targeting each model's specific data sources. Wikipedia page pursuit for 7x AI visibility lift.",
+    "Line 2 — Search Ownership: Multi-surface visibility — BTS appears across multiple results for every query that matters. 500+ pages, 55 third-party placements, competitor keyword hijacking.",
+    "Line 3 — Reputation Warfare: Weaponise Whop's documented problems (120-day fund holds, 3.7/5 Trustpilot) while building BTS's trust infrastructure to 4.5+ ratings across 5 platforms.",
+    "What gets built: 500+ optimised content pages on behindthescenes.com, 55 third-party placements, 36 press releases, 3 independent blog properties, active review profiles on 5 platforms, and forum operations across 3 platforms.",
+    "APAC content dominance covers Australia, Singapore, Malaysia, India, and Japan, supported by weekly AI mention tracking, monthly performance reports, and continuous competitive monitoring with 48-hour counter-publishing.",
+    "$11K/month. $66K total. Phase 1 pricing. Full strategy and execution, end to end."
+  ],
+  "hero": {
+    "eyebrow": "Confidential /// March 2026",
+    "headline": "BTS",
+    "accent": "COUNTER-OFFENSIVE.",
+    "subtitle": "6-month strategic growth plan to make BTS visible everywhere that matters — AI answers, search results, review platforms, and the trust signals that feed all three.",
+    "tags": [
+      "behindthescenes.com",
+      "Creator Economy",
+      "6-Month Campaign",
+      "$11K/mo"
+    ]
+  },
+  "sections": [
+    {
+      "id": "executive-summary",
+      "number": "01",
+      "heading": "EXECUTIVE SUMMARY",
+      "sectionLead": {
+        "takeaway": "BTS has real builders and real revenue. 20,000+ users, 1,600+ builders, $1.4M+ paid out. What it doesn't have is visibility.",
+        "body": "Whop has 2.4M accounts and a brand that screams hustle culture. The visibility gap is also a positioning opportunity — BTS doesn't need Whop's traffic. It needs the right 10,000 people to find it.\n\nDomain Authority sits at 7. Organic traffic is roughly 40 clicks per month — and that's only been for one month. The site ranks for 8-17 keywords, almost all branded variations of \"behindthescenes.\" AI visibility across ChatGPT, Perplexity, Gemini, and Google AI Overviews is zero. BTS has no presence on Trustpilot, G2, Capterra, or Product Hunt. The 166+ blog articles already published are a solid foundation, but they're not yet connected to the broader discovery ecosystem.\n\nMeanwhile, Whop — the primary competitor — has an Authority Score of 51, 487.5K organic monthly traffic, 232 AI mentions across platforms, and $217M in funding behind it. They're spending $50K-75K/month on content alone, with a dedicated Head of SEO and a team of 7-9 freelance writers. But their 2.4M businesses mostly do $0, their marketplace is saturated with gambling, trading, and get-rich-quick schemes, and their brand is synonymous with hustle culture — not legitimate entrepreneurship.",
+        "implication": "Whop is more fragile than it looks. And the window to exploit that fragility is open right now.\n\nThe product is ahead of the brand. The content library exists but isn't connected to any distribution system. The platform metrics are real but invisible to anyone who isn't already a user. BTS's philosophy is quality over quantity — fewer builders, higher revenue per builder, real businesses instead of hustle accounts. The common thread among BTS's target builders is obsession: they're obsessed with the thing they're building, whether it's day one or day 1,000. This plan closes the visibility gap by taking what BTS has already built and making it discoverable to the right 10,000 people."
+      },
+      "stackCards": [
+        {
+          "label": "BTS Users",
+          "title": "20,000+",
+          "icon": "Users"
+        },
+        {
+          "label": "Active Builders",
+          "title": "1,600+",
+          "icon": "Star"
+        },
+        {
+          "label": "Paid to Builders",
+          "title": "$1.4M+",
+          "icon": "DollarSign"
+        },
+        {
+          "label": "AI Mentions",
+          "title": "0",
+          "icon": "Bot"
+        }
+      ]
+    },
+    {
+      "id": "the-landscape",
+      "number": "02",
+      "heading": "THE LANDSCAPE",
+      "stackCards": [
+        {
+          "label": "Table",
+          "title": "What the Competition Spends",
+          "icon": "Database",
+          "content": "Platform | Funding | Employees | Est. SEO/Content Spend",
+          "bullets": [
+            "Patreon — Funding: $413M; Employees: 1,135; Est. SEO/Content Spend: $200K–$400K/mo",
+            "Thinkific — Funding: $182M (public); Employees: 250–300; Est. SEO/Content Spend: $150K–$300K/mo",
+            "Teachable (Hotmart) — Funding: Acquired $250M; Employees: 150; Est. SEO/Content Spend: $100K–$200K/mo",
+            "Kajabi — Funding: $550M; Employees: 400; Est. SEO/Content Spend: $75K–$150K/mo",
+            "Whop — Funding: $217M; Employees: 125–175; Est. SEO/Content Spend: $50K–$75K/mo",
+            "Circle — Funding: $33M; Employees: 252; Est. SEO/Content Spend: $60K–$120K/mo",
+            "Skool — Funding: $0 (bootstrapped); Employees: ~36; Est. SEO/Content Spend: $15K–$40K/mo",
+            "Podia — Funding: $4.75M; Employees: 35; Est. SEO/Content Spend: $10K–$30K/mo",
+            "BTS (current) — Funding: $15M valuation; Employees: —; Est. SEO/Content Spend: $0"
+          ]
+        },
+        {
+          "label": "Weakness",
+          "title": "2.4M Businesses — Most Do $0",
+          "icon": "Users",
+          "content": "The vast majority of Whop's 2.4M accounts generate zero revenue. They need volume to drive marketplace metrics, but that volume dilutes the brand and fills the platform with low-quality offerings. BTS's target of 10,000 real builders doing $100K+/year is the opposite strategy — and it's one Whop can't copy without abandoning the volume that defines them."
+        },
+        {
+          "label": "Weakness",
+          "title": "Gambling & Hustle Culture",
+          "icon": "AlertTriangle",
+          "content": "Whop's marketplace is saturated with gambling picks, trading signals, and get-rich-quick schemes. Sports betting communities, crypto signal groups, and hustle-culture content dominate the listings. This isn't a bug — it's where a significant portion of their transaction volume comes from. A fundamental positioning vulnerability they can't fix without losing the volume that drives their metrics."
+        },
+        {
+          "label": "Weakness",
+          "title": "Search Dependency",
+          "icon": "Search",
+          "content": "52% of Whop's organic traffic comes from the keyword \"whop.\" Strip that out and non-branded organic presence drops to ~234K. Organic search drives only ~8% of total traffic. 69% is direct. They haven't built a search moat — they've built brand recognition with a thin search layer on top."
+        },
+        {
+          "label": "Weakness",
+          "title": "Technical SEO Broken",
+          "icon": "AlertTriangle",
+          "content": "Text-to-HTML ratio of 0.04% (should be 10%+). PageSpeed 53%. IP canonicalization redirects to vercel.com instead of whop.com. Using 308 redirects instead of 301s. About page returns 404. SimilarWeb categorises them as \"Fashion and Apparel.\""
+        },
+        {
+          "label": "Weakness",
+          "title": "Trust Problems",
+          "icon": "Shield",
+          "content": "Trustpilot: 3.7/5 from 2,107 reviews. 120-day fund holds on builder earnings — builders can't access their own money for four months. Random account suspensions. Confusing fees. BBB complaints filed. Reddit threads warning about scams. Brand associated with hustle culture, not serious entrepreneurs."
+        },
+        {
+          "label": "Weakness",
+          "title": "Product Gaps",
+          "icon": "Target",
+          "content": "Course features basic vs dedicated platforms. Documentation doesn't match current interface. No Facebook presence. Weak Instagram. YouTube (229K subs) is siloed — doesn't feed back into search strategy because the site can't retain authority."
+        },
+        {
+          "label": "Table",
+          "title": "BTS vs. The Field",
+          "icon": "BarChart3",
+          "content": "Metric | BTS | Whop",
+          "bullets": [
+            "Domain Authority — BTS: 7; Whop: 51",
+            "Organic Traffic — BTS: ~40 clicks/mo (1 month); Whop: 487.5K/mo",
+            "Organic Keywords — BTS: 8-17; Whop: 119.2K",
+            "Referring Domains — BTS: ~100 real editorial; Whop: 18.9K",
+            "AI Mentions — BTS: 0; Whop: 232",
+            "Review Presence — BTS: None; Whop: 2,107 Trustpilot reviews",
+            "Content Base — BTS: 166+ articles; Whop: Extensive",
+            "Platform Traction — BTS: 20K+ users, 1,600+ builders, $1.4M+ paid; Whop: 2.4M accounts (most $0)",
+            "Valuation — BTS: $15M (Glamdring Research); Whop: $217M funding",
+            "Strategic Target — BTS: 10,000 builders x $100K = $1B GMV; Whop: Volume at all costs"
+          ]
+        }
+      ],
+      "highlightBoxes": [
+        {
+          "title": "Whop's Weaknesses",
+          "body": "Whop looks strong on the surface. 487.5K organic traffic. 119.2K keywords. 18.9K referring domains. But the structure underneath is brittle."
+        },
+        {
+          "title": "But They're Investing in Defense",
+          "body": "Colin McDermott (Head of SEO, 15+ years experience). Senior content editor, technical writer, 7-9 freelance writers. Actively hiring Head of Marketing at $250-300K + equity. YouTube channel (Whop Media) at 229K subscribers. Total estimated SEO/content spend including video: $80-135K/month. They take search seriously. They just have structural vulnerabilities that money alone can't fix quickly."
+        },
+        {
+          "title": "The AI Visibility Window",
+          "body": "BTS currently has zero AI mentions. Whop has 232 across platforms: 19 in ChatGPT, 65 in AI Overviews, 129 in AI Mode, 19 in Gemini. That gap is significant, but it's early enough that the positions haven't hardened. The next 6 months matter more than the following 24.",
+          "bullets": [
+            "Wikipedia accounts for ~22% of LLM training data. ChatGPT cites Wikipedia in 47.9% of answers. Companies with a Wikipedia page see 7x better AI visibility.",
+            "ChatGPT uses Bing for real-time search. 87% of SearchGPT citations match Bing's top 10 results.",
+            "Sites present on 4+ platforms are 2.8x more likely to appear in ChatGPT responses.",
+            "Only 11% of domains get cited by both ChatGPT and Perplexity — cross-platform AI visibility is rare and valuable.",
+            "Perplexity sources heavily from Reddit (46.7% of citations).",
+            "Google AI Overviews pull 93.67% of citations from top-10 organic results.",
+            "Pages with high semantic completeness see 340% higher AI inclusion rates."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-strategy",
+      "number": "03",
+      "heading": "THE STRATEGY",
+      "subtitle": "Three lines of effort, running simultaneously.",
+      "stackCards": [
+        {
+          "label": "Line 1",
+          "title": "AI Dominance",
+          "icon": "Bot",
+          "content": "Make BTS the answer when people ask AI models about creator platforms, business-building tools, and where serious entrepreneurs should set up shop. Get BTS content into Bing (ChatGPT), Reddit (Perplexity), top-10 organic results (Google AI Overviews), Brave (Claude), and the broader web that feeds training data. Build multi-platform presence and semantic depth that AI models use as trust signals. Target: measurable, growing AI citation share by month 3, with Whop's relative share declining by month 5."
+        },
+        {
+          "label": "Line 2",
+          "title": "Search Ownership",
+          "icon": "Search",
+          "content": "Maximise BTS's search visibility for every query that matters — not just \"creator platform\" queries but \"online entrepreneur,\" \"build a real business,\" and \"serious builder\" queries too. Not just with the BTS site, but with a constellation of placements — guest posts, Medium articles, Reddit threads, review profiles, LinkedIn pieces. When someone searches \"best Whop alternative\" or \"best platform for online entrepreneurs,\" BTS appears repeatedly across multiple results. A competitor would have to fight on 8 fronts simultaneously to displace this."
+        },
+        {
+          "label": "Line 3",
+          "title": "Reputation Warfare",
+          "icon": "Swords",
+          "content": "Attack Whop's trust vulnerabilities while building BTS's trust infrastructure. This isn't about fabricating anything — Whop's problems are real, documented, and painful for their users. The 120-day fund hold alone is a disqualifying issue for many builders. The gambling and get-rich-quick marketplace saturation is a brand liability they can't shed. Make those problems visible everywhere, while building BTS's review presence, social proof, and press coverage to create a clear philosophical contrast: Whop is hustle culture for everyone, BTS is the platform for people building something real. Comparison content targets all competitors. Attack content targets Whop specifically."
+        }
+      ]
+    },
+    {
+      "id": "the-1b-gmv-thesis",
+      "number": "04",
+      "heading": "THE $1B GMV THESIS",
+      "stackCards": [
+        {
+          "label": "Whop's Strategy",
+          "title": "Volume",
+          "content": "2.4M accounts, most doing $0, marketplace packed with gambling picks and hustle schemes. Their metrics look impressive at the top line but the per-account economics are hollow."
+        },
+        {
+          "label": "BTS's Strategy",
+          "title": "Density",
+          "content": "Fewer builders, higher revenue per builder, real businesses generating real income. A platform with 10,000 builders each doing $100K+ is worth more — to the builders, to the platform, and to investors — than a platform with 2.4M accounts where the median revenue is zero."
+        },
+        {
+          "label": "How This Thesis Shapes the Campaign",
+          "title": "Content Targeting",
+          "content": "We're writing for the entrepreneur doing $50K who wants to get to $200K. The fitness coach ready to turn their side hustle into a real business. Every piece speaks to builders, not browsers."
+        },
+        {
+          "label": "How This Thesis Shapes the Campaign",
+          "title": "Channel Selection",
+          "content": "Indie Hackers matters more than TikTok. LinkedIn matters more than Instagram. Reddit's r/Entrepreneur matters more than r/passive_income. We go where serious builders actually spend time."
+        },
+        {
+          "label": "How This Thesis Shapes the Campaign",
+          "title": "Competitive Framing",
+          "content": "Every comparison with Whop reinforces the density-over-volume contrast. Their numbers are bigger. Ours are better. That's the narrative."
+        },
+        {
+          "label": "How This Thesis Shapes the Campaign",
+          "title": "Community Positioning",
+          "content": "The Day One / Chapters structure gives us something Whop doesn't have: a cohort-based community model that creates belonging and retention. Content can reference \"joining Chapter 3\" or \"Day One builders\" in a way that makes BTS feel like a movement, not just a platform."
+        }
+      ],
+      "highlightBoxes": [
+        {
+          "heading": "10,000 builders x $100K average annual revenue = $1B in platform GMV.",
+          "body": "This isn't a vanity metric. It's the strategic filter for everything in this campaign. Every piece of content, every placement, every attack angle is designed to attract those specific 10,000 people — not spray and pray for millions of signups that never generate revenue."
+        },
+        {
+          "title": "The Unifying Value: Obsession",
+          "body": "BTS builders are obsessed with the thing they're building — whether it's day one or day 1,000, they still think of it as day one. That shared identity is what makes dense concentration possible. You don't need millions of casual users when you have thousands of obsessed builders who treat their work like a craft."
+        },
+        {
+          "title": "Brand Architecture",
+          "body": "At the top level, BTS is clean, tech, minimal, clinical — a serious platform for serious people. A layer deeper, the community identity takes shape: \"Day One\" as the unifying concept, with cohorts organized as Chapters (Chapter 1, Chapter 2, Chapter 3). The aesthetic shifts to an early-2000s nostalgic internet vibe — leaning into entrepreneurial legends and hard-won advice, creating a space that feels both modern and grounded.\n\nThis layered brand architecture means the content we create needs to work at both levels: the clinical authority of BTS the platform, and the warm, obsession-driven culture of Day One the community."
+        },
+        {
+          "title": "How This Thesis Shapes the Campaign"
+        }
+      ]
+    },
+    {
+      "id": "the-playbook",
+      "number": "05",
+      "heading": "THE PLAYBOOK",
+      "stackCards": [
+        {
+          "label": "Table",
+          "title": "Target Queries Where AI Answers Are Weak or Uncontested",
+          "icon": "Bot",
+          "content": "Query | Who Wins Now | Difficulty",
+          "bullets": [
+            "\"best creator platform 2026\" — Who Wins Now: Weak (Whop/Kajabi); Difficulty: Medium",
+            "\"best Whop alternative\" — Who Wins Now: Nobody; Difficulty: Easy",
+            "\"Whop vs BTS\" — Who Wins Now: Nobody; Difficulty: Easy",
+            "\"creator platform with lowest fees\" — Who Wins Now: Scattered; Difficulty: Medium",
+            "\"fastest payout creator platform\" — Who Wins Now: Scattered; Difficulty: Medium",
+            "\"best platform for selling digital products\" — Who Wins Now: Whop (weak); Difficulty: Medium",
+            "\"best community platform for creators\" — Who Wins Now: Skool; Difficulty: Hard",
+            "\"Whop alternative without fund holds\" — Who Wins Now: Nobody; Difficulty: Easy",
+            "\"safest creator platform for payments\" — Who Wins Now: Nobody; Difficulty: Easy",
+            "\"best all-in-one creator platform\" — Who Wins Now: Kajabi; Difficulty: Medium",
+            "\"best platform for online entrepreneurs\" — Who Wins Now: Scattered; Difficulty: Medium",
+            "\"best platform to build a real business\" — Who Wins Now: Nobody; Difficulty: Easy",
+            "\"platform for serious builders\" — Who Wins Now: Nobody; Difficulty: Easy",
+            "\"where to build a $100K business online\" — Who Wins Now: Nobody; Difficulty: Easy"
+          ]
+        },
+        {
+          "label": "Content Tier",
+          "title": "Flagship Content",
+          "content": "Deep comparison pages (BTS vs Whop, BTS vs Kajabi, BTS vs Skool), comprehensive guides, original research built from BTS platform data, and manifesto-style content that defines the category. \"Build Something Real\" is the throughline — pieces like \"Why We Only Want 10,000 Builders,\" \"The Case Against Volume,\" and \"What Happens When a Platform Optimizes for Real Businesses Instead of Signups.\""
+        },
+        {
+          "label": "Content Tier",
+          "title": "Comparison Content",
+          "content": "Targets every competitor: Patreon, Teachable, Circle, Podia, Thinkific. Fair, detailed, data-driven. Where a competitor genuinely has an advantage, acknowledge it — credibility increases conversion and AI trust signals."
+        },
+        {
+          "label": "Content Tier",
+          "title": "Attack Content",
+          "content": "Whop-only. \"Whop Fund Hold Problems,\" \"Is Whop Legit,\" \"Whop's 2.4M Businesses — Why Most Make $0,\" \"Gambling, Trading, and Hustle Culture: Inside Whop's Marketplace Problem.\" Surfaces real, documented issues from Trustpilot, Reddit, and BBB filings. Nothing fabricated, nothing exaggerated."
+        },
+        {
+          "label": "Content Tier",
+          "title": "Programmatic Content",
+          "content": "Long-tail pages with builder-first language: \"best platform for yoga business owners,\" \"how to build a $100K yoga business online,\" \"best platform for selling photography presets,\" \"how to build a real business teaching music online.\" Volume play covering hundreds of niche queries no competitor is targeting — language speaks to entrepreneurs building businesses, not hobbyists looking for a side hustle."
+        },
+        {
+          "label": "AI Training Data",
+          "title": "Wikipedia — Highest Leverage Play",
+          "content": "~22% of LLM training data. 7x better AI visibility for companies with a page. The 36 press releases build the coverage base Wikipedia editors require. If notability criteria are met by month 3, we draft the page."
+        },
+        {
+          "label": "AI Training Data",
+          "title": "Bing Optimization → ChatGPT",
+          "content": "ChatGPT uses Bing for real-time search. 87% of SearchGPT citations match Bing's top 10. Bing Webmaster Tools, IndexNow protocol, structured data. Most SEO campaigns ignore Bing entirely — that's the opportunity."
+        },
+        {
+          "label": "AI Training Data",
+          "title": "Multi-Platform Presence",
+          "content": "Sites on 4+ platforms are 2.8x more likely to appear in ChatGPT. BTS content across blog, LinkedIn, Medium, HackerNoon, Reddit, Quora, Substack, and the independent blog network — platform-native, not duplicate."
+        },
+        {
+          "label": "Table",
+          "title": "High-Authority Site Publishing — 55 Placements",
+          "icon": "Globe",
+          "content": "Platform | Content Type | Target Query",
+          "bullets": [
+            "LinkedIn — Content Type: Analysis pieces; Target Query: \"best platform for online entrepreneurs\"",
+            "Medium — Content Type: Builder stories; Target Query: \"best platform for selling courses\"",
+            "HackerNoon — Content Type: Technical content; Target Query: \"creator economy infrastructure\"",
+            "Forbes/Entrepreneur — Content Type: Thought leadership; Target Query: \"future of creator economy\"",
+            "Reddit — Content Type: Recommendations; Target Query: \"[competitor] alternative\"",
+            "Quora — Content Type: Detailed answers; Target Query: \"which platform is best for building a business?\"",
+            "Substack — Content Type: Newsletter content; Target Query: \"building a real business online\""
+          ]
+        },
+        {
+          "label": "Reputation Warfare",
+          "title": "Fund Holds Amplification",
+          "content": "Whop's 120-day fund hold on builder earnings is their single biggest vulnerability. Builders can't access their own money for four months. This is well-documented in Trustpilot reviews, Reddit complaints, and BBB filings.",
+          "bullets": [
+            "Dedicated content: \"Whop Fund Hold Problems: What Builders Need to Know,\" \"Why Whop Holds Your Money for 120 Days,\" \"Platforms That Pay Builders Instantly — A Comparison\"",
+            "Surface existing complaints in forum discussions and recommendation threads — amplify real ones, don't create fake ones",
+            "Position BTS's payment speed as the direct contrast — requires exact payout timing data from BTS to make the comparison concrete and credible",
+            "Every piece of comparison content between BTS and Whop mentions the fund hold difference prominently — it becomes part of BTS's standard competitive positioning"
+          ]
+        },
+        {
+          "label": "Reputation Warfare",
+          "title": "Marketplace Quality Attacks",
+          "content": "Whop's marketplace is filled with gambling picks, trading signals, get-rich-quick products, resold PLR content, and questionable businesses of every variety. This is a brand problem they can't fix without alienating a large portion of their user base — the very accounts generating their transaction volume.",
+          "bullets": [
+            "Content contrasting Whop's open marketplace (anyone can sell anything, minimal quality control) with BTS's curation-first approach",
+            "Name the specific categories: gambling communities, trading signal groups, get-rich-quick schemes, questionable hustle products",
+            "Surface specific examples of low-quality Whop marketplace listings — screenshot, document, cite",
+            "Position BTS as the antidote: curation over volume, real businesses over hustle schemes, 10,000 serious builders over 2.4M accounts where most make $0"
+          ]
+        },
+        {
+          "label": "Reputation Warfare",
+          "title": "Review Platform Strategy",
+          "content": "Whop: 3.7/5 from 2,107 reviews. BTS: not on Trustpilot at all. Close that gap and flip it.",
+          "bullets": [
+            "Create profiles on Trustpilot, G2, Capterra, TrustRadius, Product Hunt in month 1",
+            "Review solicitation flow within BTS platform at natural trigger points (first payout, milestones)",
+            "Target 4.5+ rating within 6 months",
+            "\"Whop: 3.7/5 from 2,107 reviews. BTS: 4.5+/5\" — this data point shows up everywhere"
+          ]
+        },
+        {
+          "label": "Reputation Warfare",
+          "title": "Social Proof at Scale",
+          "content": "Forum and community presence across four platforms. Key principle: every post provides real value regardless of whether they click through to BTS."
+        },
+        {
+          "label": "Reputation Warfare",
+          "title": "Independent Blog Network — 3 Sites",
+          "content": "Clean domains, real author personas, unique hosting/registrars/IPs, no footprint to BTS. Publish genuinely useful builder content for 2-3 months before introducing platform comparisons.",
+          "bullets": [
+            "Non-negotiable: if someone reads these and never clicks a BTS link, they still get genuine value",
+            "AI models treat independent editorial content as more trustworthy than brand content",
+            "Serve as additional surfaces for Bing and Brave to index, feeding ChatGPT and Claude"
+          ]
+        },
+        {
+          "label": "Reputation Warfare",
+          "title": "Competitive Monitoring — Continuous",
+          "bullets": [
+            "Track every piece of content Whop publishes. Counter within 48 hours with a better version.",
+            "Monitor Whop's backlink profile. When they get a link from a publication, pitch that same publication with a BTS angle.",
+            "Track Whop's AI mention share weekly. Counter immediately with targeted content for that platform's data sources.",
+            "Let their technical SEO problems bleed silently. Don't alert them to the IP canonicalization issue, 308 redirects, 0.04% text-to-HTML ratio, or 404 About page."
+          ]
+        }
+      ],
+      "highlightBoxes": [
+        {
+          "heading": "Become the Default AI Answer",
+          "body": "Target queries where AI answers are weak or uncontested — the easiest ground to take first."
+        },
+        {
+          "title": "Content Tiers — Scaling to 500+ Pages"
+        },
+        {
+          "title": "Getting Into AI Training Data"
+        },
+        {
+          "title": "Platform-Specific Tactics"
+        },
+        {
+          "heading": "Own the Search Results"
+        },
+        {
+          "title": "Multi-Surface Visibility End State",
+          "body": "For key queries like \"best Whop alternative,\" the goal is BTS present across as many result types as possible:",
+          "bullets": [
+            "Position 1 — behindthescenes.com page",
+            "Positions 2-3 — Guest posts on high-authority sites mentioning BTS",
+            "Positions 4-5 — Medium/Substack articles by builders",
+            "Positions 6-7 — Reddit threads recommending BTS",
+            "Position 8 — G2/Capterra review page",
+            "Positions 9-10 — LinkedIn or HackerNoon piece"
+          ]
+        },
+        {
+          "title": "Reputation Warfare"
+        },
+        {
+          "title": "Press Releases — 36 Total (6/Month)",
+          "body": "Each release serves three functions: builds Wikipedia notability coverage base, creates pages on high-authority news sites that rank in search, and provides fresh content for AI models to index. Six per month creates sustained press saturation — roughly one every five days."
+        }
+      ],
+      "platformStatuses": [
+        {
+          "platform": "ChatGPT",
+          "status": "Bing",
+          "detail": "Bing Webmaster Tools, IndexNow, structured data (FAQ, comparison, review schema)"
+        },
+        {
+          "platform": "Perplexity",
+          "status": "Reddit",
+          "detail": "Reddit accounts for 46.7% of Perplexity citations. Reddit threads recommending BTS are direct inputs to Perplexity answers. Forum ops do double duty."
+        },
+        {
+          "platform": "Claude",
+          "status": "Brave Search",
+          "detail": "Ensure BTS content indexed by Brave. Different index = different coverage opportunities."
+        },
+        {
+          "platform": "Google AI Overviews",
+          "status": "Top-10 Organic",
+          "detail": "93.67% of citations from top-10 results. Strong organic = AI Overview inclusion."
+        }
+      ],
+      "scopeBlocks": [
+        {
+          "label": "Reddit",
+          "title": "Reddit",
+          "bullets": [
+            "Aged accounts, authentic engagement in r/Entrepreneur, r/creators, r/passive_income, r/digitalnomad. The persona: a serious builder who chose BTS because they wanted a platform that takes their business seriously. BTS mentions feel incidental, not promotional."
+          ]
+        },
+        {
+          "label": "Indie Hackers",
+          "title": "Indie Hackers",
+          "bullets": [
+            "This is where the 10,000-builder audience lives. Genuine discussions about building real businesses, monetization, and platform selection. Sophisticated, skeptical audience — approach must be authentic."
+          ]
+        },
+        {
+          "label": "Quora",
+          "title": "Quora",
+          "bullets": [
+            "500+ word answers that genuinely help the reader make a decision. BTS mentioned as one option among several, with honest pros and cons."
+          ]
+        }
+      ],
+      "monthBlocks": [
+        {
+          "label": "Month 1-2",
+          "title": "Establish BTS in the media landscape.",
+          "bullets": [
+            "APAC launch, fee comparison research, founding story, payout benchmarks."
+          ]
+        },
+        {
+          "label": "Month 3-4",
+          "title": "Create comparative narratives.",
+          "bullets": [
+            "Migration numbers, Wikipedia-ready profile, earnings transparency, feature comparisons."
+          ]
+        },
+        {
+          "label": "Month 5-6",
+          "title": "Position as category leader.",
+          "bullets": [
+            "Industry trust research, growth metrics, year in review, 2027 predictions."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apac-defense",
+      "number": "06",
+      "heading": "APAC DEFENSE",
+      "sectionLead": {
+        "body": "BTS has an APAC presence that Whop hasn't targeted yet. Establish dominance in APAC search and AI results before Whop arrives. First-mover advantage in regional search is significant — harder to displace an incumbent than to claim uncontested ground."
+      },
+      "stackCards": [
+        {
+          "label": "Content",
+          "title": "Content",
+          "icon": "FileText",
+          "bullets": [
+            "\"Best Platform for Online Builders in Australia 2026\" — flagship APAC comparison",
+            "Country pages: Singapore, Malaysia, India, Japan — local payment methods, currency support, builder market conditions",
+            "\"Builder Economy in APAC\" — comprehensive market overview",
+            "Payment processing comparisons for APAC methods (PayNow, GrabPay, UPI)",
+            "Localised versions: \"Best Whop Alternative in Australia,\" \"Best Platform for Indian Entrepreneurs\""
+          ]
+        },
+        {
+          "label": "Community",
+          "title": "Community",
+          "icon": "Users",
+          "bullets": [
+            "Identify APAC builder communities on Facebook, Discord, Telegram, Line (particularly important in Japan and Southeast Asia)",
+            "Establish BTS presence before Whop arrives — early presence becomes incumbent advantage",
+            "Develop local builder case studies featuring APAC builders using BTS successfully",
+            "Position BTS as built for global entrepreneurs, not just the US market"
+          ]
+        },
+        {
+          "label": "Press",
+          "title": "Press",
+          "icon": "Megaphone",
+          "bullets": [
+            "Target APAC publications: Tech in Asia, e27, Mumbrella, and regional tech blogs",
+            "Guest posts on APAC tech and business sites",
+            "Position BTS as \"built for global entrepreneurs, not American hustle culture\"",
+            "Resonates particularly well in markets skeptical of Silicon Valley hype and get-rich-quick culture that Whop represents"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-i-need-from-bts",
+      "number": "07",
+      "heading": "WHAT I NEED FROM BTS",
+      "sectionLead": {
+        "body": "This works if I have the following. Without them, parts of the strategy stall."
+      },
+      "stackCards": [
+        {
+          "label": "Need",
+          "title": "Product Roadmap Access",
+          "content": "Content aligned with feature launches is 10x more effective than writing about them a month later."
+        },
+        {
+          "label": "Need",
+          "title": "Builder Testimonials & Case Studies",
+          "content": "Real builder stories are the most persuasive content for both search and AI models. Permission to interview builders and publish their results — earnings, growth, experience."
+        },
+        {
+          "label": "Need",
+          "title": "Payment Speed Data",
+          "content": "Exact numbers — how fast do BTS builders get paid? This is the direct counter to Whop's 120-day hold. Must be specific and verifiable, not vague marketing language."
+        },
+        {
+          "label": "Need",
+          "title": "Messaging & Positioning Input",
+          "content": "What resonates with your builders? What language do they use? What objections come up in sales conversations?"
+        },
+        {
+          "label": "Need",
+          "title": "Day One / Chapters Brand Guidelines",
+          "content": "I need to understand and align with BTS's visual and brand identity — the Day One community, the Chapter system, the early-2000s aesthetic — so all content and placements feel native to BTS's world."
+        },
+        {
+          "label": "Need",
+          "title": "\"Build Something Real\" Positioning Assets",
+          "content": "Any existing copy, internal docs, or brand materials that articulate the builder-first philosophy. If these don't exist yet, we build them together in month 1."
+        },
+        {
+          "label": "Need",
+          "title": "Builder Revenue Distribution Data",
+          "content": "What do BTS builders actually earn? Revenue distribution data supports the \"our builders actually make money\" narrative and provides the hard contrast to Whop's 2.4M accounts where most do $0."
+        },
+        {
+          "label": "Need",
+          "title": "Platform Data for Research",
+          "content": "User growth numbers, builder earnings data, transaction volumes, payout speed statistics — the raw material for the original research that press releases and flagship content are built on."
+        }
+      ]
+    },
+    {
+      "id": "commercial-terms",
+      "number": "08",
+      "heading": "COMMERCIAL TERMS",
+      "highlightBoxes": [
+        {
+          "heading": "$11,000/month",
+          "body": "6-month initial engagement. $66,000 total.",
+          "bullets": [
+            "Invoiced monthly through Memetik",
+            "100% of month 1 ($11,000) to kick off",
+            "Monthly invoicing thereafter",
+            "Phase 1 / founding-partner pricing",
+            "Category exclusivity: no competing creator economy platforms"
+          ]
+        },
+        {
+          "title": "What Gets Built",
+          "bullets": [
+            "500+ optimised content pages",
+            "55 third-party placements across 8 platforms",
+            "36 press releases (6/month)",
+            "3-site independent blog network",
+            "Active profiles on 5 review platforms",
+            "Forum engagement across 4 platforms",
+            "APAC content dominance across 5 countries",
+            "Weekly AI tracking + monthly reports",
+            "Continuous competitive monitoring"
+          ]
+        },
+        {
+          "title": "Add-on",
+          "body": "PPC competitor campaigns — $1,000/mo management fee + ad spend"
+        }
+      ]
+    },
+    {
+      "id": "next-steps",
+      "number": "09",
+      "heading": "NEXT STEPS",
+      "scopeBlocks": [
+        {
+          "label": "01",
+          "title": "Review this document together. Ask questions. Push back on anything that doesn't sit right.",
+          "bullets": []
+        },
+        {
+          "label": "02",
+          "title": "Confirm the engagement.",
+          "bullets": []
+        },
+        {
+          "label": "03",
+          "title": "Week 1: AI audit and SEO audit begin immediately.",
+          "bullets": []
+        },
+        {
+          "label": "04",
+          "title": "Full campaign running at speed within 2 weeks.",
+          "bullets": []
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "headline": "LET'S TALK",
+    "body": "Confidential. BTS leadership and strategic partners only.",
+    "href": "https://cal.com/memetik/letstalk",
+    "ctaLabel": "LET'S TALK"
+  }
+}

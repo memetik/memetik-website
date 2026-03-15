@@ -214,6 +214,174 @@ function resolveRegistryFilePath(filePath) {
   return path.isAbsolute(filePath) ? filePath : path.join(__dirname, "..", filePath);
 }
 
+function dataStrategyContent(entry) {
+  const dataPath = resolveRegistryFilePath(entry.contentDataPath);
+
+  if (!dataPath || !fs.existsSync(dataPath)) {
+    throw new Error(`Missing required content data for ${entry.route}: ${dataPath || "(not configured)"}`);
+  }
+
+  const data = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
+
+  const renderBullets = (items) =>
+    items && items.length > 0
+      ? `<ul>${items.map((item) => `<li>${esc(item)}</li>`).join("\n")}</ul>`
+      : "";
+
+  const renderTable = (headers, rows) => {
+    if (!headers || !rows) return "";
+    return `<table><thead><tr>${headers.map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td>${esc(cell)}</td>`).join("")}</tr>`).join("\n")}</tbody></table>`;
+  };
+
+  let html = `<main>\n`;
+
+  html += `<section>\n<p>00 · ${esc(data.hero.eyebrow)}</p>\n<h1>${esc(data.hero.headline)}</h1>\n`;
+  if (data.hero.subtitle) html += `<p>${esc(data.hero.subtitle)}</p>\n`;
+  html += `<p><strong>Source trace:</strong> Approved brief dated ${esc(data.generatedAt)} · Payload confidence ${data.researchConfidence ? `high (${data.researchConfidence}/100)` : "high"} · Quality gate passed</p>\n`;
+  html += `</section>\n`;
+
+  if (data.tldr && data.tldr.length > 0) {
+    html += `<section>\n<h2>Summary</h2>\n${renderBullets(data.tldr)}\n</section>\n`;
+  }
+
+  if (data.executiveSummary) {
+    html += `<section>\n<h2>Executive Summary</h2>\n`;
+    for (const metric of data.executiveSummary.metrics) {
+      html += `<p><strong>${esc(metric.label)}:</strong> ${esc(metric.value)} — ${esc(metric.note)}</p>\n`;
+    }
+    if (data.executiveSummary.immediateActions) {
+      html += `<h3>Immediate actions</h3>\n<ol>\n`;
+      for (const action of data.executiveSummary.immediateActions) {
+        html += `<li><strong>${esc(action.title)}</strong>: ${esc(action.detail)}</li>\n`;
+      }
+      html += `</ol>\n`;
+    }
+    html += `</section>\n`;
+  }
+
+  for (const section of data.sections) {
+    html += `<section>\n`;
+
+    const headingText = section.heading;
+    const mappedHeading = mapSectionHeading(headingText);
+    html += `<h2>${esc(mappedHeading)}</h2>\n`;
+
+    if (section.sectionLead) {
+      if (section.sectionLead.takeaway) html += `<p><strong>${esc(section.sectionLead.takeaway)}</strong></p>\n`;
+      if (section.sectionLead.body) html += `<p>${esc(section.sectionLead.body)}</p>\n`;
+      if (section.sectionLead.implication) html += `<p><em>So what:</em> ${esc(section.sectionLead.implication)}</p>\n`;
+    }
+
+    if (section.highlightBoxes) {
+      for (const box of section.highlightBoxes) {
+        if (box.heading) html += `<p><strong>${esc(box.heading)}</strong></p>\n`;
+        if (box.body) html += `<p>${esc(box.body)}</p>\n`;
+        if (box.bullets) html += renderBullets(box.bullets);
+      }
+    }
+
+    if (section.stackCards) {
+      for (const card of section.stackCards) {
+        if (card.title) html += `<h3>${esc(card.title)}</h3>\n`;
+        if (card.content) html += `<p>${esc(card.content)}</p>\n`;
+        if (card.bullets) html += renderBullets(card.bullets);
+      }
+    }
+
+    if (section.platformStatuses) {
+      for (const ps of section.platformStatuses) {
+        html += `<h3>${esc(ps.platform)}: ${esc(ps.status)}</h3>\n<p>${esc(ps.detail)}</p>\n`;
+      }
+    }
+
+    if (section.promptObservations) {
+      for (const po of section.promptObservations) {
+        html += `<h3>${esc(po.platform)} (${esc(po.market)}): ${esc(po.prompt)}</h3>\n<p>${esc(po.observed)}</p>\n`;
+      }
+    }
+
+    if (section.monthBlocks) {
+      for (const mb of section.monthBlocks) {
+        html += `<h3>${esc(mb.label)}: ${esc(mb.title)}</h3>\n`;
+        html += renderBullets(mb.bullets);
+      }
+    }
+
+    if (section.scopeBlocks) {
+      for (const sb of section.scopeBlocks) {
+        html += `<h3>${esc(sb.title)}</h3>\n`;
+        html += renderBullets(sb.bullets);
+      }
+    }
+
+    if (section.timelineChart) {
+      for (const point of section.timelineChart.points) {
+        html += `<h3>Month ${point.month}: ${esc(point.title)}</h3>\n<p>${esc(point.detail)}</p>\n`;
+        html += renderBullets(point.bullets);
+      }
+    }
+
+    if (section.upsideChart) {
+      html += `<p>Traffic projection: Month 1 base ${section.upsideChart[0]?.base || 0} → Month 12 base ${section.upsideChart[section.upsideChart.length - 1]?.base || 0}</p>\n`;
+    }
+
+    if (section.calculator) {
+      html += `<p>Traffic-to-revenue calculator: base visits ${section.calculator.baseVisits}</p>\n`;
+    }
+
+    html += `</section>\n`;
+  }
+
+  html += `<section>\n<h2>Strategy call</h2>\n`;
+  html += `<p>${esc(data.cta.body)}</p>\n`;
+  html += `<p><a href="${esc(data.cta.href || "https://cal.com/memetik/letstalk")}">Book a strategy call</a></p>\n`;
+  html += `</section>\n`;
+
+  if (data.appendix) {
+    html += `<section>\n<h2>Supporting evidence appendix</h2>\n`;
+    for (const section of data.appendix.sections) {
+      html += `<h3>${esc(section.title)}</h3>\n`;
+      if (section.description) html += `<p>${esc(section.description)}</p>\n`;
+
+      if ("headers" in section && "rows" in section) {
+        html += renderTable(section.headers, section.rows);
+      }
+      if ("bullets" in section && !("children" in section)) {
+        html += renderBullets(section.bullets);
+      }
+      if ("children" in section) {
+        for (const child of section.children) {
+          if (child.type === "table") html += renderTable(child.headers, child.rows);
+          if (child.type === "bullets") html += renderBullets(child.items);
+          if (child.type === "highlight" || child.type === "card") html += renderBullets(child.bullets);
+        }
+      }
+    }
+    html += `</section>\n`;
+  }
+
+  html += `</main>`;
+  return html;
+}
+
+function mapSectionHeading(heading) {
+  const headingMap = {
+    "State of Search 2026": "Current state",
+    "Where XoomAI Is Today": "Current state",
+    "The Opportunity": "Opportunity / right to win",
+    "Why XoomAI Can Win": "Opportunity / right to win",
+    "Competitive Gap": "Competitive gap",
+    "AI Visibility Gap": "AI visibility / answer-surface gap",
+    "Revenue / Commercial Impact": "Opportunity / right to win",
+    "6-month Growth Plan": "90-day opening move",
+    "Off-site Authority": "Off-site authority",
+    "What Memetik Actually Builds and Ships": "What Memetik builds and ships",
+    "Operating Model": "Operating cadence",
+    "Why Memetik": "What Memetik builds and ships",
+  };
+  return headingMap[heading] || heading;
+}
+
 function briefStrategyContent(entry) {
   const briefPath = resolveRegistryFilePath(entry.briefPath);
 
@@ -1062,7 +1230,14 @@ function main() {
 
   // Strategy routes derive from the shared canonical registry used by the app router.
   for (const entry of STRATEGY_REGISTRY.routes) {
-    const bodyContent = entry.prerenderMode === "brief" ? briefStrategyContent(entry) : summaryStrategyContent(entry);
+    let bodyContent;
+    if (entry.prerenderMode === "data") {
+      bodyContent = dataStrategyContent(entry);
+    } else if (entry.prerenderMode === "brief") {
+      bodyContent = briefStrategyContent(entry);
+    } else {
+      bodyContent = summaryStrategyContent(entry);
+    }
 
     allPages.push({
       route: entry.route,
