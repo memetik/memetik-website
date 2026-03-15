@@ -16,8 +16,8 @@
   ],
   "hero": {
     "eyebrow": "Founder strategy memo",
-    "headline": "Hyro can own electrolyte decisions",
-    "subtitle": "The opening move is not broad category awareness. It is owning the buyer-guide and comparison queries where people decide which electrolyte powder to trust, then reinforcing those pages across Google, ChatGPT, Gemini, review surfaces, listicles, and community proof until Hyro enters real buying consideration.",
+    "headline": "Thousands search for electrolytes daily. Hyro doesn't show up.",
+    "subtitle": "Thousands of health-conscious consumers search for electrolyte drinks, hydration supplements, and recovery products every month. Right now, Hyro is invisible in those results. This strategy shows exactly how to change that.",
     "tags": [
       "drinkhyro.com",
       "Consumer Health",
@@ -25,122 +25,31 @@
       "Electrolyte drink mix"
     ]
   },
-  "executiveSummary": {
-    "number": "00",
-    "heading": "Executive Summary",
-    "eyebrow": "validated topical scope",
-    "subtitle": "Founder read: Hyro already has enough relevance to win a defined slice of the market. The fastest path is to own the decision-stage electrolyte queries first, then widen into broader category demand once the proof layer is in place. This page is derived from the approved Hyro brief and keeps the full execution engine visible: commercial page buildout, supporting content coverage, off-site authority, review work, technical infrastructure, and ongoing reinforcement.",
-    "metrics": [
-      {
-        "label": "Total search opportunity",
-        "value": "8,464,050",
-        "note": "Validated topical demand inside Hyro's category frame, with low-quality semantic noise excluded.",
-        "breakdown": [
-          {
-            "label": "Competitor-keyword demand",
-            "value": "629,440"
-          },
-          {
-            "label": "Non-competitor / unbranded demand",
-            "value": "7,834,610"
-          }
-        ]
-      },
-      {
-        "label": "Expected traffic in 12 months",
-        "value": "191,505",
-        "note": "Base-case cumulative traffic potential if Hyro owns the decision layer first, then compounds into broader category coverage.",
-        "breakdown": [
-          {
-            "label": "Competitor-keyword traffic",
-            "value": "13,798"
-          },
-          {
-            "label": "Non-competitor / unbranded traffic",
-            "value": "177,707"
-          }
-        ]
-      },
-      {
-        "label": "Aggressive upside",
-        "value": "327,134",
-        "note": "Upper-range outcome if Hyro wins faster on buyer guides, supporting coverage, and third-party trust surfaces.",
-        "breakdown": [
-          {
-            "label": "Competitor-keyword share",
-            "value": "7.4%"
-          },
-          {
-            "label": "Non-competitor / unbranded share",
-            "value": "92.6%"
-          }
-        ]
-      },
-      {
-        "label": "First 6-month target",
-        "value": "70,857",
-        "note": "The first deployment window should create visible movement before the full category expansion phase arrives.",
-        "breakdown": [
-          {
-            "label": "Competitor-keyword 6-month target",
-            "value": "5,105"
-          },
-          {
-            "label": "Non-competitor / unbranded 6-month target",
-            "value": "65,752"
-          }
-        ]
-      }
-    ],
-    "immediateActions": [
-      {
-        "number": "01",
-        "title": "Open with buyer-guide pages where selection intent is strongest.",
-        "detail": "Hyro should begin with best electrolyte drink, best electrolyte powder, best hydration powder, best electrolyte mix, and best electrolyte drink mix rather than trying to boil the ocean across the entire category."
-      },
-      {
-        "number": "02",
-        "title": "Attach third-party proof to every important commercial page.",
-        "detail": "On-site publishing alone will not change who gets recommended. Reviews, communities, editorial mentions, roundups, and backlinks need to reinforce the same commercial narrative."
-      },
-      {
-        "number": "03",
-        "title": "Widen only after the first commercial layer is working.",
-        "detail": "Once the buyer-guide and comparison pages begin to earn visibility, Hyro can expand into broader category, ingredient, and routine coverage without diluting the opening move."
-      }
-    ]
-  },
   "sections": [
     {
-      "id": "state-of-search-2026",
+      "id": "the-problem",
       "number": "01",
-      "heading": "State of Search 2026",
-      "sectionLead": {
-        "takeaway": "Google still drives category discovery, but AI is now shaping who gets considered.",
-        "body": "Traditional search remains a core buying behavior. At the same time, buyers increasingly move across Google, ChatGPT, Gemini, and other answer layers before they ever buy. That means Hyro cannot rely on a single-channel SEO model. It needs visibility across classic demand capture and AI-led recommendation surfaces at the same time.",
-        "implication": "The brand that earns repeated visibility across both systems becomes easier to trust, easier to compare, and more likely to enter buying consideration."
-      },
-      "highlightBoxes": [
+      "heading": "The Problem",
+      "eyebrow": "Where Hyro stands today",
+      "subtitle": "Hyro has category potential, but right now, buyers researching solutions in this space cannot find you — not in Google, not in ChatGPT, not in Gemini.",
+      "narrativeProse": [
         {
-          "title": "Why this matters now",
-          "bullets": [
-            "Google still carries a major share of discovery and commercial research traffic in categories like hydration, wellness, and supplement-adjacent consumer health.",
-            "AI answer layers are changing how buyers narrow options before they click, especially on best-of, comparison, and product-selection queries.",
-            "The winning brand is not just the one with product pages. It is the one that keeps appearing as the most believable answer across multiple surfaces.",
-            "For Hyro, that means building decision pages, supporting coverage, and third-party proof as one system rather than treating them as separate tasks."
-          ]
+          "heading": "State of Search 2026",
+          "body": "Google still drives category discovery, but AI is now shaping who gets considered. Traditional search remains a core buying behavior. At the same time, buyers increasingly move across Google, ChatGPT, Gemini, and other answer layers before they ever buy. That means Hyro cannot rely on a single-channel SEO model. It needs visibility across classic demand capture and AI-led recommendation surfaces at the same time."
+        },
+        {
+          "heading": "Where Hyro Is Today",
+          "body": "Hyro has a real foothold, but not yet a market-defining footprint. The brief shows a legitimate starting point: 1,004 current organic visits, 362 ranking keywords, 74 referring domains, and 366 backlinks. That is enough authority to support a focused opening move. It is not enough to win the category without concentrated commercial coverage."
+        },
+        {
+          "heading": "Competitive Gap",
+          "body": "Incumbents are winning because they occupy more decision surfaces, not because the category is closed. LMNT and Liquid I.V. are not just larger brands. They also show up more often where people compare products, ask for recommendations, and seek trusted evaluation. Hyro's job is not to outspend them everywhere. It is to build a tighter commercial footprint in the places that shape choice."
+        },
+        {
+          "heading": "AI Visibility Gap",
+          "body": "In sampled unbranded prompts, Hyro is not yet being recommended. The approved brief shows zero sampled visibility for Hyro across ChatGPT, Gemini, and Google AI Overview on the tested prompt set. That does not mean Hyro is invisible everywhere. It does mean Hyro is not yet showing up where commercial recommendation behavior is already visible."
         }
-      ]
-    },
-    {
-      "id": "where-hyro-is-today",
-      "number": "02",
-      "heading": "Where Hyro Is Today",
-      "sectionLead": {
-        "takeaway": "Hyro has a real foothold, but not yet a market-defining footprint.",
-        "body": "The brief shows a legitimate starting point: 1,004 current organic visits, 362 ranking keywords, 74 referring domains, and 366 backlinks. That is enough authority to support a focused opening move. It is not enough to win the category without concentrated commercial coverage.",
-        "implication": "This is a leverage story, not a cold-start story. Hyro does not need to manufacture relevance from zero. It needs to focus it."
-      },
+      ],
       "stackCards": [
         {
           "label": "What is working",
@@ -178,144 +87,47 @@
             "Waiting gives incumbents more time to harden their position"
           ]
         }
-      ]
-    },
-    {
-      "id": "the-opportunity",
-      "number": "03",
-      "heading": "The Opportunity",
-      "sectionLead": {
-        "takeaway": "The biggest near-term upside sits in decision-stage electrolyte queries, not the whole category at once.",
-        "body": "Hyro should begin where intent is highest and choice is most visible. In the approved brief, buyer-guide demand is the clearest opening move, with validated examples like best electrolyte drink, best electrolyte powder, best hydration powder, best electrolyte mix, and best electrolyte drink mix.",
-        "implication": "Instead of trying to rank for every electrolyte term immediately, Hyro should first become the answer to the questions buyers ask when they are actively choosing."
-      },
-      "stackCards": [
+      ],
+      "promptObservations": [
         {
-          "label": "Opening move",
-          "title": "Lead with buyer guides and selection pages.",
-          "icon": "Target",
-          "glow": "blue",
-          "content": "This is the fastest commercial layer because the query language already reveals decision-making. People are not just browsing the category. They are asking what is best, what fits a need, and what they should choose.",
-          "bullets": [
-            "Validated buyer-guide demand: 211,170",
-            "Expected 12-month traffic from this cluster alone: 23,229",
-            "Best-for and use-case pages should launch before broad category pages"
-          ]
+          "platform": "Google AI Overview / ChatGPT",
+          "market": "Current visible winners: LMNT, Liquid I.V., Ultima, Nuun, DripDrop",
+          "prompt": "best electrolyte powder drink mix",
+          "observed": "This is the exact type of decision-stage query Hyro needs to win. In the sampled responses, the answer layer defaulted to better-known brands and high-authority editorial references rather than Hyro. Observed March 2026 sample: Google AI Overview named LMNT, Liquid I.V., Ultima, Nuun, DripDrop, and Skratch Labs. ChatGPT also surfaced LMNT and other well-known options, with Hyro absent."
         },
         {
-          "label": "Second layer",
-          "title": "Expand into comparisons, reviews, and proof-led evaluation pages.",
-          "icon": "Trophy",
-          "glow": "blue",
-          "content": "Once Hyro owns the first decision pages, it becomes easier to widen into product comparisons, social-proof angles, and use-case evaluation pages that help buyers test alternatives and validate their choice.",
-          "bullets": [
-            "Comparison demand is smaller, but highly commercial",
-            "Review-led content improves believability and buyer confidence",
-            "These pages make Hyro easier to compare against better-known incumbents"
-          ]
-        },
-        {
-          "label": "Expansion path",
-          "title": "Broader category demand becomes much more valuable after the decision layer is built.",
-          "icon": "Compass",
-          "glow": "blue",
-          "content": "The largest demand pool is still category-level search around electrolyte drinks, electrolyte powder, and related phrasing. But that layer should be approached after Hyro has stronger commercial pages and more external proof supporting the brand.",
-          "bullets": [
-            "Category & brand demand: 8,241,950",
-            "Expected 12-month traffic from this broader layer: 167,074",
-            "This is the scale layer, not the first move"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "why-hyro-can-win",
-      "number": "04",
-      "heading": "Why Hyro Can Win",
-      "sectionLead": {
-        "takeaway": "Hyro does not need to beat LMNT everywhere. It needs to become the most believable answer in a defined slice first.",
-        "body": "The approved brief is clear: Hyro already has enough authority to support a focused category move, but it has not yet used that authority to own buyer-guide and selection queries. That creates a credible right-to-win if execution stays concentrated.",
-        "implication": "A narrower, more commercial opening move gives Hyro a path to enter the market conversation faster than a diffuse category-awareness plan."
-      },
-      "highlightBoxes": [
-        {
-          "title": "One strategic fact matters most",
-          "heading": "92.6% of the validated demand is non-competitor and unbranded.",
-          "body": "Hyro is not limited to stealing branded queries from incumbent electrolyte brands. Most of the upside sits in open-market demand where buyers are asking broad or need-specific questions and have not yet committed to a brand."
+          "platform": "ChatGPT / Gemini",
+          "market": "Current visible winners: Liquid I.V., LMNT, Nuun, DripDrop, broad editorial sources",
+          "prompt": "electrolyte powder drink mix comparison",
+          "observed": "Comparison intent matters because it captures buyers who are narrowing choices, not just exploring the category. In the sampled responses, Hyro was absent while incumbent brands and editorial comparison logic shaped the answer. Observed March 2026 sample: ChatGPT framed the comparison around Liquid I.V. and other incumbents. Gemini produced a comparison table featuring LMNT, Liquid I.V., Nuun Sport, and DripDrop."
         }
       ],
-      "stackCards": [
+      "highlightBoxes": [
         {
-          "label": "Right to win",
-          "title": "Hyro already has a usable authority base.",
-          "icon": "Link2",
-          "glow": "blue",
-          "content": "Seventy-four referring domains is not enough to dominate the category, but it is enough to support a focused campaign around a commercial slice of demand. That matters because it lowers the burden of proof required to get momentum started.",
+          "title": "Why this matters now",
           "bullets": [
-            "74 referring domains",
-            "366 backlinks",
-            "Enough baseline authority to support a concentrated decision-page push"
-          ]
-        },
-        {
-          "label": "Right market shape",
-          "title": "The strongest available queries align with how people buy electrolyte products.",
-          "icon": "HeartPulse",
-          "glow": "blue",
-          "content": "The commercial signals in the brief are not vague informational topics. They include high-intent modifiers like sugar-free, low-sugar, pregnancy, natural ingredients, price sensitivity, and ingredient exclusions. Those are exactly the kinds of queries where a well-built commercial page can change the buying decision.",
-          "bullets": [
-            "Hyro can win on use-case specificity before broad category dominance",
-            "Health-conscious modifiers create room for differentiated positioning",
-            "Specific need states make commercial pages easier to trust and recommend"
-          ]
-        },
-        {
-          "label": "Focused advantage",
-          "title": "A tighter opening move is more realistic than broad category combat.",
-          "icon": "Sparkles",
-          "glow": "blue",
-          "content": "Competing head-on across the entire electrolyte landscape would waste time and authority. Hyro's advantage comes from picking the most commercially valuable slice, building the best pages for it, and then surrounding those pages with enough proof that the market starts to repeat the same answer back.",
-          "bullets": [
-            "Start narrow, then widen",
-            "Build around real selection behavior",
-            "Use proof to increase trust, not just page count"
+            "Google still carries a major share of discovery and commercial research traffic in categories like hydration, wellness, and supplement-adjacent consumer health.",
+            "AI answer layers are changing how buyers narrow options before they click, especially on best-of, comparison, and product-selection queries.",
+            "The winning brand is not just the one with product pages. It is the one that keeps appearing as the most believable answer across multiple surfaces.",
+            "For Hyro, that means building decision pages, supporting coverage, and third-party proof as one system rather than treating them as separate tasks."
           ]
         }
-      ]
-    },
-    {
-      "id": "competitive-gap",
-      "number": "05",
-      "heading": "Competitive Gap",
-      "sectionLead": {
-        "takeaway": "Incumbents are winning because they occupy more decision surfaces, not because the category is closed.",
-        "body": "LMNT and Liquid I.V. are not just larger brands. They also show up more often where people compare products, ask for recommendations, and seek trusted evaluation. Hyro's job is not to outspend them everywhere. It is to build a tighter commercial footprint in the places that shape choice.",
-        "implication": "The category is competitive, but it is still structurally open to a focused brand that can build stronger decision pages and attach more believable proof."
-      },
-      "stackCards": [
+      ],
+      "platformStatuses": [
         {
-          "label": "What incumbents have",
-          "title": "They already look like category defaults.",
-          "icon": "BarChart3",
-          "glow": "blue",
-          "content": "LMNT, Liquid I.V., and Nuun combine broad organic reach with much deeper link profiles and more visible answer-surface presence. That creates a compounding perception advantage: buyers keep seeing the same names in more places.",
-          "bullets": [
-            "LMNT: 429,600 organic traffic and 4,642 referring domains",
-            "Liquid I.V.: 456,449 organic traffic and 2,789 referring domains",
-            "Nuun: 105,219 organic traffic and 4,218 referring domains"
-          ]
+          "platform": "ChatGPT",
+          "status": "0 / 8 sampled mentions",
+          "detail": "In the brief's sampled prompt set, Hyro was not mentioned in ChatGPT on the tracked commercial prompts. LMNT and other incumbents appeared instead, especially on best-of and comparison language."
         },
         {
-          "label": "What Hyro lacks",
-          "title": "Hyro is still too small on the pages that decide the category.",
-          "icon": "ScanSearch",
-          "glow": "blue",
-          "content": "The gap is not just overall traffic. It is that competitors have many more surfaces where a buyer can compare, validate, and trust them. Hyro needs more decision pages, more supporting coverage, and more third-party reinforcement if it wants to change that pattern.",
-          "bullets": [
-            "Far smaller organic footprint today",
-            "Much lighter external authority profile",
-            "No visible sampled answer-surface presence in the brief's commercial prompts"
-          ]
+          "platform": "Gemini",
+          "status": "0 / 8 sampled mentions",
+          "detail": "Gemini also showed no sampled Hyro visibility in the approved brief. One response example returned a safety-filter interruption, which is a reminder to keep platform claims cautious and specific."
+        },
+        {
+          "platform": "Google AI Overview",
+          "status": "0 / 8 sampled mentions",
+          "detail": "The tested Google AI Overview sample surfaced well-known brands like LMNT, Liquid I.V., Nuun, DripDrop, and others. Hyro did not appear in the tracked examples."
         }
       ],
       "dataTables": [
@@ -390,68 +202,68 @@
       ]
     },
     {
-      "id": "ai-visibility-gap",
-      "number": "06",
-      "heading": "AI Visibility Gap",
-      "sectionLead": {
-        "takeaway": "In sampled unbranded prompts, Hyro is not yet being recommended.",
-        "body": "The approved brief shows zero sampled visibility for Hyro across ChatGPT, Gemini, and Google AI Overview on the tested prompt set. That does not mean Hyro is invisible everywhere. It does mean Hyro is not yet showing up where commercial recommendation behavior is already visible.",
-        "implication": "If Hyro wants to be chosen more often, it has to be easier for answer engines to find, compare, and trust across the exact questions buyers are asking."
-      },
-      "platformStatuses": [
+      "id": "the-opportunity",
+      "number": "02",
+      "heading": "The Opportunity",
+      "eyebrow": "Why Hyro can win — and what it is worth",
+      "subtitle": "The market has significant unbranded demand and Hyro does not need to outspend incumbents — it needs to show up first where buyers are making decisions.",
+      "narrativeProse": [
         {
-          "platform": "ChatGPT",
-          "status": "0 / 8 sampled mentions",
-          "detail": "In the brief's sampled prompt set, Hyro was not mentioned in ChatGPT on the tracked commercial prompts. LMNT and other incumbents appeared instead, especially on best-of and comparison language."
+          "heading": "The Opportunity",
+          "body": "The biggest near-term upside sits in decision-stage electrolyte queries, not the whole category at once. Hyro should begin where intent is highest and choice is most visible. In the approved brief, buyer-guide demand is the clearest opening move, with validated examples like best electrolyte drink, best electrolyte powder, best hydration powder, best electrolyte mix, and best electrolyte drink mix."
         },
         {
-          "platform": "Gemini",
-          "status": "0 / 8 sampled mentions",
-          "detail": "Gemini also showed no sampled Hyro visibility in the approved brief. One response example returned a safety-filter interruption, which is a reminder to keep platform claims cautious and specific."
+          "heading": "Why Hyro Can Win",
+          "body": "Hyro does not need to beat LMNT everywhere. It needs to become the most believable answer in a defined slice first. The approved brief is clear: Hyro already has enough authority to support a focused category move, but it has not yet used that authority to own buyer-guide and selection queries. That creates a credible right-to-win if execution stays concentrated."
         },
         {
-          "platform": "Google AI Overview",
-          "status": "0 / 8 sampled mentions",
-          "detail": "The tested Google AI Overview sample surfaced well-known brands like LMNT, Liquid I.V., Nuun, DripDrop, and others. Hyro did not appear in the tracked examples."
+          "heading": "Revenue / Commercial Impact",
+          "body": "If Hyro wins this layer, the upside is not a few rankings. It is a step change in buying consideration. The approved brief models a base-case path to 70,857 cumulative visits in the first six months and 191,505 in 12 months, with aggressive upside to 327,134. The most important part is where that growth starts: decision-stage pages and related proof surfaces that can influence buyer choice early."
         }
       ],
-      "promptObservations": [
+      "stackCards": [
         {
-          "platform": "Google AI Overview / ChatGPT",
-          "market": "Current visible winners: LMNT, Liquid I.V., Ultima, Nuun, DripDrop",
-          "prompt": "best electrolyte powder drink mix",
-          "observed": "This is the exact type of decision-stage query Hyro needs to win. In the sampled responses, the answer layer defaulted to better-known brands and high-authority editorial references rather than Hyro. Observed March 2026 sample: Google AI Overview named LMNT, Liquid I.V., Ultima, Nuun, DripDrop, and Skratch Labs. ChatGPT also surfaced LMNT and other well-known options, with Hyro absent."
+          "label": "Opening move",
+          "title": "Lead with buyer guides and selection pages.",
+          "icon": "Target",
+          "glow": "blue",
+          "content": "This is the fastest commercial layer because the query language already reveals decision-making. People are not just browsing the category. They are asking what is best, what fits a need, and what they should choose.",
+          "bullets": [
+            "Validated buyer-guide demand: 211,170",
+            "Expected 12-month traffic from this cluster alone: 23,229",
+            "Best-for and use-case pages should launch before broad category pages"
+          ]
         },
         {
-          "platform": "ChatGPT / Gemini",
-          "market": "Current visible winners: Liquid I.V., LMNT, Nuun, DripDrop, broad editorial sources",
-          "prompt": "electrolyte powder drink mix comparison",
-          "observed": "Comparison intent matters because it captures buyers who are narrowing choices, not just exploring the category. In the sampled responses, Hyro was absent while incumbent brands and editorial comparison logic shaped the answer. Observed March 2026 sample: ChatGPT framed the comparison around Liquid I.V. and other incumbents. Gemini produced a comparison table featuring LMNT, Liquid I.V., Nuun Sport, and DripDrop."
+          "label": "Second layer",
+          "title": "Expand into comparisons, reviews, and proof-led evaluation pages.",
+          "icon": "Trophy",
+          "glow": "blue",
+          "content": "Once Hyro owns the first decision pages, it becomes easier to widen into product comparisons, social-proof angles, and use-case evaluation pages that help buyers test alternatives and validate their choice.",
+          "bullets": [
+            "Comparison demand is smaller, but highly commercial",
+            "Review-led content improves believability and buyer confidence",
+            "These pages make Hyro easier to compare against better-known incumbents"
+          ]
+        },
+        {
+          "label": "Expansion path",
+          "title": "Broader category demand becomes much more valuable after the decision layer is built.",
+          "icon": "Compass",
+          "glow": "blue",
+          "content": "The largest demand pool is still category-level search around electrolyte drinks, electrolyte powder, and related phrasing. But that layer should be approached after Hyro has stronger commercial pages and more external proof supporting the brand.",
+          "bullets": [
+            "Category & brand demand: 8,241,950",
+            "Expected 12-month traffic from this broader layer: 167,074",
+            "This is the scale layer, not the first move"
+          ]
         }
       ],
       "highlightBoxes": [
         {
-          "title": "Caveat discipline",
-          "body": "These AI findings are limited to the approved brief's sampled surfaces. Public claims here intentionally exclude unsupported platform certainty where probe coverage was incomplete. The signal is still clear: Hyro is not yet showing up in the commercial answer patterns that matter."
-        }
-      ]
-    },
-    {
-      "id": "revenue-commercial-impact",
-      "number": "07",
-      "heading": "Revenue / Commercial Impact",
-      "sectionLead": {
-        "takeaway": "If Hyro wins this layer, the upside is not a few rankings. It is a step change in buying consideration.",
-        "body": "The approved brief models a base-case path to 70,857 cumulative visits in the first six months and 191,505 in 12 months, with aggressive upside to 327,134. The most important part is where that growth starts: decision-stage pages and related proof surfaces that can influence buyer choice early.",
-        "implication": "High-intent category ownership improves efficient discovery, supports healthier acquisition economics, and gives Hyro a compounding channel that does not reset every quarter."
-      },
-      "highlightBoxes": [
-        {
-          "body": "Not every visit is equal. The first job here is to increase qualified visibility where people are actively deciding what product to choose. From there, supporting coverage and broader category pages widen reach without diluting the commercial core."
-        },
-        {
-          "title": "Interpretation note",
-          "body": "Estimate-only. Revenue planning requires client ACV/AOV and funnel inputs. The model on this page should be read as traffic and commercial-surface upside, not as a booked-revenue forecast."
+          "title": "One strategic fact matters most",
+          "heading": "92.6% of the validated demand is non-competitor and unbranded.",
+          "body": "Hyro is not limited to stealing branded queries from incumbent electrolyte brands. Most of the upside sits in open-market demand where buyers are asking broad or need-specific questions and have not yet committed to a brand."
         }
       ],
       "upsideChart": [
@@ -533,13 +345,13 @@
       }
     },
     {
-      "id": "six-month-growth-plan",
-      "number": "08",
-      "heading": "6-month Growth Plan",
+      "id": "the-plan",
+      "number": "03",
+      "heading": "The Plan",
+      "eyebrow": "How we get there",
+      "subtitle": "Three phases. Own the decision stage. Reinforce it everywhere buyers look. Then expand into the broader market.",
       "sectionLead": {
-        "takeaway": "The first six months should build a visible decision-layer footprint, then compound it.",
-        "body": "This plan stays intentionally simple at founder altitude: Month 1 opens with the highest-intent pages, Month 2 expands comparison and proof, Month 3 deepens supporting coverage and infrastructure, and months 4–6 widen distribution while reinforcing what is already working.",
-        "implication": "The goal is not to publish randomly. It is to build a repeatable sequence that turns the first visible wins into durable market presence."
+        "takeaway": "Step 1: The first six months should build a visible decision-layer footprint, then compound it. Step 2: Hyro will not become a default recommendation through on-site publishing alone. Step 3: This is a serious execution program, not a light content retainer."
       },
       "monthBlocks": [
         {
@@ -586,77 +398,7 @@
             "Use monthly reporting to double down on what is entering real buying consideration"
           ]
         }
-      ]
-    },
-    {
-      "id": "off-site-authority",
-      "number": "09",
-      "heading": "Off-site Authority",
-      "sectionLead": {
-        "takeaway": "Hyro will not become a default recommendation through on-site publishing alone.",
-        "body": "Buyers and machines both look for external validation. The approved brief makes this explicit: review surfaces, communities, editorial mentions, listicles, backlinks, and expert-style placements are part of the main delivery scope, not a side quest.",
-        "implication": "If Hyro wants to be named more often, the market needs to see the same story repeated outside Hyro's own site."
-      },
-      "stackCards": [
-        {
-          "label": "Community presence",
-          "title": "Reddit and forum participation make the brand visible where real buying conversations happen.",
-          "icon": "MessageSquareQuote",
-          "glow": "blue",
-          "content": "Community threads and forum-style discussions often shape credibility long before a purchase. Hyro needs relevant participation and third-party-style mention surfaces around hydration, electrolyte use cases, product comparisons, and ingredient questions.",
-          "bullets": [
-            "Target buyer-relevant community threads and category discussions",
-            "Show up where comparison and use-case questions are already happening",
-            "Support decision pages with community-visible proof and references"
-          ]
-        },
-        {
-          "label": "Review surfaces",
-          "title": "Review profiles and social proof should reinforce Hyro's commercial pages.",
-          "icon": "Star",
-          "glow": "blue",
-          "content": "Review-platform presence is not cosmetic. It improves trust, helps answer systems validate the brand, and gives buyers another proof surface when they check whether a recommendation feels credible.",
-          "bullets": [
-            "Audit and improve review-platform coverage",
-            "Create an active review acquisition and response motion",
-            "Reflect review proof back into Hyro's most important commercial pages"
-          ]
-        },
-        {
-          "label": "Editorial and listicles",
-          "title": "Hydration roundups, listicles, newsletters, and editorial placements should echo Hyro's strongest claims.",
-          "icon": "Newspaper",
-          "glow": "blue",
-          "content": "Well-placed third-party mentions help answer systems and buyers see the brand as more than self-asserted. The initial attack surfaces in the brief include hydration roundups, comparison listicles, athlete or influencer proof, and expert commentary placements.",
-          "bullets": [
-            "Push digital PR and editorial-style mentions tied to the same commercial angles",
-            "Earn inclusion in roundups where category leaders already benefit",
-            "Use newsletters and professional-network distribution to extend proof beyond search"
-          ]
-        },
-        {
-          "label": "Backlink pressure",
-          "title": "Backlinks should be pointed at decision pages, not sprayed across the site.",
-          "icon": "ArrowUpRight",
-          "glow": "blue",
-          "content": "The job is not just to grow a backlink count. It is to strengthen the exact pages Hyro needs buyers and answer layers to trust most. That means intentional link acquisition around the pages that influence category choice.",
-          "bullets": [
-            "Prioritize links that reinforce buyer-guide and comparison pages",
-            "Use external mentions to support the pages already showing traction",
-            "Treat authority as reinforcement for commercial pages, not vanity growth"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "what-memetik-actually-builds-and-ships",
-      "number": "10",
-      "heading": "What Memetik Actually Builds and Ships",
-      "sectionLead": {
-        "takeaway": "This is a serious execution program, not a light content retainer.",
-        "body": "Memetik does not just publish articles. The operating scope combines commercial page production, supporting coverage, off-site authority, review work, link acquisition, technical readiness, and refresh loops until the category starts to shift.",
-        "implication": "A founder should be able to look at this scope and immediately understand why the outcome is a market position, not a pile of disconnected deliverables."
-      },
+      ],
       "scopeBlocks": [
         {
           "label": "Scope lane 01",
@@ -757,17 +499,45 @@
             "Reallocation toward the pages and query families with the clearest commercial movement"
           ]
         }
-      ]
-    },
-    {
-      "id": "operating-model",
-      "number": "11",
-      "heading": "Operating Model",
-      "sectionLead": {
-        "takeaway": "The first six months are the deployment window. The full year is the compounding window.",
-        "body": "Every month runs the same core motions in parallel: prioritization, page production, publishing and indexing, off-site authority, review reinforcement, and measurement. The difference over time is not whether the system runs. It is how much of the category Hyro has earned the right to cover.",
-        "implication": "Founders should expect visible monthly deployments, monthly reporting, and quarterly strategic reallocation rather than a vague evergreen retainer."
-      },
+      ],
+      "stackCards": [
+        {
+          "label": "Community presence",
+          "title": "Reddit and forum participation make the brand visible where real buying conversations happen.",
+          "icon": "MessageSquareQuote",
+          "glow": "blue",
+          "content": "Community threads and forum-style discussions often shape credibility long before a purchase. Hyro needs relevant participation and third-party-style mention surfaces around hydration, electrolyte use cases, product comparisons, and ingredient questions.",
+          "bullets": [
+            "Target buyer-relevant community threads and category discussions",
+            "Show up where comparison and use-case questions are already happening",
+            "Support decision pages with community-visible proof and references"
+          ]
+        },
+        {
+          "label": "Review surfaces",
+          "title": "Review profiles and social proof should reinforce Hyro's commercial pages.",
+          "icon": "Star",
+          "glow": "blue",
+          "content": "Review-platform presence is not cosmetic. It improves trust, helps answer systems validate the brand, and gives buyers another proof surface when they check whether a recommendation feels credible.",
+          "bullets": [
+            "Audit and improve review-platform coverage",
+            "Create an active review acquisition and response motion",
+            "Reflect review proof back into Hyro's most important commercial pages"
+          ]
+        },
+        {
+          "label": "Editorial and listicles",
+          "title": "Hydration roundups, listicles, newsletters, and editorial placements should echo Hyro's strongest claims.",
+          "icon": "Newspaper",
+          "glow": "blue",
+          "content": "Well-placed third-party mentions help answer systems and buyers see the brand as more than self-asserted. The initial attack surfaces in the brief include hydration roundups, comparison listicles, athlete or influencer proof, and expert commentary placements.",
+          "bullets": [
+            "Push digital PR and editorial-style mentions tied to the same commercial angles",
+            "Earn inclusion in roundups where category leaders already benefit",
+            "Use newsletters and professional-network distribution to extend proof beyond search"
+          ]
+        }
+      ],
       "timelineChart": {
         "points": [
           {
@@ -1031,86 +801,7 @@
             ]
           }
         ]
-      },
-      "stackCards": [
-        {
-          "label": "Monthly deployment",
-          "title": "Each month ships pages, authority, and infrastructure together.",
-          "icon": "Workflow",
-          "glow": "blue",
-          "content": "The model is intentionally concurrent. Hyro does not wait for the site to be perfect before building authority, and it does not wait for authority to improve before publishing commercial pages. Both move together, month by month.",
-          "bullets": [
-            "Research and prioritization",
-            "Page production and publishing",
-            "Off-site authority and review actions",
-            "Measurement, refreshes, and reallocations"
-          ]
-        },
-        {
-          "label": "Monthly reporting",
-          "title": "Reporting should show what shipped, what moved, and what now deserves more pressure.",
-          "icon": "TrendingUp",
-          "glow": "blue",
-          "content": "Memetik's reporting frame should stay business-facing. The founder needs to see where visibility is increasing, which pages are earning momentum, which third-party proof surfaces are strengthening the brand, and where the next deployment should go.",
-          "bullets": [
-            "Visibility across search and answer surfaces",
-            "Authority proof and work completed",
-            "Prompt coverage and downstream search indicators",
-            "Commercial implications for the next month's focus"
-          ]
-        },
-        {
-          "label": "Quarterly review",
-          "title": "The strategy should refresh and consolidate rather than run on autopilot.",
-          "icon": "Compass",
-          "glow": "blue",
-          "content": "Every quarter is an opportunity to reinforce winners, patch weak query families, tighten proof, refresh aging pages, and decide whether Hyro is ready for a broader category move or should keep pressing its current opening.",
-          "bullets": [
-            "Defended versus weak query families",
-            "Refresh priorities and proof gaps",
-            "Where to widen versus where to defend"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "why-memetik",
-      "number": "12",
-      "heading": "Why Memetik",
-      "sectionLead": {
-        "takeaway": "Memetik is built for default recommendation visibility, not just rankings.",
-        "body": "Most SEO programs still behave like click-capture retainers. Memetik builds the broader market system a founder actually needs now: decision pages, supporting coverage, off-site authority, review reinforcement, technical readiness, and a monthly deployment model that can reshape category perception over time.",
-        "implication": "For Hyro, that means a partner built to influence buying consideration across both classic search and answer-driven discovery."
-      },
-      "stackCards": [
-        {
-          "label": "Search + AI together",
-          "title": "Memetik treats Google and answer engines as one commercial system.",
-          "icon": "Globe2",
-          "glow": "blue",
-          "content": "The buyer path no longer lives in a single interface. Hyro needs classic search capture and answer-surface visibility working together, because buying consideration now moves across both."
-        },
-        {
-          "label": "On-site + off-site together",
-          "title": "Memetik does not stop at publishing pages.",
-          "icon": "Layers3",
-          "glow": "blue",
-          "content": "Decision pages matter, but they do not become a default recommendation on their own. Off-site authority, reviews, listicles, editorials, communities, and backlinks have to reinforce the same story."
-        },
-        {
-          "label": "Deployment + defense",
-          "title": "Memetik ships, measures, refreshes, and reallocates.",
-          "icon": "RefreshCw",
-          "glow": "blue",
-          "content": "This is not a one-time content burst. The operating model keeps reinforcing what works, correcting what softens, and widening coverage once Hyro begins to win in the market."
-        }
-      ],
-      "highlightBoxes": [
-        {
-          "title": "Bottom line",
-          "heading": "Hyro does not need more random content. It needs a concentrated market position that gets repeated across the pages buyers read and the sources buyers trust."
-        }
-      ]
+      }
     }
   ],
   "cta": {
@@ -1120,7 +811,7 @@
     "ctaLabel": "Book a Strategy Call"
   },
   "appendix": {
-    "number": "13",
+    "number": "04",
     "heading": "Supporting Evidence",
     "sectionLead": {
       "takeaway": "Below the fold is the evidence layer behind the memo.",
@@ -1351,6 +1042,26 @@
           "Source trace: approved Hyro strategy brief checked 2026-03-09, with research generated 2026-03-08."
         ]
       }
+    ]
+  },
+  "failureBlock": {
+    "eyebrow": "What happens if nothing changes",
+    "heading": "The cost of staying invisible",
+    "bullets": [
+      "Every month without decision-stage pages is a month where buyers choose electrolyte brands they can actually find.",
+      "AI answer engines are forming product recommendation patterns now — brands absent today get locked out tomorrow.",
+      "Competitors like LMNT and Liquid IV keep getting recommended while Hyro has no indexed presence.",
+      "The longer Hyro waits, the more the hydration conversation gets defined by other brands."
+    ]
+  },
+  "successBlock": {
+    "eyebrow": "What 12 months from now looks like",
+    "heading": "Hyro becomes the default electrolyte recommendation",
+    "bullets": [
+      "When health-conscious consumers search for electrolyte drinks and hydration supplements, Hyro shows up in Google results, ChatGPT recommendations, and Gemini answers.",
+      "The brand owns the decision-stage conversation — best-for lists, comparisons, and evaluation content that shapes buyer choice.",
+      "Third-party proof reinforces the same story across every surface where buyers research hydration products.",
+      "A defensible organic channel that compounds instead of renting attention from paid ads."
     ]
   }
 }

@@ -16,8 +16,8 @@
   ],
   "hero": {
     "eyebrow": "00 · Founder strategy memo",
-    "headline": "BTS can own the serious creator conversation",
-    "subtitle": "Own the comparison and monetization queries where founders decide which platform can support a real business long term.",
+    "headline": "Serious creators need better tools. They can't find BTS yet.",
+    "subtitle": "Creator-economy demand is exploding across search and AI answer engines. Right now, Behind the Scenes does not appear in any of those conversations. This strategy shows exactly how to change that.",
     "tags": [
       "behindthescenes.com",
       "Creator Economy",
@@ -26,65 +26,31 @@
       "Approved brief · 2026-03-07"
     ]
   },
-  "executiveSummary": {
-    "number": "00",
-    "heading": "Executive Summary",
-    "eyebrow": "Founder strategy memo",
-    "subtitle": "Canonical lineage — This page is rendered from the approved brief, not raw research: master reference → generation contract → brief → page.",
-    "metrics": [
-      {
-        "label": "Total search opportunity",
-        "value": "2,268,640",
-        "note": "Validated demand across creator-platform queries, with topical integrity passed.",
-        "icon": "Search"
-      },
-      {
-        "label": "Expected traffic in 12 months",
-        "value": "191,043",
-        "note": "Base case if BTS owns the first commercial lane and expands coverage behind it.",
-        "icon": "TrendingUp"
-      },
-      {
-        "label": "Aggressive upside",
-        "value": "285,367",
-        "note": "Higher-end scenario if the first commercial win compounds into broader creator-platform demand.",
-        "icon": "Sparkles"
-      },
-      {
-        "label": "First 90-day target",
-        "value": "28,656",
-        "note": "The first proof window is buyer consideration, not broad awareness all at once.",
-        "icon": "Target"
-      }
-    ],
-    "immediateActions": [
-      {
-        "number": "01",
-        "title": "Lead with Whop and Patreon comparison pages",
-        "detail": "Lead with Whop and Patreon comparison pages where buying intent is already visible and BTS can frame itself as the serious-business option."
-      },
-      {
-        "number": "02",
-        "title": "Pair every core bottom-of-funnel page with off-site authority",
-        "detail": "Pair every core bottom-of-funnel page with off-site authority, review proof, Reddit/community visibility, and backlinks so the message compounds off-site as well as on-site."
-      },
-      {
-        "number": "03",
-        "title": "Keep the first 90 days output-heavy and visible",
-        "detail": "Keep the first 90 days output-heavy and visible: pages shipped, placements earned, coverage expanded, and buyer trust checked weekly."
-      }
-    ]
-  },
   "sections": [
     {
-      "id": "state-of-search-2026",
+      "id": "the-problem",
       "number": "01",
-      "heading": "State of Search 2026",
-      "sectionLead": {
-        "takeaway": "Google still matters, but buying consideration now gets shaped across classic search and AI answer engines before a buyer ever converts.",
-        "body": "The commercial reality is hybrid, not either/or. Google still drives a major share of discovery and commercial research. Traditional search remains core behavior. At the same time, buyers increasingly move across ChatGPT, Gemini, Perplexity, Google AI Overviews, and other answer layers to compare vendors, pressure-test alternatives, and decide who even deserves a click.",
-        "implication": "Winning the category now means owning both demand capture and answer-surface trust. If BTS only shows up in one layer, competitors still control buyer consideration."
-      },
+      "heading": "The Problem",
+      "eyebrow": "Where Behind the Scenes stands today",
+      "subtitle": "Behind the Scenes has category potential, but right now, buyers researching solutions in this space cannot find you — not in Google, not in ChatGPT, not in Gemini.",
+      "narrativeProse": [
+        {
+          "heading": "State of Search 2026",
+          "body": "Google still matters, but buying consideration now gets shaped across classic search and AI answer engines before a buyer ever converts. The commercial reality is hybrid, not either/or. Google still drives a major share of discovery and commercial research. Traditional search remains core behavior. At the same time, buyers increasingly move across ChatGPT, Gemini, Perplexity, Google AI Overviews, and other answer layers to compare vendors, pressure-test alternatives, and decide who even deserves a click."
+        },
+        {
+          "heading": "Where Behind the Scenes Is Today",
+          "body": "BTS has enough authority to matter, but not enough commercial coverage to get chosen. The current site is not starting from zero. It already has 880 referring domains and 27,577 backlinks, which is a usable base. What is missing is systematic coverage of the commercial prompts that shape buyer choice in the creator platform category."
+        },
+        {
+          "heading": "Competitive Gap",
+          "body": "Incumbents are winning because they are easier to retrieve, easier to compare, and easier for machines to trust. The competitive gap is not just size. It is surface area. Patreon, Teachable, Circle, Kajabi, and Skool all present more pages, more authority, and more repeated category cues than BTS does today. Buyers also compare against Whop when they want a creator-business platform, which makes the contrast page even more important."
+        },
+        {
+          "heading": "AI Visibility Gap",
+          "body": "BTS has early answer-engine momentum, but not durable business-platform default status. The sampled baseline is directionally useful: BTS appears in some ChatGPT and Gemini prompts, but sampled Google AI Overviews show no visibility. That means the brand is interpretable, but not yet reinforced enough across owned and third-party surfaces to become the obvious answer repeatedly."
+        }
+      ],
       "stackCards": [
         {
           "label": "",
@@ -107,41 +73,25 @@
           "glow": "mixed",
           "content": "The brands that win are not just publishing pages. They are creating one repeated commercial story across owned pages, review surfaces, editorial mentions, communities, and answer engines."
         }
-      ]
-    },
-    {
-      "id": "where-behind-the-scenes-is-today",
-      "number": "02",
-      "heading": "Where Behind the Scenes Is Today",
-      "sectionLead": {
-        "takeaway": "BTS has enough authority to matter, but not enough commercial coverage to get chosen.",
-        "body": "The current site is not starting from zero. It already has 880 referring domains and 27,577 backlinks, which is a usable base. What is missing is systematic coverage of the commercial prompts that shape buyer choice in the creator platform category.",
-        "implication": "This is a positioning-and-execution gap more than an authority gap. BTS does not need a reinvention. It needs a sharper opening move."
-      },
-      "stackCards": [
+      ],
+      "promptObservations": [
         {
-          "label": "Current organic traffic",
-          "title": "162",
-          "icon": "Gauge",
-          "content": "Current discoverability is tiny relative to the validated category opportunity."
+          "platform": "Gemini",
+          "market": "AU",
+          "prompt": "best creator monetization platform tools",
+          "observed": "BTS can be recognized in broad category prompts, but that is not the same as owning the answer. The market is still open for a stronger default recommendation. The sampled result framed the market around monetization tools, but broad tool roundups still tend to disperse attention across many vendors unless BTS owns stronger category pages and comparison proof."
         },
         {
-          "label": "Current organic keywords",
-          "title": "19",
-          "icon": "FileText",
-          "content": "BTS is not yet publishing enough category-defining commercial surfaces."
+          "platform": "ChatGPT",
+          "market": "US / AU",
+          "prompt": "behind the scenes creator monetization platform alternatives",
+          "observed": "Even branded alternative prompts still redirect attention toward bigger incumbents like Patreon and adjacent options like Ko-fi. This is exactly why the first move should be comparison pages: buyers are already asking decision-stage questions, and BTS needs pages that make it the serious-business alternative to options like Whop."
         },
         {
-          "label": "Referring domains",
-          "title": "880",
-          "icon": "Link2",
-          "content": "There is already enough authority to support a focused commercial opening move if execution becomes systematic."
-        },
-        {
-          "label": "Backlinks",
-          "title": "27,577",
-          "icon": "Network",
-          "content": "The issue is not zero authority. The issue is weak commercial coverage and inconsistent retrieval signals."
+          "platform": "Gemini",
+          "market": "AU",
+          "prompt": "behind the scenes creator monetization platform alternatives",
+          "observed": "Gemini surfaced BTS with clearer differentiated language around frictionless commerce and pay-per-view, which is a useful signal. That means the positioning is not the problem. The problem is repetition and reinforcement across owned pages, third-party proof, and broader retrieval coverage."
         }
       ],
       "highlightBoxes": [
@@ -155,17 +105,45 @@
             "The current gap is a lack of owned answer assets, comparison coverage, pricing clarity, and retrieval repetition."
           ]
         }
+      ],
+      "platformStatuses": [
+        {
+          "platform": "ChatGPT",
+          "status": "25.0%",
+          "detail": "BTS appears in a minority of sampled prompts. Branded alternative queries can trigger mentions, but not durable default-answer status yet."
+        },
+        {
+          "platform": "Gemini",
+          "status": "37.5%",
+          "detail": "Gemini shows more early mention momentum, which suggests the positioning can land when the retrieval context is strong enough."
+        },
+        {
+          "platform": "Google AI Overviews",
+          "status": "0.0%",
+          "detail": "In the sampled set, BTS did not surface. That makes Google-side commercial page coverage and technical/entity readiness a real priority."
+        }
       ]
     },
     {
       "id": "the-opportunity",
-      "number": "03",
+      "number": "02",
       "heading": "The Opportunity",
-      "sectionLead": {
-        "takeaway": "The fastest path is not broad creator-category awareness. It is owning the monetization and alternative queries that create buyer consideration first.",
-        "body": "The approved brief is explicit: Buyer Guides, Alternatives & Comparisons, and Pricing & Cost are the Phase 1 clusters. Broad category demand becomes much more winnable after BTS establishes itself as a credible answer for the commercial prompts buyers use when they are actively comparing options.",
-        "implication": "In plain English: win the buying questions first, then expand into the larger category."
-      },
+      "eyebrow": "Why Behind the Scenes can win — and what it is worth",
+      "subtitle": "The market has significant unbranded demand and Behind the Scenes does not need to outspend incumbents — it needs to show up first where buyers are making decisions.",
+      "narrativeProse": [
+        {
+          "heading": "The Opportunity",
+          "body": "The fastest path is not broad creator-category awareness. It is owning the monetization and alternative queries that create buyer consideration first. The approved brief is explicit: Buyer Guides, Alternatives & Comparisons, and Pricing & Cost are the Phase 1 clusters. Broad category demand becomes much more winnable after BTS establishes itself as a credible answer for the commercial prompts buyers use when they are actively comparing options."
+        },
+        {
+          "heading": "Why Behind the Scenes Can Win",
+          "body": "BTS does not need to beat every creator platform everywhere. It needs to own one clear commercial lane where its positioning already makes sense. The company-specific right to win is unusually clear. BTS already has a monetization-first positioning, a usable authority base, and early evidence that LLMs can understand its differentiated framing. What it lacks is repetition: the same commercial story expressed through the right pages, comparisons, proof surfaces, and technical/entity signals."
+        },
+        {
+          "heading": "Revenue / Commercial Impact",
+          "body": "The upside is not just more traffic. It is becoming the platform buyers trust earlier in the buying journey. For BTS, this strategy changes how buyers find, compare, and trust the platform. If the company becomes the repeated answer for creator monetization alternatives and commercial comparison prompts, that can reduce dependency on reactive acquisition and create a more defensible demand engine."
+        }
+      ],
       "stackCards": [
         {
           "label": "Phase 1",
@@ -205,19 +183,13 @@
             "skool pricing",
             "patreon cost"
           ]
-        },
+        }
+      ],
+      "highlightBoxes": [
         {
-          "label": "Phase 3",
-          "title": "Category & Brand Demand",
-          "glow": "mixed",
-          "content": "This is the larger long-game category prize. It becomes more winnable once BTS first owns a defined monetization lane and earns outside proof.",
-          "bullets": [
-            "Demand: 2,228,330",
-            "Expected traffic in 12 months: 181,000",
-            "patreon",
-            "kajabi",
-            "skool"
-          ]
+          "title": "Right-to-win summary",
+          "heading": "The opening move is to own creator monetization alternatives and comparison intent before expanding into broad category demand.",
+          "body": "That is where BTS can look like the best answer fastest. Once those commercial pages exist and are reinforced off-site, the larger “creator platform” and competitor brand-demand layers become more winnable because the market has already learned how to place BTS in the category."
         }
       ],
       "upsideChart": [
@@ -293,207 +265,150 @@
           "base": 191043,
           "high": 285367
         }
-      ]
-    },
-    {
-      "id": "why-behind-the-scenes-can-win",
-      "number": "04",
-      "heading": "Why Behind the Scenes Can Win",
-      "sectionLead": {
-        "takeaway": "BTS does not need to beat every creator platform everywhere. It needs to own one clear commercial lane where its positioning already makes sense.",
-        "body": "The company-specific right to win is unusually clear. BTS already has a monetization-first positioning, a usable authority base, and early evidence that LLMs can understand its differentiated framing. What it lacks is repetition: the same commercial story expressed through the right pages, comparisons, proof surfaces, and technical/entity signals.",
-        "implication": "That combination makes this a leverage problem, not a blank-sheet problem."
-      },
-      "stackCards": [
-        {
-          "label": "",
-          "title": "The positioning already fits the opening move",
-          "icon": "BadgeCheck",
-          "glow": "mixed",
-          "content": "Prompt evidence shows answer engines can describe BTS in a differentiated way around frictionless commerce and creator monetization. That is a useful starting advantage."
-        },
-        {
-          "label": "",
-          "title": "There is enough authority to support lift",
-          "icon": "Building2",
-          "glow": "mixed",
-          "content": "880 referring domains is not category dominance, but it is enough to amplify a focused alternative-and-comparison opening move if the pages and proof get built correctly."
-        },
-        {
-          "label": "",
-          "title": "The Whop contrast is easy to understand",
-          "icon": "Telescope",
-          "glow": "mixed",
-          "content": "Whop can own the broader creator marketplace lane. BTS can own the buyer conversation for serious creators building real businesses who want a cleaner, more intentional platform story."
-        }
-      ],
-      "highlightBoxes": [
-        {
-          "title": "Right-to-win summary",
-          "heading": "The opening move is to own creator monetization alternatives and comparison intent before expanding into broad category demand.",
-          "body": "That is where BTS can look like the best answer fastest. Once those commercial pages exist and are reinforced off-site, the larger “creator platform” and competitor brand-demand layers become more winnable because the market has already learned how to place BTS in the category."
-        }
-      ]
-    },
-    {
-      "id": "competitive-gap",
-      "number": "05",
-      "heading": "Competitive Gap",
-      "sectionLead": {
-        "takeaway": "Incumbents are winning because they are easier to retrieve, easier to compare, and easier for machines to trust.",
-        "body": "The competitive gap is not just size. It is surface area. Patreon, Teachable, Circle, Kajabi, and Skool all present more pages, more authority, and more repeated category cues than BTS does today. Buyers also compare against Whop when they want a creator-business platform, which makes the contrast page even more important.",
-        "implication": "BTS does not need to match incumbent scale immediately. It needs to become easier to choose in one high-intent lane first."
-      },
-      "stackCards": [
-        {
-          "label": "What incumbents have",
-          "title": "Commercial surface area",
-          "glow": "blue",
-          "content": "Competitors have more indexable comparison pages, more brand-demand pages, more editorial mentions, and more retrieval repetition across the web."
-        },
-        {
-          "label": "What BTS lacks",
-          "title": "Decision pages that make the contrast obvious",
-          "glow": "blue",
-          "content": "BTS has not yet translated its positioning into a visible system of alternatives, versus pages, buyer guides, pricing explainers, and supporting proof that make the Whop contrast obvious."
-        },
-        {
-          "label": "What to do",
-          "title": "Attack the comparison layer first",
-          "glow": "amber",
-          "content": "Alternatives and comparison prompts are where large category leaders can be displaced earliest because buyers are still deciding, not just searching for a familiar brand."
-        }
-      ],
-      "highlightBoxes": [
-        {
-          "title": "Competitive evidence snapshot",
-          "bullets": [
-            "Patreon — Organic traffic: 4,172,095; Organic keywords: 598,893; Referring domains: 372,395; Backlinks: 454,284,402; Prompt hits: 21",
-            "Teachable — Organic traffic: 506,693; Organic keywords: 81,847; Referring domains: 88,832; Backlinks: 15,841,175; Prompt hits: 5",
-            "Circle — Organic traffic: 219,983; Organic keywords: 13,861; Referring domains: 21,370; Backlinks: 1,707,296; Prompt hits: 2",
-            "Skool — Organic traffic: 208,627; Organic keywords: 52,170; Referring domains: 73,244; Backlinks: 6,040,046; Prompt hits: 0",
-            "Kajabi — Organic traffic: 79,194; Organic keywords: 17,679; Referring domains: 40,224; Backlinks: 1,529,242; Prompt hits: 7",
-            "Behind the Scenes — Organic traffic: 162; Organic keywords: 19; Referring domains: 880; Backlinks: 27,577; Prompt hits: —"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ai-visibility-gap",
-      "number": "06",
-      "heading": "AI Visibility Gap",
-      "sectionLead": {
-        "takeaway": "BTS has early answer-engine momentum, but not durable business-platform default status.",
-        "body": "The sampled baseline is directionally useful: BTS appears in some ChatGPT and Gemini prompts, but sampled Google AI Overviews show no visibility. That means the brand is interpretable, but not yet reinforced enough across owned and third-party surfaces to become the obvious answer repeatedly.",
-        "implication": "This is why the strategy cannot stop at content publishing. It needs off-site authority and repeated third-party proof."
-      },
-      "platformStatuses": [
-        {
-          "platform": "ChatGPT",
-          "status": "25.0%",
-          "detail": "BTS appears in a minority of sampled prompts. Branded alternative queries can trigger mentions, but not durable default-answer status yet."
-        },
-        {
-          "platform": "Gemini",
-          "status": "37.5%",
-          "detail": "Gemini shows more early mention momentum, which suggests the positioning can land when the retrieval context is strong enough."
-        },
-        {
-          "platform": "Google AI Overviews",
-          "status": "0.0%",
-          "detail": "In the sampled set, BTS did not surface. That makes Google-side commercial page coverage and technical/entity readiness a real priority."
-        }
-      ],
-      "promptObservations": [
-        {
-          "platform": "Gemini",
-          "market": "AU",
-          "prompt": "best creator monetization platform tools",
-          "observed": "BTS can be recognized in broad category prompts, but that is not the same as owning the answer. The market is still open for a stronger default recommendation. The sampled result framed the market around monetization tools, but broad tool roundups still tend to disperse attention across many vendors unless BTS owns stronger category pages and comparison proof."
-        },
-        {
-          "platform": "ChatGPT",
-          "market": "US / AU",
-          "prompt": "behind the scenes creator monetization platform alternatives",
-          "observed": "Even branded alternative prompts still redirect attention toward bigger incumbents like Patreon and adjacent options like Ko-fi. This is exactly why the first move should be comparison pages: buyers are already asking decision-stage questions, and BTS needs pages that make it the serious-business alternative to options like Whop."
-        },
-        {
-          "platform": "Gemini",
-          "market": "AU",
-          "prompt": "behind the scenes creator monetization platform alternatives",
-          "observed": "Gemini surfaced BTS with clearer differentiated language around frictionless commerce and pay-per-view, which is a useful signal. That means the positioning is not the problem. The problem is repetition and reinforcement across owned pages, third-party proof, and broader retrieval coverage."
-        }
-      ],
-      "highlightBoxes": [
-        {
-          "title": "Caveat discipline",
-          "tone": "warning",
-          "body": "Public claims here are intentionally limited to the approved sampled surfaces. Additional platform probes had gaps in the source process, so this page does not overstate certainty for unsampled answer engines."
-        }
-      ]
-    },
-    {
-      "id": "revenue-commercial-impact",
-      "number": "07",
-      "heading": "Revenue / Commercial Impact",
-      "sectionLead": {
-        "takeaway": "The upside is not just more traffic. It is becoming the platform buyers trust earlier in the buying journey.",
-        "body": "For BTS, this strategy changes how buyers find, compare, and trust the platform. If the company becomes the repeated answer for creator monetization alternatives and commercial comparison prompts, that can reduce dependency on reactive acquisition and create a more defensible demand engine.",
-        "implication": "Traffic is the visible signal. Buyer choice is the business outcome."
-      },
-      "stackCards": [
-        {
-          "label": "Total search opportunity",
-          "title": "2,268,640",
-          "icon": "Globe",
-          "content": "Validated demand across the mapped creator-platform opportunity."
-        },
-        {
-          "label": "Expected traffic in 12 months",
-          "title": "191,043",
-          "icon": "TrendingUp",
-          "content": "Base case for the full traffic trajectory if the first commercial win compounds."
-        },
-        {
-          "label": "Aggressive upside",
-          "title": "285,367",
-          "icon": "Sparkles",
-          "content": "Higher-end scenario if BTS captures broader category demand after the first commercial win lands."
-        },
-        {
-          "label": "First 90-day target",
-          "title": "28,656",
-          "icon": "Target",
-          "content": "Initial traction window for the first commercial clusters."
-        }
-      ],
-      "highlightBoxes": [
-        {
-          "title": "What this means in plain English",
-          "bullets": [
-            "If BTS owns more of the comparison and monetization conversation, it increases the number of buyers who encounter the brand before they settle on Patreon, Kajabi, or another incumbent.",
-            "That improves not just raw visits, but the quality of the visits: users arriving from alternative, pricing, and evaluation queries are much closer to selection than broad top-of-funnel readers."
-          ]
-        },
-        {
-          "title": "Revenue planning note",
-          "tone": "warning",
-          "body": "Revenue planning requires client ACV/AOV and funnel inputs."
-        }
       ],
       "calculator": {
         "baseVisits": 191043
       }
     },
     {
-      "id": "90-day-opening-move",
-      "number": "08",
-      "heading": "90-day Opening Move",
+      "id": "the-plan",
+      "number": "03",
+      "heading": "The Plan",
+      "eyebrow": "How we get there",
+      "subtitle": "Three phases. Own the decision stage. Reinforce it everywhere buyers look. Then expand into the broader market.",
       "sectionLead": {
-        "takeaway": "The first 90 days should look like a focused category capture sprint, not a slow content warm-up.",
-        "body": "The opening move is specific: lead with Whop and Patreon comparison pages, publish the first bottom-of-funnel pages, push trust signals around each one, and expand supporting coverage behind the winners.",
-        "implication": "The goal of the first quarter is to change market perception in one commercial lane, then widen from there."
+        "takeaway": "Step 1: The first 90 days should look like a focused category capture sprint, not a slow content warm-up. Step 2: BTS will not become the obvious answer on owned pages alone. The market needs to hear the same story about BTS off-site too. Step 3: This is a category-capture program, not a light content retainer."
       },
+      "monthBlocks": [
+        {
+          "label": "Day 0–30",
+          "title": "Day 0–30",
+          "bullets": [
+            "Map the highest-intent buying queries, launch the first decision pages, get review profiles live, and start early placements across Reddit, creator communities, and editorial surfaces."
+          ]
+        },
+        {
+          "label": "Day 31–60",
+          "title": "Day 31–60",
+          "bullets": [
+            "Expand the comparison library, publish supporting coverage behind the winners, and grow review, editorial, and backlink proof around the pages already gaining traction."
+          ]
+        },
+        {
+          "label": "Day 61–90",
+          "title": "Day 61–90",
+          "bullets": [
+            "Cover the highest-intent demand fully, reinforce the strongest pages with community proof and backlinks, and turn early wins into a durable business-building brand signal."
+          ]
+        },
+        {
+          "label": "Day 0–30",
+          "title": "Day 0–30",
+          "bullets": [
+            "Map the highest-intent buying queries, launch the first decision pages, get review profiles live, and start early placements across Reddit, creator communities, and editorial surfaces."
+          ]
+        },
+        {
+          "label": "Day 31–60",
+          "title": "Day 31–60",
+          "bullets": [
+            "Expand the comparison library, publish supporting coverage behind the winners, and grow review, editorial, and backlink proof around the pages already gaining traction."
+          ]
+        },
+        {
+          "label": "Day 61–90",
+          "title": "Day 61–90",
+          "bullets": [
+            "Cover the highest-intent demand fully, reinforce the strongest pages with community proof and backlinks, and turn early wins into a durable business-building brand signal."
+          ]
+        },
+        {
+          "label": "Monday",
+          "title": "Monday",
+          "bullets": [
+            "Research, entity updates, priority review, and prompt movement checks."
+          ]
+        },
+        {
+          "label": "Tuesday–Wednesday",
+          "title": "Tuesday–Wednesday",
+          "bullets": [
+            "Page briefing, drafting, QA, comparison buildout, and supporting coverage production."
+          ]
+        },
+        {
+          "label": "Thursday",
+          "title": "Thursday",
+          "bullets": [
+            "Publishing, indexing pushes, off-site authority distribution, review activity, Reddit/community outreach, and authority-node outreach."
+          ]
+        },
+        {
+          "label": "Friday",
+          "title": "Friday",
+          "bullets": [
+            "Metrics review, buyer-trust checks, prompt re-testing, and iteration planning."
+          ]
+        }
+      ],
+      "scopeBlocks": [
+        {
+          "label": "Priority buying query mapping",
+          "title": "Priority buying query mapping",
+          "bullets": [
+            "Prioritize the commercial prompt families that actually shape buyer decisions, not a random keyword backlog."
+          ]
+        },
+        {
+          "label": "Bottom-of-funnel pages",
+          "title": "Bottom-of-funnel pages",
+          "bullets": [
+            "Build the decision pages, comparisons, and evaluation content that turn BTS into a credible buying option."
+          ]
+        },
+        {
+          "label": "Supporting coverage",
+          "title": "Supporting coverage",
+          "bullets": [
+            "Expand supporting content so answer engines keep finding the same commercial story in more contexts."
+          ]
+        },
+        {
+          "label": "Off-site authority",
+          "title": "Off-site authority",
+          "bullets": [
+            "Push review, editorial, Reddit, community, and link-based proof until the market sees the same answer everywhere."
+          ]
+        },
+        {
+          "label": "Map the opening move",
+          "title": "Map the opening move",
+          "bullets": [
+            "Lock the first buying queries, the first competitors to attack, the first prompts to win, and the proof needed to make each page believable."
+          ]
+        },
+        {
+          "label": "Ship the core pages",
+          "title": "Ship the core pages",
+          "bullets": [
+            "Publish the initial decision pages and comparison pages that change buyer consideration instead of waiting for broad category coverage first."
+          ]
+        },
+        {
+          "label": "Multiply distribution",
+          "title": "Multiply distribution",
+          "bullets": [
+            "Break each shipped asset into micro-assets, listicle angles, community posts, review proof, and backlinks that reinforce the same narrative."
+          ]
+        },
+        {
+          "label": "Reinforce and iterate",
+          "title": "Reinforce and iterate",
+          "bullets": [
+            "Re-test prompts, monitor movement, refresh weak pages, and push more authority at the prompts where BTS begins to win."
+          ]
+        }
+      ],
       "stackCards": [
         {
           "label": "First opening move",
@@ -535,76 +450,6 @@
             "Kajabi alternative",
             "Pricing / cost explainer"
           ]
-        },
-        {
-          "label": "First prompts to win",
-          "title": "First prompts to win",
-          "glow": "mixed",
-          "bullets": [
-            "best creator monetization platform",
-            "best Whop alternative",
-            "patreon alternative",
-            "creator monetization platform alternatives",
-            "kajabi alternative",
-            "skool vs patreon",
-            "best platform for behind-the-scenes content"
-          ]
-        }
-      ],
-      "monthBlocks": [
-        {
-          "label": "Day 0–30",
-          "title": "Day 0–30",
-          "bullets": [
-            "Map the highest-intent buying queries, launch the first decision pages, get review profiles live, and start early placements across Reddit, creator communities, and editorial surfaces."
-          ]
-        },
-        {
-          "label": "Day 31–60",
-          "title": "Day 31–60",
-          "bullets": [
-            "Expand the comparison library, publish supporting coverage behind the winners, and grow review, editorial, and backlink proof around the pages already gaining traction."
-          ]
-        },
-        {
-          "label": "Day 61–90",
-          "title": "Day 61–90",
-          "bullets": [
-            "Cover the highest-intent demand fully, reinforce the strongest pages with community proof and backlinks, and turn early wins into a durable business-building brand signal."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "off-site-authority",
-      "number": "09",
-      "heading": "Off-site Authority",
-      "sectionLead": {
-        "takeaway": "BTS will not become the obvious answer on owned pages alone. The market needs to hear the same story about BTS off-site too.",
-        "body": "This is the missing layer on most SEO retainers and the reason this strategy is more commercial than a publishing plan. Reddit threads, creator communities, reviews, listicles, editorial mentions, and backlinks help buyers — and answer engines — trust BTS as the serious-business alternative to Whop and the broader creator-platform field.",
-        "implication": "If BTS wants the comparison pages to convert, it needs public proof around them, not just polished on-site copy."
-      },
-      "stackCards": [
-        {
-          "label": "",
-          "title": "Reddit and creator communities",
-          "icon": "MessageSquareQuote",
-          "glow": "mixed",
-          "content": "BTS needs visible proof in the places creators pressure-test platforms in public. That means Reddit threads, niche communities, founder groups, and creator conversations where real buyers compare Whop, Patreon, and the rest."
-        },
-        {
-          "label": "",
-          "title": "Reviews and editorial proof",
-          "icon": "BadgeCheck",
-          "glow": "mixed",
-          "content": "Review profiles, listicles, expert roundups, and editorial mentions help answer engines see BTS as a credible business platform instead of a niche brand with thin third-party proof."
-        },
-        {
-          "label": "",
-          "title": "Backlinks that reinforce the money pages",
-          "icon": "Link2",
-          "glow": "mixed",
-          "content": "Every strong comparison page should keep getting cited, linked, and discussed off-site so the on-site story is reinforced by the wider web, not left to stand alone."
         }
       ],
       "highlightBoxes": [
@@ -612,309 +457,6 @@
           "title": "Why Reddit matters",
           "heading": "When creators ask real people what to use instead of Whop, BTS needs to show up in the answer.",
           "body": "That means creator-community threads, Reddit conversations, review profiles, and editorial proof that link back to the bottom-of-funnel pages and repeat the same commercial story: BTS is for serious creators building real businesses."
-        }
-      ]
-    },
-    {
-      "id": "what-memetik-actually-builds-and-ships",
-      "number": "10",
-      "heading": "What Memetik Actually Builds and Ships",
-      "sectionLead": {
-        "takeaway": "This is a category-capture program, not a light content retainer.",
-        "body": "Memetik’s delivery model is simple in public language: map the buying queries, build the decision pages, expand supporting coverage, reinforce them with off-site authority, and keep the technical/entity foundation clean. BTS does not just get blog posts. It gets a real demand-capture engine.",
-        "implication": "If any one of these layers is missing, the system gets weaker. That is why the scope has to be substantial."
-      },
-      "scopeBlocks": [
-        {
-          "label": "Priority buying query mapping",
-          "title": "Priority buying query mapping",
-          "bullets": [
-            "Prioritize the commercial prompt families that actually shape buyer decisions, not a random keyword backlog."
-          ]
-        },
-        {
-          "label": "Bottom-of-funnel pages",
-          "title": "Bottom-of-funnel pages",
-          "bullets": [
-            "Build the decision pages, comparisons, and evaluation content that turn BTS into a credible buying option."
-          ]
-        },
-        {
-          "label": "Supporting coverage",
-          "title": "Supporting coverage",
-          "bullets": [
-            "Expand supporting content so answer engines keep finding the same commercial story in more contexts."
-          ]
-        },
-        {
-          "label": "Off-site authority",
-          "title": "Off-site authority",
-          "bullets": [
-            "Push review, editorial, Reddit, community, and link-based proof until the market sees the same answer everywhere."
-          ]
-        }
-      ],
-      "stackCards": [
-        {
-          "label": "On-site conversion layer",
-          "title": "Bottom-of-funnel decision pages",
-          "content": "These are the pages that create buying consideration fastest: alternatives, comparisons, use-case pages, pricing explainers, and decision-support assets.",
-          "bullets": [
-            "Volume: As many bottom-of-funnel pages as needed to cover real demand",
-            "Patreon alternative flagship page",
-            "Whop comparison and alternative pages",
-            "Head-to-head competitor pages",
-            "Best-for / use-case guides",
-            "Pricing and cost transparency pages"
-          ]
-        },
-        {
-          "label": "Commercial coverage",
-          "title": "Category-capture and evaluation layer",
-          "content": "BTS needs more than one hero page. It needs enough middle-funnel and commercial coverage that buyers keep encountering the same business case.",
-          "bullets": [
-            "Volume: Expanded anywhere buyers compare options",
-            "Alternatives and versus pages",
-            "Buyer guide clusters",
-            "Persona / monetization-model pages",
-            "Comparison rubric and proof pages"
-          ]
-        },
-        {
-          "label": "Scale layer",
-          "title": "Supporting content network",
-          "content": "Supporting pages create retrieval density, reinforce the opening move, and route authority back into the highest-converting pages.",
-          "bullets": [
-            "Volume: Scaled around the winning pages and use cases",
-            "Competitor-adjacent supporting pages",
-            "Creator persona coverage",
-            "Use-case and monetization model pages",
-            "Internal-link architecture back to the decision pages"
-          ]
-        },
-        {
-          "label": "Authority layer",
-          "title": "Off-site authority and proof",
-          "content": "Default recommendation status does not move on owned pages alone. BTS needs third-party reinforcement across reviews, editorials, Reddit threads, communities, and link nodes.",
-          "bullets": [
-            "Volume: Built across the third-party surfaces that shape trust",
-            "Aggressive backlink acquisition to the decision pages",
-            "Digital PR, editorial, and listicle pushes",
-            "Review-platform presence and reinforcement",
-            "Forum, Reddit, creator-community, and newsletter placements"
-          ]
-        },
-        {
-          "label": "",
-          "title": "On-site production",
-          "icon": "Layers3",
-          "glow": "amber",
-          "content": "Priority buying query mapping, bottom-of-funnel targeting, comparison/evaluation content, supporting coverage, internal linking, and conversion-oriented page structure."
-        },
-        {
-          "label": "",
-          "title": "Off-site authority",
-          "icon": "MessageSquareQuote",
-          "glow": "amber",
-          "content": "Aggressive backlink acquisition, digital PR, press and editorial pushes, creator-software listicles, review-platform work, newsletter distribution, and community/forum placements that link back into the core decision pages."
-        },
-        {
-          "label": "",
-          "title": "Infrastructure and machine-readability",
-          "icon": "ShieldCheck",
-          "glow": "amber",
-          "content": "Schema matched to visible content, sitemap hygiene, crawl and index eligibility, canonicals, Bing Webmaster Tools, IndexNow, and entity consistency across owned and third-party surfaces."
-        }
-      ],
-      "monthBlocks": [
-        {
-          "label": "Day 0–30",
-          "title": "Day 0–30",
-          "bullets": [
-            "Map the highest-intent buying queries, launch the first decision pages, get review profiles live, and start early placements across Reddit, creator communities, and editorial surfaces."
-          ]
-        },
-        {
-          "label": "Day 31–60",
-          "title": "Day 31–60",
-          "bullets": [
-            "Expand the comparison library, publish supporting coverage behind the winners, and grow review, editorial, and backlink proof around the pages already gaining traction."
-          ]
-        },
-        {
-          "label": "Day 61–90",
-          "title": "Day 61–90",
-          "bullets": [
-            "Cover the highest-intent demand fully, reinforce the strongest pages with community proof and backlinks, and turn early wins into a durable business-building brand signal."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "operating-model",
-      "number": "11",
-      "heading": "Operating Model",
-      "sectionLead": {
-        "takeaway": "Execution works because research, publishing, distribution, and measurement run every week in parallel.",
-        "body": "This is not a linear sequence where pages are written first and authority comes later. Memetik runs the opening move like an operating system: map, publish, distribute, re-test, and reinforce. Every week creates visible outputs and stronger commercial signals.",
-        "implication": "That is how the program compounds instead of resetting every month."
-      },
-      "scopeBlocks": [
-        {
-          "label": "Map the opening move",
-          "title": "Map the opening move",
-          "bullets": [
-            "Lock the first buying queries, the first competitors to attack, the first prompts to win, and the proof needed to make each page believable."
-          ]
-        },
-        {
-          "label": "Ship the core pages",
-          "title": "Ship the core pages",
-          "bullets": [
-            "Publish the initial decision pages and comparison pages that change buyer consideration instead of waiting for broad category coverage first."
-          ]
-        },
-        {
-          "label": "Multiply distribution",
-          "title": "Multiply distribution",
-          "bullets": [
-            "Break each shipped asset into micro-assets, listicle angles, community posts, review proof, and backlinks that reinforce the same narrative."
-          ]
-        },
-        {
-          "label": "Reinforce and iterate",
-          "title": "Reinforce and iterate",
-          "bullets": [
-            "Re-test prompts, monitor movement, refresh weak pages, and push more authority at the prompts where BTS begins to win."
-          ]
-        }
-      ],
-      "monthBlocks": [
-        {
-          "label": "Monday",
-          "title": "Monday",
-          "bullets": [
-            "Research, entity updates, priority review, and prompt movement checks."
-          ]
-        },
-        {
-          "label": "Tuesday–Wednesday",
-          "title": "Tuesday–Wednesday",
-          "bullets": [
-            "Page briefing, drafting, QA, comparison buildout, and supporting coverage production."
-          ]
-        },
-        {
-          "label": "Thursday",
-          "title": "Thursday",
-          "bullets": [
-            "Publishing, indexing pushes, off-site authority distribution, review activity, Reddit/community outreach, and authority-node outreach."
-          ]
-        },
-        {
-          "label": "Friday",
-          "title": "Friday",
-          "bullets": [
-            "Metrics review, buyer-trust checks, prompt re-testing, and iteration planning."
-          ]
-        }
-      ],
-      "stackCards": [
-        {
-          "label": "Publishing and owned visibility",
-          "title": "Publishing and owned visibility",
-          "content": "Memetik runs the page production engine: commercial page briefs, drafting, optimization, schema alignment, publishing support, and indexing readiness.",
-          "bullets": [
-            "Publish 1 core asset",
-            "Expand into related comparison / evaluation pages",
-            "Add schema, canonicals, and internal links",
-            "Refresh pages as competitors respond",
-            "Outcome: BTS gets a visible on-site body of work that answer engines and buyers can actually retrieve, compare, and trust."
-          ]
-        },
-        {
-          "label": "Off-site authority distribution",
-          "title": "Off-site authority distribution",
-          "content": "Every core asset gets broken into derivative content and pushed into authority nodes. This is where the market starts hearing the same story from more than BTS itself.",
-          "bullets": [
-            "Turn each core asset into 10–20 micro-assets",
-            "Push to 3–5 authority nodes per asset",
-            "Secure backlinks, listicles, review proof, and community mentions",
-            "Link back to the owned destination consistently",
-            "Outcome: BTS gains the third-party reinforcement needed to increase buyer trust across both classic search and AI answer layers."
-          ]
-        },
-        {
-          "label": "01",
-          "title": "Ship core asset",
-          "content": "Publish a flagship comparison, alternative, or buyer guide page."
-        },
-        {
-          "label": "02",
-          "title": "Create micro-assets",
-          "content": "Turn it into 10–20 short-form proofs, claims, snippets, and angle variations."
-        },
-        {
-          "label": "03",
-          "title": "Push authority nodes",
-          "content": "Distribute to 3–5 review, editorial, listicle, newsletter, or community surfaces."
-        },
-        {
-          "label": "04",
-          "title": "Link back and reinforce",
-          "content": "Route trust and context back to the owned destination until the signal repeats."
-        }
-      ],
-      "highlightBoxes": [
-        {
-          "title": "Execution outputs",
-          "bullets": [
-            "A real shipping cadence — Not a quarterly strategy deck. BTS sees pages, placements, proof objects, refreshes, and weekly movement.",
-            "A cleaner answer-engine signal — The same commercial story starts appearing across owned pages, review surfaces, communities, and editorial mentions.",
-            "A more defensible growth channel — As the opening move compounds, BTS depends less on isolated wins and more on a system competitors have to unpick surface by surface."
-          ]
-        },
-        {
-          "title": "Distribution workflow",
-          "heading": "Publish once. Multiply everywhere that matters."
-        }
-      ]
-    },
-    {
-      "id": "why-memetik",
-      "number": "12",
-      "heading": "Why Memetik",
-      "sectionLead": {
-        "takeaway": "Memetik is built for category ownership in an answer-engine market, not just ranking maintenance.",
-        "body": "The difference is strategic discipline. Memetik keeps the founder-facing story simple — own the right buying questions and make the market hear the same answer everywhere — while keeping the operating model deep enough to actually move demand.",
-        "implication": "That is why the program feels more like a growth engine than an SEO retainer."
-      },
-      "stackCards": [
-        {
-          "label": "",
-          "title": "One system, not disconnected tactics",
-          "icon": "Workflow",
-          "glow": "mixed",
-          "bullets": [
-            "Memetik is not selling generic SEO reporting. The system is built to win high-intent buying decisions and default recommendations.",
-            "The execution model keeps decision pages, supporting coverage, off-site authority, and technical/entity work connected instead of split across agencies.",
-            "The program is designed for category ownership: first win a narrow commercial opening move, then widen that control into broader demand.",
-            "Reporting stays tied to prompt coverage, answer visibility, authority proof, and business-facing progress rather than vanity ranking noise."
-          ]
-        },
-        {
-          "label": "",
-          "title": "Founder-readable, operator-serious",
-          "icon": "Building2",
-          "glow": "amber",
-          "content": "The strategy stays easy to understand at the board level, but the work underneath is concrete enough to create real market movement."
-        },
-        {
-          "label": "",
-          "title": "Measured by default recommendation momentum",
-          "icon": "Radar",
-          "glow": "amber",
-          "content": "The scorecard is whether BTS gets recommended, cited, and found for the right buying prompts — not just whether a keyword moved a few positions."
         }
       ]
     }
@@ -927,7 +469,7 @@
     "ctaLabel": "Book a Strategy Call"
   },
   "appendix": {
-    "number": "13",
+    "number": "04",
     "heading": "Supporting Evidence Appendix",
     "sectionLead": {
       "takeaway": "The main story above is intentionally concise. The detail below is here for diligence, not to clutter the decision.",
@@ -1195,6 +737,26 @@
           "Revenue planning still requires BTS-specific ACV/AOV and funnel conversion data."
         ]
       }
+    ]
+  },
+  "failureBlock": {
+    "eyebrow": "What happens if nothing changes",
+    "heading": "The cost of staying invisible",
+    "bullets": [
+      "Every month without commercial pages is a month where serious creators choose platforms they can actually find.",
+      "AI answer engines are forming their recommendation patterns now — brands absent today get locked out tomorrow.",
+      "Even modest competitors with indexed content will keep getting recommended over a platform with no search presence.",
+      "The longer Behind the Scenes waits, the more the creator-tools narrative gets defined by other brands."
+    ]
+  },
+  "successBlock": {
+    "eyebrow": "What 12 months from now looks like",
+    "heading": "Behind the Scenes becomes the default recommendation",
+    "bullets": [
+      "When serious creators search for tools to build their business, Behind the Scenes shows up in Google results, ChatGPT recommendations, and Gemini answers.",
+      "The brand owns the decision-stage conversation with buyer guides, comparisons, and evaluation pages.",
+      "Third-party proof reinforces the same story across every surface where creators research tools.",
+      "A defensible organic channel that compounds instead of renting attention."
     ]
   }
 }

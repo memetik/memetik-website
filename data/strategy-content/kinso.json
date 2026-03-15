@@ -18,8 +18,8 @@
   ],
   "hero": {
     "eyebrow": "Founder strategy memo",
-    "headline": "Kinso can own shared inbox demand",
-    "subtitle": "The opening move is not broad awareness. It is to win the buyer-guide and decision-stage conversation around AI shared inbox and email triage software, then reinforce that position across Google, ChatGPT, Gemini, and other answer layers before incumbents keep defining the category for you.",
+    "headline": "Teams search for shared inbox tools. Kinso isn't in the results.",
+    "subtitle": "Teams searching for shared inbox and collaborative email tools are choosing competitors because Kinso doesn't appear anywhere — not in Google, not in ChatGPT, not in Gemini. This strategy shows exactly how to change that.",
     "tags": [
       "kinso.ai",
       "Communication / Collaboration",
@@ -27,100 +27,31 @@
       "US + AU"
     ]
   },
-  "executiveSummary": {
-    "number": "",
-    "heading": "Executive Summary",
-    "eyebrow": "Executive Summary",
-    "metrics": [
-      {
-        "label": "Total search opportunity",
-        "value": "8250150",
-        "note": "Validated demand across the US and AU inside Kinso's relevant category frame, filtered through the approved brief's topical-integrity guardrails.",
-        "breakdown": [
-          {
-            "label": "Competitor-keyword demand",
-            "value": "471610 (5.7%)"
-          },
-          {
-            "label": "Non-competitor / unbranded",
-            "value": "7778540 (94.3%)"
-          }
-        ]
-      },
-      {
-        "label": "Expected traffic in 12 months",
-        "value": "575954",
-        "note": "Base-case planning view if Kinso starts with decision-stage shared inbox and email triage demand, then compounds authority and broader category coverage.",
-        "breakdown": [
-          {
-            "label": "Competitor-keyword traffic",
-            "value": "10052"
-          },
-          {
-            "label": "Non-competitor / unbranded",
-            "value": "565902"
-          }
-        ]
-      },
-      {
-        "label": "Aggressive upside",
-        "value": "859549",
-        "note": "Upper-range planning case if the first buyer-guide pages win early, off-site authority reinforces them quickly, and broader category coverage opens on schedule.",
-        "breakdown": [
-          {
-            "label": "Demand mix in model",
-            "value": "5.7% competitor-led / 94.3% non-competitor"
-          },
-          {
-            "label": "Primary upside driver",
-            "value": "Unbranded buyer-guide demand, not competitor spillover"
-          }
-        ]
-      },
-      {
-        "label": "First 6-month target",
-        "value": "213103",
-        "note": "The first half of the program is about building enough decision-page coverage and authority to turn Kinso into a visible option during live buying research.",
-        "breakdown": [
-          {
-            "label": "Competitor-keyword target",
-            "value": "3719"
-          },
-          {
-            "label": "Non-competitor / unbranded",
-            "value": "209384"
-          }
-        ]
-      }
-    ],
-    "immediateActions": [
-      {
-        "number": "01",
-        "title": "Own the first buyer-guide category pages",
-        "detail": "Start with the commercial queries where buyers are already comparing options: AI shared inbox software, email triage software, collaboration-heavy inbox workflows, and adjacent Gmail-oriented decision pages."
-      },
-      {
-        "number": "02",
-        "title": "Attach authority to every important page",
-        "detail": "Do not publish pages in isolation. Every core page should be reinforced with review profiles, community participation, third-party mentions, backlinks, and listicle or editorial coverage so buyers and answer engines see the same story repeatedly."
-      },
-      {
-        "number": "03",
-        "title": "Build depth around the first winners",
-        "detail": "Once the first decision pages are live, expand supporting coverage, entity consistency, and refresh loops around the winners until Kinso becomes a believable default option rather than a hidden alternative."
-      }
-    ]
-  },
   "sections": [
     {
-      "id": "state-of-search-2026",
+      "id": "the-problem",
       "number": "01",
-      "heading": "State of Search 2026",
-      "sectionLead": {
-        "takeaway": "Google still drives major commercial discovery, but buying consideration now forms across both classic search and AI answers before sales ever enters the room.",
-        "body": "Traditional search remains core behavior. Buyers still research categories, comparisons, pricing logic, and use cases in Google. But they also move through ChatGPT, Gemini, Perplexity, and other answer layers to compress research, compare vendors, and decide who looks credible enough to evaluate further.",
-        "implication": "For Kinso, the job is not choosing between SEO and AI visibility. The job is making the same commercial story easy to find across both."
-      },
+      "heading": "The Problem",
+      "eyebrow": "Where Kinso stands today",
+      "subtitle": "Kinso has category potential, but right now, buyers researching solutions in this space cannot find you — not in Google, not in ChatGPT, not in Gemini.",
+      "narrativeProse": [
+        {
+          "heading": "State of Search 2026",
+          "body": "Google still drives major commercial discovery, but buying consideration now forms across both classic search and AI answers before sales ever enters the room. Traditional search remains core behavior. Buyers still research categories, comparisons, pricing logic, and use cases in Google. But they also move through ChatGPT, Gemini, Perplexity, and other answer layers to compress research, compare vendors, and decide who looks credible enough to evaluate further."
+        },
+        {
+          "heading": "Where Kinso Is Today",
+          "body": "Kinso is not starting from zero, but it is still nearly invisible relative to the size of the category it could win. The approved brief shows a meaningful category opportunity and a real, usable authority base. What is missing is the concentrated commercial page layer and off-site reinforcement needed to turn that base into visible buying consideration."
+        },
+        {
+          "heading": "Competitive Gap",
+          "body": "Kinso is competing against incumbents that already invested in category surface area, authority depth, and answer-engine familiarity. Front, Help Scout, Missive, Gmelius, and Drag have much larger search footprints and much deeper authority than Kinso today. The gap is not that they have better words on a homepage. The gap is that they already built the pages and proof layers buyers and answer engines keep finding."
+        },
+        {
+          "heading": "AI Visibility Gap",
+          "body": "In sampled answer-engine checks, Kinso is absent exactly where buyers ask who to choose. The approved brief shows 0.0% sampled mention rate across ChatGPT, Gemini, and Google AI Overviews for the tested prompt set. That does not mean the category is unwinnable. It means Kinso has not yet built enough owned and external proof for answer engines to treat it as a confident recommendation."
+        }
+      ],
       "stackCards": [
         {
           "label": "Market reality",
@@ -140,73 +71,39 @@
           "icon": "Globe",
           "content": "If Kinso only invests in traditional rankings, incumbents keep owning the answer layer. If it only thinks about AI mentions, it misses the Google demand that still drives category research at scale. The moat comes from owning both."
         }
-      ]
-    },
-    {
-      "id": "where-kinso-is-today",
-      "number": "02",
-      "heading": "Where Kinso Is Today",
-      "sectionLead": {
-        "takeaway": "Kinso is not starting from zero, but it is still nearly invisible relative to the size of the category it could win.",
-        "body": "The approved brief shows a meaningful category opportunity and a real, usable authority base. What is missing is the concentrated commercial page layer and off-site reinforcement needed to turn that base into visible buying consideration.",
-        "implication": "This is a positioning and execution gap, not a demand gap."
-      },
-      "stackCards": [
+      ],
+      "highlightBoxes": [
         {
-          "label": "Current search footprint",
-          "title": "599 monthly organic visits against an 8.25M opportunity",
-          "icon": "LineChart",
-          "content": "Kinso currently captures a tiny share of the validated market: 599 organic visits and 22 ranking keywords against a total search opportunity of 8,250,150.",
+          "title": "Competitive evidence",
+          "heading": "Competitor | Organic traffic | Organic keywords | Referring domains | Backlinks | Prompt hits",
           "bullets": [
-            "Current organic traffic: 599",
-            "Current organic keywords: 22",
-            "No ranked commercial keywords were found in the approved brief"
-          ]
-        },
-        {
-          "label": "Existing authority",
-          "title": "There is enough authority to support a focused opening move",
-          "icon": "Link2",
-          "content": "Kinso already has 64 referring domains and 435 backlinks. That is far below the category leaders, but it is enough to support a concentrated effort around the right decision pages if authority work accelerates with publishing.",
-          "bullets": [
-            "Referring domains: 64",
-            "Backlinks: 435",
-            "Authority exists, but not yet at category-defining scale"
-          ]
-        },
-        {
-          "label": "Commercial visibility gap",
-          "title": "The missing layer is commercial page depth and off-site reinforcement",
-          "icon": "Radar",
-          "content": "Kinso has not yet translated product relevance into a decisive set of buyer-guide pages, comparisons, proof assets, review coverage, and third-party mentions. That is why the company remains easy to overlook during live evaluation."
-        },
-        {
-          "label": "Answer-surface snapshot",
-          "title": "Sampled AI visibility is effectively absent",
-          "icon": "Bot",
-          "content": "In the approved brief, Kinso recorded 0.0% sampled mention rate across ChatGPT, Gemini, and Google AI Overviews for the tested prompts. That is exactly the gap this program is built to close.",
-          "bullets": [
-            "ChatGPT: 0 / 16 sampled mentions",
-            "Gemini: 0 / 16 sampled mentions",
-            "Google AI Overview: 0 / 16 sampled mentions"
+            "Missive | 160380 | 10650 | 2736 | 23821 | 10",
+            "Gmelius | 91438 | 10372 | 2346 | 9031 | 1",
+            "Front | 88656 | 11993 | 6083 | 51273 | 28",
+            "Help Scout | 150333 | 24153 | 26329 | 681859 | 13",
+            "Drag | 70833 | 10334 | 1970 | 9230 | 1"
           ]
         }
       ]
     },
     {
       "id": "the-opportunity",
-      "number": "03",
+      "number": "02",
       "heading": "The Opportunity",
-      "sectionLead": {
-        "takeaway": "The highest-leverage opening is narrow, commercial, and immediate: own decision-stage shared inbox and email triage demand before expanding into broader category reach.",
-        "body": "The strongest first layer is not generic brand awareness. It is the buyer-guide cluster where buyers are actively trying to choose software, compare workflows, and understand what kind of inbox product fits them.",
-        "implication": "Kinso should win the decision moment first, then use that position to grow into adjacent category demand."
-      },
-      "highlightBoxes": [
+      "eyebrow": "Why Kinso can win — and what it is worth",
+      "subtitle": "The market has significant unbranded demand and Kinso does not need to outspend incumbents — it needs to show up first where buyers are making decisions.",
+      "narrativeProse": [
         {
-          "title": "Core commercial read",
-          "heading": "Most of the opportunity is unbranded.",
-          "body": "Only 5.7% of validated demand is tied to competitor-keyword patterns. The other 94.3% is non-competitor or unbranded demand. That means Kinso does not need to steal an already-closed market; it needs to become visible where buyers are still asking category and workflow questions without a fixed vendor in mind."
+          "heading": "The Opportunity",
+          "body": "The highest-leverage opening is narrow, commercial, and immediate: own decision-stage shared inbox and email triage demand before expanding into broader category reach. The strongest first layer is not generic brand awareness. It is the buyer-guide cluster where buyers are actively trying to choose software, compare workflows, and understand what kind of inbox product fits them."
+        },
+        {
+          "heading": "Why Kinso Can Win",
+          "body": "Kinso can win because the market is large, mostly unbranded, and not yet matched by a concentrated Kinso-owned answer layer. The approved brief does not support a claim that Kinso already owns the conversation. It does support a much more useful claim: Kinso has product relevance, enough authority to start, and a market where most demand is still open to whoever builds the clearest commercial narrative first."
+        },
+        {
+          "heading": "Revenue / Commercial Impact",
+          "body": "If Kinso turns even a modest share of validated category demand into visibility, search can become a meaningful pipeline engine instead of a minor brand side-channel. This is a commercial growth program, not a vanity traffic plan. The base case in the approved brief models 575954 visits in 12 months and 213103 in the first 6 months if Kinso wins the right decision-stage slice first and compounds from there."
         }
       ],
       "stackCards": [
@@ -242,169 +139,13 @@
             "Sample keywords: gmail email template, gmail templates",
             "Useful as supporting coverage once the core story is established"
           ]
-        },
-        {
-          "label": "Phase 3",
-          "title": "Broader category demand becomes realistic later",
-          "icon": "Globe",
-          "content": "Generic category and brand-adjacent demand is large, but it should come after Kinso has already built authority around decision-stage shared inbox and triage queries. Broad expansion works better when the company already looks credible in the core slice.",
-          "bullets": [
-            "Demand: 3693430",
-            "Expected traffic in 12 months: 75942",
-            "This is later expansion, not the opening move"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "why-kinso-can-win",
-      "number": "04",
-      "heading": "Why Kinso Can Win",
-      "sectionLead": {
-        "takeaway": "Kinso can win because the market is large, mostly unbranded, and not yet matched by a concentrated Kinso-owned answer layer.",
-        "body": "The approved brief does not support a claim that Kinso already owns the conversation. It does support a much more useful claim: Kinso has product relevance, enough authority to start, and a market where most demand is still open to whoever builds the clearest commercial narrative first.",
-        "implication": "This is a company that can earn market position through focused execution, not one that needs a miracle."
-      },
-      "stackCards": [
-        {
-          "label": "Reason 1",
-          "title": "The product fits the first commercial story",
-          "icon": "Sparkles",
-          "content": "Kinso sits naturally inside the shared inbox and email triage conversation. That gives the company a credible right to publish category-defining pages instead of stretching into a market it does not actually serve."
-        },
-        {
-          "label": "Reason 2",
-          "title": "The site already has enough authority to support a focused push",
-          "icon": "ShieldCheck",
-          "content": "Sixty-four referring domains is not category leadership, but it is a real base. With stronger page architecture and much more aggressive external reinforcement, Kinso can move faster than a site that has no authority foundation at all."
-        },
-        {
-          "label": "Reason 3",
-          "title": "Most of the upside is outside competitor-branded demand",
-          "icon": "TrendingUp",
-          "content": "The opportunity is driven mainly by non-competitor and unbranded queries. That matters because Kinso does not have to rely on poaching trademark-style demand. It can win by owning the category questions buyers ask before they decide who to trust."
-        },
-        {
-          "label": "Reason 4",
-          "title": "The research quality gate passed cleanly",
-          "icon": "CheckCircle2",
-          "content": "Topical integrity passed in the approved brief, with low-quality semantic demand share at 0.0%. That gives Kinso a clean planning base: the page can lean into the opportunity without inflating ambiguous or low-relevance terms."
-        }
-      ]
-    },
-    {
-      "id": "competitive-gap",
-      "number": "05",
-      "heading": "Competitive Gap",
-      "sectionLead": {
-        "takeaway": "Kinso is competing against incumbents that already invested in category surface area, authority depth, and answer-engine familiarity.",
-        "body": "Front, Help Scout, Missive, Gmelius, and Drag have much larger search footprints and much deeper authority than Kinso today. The gap is not that they have better words on a homepage. The gap is that they already built the pages and proof layers buyers and answer engines keep finding.",
-        "implication": "Kinso does not need to out-publish the whole category at once. It needs to out-focus the market on the right commercial slice first."
-      },
-      "stackCards": [
-        {
-          "label": "Where incumbents win",
-          "title": "They have more pages, more authority, and more market memory",
-          "icon": "FileSearch",
-          "content": "Each major incumbent has thousands more keywords and dramatically deeper authority. That means the market already sees them more often in search results, third-party references, and AI summaries."
-        },
-        {
-          "label": "Who shapes the current answer layer",
-          "title": "Front shows the strongest sampled answer-surface momentum",
-          "icon": "Bot",
-          "content": "In the approved brief's competitor view, Front recorded the highest prompt-hit count. That matters because it suggests the brand already has stronger answer-surface familiarity than Kinso in the exact category Kinso wants to enter."
-        },
-        {
-          "label": "What Kinso should do about it",
-          "title": "Attack the buying-decision layer instead of copying generic category breadth",
-          "icon": "Target",
-          "content": "The fastest path is to build the decision pages incumbents use to frame the market, then reinforce them aggressively off-site. Kinso wins by becoming clearer and more visible in the right slice, not by trying to imitate everything bigger players publish."
         }
       ],
       "highlightBoxes": [
         {
-          "title": "Competitive evidence",
-          "heading": "Competitor | Organic traffic | Organic keywords | Referring domains | Backlinks | Prompt hits",
-          "bullets": [
-            "Missive | 160380 | 10650 | 2736 | 23821 | 10",
-            "Gmelius | 91438 | 10372 | 2346 | 9031 | 1",
-            "Front | 88656 | 11993 | 6083 | 51273 | 28",
-            "Help Scout | 150333 | 24153 | 26329 | 681859 | 13",
-            "Drag | 70833 | 10334 | 1970 | 9230 | 1"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ai-visibility-gap",
-      "number": "06",
-      "heading": "AI Visibility Gap",
-      "sectionLead": {
-        "takeaway": "In sampled answer-engine checks, Kinso is absent exactly where buyers ask who to choose.",
-        "body": "The approved brief shows 0.0% sampled mention rate across ChatGPT, Gemini, and Google AI Overviews for the tested prompt set. That does not mean the category is unwinnable. It means Kinso has not yet built enough owned and external proof for answer engines to treat it as a confident recommendation.",
-        "implication": "The fix is not one more blog post. The fix is a coordinated answer-layer program: decision pages, proof, reviews, comparisons, and third-party reinforcement."
-      },
-      "stackCards": [
-        {
-          "label": "Platform snapshot",
-          "title": "ChatGPT: absent in sampled checks",
-          "icon": "Bot",
-          "content": "Kinso was not mentioned in the sampled ChatGPT prompts in the approved brief. The visible category framing currently leans toward established incumbents and existing review or comparison narratives."
-        },
-        {
-          "label": "Platform snapshot",
-          "title": "Gemini: absent in sampled checks",
-          "icon": "Bot",
-          "content": "Kinso was also absent in the sampled Gemini checks. That reinforces the same diagnosis: the company has not yet built enough externally validated category presence to be surfaced confidently."
-        },
-        {
-          "label": "Platform snapshot",
-          "title": "Google AI Overviews: detected, but Kinso not surfaced",
-          "icon": "Search",
-          "content": "Google AI Overview appeared in sampled results for the key unbranded category prompt, but Kinso was not part of the surfaced answer layer. That is a direct commercial visibility gap inside Google's own evolving results."
-        },
-        {
-          "label": "Unbranded buying prompt",
-          "title": "best shared inbox and email triage software",
-          "content": "Current status: Sampled live across ChatGPT US/AU, Gemini US/AU, and Google AI Overview US. Kinso was absent.\n\nWhat buyers see today: The prompt evidence in the approved brief shows incumbents like Front and Help Scout framing the answer. Kinso is not yet treated as a default option.\n\nWhat must change: Publish the definitive buyer-guide page, pair it with proof and comparison pages, and reinforce it through reviews, listicles, community references, and backlinks so Kinso becomes a believable answer instead of an omitted one."
-        },
-        {
-          "label": "Unbranded buying prompt",
-          "title": "team collaboration tools",
-          "content": "Current status: Validated as part of the top buyer-guide cluster, but not yet converted into a Kinso-owned commercial destination.\n\nWhat buyers see today: Without a precise Kinso page, the market is more likely to route buyers toward broader incumbent pages, generic collaboration roundups, or non-specialist listicles.\n\nWhat must change: Create a decision page that ties collaboration directly to shared inbox and email triage workflows, then support it with third-party proof so the category frame favors Kinso's use case."
-        },
-        {
-          "label": "Unbranded buying prompt",
-          "title": "collaborative inbox vs shared mailbox",
-          "content": "Current status: Validated comparison intent in the approved brief, but not yet owned by a Kinso evaluation page.\n\nWhat buyers see today: This kind of query shapes buying consideration because it defines the category language itself. If Kinso does not answer it, incumbents get to set the terms.\n\nWhat must change: Ship comparison-led evaluation content that explains the difference, names the right use cases, and makes Kinso visible inside the decision logic buyers are already using."
-        }
-      ],
-      "highlightBoxes": [
-        {
-          "title": "Caveat discipline",
-          "tone": "warning",
-          "body": "Publicly visible AI-gap claims here are limited to the sampled ChatGPT, Gemini, and Google AI Overview checks in the approved brief. Specific Perplexity probe detail was not used on-page because the brief flagged a caution on that data path."
-        }
-      ]
-    },
-    {
-      "id": "revenue-commercial-impact",
-      "number": "07",
-      "heading": "Revenue / Commercial Impact",
-      "sectionLead": {
-        "takeaway": "If Kinso turns even a modest share of validated category demand into visibility, search can become a meaningful pipeline engine instead of a minor brand side-channel.",
-        "body": "This is a commercial growth program, not a vanity traffic plan. The base case in the approved brief models 575954 visits in 12 months and 213103 in the first 6 months if Kinso wins the right decision-stage slice first and compounds from there.",
-        "implication": "What matters is not traffic for its own sake. What matters is creating more high-intent moments where Kinso enters vendor consideration before incumbents lock the decision."
-      },
-      "highlightBoxes": [
-        {
-          "title": "Estimate-only",
-          "heading": "Cumulative traffic progression",
-          "body": "The curve below is a planning model based on the approved brief's validated demand, priority sequence, and compounding rollout logic. It is useful because it translates category ownership work into a clear founder view: how the first decision pages create the base, and how supporting coverage plus authority increase the upside over time."
-        },
-        {
-          "title": "Revenue planning note",
-          "body": "Revenue planning requires client ACV/AOV and funnel inputs. The traffic model is page-safe and useful for scenario planning, but actual pipeline and revenue projections should be calibrated with Kinso's first-party CRM, conversion, and sales data before they are treated as commitments."
+          "title": "Core commercial read",
+          "heading": "Most of the opportunity is unbranded.",
+          "body": "Only 5.7% of validated demand is tied to competitor-keyword patterns. The other 94.3% is non-competitor or unbranded demand. That means Kinso does not need to steal an already-closed market; it needs to become visible where buyers are still asking category and workflow questions without a fixed vendor in mind."
         }
       ],
       "upsideChart": [
@@ -486,13 +227,13 @@
       }
     },
     {
-      "id": "6-month-growth-plan",
-      "number": "08",
-      "heading": "6-month Growth Plan",
+      "id": "the-plan",
+      "number": "03",
+      "heading": "The Plan",
+      "eyebrow": "How we get there",
+      "subtitle": "Three phases. Own the decision stage. Reinforce it everywhere buyers look. Then expand into the broader market.",
       "sectionLead": {
-        "takeaway": "The first six months are about turning Kinso from a relevant product into a visible category option in the moments that shape buying decisions.",
-        "body": "The program starts with the buyer-guide and decision-page layer, then expands through comparisons, proof pages, supporting coverage, off-site authority, and ongoing refresh. The goal is to build a compounding system, not a one-time publication burst.",
-        "implication": "Month 1 sets the opening move. Month 2 attaches authority. Month 3 deepens coverage. Months 4–6 turn that into a repeatable visibility engine."
+        "takeaway": "Step 1: The first six months are about turning Kinso from a relevant product into a visible category option in the moments that shape buying decisions. Step 2: Kinso will not become a default recommendation through owned pages alone. Step 3: This is a serious market-capture program, not a light content retainer."
       },
       "stackCards": [
         {
@@ -527,157 +268,8 @@
             "Strengthen entity consistency across owned pages, profile pages, reviews, and third-party mentions",
             "Keep authority work tied directly to the pages influencing buying consideration"
           ]
-        },
-        {
-          "label": "Months 4–6",
-          "title": "Compound visibility, refresh winners, and widen market share",
-          "content": "By this point Kinso should be moving from isolated launches into a real deployment engine. Publishing, authority, refresh, and infrastructure now work together to turn the first pages into durable market assets.",
-          "bullets": [
-            "Expand supporting coverage around templates, adjacent workflows, and broader context pages",
-            "Refresh decision pages using live performance and answer-surface feedback",
-            "Continue aggressive backlink acquisition, editorials, listicle pushes, and community placements around the winners",
-            "Use monthly reporting to reallocate effort toward the strongest pages, prompts, and external authority nodes"
-          ]
         }
-      ]
-    },
-    {
-      "id": "off-site-authority",
-      "number": "09",
-      "heading": "Off-site Authority",
-      "sectionLead": {
-        "takeaway": "Kinso will not become a default recommendation through owned pages alone.",
-        "body": "Third-party trust is part of the core system, not an optional amplifier. Answer engines, classic search, and human buyers all look for external evidence that the company is credible, cited, reviewed, and discussed beyond its own website.",
-        "implication": "This is why Memetik pairs every important page with review, community, editorial, and backlink work instead of treating distribution as a later add-on."
-      },
-      "stackCards": [
-        {
-          "label": "Reviews",
-          "title": "Review platforms help validate the category claim",
-          "icon": "Star",
-          "content": "Review-profile presence and reinforcement help Kinso look like a credible option when buyers check external proof. They also create the kind of machine-readable trust signals that answer surfaces tend to rely on.",
-          "bullets": [
-            "Repair or strengthen review profiles where needed",
-            "Build a repeatable review acquisition and response workflow",
-            "Route review proof back into decision pages and comparison pages"
-          ]
-        },
-        {
-          "label": "Communities",
-          "title": "Reddit and forum participation shape real-world credibility",
-          "icon": "MessageSquare",
-          "content": "Community threads, forum participation, and practitioner discussion are where many buyers pressure-test vendor claims. Kinso needs to be present where category language is actually debated, not just where polished marketing copy lives.",
-          "bullets": [
-            "Participate in Reddit and relevant community threads",
-            "Place Kinso into real workflow conversations, not just promotions",
-            "Use community insights to refine page language and proof"
-          ]
-        },
-        {
-          "label": "Editorial and listicles",
-          "title": "Listicles, expert commentary, and editorials create broader trust",
-          "icon": "Newspaper",
-          "content": "Third-party roundups and editorial-style placements help the market keep encountering Kinso in buying contexts it does not control directly. That matters for both human trust and retrieval visibility.",
-          "bullets": [
-            "Push expert commentary and publication-style placements",
-            "Target comparison listicles and category roundups",
-            "Use editorial mentions to reinforce decision pages already live on-site"
-          ]
-        },
-        {
-          "label": "Backlinks",
-          "title": "Authority needs to flow into the pages that matter commercially",
-          "icon": "Link2",
-          "content": "Backlinks are not a vanity count here. The point is to direct authority into the buyer-guide, comparison, and proof pages that shape buying consideration, then refresh and defend those pages as they start to win.",
-          "bullets": [
-            "Aggressive backlink acquisition into live commercial pages",
-            "Authority routing toward the pages with strongest traction",
-            "Refresh and defense once pages start carrying category visibility"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "what-memetik-actually-builds-and-ships",
-      "number": "10",
-      "heading": "What Memetik Actually Builds and Ships",
-      "sectionLead": {
-        "takeaway": "This is a serious market-capture program, not a light content retainer.",
-        "body": "Memetik builds the whole visibility system required for Kinso to win: priority query mapping, commercial pages, supporting coverage, review and authority layers, technical/entity infrastructure, and ongoing refresh once the first wins appear.",
-        "implication": "A founder should read this as category infrastructure: what gets mapped, what gets built, what gets distributed, and what keeps getting reinforced after launch."
-      },
-      "stackCards": [
-        {
-          "label": "Scope lane 01",
-          "title": "Priority buying-query mapping",
-          "content": "Before production scales, Memetik maps the exact buying queries and prompt patterns that matter most to Kinso's category entry. This prevents generic publishing and keeps execution tied to commercial demand.",
-          "bullets": [
-            "Map the first high-intent category, comparison, and workflow queries to attack",
-            "Prioritize the opening move around AI shared inbox and email triage software",
-            "Align each priority query to one clear owned destination and one clear commercial angle"
-          ]
-        },
-        {
-          "label": "Scope lane 02",
-          "title": "Bottom-of-funnel page production",
-          "content": "Memetik builds as many bottom-of-funnel pages as needed to cover the relevant demand, starting with the buyer-guide and decision pages that shape vendor consideration fastest.",
-          "bullets": [
-            "Buyer guides that answer who the tool is for, what it does best, and how to evaluate it",
-            "Use-case pages tied to collaboration, triage, Gmail workflow, and team inbox behavior",
-            "Product-form explainers and proof-led pages that make Kinso's story easier to trust"
-          ]
-        },
-        {
-          "label": "Scope lane 03",
-          "title": "Comparison and evaluation content",
-          "content": "Kinso needs pages that intercept buyers who already know some incumbents and are actively comparing options. This layer is where much of the category framing actually happens.",
-          "bullets": [
-            "Head-to-head comparisons against incumbent decision patterns",
-            "Alternative-style pages and category distinction pages",
-            "Evaluation pages that explain shared mailbox, collaborative inbox, and related category language clearly"
-          ]
-        },
-        {
-          "label": "Scope lane 04",
-          "title": "Supporting content coverage",
-          "content": "Once the first decision pages exist, Memetik expands supporting coverage around use cases, proof objects, buyer context, and adjacent workflow patterns so search and answer engines keep finding the same narrative in more places.",
-          "bullets": [
-            "Supporting pages around adjacent workflows and buying contexts",
-            "Template and operational coverage once the first commercial pages are live",
-            "Internal linking and authority routing back into the pages that matter most"
-          ]
-        },
-        {
-          "label": "Scope lane 05",
-          "title": "Off-site authority and distribution",
-          "content": "Memetik does not leave authority to chance. The program explicitly includes aggressive backlink acquisition, digital PR and editorial pushes, listicles, reviews, and community placements that reinforce Kinso's owned pages.",
-          "bullets": [
-            "Backlinks routed into decision pages and proof pages",
-            "Digital PR, editorial mentions, press-style angles, and listicle inclusion",
-            "Review-platform work, Reddit/community participation, and professional-network distribution"
-          ]
-        },
-        {
-          "label": "Scope lane 06",
-          "title": "Infrastructure, entity consistency, and defense",
-          "content": "Kinso also needs the technical and entity layer that makes the entire system easier to crawl, index, and trust. Memetik keeps this visible because without it, good pages and placements underperform.",
-          "bullets": [
-            "Schema matched to visible content, clean canonicals, sitemap hygiene, and crawl/index readiness",
-            "Bing Webmaster Tools, IndexNow, and machine-readable consistency across owned and third-party surfaces",
-            "Monthly refresh, measurement, and defense loops so winning pages do not decay after launch"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "operating-model",
-      "number": "11",
-      "heading": "Operating Model",
-      "sectionLead": {
-        "takeaway": "Kinso needs monthly deployments with concurrent workstreams, not isolated publishing sprints.",
-        "body": "Each month runs the same core motions together: research and prioritization, page production, publishing and indexing, off-site authority, and measurement. The mix changes as the program matures, but those motions do not stop after launch.",
-        "implication": "That is how the first decision pages turn into category position instead of sitting as isolated assets."
-      },
+      ],
       "timelineChart": {
         "points": [
           {
@@ -911,64 +503,7 @@
             "trafficValue": 575954
           }
         ]
-      },
-      "stackCards": [
-        {
-          "label": "Monthly deployment rhythm",
-          "title": "Every month ships research, pages, authority, and infrastructure together",
-          "icon": "Workflow",
-          "content": "The program does not move in a simple line from content to distribution to reporting. Every month includes prioritization, production, publishing, indexing, authority building, and measurement running concurrently."
-        },
-        {
-          "label": "Monthly reporting",
-          "title": "Reporting shows what moved, what shipped, and what deserves more force",
-          "icon": "Database",
-          "content": "Memetik reviews visibility movement, prompt coverage, authority proof, and workstream completion each month so Kinso can see whether the program is actually increasing buying-surface presence rather than just producing output."
-        },
-        {
-          "label": "Quarterly strategy review",
-          "title": "The program refreshes and reallocates instead of running on autopilot",
-          "icon": "Compass",
-          "content": "Every quarter, the strategy should decide which pages deserve reinforcement, which prompts still look weak, which external surfaces matter most, and where Kinso can widen the category footprint without losing focus."
-        }
-      ]
-    },
-    {
-      "id": "why-memetik",
-      "number": "12",
-      "heading": "Why Memetik",
-      "sectionLead": {
-        "takeaway": "Memetik is built for category ownership, not content volume for its own sake.",
-        "body": "Most agencies either stay too narrow on on-site SEO or talk about AI visibility without building the underlying page, authority, and infrastructure system required to earn it. Memetik's model is different because it keeps the whole growth engine visible and operational.",
-        "implication": "For Kinso, that means one partner responsible for the commercial pages, the supporting coverage, the off-site authority, the technical foundation, and the ongoing defense."
-      },
-      "highlightBoxes": [
-        {
-          "title": "The Memetik difference",
-          "heading": "One system for Google, answer engines, and market trust.",
-          "body": "Kinso does not need disconnected tactics. It needs a commercial visibility engine that makes the same story easier to find, easier to trust, and harder for incumbents to crowd out."
-        }
-      ],
-      "stackCards": [
-        {
-          "label": "Commercial focus",
-          "title": "The work starts from buying moments, not generic traffic goals",
-          "icon": "Target",
-          "content": "Memetik begins with the category questions and prompts that shape vendor consideration, then builds the page and authority system around those moments."
-        },
-        {
-          "label": "Integrated execution",
-          "title": "On-site production, off-site authority, and technical foundations stay under one roof",
-          "icon": "Layers3",
-          "content": "That matters because Kinso needs all three at once. Publishing without distribution is weak. Distribution without owned destinations leaks value. Infrastructure without message clarity does not change the market."
-        },
-        {
-          "label": "Visibility that can be defended",
-          "title": "Memetik treats refresh and defense as core scope",
-          "icon": "Radar",
-          "content": "Once Kinso starts winning the right pages and prompts, the job is not done. Pages need refreshes, authority needs reinforcement, and the market needs a steady signal that Kinso deserves to stay visible."
-        }
-      ]
+      }
     }
   ],
   "cta": {
@@ -979,7 +514,7 @@
     "ctaLabel": "Book a Strategy Call"
   },
   "appendix": {
-    "number": "13",
+    "number": "04",
     "heading": "Supporting Evidence Appendix",
     "sectionLead": {
       "takeaway": "The main narrative is designed to be skimmable. The evidence below supports the thesis without turning the page into a research dump.",
@@ -1177,6 +712,26 @@
           }
         ]
       }
+    ]
+  },
+  "failureBlock": {
+    "eyebrow": "What happens if nothing changes",
+    "heading": "The cost of staying invisible",
+    "bullets": [
+      "Every month without commercial pages is a month where teams choose inbox tools they can actually find.",
+      "AI answer engines are forming their recommendation patterns now — tools absent today get locked out tomorrow.",
+      "Competitors like Front, Missive, and Hiver keep getting recommended while Kinso has no indexed presence.",
+      "The longer Kinso waits, the more the shared-inbox category gets defined by established players."
+    ]
+  },
+  "successBlock": {
+    "eyebrow": "What 12 months from now looks like",
+    "heading": "Kinso becomes the default shared inbox recommendation",
+    "bullets": [
+      "When teams search for shared inbox tools, collaborative email, and team communication solutions, Kinso shows up in Google results, ChatGPT recommendations, and Gemini answers.",
+      "Kinso owns the decision-stage conversation with buyer guides, comparisons, and evaluation pages.",
+      "Third-party proof reinforces the same commercial story across every surface where teams research tools.",
+      "A defensible organic channel that compounds instead of renting attention."
     ]
   }
 }

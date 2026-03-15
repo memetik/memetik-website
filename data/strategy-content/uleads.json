@@ -15,47 +15,28 @@
   ],
   "hero": {
     "eyebrow": "Strategy Document /// February 2026",
-    "headline": "ULEADS",
+    "headline": "Leads are being searched for. ULeads is nowhere to be found.",
     "accent": "SEO & AEO STRATEGY.",
     "tags": [
       "boostursuper.com",
       "righthealthinsurance.com",
       "rightlifeinsure.com"
-    ]
+    ],
+    "subtitle": "Businesses looking for lead generation solutions can't find ULeads in search results or AI recommendations. This strategy shows exactly how to change that."
   },
   "sections": [
     {
-      "id": "current-state",
-      "number": "00",
-      "heading": "CURRENT STATE",
-      "highlightBoxes": [
-        {
-          "title": "What's Missing",
-          "tone": "warning",
-          "bullets": [
-            "No indexable content beyond the landing page — Google has nothing to rank",
-            "No blog, no resource pages, no comparison content",
-            "No schema markup",
-            "No sitemap or robots.txt configuration",
-            "No backlink profile",
-            "Zero presence in AI platforms (ChatGPT, Perplexity, Google AI Overviews)"
-          ]
-        },
-        {
-          "heading": "The organic opportunity is massive — and completely untapped.",
-          "body": "Superannuation, health insurance, and life insurance are three of the highest-volume, highest-intent search verticals in Australian finance. Millions of Australians search for help with these decisions every year. The sites that capture that traffic — Canstar, Finder, Compare the Market, Money.com.au — built eight and nine-figure businesses on the back of organic content that converts searchers into leads.\n\nRight now, Uleads has three sites in three of those exact verticals with proven funnels and proven demand (paid ads confirm it). But every lead costs ad spend, and the moment you stop spending, the leads stop. There is zero organic presence — no content, no rankings, no AI visibility. That's not a problem, it's a gap. And it's the kind of gap where closing it changes the economics of the entire business.\n\nOrganic leads compound. A page published in month 2 is still generating leads in month 12 and beyond. The three verticals share the same audience — Australians making financial decisions — which means content, links, and authority built on one site reinforces the others. This isn't three separate SEO projects. It's one ecosystem."
-        }
-      ]
-    },
-    {
-      "id": "competitive-landscape",
+      "id": "the-problem",
       "number": "01",
-      "heading": "COMPETITIVE LANDSCAPE",
-      "subtitle": "Who Owns These Verticals",
-      "sectionLead": {
-        "body": "Site | Organic Traffic | What They Do Well",
-        "implication": "Data sourced from Semrush, February 2026."
-      },
+      "heading": "The Problem",
+      "eyebrow": "Where ULEADS stands today",
+      "subtitle": "ULEADS has category potential, but right now, buyers researching solutions in this space cannot find you — not in Google, not in ChatGPT, not in Gemini.",
+      "narrativeProse": [
+        {
+          "heading": "COMPETITIVE LANDSCAPE",
+          "body": "Site | Organic Traffic | What They Do Well"
+        }
+      ],
       "stackCards": [
         {
           "title": "Superannuation",
@@ -70,71 +51,27 @@
           "content": "Allianz (22.7%), Moneysmart (13.7%), Compare the Market (8.7%). Less consolidated than health insurance — more room for a content-rich comparison site to rank."
         }
       ],
-      "scopeBlocks": [
-        {
-          "label": "1.4M/month",
-          "title": "canstar.com.au",
-          "bullets": [
-            "Star ratings system, trust signals, 1000+ indexed pages per vertical"
-          ]
-        },
-        {
-          "label": "1.3M/month",
-          "title": "moneysmart.gov.au",
-          "bullets": [
-            "Government authority, E-E-A-T maxed out, cited by every AI platform"
-          ]
-        },
-        {
-          "label": "901.6K/month",
-          "title": "comparethemarket.com.au",
-          "bullets": [
-            "Brand recognition, massive content library, every insurer × product type covered"
-          ]
-        },
-        {
-          "label": "663.7K/month",
-          "title": "choice.com.au",
-          "bullets": [
-            "Independent reviews, \"we don't take commission\" positioning"
-          ]
-        },
-        {
-          "label": "448.7K/month",
-          "title": "finder.com.au",
-          "bullets": [
-            "Widest keyword coverage, comparison tools, policy breakdowns"
-          ]
-        },
-        {
-          "label": "52.1K/month",
-          "title": "stockspot.com.au",
-          "bullets": [
-            "Original research (\"Fat Cat Funds Report\"), digital PR machine"
-          ]
-        },
-        {
-          "label": "14.6K/month",
-          "title": "superratings.com.au",
-          "bullets": [
-            "Industry authority, awards, data-driven content, media citations"
-          ]
-        }
-      ],
       "highlightBoxes": [
         {
-          "title": "Where Uleads Sits Today",
-          "body": "0 organic traffic. 0 indexed content pages. 0 referring domains. 0 AI citations.",
+          "title": "What's Missing",
+          "tone": "warning",
           "bullets": [
-            "The strategy below is designed to close that gap."
+            "No indexable content beyond the landing page — Google has nothing to rank",
+            "No blog, no resource pages, no comparison content",
+            "No schema markup",
+            "No sitemap or robots.txt configuration",
+            "No backlink profile",
+            "Zero presence in AI platforms (ChatGPT, Perplexity, Google AI Overviews)"
           ]
         }
       ]
     },
     {
-      "id": "strategy-content-led-lead-gen-aeo",
+      "id": "the-opportunity",
       "number": "02",
-      "heading": "STRATEGY: CONTENT-LED LEAD GEN + AEO",
+      "heading": "The Opportunity",
+      "eyebrow": "Why ULEADS can win — and what it is worth",
+      "subtitle": "The market has significant unbranded demand and ULEADS does not need to outspend incumbents — it needs to show up first where buyers are making decisions.",
       "highlightBoxes": [
         {
           "body": "Turn each single-page funnel into a content-rich authority site that ranks for hundreds of long-tail, high-intent queries and gets cited by AI platforms. Every piece of content funnels back to the lead capture form."
@@ -142,62 +79,49 @@
       ]
     },
     {
-      "id": "execution-protocol",
+      "id": "the-plan",
       "number": "03",
-      "heading": "EXECUTION PROTOCOL",
-      "stackCards": [
+      "heading": "The Plan",
+      "eyebrow": "How we get there",
+      "subtitle": "Three phases. Own the decision stage. Reinforce it everywhere buyers look. Then expand into the broader market.",
+      "sectionLead": {
+        "takeaway": "Step 1: EXECUTION PROTOCOL Step 2: WHAT TO EXPECT"
+      },
+      "monthBlocks": [
         {
-          "label": "Phase 1 — Month 1-2",
-          "title": "Foundation",
-          "icon": "Target",
+          "label": "Month 1",
+          "title": "Technical foundation across all 3 sites. Competitor reverse-engineering. Full keyword maps and content architecture. Baseline AEO audit.",
           "bullets": [
-            "Technical Setup (All 3 Sites)",
-            "Competitor Reverse-Engineering",
-            "Keyword Research & Content Architecture",
-            "Baseline AEO Audit"
+            "Sites indexed in Google. Content calendars for 1,475+ pages delivered. Clear blueprint for every page we're building."
           ]
         },
         {
-          "label": "Phase 2 — Month 2 Onwards",
-          "title": "Content Engine",
-          "icon": "Database",
+          "label": "Month 2-3",
+          "title": "First 100+ pages published across all 3 sites. Programmatic templates deployed. Link building and PR campaigns launched. Reddit/Quora seeding begins.",
           "bullets": [
-            "boostursuper.com",
-            "righthealthinsurance.com",
-            "rightlifeinsure.com",
-            "Site | Editorial | Programmatic | Total",
-            "Content Principles"
+            "Pages appearing in Google index. Long-tail rankings starting to show. First organic impressions in Search Console."
           ]
         },
         {
-          "label": "Phase 3 — Month 2 Onwards",
-          "title": "Authority Building",
-          "icon": "Share2",
+          "label": "Month 4-6",
+          "title": "300+ pages live. Comparison and BOFU content scaling. Authority signals compounding. AEO entity building in progress.",
           "bullets": [
-            "Link Building",
-            "Press Releases",
-            "Parasite SEO"
+            "Rankings climbing across all 3 verticals. First organic leads hitting forms. AI platforms starting to reference your content."
           ]
         },
         {
-          "label": "Phase 4 — Ongoing from Month 1",
-          "title": "AEO & AI Visibility",
-          "icon": "RotateCw",
+          "label": "Month 7-9",
+          "title": "600+ pages live. Programmatic content at scale. Second wave of link building. PR placements generating brand signals.",
           "bullets": [
-            "Reddit & Quora Seeding",
-            "Entity Building",
-            "Content Structure for AI",
-            "AI Monitoring"
+            "Organic becoming a consistent lead channel alongside paid. Hundreds of ranking keywords per site. Monthly lead volume growing."
           ]
-        }
-      ],
-      "highlightBoxes": [
-        {
-          "body": "We don't do selective content. We build every single page that could rank and convert — every comparison, every review, every segment page, every BOFU query, every programmatic variation. If there's a search query with intent, we build a page for it. The goal is total coverage across all three verticals."
         },
         {
-          "title": "Content Principles",
-          "body": "Every page targets a real search query. Every page has a clear CTA to the lead capture form. FAQ schema on every page. Content structured for AI extraction — clear, quotable answers in the first 100 words. E-E-A-T signals throughout. No filler. Every page exists because someone searches for it."
+          "label": "Month 10-12",
+          "title": "1,000+ pages live. Full content coverage approaching. AEO citations tracked and optimised.",
+          "bullets": [
+            "Organic traffic compounding month over month. Multiple AI platforms citing your brands. Lead cost from organic approaching zero marginal cost."
+          ]
         }
       ],
       "scopeBlocks": [
@@ -358,83 +282,45 @@
             "Iterate content and entity signals based on what's working"
           ]
         }
-      ]
-    },
-    {
-      "id": "what-to-expect",
-      "number": "04",
-      "heading": "WHAT TO EXPECT",
-      "sectionLead": {
-        "body": "Timeline | What We're Doing | What You'll See"
-      },
-      "monthBlocks": [
+      ],
+      "stackCards": [
         {
-          "label": "Month 1",
-          "title": "Technical foundation across all 3 sites. Competitor reverse-engineering. Full keyword maps and content architecture. Baseline AEO audit.",
+          "label": "Phase 1 — Month 1-2",
+          "title": "Foundation",
+          "icon": "Target",
           "bullets": [
-            "Sites indexed in Google. Content calendars for 1,475+ pages delivered. Clear blueprint for every page we're building."
+            "Technical Setup (All 3 Sites)",
+            "Competitor Reverse-Engineering",
+            "Keyword Research & Content Architecture",
+            "Baseline AEO Audit"
           ]
         },
         {
-          "label": "Month 2-3",
-          "title": "First 100+ pages published across all 3 sites. Programmatic templates deployed. Link building and PR campaigns launched. Reddit/Quora seeding begins.",
+          "label": "Phase 2 — Month 2 Onwards",
+          "title": "Content Engine",
+          "icon": "Database",
           "bullets": [
-            "Pages appearing in Google index. Long-tail rankings starting to show. First organic impressions in Search Console."
+            "boostursuper.com",
+            "righthealthinsurance.com",
+            "rightlifeinsure.com",
+            "Site | Editorial | Programmatic | Total",
+            "Content Principles"
           ]
         },
         {
-          "label": "Month 4-6",
-          "title": "300+ pages live. Comparison and BOFU content scaling. Authority signals compounding. AEO entity building in progress.",
+          "label": "Phase 3 — Month 2 Onwards",
+          "title": "Authority Building",
+          "icon": "Share2",
           "bullets": [
-            "Rankings climbing across all 3 verticals. First organic leads hitting forms. AI platforms starting to reference your content."
-          ]
-        },
-        {
-          "label": "Month 7-9",
-          "title": "600+ pages live. Programmatic content at scale. Second wave of link building. PR placements generating brand signals.",
-          "bullets": [
-            "Organic becoming a consistent lead channel alongside paid. Hundreds of ranking keywords per site. Monthly lead volume growing."
-          ]
-        },
-        {
-          "label": "Month 10-12",
-          "title": "1,000+ pages live. Full content coverage approaching. AEO citations tracked and optimised.",
-          "bullets": [
-            "Organic traffic compounding month over month. Multiple AI platforms citing your brands. Lead cost from organic approaching zero marginal cost."
+            "Link Building",
+            "Press Releases",
+            "Parasite SEO"
           ]
         }
       ],
       "highlightBoxes": [
         {
-          "body": "Paid ads stop the moment you stop paying. Content compounds. By month 12, every page we've built is working for you — permanently."
-        }
-      ]
-    },
-    {
-      "id": "next-steps",
-      "number": "05",
-      "heading": "NEXT STEPS",
-      "scopeBlocks": [
-        {
-          "label": "1",
-          "title": "Confirm CMS capabilities",
-          "bullets": [
-            "can we add content to the existing sites, or do we need subdomains/separate platforms?"
-          ]
-        },
-        {
-          "label": "2",
-          "title": "Technical setup and content calendars delivered",
-          "bullets": [
-            "week 1-2"
-          ]
-        },
-        {
-          "label": "3",
-          "title": "Content publishing begins",
-          "bullets": [
-            "week 3"
-          ]
+          "body": "We don't do selective content. We build every single page that could rank and convert — every comparison, every review, every segment page, every BOFU query, every programmatic variation. If there's a search query with intent, we build a page for it. The goal is total coverage across all three verticals."
         }
       ]
     }
@@ -445,5 +331,25 @@
     "body": "Confirm CMS capabilities, deliver technical setup and content calendars in week 1-2, and begin content publishing in week 3.",
     "href": "https://cal.com/memetik/letstalk",
     "ctaLabel": "LET'S TALK"
+  },
+  "failureBlock": {
+    "eyebrow": "What happens if nothing changes",
+    "heading": "The cost of staying invisible",
+    "bullets": [
+      "Every month without commercial pages is a month where businesses choose lead-gen providers they can actually find.",
+      "AI answer engines are forming recommendation patterns now — providers absent today get locked out.",
+      "Competitors with even basic search presence will keep appearing while ULeads remains invisible.",
+      "The lead generation market is being defined right now by whoever shows up first."
+    ]
+  },
+  "successBlock": {
+    "eyebrow": "What 12 months from now looks like",
+    "heading": "ULeads becomes the go-to lead generation partner",
+    "bullets": [
+      "When businesses search for lead generation services, ULeads shows up in Google results and AI recommendations.",
+      "ULeads owns the decision-stage conversation with commercial pages that shape buyer choice.",
+      "Third-party proof reinforces the same story across every surface where businesses research providers.",
+      "A defensible organic channel that compounds month after month."
+    ]
   }
 }

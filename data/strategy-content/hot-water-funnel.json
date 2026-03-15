@@ -16,8 +16,8 @@
   ],
   "hero": {
     "eyebrow": "Gold Coast heat pump hot water strategy",
-    "headline": "Own Gold Coast heat pump demand",
-    "subtitle": "Turn local search, Google Ads, and Google Business Profile into booked installs with one specialist conversion system.",
+    "headline": "Gold Coast homeowners want heat pumps. They can't find you.",
+    "subtitle": "Gold Coast homeowners searching for heat pump hot water systems are finding your competitors first. This strategy shows exactly how to capture that demand.",
     "tags": [
       "Gold Coast",
       "Heat pump hot water",
@@ -25,64 +25,52 @@
       "90-day activation plan"
     ]
   },
-  "executiveSummary": {
-    "number": "",
-    "heading": "Launch a specialist local acquisition system that starts producing qualified installs in the first 90 days, then use those wins to keep strengthening the channel month by month.",
-    "eyebrow": "Executive summary",
-    "subtitle": "You are not buying a brochure site. You are launching a revenue channel that combines Google Ads, local SEO, Google Business Profile, conversion-led pages, an eligibility path, and ongoing optimisation around one clear offer.",
-    "metrics": [
-      {
-        "label": "Standard install offer",
-        "value": "$3,600",
-        "note": "A clear fixed-price offer gives your business a cleaner sales message than generic quote-first competitors.",
-        "icon": "DollarSign"
-      },
-      {
-        "label": "Gold Coast demand",
-        "value": "1.5k–3k+",
-        "note": "Estimated monthly search demand across heat pump, hot water replacement, rebate, and brand-intent terms.",
-        "icon": "TrendingUp"
-      },
-      {
-        "label": "Launch period",
-        "value": "90 days",
-        "note": "The first 90 days put the channel live fast enough to start producing jobs and collecting real closed-job feedback.",
-        "icon": "CalendarDays"
-      },
-      {
-        "label": "Target output",
-        "value": "8–15 / week",
-        "note": "Long-range weekly booked-install target once the system is live, refined, and reinforced by ongoing monthly work.",
-        "icon": "Zap"
-      }
-    ],
-    "immediateActions": [
-      {
-        "number": "Commercial outcome",
-        "title": "You get a specialist local revenue channel",
-        "detail": "Your offer becomes a dedicated local acquisition system instead of another service page buried inside a generic plumbing website."
-      },
-      {
-        "number": "Commercial outcome",
-        "title": "Your first 90 days focus on traction",
-        "detail": "The opening phase gets the channel live, generates qualified demand, and aims to produce the first closed jobs quickly enough to create real commercial momentum."
-      },
-      {
-        "number": "Commercial outcome",
-        "title": "Closed installs fund faster growth",
-        "detail": "Once installs start closing, that revenue can help fund the next layer of SEO, backlinks, local authority, and funnel optimisation rather than forcing everything into one large upfront build."
-      }
-    ]
-  },
   "sections": [
     {
-      "id": "why-your-offer-can-win-on-the-gold-coast",
+      "id": "the-problem",
       "number": "01",
-      "heading": "Why Your Offer Can Win on the Gold Coast",
-      "sectionLead": {
-        "takeaway": "Your offer gives you a strong local angle: fixed price, strong savings story, and a buying decision that often arrives with urgency.",
-        "body": "Buyers already understand the category, the price can be positioned credibly, and the path from replacement pain to booked install is cleaner than in many other local service categories."
-      },
+      "heading": "The Problem",
+      "eyebrow": "Where you stand today",
+      "subtitle": "Gold Coast homeowners are actively searching for heat pump hot water solutions, but they are finding established competitors — not you.",
+      "narrativeProse": [
+        {
+          "heading": "Buyers are searching with urgency and you are not showing up",
+          "body": "When a hot water system fails, homeowners go straight to Google. They search for heat pump installers, government rebates, and brand comparisons. Right now, the results they see are dominated by established plumbing firms and national brands — not your fixed-price offer."
+        },
+        {
+          "heading": "Generalist plumbers own the conversation by default",
+          "body": "Most Gold Coast heat pump installations are quoted by general plumbing businesses. They do not specialise, but they rank because they have more reviews, more pages, and longer search histories. A focused heat pump offer should beat them — but only if buyers can find it."
+        }
+      ],
+      "stackCards": [
+        {
+          "label": "",
+          "title": "The buyer already understands the offer",
+          "content": "Heat pump hot water has a cleaner buying story than many local trades offers: lower running costs, better efficiency, and a replacement decision that often arrives with urgency."
+        },
+        {
+          "label": "",
+          "title": "The pricing can be positioned credibly",
+          "content": "Broader Australian installation benchmarks still leave room for a $3,600 standard-install offer to feel commercially believable rather than confusingly cheap or over-engineered."
+        }
+      ]
+    },
+    {
+      "id": "the-opportunity",
+      "number": "02",
+      "heading": "The Opportunity",
+      "eyebrow": "Why Hot Water Funnel can win — and what it is worth",
+      "subtitle": "The market has significant unbranded demand and Hot Water Funnel does not need to outspend incumbents — it needs to show up first where buyers are making decisions.",
+      "narrativeProse": [
+        {
+          "heading": "Why Your Offer Can Win on the Gold Coast",
+          "body": "Your offer gives you a strong local angle: fixed price, strong savings story, and a buying decision that often arrives with urgency. Buyers already understand the category, the price can be positioned credibly, and the path from replacement pain to booked install is cleaner than in many other local service categories."
+        },
+        {
+          "heading": "Commercial Upside",
+          "body": "At $3,600 per standard install, the economics become meaningful quickly once the funnel starts producing booked jobs consistently. The ranges below show what booked-install volume can look like in gross revenue terms as the channel moves from early traction into stronger weekly output."
+        }
+      ],
       "stackCards": [
         {
           "label": "",
@@ -98,21 +86,17 @@
           "label": "",
           "title": "A specialist brand can out-position generalists",
           "content": "Most local competitors still present as broad plumbing or multi-trade businesses. A narrower specialist position makes your business easier to remember, easier to trust, and easier to choose."
-        },
-        {
-          "label": "",
-          "title": "The Gold Coast supports the product story",
-          "content": "Local climate conditions and household economics make the efficiency and savings story easier to communicate than in colder, more technically awkward markets."
         }
       ]
     },
     {
-      "id": "what-we-will-launch-for-you",
-      "number": "02",
-      "heading": "What We Will Launch for You",
+      "id": "the-plan",
+      "number": "03",
+      "heading": "The Plan",
+      "eyebrow": "How we get there",
+      "subtitle": "Three phases. Own the decision stage. Reinforce it everywhere buyers look. Then expand into the broader market.",
       "sectionLead": {
-        "takeaway": "We will launch one connected system across acquisition, local visibility, qualification, booking, and monthly optimisation.",
-        "body": "Google Ads captures demand. On-page SEO builds the service and suburb footprint. Off-page SEO builds authority through citations, backlinks, niche edits, guest posts, and listicles. Google Business Profile and the funnel turn that visibility into booked installs."
+        "takeaway": "Step 1: We will launch one connected system across acquisition, local visibility, qualification, booking, and monthly optimisation. Step 2: The Full-Funnel Revenue Engine is the complete build. The other two options exist as reduced-scope downsells, not equal alternatives. Step 3: If the goal is to build the full engine properly, this is the 90-day commercial model to anchor on."
       },
       "stackCards": [
         {
@@ -153,360 +137,8 @@
             "Service-area relevance",
             "Review and proof-layer support"
           ]
-        },
-        {
-          "label": "",
-          "title": "Eligibility, booking, and deposit flow",
-          "icon": "CreditCard",
-          "glow": "mixed",
-          "content": "We will reduce quote friction by moving weaker-fit leads out early and guiding stronger-fit leads into a clearer qualification, booking, and deposit path.",
-          "bullets": [
-            "Eligibility check flow",
-            "Manual-review branch for edge cases",
-            "Booking request or calendar layer",
-            "Deposit logic for standard-fit jobs"
-          ]
-        },
-        {
-          "label": "",
-          "title": "On-page and off-page SEO",
-          "icon": "ShieldCheck",
-          "glow": "mixed",
-          "content": "We will grow both the on-page SEO footprint and the off-page authority layer through service and suburb content, citations, backlinks, niche edits, guest posts, listicles, and ongoing local optimisation.",
-          "bullets": [
-            "Service, suburb, and service + suburb page expansion",
-            "Citations, backlinks, niche edits, guest posts, and listicle placements",
-            "Monthly reporting and optimisation",
-            "Ongoing on-page SEO, off-page SEO, GBP, and funnel improvement"
-          ]
         }
-      ]
-    },
-    {
-      "id": "choose-your-90-day-rollout",
-      "number": "03",
-      "heading": "Choose Your 90-Day Rollout",
-      "sectionLead": {
-        "takeaway": "The Full-Funnel Revenue Engine is the complete build. The other two options exist as reduced-scope downsells, not equal alternatives.",
-        "body": "Each tier steps down the local footprint, ad coverage, content depth, automation, and GBP cadence so the top package remains the obvious commercial choice if the goal is to own the niche properly."
-      },
-      "stackCards": [
-        {
-          "label": "Recommended",
-          "title": "Full-Funnel Revenue Engine",
-          "glow": "amber",
-          "content": "This is the complete build: full on-page SEO footprint, full off-page authority building, full paid search coverage, full funnel automation, full Google Business Profile cadence, and the full customer journey from click to deposit to review to referral.",
-          "bullets": [
-            "Best option",
-            "90-day total: $14,750 / 90 days",
-            "Setup: $2,000 one-off",
-            "Monthly management: $3,000 / month management",
-            "Media budget: $1,250 / month ad spend",
-            "Website + on-page SEO footprint",
-            "1 homepage anchored around the $3,600 standard-install offer",
-            "4 core service pages",
-            "7 brand pages",
-            "60–80 Gold Coast suburb pages",
-            "240–320 service + suburb pages across the 4 core services",
-            "5 resource / comparison pages",
-            "10–15 initial blog posts",
-            "FAQ, about, reviews, refer, eligibility, privacy policy, and terms & conditions pages",
-            "Off-page SEO + authority building",
-            "citation building and local directory placements",
-            "backlink acquisition and authority outreach",
-            "niche edits and contextual link placements",
-            "guest posts, listicles, and comparison placements",
-            "brand mention reinforcement around core service and suburb targets",
-            "Google Ads build",
-            "4 campaign-aligned landing pages, one per ad set",
-            "4 search campaign clusters: high intent, brand, rebate / savings, replacement / upgrade",
-            "ad copy, keyword sets, negatives, assets, geo targeting, and conversion tracking",
-            "weekly optimisation against lead quality and deposit conversion",
-            "GBP + local trust layer",
-            "full GBP setup across categories, services, products, Q&A, and photos",
-            "GBP offer setup and CTA alignment to the eligibility funnel",
-            "1 GBP post per day for 90 days",
-            "review request framework and review response protocol mirroring the source plan",
-            "Funnel + automation + ops",
-            "5-step eligibility quiz",
-            "booking calendar and Stripe deposit flow",
-            "ServiceM8 job creation flow and internal notifications",
-            "confirmation email + SMS, 48-hour reminder, on-the-way SMS, Day 3 check-in, Day 7 review email, Day 14 referral email, and Day 30 follow-up email",
-            "Technical + reporting",
-            "schema, metadata, canonicals, sitemap, and GSC-ready structure",
-            "call, form, quiz, booking, and deposit tracking",
-            "monthly reporting against acquisition, funnel, review, referral, and revenue KPIs"
-          ]
-        },
-        {
-          "label": "Reduced scope",
-          "title": "Growth Launch",
-          "glow": "blue",
-          "content": "This keeps the core acquisition and conversion system intact, but cuts back the on-page footprint, off-page authority activity, daily local activity, and automation depth. It still launches properly, just without the full local domination buildout.",
-          "bullets": [
-            "90-day total: $10,250 / 90 days",
-            "Setup: $1,250 one-off",
-            "Monthly management: $2,000 / month management",
-            "Media budget: $1,000 / month ad spend",
-            "Website + on-page SEO footprint",
-            "1 homepage",
-            "4 core service pages",
-            "3 brand pages",
-            "20–30 suburb pages",
-            "60–90 service + suburb pages",
-            "3 resource / comparison pages",
-            "3–5 initial blog posts",
-            "FAQ, about, reviews, eligibility, privacy policy, and terms & conditions pages",
-            "Off-page SEO + authority building",
-            "foundational citations and local directory placements",
-            "selective backlink outreach",
-            "niche edits and contextual authority placements",
-            "guest posts, listicles, and external mention work on priority targets",
-            "Google Ads build",
-            "3 campaign-aligned landing pages",
-            "3 search campaign clusters",
-            "ad copy, keyword sets, negatives, and conversion tracking",
-            "weekly optimisation on the live campaigns",
-            "GBP + trust layer",
-            "full GBP setup",
-            "GBP offer setup and CTA alignment",
-            "3 GBP posts per week",
-            "review request framework",
-            "Funnel + automation",
-            "eligibility quiz",
-            "booking request flow and deposit flow",
-            "confirmation email + SMS",
-            "Day 3 check-in and Day 7 review request",
-            "What drops off vs the Revenue Engine",
-            "lighter suburb coverage",
-            "smaller service + suburb page matrix",
-            "reduced brand and content coverage",
-            "lighter off-page SEO outreach and authority reinforcement",
-            "no referral page or referral automation",
-            "no daily GBP cadence"
-          ]
-        },
-        {
-          "label": "Entry tier",
-          "title": "Lean Launch",
-          "glow": "mixed",
-          "content": "This is the stripped-down downsell: enough to test demand, launch the core page set, and establish a light off-page foundation, but nowhere near the full footprint needed to own the market.",
-          "bullets": [
-            "90-day total: $5,350 / 90 days",
-            "Setup: $850 one-off",
-            "Monthly management: $900 / month management",
-            "Media budget: $600 / month ad spend",
-            "Website + on-page SEO footprint",
-            "1 primary landing page / homepage hybrid",
-            "1 core service page",
-            "5 suburb pages",
-            "1 rebate / savings page",
-            "FAQ, eligibility / enquiry, privacy policy, and terms & conditions pages",
-            "Off-page SEO + authority building",
-            "foundational citation setup",
-            "core directory placements",
-            "basic backlink and authority setup around the main service page",
-            "Google Ads build",
-            "1 campaign-aligned landing page",
-            "1 search campaign cluster",
-            "basic keyword targeting and conversion tracking",
-            "GBP + funnel",
-            "GBP setup pass",
-            "GBP offer setup and CTA alignment",
-            "1 GBP post per week",
-            "simple eligibility capture and manual booking handoff",
-            "basic confirmation email only",
-            "What drops off vs the Revenue Engine",
-            "no brand page layer",
-            "no service + suburb matrix at scale",
-            "foundation-only off-page SEO",
-            "no booking + Stripe + ServiceM8 automation",
-            "no review or referral automation stack",
-            "limited local SEO buildout"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "full-funnel-revenue-engine-90-day-investment-breakdown",
-      "number": "04",
-      "heading": "Full-Funnel Revenue Engine: 90-Day Investment Breakdown",
-      "sectionLead": {
-        "takeaway": "If the goal is to build the full engine properly, this is the 90-day commercial model to anchor on.",
-        "body": "These figures apply to the recommended package only: full website footprint, full ad coverage, daily GBP cadence, and the complete funnel / automation stack."
-      },
-      "stackCards": [
-        {
-          "label": "Month 1",
-          "title": "$6,250",
-          "glow": "mixed",
-          "content": "Month 1 includes setup / launch plus the first month of ads management, SEO + authority, and paid media for the Full-Funnel Revenue Engine.",
-          "bullets": [
-            "$2,000 setup / launch",
-            "$1,000 ads management",
-            "$2,000 on-page + off-page SEO",
-            "$1,250 ad spend"
-          ]
-        },
-        {
-          "label": "Month 2",
-          "title": "$4,250",
-          "glow": "mixed",
-          "content": "Once the channel is live, the spend shifts fully into management, SEO, and media rather than additional setup cost.",
-          "bullets": [
-            "$1,000 ads management",
-            "$2,000 on-page + off-page SEO",
-            "$1,250 ad spend"
-          ]
-        },
-        {
-          "label": "Month 3",
-          "title": "$4,250",
-          "glow": "mixed",
-          "content": "Month 3 keeps the full package running long enough to produce real optimisation data and the first meaningful closed-job cycle.",
-          "bullets": [
-            "$1,000 ads management",
-            "$2,000 on-page + off-page SEO",
-            "$1,250 ad spend"
-          ]
-        },
-        {
-          "label": "Full-Funnel total",
-          "title": "$14,750",
-          "glow": "amber",
-          "content": "This is the 90-day investment for the recommended package — the only tier that includes the full website footprint, daily GBP cadence, and complete automation stack.",
-          "bullets": [
-            "full 90-day launch window",
-            "complete package coverage",
-            "first closed jobs begin funding the next layer of work"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "commercial-upside",
-      "number": "05",
-      "heading": "Commercial Upside",
-      "sectionLead": {
-        "takeaway": "At $3,600 per standard install, the economics become meaningful quickly once the funnel starts producing booked jobs consistently.",
-        "body": "The ranges below show what booked-install volume can look like in gross revenue terms as the channel moves from early traction into stronger weekly output."
-      },
-      "stackCards": [
-        {
-          "label": "Conservative traction",
-          "title": "2–4 booked installs / week",
-          "glow": "blue",
-          "content": "$28.8k–$57.6k monthly gross revenue\nEven at a conservative weekly pace, the economics become meaningful quickly because the offer value per standard install is already strong."
-        },
-        {
-          "label": "Core performance range",
-          "title": "4–8 booked installs / week",
-          "glow": "blue",
-          "content": "$57.6k–$115.2k monthly gross revenue\nThis is where the channel starts to look like a serious acquisition engine rather than a light experiment."
-        },
-        {
-          "label": "Long-range target",
-          "title": "8–15 booked installs / week",
-          "glow": "amber",
-          "content": "$115.2k–$216k monthly gross revenue\nThis is the longer-range upside once the funnel, local authority, and monthly optimisation are working together at a high level."
-        }
-      ]
-    },
-    {
-      "id": "what-goes-live-across-the-first-90-days",
-      "number": "06",
-      "heading": "What Goes Live Across The First 90 Days",
-      "sectionLead": {
-        "takeaway": "The recommended package is not vague. Each month has exact outputs tied to the website, Google Ads, Google Business Profile, and the funnel stack.",
-        "body": "This is the rollout for the Full-Funnel Revenue Engine — the package built to own the niche rather than just test it."
-      },
-      "stackCards": [
-        {
-          "label": "Month 1",
-          "title": "Go live with the full acquisition system",
-          "glow": "mixed",
-          "content": "The first month gets the paid channel, core website, local presence, and booking flow live so the business can start taking qualified enquiries and deposits.",
-          "bullets": [
-            "homepage, about, FAQ, reviews, eligibility, privacy policy, and terms & conditions live",
-            "4 core service pages and 4 paid landing pages live",
-            "first 30 suburb pages and first 120 service + suburb pages live",
-            "citation, directory, and foundational off-page SEO setup underway",
-            "Google Ads campaigns live with call, form, quiz, booking, and deposit tracking",
-            "GBP fully optimised and posting daily",
-            "booking calendar, Stripe deposit flow, and ServiceM8 connection tested end-to-end",
-            "What is live: By the end of Month 1, paid traffic can hit campaign-specific pages, organic traffic has real local coverage, and deposits can be taken through a working funnel."
-          ]
-        },
-        {
-          "label": "Month 2",
-          "title": "Expand the local footprint and tighten conversion",
-          "glow": "mixed",
-          "content": "The second month pushes the local SEO footprint forward, improves lead quality, and turns live search-term and conversion data into better pages and better ad performance.",
-          "bullets": [
-            "remaining suburb pages live",
-            "brand pages and resource pages live",
-            "next 120 service + suburb pages live",
-            "backlinks, citations, niche edits, guest posts, and listicle placements underway",
-            "review request flow running from completed installs",
-            "daily GBP posting continues and offer / CTA alignment stays tight",
-            "ads refined from live keyword, search-term, and lead-quality data",
-            "What is live: By the end of Month 2, the site looks materially deeper, the local footprint is much harder to ignore, and the funnel is qualifying traffic more effectively."
-          ]
-        },
-        {
-          "label": "Month 3",
-          "title": "Finish the footprint and lock the growth loop",
-          "glow": "mixed",
-          "content": "The third month completes the first major build cycle and puts the compounding layer in place so the next quarter can scale from real commercial evidence.",
-          "bullets": [
-            "remaining service + suburb pages live",
-            "initial blog cluster live",
-            "off-page SEO compounding through backlinks, citations, guest posts, niche edits, and listicle reinforcement",
-            "referral page and referral email flow live on the Full-Funnel package",
-            "post-install nurture sequence fully active",
-            "reporting, optimisation, and next-quarter scale plan in place",
-            "What is live: By the end of Month 3, the business has a full local acquisition system, a much larger SEO footprint, a live review engine, and a cleaner path to scale."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "how-revenue-keeps-strengthening-the-channel",
-      "number": "07",
-      "heading": "How Revenue Keeps Strengthening the Channel",
-      "sectionLead": {
-        "takeaway": "The first wins should strengthen the next round of SEO, authority building, and funnel optimisation.",
-        "body": "Keep the monthly structure simple and use closed-job revenue to support the next layer of growth."
-      },
-      "stackCards": [
-        {
-          "label": "",
-          "title": "Launch first, then scale with evidence",
-          "glow": "blue",
-          "content": "Launch quickly, learn from real demand, and tighten the channel around actual closed jobs rather than assumptions."
-        },
-        {
-          "label": "",
-          "title": "Closed jobs fund the next phase of growth",
-          "glow": "blue",
-          "content": "Once installs start closing, that revenue can be used to fund more SEO coverage, more backlinks, more local authority work, and more funnel optimisation."
-        },
-        {
-          "label": "",
-          "title": "The monthly structure stays simple",
-          "glow": "amber",
-          "content": "After the first 90 days, the structure remains easy to understand: $1,000 / month for ads management, $2,000 / month for SEO + authority, plus the media budget that the closed-job economics can support."
-        }
-      ]
-    },
-    {
-      "id": "standard-install-scope",
-      "number": "08",
-      "heading": "Standard Install Scope",
-      "sectionLead": {
-        "takeaway": "The offer works best when the public message stays simple and the operational boundaries stay explicit.",
-        "body": "The fixed price should remain visible, but it needs a clear standard-install definition so unusual jobs route into review rather than creating delivery friction later."
-      },
+      ],
       "highlightBoxes": [
         {
           "bullets": [
@@ -518,10 +150,6 @@
             "no crane work or unusual access constraints",
             "no unusual structural modifications"
           ]
-        },
-        {
-          "title": "Commercial rule",
-          "body": "Keep the public promise simple: $3,600 fully installed for standard installs. If the job requires relocation, switchboard work, unusual access, structural modification, or any other non-standard element, it should move into manual review before final confirmation."
         }
       ]
     }
@@ -531,5 +159,25 @@
     "headline": "Launch the full revenue engine, not a cut-down version",
     "body": "If the goal is to own the Gold Coast heat pump niche properly, the Full-Funnel Revenue Engine is the cleanest option: full website footprint, full paid search coverage, daily GBP activity, full automation, and a 90-day rollout built to start generating installs and compound from there.",
     "ctaLabel": "Book Strategy Call"
+  },
+  "failureBlock": {
+    "eyebrow": "What happens if nothing changes",
+    "heading": "The cost of staying invisible",
+    "bullets": [
+      "Every month without optimized pages is a month where homeowners choose heat pump installers they can actually find.",
+      "AI answer engines are forming their local recommendation patterns now — businesses absent today get locked out.",
+      "Competitors already ranking for Gold Coast heat pump queries will keep capturing the demand.",
+      "The longer you wait, the more expensive it becomes to break into a market that others already own."
+    ]
+  },
+  "successBlock": {
+    "eyebrow": "What 12 months from now looks like",
+    "heading": "You become the default heat pump installer on the Gold Coast",
+    "bullets": [
+      "When Gold Coast homeowners search for heat pump hot water systems, your business shows up first in Google, Maps, and AI answers.",
+      "You own the local decision-stage conversation with pages that answer every buyer question.",
+      "Reviews, local citations, and community proof reinforce the same story everywhere homeowners look.",
+      "A defensible local organic channel that generates leads without ongoing ad spend."
+    ]
   }
 }

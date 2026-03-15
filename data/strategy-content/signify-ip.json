@@ -2,9 +2,11 @@
   "slug": "signify-ip",
   "company": "Signify IP",
   "domain": "signifyip.com.au",
-  "title": "Signify IP — SEO & AEO Strategy",
-  "description": "Make Signify IP the default answer when any Australian business owner asks Google, ChatGPT, Perplexity, or Gemini about trade mark registration, protection, or attorneys.",
+  "title": "Signify IP — Founder Strategy Memo | MEMETIK",
+  "description": "Founder-facing strategy memo for Signify IP focused on trade mark registration, protection, and IP attorney services for Australian businesses.",
   "generatedAt": "2025-02-14",
+  "researchConfidence": 85,
+
   "tldr": [
     "Signify IP already has strong positioning, strong reviews, clear service definitions, and credible case studies, but almost no organic search presence today.",
     "The biggest gaps are missing indexable content, missing schema, missing sitemap and robots.txt, no backlink profile, no FAQ depth, no pricing transparency page, and no location or industry landing pages.",
@@ -15,11 +17,11 @@
     "Local Adelaide visibility and off-site authority should run in parallel with content production through Google Business Profile work, citations, placements, and backlinks.",
     "On the Authority plan, the strategy projects 40-60 organic leads per month by month 12, with compounding upside beyond paid channels because every page remains a permanent asset."
   ],
+
   "hero": {
-    "eyebrow": "Strategy Document /// February 2026",
-    "headline": "SIGNIFY IP",
-    "accent": "SEO & AEO STRATEGY.",
-    "subtitle": "Make Signify IP the default answer when any Australian business owner asks Google, ChatGPT, Perplexity, or Gemini about trade mark registration, protection, or attorneys.",
+    "eyebrow": "Memetik founder strategy memo",
+    "headline": "25,000 searches. Zero results for Signify IP.",
+    "subtitle": "Every month, thousands of Australian business owners search for trade mark registration, protection, and attorneys. Signify IP appears in none of those results — not in Google, not in ChatGPT, not in Gemini. This strategy shows exactly how to change that.",
     "tags": [
       "signifyip.com.au",
       "Trade Marks",
@@ -27,737 +29,461 @@
       "Fixed-Fee"
     ]
   },
+
   "sections": [
     {
-      "id": "current-state",
-      "number": "00",
-      "heading": "CURRENT STATE",
-      "sectionLead": {
-        "takeaway": "The organic opportunity is massive — and completely untapped.",
-        "body": "Trade mark registration is one of the highest-intent search verticals in Australian professional services. Businesses search when they're ready to act. The firms that own organic search capture leads at zero marginal cost — indefinitely.\n\nMost of Signify IP's direct boutique competitors have minimal to no content strategies. The big firms (Spruson & Ferguson, Allens, Corrs) have authority but don't target the SMB/startup keywords that Signify's ideal clients actually search for. The gap is massive.",
-        "implication": "Who AI platforms currently cite: IP Australia (government authority), Lawpath, Gladwin Legal, Progressive Legal, and the large firms. No boutique TM specialist is consistently cited. This is the window."
-      },
-      "highlightBoxes": [
-        {
-          "title": "What's Strong",
-          "bullets": [
-            "Clear value proposition: fixed fees, plain English, strategic approach",
-            "Excellent social proof: 5.0 Google rating, 11 genuine reviews",
-            "2 detailed case studies with real outcomes (Hyro, Natural Raw C)",
-            "Named team members (Hollie, Christine) referenced in reviews — builds E-E-A-T",
-            "Services are well-defined: searches, applications, disputes, portfolio management",
-            "Free consultation CTA is clear"
-          ]
-        },
-        {
-          "title": "What's Missing",
-          "tone": "warning",
-          "bullets": [
-            "No indexable content — Google has nothing to rank. Only 1 result for site:signifyip.com.au",
-            "No blog, no resource pages, no guides, no comparison content",
-            "No schema markup of any kind",
-            "No sitemap or robots.txt configured",
-            "No backlink profile — zero referring domains",
-            "Zero presence in AI platforms (ChatGPT, Perplexity, Gemini, Google AI Overviews)",
-            "No FAQ content despite the vertical being FAQ-heavy",
-            "No pricing transparency page despite 'fixed fees' being a core value prop",
-            "No industry-specific or location landing pages",
-            "All image alt text says 'Company E logo' — no descriptive alt text"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "keyword-opportunity",
+      "id": "the-problem",
       "number": "01",
-      "heading": "KEYWORD OPPORTUNITY",
-      "subtitle": "430+ unique keywords mapped across 15 categories. Estimated 25,000-40,000 total monthly searches in Australia. Here are the top 10 priority targets:",
-      "sectionLead": {
-        "body": "# | Keyword | Monthly Searches | Intent"
-      },
-      "stackCards": [
+      "heading": "The Problem",
+      "eyebrow": "Where Signify IP stands today",
+      "subtitle": "Signify IP has real expertise, five-star reviews, and a clear fixed-fee value proposition — but right now, buyers researching trade mark services cannot find you anywhere online.",
+      "narrativeProse": [
         {
-          "label": "1",
-          "title": "how to register a trade mark in australia",
-          "content": "Monthly Searches: 500-1,000",
-          "bullets": [
-            "Intent: Informational → BOFU"
-          ]
+          "heading": "You have everything except visibility",
+          "body": "Today, Signify IP has 1 indexed page, zero organic traffic, zero referring domains, and zero AI citations. That is not a quality problem — it is an existence problem. When Australian business owners search for trade mark registration, trade mark attorneys, or IP protection, Signify IP does not appear. Not in Google results. Not in AI answer summaries. Not in any AI platform — ChatGPT, Perplexity, Gemini, or Google AI Overviews."
         },
         {
-          "label": "2",
-          "title": "trade mark registration cost australia",
-          "content": "Monthly Searches: 500-1,000",
-          "bullets": [
-            "Intent: Commercial"
-          ]
+          "heading": "Buyers choose who they can find, not who is best",
+          "body": "The firms getting found right now are not necessarily better — they just have content that search engines and AI models can index and cite. IP Australia, Lawpath, Gladwin Legal, Progressive Legal, and the large national firms are the ones AI platforms currently recommend. No boutique trade mark specialist is consistently cited. Every day without organic visibility is a day where ideal clients choose other firms simply because those firms were easier to find."
         },
         {
-          "label": "3",
-          "title": "trademark attorney australia",
-          "content": "Monthly Searches: 500-1,000",
-          "bullets": [
-            "Intent: Commercial"
-          ]
-        },
-        {
-          "label": "4",
-          "title": "how to trademark a business name australia",
-          "content": "Monthly Searches: 500-1,000",
-          "bullets": [
-            "Intent: Informational → BOFU"
-          ]
-        },
-        {
-          "label": "5",
-          "title": "trade mark vs copyright",
-          "content": "Monthly Searches: 500-1,000",
-          "bullets": [
-            "Intent: Informational"
-          ]
-        },
-        {
-          "label": "6",
-          "title": "do i need a trademark attorney",
-          "content": "Monthly Searches: 200-500",
-          "bullets": [
-            "Intent: Commercial"
-          ]
-        },
-        {
-          "label": "7",
-          "title": "trademark attorney adelaide",
-          "content": "Monthly Searches: 100-300",
-          "bullets": [
-            "Intent: Local / Commercial"
-          ]
-        },
-        {
-          "label": "8",
-          "title": "how much does it cost to trademark",
-          "content": "Monthly Searches: 500-1,000",
-          "bullets": [
-            "Intent: Commercial"
-          ]
-        },
-        {
-          "label": "9",
-          "title": "someone is using my trade mark",
-          "content": "Monthly Searches: 100-200",
-          "bullets": [
-            "Intent: Panic → Urgent"
-          ]
-        },
-        {
-          "label": "10",
-          "title": "fixed fee trademark attorney australia",
-          "content": "Monthly Searches: 50-100",
-          "bullets": [
-            "Intent: Exact Match"
-          ]
+          "heading": "Most competitors have not started either",
+          "body": "The good news is that the boutique tier is wide open. The Trademark Factory has some pricing pages and guides. Mark My Words and Quick Off The Mark have blogs. But none of the direct boutique competitors have built a comprehensive content authority. The national firms — Spruson & Ferguson, Baxter IP, Lawpath — have organic authority but do not target the SMB and startup keywords that Signify IP's ideal clients actually search for. The gap between where Signify IP is and where the category leader could be is massive, and the window is open."
         }
       ],
-      "highlightBoxes": [
-        {
-          "title": "Why \"fixed fee trademark attorney australia\" matters most",
-          "body": "Lowest volume on the list, but this is Signify IP's exact positioning. Zero competition. Anyone searching this phrase is your ideal client. Own it permanently."
-        }
-      ]
-    },
-    {
-      "id": "competitive-landscape",
-      "number": "02",
-      "heading": "COMPETITIVE LANDSCAPE",
-      "subtitle": "Three tiers of competitors were mapped: direct boutique TM specialists, Adelaide/SA-based firms, and national enterprise firms. The key finding: most boutique competitors have minimal to zero content strategies.",
       "stackCards": [
         {
-          "label": "Tier 1",
-          "title": "Direct Boutique Competitors",
+          "label": "Current organic presence",
+          "title": "Signify IP is invisible across search and AI",
+          "icon": "Bot",
+          "glow": "amber",
+          "bullets": [
+            "1 indexed page in Google — Google has nothing to rank.",
+            "0 organic traffic, 0 ranked keywords, 0 referring domains.",
+            "0 AI citations across ChatGPT, Perplexity, Gemini, and Google AI Overviews.",
+            "No blog, no resource pages, no guides, no comparison content.",
+            "No schema markup, no sitemap, no robots.txt configured."
+          ]
+        },
+        {
+          "label": "What is strong",
+          "title": "Signify IP has the foundation to win",
           "icon": "Target",
-          "content": "Firm | Positioning | Content Strategy",
+          "glow": "blue",
           "bullets": [
-            "The Trademark Factory — ttmf.com.au — Fixed fee from $350, 9000+ TMs, online-first — Pricing pages, guides, blog",
-            "Acorn Trade Marks — acorntrademarks.com.au — Fixed fees, no hidden costs, SMB focus — Minimal",
-            "YIP Legal — yiplegal.com.au — Packages from $450, startups + brands — Blog, service pages",
-            "Mark My Words — mmwtrademarks.com.au — Blog content, practical guides — Strong blog",
-            "Markster — markster.com.au — Online TM service, blog content — Good blog + SEO",
-            "Quick Off The Mark — quickoffthemark.com.au — Blog-driven, educational — Strong content",
-            "eTrademark — etrademark.com.au — $199 attorney fee, volume play — Minimal",
-            "TradeMark Action — trademarkaction.com — $990 fixed fee, transparent pricing — Moderate"
-          ]
-        },
-        {
-          "label": "Tier 2",
-          "title": "Adelaide / SA-Based Firms",
-          "icon": "MapPin",
-          "bullets": [
-            "Madderns — 50+ years, Adelaide institution, patents + TMs",
-            "Phillips Ormonde Fitzpatrick — National firm, Adelaide office on Grenfell St",
-            "Davies Collison Cave — Est. 1877, largest AU TM filers since 2000",
-            "IP Guardian — Adelaide-based, free consultations, strong reviews",
-            "DW Fox Tucker — Adelaide law firm, IP practice group, award-winning",
-            "Piper Alderman — Adelaide HQ, full-service with IP team"
-          ]
-        },
-        {
-          "label": "Tier 3",
-          "title": "National Firms with Organic Authority",
-          "icon": "Scale",
-          "bullets": [
-            "Spruson & Ferguson — WTR 1000 Gold, massive content library",
-            "Baxter IP — Strong SEO, Sydney/Melbourne, blog content",
-            "Lawpath — Online legal, strong SEO content on TM topics",
-            "Gladwin Legal — Blog-driven TM guides ranking well",
-            "Halfords IP — Ranking for TM cost/fee queries"
+            "Clear value proposition: fixed fees, plain English, strategic approach.",
+            "5.0 Google rating with 11 genuine reviews.",
+            "2 detailed case studies with real outcomes (Hyro, Natural Raw C).",
+            "Named team members (Hollie, Christine) referenced in reviews — strong E-E-A-T signals.",
+            "Services well-defined: searches, applications, disputes, portfolio management.",
+            "Free consultation CTA is clear."
           ]
         }
       ],
       "highlightBoxes": [
         {
-          "title": "Where Signify IP Sits Today",
-          "heading": "1 indexed page. 0 organic traffic. 0 referring domains. 0 AI citations.",
-          "body": "The strategy below closes that gap and leapfrogs the entire boutique tier."
+          "title": "Caveat",
+          "tone": "warning",
+          "body": "AI platform citation data is based on sampled prompts across ChatGPT, Perplexity, Gemini, and Google AI Overviews. No boutique TM specialist was consistently cited in any sampled response."
         }
       ]
     },
     {
-      "id": "strategy-overview",
+      "id": "the-opportunity",
+      "number": "02",
+      "heading": "The Opportunity",
+      "eyebrow": "Why Signify IP can win — and what it is worth",
+      "subtitle": "The demand is massive, the boutique tier is wide open, and Signify IP's fixed-fee positioning maps perfectly to the highest-intent queries in the category.",
+      "narrativeProse": [
+        {
+          "heading": "25,000-40,000 monthly searches and almost no boutique competition",
+          "body": "430+ keywords have been mapped across 15 categories with an estimated 25,000-40,000 total monthly searches in Australia for trade mark related queries. The top priority targets — 'how to register a trade mark in australia,' 'trade mark registration cost australia,' 'trademark attorney australia' — each carry 500-1,000 monthly searches. These are buyers who are ready to act, not browsers."
+        },
+        {
+          "heading": "The opening move is narrow, commercial, and winnable",
+          "body": "Signify IP does not need to outspend the national firms. The highest-leverage move is owning the fixed-fee, SMB-focused layer of trade mark search demand. Queries like 'fixed fee trademark attorney australia,' 'cheapest ways to register a trade mark,' and 'trade mark registration cost australia' are exact-match opportunities where Signify IP's positioning is the answer. Owning this commercial layer first creates the authority base that funds expansion into broader category demand."
+        },
+        {
+          "heading": "The 300+ page authority play changes the economics permanently",
+          "body": "The recommended model builds 300+ pages across flagship guides, comparison pages, industry landing pages, location pages, resources, case studies, blog content, and scaled landing pages. By month 12, the Authority plan projects 40-60 organic leads per month. Unlike paid channels, every page remains a permanent asset — the cost per lead drops toward zero as the content compounds."
+        },
+        {
+          "heading": "A local Adelaide frame makes the first fight easier",
+          "body": "Starting with Adelaide-focused trade mark content — 'trademark attorney adelaide,' local citations, Google Business Profile optimisation — gives Signify IP a defensible local base while the broader national content scales. Adelaide is where Signify IP has real-world proof (office, reviews, case studies), making the first market position more credible and achievable."
+        }
+      ],
+      "upsideChart": [
+        { "month": 1, "low": 0, "base": 50, "high": 100 },
+        { "month": 2, "low": 50, "base": 150, "high": 300 },
+        { "month": 3, "low": 150, "base": 500, "high": 1000 },
+        { "month": 4, "low": 300, "base": 800, "high": 1500 },
+        { "month": 5, "low": 400, "base": 1200, "high": 2200 },
+        { "month": 6, "low": 500, "base": 1500, "high": 3000 },
+        { "month": 7, "low": 700, "base": 2000, "high": 3500 },
+        { "month": 8, "low": 900, "base": 2500, "high": 4000 },
+        { "month": 9, "low": 1100, "base": 3000, "high": 4500 },
+        { "month": 10, "low": 1500, "base": 3500, "high": 5000 },
+        { "month": 11, "low": 2000, "base": 4000, "high": 5500 },
+        { "month": 12, "low": 3000, "base": 5000, "high": 7000 }
+      ],
+      "calculator": { "baseVisits": 5000 },
+      "highlightBoxes": [
+        {
+          "title": "Estimate-only",
+          "tone": "warning",
+          "body": "Traffic projections are modeled estimates based on category benchmarks and are not guaranteed outcomes. Actual results depend on market conditions, content velocity, and competitive dynamics. Revenue planning requires client engagement values and funnel inputs."
+        }
+      ]
+    },
+    {
+      "id": "the-plan",
       "number": "03",
-      "heading": "STRATEGY: 7-PHASE CONTENT + AEO SYSTEM",
-      "highlightBoxes": [
-        {
-          "body": "Turn a 6-page website into a 300+ page content authority that ranks for 150-200 keywords, generates 40-60 organic leads per month, and becomes the #1 cited trade mark source across all AI platforms."
-        },
-        {
-          "title": "Site Architecture"
-        }
-      ],
-      "stackCards": [
-        {
-          "label": "/guides/",
-          "title": "10 pages",
-          "content": "10 flagship pillar guides (registration, costs, classes, Madrid Protocol, disputes, renewal, infringement, startups)"
-        },
-        {
-          "label": "/industries/",
-          "title": "9 pages",
-          "content": "Industry-specific landing pages: food & bev, fashion, tech, ecommerce, construction, health, hospitality, services, creative"
-        },
-        {
-          "label": "/locations/",
-          "title": "8 pages",
-          "content": "Location pages: Adelaide, Sydney, Melbourne, Brisbane, Perth, Canberra, Hobart, Gold Coast"
-        },
-        {
-          "label": "/comparisons/",
-          "title": "8 pages",
-          "content": "Attorney vs DIY, TM Headstart vs Standard, Signify IP vs competitors, best-of listicles"
-        },
-        {
-          "label": "/resources/",
-          "title": "5 pages",
-          "content": "FAQ (50+ questions), glossary, checklist, timeline, 2026 regulation changes"
-        },
-        {
-          "label": "/case-studies/",
-          "title": "12+ pages",
-          "content": "Expanded from 2 to 12+ detailed client stories with outcomes"
-        },
-        {
-          "label": "/blog/",
-          "title": "Ongoing",
-          "content": "Ongoing topical content: regulation changes, common mistakes, seasonal guides"
-        },
-        {
-          "label": "Scaled landing pages",
-          "title": "200-300 pages",
-          "content": "\"Can I trademark...\", \"TM in [country] from AU\", \"What to do if...\", industry x service, location x service"
-        }
-      ]
-    },
-    {
-      "id": "execution-protocol",
-      "number": "04",
-      "heading": "EXECUTION PROTOCOL",
-      "highlightBoxes": [
-        {
-          "title": "Phase 2 — Month 1-3 — bottom-of-funnel pages (high-intent content)",
-          "body": "40+ hand-crafted, high-intent pages. Each targets a real search query, includes FAQ schema, and is structured for AI citation. These are the pages that rank, convert, and get cited."
-        },
-        {
-          "title": "Phase 3 — Month 2-6 — Scaled content pages (200-300 pages)",
-          "body": "Template-driven pages cover every permutation a potential client might search. Each page is 800-1,200 words of unique content with FAQ schema, internal links to pillar content, and a CTA to free consultation."
-        },
-        {
-          "title": "12-Month Content Output",
-          "body": "Content Type | Editorial | Template-driven | Total",
-          "bullets": [
-            "bottom-of-funnel pages | 40+ | — | 40+",
-            "Scaled content pages | — | 200-300 | 200-300",
-            "Blog / Ongoing | 12+ | — | 12+",
-            "Total (12 months) | 52+ | 200-300 | 252-352"
-          ]
-        },
-        {
-          "title": "Measurement disclaimer",
-          "body": "All projections below are modeled estimates based on category benchmarks and are not guaranteed outcomes. Actual results depend on market conditions, content velocity, and competitive dynamics."
-        }
-      ],
-      "scopeBlocks": [
-        {
-          "label": "Phase 1 — Week 1-2",
-          "title": "Technical Foundation — Schema Markup",
-          "icon": "Globe",
-          "bullets": [
-            "LegalService + Organization + LocalBusiness schema on all pages",
-            "FAQPage schema on every content page (LLMs directly map structured Q&A)",
-            "HowTo schema on process/guide pages",
-            "Person schema for Hollie and Christine (E-E-A-T signals)",
-            "BreadcrumbList navigation for every page"
-          ]
-        },
-        {
-          "label": "Phase 1 — Week 1-2",
-          "title": "Technical Foundation — Technical Checklist",
-          "icon": "Search",
-          "bullets": [
-            "Generate and submit XML sitemap to Google Search Console",
-            "Configure robots.txt",
-            "Set up Google Search Console and GA4",
-            "Fix all image alt text (currently all 'Company E logo')",
-            "Add canonical URLs and Open Graph meta tags to all pages",
-            "Core Web Vitals audit and fixes",
-            "Implement IndexNow for instant indexing of new content",
-            "Internal linking structure between all existing pages"
-          ]
-        },
-        {
-          "label": "Phase 2 — Month 1-3",
-          "title": "bottom-of-funnel pages — Flagship Guide Pages (10 pages)",
-          "icon": "FileText",
-          "bullets": [
-            "How to Register a Trade Mark in Australia — Complete 2026 Guide (3,500+ words)",
-            "Trade Mark Registration Costs — Full 2026 Breakdown (with Signify IP's fixed fees)",
-            "Trade Mark vs Copyright vs Patent — What's the Difference?",
-            "Do I Need a Trade Mark Attorney? Attorney vs DIY Filing",
-            "International Trade Mark Registration — Madrid Protocol Guide",
-            "Trade Mark Classes Explained — Complete Australian Guide (all 45 classes)",
-            "Trade Mark Opposition & Disputes — What to Expect",
-            "Trade Mark Renewal Guide — Deadlines, Costs & Process",
-            "Trade Mark Infringement — How to Protect Your Brand",
-            "Trade Marks for Startups — A Founder's Guide to Brand Protection"
-          ]
-        },
-        {
-          "label": "Phase 2 — Month 1-3",
-          "title": "bottom-of-funnel pages — Comparison & Alternative Pages (8 pages)",
-          "icon": "FileText",
-          "bullets": [
-            "Trade Mark Attorney vs Lawyer — What's the Difference?",
-            "TM Headstart vs Standard Application — Which to Choose?",
-            "Signify IP vs The Trademark Factory — Full Comparison",
-            "Best Trade Mark Attorneys in Australia (2026 listicle)",
-            "IP Australia Direct vs Using an Attorney",
-            "Best Trade Mark Attorneys in Adelaide",
-            "Cheapest Ways to Register a Trade Mark in Australia",
-            "Trade Mark Registration Services Compared 2026"
-          ]
-        },
-        {
-          "label": "Phase 2 — Month 1-3",
-          "title": "bottom-of-funnel pages — Industry Landing Pages (9 pages)",
-          "icon": "FileText",
-          "bullets": [
-            "Food & Beverage",
-            "Fashion & Clothing",
-            "Technology & SaaS",
-            "E-commerce",
-            "Construction & Trades",
-            "Health & Wellness",
-            "Hospitality & Events",
-            "Professional Services",
-            "Creative & Design",
-            "Each page: why TMs matter for that industry, common issues, what to protect, cost estimate, case study, CTA."
-          ]
-        },
-        {
-          "label": "Phase 2 — Month 1-3",
-          "title": "bottom-of-funnel pages — Location Pages (8 pages)",
-          "icon": "MapPin",
-          "bullets": [
-            "Adelaide (primary)",
-            "Sydney",
-            "Melbourne",
-            "Brisbane",
-            "Perth",
-            "Canberra",
-            "Hobart",
-            "Gold Coast",
-            "Each page positions Signify IP as serving that city remotely. Local business stats, TM relevance, testimonials if available."
-          ]
-        },
-        {
-          "label": "Phase 2 — Month 1-3",
-          "title": "bottom-of-funnel pages — Resource & FAQ Pages (5 pages)",
-          "icon": "FileText",
-          "bullets": [
-            "Trade Mark FAQ — 50+ common questions answered (FAQPage schema)",
-            "Trade Mark Glossary — every term explained (long-tail definition queries)",
-            "Trade Mark Registration Checklist — downloadable PDF + on-page content",
-            "Trade Mark Application Timeline — visual timeline infographic",
-            "2026 Trade Mark Regulation Changes — topical authority play"
-          ]
-        },
-        {
-          "label": "Phase 3 — Month 2-6",
-          "title": "Scaled content pages — Industry x Service Type",
-          "icon": "Database",
-          "bullets": [
-            "Pattern: \"Trade Mark [Service] for [Industry] Businesses\"",
-            "Example: Trade Mark Search for Restaurant Businesses",
-            "Count: 36 pages"
-          ]
-        },
-        {
-          "label": "Phase 3 — Month 2-6",
-          "title": "Scaled content pages — Location x Service Type",
-          "icon": "Database",
-          "bullets": [
-            "Pattern: \"Trade Mark [Service] in [City]\"",
-            "Example: Trade Mark Registration in Sydney",
-            "Count: 32 pages"
-          ]
-        },
-        {
-          "label": "Phase 3 — Month 2-6",
-          "title": "Scaled content pages — \"Can I Trademark...\" Queries",
-          "icon": "Database",
-          "bullets": [
-            "Pattern: \"Can I Trademark a [Thing] in Australia?\"",
-            "Example: Can I Trademark a Colour / Sound / Hashtag / Slogan",
-            "Count: 20+ pages"
-          ]
-        },
-        {
-          "label": "Phase 3 — Month 2-6",
-          "title": "Scaled content pages — International Filing",
-          "icon": "Database",
-          "bullets": [
-            "Pattern: \"How to Register a Trade Mark in [Country] from Australia\"",
-            "Example: USA, UK, EU, NZ, Singapore, Japan, China, India, Canada",
-            "Count: 15+ pages"
-          ]
-        },
-        {
-          "label": "Phase 3 — Month 2-6",
-          "title": "Scaled content pages — Dispute Scenarios",
-          "icon": "Database",
-          "bullets": [
-            "Pattern: \"What to Do If [Scenario]\"",
-            "Example: ...Someone Copies Your Brand / Application Rejected / Cease and Desist",
-            "Count: 10+ pages"
-          ]
-        },
-        {
-          "label": "Phase 4 — Concurrent from Month 1",
-          "title": "AEO & AI Visibility — Citation-Ready Content Formatting",
-          "icon": "Bot",
-          "bullets": [
-            "Definitive statements in the first 200 words — LLMs prefer confident, un-hedged answers",
-            "Comparison tables with Signify IP in column 1 (LLMs copy column 1 68% of the time)",
-            "Numbered lists and step-by-step processes (LLMs prefer structured answers)",
-            "Specific data points: exact fees, exact timelines, exact statistics — not vague ranges",
-            "FAQ sections with schema — directly maps to AI Q&A responses",
-            "Author attribution (Hollie Ford, Christine) — builds E-E-A-T for AI trust"
-          ]
-        },
-        {
-          "label": "Phase 4 — Concurrent from Month 1",
-          "title": "AEO & AI Visibility — Entity Building",
-          "icon": "Bot",
-          "bullets": [
-            "Google Knowledge Panel — claim and optimize business listing",
-            "Crunchbase, LinkedIn Company Page — optimized with full description and services",
-            "Business directories: TrueLocal, Yellow Pages, Yelp, Hotfrog, StartLocal",
-            "Consistent NAP across all platforms: Signify IP, 213 Greenhill Rd, Eastwood SA 5063"
-          ]
-        },
-        {
-          "label": "Phase 4 — Concurrent from Month 1",
-          "title": "AEO & AI Visibility — AI Platform Seeding",
-          "icon": "Bot",
-          "bullets": [
-            "Reddit seeding: r/AusLegal, r/smallbusiness, r/australia — helpful answers citing Signify IP content",
-            "Quora answers for core queries: 'best trade mark attorney,' 'how to register trade mark Australia'",
-            "'According to Signify IP' phrasing baked into parasite and PR content to train citation patterns",
-            "Monthly monitoring across ChatGPT, Perplexity, Gemini, Google AI Overviews — iterate based on what works"
-          ]
-        },
-        {
-          "label": "Phase 5 — Month 2 Onwards",
-          "title": "off-site authority network — Content Placements",
-          "icon": "Share2",
-          "bullets": [
-            "Medium / business publications: 'How I Helped [Client] Protect Their Brand' — 3-4 articles",
-            "Industry blogs / guest posts: trade mark tips for specific audiences — 3-4 articles",
-            "Startup publications (Startup Daily, etc.): 'Why Every Australian Startup Needs a Trade Mark'"
-          ]
-        },
-        {
-          "label": "Phase 5 — Month 2 Onwards",
-          "title": "off-site authority network — Backlink Acquisition",
-          "icon": "Share2",
-          "bullets": [
-            "Source Type | Quantity",
-            "Business directories | 5-6",
-            "Industry publications | 3-4",
-            "Guest posts | 3-4",
-            "Total | 20+ links"
-          ]
-        },
-        {
-          "label": "Phase 6 — Month 1-3",
-          "title": "Local SEO — Adelaide Domination — Google Business Profile",
-          "icon": "MapPin",
-          "bullets": [
-            "Add all services with descriptions and pricing",
-            "Upload 20+ professional photos (office, team, process)",
-            "Write full business description using target keywords",
-            "Add service areas (all major Australian cities)",
-            "Post weekly Google Business updates",
-            "Respond to all reviews with keyword-rich responses"
-          ]
-        },
-        {
-          "label": "Phase 6 — Month 1-3",
-          "title": "Local SEO — Adelaide Domination — Local Citations (10+ directories)",
-          "icon": "MapPin",
-          "bullets": [
-            "Yellow Pages AU",
-            "TrueLocal",
-            "Hotfrog",
-            "StartLocal",
-            "Yelp AU",
-            "White Pages",
-            "Adelaide Now",
-            "SA.gov.au"
-          ]
-        },
-        {
-          "label": "Ongoing",
-          "title": "Measurement & KPIs — Metric | Now | 6-Month (est.) | 12-Month (est.)",
-          "icon": "BarChart3",
-          "bullets": [
-            "Indexed pages | 1 | 100+ | 300+",
-            "Organic traffic (monthly) | ~0 | 500-1,000 | 3,000-5,000",
-            "Keywords ranking top 10 | 0 | 30-50 | 150-200",
-            "Referring domains | 0 | 20-30 | 50+",
-            "Domain Rating | ~0 | 15-25 | 30-40",
-            "AI citation rate (20 queries) | 0/20 | 5-8/20 | 12-15/20",
-            "Organic leads per month | 0 | 10-20 | 40-60",
-            "Consultation bookings (organic) | 0 | 5-10 | 20-30"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "roadmap",
-      "number": "05",
-      "heading": "12-MONTH ROADMAP",
-      "subtitle": "Shown for Dominance tier — Ignite and Authority follow the same phases at adjusted velocity.",
+      "heading": "The Plan",
+      "eyebrow": "How we get there",
+      "subtitle": "Three steps. Build the content authority. Reinforce it across every surface buyers use. Then compound and defend.",
       "sectionLead": {
-        "body": "Timeline | What We're Doing | What You'll See\nQuarter | New Pages | Cumulative"
+        "takeaway": "Step 1: Ship the flagship guides, comparison pages, and local landing pages that answer buying questions. Step 2: Build off-site authority through citations, backlinks, placements, and AI seeding. Step 3: Scale the content footprint and defend the position."
       },
       "monthBlocks": [
         {
           "label": "Month 1",
-          "title": "Technical foundation. Schema markup. Sitemap + GSC. Flagship guides #1-3 published. Pricing page. FAQ page. GBP optimization. Local citations. AEO baseline audit. Reddit + Quora seeding begins.",
+          "title": "Technical foundation and first flagship content",
           "bullets": [
-            "Site indexed properly in Google. First AI citations appearing in ChatGPT and Perplexity within weeks. Content calendar delivered."
+            "Schema markup: LegalService, Organization, LocalBusiness, FAQPage, HowTo, Person (Hollie, Christine), and BreadcrumbList across all pages.",
+            "Generate and submit XML sitemap. Configure robots.txt. Set up Google Search Console and GA4.",
+            "Fix all image alt text (currently all 'Company E logo'). Add canonical URLs and Open Graph meta tags.",
+            "Core Web Vitals audit and fixes. Implement IndexNow for instant indexing.",
+            "Publish flagship guides #1-3: How to Register a Trade Mark in Australia, Trade Mark Registration Costs, Trade Mark vs Copyright vs Patent.",
+            "Publish pricing page and FAQ page (50+ questions with FAQPage schema).",
+            "Google Business Profile optimisation: services, descriptions, pricing, photos, weekly posts.",
+            "Local citations submitted to 10+ directories (Yellow Pages, TrueLocal, Hotfrog, StartLocal, Yelp AU).",
+            "AEO baseline audit across ChatGPT, Perplexity, Gemini, Google AI Overviews.",
+            "Reddit and Quora seeding begins: r/AusLegal, r/smallbusiness, r/australia."
           ]
         },
         {
           "label": "Month 2-3",
-          "title": "Flagship guides #4-10. Comparison pages. All 8 location pages. Industry landing pages. First 50 scaled landing pages deployed. Press releases. Reddit/Medium placements. Backlink acquisition begins.",
+          "title": "Expand content footprint and off-site authority",
           "bullets": [
-            "100+ pages live. AI platforms citing Signify IP for core trade mark queries. Long-tail rankings appearing. First organic leads hitting forms."
+            "Flagship guides #4-10: Do I Need a Trade Mark Attorney, Madrid Protocol Guide, Trade Mark Classes, Opposition & Disputes, Renewal Guide, Infringement, Startups Guide.",
+            "8 comparison pages: Attorney vs Lawyer, TM Headstart vs Standard, Signify IP vs The Trademark Factory, Best Trade Mark Attorneys in Australia 2026, and more.",
+            "All 8 location pages: Adelaide (primary), Sydney, Melbourne, Brisbane, Perth, Canberra, Hobart, Gold Coast.",
+            "9 industry landing pages: Food & Bev, Fashion, Tech, E-commerce, Construction, Health, Hospitality, Professional Services, Creative.",
+            "5 resource pages: FAQ, Glossary, Checklist, Timeline, 2026 Regulation Changes.",
+            "First 50 scaled landing pages deployed.",
+            "Press releases and Medium placements. Guest post and backlink acquisition begins.",
+            "Review-platform reinforcement and entity consistency.",
+            "Author attribution (Hollie Ford, Christine) strengthened across all surfaces."
           ]
         },
         {
           "label": "Month 4-6",
-          "title": "Full scaled-page rollout: 150+ scaled landing pages deployed. Guest post placements. Ongoing backlink acquisition. Monthly AEO optimization. Case studies expanded.",
+          "title": "Scale the content engine and compound authority",
           "bullets": [
-            "250+ pages live. Rankings climbing across all target keywords. Organic leads growing month over month. Signify IP consistently cited across ChatGPT, Perplexity, Gemini."
+            "Full scaled-page rollout: 150+ additional scaled landing pages across 'Can I Trademark...', international filing, dispute scenarios, industry × service, location × service combinations.",
+            "Case studies expanded from 2 to 12+ detailed client stories with outcomes.",
+            "Guest post placements and ongoing backlink acquisition (target: 20+ referring domains).",
+            "Monthly AEO optimisation: re-test AI platform citations and adjust content strategy.",
+            "Content refresh on top-performing pages.",
+            "Competitor monitoring and response."
           ]
         },
         {
-          "label": "Month 7-9",
-          "title": "International filing pages. Dispute scenario pages. PR placements generating brand signals. Content refresh on top performers. Competitor monitoring.",
+          "label": "Month 7-12",
+          "title": "Defend the position and compound into broader demand",
           "bullets": [
-            "320+ pages live. Organic a consistent lead channel. 30-50 leads/month. Multiple AI platforms citing Signify IP as a top recommendation."
-          ]
-        },
-        {
-          "label": "Month 10-12",
-          "title": "Final scaled landing page batch. Full content audit. Optimization pass. Quarterly refresh. Year 2 planning.",
-          "bullets": [
-            "350+ pages live. 150-200 ranking keywords. 50-80 organic leads/month. Top-3 AI cited source for trade mark queries in Australia."
+            "International filing pages and dispute scenario pages live.",
+            "PR placements generating brand signals.",
+            "320+ pages live with 150-200 ranking keywords.",
+            "Full content audit and optimisation pass.",
+            "Quarterly refresh on top performers.",
+            "Year 2 planning around adjacent categories and new proof assets.",
+            "Target: 40-60 organic leads per month, 12-15/20 AI citation rate, 50+ referring domains."
           ]
         }
       ],
-      "stackCards": [
+      "scopeBlocks": [
         {
-          "label": "Q1 (Month 1-3)",
-          "title": "Cumulative: 100+",
-          "content": "New Pages: 100+"
+          "label": "On-site",
+          "title": "Content authority: guides, comparisons, and scaled pages",
+          "icon": "FileText",
+          "bullets": [
+            "10 flagship pillar guides covering registration, costs, classes, Madrid Protocol, disputes, renewal, infringement, and startups.",
+            "8 comparison and alternative pages: attorney vs DIY, best-of listicles, head-to-head comparisons.",
+            "9 industry landing pages and 8 location pages.",
+            "5 resource pages: FAQ (50+ questions), glossary, checklist, timeline, regulation changes.",
+            "12+ expanded case studies with real client outcomes.",
+            "200-300 scaled landing pages covering every 'Can I Trademark...', international filing, dispute scenario, industry × service, and location × service combination.",
+            "Ongoing blog content: regulation changes, common mistakes, seasonal guides."
+          ]
         },
         {
-          "label": "Q2 (Month 4-6)",
-          "title": "Cumulative: 250+",
-          "content": "New Pages: 150+"
+          "label": "Off-site",
+          "title": "Authority building: backlinks, citations, placements, and AI seeding",
+          "icon": "Globe",
+          "bullets": [
+            "Google Business Profile fully optimised with weekly posts and keyword-rich review responses.",
+            "10+ local citation directories: Yellow Pages, TrueLocal, Hotfrog, StartLocal, Yelp AU, White Pages, Adelaide Now.",
+            "20+ backlinks from business directories, industry publications, and guest posts.",
+            "Medium and LinkedIn articles: 'How I Helped [Client] Protect Their Brand' style placements.",
+            "Reddit (r/AusLegal, r/smallbusiness) and Quora seeding for core trade mark queries.",
+            "Press release distribution for entity signals and Knowledge Panel building.",
+            "Crunchbase, LinkedIn Company Page optimised with full description and services."
+          ]
         },
         {
-          "label": "Q3 (Month 7-9)",
-          "title": "Cumulative: 320+",
-          "content": "New Pages: 70+"
-        },
-        {
-          "label": "Q4 (Month 10-12)",
-          "title": "Cumulative: 350+",
-          "content": "New Pages: 30+"
+          "label": "Infrastructure",
+          "title": "Technical foundation and AEO engineering",
+          "icon": "Gauge",
+          "bullets": [
+            "Full schema markup: LegalService, Organization, LocalBusiness, FAQPage, HowTo, Person, BreadcrumbList.",
+            "Sitemap, robots.txt, canonicals, Open Graph, Core Web Vitals, and IndexNow.",
+            "Citation-ready content formatting: definitive first-200-word answers, comparison tables with Signify IP in column 1, numbered lists, specific data points.",
+            "Monthly AEO monitoring across ChatGPT, Perplexity, Gemini, Google AI Overviews.",
+            "Google Knowledge Panel claim and optimisation.",
+            "Consistent NAP across all platforms: Signify IP, 213 Greenhill Rd, Eastwood SA 5063."
+          ]
         }
       ],
-      "highlightBoxes": [
-        {
-          "body": "Signify IP has a strong brand, excellent reviews, and a clear value proposition — but zero organic presence. Most competitors haven't started. The firms that build content authority now will own this vertical for years."
-        }
-      ]
-    },
-    {
-      "id": "investment",
-      "number": "06",
-      "heading": "INVESTMENT",
-      "highlightBoxes": [
-        {
-          "heading": "Month-to-month. No lock-in contract. Cancel anytime.",
-          "body": "Every page we build stays on your site — permanently."
-        },
-        {
-          "title": "More investment = faster compounding",
-          "body": "Ignite | Authority | Dominance",
-          "bullets": [
-            "Pages published | ~50 | 350+ | 350+",
-            "Organic leads/month (month 12) | 5-15 | 40-60 | 50-80",
-            "Time to ROI | 2-3 months | 1-2 months | ~1 month",
-            "AI citation tracking | — | Quarterly | Monthly",
-            "Backlink building | Organic only | PR + directories | Backlink acquisition"
-          ]
-        },
-        {
-          "body": "Traditional SERP rankings take 3-6 months. We don't wait — we target the upstream traffic inside LLMs (ChatGPT, Perplexity, Gemini) using methods that generate AI citations within weeks. Google rankings compound on top of that."
-        },
-        {
-          "title": "The economics",
-          "body": "On Authority at $3,500/month — by month 12, you're looking at 40-60 organic leads per month. At a conservative 20% conversion to paid consultations, that's 8 to 12 new clients per month from organic alone. At Signify IP's average engagement value, the ROI pays for itself many times over. And unlike paid ads, it compounds — every page we build keeps working permanently."
-        }
-      ],
-      "stackCards": [
-        {
-          "label": "$2,200/mo",
-          "title": "Ignite",
-          "content": "No lock-in contract\n~50 PAGES OVER 3 MONTHS",
-          "bullets": [
-            "Full technical SEO setup (schema, sitemap, GSC, GA4, Core Web Vitals)",
-            "10 flagship guide pages",
-            "5 location pages (Adelaide + 4 major cities)",
-            "30 scaled landing pages",
-            "Google Business Profile optimization",
-            "Local citation submissions (10+ directories)",
-            "Monthly reporting"
-          ]
-        },
-        {
-          "label": "RECOMMENDED • $3,500/mo",
-          "title": "Authority",
-          "glow": "amber",
-          "content": "No lock-in contract\n350+ PAGES OVER 6 MONTHS",
-          "bullets": [
-            "Everything in Ignite",
-            "Full 40+ editorial pages (guides, comparisons, industry, all 8 locations)",
-            "200-300 scaled landing pages (every permutation)",
-            "12+ expanded case studies",
-            "Press releases (2/month)",
-            "Blog content (2 posts/month)",
-            "AEO baseline audit + quarterly monitoring",
-            "Monthly reporting with SEO + AEO + conversion tracking"
-          ]
-        },
-        {
-          "label": "$5,500/mo",
-          "title": "Dominance",
-          "content": "No lock-in contract\n350+ PAGES, 20+ BACKLINKS",
-          "bullets": [
-            "Everything in Authority",
-            "Backlink acquisition (5+ links/month)",
-            "Guest post placements (1-2/month)",
-            "Reddit + Quora seeding (ongoing brand mentions)",
-            "Medium articles + content placements",
-            "Monthly AEO monitoring + optimization",
-            "Competitor monitoring dashboard",
-            "Quarterly content refresh on top performers",
-            "Priority Slack/email support"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "next-steps",
-      "number": "07",
-      "heading": "NEXT STEPS",
-      "monthBlocks": [
-        {
-          "label": "1",
-          "title": "Choose your plan",
-          "bullets": [
-            "Pick Ignite, Authority, or Dominance. We'll send over a simple month-to-month agreement — no lock-in, cancel anytime."
-          ]
-        },
-        {
-          "label": "2",
-          "title": "Sign & pay",
-          "bullets": [
-            "E-sign the agreement and set up billing via Stripe. First invoice on signup, then monthly."
-          ]
-        },
-        {
-          "label": "3",
-          "title": "Complete the onboarding form",
-          "bullets": [
-            "We'll send a short onboarding form to capture your brand details, target audience, competitors, and any preferences for content tone and style."
-          ]
-        },
-        {
-          "label": "4",
-          "title": "Grant us access",
-          "bullets": [
-            "We'll need admin access to your website to push content and implement technical fixes (schema, sitemap, meta tags, alt text). Plus access to Google Search Console and Google Analytics."
-          ]
-        },
-        {
-          "label": "5",
-          "title": "We get to work",
-          "bullets": [
-            "Technical setup starts immediately. First content published within week 2. AI citation seeding begins day one. You'll have a dedicated Slack channel or email thread for updates."
-          ]
-        }
-      ]
+      "timelineChart": {
+        "points": [
+          {
+            "month": 1, "title": "Technical foundation and first flagship content",
+            "detail": "Month 1 establishes the technical base and publishes the first high-intent guides targeting trade mark registration, costs, and attorney queries.",
+            "bullets": ["Schema, sitemap, GSC, GA4, IndexNow setup.", "First 3 flagship guides, pricing page, and FAQ page live.", "GBP optimised. Local citations submitted. AEO baseline audit complete."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 50, "low": 0, "base": 50, "high": 100
+          },
+          {
+            "month": 2, "title": "Expand editorial and location coverage",
+            "detail": "Month 2 adds more flagship guides, location pages, and the first comparison content.",
+            "bullets": ["Flagship guides #4-7 live.", "Location pages started.", "Backlink acquisition begins."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 150, "low": 50, "base": 150, "high": 300
+          },
+          {
+            "month": 3, "title": "Complete editorial core and launch scaled pages",
+            "detail": "Month 3 finishes the editorial foundation and begins the scaled landing page rollout.",
+            "bullets": ["All 10 flagship guides live. All comparison, industry, and location pages live.", "First 50 scaled landing pages deployed.", "100+ pages live. First organic leads appearing."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 500, "low": 150, "base": 500, "high": 1000
+          },
+          {
+            "month": 4, "title": "Scale the content footprint",
+            "detail": "Month 4 shifts from editorial to scaled content production.",
+            "bullets": ["Additional scaled landing pages deployed.", "Case studies expanded.", "Guest post and backlink campaigns active."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 800, "low": 300, "base": 800, "high": 1500
+          },
+          {
+            "month": 5, "title": "Deepen proof and authority layers",
+            "detail": "Month 5 adds more proof assets and strengthens the authority profile.",
+            "bullets": ["More scaled pages live.", "AEO re-testing and content adjustment.", "Review and citation velocity increasing."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 1200, "low": 400, "base": 1200, "high": 2200
+          },
+          {
+            "month": 6, "title": "First visible market footprint",
+            "detail": "By month 6, Signify IP should have 250+ pages live and visible organic traction.",
+            "bullets": ["250+ pages live.", "Rankings climbing across target keywords.", "Organic leads growing month over month. AI platforms starting to cite Signify IP."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 1500, "low": 500, "base": 1500, "high": 3000
+          },
+          {
+            "month": 7, "title": "International and dispute content",
+            "detail": "After the first footprint is established, widen into international filing and dispute scenarios.",
+            "bullets": ["International filing pages live.", "Dispute scenario pages live.", "PR placements generating brand signals."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 2000, "low": 700, "base": 2000, "high": 3500
+          },
+          {
+            "month": 8, "title": "Content density and refresh",
+            "detail": "Month 8 deepens the content network and refreshes early winners.",
+            "bullets": ["Content refresh on top performers.", "Internal linking strengthened.", "Competitor monitoring active."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 2500, "low": 900, "base": 2500, "high": 4000
+          },
+          {
+            "month": 9, "title": "Broader category expansion",
+            "detail": "Push into broader IP and trade mark demand beyond the initial commercial focus.",
+            "bullets": ["320+ pages live.", "30-50 organic leads per month.", "Multiple AI platforms citing Signify IP."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 3000, "low": 1100, "base": 3000, "high": 4500
+          },
+          {
+            "month": 10, "title": "Defend owned territory",
+            "detail": "Focus on defense as visibility grows.",
+            "bullets": ["Full content audit.", "Refresh where new competitors appear.", "Structured data and entity consistency clean."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 3500, "low": 1500, "base": 3500, "high": 5000
+          },
+          {
+            "month": 11, "title": "Consolidate authority",
+            "detail": "The program should feel like a moat, not a campaign.",
+            "bullets": ["Continue backlink pressure into strongest pages.", "Quarterly content refresh on top performers.", "Close final soft spots before year-end."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 4000, "low": 2000, "base": 4000, "high": 5500
+          },
+          {
+            "month": 12, "title": "Finish year one with a defended position",
+            "detail": "Month 12: 350+ pages live, visible and defensible market presence across trade mark buying questions.",
+            "bullets": ["350+ pages live. 150-200 ranking keywords.", "40-60 organic leads per month. 12-15/20 AI citation rate.", "50+ referring domains. Year 2 planning underway."],
+            "trafficLabel": "Cumulative traffic", "trafficValue": 5000, "low": 3000, "base": 5000, "high": 7000
+          }
+        ],
+        "milestones": [
+          { "label": "Milestone 1", "month": 1, "title": "Technical foundation and first content live", "detail": "Schema, sitemap, first flagship guides, GBP optimised, citations submitted.", "trafficLabel": "Cumulative traffic", "trafficValue": 50 },
+          { "label": "Milestone 2", "month": 3, "title": "Editorial core complete", "detail": "All flagship guides, comparisons, industry, and location pages live. First organic leads.", "trafficLabel": "Cumulative traffic", "trafficValue": 500 },
+          { "label": "Milestone 3", "month": 6, "title": "First visible market footprint", "detail": "250+ pages live. Rankings climbing. AI platforms starting to cite Signify IP.", "trafficLabel": "Cumulative traffic", "trafficValue": 1500 },
+          { "label": "Milestone 4", "month": 12, "title": "Defended category position", "detail": "350+ pages, 150-200 keywords, 40-60 leads/month, 12-15/20 AI citation rate, 50+ referring domains.", "trafficLabel": "Cumulative traffic", "trafficValue": 5000 }
+        ]
+      }
     }
   ],
+
+  "failureBlock": {
+    "eyebrow": "What happens if nothing changes",
+    "heading": "The cost of staying invisible in a category that is actively buying",
+    "bullets": [
+      "Every month without content is a month where Australian business owners choose Lawpath, Gladwin Legal, or The Trademark Factory because those firms showed up first.",
+      "AI answer engines are training on the market right now — firms that are absent today become harder to surface tomorrow.",
+      "The boutique tier is wide open now, but it will not stay open forever. The first specialist to build content authority will define the category.",
+      "Signify IP's 5-star reviews, fixed-fee positioning, and case studies are invisible to any buyer who never finds the website."
+    ]
+  },
+
+  "successBlock": {
+    "eyebrow": "What 12 months from now looks like",
+    "heading": "Signify IP becomes the default recommendation",
+    "bullets": [
+      "When Australian business owners search for trade mark registration, attorneys, or IP protection, Signify IP shows up in Google results, ChatGPT recommendations, Perplexity answers, and Gemini responses.",
+      "The firm owns the decision-stage conversation — flagship guides, comparisons, pricing transparency, and location pages that shape vendor choice.",
+      "350+ pages of permanent content generating 40-60 organic leads per month at near-zero marginal cost.",
+      "Third-party proof (reviews, citations, editorial coverage, community mentions) reinforces the same story across every surface buyers use."
+    ]
+  },
+
   "cta": {
-    "eyebrow": "/// End of Strategy",
-    "headline": "LET'S TALK",
-    "body": "Choose your plan, sign, complete onboarding, grant access, and we get to work. Technical setup starts immediately, first content is published within week 2, and AI citation seeding begins day one.",
+    "eyebrow": "Book Strategy Call",
+    "headline": "If you want Signify IP to become the answer buyers see first",
+    "body": "Memetik will help turn this from a strategy memo into a live category-capture program across search, answer engines, and third-party trust surfaces — building permanent content assets that compound instead of renting attention.",
     "href": "https://cal.com/memetik/letstalk",
-    "ctaLabel": "LET'S TALK"
+    "ctaLabel": "Book a Strategy Call"
+  },
+
+  "appendix": {
+    "number": "04",
+    "heading": "Supporting Evidence",
+    "eyebrow": "Appendix",
+    "subtitle": "The main memo above is the recommendation. The sections below show the evidence that supports it.",
+    "sectionLead": {
+      "takeaway": "Everything on this page flows from the original Signify IP strategy research.",
+      "body": "The public claims below are limited to validated evidence from the original research. Where evidence was weak or unavailable, the page softened or omitted the claim."
+    },
+    "sections": [
+      {
+        "title": "Top 10 priority keyword targets",
+        "description": "The highest-intent keywords mapped from the 430+ keyword research.",
+        "defaultOpen": true,
+        "headers": ["#", "Keyword", "Monthly Searches", "Intent"],
+        "rows": [
+          ["1", "how to register a trade mark in australia", "500-1,000", "Informational → BOFU"],
+          ["2", "trade mark registration cost australia", "500-1,000", "Commercial"],
+          ["3", "trademark attorney australia", "500-1,000", "Commercial"],
+          ["4", "how to trademark a business name australia", "500-1,000", "Informational → BOFU"],
+          ["5", "trade mark vs copyright", "500-1,000", "Informational"],
+          ["6", "do i need a trademark attorney", "200-500", "Commercial"],
+          ["7", "trademark attorney adelaide", "100-300", "Local / Commercial"],
+          ["8", "how much does it cost to trademark", "500-1,000", "Commercial"],
+          ["9", "someone is using my trade mark", "100-200", "Panic → Urgent"],
+          ["10", "fixed fee trademark attorney australia", "50-100", "Exact Match"]
+        ]
+      },
+      {
+        "title": "Competitive landscape",
+        "description": "Three tiers of competitors were mapped: direct boutique TM specialists, Adelaide/SA-based firms, and national enterprise firms.",
+        "headers": ["Tier", "Firm", "Positioning", "Content Strategy"],
+        "rows": [
+          ["Tier 1 — Boutique", "The Trademark Factory (ttmf.com.au)", "Fixed fee from $350, 9000+ TMs, online-first", "Pricing pages, guides, blog"],
+          ["Tier 1 — Boutique", "Acorn Trade Marks", "Fixed fees, no hidden costs, SMB focus", "Minimal"],
+          ["Tier 1 — Boutique", "YIP Legal", "Packages from $450, startups + brands", "Blog, service pages"],
+          ["Tier 1 — Boutique", "Mark My Words", "Blog content, practical guides", "Strong blog"],
+          ["Tier 1 — Boutique", "Markster", "Online TM service, blog content", "Good blog + SEO"],
+          ["Tier 1 — Boutique", "Quick Off The Mark", "Blog-driven, educational", "Strong content"],
+          ["Tier 1 — Boutique", "eTrademark", "$199 attorney fee, volume play", "Minimal"],
+          ["Tier 1 — Boutique", "TradeMark Action", "$990 fixed fee, transparent pricing", "Moderate"],
+          ["Tier 2 — Adelaide", "Madderns", "50+ years, Adelaide institution, patents + TMs", "Established"],
+          ["Tier 2 — Adelaide", "Phillips Ormonde Fitzpatrick", "National firm, Adelaide office", "Established"],
+          ["Tier 2 — Adelaide", "Davies Collison Cave", "Est. 1877, largest AU TM filers since 2000", "Established"],
+          ["Tier 2 — Adelaide", "IP Guardian", "Adelaide-based, free consultations, strong reviews", "Moderate"],
+          ["Tier 2 — Adelaide", "DW Fox Tucker", "Adelaide law firm, IP practice group, award-winning", "Moderate"],
+          ["Tier 2 — Adelaide", "Piper Alderman", "Adelaide HQ, full-service with IP team", "Established"],
+          ["Tier 3 — National", "Spruson & Ferguson", "WTR 1000 Gold, massive content library", "Strong"],
+          ["Tier 3 — National", "Baxter IP", "Strong SEO, Sydney/Melbourne, blog content", "Strong"],
+          ["Tier 3 — National", "Lawpath", "Online legal, strong SEO content on TM topics", "Strong"],
+          ["Tier 3 — National", "Gladwin Legal", "Blog-driven TM guides ranking well", "Strong"],
+          ["Tier 3 — National", "Halfords IP", "Ranking for TM cost/fee queries", "Moderate"]
+        ]
+      },
+      {
+        "title": "Recommended site architecture",
+        "description": "The 300+ page content authority model.",
+        "headers": ["Section", "Pages", "Description"],
+        "rows": [
+          ["/guides/", "10 pages", "Flagship pillar guides: registration, costs, classes, Madrid Protocol, disputes, renewal, infringement, startups"],
+          ["/industries/", "9 pages", "Industry-specific landing pages: food & bev, fashion, tech, ecommerce, construction, health, hospitality, services, creative"],
+          ["/locations/", "8 pages", "Location pages: Adelaide, Sydney, Melbourne, Brisbane, Perth, Canberra, Hobart, Gold Coast"],
+          ["/comparisons/", "8 pages", "Attorney vs DIY, TM Headstart vs Standard, Signify IP vs competitors, best-of listicles"],
+          ["/resources/", "5 pages", "FAQ (50+ questions), glossary, checklist, timeline, 2026 regulation changes"],
+          ["/case-studies/", "12+ pages", "Expanded from 2 to 12+ detailed client stories with outcomes"],
+          ["/blog/", "Ongoing", "Ongoing topical content: regulation changes, common mistakes, seasonal guides"],
+          ["Scaled landing pages", "200-300 pages", "'Can I trademark...', 'TM in [country] from AU', 'What to do if...', industry x service, location x service"]
+        ]
+      },
+      {
+        "title": "Projected KPIs",
+        "description": "Measurement targets across the 12-month program.",
+        "headers": ["Metric", "Now", "6-Month (est.)", "12-Month (est.)"],
+        "rows": [
+          ["Indexed pages", "1", "100+", "300+"],
+          ["Organic traffic (monthly)", "~0", "500-1,000", "3,000-5,000"],
+          ["Keywords ranking top 10", "0", "30-50", "150-200"],
+          ["Referring domains", "0", "20-30", "50+"],
+          ["Domain Rating", "~0", "15-25", "30-40"],
+          ["AI citation rate (20 queries)", "0/20", "5-8/20", "12-15/20"],
+          ["Organic leads per month", "0", "10-20", "40-60"],
+          ["Consultation bookings (organic)", "0", "5-10", "20-30"]
+        ]
+      },
+      {
+        "title": "AI visibility engineering approach",
+        "description": "How every page is structured for AI citation.",
+        "children": [
+          {
+            "type": "card",
+            "eyebrow": "Citation-ready content formatting",
+            "bullets": [
+              "Definitive statements in the first 200 words — LLMs prefer confident, un-hedged answers.",
+              "Comparison tables with Signify IP in column 1 (LLMs copy column 1 68% of the time).",
+              "Numbered lists and step-by-step processes (LLMs prefer structured answers).",
+              "Specific data points: exact fees, exact timelines, exact statistics — not vague ranges.",
+              "FAQ sections with schema — directly maps to AI Q&A responses.",
+              "Author attribution (Hollie Ford, Christine) — builds E-E-A-T for AI trust."
+            ]
+          },
+          {
+            "type": "highlight",
+            "title": "Measurement disclaimer",
+            "tone": "warning",
+            "bullets": [
+              "All projections are modeled estimates based on category benchmarks and are not guaranteed outcomes.",
+              "Actual results depend on market conditions, content velocity, and competitive dynamics.",
+              "Revenue planning requires client engagement values and funnel inputs.",
+              "AI citation tracking is based on sampled prompts and may not capture all surfaces."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Source trace and lineage",
+        "description": "How this strategy memo was generated.",
+        "bullets": [
+          "Original research date: 2025-02-14.",
+          "430+ keywords mapped across 15 categories from Australian trade mark search data.",
+          "Competitive landscape mapped across 3 tiers: direct boutique, Adelaide/SA-based, and national enterprise firms.",
+          "AI platform citation data sampled across ChatGPT, Perplexity, Gemini, and Google AI Overviews.",
+          "Where evidence was weak or unavailable, claims were softened or omitted."
+        ]
+      }
+    ]
   }
 }
