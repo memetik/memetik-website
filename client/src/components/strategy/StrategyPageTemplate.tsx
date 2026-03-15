@@ -590,11 +590,13 @@ export default function StrategyPageTemplate({ slug }: { slug: string }) {
           subtitle={data.hero.subtitle}
           tags={data.hero.tags}
         >
-          <div className="mb-6">
+          <div className="mb-8">
             <SummariseButton slug={data.slug} />
           </div>
 
-          <TldrSection items={data.tldr} />
+          <div className="mb-8">
+            <TldrSection items={data.tldr} />
+          </div>
 
           {data.executiveSummary ? (
             <StrategyCard glow="mixed">
