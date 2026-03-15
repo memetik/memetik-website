@@ -590,6 +590,12 @@ export default function StrategyPageTemplate({ slug }: { slug: string }) {
           subtitle={data.hero.subtitle}
           tags={data.hero.tags}
         >
+          <div className="mb-6">
+            <SummariseButton slug={data.slug} />
+          </div>
+
+          <TldrSection items={data.tldr} />
+
           {data.executiveSummary ? (
             <StrategyCard glow="mixed">
               <SectionHeader
@@ -621,12 +627,6 @@ export default function StrategyPageTemplate({ slug }: { slug: string }) {
             </StrategyCard>
           ) : null}
         </StrategyHero>
-
-        <div className="flex items-center gap-4">
-          <SummariseButton slug={data.slug} />
-        </div>
-
-        <TldrSection items={data.tldr} />
 
         {data.sections.map((section) => renderSection(section))}
 

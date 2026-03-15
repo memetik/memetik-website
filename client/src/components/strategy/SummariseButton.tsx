@@ -8,7 +8,7 @@ export function SummariseButton({ slug }: { slug: string }) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded border border-white/15 bg-white/[0.05] px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-white/70 transition-colors hover:bg-white/[0.08] hover:text-white/90"
+      className="inline-flex items-center gap-2 rounded-full border border-[#f4e4cd]/25 bg-[#f4e4cd]/10 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.14em] text-[#f4e4cd]/80 transition-colors hover:bg-[#f4e4cd]/18 hover:text-[#f4e4cd]"
     >
       <Sparkles className="h-3.5 w-3.5" />
       Summarise with AI
