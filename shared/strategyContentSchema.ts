@@ -154,6 +154,31 @@ export interface StrategySection {
   };
 }
 
+export interface DeliverableItem {
+  label: string;
+  description: string;
+  icon?: string;
+}
+
+export interface DeliverableCategory {
+  heading?: string;
+  items: DeliverableItem[];
+}
+
+export interface DeliverableProseCategory {
+  heading?: string;
+  body: string;
+}
+
+export interface DeliverableStack {
+  apexAssets?: DeliverableCategory;
+  knowledgeGraph?: DeliverableProseCategory;
+  trustRelay?: DeliverableCategory;
+  technical?: DeliverableCategory;
+  measurement?: DeliverableCategory;
+  refresh?: DeliverableCategory;
+}
+
 export interface StrategyTransitionalCta {
   eyebrow?: string;
   headline: string;
@@ -192,6 +217,8 @@ export interface StrategyContentData {
   };
 
   sections: StrategySection[];
+
+  deliverableStack?: DeliverableStack;
 
   failureBlock?: StrategyStakesBlock;
   successBlock?: StrategyStakesBlock;

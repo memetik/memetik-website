@@ -75,9 +75,10 @@ The page follows a StoryBrand + PAS hybrid structure. The prospect is the hero. 
 3. **Cut StrategySectionLead from most sections.** Use it sparingly (at most 1 section). Other sections should use a short subtitle and/or narrativeProse for pacing.
 4. **"The Problem" should agitate.** Name the external problem (invisible in search and AI), the internal problem (losing deals they don't know about), and the philosophical problem (inferior competitors getting recommended instead).
 5. **"The Opportunity" should excite.** Show the size of the prize AND why THIS company specifically can win it. Include the revenue/upside curve and calculator here.
-6. **"The Plan" should reassure.** Open with a 3-step summary (like StoryBrand Principle 4), then expand into month blocks and scope blocks underneath.
+6. **"The Plan" should reassure.** Open with a 3-step summary (like StoryBrand Principle 4), then show the full deliverable stack, then expand into month blocks for sequencing.
 7. **"Why Memetik" is 2-3 sentences max**, not a full section with cards. Fold it into the CTA transition or a brief highlight box.
 8. **failureBlock and successBlock are mandatory.** They create the emotional contrast that drives the CTA conversion.
+9. **deliverableStack is mandatory.** The Plan must include a structured deliverable inventory showing every asset type and workstream Memetik delivers. This replaces the old generic scope blocks. The inventory covers six categories: Apex Assets (decision-stage content types), Knowledge Graph (supporting coverage prose), Trust Relay (off-site authority channels), Technical Foundation (entity and crawler eligibility), Measurement and Proof (citation tracking, prompt testing, reporting), and Refresh and Defense (ongoing compound and protect loops). Do not commit to specific page counts — describe the breadth of deliverable types with punchy descriptions that make the scope feel overwhelming and specific. The deliverable descriptions should be tailored to the company's category.
 
 ## 4. Transformation rules: brief to page
 

@@ -339,6 +339,46 @@ function dataStrategyContent(entry) {
     html += `</section>\n`;
   }
 
+  if (data.deliverableStack) {
+    html += `<section>\n<h2>What Memetik builds and ships</h2>\n`;
+    const ds = data.deliverableStack;
+    if (ds.apexAssets) {
+      html += `<h3>${esc(ds.apexAssets.heading || 'Decision-stage assets')}</h3>\n`;
+      for (const item of ds.apexAssets.items) {
+        html += `<p><strong>${esc(item.label)}</strong>: ${esc(item.description)}</p>\n`;
+      }
+    }
+    if (ds.knowledgeGraph) {
+      html += `<h3>${esc(ds.knowledgeGraph.heading || 'Supporting coverage')}</h3>\n`;
+      html += `<p>${esc(ds.knowledgeGraph.body)}</p>\n`;
+    }
+    if (ds.trustRelay) {
+      html += `<h3>${esc(ds.trustRelay.heading || 'Off-site authority')}</h3>\n`;
+      for (const item of ds.trustRelay.items) {
+        html += `<p><strong>${esc(item.label)}</strong>: ${esc(item.description)}</p>\n`;
+      }
+    }
+    if (ds.technical) {
+      html += `<h3>${esc(ds.technical.heading || 'Technical foundation')}</h3>\n`;
+      for (const item of ds.technical.items) {
+        html += `<p><strong>${esc(item.label)}</strong>: ${esc(item.description)}</p>\n`;
+      }
+    }
+    if (ds.measurement) {
+      html += `<h3>${esc(ds.measurement.heading || 'Measurement and proof')}</h3>\n`;
+      for (const item of ds.measurement.items) {
+        html += `<p><strong>${esc(item.label)}</strong>: ${esc(item.description)}</p>\n`;
+      }
+    }
+    if (ds.refresh) {
+      html += `<h3>${esc(ds.refresh.heading || 'Refresh and defense')}</h3>\n`;
+      for (const item of ds.refresh.items) {
+        html += `<p><strong>${esc(item.label)}</strong>: ${esc(item.description)}</p>\n`;
+      }
+    }
+    html += `</section>\n`;
+  }
+
   if (data.failureBlock) {
     html += `<section>\n<h2>${esc(data.failureBlock.heading)}</h2>\n`;
     html += renderBullets(data.failureBlock.bullets);

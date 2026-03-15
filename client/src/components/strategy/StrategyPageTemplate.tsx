@@ -20,6 +20,7 @@ import { SummariseButton } from "@/components/strategy/SummariseButton";
 import { MidPageCTA } from "@/components/strategy/MidPageCTA";
 import { TransitionalCTA } from "@/components/strategy/TransitionalCTA";
 import { AIAbsenceEvidence } from "@/components/strategy/AIAbsenceEvidence";
+import { DeliverableStack } from "@/components/strategy/DeliverableStack";
 import type {
   StrategyContentData,
   StrategySection,
@@ -28,6 +29,7 @@ import type {
   StrategyStakesBlock,
   StrategyNarrativeBlock,
   StrategyAppendixSection as AppendixSectionType,
+  DeliverableStack as DeliverableStackType,
 } from "@shared/strategyContentSchema";
 import {
   BarChart3,
@@ -481,8 +483,9 @@ function renderAppendixSection(section: AppendixSectionType, index: number) {
   return null;
 }
 
-function renderSection(section: StrategySection, company?: string) {
+function renderSection(section: StrategySection, company?: string, deliverableStack?: DeliverableStackType) {
   const isProblemSection = section.id === "the-problem";
+  const isPlanSection = section.id === "the-plan";
 
   return (
     <StrategySectionShell key={section.id}>
@@ -580,6 +583,10 @@ function renderSection(section: StrategySection, company?: string) {
         </div>
       ) : null}
 
+      {isPlanSection && deliverableStack ? (
+        <DeliverableStack stack={deliverableStack} />
+      ) : null}
+
       {section.monthBlocks ? (
         <div className="mt-6 space-y-6">
           {section.monthBlocks.map((mb, i) => (
@@ -588,7 +595,7 @@ function renderSection(section: StrategySection, company?: string) {
         </div>
       ) : null}
 
-      {section.scopeBlocks ? (
+      {section.scopeBlocks && !(isPlanSection && deliverableStack) ? (
         <div className="mt-6 space-y-6">
           {section.scopeBlocks.map((sb, i) => (
             <ScopeBlock key={i} label={sb.label} title={sb.title} icon={sb.icon} bullets={sb.bullets} />
@@ -717,7 +724,7 @@ export default function StrategyPageTemplate({ slug }: { slug: string }) {
         </StrategyHero>
 
         {data.sections.map((section, sectionIndex) => {
-          const rendered = renderSection(section, data.company);
+          const rendered = renderSection(section, data.company, data.deliverableStack);
           const isAfterOpportunity = section.id === "the-opportunity";
           return (
             <div key={section.id}>

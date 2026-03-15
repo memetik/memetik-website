@@ -39,4 +39,5 @@ export { SummariseButton } from "./SummariseButton";
 export { MidPageCTA } from "./MidPageCTA";
 export { TransitionalCTA } from "./TransitionalCTA";
 export { AIAbsenceEvidence } from "./AIAbsenceEvidence";
+export { DeliverableStack } from "./DeliverableStack";
 export { default as StrategyPageTemplate } from "./StrategyPageTemplate";
