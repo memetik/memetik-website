@@ -13,3 +13,4 @@ client/public/llms.txt
 .local/
 .replit
 attached_assets/
+*.bak

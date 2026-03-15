@@ -543,14 +543,32 @@ function renderSection(section: StrategySection) {
   );
 }
 
-export default function StrategyPageTemplate({ slug }: { slug: string }) {
-  const [data, setData] = useState<StrategyContentData | null>(null);
+import btsData from "@data/strategy-content/bts.json";
+import bts2Data from "@data/strategy-content/bts-2.json";
+import bts3Data from "@data/strategy-content/bts-3.json";
+import signifyIpData from "@data/strategy-content/signify-ip.json";
+import uleadsData from "@data/strategy-content/uleads.json";
+import kinsoData from "@data/strategy-content/kinso.json";
+import drinkhyroData from "@data/strategy-content/drinkhyro.json";
+import hotWaterFunnelData from "@data/strategy-content/hot-water-funnel.json";
+import creatorArmyData from "@data/strategy-content/creator-army.json";
+import xoomaiData from "@data/strategy-content/xoomai.json";
 
-  useEffect(() => {
-    import(`../../../data/strategy-content/${slug}.json`).then((mod) => {
-      setData(mod.default || mod);
-    });
-  }, [slug]);
+const contentMap: Record<string, StrategyContentData> = {
+  bts: btsData as unknown as StrategyContentData,
+  "bts-2": bts2Data as unknown as StrategyContentData,
+  "bts-3": bts3Data as unknown as StrategyContentData,
+  "signify-ip": signifyIpData as unknown as StrategyContentData,
+  uleads: uleadsData as unknown as StrategyContentData,
+  kinso: kinsoData as unknown as StrategyContentData,
+  drinkhyro: drinkhyroData as unknown as StrategyContentData,
+  "hot-water-funnel": hotWaterFunnelData as unknown as StrategyContentData,
+  "creator-army": creatorArmyData as unknown as StrategyContentData,
+  xoomai: xoomaiData as unknown as StrategyContentData,
+};
+
+export default function StrategyPageTemplate({ slug }: { slug: string }) {
+  const data = contentMap[slug] || null;
 
   useEffect(() => {
     if (data) {
