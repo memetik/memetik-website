@@ -22,6 +22,8 @@ import type {
   StrategySection,
   StrategyStackCard,
   StrategyHighlightBox,
+  StrategyStakesBlock,
+  StrategyNarrativeBlock,
   StrategyAppendixSection as AppendixSectionType,
 } from "@shared/strategyContentSchema";
 import {
@@ -264,6 +266,55 @@ function ScopeBlock({ label, title, icon, bullets }: { label: string; title: str
   );
 }
 
+function NarrativeProseBlock({ block }: { block: StrategyNarrativeBlock }) {
+  return (
+    <div className="max-w-3xl">
+      {block.heading ? (
+        <h3 className="mb-3 text-xl font-semibold tracking-tight text-white">{block.heading}</h3>
+      ) : null}
+      <p className="text-[15px] leading-8 text-white/68">{block.body}</p>
+    </div>
+  );
+}
+
+function StakesBlock({ block, variant }: { block: StrategyStakesBlock; variant: "failure" | "success" }) {
+  const isFailure = variant === "failure";
+  return (
+    <div
+      className={`rounded-[28px] border p-6 md:p-8 ${
+        isFailure
+          ? "border-red-500/20 bg-red-500/[0.04]"
+          : "border-[#f4e4cd]/20 bg-[#f4e4cd]/[0.04]"
+      }`}
+    >
+      {block.eyebrow ? (
+        <div
+          className={`mb-3 font-mono text-[10px] uppercase tracking-[0.22em] ${
+            isFailure ? "text-red-400/80" : "text-[#f4e4cd]"
+          }`}
+        >
+          {block.eyebrow}
+        </div>
+      ) : null}
+      <h3
+        className={`text-xl font-display font-semibold tracking-tight md:text-2xl ${
+          isFailure ? "text-red-300" : "text-[#f4e4cd]"
+        }`}
+      >
+        {block.heading}
+      </h3>
+      <ul className="mt-5 space-y-3 text-sm leading-7 text-white/70">
+        {block.bullets.map((item, i) => (
+          <li key={i} className="flex gap-3">
+            <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${isFailure ? "bg-red-400/60" : "bg-[#f4e4cd]/60"}`} />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function CommercialImpactCalculator({ baseVisits }: { baseVisits: number }) {
   const [ltvInput, setLtvInput] = useState("");
   const [visitRateInput, setVisitRateInput] = useState("1");
@@ -445,14 +496,26 @@ function renderSection(section: StrategySection) {
         />
       ) : null}
 
+      {section.narrativeProse ? (
+        <div className="mb-8 space-y-6">
+          {section.narrativeProse.map((block, i) => (
+            <NarrativeProseBlock key={i} block={block} />
+          ))}
+        </div>
+      ) : null}
+
       {section.highlightBoxes?.filter((_, i) => {
         const hasStackCards = section.stackCards && section.stackCards.length > 0;
         if (!hasStackCards) return true;
         return i === 0;
-      }).map((box, i) => renderHighlightBox(box, i))}
+      }).map((box, i) => (
+        <div key={`lead-highlight-${i}`} className="mt-6">
+          {renderHighlightBox(box, i)}
+        </div>
+      ))}
 
       {section.stackCards ? (
-        <div className="space-y-4">
+        <div className="mt-6 space-y-6">
           {section.stackCards.map((card, i) => {
             if (!card.label && !card.title && card.bullets) {
               return (
@@ -470,7 +533,7 @@ function renderSection(section: StrategySection) {
       ) : null}
 
       {section.platformStatuses ? (
-        <div className="space-y-4">
+        <div className="mt-6 space-y-6">
           {section.platformStatuses.map((ps, i) => (
             <PlatformStatusCard key={i} platform={ps.platform} status={ps.status} detail={ps.detail} />
           ))}
@@ -478,7 +541,7 @@ function renderSection(section: StrategySection) {
       ) : null}
 
       {section.promptObservations ? (
-        <div className="mt-6 space-y-4">
+        <div className="mt-6 space-y-6">
           {section.promptObservations.map((po, i) => (
             <PromptObservationCard key={i} platform={po.platform} market={po.market} prompt={po.prompt} observed={po.observed} />
           ))}
@@ -498,7 +561,7 @@ function renderSection(section: StrategySection) {
       ) : null}
 
       {section.monthBlocks ? (
-        <div className="space-y-4">
+        <div className="mt-6 space-y-6">
           {section.monthBlocks.map((mb, i) => (
             <MonthBlock key={i} label={mb.label} title={mb.title} bullets={mb.bullets} />
           ))}
@@ -506,7 +569,7 @@ function renderSection(section: StrategySection) {
       ) : null}
 
       {section.scopeBlocks ? (
-        <div className="space-y-4">
+        <div className="mt-6 space-y-6">
           {section.scopeBlocks.map((sb, i) => (
             <ScopeBlock key={i} label={sb.label} title={sb.title} icon={sb.icon} bullets={sb.bullets} />
           ))}
@@ -514,14 +577,16 @@ function renderSection(section: StrategySection) {
       ) : null}
 
       {section.timelineChart ? (
-        <GrowthTimelineChart
-          points={section.timelineChart.points}
-          milestones={section.timelineChart.milestones}
-        />
+        <div className="mt-6">
+          <GrowthTimelineChart
+            points={section.timelineChart.points}
+            milestones={section.timelineChart.milestones}
+          />
+        </div>
       ) : null}
 
       {section.timelineChart && section.stackCards ? (
-        <div className="mt-6 space-y-4">
+        <div className="mt-6 space-y-6">
           {section.stackCards.map((card, i) => (
             <StackCardBlock key={`post-timeline-${i}`} card={card} />
           ))}
@@ -632,6 +697,18 @@ export default function StrategyPageTemplate({ slug }: { slug: string }) {
 
         {data.sections.map((section) => renderSection(section))}
 
+        {data.failureBlock ? (
+          <div className="mx-auto max-w-4xl">
+            <StakesBlock block={data.failureBlock} variant="failure" />
+          </div>
+        ) : null}
+
+        {data.successBlock ? (
+          <div className="mx-auto max-w-4xl">
+            <StakesBlock block={data.successBlock} variant="success" />
+          </div>
+        ) : null}
+
         <StrategyCTA
           eyebrow={data.cta.eyebrow}
           title={data.cta.headline}
@@ -654,7 +731,7 @@ export default function StrategyPageTemplate({ slug }: { slug: string }) {
                 body={data.appendix.sectionLead.body}
               />
             ) : null}
-            <div className="space-y-4">
+            <div className="space-y-6">
               {data.appendix.sections.map((section, i) => renderAppendixSection(section, i))}
             </div>
           </StrategySectionShell>

@@ -28,7 +28,12 @@ Canonical public-output contract for founder-facing strategy pages derived from 
 12. Public pages must avoid operator-only labels such as `Apex Assets`, `Knowledge Graph`, `Trust Relay`, `wedge`, `shortlist`, and `recommendation-share`; keep those canonical upstream in doctrine and briefs, then translate them for founders.
 13. Public pages must not promise a fixed count of bottom-of-funnel pages; they should explain that Memetik builds as many commercial decision pages as needed to cover the relevant demand.
 14. The page must not include pricing, staffing minutiae, hidden assumptions presented as facts, or internal QA labels.
-15. The hero H1 must be concise and claim-led. Default to one short commercial statement, usually 4-8 words, such as `<Brand> can own the <category> conversation` or an equally tight ownership claim.
+15. The hero H1 must use a contrast or direct-address formula that makes the stakes immediately obvious to a founder who knows nothing about AI search. Preferred headline formulas in priority order:
+    - Direct address + tension: `Your buyers are searching. They can't find you yet.`
+    - Contrast / before-after: `From invisible to the default recommendation.` or `Zero visibility today. Category leader in 12 months.`
+    - Quantified gap: `14.8M searches. Zero results for [Company].`
+    - Provocative question: `Who gets the deal when [Company] doesn't show up?`
+    - NEVER use the old `<Brand> can own the <category> conversation` pattern — it reads as agency jargon to founders.
 16. Do not split the core hero claim across a long `title` plus a long `accent`. If an accent line is used at all, it should be very short; the real nuance should live in the subtitle.
 
 ## 2b. Layout doctrine
@@ -39,7 +44,7 @@ Canonical public-output contract for founder-facing strategy pages derived from 
 4. In the main narrative, avoid 2-column, 3-column, or 4-column content grids as the default storytelling pattern.
 5. If a section contains multiple ideas, stack them vertically in sequence.
 6. The hero must stack: eyebrow -> H1 -> subhead -> executive summary note -> stacked metric cards -> stacked immediate actions.
-7. The hero H1 should land one sharp idea fast. Avoid qualifying clauses like `before...`, `while...`, or `so that...` inside the headline itself.
+7. The hero H1 should land one sharp idea fast. Use contrast, direct address, or a quantified gap — not an internal ownership claim. Avoid qualifying clauses like `before...`, `while...`, or `so that...` inside the headline itself.
 8. The Revenue / Commercial Impact section should stack: section lead -> explanation -> curve -> calculator -> assumptions/caveat note.
 9. The 6-month Growth Plan should stack Month 1, Month 2, Month 3, and Months 4–6 vertically.
 10. The Operating Model should use a timeline / curve visual with deployment milestones, not a dense workstream matrix.
@@ -48,21 +53,31 @@ Canonical public-output contract for founder-facing strategy pages derived from 
 13. The "What Memetik Builds and Ships" section should use vertically stacked scope blocks, not a matrix or dashboard-like execution table.
 14. Detailed comparison tables belong in the appendix, not the main narrative.
 
-## 3. Required section order
+## 3. Required section order — StoryBrand 3-act narrative
 
-| Order | Section | Brief source | Founder-facing rule |
-| --- | --- | --- | --- |
-| 00 | Hero | Company context + wedge | State the category problem and the company-specific opportunity fast |
-| 01 | Current state | Current-state diagnosis | Show what is working, what is missing, and why it matters commercially |
-| 02 | Opportunity / right to win | Wedge + rationale | Explain why this company can win a defined slice of recommendation-share |
-| 03 | Competitive gap | Competitor evidence | Name who is winning now and what they are doing that the company is not |
-| 04 | AI visibility / answer-surface gap | Prompt/platform evidence | Show recommendation/citation gap without faking platform certainty |
-| 05 | 6-month growth plan | Prioritized sequence | Show the first entities, first pages, first prompts, first surfaces to attack, and how the program compounds across the engagement |
-| 06 | Off-site authority | Trust/authority work | Make Reddit/community, review, editorial, and third-party proof explicit |
-| 07 | What Memetik builds and ships | Delivery scope | Keep on-site, off-site, review, backlink/PR, and technical/entity work explicit |
-| 08 | Operating cadence | Cadence doctrine | Show a visually clear operating timeline with deployment milestones, growth progression, monthly reporting, and quarterly review |
-| 09 | CTA | Next actions | End with a strategy-call CTA |
-| 10 | Supporting evidence appendix | Page-safe evidence subset | Optional detail only; keep the main flow skimmable |
+The page follows a StoryBrand + PAS hybrid structure. The prospect is the hero. Memetik is the guide. The old 12-section consultant-report structure is replaced by 5 narrative acts plus a CTA and optional appendix.
+
+| Order | Section | StoryBrand Principle | What It Covers | Brief Sources |
+| --- | --- | --- | --- | --- |
+| 00 | **Hero + TLDR + Executive Snapshot** | Character wants something | Headline claim, TLDR bullets, 4 metric cards, 3 immediate actions | Company context, wedge, TAM |
+| 01 | **The Problem** | Has a problem (external + internal + philosophical) | Where the company stands today, why they're invisible, the competitive gap, AI visibility gap — told as ONE narrative about what's broken. Merges old State of Search, Current State, Competitive Gap, and AI Visibility into one story. | Sections 4, 5, AI visibility, prompt evidence |
+| 02 | **The Opportunity** | Meets a guide | The wedge, why this company can win, the commercial upside, the revenue curve, the calculator. Merges old Opportunity, Right to Win, and Revenue/Commercial Impact. | Sections 3, 6, 7, TAM model |
+| 03 | **The Plan** | Who gives them a plan | 6-month growth plan, what Memetik builds and ships, off-site authority, operating model — told as ONE coherent execution story with a simple 3-step overview at the top. Merges old Growth Plan, Off-site Authority, Delivery Scope, and Operating Model. | Sections 7–13 |
+| -- | **Failure block** | Helps them avoid failure | Brief agitation block: what happens if they do nothing (2-4 bullets). Rendered between the last section and the CTA. | Derived from competitive gap + AI visibility gap |
+| -- | **Success block** | Ends in success | Brief future-pacing block: what the company looks like in 12 months if they execute (2-4 bullets). Rendered before the CTA. | Derived from TAM model + wedge |
+| 04 | **CTA** | Calls them to action | Book a strategy call | Next actions |
+| 05 | **Supporting evidence appendix** | Supporting evidence | Detailed tables, prompt evidence, assumptions, source trace | Page-safe evidence subset |
+
+### Narrative rules for the 3-act structure
+
+1. **No "State of Search 2026" section.** Market context belongs in 1-2 sentences inside "The Problem," not its own section.
+2. **Max 2-3 cards per section.** Use `narrativeProse` blocks for story flow; reserve cards for data or distinct concepts.
+3. **Cut StrategySectionLead from most sections.** Use it sparingly (at most 1 section). Other sections should use a short subtitle and/or narrativeProse for pacing.
+4. **"The Problem" should agitate.** Name the external problem (invisible in search and AI), the internal problem (losing deals they don't know about), and the philosophical problem (inferior competitors getting recommended instead).
+5. **"The Opportunity" should excite.** Show the size of the prize AND why THIS company specifically can win it. Include the revenue/upside curve and calculator here.
+6. **"The Plan" should reassure.** Open with a 3-step summary (like StoryBrand Principle 4), then expand into month blocks and scope blocks underneath.
+7. **"Why Memetik" is 2-3 sentences max**, not a full section with cards. Fold it into the CTA transition or a brief highlight box.
+8. **failureBlock and successBlock are mandatory.** They create the emotional contrast that drives the CTA conversion.
 
 ## 4. Transformation rules: brief to page
 

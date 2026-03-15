@@ -115,6 +115,17 @@ export type StrategyAppendixSection =
   | StrategyAppendixBullets
   | StrategyAppendixComposite;
 
+export interface StrategyNarrativeBlock {
+  heading?: string;
+  body: string;
+}
+
+export interface StrategyStakesBlock {
+  eyebrow?: string;
+  heading: string;
+  bullets: string[];
+}
+
 export interface StrategySection {
   id: string;
   number?: string;
@@ -126,6 +137,7 @@ export interface StrategySection {
     body?: string;
     implication?: string;
   };
+  narrativeProse?: StrategyNarrativeBlock[];
   stackCards?: StrategyStackCard[];
   highlightBoxes?: StrategyHighlightBox[];
   platformStatuses?: StrategyPlatformStatus[];
@@ -171,6 +183,9 @@ export interface StrategyContentData {
   };
 
   sections: StrategySection[];
+
+  failureBlock?: StrategyStakesBlock;
+  successBlock?: StrategyStakesBlock;
 
   cta: {
     eyebrow?: string;

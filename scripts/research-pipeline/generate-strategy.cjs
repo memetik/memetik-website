@@ -43,24 +43,15 @@ const REQUIRED_BRIEF_SECTIONS = [
 ];
 
 const REQUIRED_SECTION_PATTERNS = [
-  /state of search/i,
-  /current state|where .* today/i,
-  /opportunity|commercial upside|revenue potential|revenue impact/i,
-  /why .* can win|right to win/i,
-  /competitive gap|competitive landscape/i,
-  /ai visibility by llm|ai visibility|answer-engine visibility/i,
-  /6-month growth plan|6 month growth plan|month 1|months 4.?6|90-day opening move|90 day opening move|first 90 days/i,
-  /off-site authority/i,
-  /what memetik will actually deliver|what memetik actually builds and ships|what we will actually deliver|what memetik will build|delivery engine/i,
-  /operating model|monthly operating system|workstreams/i,
-  /why memetik/i,
-  /appendix|supporting evidence/i,
+  /the problem|current state|where .* today/i,
+  /the opportunity|commercial upside|revenue potential|revenue impact|why .* can win/i,
+  /the plan|growth plan|what memetik/i,
+  /cost of|what happens if|failure|staying invisible/i,
+  /success|becomes the|12 months from now/i,
   /estimate-only|modeled estimate|modeled/i,
   /book a strategy call|let'?s talk|cal\.com\/memetik\/letstalk/i,
   /StrategyPageFrame/i,
   /StrategyHero/i,
-  /StrategySectionLead/i,
-  /StrategyAppendixSection/i,
   /StrategySectionShell/i,
   /StrategyCTA/i,
 ];
@@ -1143,7 +1134,7 @@ function validateGeneratedTsx(tsxContent) {
   }
 
   const heroProps = extractStrategyHeroLiteralProps(tsxContent);
-  if (heroProps.title && countWords(heroProps.title) > 8) {
+  if (heroProps.title && countWords(heroProps.title) > 12) {
     throw new Error(`Generated page hero title is too verbose: "${heroProps.title}"`);
   }
 
@@ -1151,8 +1142,8 @@ function validateGeneratedTsx(tsxContent) {
     throw new Error(`Generated page hero accent is too verbose: "${heroProps.accent}"`);
   }
 
-  if (heroProps.title && /\b(before|while|because|so that)\b/i.test(heroProps.title)) {
-    throw new Error(`Generated page hero title must stay claim-led without qualifier clauses: "${heroProps.title}"`);
+  if (heroProps.title && /\bcan own\b/i.test(heroProps.title)) {
+    throw new Error(`Generated page hero title must not use the old "can own" agency pattern: "${heroProps.title}"`);
   }
 
   if (!/GrowthTimelineChart/.test(tsxContent)) {
@@ -1270,10 +1261,16 @@ function buildSystemPrompt(examples, components, canonicalDocs, brief) {
 
   return `You are a senior frontend developer and AEO/SEO strategist building a strategy page for Memetik (memetik.ai), an Answer Engine Optimization agency.
 
-You are generating a complete, production-ready TSX file for a strategy page. This page should feel like a founder-facing strategy deck: premium, highly readable, persuasive, and grounded in the approved canonical brief. It serves as:
-- An executive strategy memo founders can skim in 5 minutes
-- A premium sales asset for Memetik
-- A consulting-quality strategy with supporting evidence available below the fold
+You are generating a complete, production-ready TSX file for a strategy page. The page follows a StoryBrand + PAS (Problem-Agitate-Solve) narrative structure where the prospect is the hero and Memetik is the guide. It should feel like a premium founder-facing strategy deck that someone who knows NOTHING about AI search can immediately understand.
+
+NARRATIVE FRAMEWORK — StoryBrand 3-Act Structure:
+The page tells a story in 3 acts, not 12 consultant-report sections:
+- Act 1 "The Problem": Where the company stands today, why they are invisible, the competitive gap, the AI visibility gap — told as ONE compelling narrative about what is broken.
+- Act 2 "The Opportunity": The wedge, why this company can win, the commercial upside and revenue curve — ONE section showing the size of the prize and why THIS company specifically wins it.
+- Act 3 "The Plan": 6-month growth plan, what Memetik builds, off-site authority, operating model — ONE coherent execution story with a simple 3-step overview at the top.
+- Plus: a failureBlock (what happens if they do nothing) and a successBlock (what 12 months from now looks like) before the CTA.
+- NO separate "State of Search 2026" section. Market context is 1-2 sentences inside "The Problem."
+- NO separate "Why Memetik" section. 2-3 sentences max, folded into the CTA area.
 
 SHARED COMPONENTS (import from "@/components/strategy"):
 ${componentSnippets}
@@ -1281,7 +1278,7 @@ ${componentSnippets}
 Index file:
 ${components.index}
 
-STYLE EXAMPLES (match the visual style and premium brand language, but do NOT inherit dense information layout):
+STYLE EXAMPLES:
 ${exampleSnippets}
 
 STRATEGIC CONTEXT (MANDATORY GROUNDING):
@@ -1290,69 +1287,44 @@ ${strategicContext}
 APPROVED CANONICAL BRIEF (MANDATORY DIRECT INPUT):
 ${briefContext}
 
-MARKET CONTEXT NON-NEGOTIABLES (must be reflected in the State of Search / Why This Matters Now narrative):
-- ${MARKET_CONTEXT_NON_NEGOTIABLES}
-
 CRITICAL RULES:
 1. Output ONLY the complete TSX file content — no markdown fences, no explanation, no commentary.
 2. The file must be a valid React component with a default export.
-3. Import shared components from "@/components/strategy" — use SectionHeader, HighlightBox, BulletList, DataTable, StatsGrid, PhasedUpsideChart, GrowthTimelineChart, TamRoiCalculator, ExecutionInfographic, StrategySectionLead, and StrategyAppendixSection freely.
-3b. Prefer the premium homepage-aligned primitives: StrategyPageFrame, StrategyHero, StrategySectionShell, StrategyCard, StrategyEyebrow, StrategyCTA, StrategyGlow.
-4. Import Nav from "@/components/Nav".
-5. Import icons from "lucide-react" as needed.
-6. You CAN and SHOULD create custom inline components, data arrays, and layouts unique to this company's situation. The shared components are building blocks, not constraints.
-7. DO NOT include pricing. Ever. No dollar amounts for Memetik's services.
-8. End with a "Book a Strategy Call" CTA linking to https://cal.com/memetik/letstalk
-9. Match the current Memetik homepage design system: premium dark atmosphere, glass/translucent shells, larger rounded radii, mono metadata pills, premium CTA styling, and layered glow treatment. Use the homepage examples as the visual source of truth.
-10. Use useEffect to set document.title and scroll to top.
-11. Include numbered section headers ("00", "01", "02", etc.).
-12. Make it 550-950 lines. Be specific, but do not overwhelm the reader.
-13. The strategy must feel like a premium founder memo, not a research dump.
-14. The page is PUBLIC. Do not include passwords or gates.
-15. Add the company's hero tags (domain, industry, location if known, key descriptor).
-16. Use a premium vertical narrative structure: every primary section should feel like one clear block in a clean top-to-bottom scroll.
-17. Every primary section MUST include one obvious takeaway, ideally using StrategySectionLead.
-17a. The hero H1 must be one concise commercial claim, usually 4-8 words.
-17b. Prefer a pattern like "<Brand> can own the <category> conversation" when it fits the company.
-17c. Prefer no accent line. If you use an accent line at all, keep it to 1-4 words max.
-17d. Push nuance, timing, and execution detail into the subtitle, not the H1.
-18. A founder should be able to skim the main narrative in under 5 minutes.
-19. Put heavy detail into an Appendix / Supporting Evidence area using StrategyAppendixSection. The appendix can include keyword tables, detailed competitor data, assumptions, prompt evidence, and calculators.
-20. Keep the main narrative order tight and founder-first: Hero, State of Search, Current State, Opportunity, Why This Company Can Win, Competitive Gap, AI Visibility Gap, Revenue / Commercial Impact, 6-month Growth Plan, What Memetik Actually Builds and Ships, Operating Model, Why Memetik, CTA, then Appendix.
-21. Do not fabricate competitors or metrics. Use researchData.seoMetrics.backlinkMetrics and competitor metrics for backlink/ref-domain values wherever present, and never promote contaminated or low-topicality keyword clusters into hero statistics.
-22. Use the market truths above in the State of Search section, but keep that section compact and highly legible.
-23. Translate every major finding into commercial language: pipeline, shortlist share, CAC pressure, revenue leverage, moat, defensibility, and risk of waiting.
-24. Use no more than 3-4 cards in a main section unless absolutely necessary, and stack them vertically by default.
-25. Use no more than one table in any primary section. Prefer cards, charts, and compact comparison visuals. Detailed tables belong in the appendix.
-26. The main flow should NOT contain the full keyword universe table dump. Put detailed keyword evidence in the appendix.
-27. The main competitive section should NOT lead with a giant table. Lead with a clear gap narrative and only a compact supporting visual/table if it materially improves clarity.
-28. The AI visibility section should use platform cards plus 2-3 real unbranded prompt examples that show who wins today, where the company stands, and what must change.
-29. Include a dedicated "Why This Company Can Win" or equivalent right-to-win section. It must explain the company-specific wedge and why this company can beat incumbents in a defined slice of the market.
-30. Include a dedicated "6-month Growth Plan" section with Month 1, Month 2, Month 3, and Months 4-6 framing. It should show the first category/entity wedge, first pages to ship, first prompts to win, first competitors to attack, and how the system compounds across the full engagement.
-31. Include a dedicated revenue/commercial impact section. Keep methodology secondary; explain what the opportunity means in plain English.
-32. Use PhasedUpsideChart as a 12-month trajectory component in the Revenue / Commercial Impact section, but keep explanation concise and commercial.
-33. Keep estimate-only disclosure consolidated to section-level labels and appendix assumptions. Do NOT scatter repetitive estimate notes everywhere, but include the literal phrase "Estimate-only" at least once in the visible page.
-34. If researchData.topicalIntegrity exists, treat it as a hard guardrail: only headline validated keyword/TAM insights, surface ambiguity risks honestly, and do not center excluded or low-quality semantic terms.
-35. If tamModel.revenueModel.enabled is false, explicitly note that revenue planning requires first-party ACV/AOV and funnel inputs.
-36. Use plain founder language for traffic planning. In the visible UI, prefer "Total search opportunity", "Expected traffic in 12 months", "Aggressive upside", and "First 6-month target". Avoid jargon like reachable share, modeled capture rate, or execution capture rate.
-37. The page should look homepage-premium, not report-template-flat: use StrategyPageFrame for the page, StrategyHero for the hero, StrategySectionShell for major sections, StrategyCard for sub-blocks, and StrategyCTA for the close.
-38. Do not make the page feel like "look how much research we did." Make it feel like "we understand the market, your position, your wedge, and how to build the moat."
-39. The delivery scope must reflect the documented Memetik program from the playbook: priority buying queries, bottom-of-funnel pages, comparison/evaluation content, supporting content coverage, off-site authority, review-platform work, Bing/IndexNow/schema infrastructure, and monthly optimization loops.
-39b. Do not describe the engagement as a weekly rhythm, weekly operating system, or weekly cadence. Frame it as monthly deployments with concurrent monthly workstreams.
-40. Public pages must translate operator-only doctrine into plain founder language. Do not expose labels such as Money Entities, Apex Assets, Knowledge Graph, Trust Relay, recommendation-share, wedge, or shortlist in founder-facing copy.
-41. Do not promise a fixed public count of bottom-of-funnel pages. Explain that Memetik builds as many bottom-of-funnel pages as needed to cover the relevant demand, then expands supporting coverage and authority around the winners.
-42. Public pages must not mention prior internal page versions, old drafts, or origin-story commentary. The output should read like the canonical page, not a page about previous pages.
-43. If keyword attribution data is provided, surface competitor-keyword vs non-competitor / unbranded breakdowns directly beneath each executive-summary metric card and reinforce that split in the appendix.
-44. The Operating Model should show the full 12-month view when the page uses 12-month traffic planning, and the timeline should reveal what ships in the active month.
-45. Include a dedicated Off-site Authority section that explicitly covers Reddit/community participation, reviews, editorials, listicles, backlinks, and other third-party trust surfaces.
-46. For creator-platform strategies where relevant, position the company for serious creators building real businesses and counter-position clearly against Whop without inventing unsupported facts.
-47. The main narrative must have one reading axis: vertical. Avoid side-by-side storytelling layouts in primary sections.
-48. The page must make it obvious that Memetik delivers both on-site production and off-site authority building; do not reduce the strategy to only content publishing.
-49. Executive-summary metric cards must stay at the top of the page in a vertical stack, and immediate actions must stack underneath them. Do not place them side-by-side.
-50. The 12-month opportunity curve must use cumulative traffic progression so the final point matches the visible "Expected traffic in 12 months" number, not a month-12 run-rate or first-6-month value.
-51. Surface the TAM / ROI calculator in or immediately after the Revenue / Commercial Impact section; do not bury it only in the appendix.
-52. Canonical lineage is mandatory and must remain visible in your reasoning: master reference -> generation contract -> brief -> page.
-53. Do not bypass or reinterpret the approved brief. Raw research payload is not the canonical page input.`;
+3. Import shared components from "@/components/strategy". Prefer StrategyPageFrame, StrategyHero, StrategySectionShell, StrategyCard, StrategyCTA.
+4. Import Nav from "@/components/Nav". Import icons from "lucide-react".
+5. DO NOT include pricing. Ever. No dollar amounts for Memetik's services.
+6. End with a "Book a Strategy Call" CTA linking to https://cal.com/memetik/letstalk
+7. Match the Memetik dark premium design system: glass/translucent shells, rounded radii, mono metadata pills, layered glow.
+8. Use useEffect to set document.title and scroll to top.
+9. The hero H1 must use a contrast or direct-address formula, NOT an internal ownership claim. Preferred formulas in priority order:
+   a) Direct address + tension: "Your buyers are searching. They can't find you yet."
+   b) Contrast / before-after: "From invisible to the default recommendation." or "Zero visibility today. Category leader in 12 months."
+   c) Quantified gap: "14.8M searches. Zero results for [Company]."
+   d) Provocative question: "Who gets the deal when [Company] doesn't show up?"
+   NEVER use the old "[Brand] can own the [category]" pattern — it reads as agency jargon to founders. The headline must make a founder who knows nothing about AI search immediately feel the stakes. Keep it under 10 words. No accent line unless extremely short.
+10. A founder should be able to skim the ENTIRE main narrative in under 3 minutes.
+11. Make it 400-700 lines. The old 550-950 range was too verbose.
+12. The page is PUBLIC. Do not include passwords or gates.
+
+NARRATIVE RULES:
+13. "The Problem" section should use narrativeProse (paragraph blocks) to tell a story, NOT walls of stacked cards. Use at most 2-3 cards for data like AI visibility scores. Name the external problem (invisible), the internal problem (losing deals they don't know about), and the philosophical problem (inferior competitors getting found first).
+14. "The Opportunity" section should excite. Show the size of the prize AND the specific wedge. Include PhasedUpsideChart and the calculator here.
+15. "The Plan" section should reassure. Open with a 3-step summary, then expand into month blocks and scope blocks.
+16. Use StrategySectionLead sparingly — at most in 1 section. Other sections use a subtitle and/or narrativeProse.
+17. Max 2-3 cards per section. Use prose for flow; cards for data or distinct concepts only.
+18. Include a failure block and success block as data, not as sections (they render between the last section and the CTA).
+19. Do not fabricate competitors or metrics. Use backlink metrics from the brief where available.
+20. Translate operator-only doctrine into founder language. Do not use Money Entities, Apex Assets, Knowledge Graph, Trust Relay, recommendation-share, wedge, or shortlist.
+21. Include the literal phrase "Estimate-only" at least once.
+22. Do not bypass the approved brief. Raw research payload is not the canonical input.
+23. Put detailed evidence (keyword tables, competitor data, assumptions, prompt evidence) in the Appendix using StrategyAppendixSection.
+24. The main narrative must have one reading axis: vertical. No side-by-side layouts.
+25. Include 2-3 real unbranded prompt examples inside "The Problem" section showing who currently wins the AI answers.
+26. Preserve the full delivery scope: on-site pages, off-site authority, reviews, backlinks, technical infrastructure, and refresh loops.
+27. Frame as monthly deployments, not weekly cadence.
+28. Do not promise a fixed count of pages. Memetik builds as many as needed.
+29. Use cumulative traffic progression so the final chart point matches the 12-month expected traffic number.
+30. Canonical lineage must be preserved: master reference -> generation contract -> brief -> page.`;
 }
 
 function buildContentDraftSystemPrompt(canonicalInputs) {
@@ -1500,12 +1472,15 @@ RULES:
 1. Output ONLY valid JSON. No markdown fences, no explanation, no commentary.
 2. Extract every piece of visible text content from the TSX.
 3. Map icons to their string names (e.g., "Search", "TrendingUp", "Target").
-4. The "tldr" field is MANDATORY. Write 6-8 bullet points that a founder can skim in 10 seconds. Each bullet must be one sentence, data-grounded, and actionable. Cover: current AI visibility score, total search opportunity, current traffic/authority baseline, the recommended opening move, competitive landscape summary, and execution timeline. These render as the first visible content block on the page — they must be compelling.
+4. The "tldr" field is MANDATORY. Write 6-8 bullet points that a founder can skim in 10 seconds. Each bullet must be one sentence, data-grounded, and actionable. Cover: current AI visibility score, total search opportunity, current traffic/authority baseline, the recommended opening move, competitive landscape summary, and execution timeline.
 5. Do NOT include any publicBannedTerms: ${JSON.stringify(["Foundation Assets", "AI share of voice", "pSEO", "programmatic SEO", "Apex Assets", "Knowledge Graph", "Trust Relay", "recommendation-share", "shortlist", "wedge", "Dream 100"])}.
-6. Translate any internal terms to public equivalents (e.g., "Apex Assets" -> "bottom-of-funnel pages", "Knowledge Graph" -> "supporting content network", "Trust Relay" -> "off-site authority", "Money Entities" -> "priority buying queries").
+6. Translate any internal terms to public equivalents.
 7. Preserve all data: metrics, breakdowns, chart points, timeline milestones, appendix tables, prompt observations.
 8. The JSON must be complete enough to render the full page from data alone.
-9. The template renders a "Summarise with AI" button and the TLDR section at the very top of the hero, before the executive summary. You do not need to include button markup — just ensure the tldr array and all content fields are populated.`;
+9. The page follows a StoryBrand 3-act structure: "The Problem" (section 01), "The Opportunity" (section 02), "The Plan" (section 03). Extract sections accordingly. Use "narrativeProse" for paragraph-style content blocks within sections.
+10. Extract "failureBlock" and "successBlock" if the TSX contains agitation/success-vision content near the CTA. These have eyebrow, heading, and bullets fields.
+11. The hero headline must use a contrast or direct-address formula (e.g. "Your buyers are searching. They can't find you yet.") — NEVER the old "[Brand] can own the [category]" pattern.
+12. The template renders a "Summarise with AI" button and the TLDR section at the very top of the hero. Just ensure the tldr array and all content fields are populated.`;
 
   const userPrompt = `Extract the content from this strategy page TSX into the StrategyContentData JSON format.
 
@@ -1579,7 +1554,7 @@ async function generateStrategyPage(company, researchData, options = {}) {
   const systemPrompt = buildSystemPrompt(examples, components, canonicalInputs.docs, brief);
   const keywordAttributionSummary = buildKeywordAttributionSummary(researchData);
 
-  const userPrompt = `Generate a complete strategy page TSX file for this company.
+  const userPrompt = `Generate a complete strategy page TSX file for this company using the StoryBrand 3-act narrative structure.
 
 CANONICAL LINEAGE (do not break): master reference -> generation contract -> brief -> page
 APPROVED BRIEF PATH: ${brief.filePath}
@@ -1599,45 +1574,25 @@ ${brief.content}
 The component should be named Strategy${pascalCase(company.slug)} and exported as default.
 The file will be saved at client/src/pages/strategy/${pascalCase(company.slug)}.tsx
 
-Mandatory output structure additions:
-- Add an "Executive Summary" block with 4 stacked headline cards: Total search opportunity, Expected traffic in 12 months, Aggressive upside, and First 6-month target, followed by 3 stacked immediate actions.
-- Use StrategyPageFrame, StrategyHero, StrategySectionShell, and StrategyCTA as the default page architecture.
-- Every primary section should use StrategySectionLead or an equivalent one-takeaway block.
-- Main narrative sections: "State of Search 2026", "Where ${company.name} Is Today" (or "Current State Snapshot"), "The Opportunity", "Why ${company.name} Can Win", "Competitive Gap", "AI Visibility Gap", "Revenue / Commercial Impact", "6-month Growth Plan", "Off-site Authority", "What Memetik Actually Builds and Ships", "Operating Model", "Why Memetik".
-- Add an appendix / supporting evidence section using StrategyAppendixSection.
-- Put detailed keyword universe, assumptions/confidence, detailed competitor evidence, prompt evidence, and optional calculator in the appendix rather than the primary flow.
-- Use backlinks/referring-domain values from payload where available (avoid placeholder unavailable text for these fields).
-- Keep executive-summary headline numbers compact enough that seven-figure values do not wrap awkwardly, but let the cards grow naturally; do not cram them into a horizontal row.
-- Make the hero H1 concise and claim-led. Default to a short ownership headline such as "${company.name} can own the <category> conversation" where appropriate.
-- Do not split the main hero idea across a long title plus a long accent. Prefer no accent line; if you use one, keep it extremely short.
-- Put nuance like timing, incumbent pressure, and execution detail into the subtitle instead of the H1.
-- If keyword attribution summary is available, add a compact competitor-keyword vs non-competitor / unbranded breakdown beneath each executive-summary metric card.
-- Keep hero metrics and primary visuals tied to validated topical subsets.
-- Display trajectory numbers as whole integers in visible UI labels.
-- If researchData.tamModel.totals.expectedTraffic12Months exists, use that terminology in the visible UI instead of "reachable visits".
-- Keep all planning jargon out of the main page. Do not use labels like reachable share, capture rate, or modeled coefficient in user-facing copy.
-- Use researchData.topicalIntegrity to avoid headline claims from excluded or ambiguous keyword groups.
-- Include 2-3 real unbranded prompt examples inside the AI visibility section.
-- Include a concrete 6-month growth plan: Month 1, Month 2, Month 3, and Months 4-6, covering the first entity/category wedge, first pages to ship, first prompts to win, first competitors to attack, and how work compounds across the engagement.
-- Add a dedicated section that makes the scope of execution unmistakable. It should explicitly show: priority buying query mapping, bottom-of-funnel page production, comparison/evaluation content, supporting content coverage, aggressive backlink acquisition, digital PR / press release / listicle pushes, review-platform work, Bing/IndexNow/schema infrastructure, and third-party/forum/community placements.
-- Make the delivery section feel substantial enough that a founder can immediately see why this is a serious execution program rather than a light content retainer.
-- The "What Memetik Actually Builds and Ships" section must use vertically stacked scope blocks. Do not use DeliveryScopeMatrix or any dashboard-style matrix there.
-- Do not use fixed public page-count promises like 8–12 flagship assets. Say Memetik builds as many bottom-of-funnel pages as needed to cover demand, then expands supporting coverage and authority behind the winners.
-- The main story must read vertically. Do not use side-by-side layouts as the default pattern in the hero or primary sections.
-- Include a visible Month 1 / Month 2 / Month 3 / Months 4-6 rollout summary with concrete outputs, but stack those blocks vertically.
-- The Revenue / Commercial Impact section should stack vertically in this order: lead, explanation, PhasedUpsideChart, calculator, then assumptions/caveat note.
-- The Operating Model section must use GrowthTimelineChart, not WorkstreamTimeline. It should show deployment milestones tied to growth progression along one visual timeline and expose the full 12-month progression when 12-month planning numbers are shown.
-- The Operating Model timeline should support month-level deployment detail for hover on desktop and tap on mobile where the shared component allows it.
-- Keep the executive-summary metric cards at the top in a single vertical stack, then place the immediate actions underneath in a second vertical stack.
-- In the main narrative, avoid multi-column grids unless the content is a chart or appendix table.
-- Include the exact visible label "Estimate-only" at least once in the Revenue / Commercial Impact or Operating Model area.
-- Make the 12-month opportunity curve cumulative so its final point equals the visible expected-traffic-in-12-months figure.
-- Place the TAM / ROI calculator in or directly below the Revenue / Commercial Impact section so it is easy to find.
-- If tamModel.revenueModel.enabled is false, include a clear note: "Revenue planning requires client ACV/AOV and funnel inputs."
-- If researchData.tamModel.assumptions includes planning assumptions, keep them in the appendix and explain them in normal English rather than coefficient language.
-- Do not mention prior internal page versions, prior page names, or old draft history anywhere in the visible copy.
-- For BTS specifically, make the hero more commercial and punchy, make the Whop contrast visible, and frame BTS for serious creators building real businesses.
-- Reject any attempt to generate directly from raw research. The approved brief is already the canonical downstream planning artifact.
+REQUIRED STRUCTURE (StoryBrand 3-Act):
+1. Hero + TLDR + Executive Summary (section 00): 4 stacked metric cards + 3 immediate actions inside StrategyHero.
+2. "The Problem" (section 01): ONE section merging current state, competitive gap, AI visibility gap. Use narrativeProse paragraphs for story flow. Include 2-3 prompt observations. Max 2 cards for data.
+3. "The Opportunity" (section 02): ONE section merging wedge, right to win, commercial upside. Include PhasedUpsideChart and calculator. Use narrativeProse.
+4. "The Plan" (section 03): ONE section merging growth plan, delivery scope, off-site authority, operating model. Open with a 3-step summary via sectionLead, then month blocks, scope blocks, and GrowthTimelineChart.
+5. Failure block: data block (not a section) with 3-4 bullets about what happens if they do nothing.
+6. Success block: data block (not a section) with 3-4 bullets about what 12 months looks like.
+7. CTA: Book a strategy call.
+8. Appendix: Supporting evidence using StrategyAppendixSection.
+
+- Use StrategyPageFrame, StrategyHero, StrategySectionShell, StrategyCard, StrategyCTA.
+- Hero H1: use a contrast or direct-address formula that makes the stakes obvious to a founder who knows nothing about AI search. Preferred: "Your buyers are searching. They can't find you yet." or "From invisible to the default recommendation." or a quantified gap like "14.8M searches. Zero results for [Company]." NEVER use "[Brand] can own the [category]" — that is agency jargon. Under 10 words. No accent unless very short.
+- Make the page 400-700 lines.
+- If keyword attribution is available, add breakdown beneath each executive-summary metric card.
+- Include "Estimate-only" label at least once.
+- Use cumulative traffic progression in charts.
+- Translate all operator doctrine to founder language.
+- For BTS, frame for serious creators and contrast against Whop.
+- Do not fabricate data. Use brief evidence only.
 
 Generate the complete TSX file now.`;
 

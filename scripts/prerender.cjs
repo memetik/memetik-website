@@ -272,6 +272,13 @@ function dataStrategyContent(entry) {
       if (section.sectionLead.implication) html += `<p><em>So what:</em> ${esc(section.sectionLead.implication)}</p>\n`;
     }
 
+    if (section.narrativeProse) {
+      for (const block of section.narrativeProse) {
+        if (block.heading) html += `<h3>${esc(block.heading)}</h3>\n`;
+        html += `<p>${esc(block.body)}</p>\n`;
+      }
+    }
+
     if (section.highlightBoxes) {
       for (const box of section.highlightBoxes) {
         if (box.heading) html += `<p><strong>${esc(box.heading)}</strong></p>\n`;
@@ -332,6 +339,18 @@ function dataStrategyContent(entry) {
     html += `</section>\n`;
   }
 
+  if (data.failureBlock) {
+    html += `<section>\n<h2>${esc(data.failureBlock.heading)}</h2>\n`;
+    html += renderBullets(data.failureBlock.bullets);
+    html += `</section>\n`;
+  }
+
+  if (data.successBlock) {
+    html += `<section>\n<h2>${esc(data.successBlock.heading)}</h2>\n`;
+    html += renderBullets(data.successBlock.bullets);
+    html += `</section>\n`;
+  }
+
   html += `<section>\n<h2>Strategy call</h2>\n`;
   html += `<p>${esc(data.cta.body)}</p>\n`;
   html += `<p><a href="${esc(data.cta.href || "https://cal.com/memetik/letstalk")}">Book a strategy call</a></p>\n`;
@@ -378,6 +397,8 @@ function mapSectionHeading(heading) {
     "What Memetik Actually Builds and Ships": "What Memetik builds and ships",
     "Operating Model": "Operating cadence",
     "Why Memetik": "What Memetik builds and ships",
+    "The Problem": "Current state",
+    "The Plan": "What Memetik builds and ships",
   };
   return headingMap[heading] || heading;
 }
