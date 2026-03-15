@@ -1146,6 +1146,10 @@ function validateGeneratedTsx(tsxContent) {
     throw new Error(`Generated page hero title must not use the old "can own" agency pattern: "${heroProps.title}"`);
   }
 
+  if (!/oneLiner/.test(tsxContent)) {
+    console.warn(`  Warning: Generated TSX does not include an oneLiner prop. The content JSON enrichment will generate a fallback.`);
+  }
+
   if (!/GrowthTimelineChart/.test(tsxContent)) {
     throw new Error("Generated page must use GrowthTimelineChart for the Operating Model section.");
   }
@@ -1324,7 +1328,9 @@ NARRATIVE RULES:
 27. Frame as monthly deployments, not weekly cadence.
 28. Do not promise a fixed count of pages. Memetik builds as many as needed.
 29. Use cumulative traffic progression so the final chart point matches the 12-month expected traffic number.
-30. Canonical lineage must be preserved: master reference -> generation contract -> brief -> page.`;
+30. Canonical lineage must be preserved: master reference -> generation contract -> brief -> page.
+31. The hero must include a "oneLiner" prop — a single punchy stat line that renders in gold below the H1. Format: "[Quantified gap]. [Company consequence]." e.g. "14.8M monthly searches. Zero results for XoomAI." Keep it under 15 words. It must pass the 3-second test — a founder glances at the hero and instantly understands the stakes from headline + oneLiner alone.
+32. Do NOT generate deliverableStack, midPageCta, or transitionalCta in the TSX. These are added as standard doctrine during post-generation enrichment. The template auto-generates smart defaults for midPageCta and transitionalCta when not present in the JSON.`;
 }
 
 function buildContentDraftSystemPrompt(canonicalInputs) {
@@ -1480,7 +1486,10 @@ RULES:
 9. The page follows a StoryBrand 3-act structure: "The Problem" (section 01), "The Opportunity" (section 02), "The Plan" (section 03). Extract sections accordingly. Use "narrativeProse" for paragraph-style content blocks within sections.
 10. Extract "failureBlock" and "successBlock" if the TSX contains agitation/success-vision content near the CTA. These have eyebrow, heading, and bullets fields.
 11. The hero headline must use a contrast or direct-address formula (e.g. "Your buyers are searching. They can't find you yet.") — NEVER the old "[Brand] can own the [category]" pattern.
-12. The template renders a "Summarise with AI" button and the TLDR section at the very top of the hero. Just ensure the tldr array and all content fields are populated.`;
+12. The template renders a "Summarise with AI" button and the TLDR section at the very top of the hero. Just ensure the tldr array and all content fields are populated.
+13. Generate a "hero.oneLiner" field: a single punchy stat line for the 3-second hero test. Format: "[Big number/gap]. [Company consequence]." Under 15 words. Example: "14.8M monthly searches. Zero results for XoomAI."
+14. Do NOT generate deliverableStack in the JSON. It will be added by a post-generation enrichment script with standard Memetik doctrine.
+15. Do NOT generate midPageCta or transitionalCta. The template auto-generates smart defaults.`;
 
   const userPrompt = `Extract the content from this strategy page TSX into the StrategyContentData JSON format.
 
@@ -1511,6 +1520,14 @@ Generate the complete JSON now.`;
     if (!parsed.slug) parsed.slug = company.slug;
     if (!parsed.company) parsed.company = company.name;
     if (!parsed.title) parsed.title = `${company.name} — Founder Strategy Memo | MEMETIK`;
+
+    // Post-generation enrichment: add deliverableStack + validate oneLiner
+    const enrichScript = path.join(__dirname, "enrich-content-json.cjs");
+    if (fs.existsSync(enrichScript)) {
+      const { enrichContentJson } = require(enrichScript);
+      enrichContentJson(parsed, company);
+      console.log(`  Content JSON enriched with deliverableStack and oneLiner`);
+    }
 
     const outPath = path.join(contentJsonDir, `${company.slug}.json`);
     fs.writeFileSync(outPath, JSON.stringify(parsed, null, 2));
@@ -1575,7 +1592,7 @@ The component should be named Strategy${pascalCase(company.slug)} and exported a
 The file will be saved at client/src/pages/strategy/${pascalCase(company.slug)}.tsx
 
 REQUIRED STRUCTURE (StoryBrand 3-Act):
-1. Hero + TLDR + Executive Summary (section 00): 4 stacked metric cards + 3 immediate actions inside StrategyHero.
+1. Hero + TLDR + Executive Summary (section 00): 4 stacked metric cards + 3 immediate actions inside StrategyHero. Include a "oneLiner" prop with a quantified stat line for the 3-second test (e.g. "14.8M monthly searches. Zero results for XoomAI.").
 2. "The Problem" (section 01): ONE section merging current state, competitive gap, AI visibility gap. Use narrativeProse paragraphs for story flow. Include 2-3 prompt observations. Max 2 cards for data.
 3. "The Opportunity" (section 02): ONE section merging wedge, right to win, commercial upside. Include PhasedUpsideChart and calculator. Use narrativeProse.
 4. "The Plan" (section 03): ONE section merging growth plan, delivery scope, off-site authority, operating model. Open with a 3-step summary via sectionLead, then month blocks, scope blocks, and GrowthTimelineChart.
