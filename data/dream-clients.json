@@ -807,12 +807,71 @@
         "domain": "helpscout.com"
       },
       {
-        "name": "Gmelius",
-        "domain": "gmelius.com"
+        "name": "Intercom",
+        "domain": "intercom.com"
       },
       {
-        "name": "Drag",
-        "domain": "dragapp.com"
+        "name": "Zendesk",
+        "domain": "zendesk.com"
+      }
+    ]
+  },
+  {
+    "slug": "xoomai",
+    "name": "XoomAI",
+    "domain": "xoomai.com.au",
+    "category": "AI Consultancy / Managed AI Employee & Workflow Automation",
+    "industry": "AI Consultancy",
+    "brandDisambiguation": "managed AI employee and workflow automation for Australian businesses",
+    "semanticSeeds": [
+      "ai employee for business",
+      "managed ai agent service",
+      "ai workflow automation",
+      "ai automation consultant",
+      "business ai integration",
+      "ai receptionist",
+      "ai admin assistant",
+      "dedicated hardware ai agent",
+      "claude ai integration services",
+      "ai strategy consulting australia"
+    ],
+    "semanticExclusions": [
+      "zoom ai",
+      "xoom money transfer",
+      "consumer chatbot",
+      "image generator",
+      "voice clone",
+      "free chatgpt",
+      "student ai",
+      "gaming ai"
+    ],
+    "promptModifiers": {
+      "categoryLabel": "managed AI employee and workflow automation"
+    },
+    "competitorSeeds": [
+      {
+        "name": "Tribeca Digital",
+        "domain": "tribecadigital.com.au"
+      },
+      {
+        "name": "Appenate AI Consulting",
+        "domain": "appenate.com"
+      },
+      {
+        "name": "Inventium AI Consulting",
+        "domain": "inventium.com.au"
+      },
+      {
+        "name": "Azure AI Consulting Australia",
+        "domain": "microsoft.com"
+      },
+      {
+        "name": "Custom D",
+        "domain": "customd.com"
+      },
+      {
+        "name": "Xero AI Automation Partners",
+        "domain": "xero.com"
       }
     ]
   },

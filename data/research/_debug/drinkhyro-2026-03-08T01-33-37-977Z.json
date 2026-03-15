@@ -1,0 +1,220 @@
+{
+  "slug": "drinkhyro",
+  "startedAt": "2026-03-08T01:32:55.191Z",
+  "mode": "strict",
+  "company": {
+    "slug": "drinkhyro",
+    "name": "Hyro",
+    "domain": "drinkhyro.com",
+    "category": "Consumer Health / Electrolyte Drink Mix",
+    "industry": "Consumer Health",
+    "brandDisambiguation": "electrolyte powder drink mix",
+    "semanticSeeds": [
+      "electrolyte powder drink mix",
+      "electrolyte drink mix",
+      "hydration powder",
+      "hydration drink mix",
+      "sugar free hydration drink",
+      "electrolyte sachets",
+      "sports hydration powder",
+      "daily electrolyte powder"
+    ],
+    "semanticExclusions": [
+      "chatbot",
+      "conversational ai",
+      "voice ai",
+      "call center ai",
+      "patient engagement",
+      "healthcare automation",
+      "enterprise ai",
+      "customer support ai"
+    ],
+    "promptModifiers": {
+      "categoryLabel": "electrolyte powder drink mix"
+    },
+    "competitorSeeds": [
+      {
+        "name": "LMNT",
+        "domain": "drinklmnt.com"
+      },
+      {
+        "name": "Liquid I.V.",
+        "domain": "liquid-iv.com"
+      },
+      {
+        "name": "Hydralyte",
+        "domain": "hydralyte.com"
+      },
+      {
+        "name": "Nuun",
+        "domain": "nuunlife.com"
+      },
+      {
+        "name": "DripDrop",
+        "domain": "dripdrop.com"
+      },
+      {
+        "name": "Sodii",
+        "domain": "sodii.com"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "step": "preflight_auth_check_us",
+      "at": "2026-03-08T01:33:37.974Z",
+      "endpoint": "/v3/dataforseo_labs/google/domain_rank_overview/live",
+      "durationMs": 42782,
+      "httpStatus": 200,
+      "requestBody": [
+        {
+          "target": "drinkhyro.com",
+          "location_code": 2840,
+          "language_code": "en"
+        }
+      ],
+      "summary": {
+        "status_code": 20000,
+        "status_message": "Ok.",
+        "time": "0.1255 sec.",
+        "cost": 0.0101,
+        "tasks_count": 1,
+        "tasks_error": 0,
+        "first_task_status_code": 20000,
+        "first_task_status_message": "Ok.",
+        "first_result_items": 1
+      },
+      "response": {
+        "version": "0.1.20260223",
+        "status_code": 20000,
+        "status_message": "Ok.",
+        "time": "0.1255 sec.",
+        "cost": 0.0101,
+        "tasks_count": 1,
+        "tasks_error": 0,
+        "tasks": [
+          {
+            "id": "03080333-1445-0388-0000-ba6ed99c2703",
+            "status_code": 20000,
+            "status_message": "Ok.",
+            "time": "0.0705 sec.",
+            "cost": 0.0101,
+            "result_count": 1,
+            "path": [
+              "v3",
+              "dataforseo_labs",
+              "google",
+              "domain_rank_overview",
+              "live"
+            ],
+            "data": {
+              "api": "dataforseo_labs",
+              "function": "domain_rank_overview",
+              "se_type": "google",
+              "target": "drinkhyro.com",
+              "location_code": 2840,
+              "language_code": "en"
+            },
+            "result": [
+              {
+                "se_type": "google",
+                "target": "drinkhyro.com",
+                "location_code": 2840,
+                "language_code": "en",
+                "total_count": 1,
+                "items_count": 1,
+                "items": [
+                  {
+                    "se_type": "google",
+                    "location_code": 2840,
+                    "language_code": "en",
+                    "metrics": {
+                      "organic": {
+                        "pos_1": 3,
+                        "pos_2_3": 4,
+                        "pos_4_10": 12,
+                        "pos_11_20": 30,
+                        "pos_21_30": 29,
+                        "pos_31_40": 26,
+                        "pos_41_50": 51,
+                        "pos_51_60": 34,
+                        "pos_61_70": 39,
+                        "pos_71_80": 46,
+                        "pos_81_90": 49,
+                        "pos_91_100": 39,
+                        "etv": 1004.448008492589,
+                        "count": 362,
+                        "estimated_paid_traffic_cost": 2044.9113164409064,
+                        "is_new": 283,
+                        "is_up": 41,
+                        "is_down": 32,
+                        "is_lost": 108,
+                        "clickstream_etv": null,
+                        "clickstream_gender_distribution": null,
+                        "clickstream_age_distribution": null
+                      },
+                      "paid": {
+                        "pos_1": 0,
+                        "pos_2_3": 0,
+                        "pos_4_10": 0,
+                        "pos_11_20": 0,
+                        "pos_21_30": 0,
+                        "pos_31_40": 0,
+                        "pos_41_50": 0,
+                        "pos_51_60": 0,
+                        "pos_61_70": 0,
+                        "pos_71_80": 0,
+                        "pos_81_90": 0,
+                        "pos_91_100": 0,
+                        "etv": 0,
+                        "count": 0,
+                        "estimated_paid_traffic_cost": 0,
+                        "is_new": 0,
+                        "is_up": 0,
+                        "is_down": 0,
+                        "is_lost": 0,
+                        "clickstream_etv": null,
+                        "clickstream_gender_distribution": null,
+                        "clickstream_age_distribution": null
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "step": "preflight_auth_check_au",
+      "at": "2026-03-08T01:33:37.977Z",
+      "endpoint": "/v3/dataforseo_labs/google/domain_rank_overview/live",
+      "durationMs": 2,
+      "requestBody": [
+        {
+          "target": "drinkhyro.com",
+          "location_code": 2036,
+          "language_code": "en"
+        }
+      ],
+      "networkError": "socket hang up"
+    }
+  ],
+  "issues": [
+    {
+      "step": "preflight",
+      "error": "socket hang up"
+    },
+    {
+      "step": "runResearch",
+      "error": "preflight failed: socket hang up"
+    }
+  ],
+  "timingsMs": {
+    "preflight": 42785
+  },
+  "preflight": null,
+  "finishedAt": "2026-03-08T01:33:37.977Z",
+  "totalDurationMs": 42788
+}

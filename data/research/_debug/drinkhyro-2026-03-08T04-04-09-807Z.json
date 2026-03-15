@@ -1,0 +1,113 @@
+{
+  "slug": "drinkhyro",
+  "startedAt": "2026-03-08T04:03:46.877Z",
+  "mode": "strict",
+  "company": {
+    "slug": "drinkhyro",
+    "name": "Hyro",
+    "domain": "drinkhyro.com",
+    "category": "Consumer Health / Electrolyte Drink Mix",
+    "industry": "Consumer Health",
+    "brandDisambiguation": "electrolyte powder drink mix",
+    "semanticSeeds": [
+      "electrolyte powder drink mix",
+      "electrolyte drink mix",
+      "hydration powder",
+      "hydration drink mix",
+      "sugar free hydration drink",
+      "electrolyte sachets",
+      "sports hydration powder",
+      "daily electrolyte powder"
+    ],
+    "semanticExclusions": [
+      "chatbot",
+      "conversational ai",
+      "voice ai",
+      "call center ai",
+      "patient engagement",
+      "healthcare automation",
+      "enterprise ai",
+      "customer support ai"
+    ],
+    "promptModifiers": {
+      "categoryLabel": "electrolyte powder drink mix"
+    },
+    "competitorSeeds": [
+      {
+        "name": "LMNT",
+        "domain": "drinklmnt.com"
+      },
+      {
+        "name": "Liquid I.V.",
+        "domain": "liquid-iv.com"
+      },
+      {
+        "name": "Hydralyte",
+        "domain": "hydralyte.com"
+      },
+      {
+        "name": "Nuun",
+        "domain": "nuunlife.com"
+      },
+      {
+        "name": "DripDrop",
+        "domain": "dripdrop.com"
+      },
+      {
+        "name": "Sodii",
+        "domain": "sodii.com"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "step": "preflight_auth_check_us",
+      "at": "2026-03-08T04:04:09.807Z",
+      "endpoint": "/v3/dataforseo_labs/google/domain_rank_overview/live",
+      "durationMs": 22929,
+      "httpStatus": 401,
+      "requestBody": [
+        {
+          "target": "drinkhyro.com",
+          "location_code": 2840,
+          "language_code": "en"
+        }
+      ],
+      "summary": {
+        "status_code": 40100,
+        "status_message": "You are not authorized to access this resource. See your login details here: https://app.dataforseo.com/api-access .",
+        "time": "0 sec.",
+        "cost": 0,
+        "tasks_count": 0,
+        "tasks_error": 0,
+        "first_result_items": 0
+      },
+      "response": {
+        "version": "0.1.20260223",
+        "status_code": 40100,
+        "status_message": "You are not authorized to access this resource. See your login details here: https://app.dataforseo.com/api-access .",
+        "time": "0 sec.",
+        "cost": 0,
+        "tasks_count": 0,
+        "tasks_error": 0,
+        "tasks": null
+      }
+    }
+  ],
+  "issues": [
+    {
+      "step": "preflight",
+      "error": "[/v3/dataforseo_labs/google/domain_rank_overview/live] DataForSEO status 40100: You are not authorized to access this resource. See your login details here: https://app.dataforseo.com/api-access ."
+    },
+    {
+      "step": "runResearch",
+      "error": "preflight failed: [/v3/dataforseo_labs/google/domain_rank_overview/live] DataForSEO status 40100: You are not authorized to access this resource. See your login details here: https://app.dataforseo.com/api-access ."
+    }
+  ],
+  "timingsMs": {
+    "preflight": 22929
+  },
+  "preflight": null,
+  "finishedAt": "2026-03-08T04:04:09.807Z",
+  "totalDurationMs": 22932
+}

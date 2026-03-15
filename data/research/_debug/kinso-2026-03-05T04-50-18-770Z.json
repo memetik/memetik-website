@@ -1,0 +1,211 @@
+{
+  "slug": "kinso",
+  "startedAt": "2026-03-05T04:50:17.397Z",
+  "mode": "strict",
+  "company": {
+    "slug": "kinso",
+    "name": "Kinso",
+    "domain": "kinso.ai",
+    "category": "Communication / Unified AI Inbox",
+    "industry": "Communication / Collaboration",
+    "competitorSeeds": [
+      {
+        "name": "Front",
+        "domain": "front.com"
+      },
+      {
+        "name": "Intercom",
+        "domain": "intercom.com"
+      },
+      {
+        "name": "Zendesk",
+        "domain": "zendesk.com"
+      },
+      {
+        "name": "Help Scout",
+        "domain": "helpscout.com"
+      },
+      {
+        "name": "Missive",
+        "domain": "missiveapp.com"
+      },
+      {
+        "name": "Hiver",
+        "domain": "hiverhq.com"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "step": "preflight_auth_check",
+      "at": "2026-03-05T04:50:18.769Z",
+      "endpoint": "/v3/dataforseo_labs/google/domain_rank_overview/live",
+      "durationMs": 1367,
+      "httpStatus": 200,
+      "requestBody": [
+        {
+          "target": "kinso.ai",
+          "location_code": 2840,
+          "language_code": "en"
+        },
+        {
+          "target": "kinso.ai",
+          "location_code": 2036,
+          "language_code": "en"
+        }
+      ],
+      "summary": {
+        "status_code": 20000,
+        "status_message": "Ok.",
+        "time": "0.1455 sec.",
+        "cost": 0.0101,
+        "tasks_count": 2,
+        "tasks_error": 1,
+        "first_task_status_code": 20000,
+        "first_task_status_message": "Ok.",
+        "first_result_items": 1
+      },
+      "response": {
+        "version": "0.1.20260223",
+        "status_code": 20000,
+        "status_message": "Ok.",
+        "time": "0.1455 sec.",
+        "cost": 0.0101,
+        "tasks_count": 2,
+        "tasks_error": 1,
+        "tasks": [
+          {
+            "id": "03050650-1445-0388-0000-7211d1b5f5c9",
+            "status_code": 20000,
+            "status_message": "Ok.",
+            "time": "0.0645 sec.",
+            "cost": 0.0101,
+            "result_count": 1,
+            "path": [
+              "v3",
+              "dataforseo_labs",
+              "google",
+              "domain_rank_overview",
+              "live"
+            ],
+            "data": {
+              "api": "dataforseo_labs",
+              "function": "domain_rank_overview",
+              "se_type": "google",
+              "target": "kinso.ai",
+              "location_code": 2840,
+              "language_code": "en"
+            },
+            "result": [
+              {
+                "se_type": "google",
+                "target": "kinso.ai",
+                "location_code": 2840,
+                "language_code": "en",
+                "total_count": 1,
+                "items_count": 1,
+                "items": [
+                  {
+                    "se_type": "google",
+                    "location_code": 2840,
+                    "language_code": "en",
+                    "metrics": {
+                      "organic": {
+                        "pos_1": 2,
+                        "pos_2_3": 0,
+                        "pos_4_10": 1,
+                        "pos_11_20": 1,
+                        "pos_21_30": 2,
+                        "pos_31_40": 2,
+                        "pos_41_50": 0,
+                        "pos_51_60": 2,
+                        "pos_61_70": 1,
+                        "pos_71_80": 1,
+                        "pos_81_90": 3,
+                        "pos_91_100": 1,
+                        "etv": 95.4660008624196,
+                        "count": 16,
+                        "estimated_paid_traffic_cost": 428.8628284782171,
+                        "is_new": 7,
+                        "is_up": 5,
+                        "is_down": 2,
+                        "is_lost": 12,
+                        "clickstream_etv": null,
+                        "clickstream_gender_distribution": null,
+                        "clickstream_age_distribution": null
+                      },
+                      "paid": {
+                        "pos_1": 0,
+                        "pos_2_3": 0,
+                        "pos_4_10": 0,
+                        "pos_11_20": 0,
+                        "pos_21_30": 0,
+                        "pos_31_40": 0,
+                        "pos_41_50": 0,
+                        "pos_51_60": 0,
+                        "pos_61_70": 0,
+                        "pos_71_80": 0,
+                        "pos_81_90": 0,
+                        "pos_91_100": 0,
+                        "etv": 0,
+                        "count": 0,
+                        "estimated_paid_traffic_cost": 0,
+                        "is_new": 0,
+                        "is_up": 0,
+                        "is_down": 0,
+                        "is_lost": 0,
+                        "clickstream_etv": null,
+                        "clickstream_gender_distribution": null,
+                        "clickstream_age_distribution": null
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "03050650-1445-0388-0000-6a5af3d42916",
+            "status_code": 40000,
+            "status_message": "You can set only one task at a time.",
+            "time": "0 sec.",
+            "cost": 0,
+            "result_count": 0,
+            "path": [
+              "v3",
+              "dataforseo_labs",
+              "google",
+              "domain_rank_overview",
+              "live"
+            ],
+            "data": {
+              "api": "dataforseo_labs",
+              "function": "domain_rank_overview",
+              "se_type": "google",
+              "target": "kinso.ai",
+              "location_code": 2036,
+              "language_code": "en"
+            },
+            "result": null
+          }
+        ]
+      }
+    }
+  ],
+  "issues": [
+    {
+      "step": "preflight",
+      "error": "[/v3/dataforseo_labs/google/domain_rank_overview/live] Task status 40000: You can set only one task at a time."
+    },
+    {
+      "step": "runResearch",
+      "error": "preflight failed: [/v3/dataforseo_labs/google/domain_rank_overview/live] Task status 40000: You can set only one task at a time."
+    }
+  ],
+  "timingsMs": {
+    "preflight": 1368
+  },
+  "preflight": null,
+  "finishedAt": "2026-03-05T04:50:18.770Z",
+  "totalDurationMs": 1374
+}
