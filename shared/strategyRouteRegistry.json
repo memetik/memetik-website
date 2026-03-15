@@ -78,8 +78,8 @@
       "slug": "xoomai",
       "route": "/strategy/xoomai",
       "componentKey": "xoomai",
-      "title": "XoomAI — Dream 100 Pipeline Audit | MEMETIK",
-      "description": "Dream 100 pipeline audit and revenue-led search strategy for XoomAI focused on XoomAgent™, vertical account selection, outbound-page alignment, and commercial demand capture.",
+      "title": "XoomAI — Founder Strategy Memo | MEMETIK",
+      "description": "Founder-facing strategy memo for XoomAI focused on XoomAgent™, vertical account selection, outbound-page alignment, and commercial demand capture.",
       "prerenderMode": "summary"
     }
   ],
@@ -113,7 +113,10 @@
       "shortlist",
       "wedge",
       "8–12",
-      "8-12"
+      "8-12",
+      "Dream 100",
+      "dream 100",
+      "Dream100"
     ],
     "requiredHtmlSections": [
       "Current state",
