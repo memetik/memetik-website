@@ -6,7 +6,6 @@
   "description": "Founder-facing strategy memo for XoomAI focused on XoomAgent™, vertical account selection, outbound-page alignment, and commercial demand capture.",
   "generatedAt": "2026-03-14",
   "researchConfidence": 90,
-
   "tldr": [
     "0% AI visibility across ChatGPT, Gemini, and Google AI Overviews — not mentioned in any sampled prompts.",
     "14.8M total validated search demand in the category with 310K base expected traffic at 12 months.",
@@ -15,14 +14,18 @@
     "No competitors own the AI consultancy + managed AI employee niche in AU — wide open.",
     "6-month execution: decision pages month 1, comparison/review coverage month 2-3, compound distribution months 4-6."
   ],
-
   "hero": {
     "eyebrow": "Memetik founder strategy memo",
     "headline": "Your buyers are searching. They can't find you yet.",
     "subtitle": "14.8 million searches happen in your category every month. Right now, XoomAI appears in zero of them — not in Google, not in ChatGPT, not in Gemini. This strategy shows exactly how to change that.",
-    "tags": ["xoomai.com.au", "AI Consultancy", "AU + US", "Managed AI Employee & Workflow Automation"]
+    "tags": [
+      "xoomai.com.au",
+      "AI Consultancy",
+      "AU + US",
+      "Managed AI Employee & Workflow Automation"
+    ],
+    "oneLiner": "14.8M monthly searches. Zero results for XoomAI."
   },
-
   "sections": [
     {
       "id": "the-problem",
@@ -100,20 +103,82 @@
         }
       ],
       "upsideChart": [
-        { "month": 1, "low": 800, "base": 2800, "high": 4500 },
-        { "month": 2, "low": 3500, "base": 9400, "high": 14000 },
-        { "month": 3, "low": 9000, "base": 18500, "high": 28000 },
-        { "month": 4, "low": 18000, "base": 35000, "high": 54000 },
-        { "month": 5, "low": 32000, "base": 63000, "high": 96000 },
-        { "month": 6, "low": 50000, "base": 114910, "high": 140000 },
-        { "month": 7, "low": 73000, "base": 146000, "high": 205000 },
-        { "month": 8, "low": 94000, "base": 182000, "high": 275000 },
-        { "month": 9, "low": 112000, "base": 218000, "high": 350000 },
-        { "month": 10, "low": 131000, "base": 252000, "high": 420000 },
-        { "month": 11, "low": 145000, "base": 282000, "high": 480000 },
-        { "month": 12, "low": 157465, "base": 310568, "high": 538574 }
+        {
+          "month": 1,
+          "low": 800,
+          "base": 2800,
+          "high": 4500
+        },
+        {
+          "month": 2,
+          "low": 3500,
+          "base": 9400,
+          "high": 14000
+        },
+        {
+          "month": 3,
+          "low": 9000,
+          "base": 18500,
+          "high": 28000
+        },
+        {
+          "month": 4,
+          "low": 18000,
+          "base": 35000,
+          "high": 54000
+        },
+        {
+          "month": 5,
+          "low": 32000,
+          "base": 63000,
+          "high": 96000
+        },
+        {
+          "month": 6,
+          "low": 50000,
+          "base": 114910,
+          "high": 140000
+        },
+        {
+          "month": 7,
+          "low": 73000,
+          "base": 146000,
+          "high": 205000
+        },
+        {
+          "month": 8,
+          "low": 94000,
+          "base": 182000,
+          "high": 275000
+        },
+        {
+          "month": 9,
+          "low": 112000,
+          "base": 218000,
+          "high": 350000
+        },
+        {
+          "month": 10,
+          "low": 131000,
+          "base": 252000,
+          "high": 420000
+        },
+        {
+          "month": 11,
+          "low": 145000,
+          "base": 282000,
+          "high": 480000
+        },
+        {
+          "month": 12,
+          "low": 157465,
+          "base": 310568,
+          "high": 538574
+        }
       ],
-      "calculator": { "baseVisits": 310568 },
+      "calculator": {
+        "baseVisits": 310568
+      },
       "highlightBoxes": [
         {
           "title": "Estimate-only",
@@ -209,88 +274,223 @@
       "timelineChart": {
         "points": [
           {
-            "month": 1, "title": "Ship the first decision pages",
+            "month": 1,
+            "title": "Ship the first decision pages",
             "detail": "Month 1 establishes the first commercial territory: the buyer-guide cluster around AI tools, best AI, best AI for coding, and workflow automation terms.",
-            "bullets": ["Prioritize the first commercial prompt set.", "Publish the first decision pages and buyer guides.", "Set up schema, sitemap, canonicals, Bing, and IndexNow."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 2800, "low": 800, "base": 2800, "high": 4500
+            "bullets": [
+              "Prioritize the first commercial prompt set.",
+              "Publish the first decision pages and buyer guides.",
+              "Set up schema, sitemap, canonicals, Bing, and IndexNow."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 2800,
+            "low": 800,
+            "base": 2800,
+            "high": 4500
           },
           {
-            "month": 2, "title": "Expand comparisons and trust surfaces",
+            "month": 2,
+            "title": "Expand comparisons and trust surfaces",
             "detail": "Month 2 adds comparison pressure and third-party reinforcement.",
-            "bullets": ["Launch head-to-head and evaluation pages.", "Strengthen review-platform presence.", "Start community, listicle, and editorial outreach."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 9400, "low": 3500, "base": 9400, "high": 14000
+            "bullets": [
+              "Launch head-to-head and evaluation pages.",
+              "Strengthen review-platform presence.",
+              "Start community, listicle, and editorial outreach."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 9400,
+            "low": 3500,
+            "base": 9400,
+            "high": 14000
           },
           {
-            "month": 3, "title": "Deepen supporting coverage",
+            "month": 3,
+            "title": "Deepen supporting coverage",
             "detail": "Month 3 broadens the content network so answer engines find the same story in more places.",
-            "bullets": ["Ship supporting use-case and pricing-support pages.", "Improve internal linking to core pages.", "Re-test answer surfaces and tighten underperformers."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 18500, "low": 9000, "base": 18500, "high": 28000
+            "bullets": [
+              "Ship supporting use-case and pricing-support pages.",
+              "Improve internal linking to core pages.",
+              "Re-test answer surfaces and tighten underperformers."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 18500,
+            "low": 9000,
+            "base": 18500,
+            "high": 28000
           },
           {
-            "month": 4, "title": "Reinforce first winners",
+            "month": 4,
+            "title": "Reinforce first winners",
             "detail": "Month 4 shifts from launch to reinforcement.",
-            "bullets": ["Refresh early winners with stronger comparisons.", "Widen community and professional distribution.", "Push more backlinks into pages gaining traction."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 35000, "low": 18000, "base": 35000, "high": 54000
+            "bullets": [
+              "Refresh early winners with stronger comparisons.",
+              "Widen community and professional distribution.",
+              "Push more backlinks into pages gaining traction."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 35000,
+            "low": 18000,
+            "base": 35000,
+            "high": 54000
           },
           {
-            "month": 5, "title": "Add proof-heavy assets",
+            "month": 5,
+            "title": "Add proof-heavy assets",
             "detail": "Month 5 broadens the commercial surface with pricing and benefit-proof content.",
-            "bullets": ["Publish pricing-support and selection-guidance content.", "Add case-evidence style proof.", "Continue editorial and backlink reinforcement."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 63000, "low": 32000, "base": 63000, "high": 96000
+            "bullets": [
+              "Publish pricing-support and selection-guidance content.",
+              "Add case-evidence style proof.",
+              "Continue editorial and backlink reinforcement."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 63000,
+            "low": 32000,
+            "base": 63000,
+            "high": 96000
           },
           {
-            "month": 6, "title": "Establish first market footprint",
+            "month": 6,
+            "title": "Establish first market footprint",
             "detail": "By Month 6, XoomAI should no longer look invisible.",
-            "bullets": ["Reach the first 6-month target.", "Refresh winning pages rather than just adding new volume.", "Use reporting to decide which themes deserve heavier expansion."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 114910, "low": 50000, "base": 114910, "high": 140000
+            "bullets": [
+              "Reach the first 6-month target.",
+              "Refresh winning pages rather than just adding new volume.",
+              "Use reporting to decide which themes deserve heavier expansion."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 114910,
+            "low": 50000,
+            "base": 114910,
+            "high": 140000
           },
           {
-            "month": 7, "title": "Scale into adjacent angles",
+            "month": 7,
+            "title": "Scale into adjacent angles",
             "detail": "After the first footprint is established, widen into adjacent use cases and provider comparisons.",
-            "bullets": ["Expand decision pages around winning subtopics.", "Keep review velocity active.", "Patch pages that still look generic."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 146000, "low": 73000, "base": 146000, "high": 205000
+            "bullets": [
+              "Expand decision pages around winning subtopics.",
+              "Keep review velocity active.",
+              "Patch pages that still look generic."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 146000,
+            "low": 73000,
+            "base": 146000,
+            "high": 205000
           },
           {
-            "month": 8, "title": "Increase density around use cases",
+            "month": 8,
+            "title": "Increase density around use cases",
             "detail": "Month 8 builds retrieval density and buyer-fit clarity.",
-            "bullets": ["Add more use-case and persona-adjacent support pages.", "Reinforce internal pathways.", "Keep authority-building pointed at best themes."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 182000, "low": 94000, "base": 182000, "high": 275000
+            "bullets": [
+              "Add more use-case and persona-adjacent support pages.",
+              "Reinforce internal pathways.",
+              "Keep authority-building pointed at best themes."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 182000,
+            "low": 94000,
+            "base": 182000,
+            "high": 275000
           },
           {
-            "month": 9, "title": "Begin broader category expansion",
+            "month": 9,
+            "title": "Begin broader category expansion",
             "detail": "Push harder into broader category and brand demand.",
-            "bullets": ["Expand from buyer-guide wins into broader AI category capture.", "Maintain commercial pages as authority center.", "Keep third-party proof synchronized."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 218000, "low": 112000, "base": 218000, "high": 350000
+            "bullets": [
+              "Expand from buyer-guide wins into broader AI category capture.",
+              "Maintain commercial pages as authority center.",
+              "Keep third-party proof synchronized."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 218000,
+            "low": 112000,
+            "base": 218000,
+            "high": 350000
           },
           {
-            "month": 10, "title": "Defend owned territory",
+            "month": 10,
+            "title": "Defend owned territory",
             "detail": "Focus on defense as visibility grows.",
-            "bullets": ["Refresh where new competitors appear.", "Strengthen editorial proof.", "Keep structured data and entity consistency clean."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 252000, "low": 131000, "base": 252000, "high": 420000
+            "bullets": [
+              "Refresh where new competitors appear.",
+              "Strengthen editorial proof.",
+              "Keep structured data and entity consistency clean."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 252000,
+            "low": 131000,
+            "base": 252000,
+            "high": 420000
           },
           {
-            "month": 11, "title": "Consolidate authority",
+            "month": 11,
+            "title": "Consolidate authority",
             "detail": "The program should feel like a moat, not a campaign.",
-            "bullets": ["Continue backlink pressure into strongest pages.", "Keep community and editorial coverage active.", "Close final soft spots before year-end."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 282000, "low": 145000, "base": 282000, "high": 480000
+            "bullets": [
+              "Continue backlink pressure into strongest pages.",
+              "Keep community and editorial coverage active.",
+              "Close final soft spots before year-end."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 282000,
+            "low": 145000,
+            "base": 282000,
+            "high": 480000
           },
           {
-            "month": 12, "title": "Finish year one with a defended position",
+            "month": 12,
+            "title": "Finish year one with a defended position",
             "detail": "Month 12: visible, defensible market presence across the first important buying questions.",
-            "bullets": ["Reach 310,568 expected visits.", "Protect best-performing decision pages.", "Plan next year around adjacent categories and new proof assets."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 310568, "low": 157465, "base": 310568, "high": 538574
+            "bullets": [
+              "Reach 310,568 expected visits.",
+              "Protect best-performing decision pages.",
+              "Plan next year around adjacent categories and new proof assets."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 310568,
+            "low": 157465,
+            "base": 310568,
+            "high": 538574
           }
         ],
         "milestones": [
-          { "label": "Milestone 1", "month": 1, "title": "First commercial territory defined", "detail": "First buyer-guide pages and infrastructure set up.", "trafficLabel": "Cumulative traffic", "trafficValue": 2800 },
-          { "label": "Milestone 2", "month": 3, "title": "Support network and trust layer live", "detail": "Core pages supported by comparisons, reviews, and third-party distribution.", "trafficLabel": "Cumulative traffic", "trafficValue": 18500 },
-          { "label": "Milestone 3", "month": 6, "title": "First visible market footprint", "detail": "Live, reinforced commercial pages with distribution and measurable visibility.", "trafficLabel": "Cumulative traffic", "trafficValue": 114910 },
-          { "label": "Milestone 4", "month": 12, "title": "Defended category position", "detail": "Owned commercial pages, support network, third-party proof, and a refresh loop.", "trafficLabel": "Cumulative traffic", "trafficValue": 310568 }
+          {
+            "label": "Milestone 1",
+            "month": 1,
+            "title": "First commercial territory defined",
+            "detail": "First buyer-guide pages and infrastructure set up.",
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 2800
+          },
+          {
+            "label": "Milestone 2",
+            "month": 3,
+            "title": "Support network and trust layer live",
+            "detail": "Core pages supported by comparisons, reviews, and third-party distribution.",
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 18500
+          },
+          {
+            "label": "Milestone 3",
+            "month": 6,
+            "title": "First visible market footprint",
+            "detail": "Live, reinforced commercial pages with distribution and measurable visibility.",
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 114910
+          },
+          {
+            "label": "Milestone 4",
+            "month": 12,
+            "title": "Defended category position",
+            "detail": "Owned commercial pages, support network, third-party proof, and a refresh loop.",
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 310568
+          }
         ]
       }
     }
   ],
-
   "failureBlock": {
     "eyebrow": "What happens if nothing changes",
     "heading": "The cost of staying invisible",
@@ -301,7 +501,6 @@
       "The longer XoomAI waits, the more the 'managed AI employee' niche gets defined by other brands."
     ]
   },
-
   "successBlock": {
     "eyebrow": "What 12 months from now looks like",
     "heading": "XoomAI becomes the default answer",
@@ -312,7 +511,6 @@
       "310,000+ monthly visits flowing through a defensible organic channel that compounds instead of renting attention."
     ]
   },
-
   "cta": {
     "eyebrow": "Book Strategy Call",
     "headline": "If you want XoomAI to become the answer buyers see first",
@@ -320,7 +518,6 @@
     "href": "https://cal.com/memetik/letstalk",
     "ctaLabel": "Book a Strategy Call"
   },
-
   "appendix": {
     "number": "04",
     "heading": "Supporting Evidence",
@@ -335,35 +532,142 @@
         "title": "Validated opportunity clusters",
         "description": "Selected cluster evidence from the approved brief.",
         "defaultOpen": true,
-        "headers": ["Cluster", "Intent", "When it matters", "Validated demand", "Expected traffic in 12 months", "Selected examples"],
+        "headers": [
+          "Cluster",
+          "Intent",
+          "When it matters",
+          "Validated demand",
+          "Expected traffic in 12 months",
+          "Selected examples"
+        ],
         "rows": [
-          ["Category & Brand Demand", "Broader category demand", "Months 9–12", "14,620,210", "293,261", "ai, microsoft ai, conversational ai"],
-          ["Buyer Guides", "Decision-stage", "Months 0–3", "140,740", "15,463", "ai tools, best ai, best ai for coding, ai workflow automation tools"],
-          ["Education & Awareness", "Support / explain", "Months 9–12", "83,200", "1,673", "what is ai workflow, what is ai workflow automation, what is ai agent workflow"],
-          ["Pricing & Cost", "Decision support", "Months 0–3", "1,040", "114", "consultant pricing strategy, ai assistant pricing, ai agent pricing"]
+          [
+            "Category & Brand Demand",
+            "Broader category demand",
+            "Months 9–12",
+            "14,620,210",
+            "293,261",
+            "ai, microsoft ai, conversational ai"
+          ],
+          [
+            "Buyer Guides",
+            "Decision-stage",
+            "Months 0–3",
+            "140,740",
+            "15,463",
+            "ai tools, best ai, best ai for coding, ai workflow automation tools"
+          ],
+          [
+            "Education & Awareness",
+            "Support / explain",
+            "Months 9–12",
+            "83,200",
+            "1,673",
+            "what is ai workflow, what is ai workflow automation, what is ai agent workflow"
+          ],
+          [
+            "Pricing & Cost",
+            "Decision support",
+            "Months 0–3",
+            "1,040",
+            "114",
+            "consultant pricing strategy, ai assistant pricing, ai agent pricing"
+          ]
         ]
       },
       {
         "title": "Competitor benchmark snapshot",
         "description": "The competitive picture that informs the gap narrative.",
-        "headers": ["Competitor", "Organic traffic", "Organic keywords", "Referring domains", "Backlinks", "Prompt hits"],
+        "headers": [
+          "Competitor",
+          "Organic traffic",
+          "Organic keywords",
+          "Referring domains",
+          "Backlinks",
+          "Prompt hits"
+        ],
         "rows": [
-          ["Tribeca Digital", "0", "0", "0", "0", "0"],
-          ["Appenate AI Consulting", "326", "488", "396", "1,338", "0"],
-          ["Inventium AI Consulting", "374", "116", "499", "2,305", "0"],
-          ["Azure AI Consulting Australia", "173,201,094", "7,001,834", "3,161,996", "864,347,185", "0"],
-          ["Custom D", "346", "24", "258", "2,992", "0"]
+          [
+            "Tribeca Digital",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "Appenate AI Consulting",
+            "326",
+            "488",
+            "396",
+            "1,338",
+            "0"
+          ],
+          [
+            "Inventium AI Consulting",
+            "374",
+            "116",
+            "499",
+            "2,305",
+            "0"
+          ],
+          [
+            "Azure AI Consulting Australia",
+            "173,201,094",
+            "7,001,834",
+            "3,161,996",
+            "864,347,185",
+            "0"
+          ],
+          [
+            "Custom D",
+            "346",
+            "24",
+            "258",
+            "2,992",
+            "0"
+          ]
         ]
       },
       {
         "title": "Sample answer-engine observations",
         "description": "Public-safe excerpts from the validated prompt evidence.",
-        "headers": ["Platform", "Market", "Prompt", "Observed answer pattern", "XoomAI present?"],
+        "headers": [
+          "Platform",
+          "Market",
+          "Prompt",
+          "Observed answer pattern",
+          "XoomAI present?"
+        ],
         "rows": [
-          ["ChatGPT", "US", "best managed ai employee and workflow automation", "Response leaned toward GPT-based agents, Perplexity AI, and Claude-style assistants.", "No"],
-          ["ChatGPT", "AU", "best managed ai employee and workflow automation", "Response leaned toward workflow tools such as Zapier and UiPath.", "No"],
-          ["Gemini", "AU", "best managed ai employee and workflow automation", "Response emphasized AI employee platforms such as Lindy AI and Devin-style products.", "No"],
-          ["Google AI Overview", "US", "best managed ai employee and workflow automation", "AI Overview detected in search results, but no visible XoomAI mention.", "No"]
+          [
+            "ChatGPT",
+            "US",
+            "best managed ai employee and workflow automation",
+            "Response leaned toward GPT-based agents, Perplexity AI, and Claude-style assistants.",
+            "No"
+          ],
+          [
+            "ChatGPT",
+            "AU",
+            "best managed ai employee and workflow automation",
+            "Response leaned toward workflow tools such as Zapier and UiPath.",
+            "No"
+          ],
+          [
+            "Gemini",
+            "AU",
+            "best managed ai employee and workflow automation",
+            "Response emphasized AI employee platforms such as Lindy AI and Devin-style products.",
+            "No"
+          ],
+          [
+            "Google AI Overview",
+            "US",
+            "best managed ai employee and workflow automation",
+            "AI Overview detected in search results, but no visible XoomAI mention.",
+            "No"
+          ]
         ]
       },
       {

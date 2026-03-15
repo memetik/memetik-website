@@ -154,6 +154,14 @@ export interface StrategySection {
   };
 }
 
+export interface StrategyTransitionalCta {
+  eyebrow?: string;
+  headline: string;
+  body: string;
+  href?: string;
+  ctaLabel?: string;
+}
+
 export interface StrategyContentData {
   slug: string;
   company: string;
@@ -170,6 +178,7 @@ export interface StrategyContentData {
     headline: string;
     accent?: string;
     subtitle?: string;
+    oneLiner?: string;
     tags?: string[];
   };
 
@@ -186,6 +195,9 @@ export interface StrategyContentData {
 
   failureBlock?: StrategyStakesBlock;
   successBlock?: StrategyStakesBlock;
+
+  midPageCta?: StrategyTransitionalCta;
+  transitionalCta?: StrategyTransitionalCta;
 
   cta: {
     eyebrow?: string;

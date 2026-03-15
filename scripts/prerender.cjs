@@ -356,6 +356,10 @@ function dataStrategyContent(entry) {
   html += `<p><a href="${esc(data.cta.href || "https://cal.com/memetik/letstalk")}">Book a strategy call</a></p>\n`;
   html += `</section>\n`;
 
+  html += `<section>\n<h2>Not ready to talk yet?</h2>\n`;
+  html += `<p>Get the full research brief with all the evidence behind this strategy.</p>\n`;
+  html += `</section>\n`;
+
   if (data.appendix) {
     html += `<section>\n<h2>Supporting evidence appendix</h2>\n`;
     for (const section of data.appendix.sections) {

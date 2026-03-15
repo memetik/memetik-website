@@ -6,6 +6,7 @@ export function StrategyHero({
   eyebrow,
   title,
   accent,
+  oneLiner,
   subtitle,
   tags = [],
   children,
@@ -14,6 +15,7 @@ export function StrategyHero({
   eyebrow?: React.ReactNode;
   title: React.ReactNode;
   accent?: React.ReactNode;
+  oneLiner?: React.ReactNode;
   subtitle?: React.ReactNode;
   tags?: React.ReactNode[];
   children?: React.ReactNode;
@@ -28,6 +30,9 @@ export function StrategyHero({
             {title}
             {accent ? <span className="block text-[#f4e4cd]">{accent}</span> : null}
           </h1>
+          {oneLiner ? (
+            <p className="max-w-3xl text-lg md:text-xl font-semibold leading-8 text-[#f4e4cd]/90 mb-4">{oneLiner}</p>
+          ) : null}
           {subtitle ? <p className="max-w-3xl text-base md:text-lg leading-8 text-white/68 mb-8">{subtitle}</p> : null}
           {tags.length ? (
             <div className="flex flex-wrap gap-3 mb-8">

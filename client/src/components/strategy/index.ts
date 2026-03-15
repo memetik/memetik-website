@@ -36,4 +36,7 @@ export { WorkstreamTimeline } from "./WorkstreamTimeline";
 export type { WorkstreamTimelineTrack, WorkstreamTimelineCell } from "./WorkstreamTimeline";
 export { TldrSection } from "./TldrSection";
 export { SummariseButton } from "./SummariseButton";
+export { MidPageCTA } from "./MidPageCTA";
+export { TransitionalCTA } from "./TransitionalCTA";
+export { AIAbsenceEvidence } from "./AIAbsenceEvidence";
 export { default as StrategyPageTemplate } from "./StrategyPageTemplate";

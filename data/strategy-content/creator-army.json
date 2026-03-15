@@ -5,7 +5,6 @@
   "title": "Creator Army — Founder Strategy Memo | MEMETIK",
   "description": "Founder-facing strategy memo for Creator Army focused on separating enterprise acquisition from creator acquisition, winning buyer-intent pages first, and building a defensible commercial search presence.",
   "generatedAt": "2025-02-14",
-
   "tldr": [
     "Creator Army already has unusually strong commercial proof through Simon Beard's $600M exit, 500M+ content-view credibility, and a 100+ certified creator network.",
     "The current public site blends enterprise acquisition and creator acquisition into one brand story, which weakens search and answer-engine classification.",
@@ -16,7 +15,6 @@
     "Off-site authority should reinforce the same story through founder-led proof, community presence, editorial mentions, and backlinks routed into enterprise pages first.",
     "The operating model should run monthly research, page production, publishing, external reinforcement, and refresh cycles, with enterprise pages receiving the first allocation of effort."
   ],
-
   "hero": {
     "eyebrow": "Memetik founder strategy memo",
     "headline": "Enterprise buyers are searching. They're finding everyone else.",
@@ -26,9 +24,9 @@
       "Enterprise growth",
       "Creator marketplace",
       "Performance model"
-    ]
+    ],
+    "oneLiner": "$600M exit story. Zero organic presence."
   },
-
   "sections": [
     {
       "id": "the-problem",
@@ -223,7 +221,6 @@
       ]
     }
   ],
-
   "failureBlock": {
     "eyebrow": "What happens if nothing changes",
     "heading": "The cost of staying blended",
@@ -234,7 +231,6 @@
       "Every month without separated enterprise pages is a month where the market defines creator-led acquisition without Creator Army in the conversation."
     ]
   },
-
   "successBlock": {
     "eyebrow": "What 12 months from now looks like",
     "heading": "Creator Army becomes the default answer for creator-led performance",
@@ -245,7 +241,6 @@
       "The creator education flywheel compounds behind the enterprise foundation, feeding supply and brand breadth without blurring the primary commercial story."
     ]
   },
-
   "cta": {
     "eyebrow": "Book Strategy Call",
     "headline": "Turn Creator Army into a commercial search category, not just a brand story",
@@ -253,7 +248,6 @@
     "href": "https://cal.com/memetik/letstalk",
     "ctaLabel": "Book a Strategy Call"
   },
-
   "appendix": {
     "number": "04",
     "heading": "Supporting Evidence",

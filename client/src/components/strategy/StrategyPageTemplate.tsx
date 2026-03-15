@@ -17,6 +17,9 @@ import {
 } from "@/components/strategy";
 import { TldrSection } from "@/components/strategy/TldrSection";
 import { SummariseButton } from "@/components/strategy/SummariseButton";
+import { MidPageCTA } from "@/components/strategy/MidPageCTA";
+import { TransitionalCTA } from "@/components/strategy/TransitionalCTA";
+import { AIAbsenceEvidence } from "@/components/strategy/AIAbsenceEvidence";
 import type {
   StrategyContentData,
   StrategySection,
@@ -478,7 +481,9 @@ function renderAppendixSection(section: AppendixSectionType, index: number) {
   return null;
 }
 
-function renderSection(section: StrategySection) {
+function renderSection(section: StrategySection, company?: string) {
+  const isProblemSection = section.id === "the-problem";
+
   return (
     <StrategySectionShell key={section.id}>
       <SectionHeader
@@ -540,7 +545,22 @@ function renderSection(section: StrategySection) {
         </div>
       ) : null}
 
-      {section.promptObservations ? (
+      {section.promptObservations && isProblemSection && company ? (
+        <AIAbsenceEvidence
+          company={company}
+          platforms={section.promptObservations.map((po) => ({
+            name: po.platform,
+            icon: po.platform.toLowerCase().includes("chatgpt")
+              ? "chatgpt" as const
+              : po.platform.toLowerCase().includes("gemini")
+                ? "gemini" as const
+                : "google" as const,
+            prompt: po.prompt,
+            result: po.observed,
+            mentioned: false,
+          }))}
+        />
+      ) : section.promptObservations ? (
         <div className="mt-6 space-y-6">
           {section.promptObservations.map((po, i) => (
             <PromptObservationCard key={i} platform={po.platform} market={po.market} prompt={po.prompt} observed={po.observed} />
@@ -652,6 +672,7 @@ export default function StrategyPageTemplate({ slug }: { slug: string }) {
           eyebrow={data.hero.eyebrow}
           title={data.hero.headline}
           accent={data.hero.accent}
+          oneLiner={data.hero.oneLiner}
           subtitle={data.hero.subtitle}
           tags={data.hero.tags}
         >
@@ -695,7 +716,36 @@ export default function StrategyPageTemplate({ slug }: { slug: string }) {
           ) : null}
         </StrategyHero>
 
-        {data.sections.map((section) => renderSection(section))}
+        {data.sections.map((section, sectionIndex) => {
+          const rendered = renderSection(section, data.company);
+          const isAfterOpportunity = section.id === "the-opportunity";
+          return (
+            <div key={section.id}>
+              {rendered}
+              {isAfterOpportunity && data.midPageCta ? (
+                <div className="mt-10 md:mt-12">
+                  <MidPageCTA
+                    eyebrow={data.midPageCta.eyebrow}
+                    title={data.midPageCta.headline}
+                    body={data.midPageCta.body}
+                    href={data.midPageCta.href}
+                    ctaLabel={data.midPageCta.ctaLabel}
+                  />
+                </div>
+              ) : isAfterOpportunity ? (
+                <div className="mt-10 md:mt-12">
+                  <MidPageCTA
+                    eyebrow="Ready to talk?"
+                    title="This opportunity won't wait"
+                    body="The data above shows exactly what's at stake. Let's discuss how to capture it before competitors do."
+                    href={data.cta.href || "https://cal.com/memetik/letstalk"}
+                    ctaLabel={data.cta.ctaLabel || "Book a Strategy Call"}
+                  />
+                </div>
+              ) : null}
+            </div>
+          );
+        })}
 
         {data.failureBlock ? (
           <div className="mx-auto max-w-4xl">
@@ -716,6 +766,24 @@ export default function StrategyPageTemplate({ slug }: { slug: string }) {
           href={data.cta.href}
           ctaLabel={data.cta.ctaLabel}
         />
+
+        {data.transitionalCta ? (
+          <TransitionalCTA
+            eyebrow={data.transitionalCta.eyebrow}
+            title={data.transitionalCta.headline}
+            body={data.transitionalCta.body}
+            href={data.transitionalCta.href}
+            ctaLabel={data.transitionalCta.ctaLabel}
+          />
+        ) : (
+          <TransitionalCTA
+            eyebrow="Not ready to talk yet?"
+            title="Get the full research brief"
+            body={`All the evidence behind this strategy — search demand data, AI visibility analysis, and competitive benchmarks for ${data.company} — in one document.`}
+            href={data.cta.href || "https://cal.com/memetik/letstalk"}
+            ctaLabel="Request the Research Brief"
+          />
+        )}
 
         {data.appendix ? (
           <StrategySectionShell>

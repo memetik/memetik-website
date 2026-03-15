@@ -6,7 +6,6 @@
   "description": "Founder-facing strategy memo for Signify IP focused on trade mark registration, protection, and IP attorney services for Australian businesses.",
   "generatedAt": "2025-02-14",
   "researchConfidence": 85,
-
   "tldr": [
     "Signify IP already has strong positioning, strong reviews, clear service definitions, and credible case studies, but almost no organic search presence today.",
     "The biggest gaps are missing indexable content, missing schema, missing sitemap and robots.txt, no backlink profile, no FAQ depth, no pricing transparency page, and no location or industry landing pages.",
@@ -17,7 +16,6 @@
     "Local Adelaide visibility and off-site authority should run in parallel with content production through Google Business Profile work, citations, placements, and backlinks.",
     "On the Authority plan, the strategy projects 40-60 organic leads per month by month 12, with compounding upside beyond paid channels because every page remains a permanent asset."
   ],
-
   "hero": {
     "eyebrow": "Memetik founder strategy memo",
     "headline": "25,000 searches. Zero results for Signify IP.",
@@ -27,9 +25,9 @@
       "Trade Marks",
       "Adelaide, SA",
       "Fixed-Fee"
-    ]
+    ],
+    "oneLiner": "25,000 IP searches. Zero results for Signify IP."
   },
-
   "sections": [
     {
       "id": "the-problem",
@@ -113,20 +111,82 @@
         }
       ],
       "upsideChart": [
-        { "month": 1, "low": 0, "base": 50, "high": 100 },
-        { "month": 2, "low": 50, "base": 150, "high": 300 },
-        { "month": 3, "low": 150, "base": 500, "high": 1000 },
-        { "month": 4, "low": 300, "base": 800, "high": 1500 },
-        { "month": 5, "low": 400, "base": 1200, "high": 2200 },
-        { "month": 6, "low": 500, "base": 1500, "high": 3000 },
-        { "month": 7, "low": 700, "base": 2000, "high": 3500 },
-        { "month": 8, "low": 900, "base": 2500, "high": 4000 },
-        { "month": 9, "low": 1100, "base": 3000, "high": 4500 },
-        { "month": 10, "low": 1500, "base": 3500, "high": 5000 },
-        { "month": 11, "low": 2000, "base": 4000, "high": 5500 },
-        { "month": 12, "low": 3000, "base": 5000, "high": 7000 }
+        {
+          "month": 1,
+          "low": 0,
+          "base": 50,
+          "high": 100
+        },
+        {
+          "month": 2,
+          "low": 50,
+          "base": 150,
+          "high": 300
+        },
+        {
+          "month": 3,
+          "low": 150,
+          "base": 500,
+          "high": 1000
+        },
+        {
+          "month": 4,
+          "low": 300,
+          "base": 800,
+          "high": 1500
+        },
+        {
+          "month": 5,
+          "low": 400,
+          "base": 1200,
+          "high": 2200
+        },
+        {
+          "month": 6,
+          "low": 500,
+          "base": 1500,
+          "high": 3000
+        },
+        {
+          "month": 7,
+          "low": 700,
+          "base": 2000,
+          "high": 3500
+        },
+        {
+          "month": 8,
+          "low": 900,
+          "base": 2500,
+          "high": 4000
+        },
+        {
+          "month": 9,
+          "low": 1100,
+          "base": 3000,
+          "high": 4500
+        },
+        {
+          "month": 10,
+          "low": 1500,
+          "base": 3500,
+          "high": 5000
+        },
+        {
+          "month": 11,
+          "low": 2000,
+          "base": 4000,
+          "high": 5500
+        },
+        {
+          "month": 12,
+          "low": 3000,
+          "base": 5000,
+          "high": 7000
+        }
       ],
-      "calculator": { "baseVisits": 5000 },
+      "calculator": {
+        "baseVisits": 5000
+      },
       "highlightBoxes": [
         {
           "title": "Estimate-only",
@@ -248,88 +308,223 @@
       "timelineChart": {
         "points": [
           {
-            "month": 1, "title": "Technical foundation and first flagship content",
+            "month": 1,
+            "title": "Technical foundation and first flagship content",
             "detail": "Month 1 establishes the technical base and publishes the first high-intent guides targeting trade mark registration, costs, and attorney queries.",
-            "bullets": ["Schema, sitemap, GSC, GA4, IndexNow setup.", "First 3 flagship guides, pricing page, and FAQ page live.", "GBP optimised. Local citations submitted. AEO baseline audit complete."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 50, "low": 0, "base": 50, "high": 100
+            "bullets": [
+              "Schema, sitemap, GSC, GA4, IndexNow setup.",
+              "First 3 flagship guides, pricing page, and FAQ page live.",
+              "GBP optimised. Local citations submitted. AEO baseline audit complete."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 50,
+            "low": 0,
+            "base": 50,
+            "high": 100
           },
           {
-            "month": 2, "title": "Expand editorial and location coverage",
+            "month": 2,
+            "title": "Expand editorial and location coverage",
             "detail": "Month 2 adds more flagship guides, location pages, and the first comparison content.",
-            "bullets": ["Flagship guides #4-7 live.", "Location pages started.", "Backlink acquisition begins."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 150, "low": 50, "base": 150, "high": 300
+            "bullets": [
+              "Flagship guides #4-7 live.",
+              "Location pages started.",
+              "Backlink acquisition begins."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 150,
+            "low": 50,
+            "base": 150,
+            "high": 300
           },
           {
-            "month": 3, "title": "Complete editorial core and launch scaled pages",
+            "month": 3,
+            "title": "Complete editorial core and launch scaled pages",
             "detail": "Month 3 finishes the editorial foundation and begins the scaled landing page rollout.",
-            "bullets": ["All 10 flagship guides live. All comparison, industry, and location pages live.", "First 50 scaled landing pages deployed.", "100+ pages live. First organic leads appearing."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 500, "low": 150, "base": 500, "high": 1000
+            "bullets": [
+              "All 10 flagship guides live. All comparison, industry, and location pages live.",
+              "First 50 scaled landing pages deployed.",
+              "100+ pages live. First organic leads appearing."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 500,
+            "low": 150,
+            "base": 500,
+            "high": 1000
           },
           {
-            "month": 4, "title": "Scale the content footprint",
+            "month": 4,
+            "title": "Scale the content footprint",
             "detail": "Month 4 shifts from editorial to scaled content production.",
-            "bullets": ["Additional scaled landing pages deployed.", "Case studies expanded.", "Guest post and backlink campaigns active."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 800, "low": 300, "base": 800, "high": 1500
+            "bullets": [
+              "Additional scaled landing pages deployed.",
+              "Case studies expanded.",
+              "Guest post and backlink campaigns active."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 800,
+            "low": 300,
+            "base": 800,
+            "high": 1500
           },
           {
-            "month": 5, "title": "Deepen proof and authority layers",
+            "month": 5,
+            "title": "Deepen proof and authority layers",
             "detail": "Month 5 adds more proof assets and strengthens the authority profile.",
-            "bullets": ["More scaled pages live.", "AEO re-testing and content adjustment.", "Review and citation velocity increasing."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 1200, "low": 400, "base": 1200, "high": 2200
+            "bullets": [
+              "More scaled pages live.",
+              "AEO re-testing and content adjustment.",
+              "Review and citation velocity increasing."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 1200,
+            "low": 400,
+            "base": 1200,
+            "high": 2200
           },
           {
-            "month": 6, "title": "First visible market footprint",
+            "month": 6,
+            "title": "First visible market footprint",
             "detail": "By month 6, Signify IP should have 250+ pages live and visible organic traction.",
-            "bullets": ["250+ pages live.", "Rankings climbing across target keywords.", "Organic leads growing month over month. AI platforms starting to cite Signify IP."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 1500, "low": 500, "base": 1500, "high": 3000
+            "bullets": [
+              "250+ pages live.",
+              "Rankings climbing across target keywords.",
+              "Organic leads growing month over month. AI platforms starting to cite Signify IP."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 1500,
+            "low": 500,
+            "base": 1500,
+            "high": 3000
           },
           {
-            "month": 7, "title": "International and dispute content",
+            "month": 7,
+            "title": "International and dispute content",
             "detail": "After the first footprint is established, widen into international filing and dispute scenarios.",
-            "bullets": ["International filing pages live.", "Dispute scenario pages live.", "PR placements generating brand signals."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 2000, "low": 700, "base": 2000, "high": 3500
+            "bullets": [
+              "International filing pages live.",
+              "Dispute scenario pages live.",
+              "PR placements generating brand signals."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 2000,
+            "low": 700,
+            "base": 2000,
+            "high": 3500
           },
           {
-            "month": 8, "title": "Content density and refresh",
+            "month": 8,
+            "title": "Content density and refresh",
             "detail": "Month 8 deepens the content network and refreshes early winners.",
-            "bullets": ["Content refresh on top performers.", "Internal linking strengthened.", "Competitor monitoring active."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 2500, "low": 900, "base": 2500, "high": 4000
+            "bullets": [
+              "Content refresh on top performers.",
+              "Internal linking strengthened.",
+              "Competitor monitoring active."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 2500,
+            "low": 900,
+            "base": 2500,
+            "high": 4000
           },
           {
-            "month": 9, "title": "Broader category expansion",
+            "month": 9,
+            "title": "Broader category expansion",
             "detail": "Push into broader IP and trade mark demand beyond the initial commercial focus.",
-            "bullets": ["320+ pages live.", "30-50 organic leads per month.", "Multiple AI platforms citing Signify IP."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 3000, "low": 1100, "base": 3000, "high": 4500
+            "bullets": [
+              "320+ pages live.",
+              "30-50 organic leads per month.",
+              "Multiple AI platforms citing Signify IP."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 3000,
+            "low": 1100,
+            "base": 3000,
+            "high": 4500
           },
           {
-            "month": 10, "title": "Defend owned territory",
+            "month": 10,
+            "title": "Defend owned territory",
             "detail": "Focus on defense as visibility grows.",
-            "bullets": ["Full content audit.", "Refresh where new competitors appear.", "Structured data and entity consistency clean."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 3500, "low": 1500, "base": 3500, "high": 5000
+            "bullets": [
+              "Full content audit.",
+              "Refresh where new competitors appear.",
+              "Structured data and entity consistency clean."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 3500,
+            "low": 1500,
+            "base": 3500,
+            "high": 5000
           },
           {
-            "month": 11, "title": "Consolidate authority",
+            "month": 11,
+            "title": "Consolidate authority",
             "detail": "The program should feel like a moat, not a campaign.",
-            "bullets": ["Continue backlink pressure into strongest pages.", "Quarterly content refresh on top performers.", "Close final soft spots before year-end."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 4000, "low": 2000, "base": 4000, "high": 5500
+            "bullets": [
+              "Continue backlink pressure into strongest pages.",
+              "Quarterly content refresh on top performers.",
+              "Close final soft spots before year-end."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 4000,
+            "low": 2000,
+            "base": 4000,
+            "high": 5500
           },
           {
-            "month": 12, "title": "Finish year one with a defended position",
+            "month": 12,
+            "title": "Finish year one with a defended position",
             "detail": "Month 12: 350+ pages live, visible and defensible market presence across trade mark buying questions.",
-            "bullets": ["350+ pages live. 150-200 ranking keywords.", "40-60 organic leads per month. 12-15/20 AI citation rate.", "50+ referring domains. Year 2 planning underway."],
-            "trafficLabel": "Cumulative traffic", "trafficValue": 5000, "low": 3000, "base": 5000, "high": 7000
+            "bullets": [
+              "350+ pages live. 150-200 ranking keywords.",
+              "40-60 organic leads per month. 12-15/20 AI citation rate.",
+              "50+ referring domains. Year 2 planning underway."
+            ],
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 5000,
+            "low": 3000,
+            "base": 5000,
+            "high": 7000
           }
         ],
         "milestones": [
-          { "label": "Milestone 1", "month": 1, "title": "Technical foundation and first content live", "detail": "Schema, sitemap, first flagship guides, GBP optimised, citations submitted.", "trafficLabel": "Cumulative traffic", "trafficValue": 50 },
-          { "label": "Milestone 2", "month": 3, "title": "Editorial core complete", "detail": "All flagship guides, comparisons, industry, and location pages live. First organic leads.", "trafficLabel": "Cumulative traffic", "trafficValue": 500 },
-          { "label": "Milestone 3", "month": 6, "title": "First visible market footprint", "detail": "250+ pages live. Rankings climbing. AI platforms starting to cite Signify IP.", "trafficLabel": "Cumulative traffic", "trafficValue": 1500 },
-          { "label": "Milestone 4", "month": 12, "title": "Defended category position", "detail": "350+ pages, 150-200 keywords, 40-60 leads/month, 12-15/20 AI citation rate, 50+ referring domains.", "trafficLabel": "Cumulative traffic", "trafficValue": 5000 }
+          {
+            "label": "Milestone 1",
+            "month": 1,
+            "title": "Technical foundation and first content live",
+            "detail": "Schema, sitemap, first flagship guides, GBP optimised, citations submitted.",
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 50
+          },
+          {
+            "label": "Milestone 2",
+            "month": 3,
+            "title": "Editorial core complete",
+            "detail": "All flagship guides, comparisons, industry, and location pages live. First organic leads.",
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 500
+          },
+          {
+            "label": "Milestone 3",
+            "month": 6,
+            "title": "First visible market footprint",
+            "detail": "250+ pages live. Rankings climbing. AI platforms starting to cite Signify IP.",
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 1500
+          },
+          {
+            "label": "Milestone 4",
+            "month": 12,
+            "title": "Defended category position",
+            "detail": "350+ pages, 150-200 keywords, 40-60 leads/month, 12-15/20 AI citation rate, 50+ referring domains.",
+            "trafficLabel": "Cumulative traffic",
+            "trafficValue": 5000
+          }
         ]
       }
     }
   ],
-
   "failureBlock": {
     "eyebrow": "What happens if nothing changes",
     "heading": "The cost of staying invisible in a category that is actively buying",
@@ -340,7 +535,6 @@
       "Signify IP's 5-star reviews, fixed-fee positioning, and case studies are invisible to any buyer who never finds the website."
     ]
   },
-
   "successBlock": {
     "eyebrow": "What 12 months from now looks like",
     "heading": "Signify IP becomes the default recommendation",
@@ -351,7 +545,6 @@
       "Third-party proof (reviews, citations, editorial coverage, community mentions) reinforces the same story across every surface buyers use."
     ]
   },
-
   "cta": {
     "eyebrow": "Book Strategy Call",
     "headline": "If you want Signify IP to become the answer buyers see first",
@@ -359,7 +552,6 @@
     "href": "https://cal.com/memetik/letstalk",
     "ctaLabel": "Book a Strategy Call"
   },
-
   "appendix": {
     "number": "04",
     "heading": "Supporting Evidence",
@@ -374,74 +566,310 @@
         "title": "Top 10 priority keyword targets",
         "description": "The highest-intent keywords mapped from the 430+ keyword research.",
         "defaultOpen": true,
-        "headers": ["#", "Keyword", "Monthly Searches", "Intent"],
+        "headers": [
+          "#",
+          "Keyword",
+          "Monthly Searches",
+          "Intent"
+        ],
         "rows": [
-          ["1", "how to register a trade mark in australia", "500-1,000", "Informational → BOFU"],
-          ["2", "trade mark registration cost australia", "500-1,000", "Commercial"],
-          ["3", "trademark attorney australia", "500-1,000", "Commercial"],
-          ["4", "how to trademark a business name australia", "500-1,000", "Informational → BOFU"],
-          ["5", "trade mark vs copyright", "500-1,000", "Informational"],
-          ["6", "do i need a trademark attorney", "200-500", "Commercial"],
-          ["7", "trademark attorney adelaide", "100-300", "Local / Commercial"],
-          ["8", "how much does it cost to trademark", "500-1,000", "Commercial"],
-          ["9", "someone is using my trade mark", "100-200", "Panic → Urgent"],
-          ["10", "fixed fee trademark attorney australia", "50-100", "Exact Match"]
+          [
+            "1",
+            "how to register a trade mark in australia",
+            "500-1,000",
+            "Informational → BOFU"
+          ],
+          [
+            "2",
+            "trade mark registration cost australia",
+            "500-1,000",
+            "Commercial"
+          ],
+          [
+            "3",
+            "trademark attorney australia",
+            "500-1,000",
+            "Commercial"
+          ],
+          [
+            "4",
+            "how to trademark a business name australia",
+            "500-1,000",
+            "Informational → BOFU"
+          ],
+          [
+            "5",
+            "trade mark vs copyright",
+            "500-1,000",
+            "Informational"
+          ],
+          [
+            "6",
+            "do i need a trademark attorney",
+            "200-500",
+            "Commercial"
+          ],
+          [
+            "7",
+            "trademark attorney adelaide",
+            "100-300",
+            "Local / Commercial"
+          ],
+          [
+            "8",
+            "how much does it cost to trademark",
+            "500-1,000",
+            "Commercial"
+          ],
+          [
+            "9",
+            "someone is using my trade mark",
+            "100-200",
+            "Panic → Urgent"
+          ],
+          [
+            "10",
+            "fixed fee trademark attorney australia",
+            "50-100",
+            "Exact Match"
+          ]
         ]
       },
       {
         "title": "Competitive landscape",
         "description": "Three tiers of competitors were mapped: direct boutique TM specialists, Adelaide/SA-based firms, and national enterprise firms.",
-        "headers": ["Tier", "Firm", "Positioning", "Content Strategy"],
+        "headers": [
+          "Tier",
+          "Firm",
+          "Positioning",
+          "Content Strategy"
+        ],
         "rows": [
-          ["Tier 1 — Boutique", "The Trademark Factory (ttmf.com.au)", "Fixed fee from $350, 9000+ TMs, online-first", "Pricing pages, guides, blog"],
-          ["Tier 1 — Boutique", "Acorn Trade Marks", "Fixed fees, no hidden costs, SMB focus", "Minimal"],
-          ["Tier 1 — Boutique", "YIP Legal", "Packages from $450, startups + brands", "Blog, service pages"],
-          ["Tier 1 — Boutique", "Mark My Words", "Blog content, practical guides", "Strong blog"],
-          ["Tier 1 — Boutique", "Markster", "Online TM service, blog content", "Good blog + SEO"],
-          ["Tier 1 — Boutique", "Quick Off The Mark", "Blog-driven, educational", "Strong content"],
-          ["Tier 1 — Boutique", "eTrademark", "$199 attorney fee, volume play", "Minimal"],
-          ["Tier 1 — Boutique", "TradeMark Action", "$990 fixed fee, transparent pricing", "Moderate"],
-          ["Tier 2 — Adelaide", "Madderns", "50+ years, Adelaide institution, patents + TMs", "Established"],
-          ["Tier 2 — Adelaide", "Phillips Ormonde Fitzpatrick", "National firm, Adelaide office", "Established"],
-          ["Tier 2 — Adelaide", "Davies Collison Cave", "Est. 1877, largest AU TM filers since 2000", "Established"],
-          ["Tier 2 — Adelaide", "IP Guardian", "Adelaide-based, free consultations, strong reviews", "Moderate"],
-          ["Tier 2 — Adelaide", "DW Fox Tucker", "Adelaide law firm, IP practice group, award-winning", "Moderate"],
-          ["Tier 2 — Adelaide", "Piper Alderman", "Adelaide HQ, full-service with IP team", "Established"],
-          ["Tier 3 — National", "Spruson & Ferguson", "WTR 1000 Gold, massive content library", "Strong"],
-          ["Tier 3 — National", "Baxter IP", "Strong SEO, Sydney/Melbourne, blog content", "Strong"],
-          ["Tier 3 — National", "Lawpath", "Online legal, strong SEO content on TM topics", "Strong"],
-          ["Tier 3 — National", "Gladwin Legal", "Blog-driven TM guides ranking well", "Strong"],
-          ["Tier 3 — National", "Halfords IP", "Ranking for TM cost/fee queries", "Moderate"]
+          [
+            "Tier 1 — Boutique",
+            "The Trademark Factory (ttmf.com.au)",
+            "Fixed fee from $350, 9000+ TMs, online-first",
+            "Pricing pages, guides, blog"
+          ],
+          [
+            "Tier 1 — Boutique",
+            "Acorn Trade Marks",
+            "Fixed fees, no hidden costs, SMB focus",
+            "Minimal"
+          ],
+          [
+            "Tier 1 — Boutique",
+            "YIP Legal",
+            "Packages from $450, startups + brands",
+            "Blog, service pages"
+          ],
+          [
+            "Tier 1 — Boutique",
+            "Mark My Words",
+            "Blog content, practical guides",
+            "Strong blog"
+          ],
+          [
+            "Tier 1 — Boutique",
+            "Markster",
+            "Online TM service, blog content",
+            "Good blog + SEO"
+          ],
+          [
+            "Tier 1 — Boutique",
+            "Quick Off The Mark",
+            "Blog-driven, educational",
+            "Strong content"
+          ],
+          [
+            "Tier 1 — Boutique",
+            "eTrademark",
+            "$199 attorney fee, volume play",
+            "Minimal"
+          ],
+          [
+            "Tier 1 — Boutique",
+            "TradeMark Action",
+            "$990 fixed fee, transparent pricing",
+            "Moderate"
+          ],
+          [
+            "Tier 2 — Adelaide",
+            "Madderns",
+            "50+ years, Adelaide institution, patents + TMs",
+            "Established"
+          ],
+          [
+            "Tier 2 — Adelaide",
+            "Phillips Ormonde Fitzpatrick",
+            "National firm, Adelaide office",
+            "Established"
+          ],
+          [
+            "Tier 2 — Adelaide",
+            "Davies Collison Cave",
+            "Est. 1877, largest AU TM filers since 2000",
+            "Established"
+          ],
+          [
+            "Tier 2 — Adelaide",
+            "IP Guardian",
+            "Adelaide-based, free consultations, strong reviews",
+            "Moderate"
+          ],
+          [
+            "Tier 2 — Adelaide",
+            "DW Fox Tucker",
+            "Adelaide law firm, IP practice group, award-winning",
+            "Moderate"
+          ],
+          [
+            "Tier 2 — Adelaide",
+            "Piper Alderman",
+            "Adelaide HQ, full-service with IP team",
+            "Established"
+          ],
+          [
+            "Tier 3 — National",
+            "Spruson & Ferguson",
+            "WTR 1000 Gold, massive content library",
+            "Strong"
+          ],
+          [
+            "Tier 3 — National",
+            "Baxter IP",
+            "Strong SEO, Sydney/Melbourne, blog content",
+            "Strong"
+          ],
+          [
+            "Tier 3 — National",
+            "Lawpath",
+            "Online legal, strong SEO content on TM topics",
+            "Strong"
+          ],
+          [
+            "Tier 3 — National",
+            "Gladwin Legal",
+            "Blog-driven TM guides ranking well",
+            "Strong"
+          ],
+          [
+            "Tier 3 — National",
+            "Halfords IP",
+            "Ranking for TM cost/fee queries",
+            "Moderate"
+          ]
         ]
       },
       {
         "title": "Recommended site architecture",
         "description": "The 300+ page content authority model.",
-        "headers": ["Section", "Pages", "Description"],
+        "headers": [
+          "Section",
+          "Pages",
+          "Description"
+        ],
         "rows": [
-          ["/guides/", "10 pages", "Flagship pillar guides: registration, costs, classes, Madrid Protocol, disputes, renewal, infringement, startups"],
-          ["/industries/", "9 pages", "Industry-specific landing pages: food & bev, fashion, tech, ecommerce, construction, health, hospitality, services, creative"],
-          ["/locations/", "8 pages", "Location pages: Adelaide, Sydney, Melbourne, Brisbane, Perth, Canberra, Hobart, Gold Coast"],
-          ["/comparisons/", "8 pages", "Attorney vs DIY, TM Headstart vs Standard, Signify IP vs competitors, best-of listicles"],
-          ["/resources/", "5 pages", "FAQ (50+ questions), glossary, checklist, timeline, 2026 regulation changes"],
-          ["/case-studies/", "12+ pages", "Expanded from 2 to 12+ detailed client stories with outcomes"],
-          ["/blog/", "Ongoing", "Ongoing topical content: regulation changes, common mistakes, seasonal guides"],
-          ["Scaled landing pages", "200-300 pages", "'Can I trademark...', 'TM in [country] from AU', 'What to do if...', industry x service, location x service"]
+          [
+            "/guides/",
+            "10 pages",
+            "Flagship pillar guides: registration, costs, classes, Madrid Protocol, disputes, renewal, infringement, startups"
+          ],
+          [
+            "/industries/",
+            "9 pages",
+            "Industry-specific landing pages: food & bev, fashion, tech, ecommerce, construction, health, hospitality, services, creative"
+          ],
+          [
+            "/locations/",
+            "8 pages",
+            "Location pages: Adelaide, Sydney, Melbourne, Brisbane, Perth, Canberra, Hobart, Gold Coast"
+          ],
+          [
+            "/comparisons/",
+            "8 pages",
+            "Attorney vs DIY, TM Headstart vs Standard, Signify IP vs competitors, best-of listicles"
+          ],
+          [
+            "/resources/",
+            "5 pages",
+            "FAQ (50+ questions), glossary, checklist, timeline, 2026 regulation changes"
+          ],
+          [
+            "/case-studies/",
+            "12+ pages",
+            "Expanded from 2 to 12+ detailed client stories with outcomes"
+          ],
+          [
+            "/blog/",
+            "Ongoing",
+            "Ongoing topical content: regulation changes, common mistakes, seasonal guides"
+          ],
+          [
+            "Scaled landing pages",
+            "200-300 pages",
+            "'Can I trademark...', 'TM in [country] from AU', 'What to do if...', industry x service, location x service"
+          ]
         ]
       },
       {
         "title": "Projected KPIs",
         "description": "Measurement targets across the 12-month program.",
-        "headers": ["Metric", "Now", "6-Month (est.)", "12-Month (est.)"],
+        "headers": [
+          "Metric",
+          "Now",
+          "6-Month (est.)",
+          "12-Month (est.)"
+        ],
         "rows": [
-          ["Indexed pages", "1", "100+", "300+"],
-          ["Organic traffic (monthly)", "~0", "500-1,000", "3,000-5,000"],
-          ["Keywords ranking top 10", "0", "30-50", "150-200"],
-          ["Referring domains", "0", "20-30", "50+"],
-          ["Domain Rating", "~0", "15-25", "30-40"],
-          ["AI citation rate (20 queries)", "0/20", "5-8/20", "12-15/20"],
-          ["Organic leads per month", "0", "10-20", "40-60"],
-          ["Consultation bookings (organic)", "0", "5-10", "20-30"]
+          [
+            "Indexed pages",
+            "1",
+            "100+",
+            "300+"
+          ],
+          [
+            "Organic traffic (monthly)",
+            "~0",
+            "500-1,000",
+            "3,000-5,000"
+          ],
+          [
+            "Keywords ranking top 10",
+            "0",
+            "30-50",
+            "150-200"
+          ],
+          [
+            "Referring domains",
+            "0",
+            "20-30",
+            "50+"
+          ],
+          [
+            "Domain Rating",
+            "~0",
+            "15-25",
+            "30-40"
+          ],
+          [
+            "AI citation rate (20 queries)",
+            "0/20",
+            "5-8/20",
+            "12-15/20"
+          ],
+          [
+            "Organic leads per month",
+            "0",
+            "10-20",
+            "40-60"
+          ],
+          [
+            "Consultation bookings (organic)",
+            "0",
+            "5-10",
+            "20-30"
+          ]
         ]
       },
       {
