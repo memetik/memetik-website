@@ -106,14 +106,15 @@ RULES:
 1. Output ONLY valid JSON. No markdown fences, no explanation.
 2. Extract every piece of visible text: hero, section headers, section leads, stack cards, highlight boxes, bullet lists, data tables, platform statuses, prompt observations, month blocks, scope blocks, chart data points, timeline data, milestones, calculator config, appendix sections, and CTA.
 3. Map Lucide icon component names to string names (Search, TrendingUp, Target, etc.).
-4. Include a "tldr" field with 6-8 bullet points summarising key findings and recommendations.
+4. The "tldr" field is MANDATORY. Write 6-8 bullet points that a founder can skim in 10 seconds. Each bullet must be one sentence, data-grounded, and actionable. Cover: current AI visibility score, total search opportunity, current traffic/authority baseline, the recommended opening move, competitive landscape summary, and execution timeline. These render as the first visible content block on the page — they must be compelling.
 5. Translate internal terms to public equivalents: "Apex Assets" -> "bottom-of-funnel pages", "Knowledge Graph" -> "supporting content network", "Trust Relay" -> "off-site authority", "Money Entities" -> "priority buying queries", "recommendation-share" -> "default recommendation", "shortlist" -> "buying consideration", "wedge" -> "opening move".
 6. Do NOT include these banned terms in the output: ${JSON.stringify(BANNED_TERMS)}.
 7. For data arrays defined as const at the top of the file (e.g., upsidePoints, timelinePoints, timelineMilestones, executiveMetrics, immediateActions), extract their exact values.
 8. For formatted numbers using formatWhole(), extract the raw number from the const definition, not the formatted string.
 9. The JSON must be complete enough to render the full page identically from data alone.
 10. Set the generatedAt field to today's date.
-11. Match the section structure exactly as it appears in the TSX render tree.`;
+11. Match the section structure exactly as it appears in the TSX render tree.
+12. The template renders a "Summarise with AI" button and the TLDR section at the very top of the hero. You do not need to include button markup — just ensure the tldr array and all content fields are populated.`;
 
   const userPrompt = `Extract all content from this strategy page TSX into StrategyContentData JSON.
 

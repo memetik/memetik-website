@@ -1500,11 +1500,12 @@ RULES:
 1. Output ONLY valid JSON. No markdown fences, no explanation, no commentary.
 2. Extract every piece of visible text content from the TSX.
 3. Map icons to their string names (e.g., "Search", "TrendingUp", "Target").
-4. Include the TLDR field with 6-8 bullet points summarising the key findings and recommended actions.
+4. The "tldr" field is MANDATORY. Write 6-8 bullet points that a founder can skim in 10 seconds. Each bullet must be one sentence, data-grounded, and actionable. Cover: current AI visibility score, total search opportunity, current traffic/authority baseline, the recommended opening move, competitive landscape summary, and execution timeline. These render as the first visible content block on the page — they must be compelling.
 5. Do NOT include any publicBannedTerms: ${JSON.stringify(["Foundation Assets", "AI share of voice", "pSEO", "programmatic SEO", "Apex Assets", "Knowledge Graph", "Trust Relay", "recommendation-share", "shortlist", "wedge", "Dream 100"])}.
 6. Translate any internal terms to public equivalents (e.g., "Apex Assets" -> "bottom-of-funnel pages", "Knowledge Graph" -> "supporting content network", "Trust Relay" -> "off-site authority", "Money Entities" -> "priority buying queries").
 7. Preserve all data: metrics, breakdowns, chart points, timeline milestones, appendix tables, prompt observations.
-8. The JSON must be complete enough to render the full page from data alone.`;
+8. The JSON must be complete enough to render the full page from data alone.
+9. The template renders a "Summarise with AI" button and the TLDR section at the very top of the hero, before the executive summary. You do not need to include button markup — just ensure the tldr array and all content fields are populated.`;
 
   const userPrompt = `Extract the content from this strategy page TSX into the StrategyContentData JSON format.
 
