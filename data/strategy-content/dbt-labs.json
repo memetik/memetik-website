@@ -1,0 +1,829 @@
+{
+  "slug": "dbt-labs",
+  "company": "dbt Labs",
+  "domain": "getdbt.com",
+  "title": "dbt Labs — AI Search Strategy",
+  "description": "Data teams researching transformation tools are asking Google, ChatGPT, and Gemini for recommendations right now. dbt Labs has the category authority to win those answers — but almost none of the pages required to get recommended. This strategy shows exactly what's broken, how big the prize is, and the 6-month plan to fix it.",
+  "generatedAt": "2026-03-16",
+  "researchConfidence": 100,
+  "tldr": [
+    "11.7M monthly searches in data transformation — dbt Labs captures a fraction of the available demand.",
+    "ChatGPT doesn't mention dbt in any of 16 tested buyer prompts. Gemini mentions it once. Google AI Overviews twice.",
+    "Competitors like Coalesce and Matillion are getting cited in answers dbt Labs should own.",
+    "419,200 monthly visits achievable within 12 months by building the decision-stage pages buyers and AI models need.",
+    "The opening move: buyer guides and comparison pages for high-intent queries like 'best ETL tools' and 'dbt vs alternatives'.",
+    "97.7% of validated demand is unbranded — buyers searching for solutions, not specific vendors. This is unclaimed territory.",
+    "dbt Labs has 5,714 referring domains — stronger authority than every direct competitor — but no decision-stage content to convert that authority into AI recommendations.",
+    "A 6-month execution plan covers decision pages, off-site authority reinforcement, and supporting content to make dbt the default recommendation."
+  ],
+  "hero": {
+    "eyebrow": "AI Search Strategy — dbt Labs",
+    "headline": "11.7M searches. dbt is barely visible.",
+    "oneLiner": "0% ChatGPT mention rate. 6% Gemini. Your buyers are choosing tools without you in the conversation.",
+    "subtitle": "Data teams researching transformation tools are asking Google, ChatGPT, and Gemini for recommendations right now. dbt Labs has the category authority to win those answers — but almost none of the pages required to get recommended. This strategy shows exactly what's broken, how big the prize is, and the 6-month plan to fix it.",
+    "tags": [
+      "Data Transformation",
+      "US + AU Markets",
+      "Answer Engine Optimization"
+    ]
+  },
+  "executiveSummary": {
+    "number": "00",
+    "heading": "Executive Summary",
+    "eyebrow": "Key Metrics",
+    "metrics": [
+      {
+        "label": "Total search opportunity",
+        "value": "11.7M",
+        "icon": "Search",
+        "note": "Monthly validated demand across data transformation, ETL/ELT tools, and category comparison queries."
+      },
+      {
+        "label": "Expected traffic in 12 months",
+        "value": "419,200",
+        "icon": "TrendingUp",
+        "note": "Base-case projection. Aggressive upside: 666,904. Estimate-only."
+      },
+      {
+        "label": "First 6-month target",
+        "value": "155,104",
+        "icon": "Target",
+        "note": "Focused on buyer-guide and comparison queries where purchase intent is highest."
+      },
+      {
+        "label": "AI visibility today",
+        "value": "~3%",
+        "icon": "Eye",
+        "note": "Across 16 tested prompts: 0% ChatGPT, 6.3% Gemini, 12.5% Google AI Overviews."
+      }
+    ],
+    "immediateActions": [
+      {
+        "number": "01",
+        "title": "Publish buyer-guide pages for high-intent data transformation queries",
+        "detail": "Queries like 'best ETL tools,' 'data transformation tools,' and 'extract transform load tools' represent 1.9M monthly searches with zero owned dbt Labs pages targeting them."
+      },
+      {
+        "number": "02",
+        "title": "Build comparison and evaluation pages to own the evaluation layer",
+        "detail": "Head-to-head pages for 'dbt vs Matillion,' 'ETL vs ELT,' and 'data lake vs data warehouse' are where buyers form preferences. dbt Labs has no structured comparison content."
+      },
+      {
+        "number": "03",
+        "title": "Pair every page with off-site authority and review reinforcement",
+        "detail": "On-site pages alone won't change AI recommendations. Each decision page needs matching backlinks, review-platform presence, and third-party editorial mentions."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "the-problem",
+      "number": "01",
+      "heading": "The Problem",
+      "eyebrow": "Act 1",
+      "subtitle": "dbt is the most well-known transformation tool in modern data — and it's almost invisible where buying decisions happen.",
+      "narrativeProse": [
+        {
+          "body": "When a data engineering lead asks ChatGPT \"what are the best data transformation tools,\" dbt doesn't appear. When a VP of Data asks Gemini to compare ETL platforms, Coalesce gets cited — dbt Labs is mentioned once across 16 tested prompts. Over 60% of B2B buyers now start their research inside AI-powered search surfaces before they ever visit a vendor website. dbt Labs is missing from that conversation."
+        },
+        {
+          "body": "This isn't a brand-awareness problem. dbt has strong community recognition and 5,714 referring domains. The problem is structural: dbt Labs doesn't have the decision-stage pages — buyer guides, comparison tables, evaluation frameworks — that AI models and search engines need to confidently recommend a tool. Without those pages, answer engines default to competitors who do have them, even when those competitors are objectively weaker in the market."
+        },
+        {
+          "body": "Meanwhile, Coalesce.io — with 526 referring domains compared to dbt's 5,714 — is getting cited in AI answers for \"best data transformation tools.\" Integrate.io appears in Gemini. These are companies with a fraction of dbt's actual authority, but they've built the content that AI systems can extract and recommend. The result: dbt Labs is losing buying consideration it should dominate, to competitors it should outrank."
+        }
+      ],
+      "promptObservations": [
+        {
+          "platform": "ChatGPT",
+          "market": "US",
+          "prompt": "best data transformation tools",
+          "observed": "ChatGPT returned a generic list of data transformation types (normalization, standardization, log transforms) — interpreting the query as a data science concept rather than a tooling recommendation. dbt was not mentioned. No vendor was recommended."
+        },
+        {
+          "platform": "Gemini",
+          "market": "US",
+          "prompt": "data transformation comparison",
+          "observed": "Gemini produced a detailed ETL vs ELT vs EtLT comparison table. dbt was cited once as a source link. Coalesce.io was the primary cited source. The answer positioned ELT as the modern default without naming dbt as the category leader."
+        },
+        {
+          "platform": "Google AI Overview",
+          "market": "US",
+          "prompt": "best data transformation tools",
+          "observed": "Google AI Overview listed dbt alongside Matillion, Fivetran, and Alteryx — but the source citations pointed to Datameer, Astera, and Coalesce listicle pages, not to any dbt Labs owned content. dbt was mentioned but did not control the narrative."
+        }
+      ],
+      "highlightBoxes": [
+        {
+          "title": "The core issue",
+          "tone": "warning",
+          "body": "dbt Labs has the authority and brand recognition to be the default recommendation in data transformation. But without owned decision-stage content, that authority is being borrowed by competitors who publish listicles and buyer guides that AI models can cite. Every month this gap stays open, buying consideration flows to tools with weaker products but stronger content infrastructure."
+        }
+      ]
+    },
+    {
+      "id": "the-opportunity",
+      "number": "02",
+      "heading": "The Opportunity",
+      "eyebrow": "Act 2",
+      "subtitle": "11.7M monthly searches. A usable authority base. And a competitor field that hasn't locked any of it down yet.",
+      "narrativeProse": [
+        {
+          "body": "The data transformation category has 11.7M monthly searches across buyer guides, tool comparisons, ETL/ELT education, and category exploration queries. The highest-intent cluster — buyer guides for \"best data analytics tools,\" \"ETL tools,\" and \"data transformation tools\" — represents 1.9M searches alone. These are the queries where buyers form vendor preferences. None of the current competitors have locked them down."
+        },
+        {
+          "body": "dbt Labs has a genuine right to win here. 5,714 referring domains and 67,348 backlinks give dbt a stronger authority foundation than every direct competitor except Gartner (which competes on a completely different axis). The opening move is narrow and high-leverage: build the buyer-guide and comparison pages that turn existing authority into AI-visible recommendations, starting with the queries where purchase intent is clearest."
+        },
+        {
+          "body": "The alternatives cluster — \"ETL vs ELT,\" \"dbt vs Matillion,\" \"data lake vs data warehouse\" — adds another 21,190 monthly searches of pure bottom-of-funnel evaluation demand. Together, the buyer-guide and comparison clusters create a focused entry point that compounds into broader category coverage over the following months."
+        }
+      ],
+      "upsideChart": [
+        {
+          "month": 1,
+          "low": 2000,
+          "base": 5000,
+          "high": 8000
+        },
+        {
+          "month": 2,
+          "low": 6000,
+          "base": 14000,
+          "high": 22000
+        },
+        {
+          "month": 3,
+          "low": 15000,
+          "base": 35000,
+          "high": 55000
+        },
+        {
+          "month": 4,
+          "low": 30000,
+          "base": 65000,
+          "high": 100000
+        },
+        {
+          "month": 5,
+          "low": 50000,
+          "base": 100000,
+          "high": 155000
+        },
+        {
+          "month": 6,
+          "low": 70000,
+          "base": 155104,
+          "high": 240000
+        },
+        {
+          "month": 7,
+          "low": 85000,
+          "base": 195000,
+          "high": 310000
+        },
+        {
+          "month": 8,
+          "low": 100000,
+          "base": 240000,
+          "high": 380000
+        },
+        {
+          "month": 9,
+          "low": 110000,
+          "base": 290000,
+          "high": 450000
+        },
+        {
+          "month": 10,
+          "low": 120000,
+          "base": 335000,
+          "high": 520000
+        },
+        {
+          "month": 11,
+          "low": 128000,
+          "base": 375000,
+          "high": 590000
+        },
+        {
+          "month": 12,
+          "low": 134000,
+          "base": 419200,
+          "high": 666904
+        }
+      ],
+      "calculator": {
+        "baseVisits": 419200
+      }
+    },
+    {
+      "id": "the-plan",
+      "number": "03",
+      "heading": "The Plan",
+      "eyebrow": "Act 3",
+      "subtitle": "A 6-month system to make dbt Labs the default recommendation in data transformation.",
+      "sectionLead": {
+        "takeaway": "Three steps. One compounding system.",
+        "body": "Step 1: Build the decision-stage pages that answer buyer questions directly. Step 2: Reinforce every page with off-site authority — backlinks, review platforms, editorial placements, and community presence. Step 3: Expand supporting content coverage and keep refreshing until the recommendation pattern is durable."
+      },
+      "monthBlocks": [
+        {
+          "label": "Month 1",
+          "title": "Set the foundation — first buyer-guide and comparison pages",
+          "bullets": [
+            "Publish decision pages targeting 'best data transformation tools,' 'ETL tools,' and 'best ELT platforms'",
+            "Build head-to-head comparison pages: dbt vs Matillion, ETL vs ELT, data lake vs data warehouse",
+            "Set up review-platform profiles and begin review acquisition workflow",
+            "Complete technical audit: schema, sitemaps, crawl eligibility, Bing Webmaster Tools, IndexNow",
+            "Secure first editorial placements and community mentions"
+          ]
+        },
+        {
+          "label": "Month 2",
+          "title": "Expand comparison coverage and authority reinforcement",
+          "bullets": [
+            "Ship additional comparison and alternative pages across the competitor set",
+            "Publish use-case pages: dbt for analytics engineering, dbt for data migration, dbt for enterprise",
+            "Push first wave of high-authority backlinks to decision pages",
+            "Begin Reddit and community thread presence around data transformation evaluation queries",
+            "Run first round of prompt testing to measure early AI visibility movement"
+          ]
+        },
+        {
+          "label": "Month 3",
+          "title": "Deepen supporting coverage and entity reinforcement",
+          "bullets": [
+            "Expand supporting content network around ETL/ELT education, data pipeline architecture, and transformation best practices",
+            "Publish pricing transparency and benchmark pages where category data supports them",
+            "Reinforce entity consistency across owned and third-party surfaces",
+            "Continue editorial, newsletter, and listicle distribution",
+            "Measure recommendation movement across ChatGPT, Gemini, and Google AI Overviews"
+          ]
+        },
+        {
+          "label": "Months 4–6",
+          "title": "Compound distribution and defend gains",
+          "bullets": [
+            "Expand into broader category demand: education, awareness, and brand-adjacent queries",
+            "Refresh data on existing decision pages to maintain freshness signals",
+            "Continue monthly backlink and editorial placement cadence",
+            "Patch weak prompts where competitors regain ground",
+            "Quarterly strategy review: consolidate winning positions, reallocate effort to emerging opportunities"
+          ]
+        }
+      ],
+      "scopeBlocks": [
+        {
+          "label": "Decision-stage pages",
+          "title": "Buyer guides, comparisons, alternatives, and evaluation content",
+          "icon": "FileText",
+          "bullets": [
+            "Best-for and use-case pages targeting the highest-intent buyer queries",
+            "Head-to-head comparison pages for every relevant competitor pairing",
+            "Alternative pages and category evaluation frameworks",
+            "Pricing transparency and benchmark pages where data supports them",
+            "As many decision pages as needed to cover the full demand surface — no fixed cap"
+          ]
+        },
+        {
+          "label": "Supporting content network",
+          "title": "Retrieval density that compounds over time",
+          "icon": "Layers3",
+          "bullets": [
+            "Education and explainer pages around ETL, ELT, transformation patterns, and data pipeline architecture",
+            "Use-case specific pages that reinforce decision content through internal linking",
+            "Long-tail coverage across adjacent queries to expand AI retrieval surface"
+          ]
+        },
+        {
+          "label": "Off-site authority",
+          "title": "Third-party proof that reinforces every claim",
+          "icon": "Globe",
+          "bullets": [
+            "High-authority backlinks (DR70+) pointing to decision pages",
+            "Review-platform presence: G2, Capterra, TrustRadius profile optimization and review acquisition",
+            "Reddit and community thread participation around data tool evaluation",
+            "Editorial and digital PR placements in data engineering publications",
+            "Listicle and newsletter distribution through professional networks"
+          ]
+        },
+        {
+          "label": "Technical infrastructure",
+          "title": "Machine-readable, indexable, and consistent",
+          "icon": "Shield",
+          "bullets": [
+            "Schema markup matched to visible content across every new page",
+            "Sitemap hygiene, crawl/index eligibility, and canonical management",
+            "Bing Webmaster Tools and IndexNow integration for faster discovery",
+            "Entity consistency across owned properties and third-party profiles"
+          ]
+        },
+        {
+          "label": "Measurement and proof",
+          "title": "Know exactly what's working",
+          "icon": "BarChart3",
+          "bullets": [
+            "Monthly prompt testing across ChatGPT, Gemini, and Google AI Overviews",
+            "Citation tracking and recommendation visibility scoring",
+            "Workstream completion reporting tied to business outcomes",
+            "Quarterly strategy reviews with consolidation and reallocation decisions"
+          ]
+        },
+        {
+          "label": "Refresh and defense",
+          "title": "The work compounds — it doesn't decay",
+          "icon": "Gauge",
+          "bullets": [
+            "Monthly data refreshes on decision pages to maintain freshness signals",
+            "Quarterly deep reviews of flagship content",
+            "Competitor-response updates when the market shifts",
+            "Ongoing backlink and editorial reinforcement cadence"
+          ]
+        }
+      ],
+      "timelineChart": {
+        "points": [
+          {
+            "month": 1,
+            "title": "Foundation",
+            "detail": "First decision pages live. Technical infrastructure in place. Review platforms set up. First editorial placements secured.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 5000,
+            "low": 2000,
+            "base": 5000,
+            "high": 8000
+          },
+          {
+            "month": 2,
+            "title": "Expansion",
+            "detail": "Comparison and alternative pages shipping. First backlink wave complete. Community presence established.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 14000,
+            "low": 6000,
+            "base": 14000,
+            "high": 22000
+          },
+          {
+            "month": 3,
+            "title": "Depth",
+            "detail": "Supporting content network expanding. Pricing and benchmark pages live. First measurable AI visibility movement.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 35000,
+            "low": 15000,
+            "base": 35000,
+            "high": 55000
+          },
+          {
+            "month": 4,
+            "title": "Compounding",
+            "detail": "Broader category demand entering the system. Monthly refresh cadence active. Authority signals reinforcing.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 65000,
+            "low": 30000,
+            "base": 65000,
+            "high": 100000
+          },
+          {
+            "month": 5,
+            "title": "Compounding",
+            "detail": "Education and awareness content expanding reach. Ongoing editorial and backlink distribution.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 100000,
+            "low": 50000,
+            "base": 100000,
+            "high": 155000
+          },
+          {
+            "month": 6,
+            "title": "6-month target",
+            "detail": "First-half target achieved. Decision pages ranking. AI recommendation patterns forming. System shifting to defense and expansion.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 155104,
+            "low": 70000,
+            "base": 155104,
+            "high": 240000
+          },
+          {
+            "month": 7,
+            "title": "Category expansion",
+            "detail": "Broader brand and category demand clusters entering production.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 195000,
+            "low": 85000,
+            "base": 195000,
+            "high": 310000
+          },
+          {
+            "month": 8,
+            "title": "Authority deepening",
+            "detail": "Continued backlink and editorial reinforcement. Recommendation patterns strengthening.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 240000,
+            "low": 100000,
+            "base": 240000,
+            "high": 380000
+          },
+          {
+            "month": 9,
+            "title": "Full coverage",
+            "detail": "Education and awareness clusters live. Full-funnel coverage active.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 290000,
+            "low": 110000,
+            "base": 290000,
+            "high": 450000
+          },
+          {
+            "month": 10,
+            "title": "Defense mode",
+            "detail": "Quarterly review complete. Weak prompts patched. Competitor responses handled.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 335000,
+            "low": 120000,
+            "base": 335000,
+            "high": 520000
+          },
+          {
+            "month": 11,
+            "title": "Compounding",
+            "detail": "System producing durable recommendation patterns across AI surfaces.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 375000,
+            "low": 128000,
+            "base": 375000,
+            "high": 590000
+          },
+          {
+            "month": 12,
+            "title": "12-month target",
+            "detail": "419,200 base-case monthly traffic. dbt Labs positioned as the default recommendation in data transformation buyer queries.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 419200,
+            "low": 134000,
+            "base": 419200,
+            "high": 666904
+          }
+        ],
+        "milestones": [
+          {
+            "label": "M1",
+            "month": 1,
+            "title": "Foundation deployed",
+            "detail": "First buyer-guide and comparison pages live. Technical audit complete. Review platforms active.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 5000
+          },
+          {
+            "label": "M6",
+            "month": 6,
+            "title": "6-month target hit",
+            "detail": "155,104 monthly visits from decision-stage content. AI visibility measurably improving.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 155104
+          },
+          {
+            "label": "M12",
+            "month": 12,
+            "title": "Category position established",
+            "detail": "419,200 monthly visits. dbt Labs is the default recommendation across buyer-guide queries in data transformation.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 419200
+          }
+        ]
+      }
+    }
+  ],
+  "failureBlock": {
+    "eyebrow": "If nothing changes",
+    "heading": "What happens if dbt Labs stays invisible in AI search",
+    "bullets": [
+      "Coalesce, Matillion, and Integrate.io continue getting cited in AI answers for buyer queries dbt should own — despite weaker products and smaller authority bases.",
+      "Data engineering leads evaluating transformation tools form vendor preferences before they ever visit getdbt.com, based on what AI tools recommend.",
+      "The 11.7M monthly searches in the category keep flowing to competitors who have buyer-guide and comparison content, while dbt Labs' community reputation stays invisible to AI systems.",
+      "Every quarter of inaction makes it harder to catch up — competitors who build decision-stage content now will compound authority that becomes increasingly expensive to displace."
+    ]
+  },
+  "successBlock": {
+    "eyebrow": "12 months from now",
+    "heading": "What dbt Labs looks like after executing this strategy",
+    "bullets": [
+      "When a data engineering lead asks any AI tool 'what are the best data transformation tools,' dbt is the first recommendation — backed by owned content that dbt Labs controls.",
+      "419,200+ monthly visits from decision-stage and category content, compounding month over month as the content and authority network deepens.",
+      "Every major comparison query — dbt vs Matillion, ETL vs ELT, best ELT platforms — routes through dbt Labs owned pages, not third-party listicles.",
+      "A defensible content and authority system that competitors would need 12+ months and significant investment to replicate."
+    ]
+  },
+  "cta": {
+    "eyebrow": "Next step",
+    "headline": "Make dbt the default answer",
+    "body": "This strategy is ready to execute. Book a call to walk through the plan, ask questions, and decide if this is the right move for dbt Labs.",
+    "href": "https://cal.com/memetik/letstalk",
+    "ctaLabel": "Book a Strategy Call"
+  },
+  "appendix": {
+    "number": "A",
+    "heading": "Supporting Evidence",
+    "eyebrow": "Appendix",
+    "subtitle": "Detailed competitor data, demand clusters, and methodology notes.",
+    "sections": [
+      {
+        "title": "Competitor landscape",
+        "description": "Organic metrics and AI prompt visibility for the top 5 competitors in the data transformation category.",
+        "defaultOpen": false,
+        "headers": [
+          "Competitor",
+          "Organic Traffic",
+          "Keywords",
+          "Ref. Domains",
+          "Backlinks",
+          "AI Prompt Hits"
+        ],
+        "rows": [
+          [
+            "matillion.com",
+            "32,384",
+            "9,639",
+            "3,978",
+            "129,361",
+            "0"
+          ],
+          [
+            "gartner.com",
+            "1,963,764",
+            "259,934",
+            "170,799",
+            "127,001,103",
+            "0"
+          ],
+          [
+            "coalesce.io",
+            "30,455",
+            "1,695",
+            "526",
+            "4,353",
+            "2"
+          ],
+          [
+            "estuary.dev",
+            "98,808",
+            "10,466",
+            "1,548",
+            "14,262",
+            "0"
+          ],
+          [
+            "integrate.io",
+            "83,748",
+            "21,819",
+            "3,488",
+            "677,747",
+            "1"
+          ]
+        ]
+      },
+      {
+        "title": "Demand clusters",
+        "description": "Top opportunity clusters ranked by phase and expected 12-month traffic.",
+        "defaultOpen": false,
+        "headers": [
+          "Cluster",
+          "Intent",
+          "Phase",
+          "Monthly Demand",
+          "Expected 12m Traffic (Base)",
+          "Sample Keywords"
+        ],
+        "rows": [
+          [
+            "Buyer Guides",
+            "BOFU",
+            "Months 0–3",
+            "1,925,000",
+            "211,632",
+            "data analytics tools, ETL tools, extract transform load tools"
+          ],
+          [
+            "Category & Brand",
+            "TOFU",
+            "Months 9–12",
+            "9,577,060",
+            "201,478",
+            "source control with git, CTEs, AWS downtime"
+          ],
+          [
+            "Education & Awareness",
+            "TOFU",
+            "Months 9–12",
+            "186,480",
+            "3,759",
+            "ETL what is, analytics definition, what is dbt"
+          ],
+          [
+            "Alternatives & Comparisons",
+            "BOFU",
+            "Months 0–3",
+            "21,190",
+            "2,331",
+            "data lake vs data warehouse, ETL vs ELT"
+          ]
+        ]
+      },
+      {
+        "title": "Methodology and assumptions",
+        "description": "How the numbers in this strategy were derived.",
+        "defaultOpen": false,
+        "bullets": [
+          "Search demand validated via DataForSEO keyword data across US and AU markets as of March 2026.",
+          "AI visibility tested across 16 unbranded buyer prompts on ChatGPT, Gemini, and Google AI Overviews.",
+          "Traffic projections modeled from keyword-level click-through rates and domain authority baselines. Estimate-only — not a guarantee.",
+          "Perplexity probe data was unavailable due to API errors (GAP-001). AI visibility figures exclude Perplexity.",
+          "Some ChatGPT prompts timed out (GAP-003, GAP-004). ChatGPT mention rate reflects available data only.",
+          "Revenue modeling requires client-provided ACV/AOV and funnel conversion data."
+        ]
+      }
+    ]
+  },
+  "deliverableStack": {
+    "apexAssets": {
+      "heading": "Decision-stage assets we build",
+      "items": [
+        {
+          "label": "Best-of and buyer guide pages",
+          "description": "Own the \"best Data & Analytics / Data Transformation\" queries that shape buying decisions before buyers ever reach out.",
+          "icon": "Target"
+        },
+        {
+          "label": "Head-to-head comparison pages",
+          "description": "Win shortlist formation with direct competitor matchups — the pages buyers read right before they choose.",
+          "icon": "BarChart3"
+        },
+        {
+          "label": "Alternative-to pages",
+          "description": "Capture buyers actively looking to switch from competitors. These are the highest-intent pages in any category.",
+          "icon": "Layers3"
+        },
+        {
+          "label": "Pricing transparency pages",
+          "description": "Answer the pricing question before competitors do. Buyers who can't find pricing move on.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Original research and benchmarks",
+          "description": "Publish category data that gets cited, linked to, and recommended by answer engines as the authoritative source.",
+          "icon": "Search"
+        },
+        {
+          "label": "Case-evidence assets",
+          "description": "Proof that converts — real results, real implementations, real outcomes that make the recommendation credible.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Calculators, tools, and interactive assets",
+          "description": "Earn links, citations, and return visits with utility-first content that buyers actually use.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Use-case and persona pages",
+          "description": "Match the right solution to the right buyer in the right context — every angle dbt Labs can win.",
+          "icon": "Building2"
+        }
+      ]
+    },
+    "knowledgeGraph": {
+      "heading": "Supporting coverage that compounds",
+      "body": "Memetik builds as many supporting pages as the category demands — long-tail permutations, contextual variations, adjacent use cases, FAQ depth, and topical clusters — all routing authority back to dbt Labs's decision pages. This layer scales from hundreds to thousands depending on the category and creates the retrieval density that makes answer engines find the same recommendation in more and more contexts over time."
+    },
+    "trustRelay": {
+      "heading": "Off-site authority that proves every claim",
+      "items": [
+        {
+          "label": "Review-platform presence",
+          "description": "Active profiles, review acquisition, and response workflows on the platforms buyers actually check before choosing.",
+          "icon": "MessageSquare"
+        },
+        {
+          "label": "Community and forum seeding",
+          "description": "Authentic participation where your category gets discussed — Reddit, niche forums, industry communities.",
+          "icon": "Globe"
+        },
+        {
+          "label": "Professional network distribution",
+          "description": "LinkedIn thought leadership, newsletter placements, and expert commentary that spreads the same story to decision-makers.",
+          "icon": "Building2"
+        },
+        {
+          "label": "Third-party listicles and publications",
+          "description": "Get featured in the best-of lists and roundups buyers actually read when comparing options.",
+          "icon": "Newspaper"
+        },
+        {
+          "label": "Editorial and digital PR",
+          "description": "Tier-one media placements that build brand authority and earn high-value citations answer engines trust.",
+          "icon": "Sparkles"
+        },
+        {
+          "label": "High-authority backlinks",
+          "description": "DR70+ links pointed at your most important commercial pages — the trust signal that compounds everything else.",
+          "icon": "Link2"
+        }
+      ]
+    },
+    "technical": {
+      "heading": "Machine-readable, indexable, and citable",
+      "items": [
+        {
+          "label": "Crawler eligibility across all AI surfaces",
+          "description": "OAI-SearchBot, PerplexityBot, Googlebot, BingBot — every answer engine can find and cite you.",
+          "icon": "Bot"
+        },
+        {
+          "label": "Structured data matched to visible content",
+          "description": "Schema that helps machines understand what you offer — not just what you claim.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Internal linking architecture",
+          "description": "Every supporting page feeds authority into your most important commercial pages.",
+          "icon": "Link2"
+        },
+        {
+          "label": "Sitemap, canonical, and duplicate discipline",
+          "description": "One canonical URL per intent. No dilution, no confusion, no wasted crawl budget.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Entity consistency",
+          "description": "Same brand story across owned pages, review platforms, directories, and third-party mentions.",
+          "icon": "Shield"
+        },
+        {
+          "label": "IndexNow and Bing Webmaster Tools",
+          "description": "Fast indexation and AI-performance visibility through Microsoft's citation and answer stack.",
+          "icon": "Search"
+        }
+      ]
+    },
+    "measurement": {
+      "heading": "Know exactly what's working",
+      "items": [
+        {
+          "label": "AI citation tracking",
+          "description": "Monitor where dbt Labs appears — and where it doesn't — across ChatGPT, Gemini, Perplexity, and AI Overviews.",
+          "icon": "Eye"
+        },
+        {
+          "label": "Prompt testing and recommendation-share",
+          "description": "Track the share of relevant prompts where your brand is the recommended answer — the metric that actually matters.",
+          "icon": "Bot"
+        },
+        {
+          "label": "Monthly performance reporting",
+          "description": "Rankings, traffic, citation movement, workstream completion, and business outcomes — every month.",
+          "icon": "BarChart3"
+        },
+        {
+          "label": "Quarterly strategy reviews",
+          "description": "Entity ownership status, defended vs weak prompts, refresh priorities, and commercial readout.",
+          "icon": "Target"
+        }
+      ]
+    },
+    "refresh": {
+      "heading": "The work doesn't stop — it compounds",
+      "items": [
+        {
+          "label": "Monthly data and pricing refreshes",
+          "description": "Keep decision pages current so engines keep citing them. Stale data kills recommendations.",
+          "icon": "RefreshCw"
+        },
+        {
+          "label": "Quarterly asset reviews",
+          "description": "Identify what's winning, what's slipping, and what needs reinforcement — then act on it.",
+          "icon": "Search"
+        },
+        {
+          "label": "Competitor-response updates",
+          "description": "When competitors move into prompts you've already won, respond before the position erodes.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Drift correction",
+          "description": "When a previously owned prompt softens, diagnose and fix before the recommendation is lost.",
+          "icon": "Gauge"
+        }
+      ]
+    }
+  }
+}

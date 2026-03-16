@@ -11,9 +11,7 @@ const OUTBOUND_PACK_MODEL = process.env.OUTBOUND_PACK_MODEL || process.env.STRAT
 const REPO_ROOT = path.join(__dirname, "..", "..");
 const REPO_STRATEGY_CONTRACT_ROOT = path.join(REPO_ROOT, "contracts", "strategy");
 const REPO_OUTBOUND_PACK_ROOT = path.join(REPO_ROOT, "content", "strategy-outbound-packs");
-const OBSIDIAN_OUTBOUND_PACK_ROOT =
-  process.env.OBSIDIAN_STRATEGY_OUTBOUND_PACK_DIR ||
-  path.join(os.homedir(), "Mind", "Areas", "Agency", "Clients", "SaaS", "memetik", "Strategy Outbound Packs");
+const DREAM_100_ROOT = path.join(os.homedir(), "Mind", "Memetik", "10-GTM", "Dream-100");
 const OUTBOUND_PACK_CONTRACT_PATH =
   process.env.STRATEGY_OUTBOUND_PACK_CONTRACT_PATH ||
   path.join(REPO_STRATEGY_CONTRACT_ROOT, "strategy-outbound-pack-contract.md");
@@ -323,7 +321,8 @@ function renderBulletList(items = []) {
 
 function renderParagraphs(paragraphs = []) {
   return ensureArray(paragraphs, "Paragraph list")
-    .map((paragraph) => ensureString(paragraph, "Paragraph"))
+    .filter((p) => typeof p === "string" && p.trim())
+    .map((paragraph) => paragraph.trim())
     .join("\n\n");
 }
 
@@ -332,7 +331,7 @@ function getRepoOutboundPackDir(slug) {
 }
 
 function getObsidianOutboundPackDir(company) {
-  return path.join(OBSIDIAN_OUTBOUND_PACK_ROOT, sanitizeFolderName(company?.name || pascalCase(company?.slug)));
+  return path.join(DREAM_100_ROOT, company?.name || pascalCase(company?.slug), "Outbound-Pack");
 }
 
 function buildPackFileTitle(companyName, suffix) {

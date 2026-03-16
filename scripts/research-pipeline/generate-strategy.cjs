@@ -13,11 +13,9 @@ const REPO_ROOT = path.join(__dirname, "..", "..");
 const REPO_STRATEGY_CONTRACT_ROOT = path.join(REPO_ROOT, "contracts", "strategy");
 const CANONICAL_MIND_ROOT = "/Users/house/Mind/Memetik/60-Shared/Reference/Strategy-Generation";
 const CANONICAL_MASTER_REFERENCE_PATH = "/Users/house/Mind/Memetik/60-Shared/Reference/MEMETIK-2026-AEO-Master-Reference.md";
+const DREAM_100_ROOT = path.join(os.homedir(), "Mind", "Memetik", "10-GTM", "Dream-100");
 const PORTABLE_BRIEF_SNAPSHOT_DIR = path.join(REPO_ROOT, "content", "strategy-briefs");
 const PORTABLE_STRATEGY_CONTENT_DRAFT_DIR = path.join(REPO_ROOT, "content", "strategy-content-drafts");
-const OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR =
-  process.env.OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR ||
-  path.join(os.homedir(), "Mind", "Areas", "Agency", "Clients", "SaaS", "memetik", "Strategy Content Drafts");
 const OPENAI_BASE_URL = resolveOpenAIBaseUrl(STRATEGY_MODEL);
 const MODEL_REQUEST_MAX_RETRIES = Number(process.env.STRATEGY_MODEL_MAX_RETRIES || 3);
 const MODEL_REQUEST_TIMEOUT_MS = Number(process.env.STRATEGY_MODEL_TIMEOUT_MS || 15 * 60 * 1000);
@@ -213,12 +211,14 @@ function loadStrategicContextDocs() {
   throw new Error("loadStrategicContextDocs now requires canonical inputs via loadCanonicalGenerationInputs().");
 }
 
+function getDream100CompanyDir(company) {
+  return path.join(DREAM_100_ROOT, company?.name || pascalCase(company?.slug));
+}
+
 function resolveCanonicalGenerationPaths(slug, company) {
   const mindRoot = process.env.STRATEGY_GENERATION_ROOT || CANONICAL_MIND_ROOT;
-  const briefDir = slug === "bts-2" ? path.join(mindRoot, "examples") : path.join(mindRoot, "briefs");
-  const briefFileName =
-    process.env.STRATEGY_BRIEF_FILE_NAME ||
-    (slug === "bts-2" ? "BTS-Strategy-Brief.md" : `${pascalCase(company?.slug || slug)}-Strategy-Brief.md`);
+  const briefDir = getDream100CompanyDir(company);
+  const briefFileName = "Strategy-Brief.md";
 
   return {
     masterReferencePath: process.env.MEMETIK_MASTER_REFERENCE_PATH || CANONICAL_MASTER_REFERENCE_PATH,
@@ -838,7 +838,7 @@ function buildCanonicalBrief(company, researchData, canonicalInputs) {
 - Quality gate: ${qualityGate.passed ? "passed" : "failed"}
 - Page output path: ${path.join(__dirname, "..", "..", "client", "src", "pages", "strategy", `${pascalCase(company.slug)}.tsx`)}
 - Repository content draft path: ${getRepoStrategyContentDraftPath(company.slug)}
-- Obsidian content draft path: ${getObsidianStrategyContentDraftPath(company.slug)}
+- Obsidian content draft path: ${getObsidianStrategyContentDraftPath(company.slug, company)}
 - Canonical brief path: ${canonicalInputs.paths.briefPath}
 
 ## 2. Company Context
@@ -1017,8 +1017,8 @@ function getRepoStrategyContentDraftPath(slug) {
   return path.join(PORTABLE_STRATEGY_CONTENT_DRAFT_DIR, fileName);
 }
 
-function getObsidianStrategyContentDraftPath(slug) {
-  return path.join(OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR, getStrategyContentDraftFileName(slug));
+function getObsidianStrategyContentDraftPath(slug, company) {
+  return path.join(getDream100CompanyDir(company || { slug }), "Strategy-Content-Drafts.md");
 }
 
 function syncPortableBriefSnapshot(slug, briefContent) {
@@ -1407,7 +1407,7 @@ COMPANY: ${company.name}
 DOMAIN: ${company.domain}
 CATEGORY: ${company.category}
 INDUSTRY: ${company.industry}
-CONTENT DRAFT OUTPUT PATH: ${getObsidianStrategyContentDraftPath(company.slug)}
+CONTENT DRAFT OUTPUT PATH: ${getObsidianStrategyContentDraftPath(company.slug, company)}
 
 KEYWORD ATTRIBUTION SUMMARY (use if available):
 ${formatKeywordAttributionSummary(keywordAttributionSummary)}
@@ -1442,12 +1442,13 @@ Additional requirements:
   }
 
   const repoOutPath = getRepoStrategyContentDraftPath(company.slug);
-  const obsidianOutPath = getObsidianStrategyContentDraftPath(company.slug);
+  const obsidianOutPath = getObsidianStrategyContentDraftPath(company.slug, company);
   if (!fs.existsSync(PORTABLE_STRATEGY_CONTENT_DRAFT_DIR)) {
     fs.mkdirSync(PORTABLE_STRATEGY_CONTENT_DRAFT_DIR, { recursive: true });
   }
-  if (!fs.existsSync(OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR)) {
-    fs.mkdirSync(OBSIDIAN_STRATEGY_CONTENT_DRAFT_DIR, { recursive: true });
+  const obsidianOutDir = path.dirname(obsidianOutPath);
+  if (!fs.existsSync(obsidianOutDir)) {
+    fs.mkdirSync(obsidianOutDir, { recursive: true });
   }
 
   fs.writeFileSync(repoOutPath, cleaned);

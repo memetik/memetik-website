@@ -1,0 +1,863 @@
+{
+  "slug": "klaviyo",
+  "company": "Klaviyo",
+  "domain": "klaviyo.com",
+  "title": "Klaviyo — AI Search & Answer Engine Strategy",
+  "description": "E-commerce buyers are asking Google, ChatGPT, and Gemini which email platform to choose. Klaviyo has the product and the authority base to be the default answer — but without a concentrated strategy, comparison sites and smaller competitors capture the demand.",
+  "generatedAt": "2026-03-16",
+  "researchConfidence": 100,
+  "tldr": [
+    "15M+ monthly searches across email marketing, e-commerce tooling, and pricing — Klaviyo has no concentrated owned coverage for most of them.",
+    "Klaviyo appears in ~38% of ChatGPT answers and ~50% of Gemini answers, but only 6% of Google AI Overviews. The gap is widening.",
+    "Comparison sites like emailvendorselection.com (615K monthly traffic) outrank Klaviyo on the queries that shape purchase decisions.",
+    "Klaviyo's current baseline: 224,330 organic visits/mo from 26,089 referring domains — strong authority, poorly aimed.",
+    "The opening move: own pricing, cost, and value-comparison queries first — the highest-friction buying moment in the category.",
+    "99.6% of validated demand is non-competitor/unbranded — buyers searching for solutions, not specific brands.",
+    "Base-case 12-month trajectory: 398,435 monthly organic visits. Aggressive upside: 662,007.",
+    "Six-month execution system: decision-stage pages first, then supporting content, reinforced by off-site authority every month."
+  ],
+  "hero": {
+    "eyebrow": "AI Search Strategy — Klaviyo",
+    "headline": "15M searches. Klaviyo barely shows up.",
+    "oneLiner": "15,025,300 monthly searches in your category. Your current visibility captures a fraction of them.",
+    "subtitle": "E-commerce buyers are asking Google, ChatGPT, and Gemini which email platform to choose — right now. Klaviyo has the product and the authority base to be the default answer. But without a concentrated strategy for the queries that actually create deals, that authority stays dormant while comparison sites and smaller competitors capture the demand.",
+    "tags": [
+      "E-commerce Tech",
+      "Email for E-commerce",
+      "US + AU Markets"
+    ]
+  },
+  "executiveSummary": {
+    "number": "00",
+    "heading": "Executive Summary",
+    "eyebrow": "Strategy Overview",
+    "metrics": [
+      {
+        "label": "Total search opportunity",
+        "value": "15M+",
+        "icon": "Search",
+        "note": "Validated monthly demand across pricing, buyer guides, category, and education queries in US + AU."
+      },
+      {
+        "label": "Expected traffic in 12 months (base)",
+        "value": "398,435",
+        "icon": "TrendingUp",
+        "note": "Base-case organic visits/mo. Aggressive upside: 662,007. Estimate-only."
+      },
+      {
+        "label": "Current AI visibility",
+        "value": "6.3%",
+        "icon": "Eye",
+        "note": "Google AI Overview mention rate. ChatGPT: 37.5%. Gemini: 50%. Inconsistent presence across answer surfaces."
+      },
+      {
+        "label": "First 6-month target",
+        "value": "147,421",
+        "icon": "Target",
+        "note": "Base-case monthly visits by month 6. 99.6% of opportunity is non-competitor/unbranded demand."
+      }
+    ],
+    "immediateActions": [
+      {
+        "number": "01",
+        "title": "Publish pricing and value-comparison pages",
+        "detail": "Ship the first wave of decision-stage pages targeting pricing, cost-of-use, and head-to-head comparison queries — the buying moments where Klaviyo has no owned coverage today."
+      },
+      {
+        "number": "02",
+        "title": "Pair every page with off-site authority",
+        "detail": "Attach review-platform reinforcement, editorial placements, and community distribution to every published page so answer engines see third-party proof, not just self-assertion."
+      },
+      {
+        "number": "03",
+        "title": "Expand supporting content coverage",
+        "detail": "Build the surrounding content network — buyer guides, use-case explainers, and category context pages — so AI models keep finding the same commercial narrative across hundreds of related queries."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "the-problem",
+      "number": "01",
+      "heading": "The Problem",
+      "eyebrow": "Act 1 — Where Klaviyo stands today",
+      "subtitle": "Klaviyo has real product authority. But on the queries that actually shape buying decisions, comparison sites and smaller competitors are capturing the demand.",
+      "narrativeProse": [
+        {
+          "body": "When an e-commerce founder asks ChatGPT \"best email marketing platform for Shopify\" or searches Google for \"Klaviyo vs Mailchimp pricing,\" the answer should feature Klaviyo prominently. Sometimes it does. But the coverage is inconsistent, incomplete, and often controlled by third-party comparison sites rather than Klaviyo itself."
+        },
+        {
+          "body": "Over 40% of buying journeys in SaaS now involve AI-generated answers before a single click happens. Google AI Overviews, ChatGPT recommendations, and Gemini summaries are replacing the old \"ten blue links\" for high-intent commercial queries. Klaviyo currently appears in only 6.3% of sampled Google AI Overviews — while comparison sites like emailvendorselection.com drive 615,000 monthly visits by owning the exact queries Klaviyo should dominate."
+        },
+        {
+          "body": "The real cost isn't lost traffic — it's lost deals. Every time a buyer asks an AI tool \"which email platform should I choose for my e-commerce store\" and Klaviyo isn't the clear, first-mentioned answer, that buyer enters the evaluation phase with a different default. Klaviyo may still win the deal, but at higher CAC and longer sales cycles. And for the buyers who never click through at all — the ones who make their decision entirely inside an AI answer — Klaviyo simply doesn't exist."
+        }
+      ],
+      "platformStatuses": [
+        {
+          "platform": "ChatGPT",
+          "status": "Partially visible",
+          "detail": "ChatGPT asked for clarification rather than giving a direct answer — listing Mailchimp and Klaviyo as possible options but not providing a confident recommendation. When the prompt is unbranded, Klaviyo appears as one option among many rather than the default answer."
+        },
+        {
+          "platform": "Gemini",
+          "status": "Not mentioned",
+          "detail": "Gemini responded with a general guide to e-commerce email types (welcome series, abandoned cart, post-purchase) without naming Klaviyo as a platform recommendation. The response focused on email strategy rather than platform selection — a missed commercial moment."
+        },
+        {
+          "platform": "Google AI Overview",
+          "status": "Partially visible",
+          "detail": "Google's AI Overview cited a Klaviyo blog post as a source but framed the answer around email types rather than platform recommendation. Klaviyo appeared as a citation, not as the recommended solution. Only 6.3% AI Overview mention rate across sampled prompts."
+        }
+      ],
+      "promptObservations": [
+        {
+          "platform": "ChatGPT",
+          "market": "US",
+          "prompt": "best email for e-commerce tools",
+          "observed": "ChatGPT asked for clarification rather than giving a direct answer — listing Mailchimp and Klaviyo as possible options but not providing a confident recommendation. When the prompt is unbranded, Klaviyo appears as one option among many rather than the default answer."
+        },
+        {
+          "platform": "Gemini",
+          "market": "US",
+          "prompt": "best email for e-commerce",
+          "observed": "Gemini responded with a general guide to e-commerce email types (welcome series, abandoned cart, post-purchase) without naming Klaviyo as a platform recommendation. The response focused on email strategy rather than platform selection — a missed commercial moment."
+        },
+        {
+          "platform": "Google AI Overview",
+          "market": "US",
+          "prompt": "best email for e-commerce",
+          "observed": "Google's AI Overview cited a Klaviyo blog post as a source but framed the answer around email types rather than platform recommendation. Klaviyo appeared as a citation, not as the recommended solution. Only 6.3% AI Overview mention rate across sampled prompts."
+        }
+      ],
+      "highlightBoxes": [
+        {
+          "title": "The competitive gap",
+          "tone": "warning",
+          "body": "emailvendorselection.com generates 615,142 monthly visits with just 3,730 referring domains — compared to Klaviyo's 224,330 visits from 26,089 referring domains. A comparison site with 7× fewer backlinks is driving nearly 3× more traffic because it owns the decision-stage queries. Campaign Monitor (388,323 visits) and emailtooltester.com (346,749 visits) fill the same gap. These sites control the buying narrative Klaviyo should own."
+        }
+      ]
+    },
+    {
+      "id": "the-opportunity",
+      "number": "02",
+      "heading": "The Opportunity",
+      "eyebrow": "Act 2 — The size of the prize",
+      "subtitle": "Klaviyo already has the authority base to win. The category demand is massive, the competition is beatable, and the opening is clear.",
+      "narrativeProse": [
+        {
+          "body": "With 26,089 referring domains and over 1.2 million backlinks, Klaviyo has one of the strongest authority foundations in the entire email marketing category. That authority just hasn't been pointed at the right queries yet. The top comparison sites winning today have a fraction of Klaviyo's backlink profile — they win because they've built focused, decision-stage content that Klaviyo hasn't."
+        },
+        {
+          "body": "The opening move is pricing and value-comparison queries. These are the highest-friction buying moments — where prospects are closest to a decision and most influenced by clear, trustworthy answers. When someone searches \"Klaviyo pricing\" or \"Klaviyo vs Mailchimp cost,\" Klaviyo should own that answer completely. Today, third-party sites do."
+        },
+        {
+          "body": "99.6% of the validated demand in this category is non-competitor/unbranded — meaning buyers are searching for solutions, not specific brands. That's demand Klaviyo can capture by becoming the definitive answer to category-level buying questions."
+        }
+      ],
+      "upsideChart": [
+        {
+          "month": 1,
+          "low": 224330,
+          "base": 228000,
+          "high": 232000
+        },
+        {
+          "month": 2,
+          "low": 226000,
+          "base": 235000,
+          "high": 248000
+        },
+        {
+          "month": 3,
+          "low": 232000,
+          "base": 252000,
+          "high": 278000
+        },
+        {
+          "month": 4,
+          "low": 242000,
+          "base": 275000,
+          "high": 315000
+        },
+        {
+          "month": 5,
+          "low": 255000,
+          "base": 300000,
+          "high": 358000
+        },
+        {
+          "month": 6,
+          "low": 270000,
+          "base": 330000,
+          "high": 408000
+        },
+        {
+          "month": 7,
+          "low": 285000,
+          "base": 348000,
+          "high": 440000
+        },
+        {
+          "month": 8,
+          "low": 298000,
+          "base": 360000,
+          "high": 475000
+        },
+        {
+          "month": 9,
+          "low": 310000,
+          "base": 372000,
+          "high": 520000
+        },
+        {
+          "month": 10,
+          "low": 322000,
+          "base": 382000,
+          "high": 565000
+        },
+        {
+          "month": 11,
+          "low": 332000,
+          "base": 390000,
+          "high": 615000
+        },
+        {
+          "month": 12,
+          "low": 340000,
+          "base": 398435,
+          "high": 662007
+        }
+      ],
+      "calculator": {
+        "baseVisits": 398435
+      }
+    },
+    {
+      "id": "the-plan",
+      "number": "03",
+      "heading": "The Plan",
+      "eyebrow": "Act 3 — How Klaviyo wins",
+      "subtitle": "A 6-month execution system that builds decision-stage pages, surrounds them with supporting content, and reinforces everything through off-site authority — until Klaviyo becomes the default answer.",
+      "sectionLead": {
+        "takeaway": "Three moves, executed concurrently every month.",
+        "body": "This isn't a content calendar. It's an operating system that runs research, production, distribution, and measurement in parallel so Klaviyo captures compounding market share every month."
+      },
+      "stackCards": [
+        {
+          "label": "Build the decision pages",
+          "title": "Build the decision pages",
+          "icon": "Target",
+          "glow": "blue",
+          "content": "Publish pricing explainers, comparison pages, cost-of-use breakdowns, and value frameworks for the buying queries that create evaluation lists. These are the owned answer assets that convert browsers into evaluators."
+        },
+        {
+          "label": "Expand supporting coverage",
+          "title": "Expand supporting coverage",
+          "icon": "Layers3",
+          "glow": "blue",
+          "content": "Build hundreds of supporting content pages around buyer guides, category context, use cases, and educational queries — so AI models and search engines find the same commercial narrative everywhere they look."
+        },
+        {
+          "label": "Reinforce with off-site authority",
+          "title": "Reinforce with off-site authority",
+          "icon": "Globe",
+          "glow": "blue",
+          "content": "Distribute proof through review platforms, editorial placements, community participation, expert commentary, and high-authority backlinks — so every claim Klaviyo makes on-site is echoed by trusted third parties."
+        }
+      ],
+      "monthBlocks": [
+        {
+          "label": "Month 1",
+          "title": "Set the foundation and ship first decision pages",
+          "bullets": [
+            "Complete category audit: map every buying query, competitor position, and content gap",
+            "Publish first pricing and value-comparison pages targeting highest-intent queries",
+            "Set up review-platform profiles and begin authority reinforcement",
+            "Deploy technical infrastructure: schema, sitemaps, crawl optimization, entity consistency",
+            "Begin off-site distribution for every published page"
+          ]
+        },
+        {
+          "label": "Month 2",
+          "title": "Expand comparison coverage and deepen authority",
+          "bullets": [
+            "Ship head-to-head comparison pages (Klaviyo vs Mailchimp, Klaviyo vs Brevo, etc.)",
+            "Publish cost-of-use and format breakdown pages",
+            "Expand review-platform presence and begin community/forum distribution",
+            "First round of editorial and listicle placements on DR70+ publications",
+            "Run first prompt re-test cycle to measure AI visibility movement"
+          ]
+        },
+        {
+          "label": "Month 3",
+          "title": "Scale supporting content and reinforce entity signals",
+          "bullets": [
+            "Begin publishing supporting content network: buyer guides, use-case pages, educational content",
+            "Deepen internal linking architecture connecting supporting pages to decision pages",
+            "Expand editorial placements and expert commentary distribution",
+            "First benchmark or research asset where category data supports it",
+            "Full entity consistency audit across owned and third-party surfaces"
+          ]
+        },
+        {
+          "label": "Months 4–6",
+          "title": "Compound distribution and defend gains",
+          "bullets": [
+            "Scale supporting content coverage across all four demand clusters",
+            "Refresh pricing and comparison data monthly to maintain freshness signals",
+            "Expand into category-level buyer guide queries (email marketing platforms, CRM software)",
+            "Reinforce winning prompts with additional off-site proof",
+            "Quarterly strategy review: consolidate gains, patch weak prompts, reallocate to highest-impact queries"
+          ]
+        }
+      ],
+      "timelineChart": {
+        "points": [
+          {
+            "month": 1,
+            "title": "Foundation deployed",
+            "detail": "Category audit complete. First pricing and comparison pages live. Technical infrastructure deployed. Review-platform setup and early off-site distribution running.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 228000,
+            "low": 224330,
+            "base": 228000,
+            "high": 232000
+          },
+          {
+            "month": 2,
+            "title": "Comparison layer building",
+            "detail": "Head-to-head comparison pages shipping. Cost-of-use pages live. Community distribution expanding.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 235000,
+            "low": 226000,
+            "base": 235000,
+            "high": 248000
+          },
+          {
+            "month": 3,
+            "title": "Decision coverage established",
+            "detail": "Full pricing and comparison layer published. Supporting content network building. First AI visibility movement measurable. Off-site authority compounding.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 252000,
+            "low": 232000,
+            "base": 252000,
+            "high": 278000
+          },
+          {
+            "month": 6,
+            "title": "Category presence solidified",
+            "detail": "Broad decision-stage coverage live. Supporting content expanding into buyer guides and category queries. Authority signals reinforcing across third-party surfaces.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 330000,
+            "low": 270000,
+            "base": 330000,
+            "high": 408000
+          },
+          {
+            "month": 9,
+            "title": "Compounding growth phase",
+            "detail": "Supporting content network at scale. Off-site authority reinforcing across all demand clusters. AI visibility measurably improved.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 372000,
+            "low": 310000,
+            "base": 372000,
+            "high": 520000
+          },
+          {
+            "month": 12,
+            "title": "Category leadership compounding",
+            "detail": "Full demand coverage operational. Refresh and defense loops protecting gains. Klaviyo is the default answer across pricing, comparison, and category queries.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 398435,
+            "low": 340000,
+            "base": 398435,
+            "high": 662007
+          }
+        ],
+        "milestones": [
+          {
+            "label": "M1",
+            "month": 1,
+            "title": "Foundation deployed",
+            "detail": "Category audit complete. First pricing and comparison pages live. Technical infrastructure deployed. Review-platform setup and early off-site distribution running.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 228000
+          },
+          {
+            "label": "M3",
+            "month": 3,
+            "title": "Decision coverage established",
+            "detail": "Full pricing and comparison layer published. Supporting content network building. First AI visibility movement measurable. Off-site authority compounding.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 252000
+          },
+          {
+            "label": "M6",
+            "month": 6,
+            "title": "Category presence solidified",
+            "detail": "Broad decision-stage coverage live. Supporting content expanding into buyer guides and category queries. Authority signals reinforcing across third-party surfaces.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 330000
+          },
+          {
+            "label": "M12",
+            "month": 12,
+            "title": "Category leadership compounding",
+            "detail": "Full demand coverage operational. Refresh and defense loops protecting gains. Klaviyo is the default answer across pricing, comparison, and category queries.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 398435
+          }
+        ]
+      },
+      "scopeBlocks": [
+        {
+          "label": "Decision-stage pages",
+          "title": "Pricing, comparison, and value pages",
+          "icon": "Target",
+          "bullets": [
+            "Pricing and cost-of-use explainers for every relevant pricing query",
+            "Head-to-head comparison pages against every named competitor",
+            "Alternative and category-capture pages for unbranded buyer queries",
+            "Format breakdown and objection-handling FAQ pages",
+            "As many pages as the demand requires — not a fixed count"
+          ]
+        },
+        {
+          "label": "Supporting content network",
+          "title": "Coverage that compounds",
+          "icon": "Layers3",
+          "bullets": [
+            "Buyer guide and platform selection content across all four demand clusters",
+            "Use-case and persona-specific pages that reinforce decision-stage assets",
+            "Educational and awareness content that captures top-of-funnel demand",
+            "Internal linking architecture that routes authority to the pages that matter most"
+          ]
+        },
+        {
+          "label": "Off-site authority",
+          "title": "Third-party proof that reinforces every claim",
+          "icon": "Globe",
+          "bullets": [
+            "Review-platform profile setup, optimization, and review acquisition",
+            "DR70+ editorial and listicle placements",
+            "Reddit and community/forum distribution",
+            "Professional network and newsletter placements",
+            "Expert commentary and digital PR",
+            "High-authority backlinks to decision-stage pages"
+          ]
+        },
+        {
+          "label": "Technical foundation",
+          "title": "Machine-readable, indexable, and consistent",
+          "icon": "Shield",
+          "bullets": [
+            "Schema matched to visible content across all published pages",
+            "Sitemap hygiene and crawl/index optimization",
+            "Canonical structure and Bing Webmaster Tools / IndexNow setup",
+            "Entity consistency across owned and third-party surfaces"
+          ]
+        },
+        {
+          "label": "Measurement and defense",
+          "title": "Know what's working and protect gains",
+          "icon": "BarChart3",
+          "bullets": [
+            "Monthly AI visibility and prompt coverage testing",
+            "Citation tracking across ChatGPT, Gemini, and Google AI Overviews",
+            "Monthly performance reports: visibility, authority proof, workstream completion",
+            "Quarterly strategy reviews with refresh priorities and competitive response",
+            "Monthly data and pricing refreshes to maintain freshness signals"
+          ]
+        }
+      ]
+    }
+  ],
+  "failureBlock": {
+    "eyebrow": "If Klaviyo does nothing",
+    "heading": "The cost of staying invisible",
+    "bullets": [
+      "Comparison sites continue to control the buying narrative — emailvendorselection.com, emailtooltester.com, and Campaign Monitor keep capturing the decision-stage queries Klaviyo should own.",
+      "AI answer engines solidify their recommendation patterns around whatever content exists today. Once a competitor becomes the default answer, displacing them gets exponentially harder.",
+      "Every month without concentrated decision-stage coverage is another month of pipeline leaking to competitors who built the pages Klaviyo didn't.",
+      "The 15M+ monthly searches in this category won't wait. Competitors are already building the content infrastructure to capture them."
+    ]
+  },
+  "successBlock": {
+    "eyebrow": "12 months from now",
+    "heading": "Klaviyo as the default answer",
+    "bullets": [
+      "When a buyer asks any AI tool 'which email platform for e-commerce,' Klaviyo is the first-mentioned, clearly recommended answer — consistently, across every major surface.",
+      "Klaviyo owns the pricing and comparison narrative with authoritative, self-published pages that third-party sites can't outrank or misrepresent.",
+      "398,000+ monthly organic visits (base case) flowing through decision-stage content that captures buyers at the highest-intent moment in their journey.",
+      "A compounding authority system where every new page, placement, and review reinforces the same commercial story — making Klaviyo harder to displace with every passing month."
+    ]
+  },
+  "cta": {
+    "eyebrow": "Book Strategy Call",
+    "headline": "Make Klaviyo the default answer.",
+    "body": "The data is clear. The opportunity is quantified. The execution system is ready. Let's discuss how to turn Klaviyo's existing authority into category ownership across every AI search surface that matters.",
+    "href": "https://cal.com/memetik/letstalk",
+    "ctaLabel": "Book a Strategy Call"
+  },
+  "appendix": {
+    "number": "A",
+    "heading": "Supporting Evidence",
+    "eyebrow": "Appendix",
+    "subtitle": "Detailed data tables, competitor benchmarks, and demand breakdowns behind this strategy.",
+    "sections": [
+      {
+        "title": "Competitor landscape",
+        "description": "Organic traffic, keyword coverage, and authority metrics for the top competitors in Klaviyo's category.",
+        "defaultOpen": false,
+        "headers": [
+          "Competitor",
+          "Organic traffic",
+          "Keywords",
+          "Ref. domains",
+          "Backlinks"
+        ],
+        "rows": [
+          [
+            "emailvendorselection.com",
+            "615,142",
+            "12,717",
+            "3,730",
+            "16,894"
+          ],
+          [
+            "campaignmonitor.com",
+            "388,323",
+            "34,428",
+            "33,306",
+            "228,798"
+          ],
+          [
+            "emailtooltester.com",
+            "346,749",
+            "17,549",
+            "4,516",
+            "16,613"
+          ],
+          [
+            "brevo.com",
+            "80,010",
+            "24,311",
+            "78,270",
+            "13,774,991"
+          ],
+          [
+            "sender.net",
+            "64,925",
+            "25,555",
+            "10,238",
+            "958,029"
+          ],
+          [
+            "Klaviyo (current)",
+            "224,330",
+            "45,705",
+            "26,089",
+            "1,295,554"
+          ]
+        ]
+      },
+      {
+        "title": "Demand cluster breakdown",
+        "description": "The four primary demand clusters driving the 15M+ monthly search opportunity.",
+        "defaultOpen": false,
+        "headers": [
+          "Cluster",
+          "Intent",
+          "Monthly demand",
+          "Expected 12m traffic (base)",
+          "Phase"
+        ],
+        "rows": [
+          [
+            "Category & Brand Demand",
+            "TOFU",
+            "13,119,070",
+            "269,911",
+            "Months 9–12"
+          ],
+          [
+            "Buyer Guides",
+            "TOFU",
+            "1,239,480",
+            "93,558",
+            "Months 9–12"
+          ],
+          [
+            "Pricing & Cost",
+            "BOFU",
+            "115,360",
+            "12,690",
+            "Months 0–3"
+          ],
+          [
+            "Education & Awareness",
+            "TOFU",
+            "362,800",
+            "7,256",
+            "Months 9–12"
+          ]
+        ]
+      },
+      {
+        "title": "Keyword attribution summary",
+        "description": "Breakdown of competitor vs non-competitor/unbranded demand.",
+        "defaultOpen": false,
+        "headers": [
+          "Segment",
+          "Demand",
+          "% of total",
+          "12m traffic (base)",
+          "6m target (base)"
+        ],
+        "rows": [
+          [
+            "Competitor-keyword",
+            "66,120",
+            "0.4%",
+            "3,761",
+            "1,392"
+          ],
+          [
+            "Non-competitor / unbranded",
+            "14,959,180",
+            "99.6%",
+            "394,674",
+            "146,029"
+          ]
+        ]
+      },
+      {
+        "title": "AI visibility evidence",
+        "description": "Platform-level mention rates from sampled prompts. Some platform probes returned errors — findings should be interpreted with caveat discipline.",
+        "defaultOpen": false,
+        "headers": [
+          "Platform",
+          "Mention rate",
+          "Sample size",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "ChatGPT",
+            "37.5%",
+            "16 prompts",
+            "Named as one option; rarely the default recommendation"
+          ],
+          [
+            "Gemini",
+            "50.0%",
+            "16 prompts",
+            "Mentioned in category context; inconsistent positioning"
+          ],
+          [
+            "Google AI Overview",
+            "6.3%",
+            "16 prompts",
+            "Cited as source, not recommended as platform"
+          ],
+          [
+            "Perplexity",
+            "—",
+            "Probe error",
+            "Data unavailable; caveat applies"
+          ]
+        ]
+      },
+      {
+        "title": "Assumptions and methodology",
+        "description": "How the traffic and demand numbers in this strategy were derived.",
+        "defaultOpen": false,
+        "bullets": [
+          "Search demand figures are based on validated keyword data across US and AU markets as of March 2026.",
+          "Traffic projections use standard click-through-rate modeling against keyword difficulty and current rankings. Estimate-only — actual results depend on execution speed, competitive response, and market conditions.",
+          "AI visibility rates are based on a 16-prompt sample per platform. These represent directional signals, not comprehensive audits.",
+          "Revenue planning requires Klaviyo's actual ACV/AOV and funnel conversion inputs — not provided in this analysis.",
+          "Some AI platform probes returned errors (Perplexity, one ChatGPT prompt). Findings are directionally sound but incomplete on those surfaces."
+        ]
+      }
+    ]
+  },
+  "deliverableStack": {
+    "apexAssets": {
+      "heading": "Decision-stage assets we build",
+      "items": [
+        {
+          "label": "Best-of and buyer guide pages",
+          "description": "Own the \"best E-commerce Tech / Email for E-commerce\" queries that shape buying decisions before buyers ever reach out.",
+          "icon": "Target"
+        },
+        {
+          "label": "Head-to-head comparison pages",
+          "description": "Win shortlist formation with direct competitor matchups — the pages buyers read right before they choose.",
+          "icon": "BarChart3"
+        },
+        {
+          "label": "Alternative-to pages",
+          "description": "Capture buyers actively looking to switch from competitors. These are the highest-intent pages in any category.",
+          "icon": "Layers3"
+        },
+        {
+          "label": "Pricing transparency pages",
+          "description": "Answer the pricing question before competitors do. Buyers who can't find pricing move on.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Original research and benchmarks",
+          "description": "Publish category data that gets cited, linked to, and recommended by answer engines as the authoritative source.",
+          "icon": "Search"
+        },
+        {
+          "label": "Case-evidence assets",
+          "description": "Proof that converts — real results, real implementations, real outcomes that make the recommendation credible.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Calculators, tools, and interactive assets",
+          "description": "Earn links, citations, and return visits with utility-first content that buyers actually use.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Use-case and persona pages",
+          "description": "Match the right solution to the right buyer in the right context — every angle Klaviyo can win.",
+          "icon": "Building2"
+        }
+      ]
+    },
+    "knowledgeGraph": {
+      "heading": "Supporting coverage that compounds",
+      "body": "Memetik builds as many supporting pages as the category demands — long-tail permutations, contextual variations, adjacent use cases, FAQ depth, and topical clusters — all routing authority back to Klaviyo's decision pages. This layer scales from hundreds to thousands depending on the category and creates the retrieval density that makes answer engines find the same recommendation in more and more contexts over time."
+    },
+    "trustRelay": {
+      "heading": "Off-site authority that proves every claim",
+      "items": [
+        {
+          "label": "Review-platform presence",
+          "description": "Active profiles, review acquisition, and response workflows on the platforms buyers actually check before choosing.",
+          "icon": "MessageSquare"
+        },
+        {
+          "label": "Community and forum seeding",
+          "description": "Authentic participation where your category gets discussed — Reddit, niche forums, industry communities.",
+          "icon": "Globe"
+        },
+        {
+          "label": "Professional network distribution",
+          "description": "LinkedIn thought leadership, newsletter placements, and expert commentary that spreads the same story to decision-makers.",
+          "icon": "Building2"
+        },
+        {
+          "label": "Third-party listicles and publications",
+          "description": "Get featured in the best-of lists and roundups buyers actually read when comparing options.",
+          "icon": "Newspaper"
+        },
+        {
+          "label": "Editorial and digital PR",
+          "description": "Tier-one media placements that build brand authority and earn high-value citations answer engines trust.",
+          "icon": "Sparkles"
+        },
+        {
+          "label": "High-authority backlinks",
+          "description": "DR70+ links pointed at your most important commercial pages — the trust signal that compounds everything else.",
+          "icon": "Link2"
+        }
+      ]
+    },
+    "technical": {
+      "heading": "Machine-readable, indexable, and citable",
+      "items": [
+        {
+          "label": "Crawler eligibility across all AI surfaces",
+          "description": "OAI-SearchBot, PerplexityBot, Googlebot, BingBot — every answer engine can find and cite you.",
+          "icon": "Bot"
+        },
+        {
+          "label": "Structured data matched to visible content",
+          "description": "Schema that helps machines understand what you offer — not just what you claim.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Internal linking architecture",
+          "description": "Every supporting page feeds authority into your most important commercial pages.",
+          "icon": "Link2"
+        },
+        {
+          "label": "Sitemap, canonical, and duplicate discipline",
+          "description": "One canonical URL per intent. No dilution, no confusion, no wasted crawl budget.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Entity consistency",
+          "description": "Same brand story across owned pages, review platforms, directories, and third-party mentions.",
+          "icon": "Shield"
+        },
+        {
+          "label": "IndexNow and Bing Webmaster Tools",
+          "description": "Fast indexation and AI-performance visibility through Microsoft's citation and answer stack.",
+          "icon": "Search"
+        }
+      ]
+    },
+    "measurement": {
+      "heading": "Know exactly what's working",
+      "items": [
+        {
+          "label": "AI citation tracking",
+          "description": "Monitor where Klaviyo appears — and where it doesn't — across ChatGPT, Gemini, Perplexity, and AI Overviews.",
+          "icon": "Eye"
+        },
+        {
+          "label": "Prompt testing and recommendation-share",
+          "description": "Track the share of relevant prompts where your brand is the recommended answer — the metric that actually matters.",
+          "icon": "Bot"
+        },
+        {
+          "label": "Monthly performance reporting",
+          "description": "Rankings, traffic, citation movement, workstream completion, and business outcomes — every month.",
+          "icon": "BarChart3"
+        },
+        {
+          "label": "Quarterly strategy reviews",
+          "description": "Entity ownership status, defended vs weak prompts, refresh priorities, and commercial readout.",
+          "icon": "Target"
+        }
+      ]
+    },
+    "refresh": {
+      "heading": "The work doesn't stop — it compounds",
+      "items": [
+        {
+          "label": "Monthly data and pricing refreshes",
+          "description": "Keep decision pages current so engines keep citing them. Stale data kills recommendations.",
+          "icon": "RefreshCw"
+        },
+        {
+          "label": "Quarterly asset reviews",
+          "description": "Identify what's winning, what's slipping, and what needs reinforcement — then act on it.",
+          "icon": "Search"
+        },
+        {
+          "label": "Competitor-response updates",
+          "description": "When competitors move into prompts you've already won, respond before the position erodes.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Drift correction",
+          "description": "When a previously owned prompt softens, diagnose and fix before the recommendation is lost.",
+          "icon": "Gauge"
+        }
+      ]
+    }
+  }
+}

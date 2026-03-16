@@ -1,0 +1,764 @@
+{
+  "slug": "linear",
+  "company": "Linear",
+  "domain": "linear.app",
+  "title": "Linear — AI Search & Answer Engine Strategy",
+  "description": "Engineering teams already love Linear. But when buyers ask Google, ChatGPT, or Gemini which issue tracker to choose, Jira and GitHub dominate the answers. This strategy shows how to change that — and what it costs to wait.",
+  "generatedAt": "2026-03-16",
+  "researchConfidence": 90,
+  "tldr": [
+    "12.3M monthly searches in Linear's category — Linear captures less than 0.5% of that demand today.",
+    "Jira (Atlassian) has 122× Linear's organic traffic and dominates AI answer surfaces.",
+    "Linear appears in ~62% of ChatGPT and ~87% of Gemini responses — but almost never in Google AI Overviews.",
+    "Linear has 66,532 monthly organic visits and 6,166 referring domains — a real authority base that hasn't been converted into buyer-facing pages.",
+    "99.9% of the identified search opportunity is unbranded — buyers searching for categories, use cases, and comparisons, not specific brand names.",
+    "The recommended opening move: publish decision-stage pages for the highest-intent buyer queries — best issue tracking tools, Linear vs Jira, project tracking software.",
+    "A focused 6-month program targeting buyer-guide and comparison queries could drive 566K+ monthly visits within 12 months.",
+    "Every month of inaction widens the gap as Jira, Monday.com, and newer competitors like Plane build content presence while Linear remains invisible."
+  ],
+  "hero": {
+    "eyebrow": "Answer Engine Strategy — Linear",
+    "headline": "12M searches. Jira gets the answer.",
+    "oneLiner": "12.3M monthly searches in issue tracking. Linear owns almost none of them.",
+    "subtitle": "Engineering teams already love Linear. But when buyers ask Google, ChatGPT, or Gemini which issue tracker to choose, Jira and GitHub dominate the answers. This strategy shows how to change that — and what it costs to wait.",
+    "tags": [
+      "Dev Tools",
+      "Issue Tracking",
+      "US + AU",
+      "Search + AI Visibility"
+    ]
+  },
+  "executiveSummary": {
+    "number": "00",
+    "heading": "Executive Summary",
+    "eyebrow": "Strategy overview",
+    "metrics": [
+      {
+        "label": "Total category search demand",
+        "value": "12.3M",
+        "icon": "Search",
+        "note": "Monthly validated searches across issue tracking, project management, and dev-tool buyer queries in US + AU."
+      },
+      {
+        "label": "Expected traffic in 12 months",
+        "value": "566,958",
+        "icon": "TrendingUp",
+        "note": "Base-case modeled traffic from a focused program. Estimate-only — aggressive upside reaches 876K."
+      },
+      {
+        "label": "Current organic traffic",
+        "value": "66,532",
+        "icon": "Eye",
+        "note": "Linear's current monthly organic visits — less than 1% of total category demand."
+      },
+      {
+        "label": "First 6-month target",
+        "value": "209,774",
+        "icon": "Target",
+        "note": "Base-case traffic target for the first half of the engagement."
+      }
+    ],
+    "immediateActions": [
+      {
+        "number": "01",
+        "title": "Publish decision-stage pages for the highest-intent buyer queries",
+        "detail": "Best issue tracking tools, project tracking software, Linear vs Jira — these are the queries that form vendor shortlists. Linear needs owned pages for each one."
+      },
+      {
+        "number": "02",
+        "title": "Pair every new page with off-site authority and review proof",
+        "detail": "Publishing alone isn't enough. Each decision page needs matching third-party placements, backlinks, review-platform presence, and community mentions to earn AI recommendation confidence."
+      },
+      {
+        "number": "03",
+        "title": "Build the supporting content network that makes AI engines keep finding Linear",
+        "detail": "Surround decision pages with supporting coverage across use cases, buyer contexts, and adjacent comparisons so retrieval systems repeatedly surface the same commercial story."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "the-problem",
+      "number": "01",
+      "heading": "The Problem",
+      "eyebrow": "Act 1 — Where Linear stands today",
+      "subtitle": "Linear has the product. It doesn't have the pages that make buyers find it.",
+      "narrativeProse": [
+        {
+          "body": "Over 12 million searches happen every month in the issue-tracking and project-management category across the US and Australia. These aren't casual browsers — they're engineering leads evaluating tools, CTOs comparing pricing, and team leads asking \"best issue tracker for startups.\""
+        },
+        {
+          "body": "Linear captures almost none of this demand. With 66,532 monthly organic visits against a 12.3M-search category, Linear is invisible in the moments that form vendor shortlists. Meanwhile, Atlassian's Jira pulls in 8.1 million visits per month. Monday.com pulls in 919K. Even Plane — a fraction of Linear's product quality — gets 96K."
+        },
+        {
+          "body": "The issue isn't brand awareness. Developers know Linear. The issue is that Linear has no owned content for the buyer queries that matter — no \"best issue tracking tools\" page, no \"Linear vs Jira\" comparison, no pricing transparency page that search engines and AI models can cite when someone asks for a recommendation."
+        },
+        {
+          "body": "In AI search, this creates a specific kind of damage. When a buyer asks ChatGPT or Gemini \"best issue tracking software,\" Linear sometimes appears — but inconsistently, and never as the default recommendation. In Google AI Overviews, Linear appeared in only 12.5% of sampled prompts. Jira is cited first in almost every response. The buyers Linear loses here never show up in any analytics dashboard — they simply choose a competitor before Linear ever gets the call."
+        }
+      ],
+      "platformStatuses": [
+        {
+          "platform": "ChatGPT",
+          "status": "Mentioned — not recommended",
+          "detail": "Lists Jira Software first as \"best overall for large teams,\" followed by GitHub Issues, then mentions Linear as \"best modern developer tool\" — but Jira consistently leads the recommendation and gets the most detailed coverage."
+        },
+        {
+          "platform": "Gemini",
+          "status": "Mentioned — niche framing",
+          "detail": "Jira is named the \"industry standard\" for software development. Linear is categorized as \"small teams / startups\" — a niche framing that undersells the product to enterprise buyers evaluating their options."
+        },
+        {
+          "platform": "Google AI Overview",
+          "status": "Absent",
+          "detail": "Linear was absent from the majority of sampled Google AI Overview responses. Jira, Monday.com, and GitHub Issues dominate the overview panels that appear above traditional search results."
+        }
+      ],
+      "highlightBoxes": [
+        {
+          "title": "AI visibility snapshot",
+          "bullets": [
+            "ChatGPT: 62.5% mention rate (10 of 16 sampled prompts)",
+            "Gemini: 87.5% mention rate (14 of 16 sampled prompts)",
+            "Google AI Overview: 12.5% mention rate (2 of 16 sampled prompts)",
+            "Linear has partial momentum in LLM responses but almost no presence in Google AI Overviews — the surface that now appears above traditional search results for most buyer queries. This is where shortlists form before a click ever happens."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-opportunity",
+      "number": "02",
+      "heading": "The Opportunity",
+      "eyebrow": "Act 2 — The size of the prize",
+      "subtitle": "Linear has the authority base to win. It just hasn't built the pages yet.",
+      "narrativeProse": [
+        {
+          "body": "Linear already has 6,166 referring domains and 66,000+ backlinks. That's a real authority foundation — far stronger than most companies at this stage. The problem isn't credibility. It's that Linear hasn't converted that authority into a concentrated set of decision-stage pages that search engines and AI models can serve to buyers."
+        },
+        {
+          "body": "The opening is buyer-guide demand. Over 3.3 million monthly searches happen around queries like \"best project tracking software,\" \"project management tools,\" and \"issue tracker for engineering teams.\" These are the queries where buying decisions are made — and right now, Linear has no owned pages targeting them. This is where Memetik starts."
+        },
+        {
+          "body": "Then come comparisons and pricing — \"Linear vs Jira,\" \"Jira pricing,\" \"ClickUp alternatives\" — another 90K monthly searches where buyers are actively evaluating options. Linear needs to own these pages so the comparison happens on its terms, not on a third-party site that may not present the product fairly."
+        }
+      ],
+      "upsideChart": [
+        {
+          "month": 0,
+          "low": 66532,
+          "base": 66532,
+          "high": 66532
+        },
+        {
+          "month": 3,
+          "low": 90000,
+          "base": 120000,
+          "high": 160000
+        },
+        {
+          "month": 6,
+          "low": 145000,
+          "base": 209774,
+          "high": 290000
+        },
+        {
+          "month": 9,
+          "low": 220000,
+          "base": 380000,
+          "high": 540000
+        },
+        {
+          "month": 12,
+          "low": 334000,
+          "base": 566958,
+          "high": 876833
+        }
+      ],
+      "calculator": {
+        "baseVisits": 566958
+      }
+    },
+    {
+      "id": "the-plan",
+      "number": "03",
+      "heading": "The Plan",
+      "eyebrow": "Act 3 — How Memetik builds this",
+      "subtitle": "A 6-month program that compounds every month — not a content calendar.",
+      "sectionLead": {
+        "takeaway": "Three moves. One system. Compounding results.",
+        "body": "Every month runs research, production, distribution, and measurement in parallel. Nothing ships without matching off-site authority. Nothing gets published without the technical infrastructure to make it findable."
+      },
+      "stackCards": [
+        {
+          "label": "01",
+          "title": "Capture the buyer queries",
+          "glow": "blue",
+          "content": "Publish decision-stage pages — buyer guides, head-to-head comparisons, pricing transparency, and use-case pages — for the highest-intent searches in issue tracking."
+        },
+        {
+          "label": "02",
+          "title": "Build the authority layer",
+          "glow": "blue",
+          "content": "Every decision page gets matched off-site authority: review-platform placements, editorial mentions, community threads, backlinks from DR70+ domains, and comparison listicles on third-party publications."
+        },
+        {
+          "label": "03",
+          "title": "Expand and compound",
+          "glow": "blue",
+          "content": "Surround decision pages with supporting content that covers long-tail use cases, buyer contexts, and adjacent queries — so AI retrieval systems keep finding the same story across hundreds of surfaces."
+        }
+      ],
+      "monthBlocks": [
+        {
+          "label": "Month 1",
+          "title": "Set the foundation and ship the first decision pages",
+          "bullets": [
+            "Full discovery audit: map every buyer query in the category, benchmark competitor content and AI visibility, identify the fastest-win pages",
+            "Publish the first wave of decision-stage pages targeting \"best issue tracking,\" \"project tracking software,\" and \"Linear vs Jira\"",
+            "Set up review-platform profiles and begin first off-site authority placements",
+            "Technical foundation: schema, sitemap hygiene, crawl eligibility, entity consistency, and IndexNow setup"
+          ]
+        },
+        {
+          "label": "Month 2",
+          "title": "Expand comparisons and deepen authority",
+          "bullets": [
+            "Publish comparison pages for every major competitor: Linear vs Monday, Linear vs GitHub Issues, Linear vs ClickUp",
+            "Pricing transparency pages for key buyer queries",
+            "First wave of backlinks from DR70+ domains pointing to decision pages",
+            "Reddit and community thread participation around issue-tracking discussions"
+          ]
+        },
+        {
+          "label": "Month 3",
+          "title": "Build supporting coverage and reinforce everything",
+          "bullets": [
+            "Launch the supporting content network: use-case pages, buyer-context pages, industry-specific guides",
+            "Entity reinforcement: consistent author profiles, about pages, and third-party review coverage",
+            "Second wave of editorial placements and expert commentary in dev-tool publications",
+            "First measurement cycle: prompt testing, citation tracking, traffic attribution"
+          ]
+        },
+        {
+          "label": "Months 4–6",
+          "title": "Compound distribution and expand market share",
+          "bullets": [
+            "Scale supporting content across every use case, team size, and buyer persona in the category",
+            "Refresh data, pricing, and benchmark claims on all decision pages to maintain freshness signals",
+            "Widen off-site authority: newsletter placements, professional-network distribution, and new editorial coverage",
+            "Quarterly strategy review: defend won prompts, attack weakening competitor positions, reallocate effort to highest-upside queries"
+          ]
+        }
+      ],
+      "timelineChart": {
+        "points": [
+          {
+            "month": 1,
+            "title": "Foundation & first decision pages",
+            "detail": "Discovery audit, first wave of buyer-guide pages, review-platform setup, technical foundation.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 85000,
+            "low": 70000,
+            "base": 85000,
+            "high": 105000
+          },
+          {
+            "month": 2,
+            "title": "Comparisons & authority deepening",
+            "detail": "Competitor comparisons, pricing pages, first backlinks, community participation.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 100000,
+            "low": 80000,
+            "base": 100000,
+            "high": 130000
+          },
+          {
+            "month": 3,
+            "title": "Supporting network & measurement",
+            "detail": "Supporting content launch, entity reinforcement, editorial placements, first citation tracking.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 130000,
+            "low": 95000,
+            "base": 130000,
+            "high": 175000
+          },
+          {
+            "month": 4,
+            "title": "Scale & compound",
+            "detail": "Expanded supporting content, broader off-site authority, data refreshes on decision pages.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 170000,
+            "low": 120000,
+            "base": 170000,
+            "high": 240000
+          },
+          {
+            "month": 5,
+            "title": "Category expansion",
+            "detail": "New use-case clusters, newsletter distribution, professional-network placements.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 230000,
+            "low": 160000,
+            "base": 230000,
+            "high": 340000
+          },
+          {
+            "month": 6,
+            "title": "First plateau & strategy review",
+            "detail": "Quarterly review: defend wins, attack weakening competitors, reallocate to highest-upside queries.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 300000,
+            "low": 200000,
+            "base": 300000,
+            "high": 450000
+          },
+          {
+            "month": 9,
+            "title": "Broader category demand capture",
+            "detail": "Category and brand demand coverage, expanded comparison network, deeper editorial placements.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 420000,
+            "low": 260000,
+            "base": 420000,
+            "high": 620000
+          },
+          {
+            "month": 12,
+            "title": "Full compound effect",
+            "detail": "The system reaches compound velocity — decision pages, supporting content, and authority all reinforcing each other.",
+            "bullets": [],
+            "trafficLabel": "Base traffic",
+            "trafficValue": 566958,
+            "low": 334000,
+            "base": 566958,
+            "high": 876833
+          }
+        ],
+        "milestones": [
+          {
+            "label": "M1",
+            "month": 1,
+            "title": "Foundation",
+            "detail": "Audit, first decision pages, technical setup, review-platform presence.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 85000
+          },
+          {
+            "label": "M3",
+            "month": 3,
+            "title": "First measurement cycle",
+            "detail": "Supporting content live, first citation tracking, editorial placements shipping.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 130000
+          },
+          {
+            "label": "M6",
+            "month": 6,
+            "title": "Quarterly review",
+            "detail": "Defend wins, reallocate effort, scale to next demand tier.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 300000
+          },
+          {
+            "label": "M12",
+            "month": 12,
+            "title": "Full compound",
+            "detail": "Category coverage at scale, durable recommendation positioning, compounding traffic.",
+            "trafficLabel": "Base traffic",
+            "trafficValue": 566958
+          }
+        ]
+      },
+      "highlightBoxes": [
+        {
+          "title": "What Memetik builds every month",
+          "bullets": [
+            "Decision-stage pages: buyer guides, head-to-head comparisons, alternative roundups, pricing transparency pages, use-case pages — as many as needed to cover the demand",
+            "Supporting content network: hundreds of pages covering long-tail use cases, buyer contexts, and adjacent queries that reinforce decision pages",
+            "Off-site authority: review-platform placements, Reddit/community participation, DR70+ backlinks, editorial placements, comparison listicles on third-party publications, expert commentary, newsletter distribution",
+            "Technical infrastructure: structured data matched to visible content, sitemap hygiene, crawl eligibility, canonicals, Bing Webmaster Tools, IndexNow, entity consistency across owned and third-party surfaces",
+            "Measurement: prompt testing across ChatGPT, Gemini, and Google AI Overviews, citation tracking, traffic attribution, monthly recommendation-visibility reporting",
+            "Refresh and defense: monthly data and pricing updates, quarterly decision-page reviews, competitor-response updates, and drift correction when a previously won query softens"
+          ]
+        }
+      ]
+    }
+  ],
+  "failureBlock": {
+    "eyebrow": "What happens if Linear does nothing",
+    "heading": "The gap widens every month",
+    "bullets": [
+      "Jira and Monday.com continue to capture the buyer queries that form shortlists — every month they publish and distribute, the gap becomes harder to close.",
+      "Google AI Overviews expand into more issue-tracking queries. Without owned content, Linear stays absent from the surface that now sits above traditional search results.",
+      "Engineering leads who would choose Linear never see it in their research phase — they shortlist Jira, evaluate Monday, and make a decision before Linear gets the call.",
+      "Newer competitors like Plane build their content presence while Linear's product advantage erodes through pure invisibility."
+    ]
+  },
+  "successBlock": {
+    "eyebrow": "What 12 months from now looks like",
+    "heading": "Linear becomes the default recommendation",
+    "bullets": [
+      "When a CTO asks ChatGPT \"best issue tracking tool for startups,\" Linear is the first name — with a confident recommendation, not a footnote.",
+      "Google AI Overviews cite Linear's owned decision pages for buyer-intent queries, putting the brand above traditional search results.",
+      "566K+ monthly organic visits from buyers actively evaluating tools — a pipeline channel that compounds instead of resetting every quarter.",
+      "The content and authority moat makes it progressively harder for competitors to displace Linear from the queries that create revenue."
+    ]
+  },
+  "cta": {
+    "eyebrow": "Next step",
+    "headline": "Let's make Linear the answer.",
+    "body": "This strategy is ready to execute. Book a call to walk through the research, discuss priorities, and define the first 30 days. Memetik builds category-defining search and AI visibility for dev tools — and Linear is exactly the kind of product that should own its category.",
+    "href": "https://cal.com/memetik/letstalk",
+    "ctaLabel": "Book a Strategy Call"
+  },
+  "appendix": {
+    "number": "A",
+    "heading": "Supporting Evidence",
+    "eyebrow": "Appendix",
+    "subtitle": "Detailed data behind the strategy — competitor benchmarks, opportunity clusters, and prompt evidence.",
+    "sections": [
+      {
+        "title": "Competitor landscape",
+        "description": "Organic traffic, keyword coverage, and backlink profiles for Linear's primary competitors.",
+        "defaultOpen": false,
+        "headers": [
+          "Competitor",
+          "Organic traffic",
+          "Keywords",
+          "Referring domains",
+          "Backlinks"
+        ],
+        "rows": [
+          [
+            "linear.app",
+            "66,532",
+            "16,427",
+            "6,166",
+            "66,056"
+          ],
+          [
+            "atlassian.com (Jira)",
+            "8,158,279",
+            "539,199",
+            "156,051",
+            "74,568,368"
+          ],
+          [
+            "github.com",
+            "48,417,137",
+            "4,294,553",
+            "2,218,878",
+            "4,625,038,368"
+          ],
+          [
+            "monday.com",
+            "919,983",
+            "154,685",
+            "71,799",
+            "8,537,980"
+          ],
+          [
+            "plane.so",
+            "96,852",
+            "12,129",
+            "1,400",
+            "108,845"
+          ]
+        ]
+      },
+      {
+        "title": "Opportunity clusters",
+        "description": "The four demand clusters that form the basis of the execution plan.",
+        "defaultOpen": false,
+        "headers": [
+          "Cluster",
+          "Intent",
+          "Phase",
+          "Monthly demand",
+          "12-month traffic (base)"
+        ],
+        "rows": [
+          [
+            "Buyer Guides",
+            "BOFU",
+            "Months 0–3",
+            "3,375,480",
+            "371,303"
+          ],
+          [
+            "Category & Brand",
+            "TOFU",
+            "Months 9–12",
+            "8,719,870",
+            "181,710"
+          ],
+          [
+            "Pricing & Cost",
+            "BOFU",
+            "Months 0–3",
+            "52,100",
+            "5,731"
+          ],
+          [
+            "Alternatives & Comparisons",
+            "BOFU",
+            "Months 0–3",
+            "37,770",
+            "4,155"
+          ]
+        ]
+      },
+      {
+        "title": "Commercial keyword signals",
+        "description": "High-volume keywords where Linear has no or weak positioning today.",
+        "defaultOpen": false,
+        "headers": [
+          "Keyword",
+          "Current position",
+          "Monthly volume"
+        ],
+        "rows": [
+          [
+            "define alternatives",
+            "104",
+            "18,100"
+          ],
+          [
+            "slack pricing",
+            "80",
+            "8,100"
+          ],
+          [
+            "notion pricing",
+            "102",
+            "6,600"
+          ],
+          [
+            "best software for project management",
+            "53",
+            "5,400"
+          ],
+          [
+            "best app for planning",
+            "53",
+            "4,400"
+          ]
+        ]
+      },
+      {
+        "title": "AI prompt evidence",
+        "description": "Sample prompts tested across ChatGPT and Gemini showing how Linear is currently positioned in AI responses.",
+        "defaultOpen": false,
+        "children": [
+          {
+            "type": "card",
+            "eyebrow": "ChatGPT · US",
+            "bullets": [
+              "Prompt: \"best issue tracking tools\"",
+              "Result: Jira is listed first as \"best overall.\" Linear appears as \"best modern developer tool\" — a secondary mention, not the default recommendation."
+            ]
+          },
+          {
+            "type": "card",
+            "eyebrow": "Gemini · AU",
+            "bullets": [
+              "Prompt: \"best issue tracking\"",
+              "Result: Linear is called \"The Speed Demon\" and positioned for \"high-speed startups\" — a niche framing that undersells the product to enterprise teams and mid-market buyers evaluating alternatives to Jira."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Assumptions and caveats",
+        "description": "Material assumptions behind the traffic projections and strategy.",
+        "defaultOpen": false,
+        "bullets": [
+          "Traffic projections are modeled estimates based on keyword demand, intent distribution, and expected capture rates. Actual results will vary based on execution speed, content quality, and competitive response.",
+          "AI visibility data was sampled across 16 prompts on ChatGPT, Gemini, and Google AI Overviews. Perplexity probes were unavailable at the time of research.",
+          "Some ChatGPT prompts timed out during data collection. Where evidence is incomplete, findings have been softened rather than fabricated.",
+          "Revenue projections require Linear's ACV and funnel conversion data to be meaningful — the calculator above is a planning tool, not a forecast guarantee.",
+          "All data was collected on 2026-03-16. Competitor positions and AI response patterns may shift as the market evolves."
+        ]
+      }
+    ]
+  },
+  "deliverableStack": {
+    "apexAssets": {
+      "heading": "Decision-stage assets we build",
+      "items": [
+        {
+          "label": "Best-of and buyer guide pages",
+          "description": "Own the \"best Dev Tools / Issue Tracking\" queries that shape buying decisions before buyers ever reach out.",
+          "icon": "Target"
+        },
+        {
+          "label": "Head-to-head comparison pages",
+          "description": "Win shortlist formation with direct competitor matchups — the pages buyers read right before they choose.",
+          "icon": "BarChart3"
+        },
+        {
+          "label": "Alternative-to pages",
+          "description": "Capture buyers actively looking to switch from competitors. These are the highest-intent pages in any category.",
+          "icon": "Layers3"
+        },
+        {
+          "label": "Pricing transparency pages",
+          "description": "Answer the pricing question before competitors do. Buyers who can't find pricing move on.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Original research and benchmarks",
+          "description": "Publish category data that gets cited, linked to, and recommended by answer engines as the authoritative source.",
+          "icon": "Search"
+        },
+        {
+          "label": "Case-evidence assets",
+          "description": "Proof that converts — real results, real implementations, real outcomes that make the recommendation credible.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Calculators, tools, and interactive assets",
+          "description": "Earn links, citations, and return visits with utility-first content that buyers actually use.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Use-case and persona pages",
+          "description": "Match the right solution to the right buyer in the right context — every angle Linear can win.",
+          "icon": "Building2"
+        }
+      ]
+    },
+    "knowledgeGraph": {
+      "heading": "Supporting coverage that compounds",
+      "body": "Memetik builds as many supporting pages as the category demands — long-tail permutations, contextual variations, adjacent use cases, FAQ depth, and topical clusters — all routing authority back to Linear's decision pages. This layer scales from hundreds to thousands depending on the category and creates the retrieval density that makes answer engines find the same recommendation in more and more contexts over time."
+    },
+    "trustRelay": {
+      "heading": "Off-site authority that proves every claim",
+      "items": [
+        {
+          "label": "Review-platform presence",
+          "description": "Active profiles, review acquisition, and response workflows on the platforms buyers actually check before choosing.",
+          "icon": "MessageSquare"
+        },
+        {
+          "label": "Community and forum seeding",
+          "description": "Authentic participation where your category gets discussed — Reddit, niche forums, industry communities.",
+          "icon": "Globe"
+        },
+        {
+          "label": "Professional network distribution",
+          "description": "LinkedIn thought leadership, newsletter placements, and expert commentary that spreads the same story to decision-makers.",
+          "icon": "Building2"
+        },
+        {
+          "label": "Third-party listicles and publications",
+          "description": "Get featured in the best-of lists and roundups buyers actually read when comparing options.",
+          "icon": "Newspaper"
+        },
+        {
+          "label": "Editorial and digital PR",
+          "description": "Tier-one media placements that build brand authority and earn high-value citations answer engines trust.",
+          "icon": "Sparkles"
+        },
+        {
+          "label": "High-authority backlinks",
+          "description": "DR70+ links pointed at your most important commercial pages — the trust signal that compounds everything else.",
+          "icon": "Link2"
+        }
+      ]
+    },
+    "technical": {
+      "heading": "Machine-readable, indexable, and citable",
+      "items": [
+        {
+          "label": "Crawler eligibility across all AI surfaces",
+          "description": "OAI-SearchBot, PerplexityBot, Googlebot, BingBot — every answer engine can find and cite you.",
+          "icon": "Bot"
+        },
+        {
+          "label": "Structured data matched to visible content",
+          "description": "Schema that helps machines understand what you offer — not just what you claim.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Internal linking architecture",
+          "description": "Every supporting page feeds authority into your most important commercial pages.",
+          "icon": "Link2"
+        },
+        {
+          "label": "Sitemap, canonical, and duplicate discipline",
+          "description": "One canonical URL per intent. No dilution, no confusion, no wasted crawl budget.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Entity consistency",
+          "description": "Same brand story across owned pages, review platforms, directories, and third-party mentions.",
+          "icon": "Shield"
+        },
+        {
+          "label": "IndexNow and Bing Webmaster Tools",
+          "description": "Fast indexation and AI-performance visibility through Microsoft's citation and answer stack.",
+          "icon": "Search"
+        }
+      ]
+    },
+    "measurement": {
+      "heading": "Know exactly what's working",
+      "items": [
+        {
+          "label": "AI citation tracking",
+          "description": "Monitor where Linear appears — and where it doesn't — across ChatGPT, Gemini, Perplexity, and AI Overviews.",
+          "icon": "Eye"
+        },
+        {
+          "label": "Prompt testing and recommendation-share",
+          "description": "Track the share of relevant prompts where your brand is the recommended answer — the metric that actually matters.",
+          "icon": "Bot"
+        },
+        {
+          "label": "Monthly performance reporting",
+          "description": "Rankings, traffic, citation movement, workstream completion, and business outcomes — every month.",
+          "icon": "BarChart3"
+        },
+        {
+          "label": "Quarterly strategy reviews",
+          "description": "Entity ownership status, defended vs weak prompts, refresh priorities, and commercial readout.",
+          "icon": "Target"
+        }
+      ]
+    },
+    "refresh": {
+      "heading": "The work doesn't stop — it compounds",
+      "items": [
+        {
+          "label": "Monthly data and pricing refreshes",
+          "description": "Keep decision pages current so engines keep citing them. Stale data kills recommendations.",
+          "icon": "RefreshCw"
+        },
+        {
+          "label": "Quarterly asset reviews",
+          "description": "Identify what's winning, what's slipping, and what needs reinforcement — then act on it.",
+          "icon": "Search"
+        },
+        {
+          "label": "Competitor-response updates",
+          "description": "When competitors move into prompts you've already won, respond before the position erodes.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Drift correction",
+          "description": "When a previously owned prompt softens, diagnose and fix before the recommendation is lost.",
+          "icon": "Gauge"
+        }
+      ]
+    }
+  }
+}
